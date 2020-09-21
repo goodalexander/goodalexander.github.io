@@ -111,7 +111,7 @@ question:
 - was my mobile screen time sub 15 mins?
 
 ### 2. Simplify diet to be "quasi optimal"
-* There's a temptation to be "fully optimal" - in the sense that it's pretty clear that eating a varied diet of fruit vegetables, brown rice, lean chicken etc produces better results. But being fully optimal requires cooking and quite a bit of discipline. It's better to allocate that discipline elsewhere and simply be "good enough" in this category until free cash flow personally is above $50k /month 
+* There's a temptation to be "fully optimal" - in the sense that it's pretty clear that eating a varied diet of fruit vegetables, brown rice, lean chicken etc produces better results. But being fully optimal requires cooking and quite a bit of discipline. It's better to allocate that discipline elsewhere and simply be "good enough" in this category
 * Cooking is too time consuming when incorporating clean up and shopping
 * There is a mediterranean place close by with relatively good chicken, rice and salad. The beef makes me feel bad so I'll avoid that (I can't have too much iron)
 * I will just change my diet to be oatmeal, protein powder, a multi vitamin and this for the forseeable future with minimal thought outside that 
