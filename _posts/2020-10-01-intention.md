@@ -5,14 +5,14 @@ date:       2020-10-01 11:21:29
 summary:    Explaining what I am trying to do
 ---
 
-** Philosophy of Success
+## Philosophy of Success
 There is a temptation to overly mechanically optimize "how" you are doing without optimizing "what" you are doing. Many employees of large corporations work 3-4x as hard as the CEO but generate 1/1000th of the financial result. This does not speak poorly of them, as they also might enjoy 1000x the amount of flow state (I know many engineers who would code for free and actually do). It's possible to enter the top 10%, or even the top 1% by "executing" better than everyone else. But it is nearly impossible to enter the .01%. 
 
 Entering the .01% has very little to do with wealth, and more to do with societal impact and the ability to marshal resources towards an objective. Many people who chop wood better than most legitimately enjoy wooden tables, whereas many people who own the logging companies are often driven by feeding the poor and uninterested in wood furniture. This isn't an abstraction - having lived in Vancouver and met the participants, I can verify this directly! (to be honest, the guys chopping the wood are usually much more fun). Thus - I don't think there's any 'value' judgment associated with being a Samurai/ wood chopper, versus being a general or an logging CEO- but there are differences that are important, and I need to cover.
 
 Steve Jobs wanted to make beautiful things people used every day. Bill Gates wanted to revolutionize computing and give back in a big way. Musk wants to die on mars. These are fundamentally non economic impulses. Whether you agree with them or not, it's hard to argue at a certain point that it's about money. Zuckerberg is a strange edge case in that he actually might want to become Augustus, and that it's about power / some bizarre notion of saving the Republic from itself, but that's a conversation for another day.
 
-** Description of My Struggle
+## Description of My Struggle
 
 My life over the past several years has been a constant struggle between competing narratives.
 
@@ -22,7 +22,7 @@ It's not that I haven't learned anything. Trading only your own money improves y
 
 The question is - going forward, how am I going to approach the problem - namely the problem of balancing investing and the creation of productive technology ventures, with the core objective of making a useful dent in the universe. First, articulating the problem.
 
-** Reflection on Misconceptions
+##Reflection on Misconceptions
 
 Trading well takes more than 12 hours a day of effort. It is nearly impossible to start a company when you spend 12 hours a day trading. At the same time, it is impossible to put a dent in the universe only trading - especially once you reach a scale where profits inherently involve the so called "manipulative function" - i.e. directly interacting with society. A study of the life of Soros actually shows that his trading brought into the world many things which existentially ran counter to everything he stood for. Nearly breaking the Ruble with his infamous FT article (after having been spurned by the Central Bank who he had advised) and profiting enormously likely led to the rise of Putin and Putin's subsequent revenge by destroying Soros' life work in philanthropy in the Ukraine. It is hard to argue that the politics of Brexit did not benefit from Soros' status as a financial Boogie man, and it is similarly hard to argue that the rise of nationalism has not benefited massively from Brexit. The deep irony and tragedy of Soros is that his aptly named theory of reflexivity boomeranged on him in what can only be called a reflexive fashion. 
 
@@ -32,7 +32,7 @@ My biggest mistake with my last business is that I chose a space orthogonal to t
 
 Given my goals in life, it's nearly impossible to justify focusing on trading exclusively. The age of automation is here, so my skills as a financial swordsman will be in direct competition with automatic rifles. I may fell a couple soldiers, but like Tom Cruise in the last Samurai, focusing on the Sword means being gunned down along with most of the people I love. Unlike The Samurai, I see no honor or glory in failure no matter the artfulness of my katana. At the same time, there are a number of disruptive changes to the technology environment which intersect with trading in a way that I can accumulate massive edge. I am probably the only person in the world who fully understands the extent to which advertising influences companies' share performance and vice-versa - just as one example. I'm likely the only person in the world who has applied the entire magnitude of US credit card data to predicting investment performance of IG and HY credit indices, as another. Because hedge funds view trading essentially as a science, rather than an interactive game as Soros proved it was - they have an inherent and structural disadvantage in the new normal of Robinhood investment and social media. 
 
-** Laying out the variant thesis 
+## Laying out the variant thesis 
 
 The essence of this thesis lies in an understanding of Soros theory of reflexivity. Normally, scientific outcomes dominate. But there are times when participants, such as central bankers or governments are studying an evolving and volatile situation and reacting to one another in real time. The interaction between these parties, and the mistakes they make due to the real time nature and impact of their actions, become the dominant driver of markets. Soros' 'super power' was recognizing when these situations were arising, and betting the ranch on their predictable resolution while other market participants (who he terms 'fundamentalists') dialed back their risk. The great irony of my last business venture is that I was treating digital advertising as a "market fundamentalist" would - studying human behavior in linear patterns to predict the future. I failed to grasp the obvious - that 1) the digital world was engaging directly in the world of investing in a way that had not been true in the past 2) people have emotions and broadly care about societal issues such as ethical treatment of employees and saving the environment. And for the third point and the crux of my thesis
 
@@ -42,7 +42,7 @@ Governments' fiscal situation and extreme indebtedness requires Central Banks to
 
 Armed with this variant understanding, this brings me to the answer to my question.
 
-** Outlining Implementation
+## Outlining Implementation
 
 There are only really three choices for me. 
 
@@ -54,7 +54,7 @@ Choice three - start a company that brings to bear all of my knowledge, all of t
 
 Because I know what choices one and two look like, it's worth spending time discussing choice 3.
 
-** Describing Structure
+## Describing Structure
 
 Let's begin with what needs to be built.
 
@@ -74,7 +74,7 @@ But what's the alternative?
 
 The truth is any company that you build in the current environment that doesn't address the core fiscal and monetary unsustainability of the underlying system is the equivalent to building a sand castle on a beach during a tsunami. 
 
-** Call To Action and Specifics
+## Call To Action and Specifics
 
 Thus - having written this and come to an inescapable conclusion, the next steps are action. 
 
