@@ -12,6 +12,8 @@ Entering the .01% has very little to do with wealth, and more to do with societa
 
 Steve Jobs wanted to make beautiful things people used every day. Bill Gates wanted to revolutionize computing and give back in a big way. Musk wants to die on mars. These are fundamentally non economic impulses. Whether you agree with them or not, it's hard to argue at a certain point that it's about money. Zuckerberg is a strange edge case in that he actually might want to become Augustus, and that it's about power / some bizarre notion of saving the Republic from itself, but that's a conversation for another day.
 
+I have a fundamental non economic impulse. I believe society is spiraling towards destruction, that this destruction has its origins in the monetary system, and that radical action must be taken in the near term to move towards a better system or we risk losing the gains of modernity.
+
 ## Description of My Struggle
 
 My life over the past several years has been a constant struggle between competing narratives.
