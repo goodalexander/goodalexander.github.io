@@ -7,8 +7,8 @@ baseurl:     ""
 url:         "https://goodalexander.com"
 date_format: "%b %-d, %Y"
 header_pages:
- - about.md
- - contact.html
+ - macro.html
+ - stocks.html
 
 # Google services
 google_verification:
@@ -72,7 +72,7 @@ vk_id:
 show_sharing_icons: false
 # Change to 'true' to enable individual icons
 share_facebook: false
-share_twitter: false
+share_twitter: True
 share_googleplus: false
 share_linkedin: false
 share_digg: false
