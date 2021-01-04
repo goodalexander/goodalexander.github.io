@@ -116,6 +116,15 @@ I think the Fed's ability to absorb the front end of the curve is far higher in 
 - Short VCLT -6%
 
 
+### 8 Cyber Security (6% of Capital)
+
+Biden said there was going to be a massive investment and I believe we should take him at face value. At the same time the regulatory environment for Telco, net neutrality etc makes cable players likely a short
+
+- Long BUG +3%
+- Short VZ -1.5%
+- Short CHTR -1.5%
+
+
 ## MACRO TAKES AND HEADLINES
 
 ### US Bullish:
