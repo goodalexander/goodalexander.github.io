@@ -31,85 +31,85 @@ News over the weekend re: large EU grants to ASML will further provide a lift to
 
 Boiling it all down into a book:
 
-1] Foreign Tech Book (30% of Capital)
+1. Foreign Tech Book (30% of Capital)
 
 Core thesis of this book is that ECB keeps printing, that Russia is scapegoated for global problems to the benefit of China, and that European tech stimulus finds its way into European growth stocks at the expense of Value stocks especially due to viral acceleration. 
 
-Chinternet (CQQQ) : +3%  
-ASML (ASML Semi) : +2%
-Sony (SNE)  : +1%
-Spotify (SPOT) - Spotify: +1%
-AstraZeneca (AZN) : +1%
-Yandex (YNDX) - : -2%
-Europe Value (EFV) : -5%
-EMB - EM Debt: -10%
-IAGG - Intl Treasuries: +5%
+- Chinternet (CQQQ) : +3%  
+- ASML (ASML Semi) : +2%
+- Sony (SNE)  : +1%
+- Spotify (SPOT) - Spotify: +1%
+- AstraZeneca (AZN) : +1%
+- Yandex (YNDX) - : -2%
+- Europe Value (EFV) : -5%
+- EMB - EM Debt: -10%
+- IAGG - Intl Treasuries: +5%
 
-2] US "Green Old Deal Book" (20% of Cap)
+2. US "Green Old Deal Book" (20% of Cap)
 
 This book expresses the idea that Nuclear is the focus of the Biden admin's clean energy focus. Similarly, Nuclear powering hydrogen production is a big narrative from the DOE. Russia and Emerging markets focused on travel and energy are funding shorts, as it's likely a virus mutation weakens the Astra Zeneca story (constant MRNA updates needed etc).
 
-Nextera (NEE): +1.5%
-Cameco (CCJ): +1.5%
-Linde (LIN): +1%
-Ormat (ORA): .5%
-Ballard Power (BLDP): .5%
-NRG (NRG): +1%
-BHP Billiton (BHP): +1%
-Vale (VALE): +1%
-Lithium ETF (LIT): +1%
-Chile (CHL): +1% 
-Russia (RSX): -5%
-Saudi (KSA): -3%
-Thailand (THD): -2%
+- Nextera (NEE): +1.5%
+- Cameco (CCJ): +1.5%
+- Linde (LIN): +1%
+- Ormat (ORA): .5%
+- Ballard Power (BLDP): .5%
+- NRG (NRG): +1%
+- BHP Billiton (BHP): +1%
+- Vale (VALE): +1%
+- Lithium ETF (LIT): +1%
+- Chile (CHL): +1% 
+- Russia (RSX): -5%
+- Saudi (KSA): -3%
+- Thailand (THD): -2%
 
-3] Blue Wave Laggards (11% of Cap)
+3. Blue Wave Laggards (11% of Cap)
 
 With ICLN pricing in massive likelihood of a blue wave, as are many assets, International energy and sustainable infra vs MReits are appealing risk reward as Biden follows through with threats to curtail energy production and a Democratic senate can put into place eviction bans which could lower housing prices and hurt MReits. 
 
-British Petroleum (BP): .5%
-Equinor (EQNR): .5%
-International Energy (IXC): 3%
-Hannon Armstrong Sustainable Infra (HASI): +2%
-US Energy (XLE): -3%
-US MREITs (REM): -2%
+- British Petroleum (BP): .5%
+- Equinor (EQNR): .5%
+- International Energy (IXC): 3%
+- Hannon Armstrong Sustainable Infra (HASI): +2%
+- US Energy (XLE): -3%
+- US MREITs (REM): -2%
 
-4] Virus Acceleration (22% of Capital)
+4. Virus Acceleration (22% of Capital)
 
 The basic bet here is that Biden is a lot more friendly to big Tech than the market realizes, and that will begin to price in this week as people think deeply about Blue Wave gap moves. Facebook banning voter ads from Republicans in Georgia... here we go
 
-Facebook (FB): +1.5%
-Google (GOOG): +1%
-Amazon (AMZN): +1%
-Activision (ATVI): +.5%
-Square (SQ): +.5%
-Comcast (CMCSA): +.5% 
-Zoom (ZM): +.5%
+- Facebook (FB): +1.5%
+- Google (GOOG): +1%
+- Amazon (AMZN): +1%
+- Activision (ATVI): +.5%
+- Square (SQ): +.5%
+- Comcast (CMCSA): +.5% 
+- Zoom (ZM): +.5%
 
-Regional Banks (KRE): -2.5%
-High Yield Debt (HYG): -8%
-TIPs (TIP): +6%
+- Regional Banks (KRE): -2.5%
+- High Yield Debt (HYG): -8%
+- TIPs (TIP): +6%
 
-5] Commodity Inflation (8% of Capital)
+5. Commodity Inflation (8% of Capital)
 
 I like the story of Vietnam increasingly being a destination for low cost inputs / manufacturing, which is a story played out in Last Week's data. Should benefit from declining energy costs as well without being hit *too* badly from a covid accel. Low volatility Emerging Markets, mostly mega caps, I think underperform as people looking to play offense on the USD and energy weights hold it down. 
 
-DBA (Agriculture): +1.5%
-Vietnam (VNM): +2.5%
-EM Low Volatility (EEMV): -4%
+- DBA (Agriculture): +1.5%
+- Vietnam (VNM): +2.5%
+- EM Low Volatility (EEMV): -4%
 
-6) UK Tech Narrative (4% of Capital)
+6. UK Tech Narrative (4% of Capital)
 
 Ultimately, think the UK is really picking up steam as an international tech hub and as the USD weakness story decelerates I think GBPUSD trades higher.  
 
-Long GBPUSD (FXB): +4%
+- Long GBPUSD (FXB): +4%
 
-7) IG Corporate Steepener (16% of Capital)
+7. IG Corporate Steepener (16% of Capital)
 
 I think the Fed's ability to absorb the front end of the curve is far higher in the near term absent Yellen coming out and making a policy statement about duration. This moves the narrative out to the defecit and being anti-corporate. The 50 bps of yield pick up you get for underwriting an obscene amount of policy risk with breakevens north of 2% feels unreasonable 
 
-Long USIG +10%
-Short VCLT -6%
+- Long USIG +10%
+- Short VCLT -6%
 
 
 ## MACRO TAKES AND HEADLINES
