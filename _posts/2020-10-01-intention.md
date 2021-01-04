@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Newsflow
+title:      2021 : New Beginnings
 date:       2021-01-02 11:21:29
-summary:    Market newsflow
+summary:    Here I detail some analysis of newsflow over the last week and where I see best risk reward going into the start of the year
 ---
 
 
