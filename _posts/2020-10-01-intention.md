@@ -12,7 +12,11 @@ The core theme coming out of the gate of the New Year is a parabolic move higher
 
 This theme is only likely to accelerate with the possibility of a Blue Wave looking increasingly likely. Osoff is speaking charismatically in Georgia, and odds markets are now above 50%. 
 
-All things being equal - these moves would signal continuation of major asset moves. 1) Higher oil prices as Biden removes subsidies, and a Blue Wave complicates exploration and extraction due to climate goals 2) A lower dollar and higher 30 year interest rates as the fiscal situation deteriorates out of control. The move lower in the dollar should be augmented by the picture of the US as geopolitically unstable, with Trump dividing republicans and attempting to blackmail the Georgia governor. 3) Lower US energy sector prices. 4) Continued bid in sectors benefited by fiscal spending - namely clean energy, and infrastructure at the expense of big tech - due to the perception that the dems will legislate Big Tech. 
+All things being equal - these moves would signal continuation of major asset moves. 
+1. Higher oil prices as Biden removes subsidies, and a Blue Wave complicates exploration and extraction due to climate goals
+2. A lower dollar and higher 30 year interest rates as the fiscal situation deteriorates out of control. The move lower in the dollar should be augmented by the picture of the US as geopolitically unstable, with Trump dividing republicans and attempting to blackmail the Georgia governor. 
+3.  Lower US energy sector prices. 
+4. Continued bid in sectors benefited by fiscal spending - namely clean energy, and infrastructure at the expense of big tech - due to the perception that the dems will legislate Big Tech. 
 
 This is complicated by two factors; consensus positioning, and the acceleration of COVID's new UK strain. First re: positioning. The fact European equities and the Euro traded quite poorly in the wake of the surprise China trade deal with the EU last week suggests that the buy side is over their skis long the Euro on fiscal solidarity. This probably makes less sense than one might expect -- because countries like Italy and Spain will be asymmetrically hurt by the lockdown, and even if they can borrow at lower rates - will be progressively less supportive of centralized decisionmaking. The realization that COVID can mutate introduces unpredictability into the efficacy of vaccines [Source](https://twitter.com/Williams_T_C/status/1345708240382918658). 
 
@@ -31,7 +35,7 @@ News over the weekend re: large EU grants to ASML will further provide a lift to
 
 Boiling it all down into a book:
 
-1. Foreign Tech Book (30% of Capital)
+### 1 Foreign Tech Book (30% of Capital)
 
 Core thesis of this book is that ECB keeps printing, that Russia is scapegoated for global problems to the benefit of China, and that European tech stimulus finds its way into European growth stocks at the expense of Value stocks especially due to viral acceleration. 
 
@@ -45,7 +49,7 @@ Core thesis of this book is that ECB keeps printing, that Russia is scapegoated 
 - EMB - EM Debt: -10%
 - IAGG - Intl Treasuries: +5%
 
-2. US "Green Old Deal Book" (20% of Cap)
+### 2 US "Green Old Deal Book" (20% of Cap)
 
 This book expresses the idea that Nuclear is the focus of the Biden admin's clean energy focus. Similarly, Nuclear powering hydrogen production is a big narrative from the DOE. Russia and Emerging markets focused on travel and energy are funding shorts, as it's likely a virus mutation weakens the Astra Zeneca story (constant MRNA updates needed etc).
 
@@ -63,7 +67,7 @@ This book expresses the idea that Nuclear is the focus of the Biden admin's clea
 - Saudi (KSA): -3%
 - Thailand (THD): -2%
 
-3. Blue Wave Laggards (11% of Cap)
+### 3 Blue Wave Laggards (11% of Cap)
 
 With ICLN pricing in massive likelihood of a blue wave, as are many assets, International energy and sustainable infra vs MReits are appealing risk reward as Biden follows through with threats to curtail energy production and a Democratic senate can put into place eviction bans which could lower housing prices and hurt MReits. 
 
@@ -74,7 +78,7 @@ With ICLN pricing in massive likelihood of a blue wave, as are many assets, Inte
 - US Energy (XLE): -3%
 - US MREITs (REM): -2%
 
-4. Virus Acceleration (22% of Capital)
+### 4 Virus Acceleration (22% of Capital)
 
 The basic bet here is that Biden is a lot more friendly to big Tech than the market realizes, and that will begin to price in this week as people think deeply about Blue Wave gap moves. Facebook banning voter ads from Republicans in Georgia... here we go
 
@@ -90,7 +94,7 @@ The basic bet here is that Biden is a lot more friendly to big Tech than the mar
 - High Yield Debt (HYG): -8%
 - TIPs (TIP): +6%
 
-5. Commodity Inflation (8% of Capital)
+### 5 Commodity Inflation (8% of Capital)
 
 I like the story of Vietnam increasingly being a destination for low cost inputs / manufacturing, which is a story played out in Last Week's data. Should benefit from declining energy costs as well without being hit *too* badly from a covid accel. Low volatility Emerging Markets, mostly mega caps, I think underperform as people looking to play offense on the USD and energy weights hold it down. 
 
@@ -98,13 +102,13 @@ I like the story of Vietnam increasingly being a destination for low cost inputs
 - Vietnam (VNM): +2.5%
 - EM Low Volatility (EEMV): -4%
 
-6. UK Tech Narrative (4% of Capital)
+### 6 UK Tech Narrative (4% of Capital)
 
 Ultimately, think the UK is really picking up steam as an international tech hub and as the USD weakness story decelerates I think GBPUSD trades higher.  
 
 - Long GBPUSD (FXB): +4%
 
-7. IG Corporate Steepener (16% of Capital)
+### 7 IG Corporate Steepener (16% of Capital)
 
 I think the Fed's ability to absorb the front end of the curve is far higher in the near term absent Yellen coming out and making a policy statement about duration. This moves the narrative out to the defecit and being anti-corporate. The 50 bps of yield pick up you get for underwriting an obscene amount of policy risk with breakevens north of 2% feels unreasonable 
 
