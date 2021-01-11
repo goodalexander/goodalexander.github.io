@@ -144,8 +144,8 @@ After last week's enormous run in Lithium, the risk reward there is less appeali
 - BHP Billiton (BHP): +1%
 - Vale (VALE): +1%
 - Norilsk (NILSY): +3%
-- Long Ford (F): +1%
-- Long GM (GM): +1%
+- Ford (F): +1%
+- GM (GM): +1%
 
 - Midcap 400 (IJH): -6%
 - Russia (RSX): -5%
@@ -166,19 +166,19 @@ This book is getting grouped in to the decline and fall book
 
 After the debacle with big Tech this book needs substantial changes. Adding in some of the stocks which rely on trading to this book swapping out big tech. Blue Wave narratives likely hurt biotech and benefit vaccine cos.
 
-- Long Equinix (EQIX): +2%
-- Long Gold (GLD): +1.5%
-- Long Silver (SLV): +1%
-- Long Moderna (MRNA): .5%
-- Long BionTex (BNTX): .5%
+- Equinix (EQIX): +2%
+- Gold (GLD): +1.5%
+- Silver (SLV): +1%
+- Moderna (MRNA): .5%
+- BionTex (BNTX): .5%
 - Comcast (CMCSA): +.5% 
-- Long MarketAxes (MKTX): .5%
-- Long Virtu (VIRT): .5%
-- Long TradeWeb (TW): .5%
+- MarketAxes (MKTX): .5%
+- Virtu (VIRT): .5%
+- TradeWeb (TW): .5%
 
-- Short South Africa (EZA): 3%
-- Short Emerging Markets Local Debt: -15%
-- Long Muni Debt (VTEB): + 10%
+- South Africa (EZA): -3%
+-  Emerging Markets Local Debt: -15%
+- Muni Debt (VTEB): + 10%
 
 
 [ Trades that are cut : - Facebook (FB): +1.5%
@@ -239,7 +239,6 @@ Think the narrative around capital hill continues to reverberate in privacy cryp
 - Long Monero (XMR): +.25% - spot ref 151.65
 - Short Bitcoin (BTC) -.75% - 36,000
 
-I think the narrative around untrustworhty government gives a bid to privacy coins vs Bitcoin this week. 
 
 ## MACRO TAKES AND HEADLINES
 
