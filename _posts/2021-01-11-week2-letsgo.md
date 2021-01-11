@@ -2,7 +2,7 @@
 layout:     post
 title:      Week 2 - Decline and Fall 
 date:       2021-01-11 11:21:29
-summary:    Cover last week's performance and key takeaways
+summary:    Ideas expressing weakness in US equities relative to ROW this week
 ---
 
 ## Last Week
