@@ -7,16 +7,20 @@ summary:    Cover last week's performance and key takeaways
 
 ## Last Week
 
-Last week's performance was +1.25%, unlevered. Full breakdown at a trade level here[Download](https://goodalexander.com/files/long_short_week1.csv)
+Last week's performance was +1.25%, unlevered had you traded this blog post on the open Monday and held til Friday [Source: Last Week's Write Up](http://goodalexander.com/2021/01/02/new-beginnings) . Full breakdown at a trade level here. [Download](https://goodalexander.com/files/long_short_week1.csv)
+
+Big tech and the virus acceleration were separated from the political narrative. I think it is notable that the basket titled "Green Old Deal" was the top performer, with big up moves in Uranium stocks throughout the week. This would be a reinforcement of the narrative that Biden will not do anything too wild re: Green energy, and will likely default to nuclear energy and hydrogen fuel providing the best risk reward given ICLN's insane run. 
+
+Taking book gross up to 1.75x leverage using pnl as a stop loss (also trading more bond products so lower vol book. )
 
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>contribution</th>
+      <th>PNL Contribution</th>
     </tr>
     <tr>
-      <th>tag</th>
+      <th>Strategy Basket</th>
       <th></th>
     </tr>
   </thead>
@@ -59,95 +63,140 @@ Last week's performance was +1.25%, unlevered. Full breakdown at a trade level h
 
 ## Analysis / Thought
 
-The core theme coming out of the gate of the New Year is a parabolic move higher in Bitcoin on the backdrop of VanEck getting a Bitcoin ETF. This moves the Zeitgeist into one of "fiat debasement" - where, essentially large institutions believed that Central Banks have jumped the shark with their talks of "Debt as Wealth", MMT, and so forth. With 10 year breakevens at 2%, the Fed's target, we are increasingly at the point where the discussion becomes letting the economy run "hot". This is in a backdrop of large increases in Food prices and analysis by things like the Chapwood Index which suggest that annual core CPI in cities is really closer to 10 or 11% per annum and has been for the past 5 years [Source](https://twitter.com/tanayj/status/1345080274107785216) 
+This week was a seminal week, likely in American history as well as in markets. 
 
-This theme is only likely to accelerate with the possibility of a Blue Wave looking increasingly likely. Osoff is speaking charismatically in Georgia, and odds markets are now above 50%. 
+A Democratic sweep sent clean energy assets soaring, and caused a large sell off in the back end of US rates. Federal reserve commentary has been increasingly nuanced - and largely points to several large trends:
+1. A lack of intention to extend duration of asset purchases. I.e. lack of sensitivity around long end financing costs 
+2. A believe that small businesses need to be bailed out
+3. A general believe that Swap lines, munis and non traditional fed actions were justified and "worked well"
 
-All things being equal - these moves would signal continuation of major asset moves. 
-1. Higher oil prices as Biden removes subsidies, and a Blue Wave complicates exploration and extraction due to climate goals
-2. A lower dollar and higher 30 year interest rates as the fiscal situation deteriorates out of control. The move lower in the dollar should be augmented by the picture of the US as geopolitically unstable, with Trump dividing republicans and attempting to blackmail the Georgia governor. 
-3.  Lower US energy sector prices. 
-4. Continued bid in sectors benefited by fiscal spending - namely clean energy, and infrastructure at the expense of big tech - due to the perception that the dems will legislate Big Tech. 
+Yellen, Biden and Kamala Harris have repeatedly signaled the need to help the little guy. This makes a fairly clear argument for shorting Ultra bonds and going long shorter duration mortgage backed securities, TIPs, as well as municipal bonds (which benefit from tax hikes).
 
-This is complicated by two factors; consensus positioning, and the acceleration of COVID's new UK strain. First re: positioning. The fact European equities and the Euro traded quite poorly in the wake of the surprise China trade deal with the EU last week suggests that the buy side is over their skis long the Euro on fiscal solidarity. This probably makes less sense than one might expect -- because countries like Italy and Spain will be asymmetrically hurt by the lockdown, and even if they can borrow at lower rates - will be progressively less supportive of centralized decisionmaking. The realization that COVID can mutate introduces unpredictability into the efficacy of vaccines [Source](https://twitter.com/Williams_T_C/status/1345708240382918658). 
+This creates a "trend reinforcing" likely move where 1) US long duration bonds sell off 2) the dollar sells off. 3) Things the fed is buying stay up, and inflation expectations rise. 
 
-Furthermore -- there are a number of perverse incentives at play to justify continuing to lock down the economy. Namely - 1) high tech weights in the S&P 500 and declining energy weights. Companies like Amazon tend to do well with covid news. Thus, the S&P and lobbyists are indifferent to new lockdowns. 2) increase of political power. Politicians are enjoying their max power at the moment, and states rarely relinquish power willingly. Thus - given incremental news flow, I think it is likely that this week - Travel names, and "cancellation of the virus" trades will radically underperform technology stocks. 
+Inflation will especially be exacerbated by three concurrent trends 
+1) Exploding costs of international trade due to shipping containers
+2) Rising costs of transitioning to Paris Agreement (electrical grid re-wiring, and policy uncertainty)
+3) Biden's insistence on workers' rights and MMT
 
-However - due to the Fed's targeting of the virus / tendency to include it in policy decisions, I believe it is likely that there will be accelerated asset purchases. Rather than outright shorting stocks then, not fighting the fed would entail buying Gold, Agricultural commodities, and TIPs and short selling HY and Emerging Markets debt. 
+It is likely that breakevens will run to 3 or even 4% before the Fed comments due to its language around "maximum" employment, making TIPs incredibly asymmetric especially with the Fed purchasing them.
 
-I believe the consensus positioning in Euro shows what can likely happen to the Clean Energy sector (ICLN) even if a Blue Wave happens. I believe that Dr. Rita Baranwal's Twitter Account is strongly foreshadowing a parabolic increase in Uranium and Nuclear energy plays [Source](https://twitter.com/DOE_NE1/status/1345771334362652678) potentially at the expense of Solar (esp with Bill Gates production experiment to blot out / dim the sun in Sweden.) Energy.gov has almost read like a stock promotion account for the nuclear sector. Given the small market caps of the names involved (Cameco at $5b vs names like RUN at $14B) - I believe this could be  a triple digit move in a month. 
+Thus - IG credit is a preferred funding short, especially on the long end (VCLT). A steepener is no longer appropriate as front end IG credit likely doesn't benefit from the fed's most recent comments either. 
 
-Biden's hiring of a prominent Facebook attorney as a staff advisor, removes gap risk from Section 230 along with the Senate override of Trump's veto (which highlighted 230 as an issue) was an underdiscussed story in the last week. [Source](https://www.vox.com/recode/22206646/joe-biden-jessica-hertz-facebook-staff-secretary-big-tech) Furthermore, Trump DOJ's antagonism towards Google, and Twitter are unlikely to be reiterated by the Biden admin. On the flip side - Biden's nomination of Kahl as national security adviser would suggest heightened geopolitical tension towards Russia [Source](https://www.foxnews.com/politics/biden-pick-colin-kahl-steele-dossier-trump-russia-collusion). The New York times and other magazines are drumming up fears about Russian Cyber security. [Source](https://www.nytimes.com/2021/01/02/us/politics/russian-hacking-government.html). This creates the argument that a basket of Cyber security names is an appropriate position to run alongside core Big Tech longs. 
+One potential complication to shorting the Long End would be Joe Manchin's objection to $2000 stimulus checks. But I believe his clarification on the subject that they should only go out to people who need them is a form of backtracking and he's unlikely to buck Biden in his first week given that he supported Twitter's ban of Trump vocally. Joe Biden seemed to suggest on Twitter that Trump should "not be above the law" i.e a willingness to prosecute Trump for inciting riots. This would echo AOC's increasingly sanguine calls to censure political rivals.
 
-In the meanwhile, over the weekend, China made very dovish comments re: the Biden administration. It's very clear the Media is focusing on Russia in order to provide Anthony Blinken's extremely pro-China agenda to fly without much political scrutiny. This makes the risk reward to owning Chinese Internet due to a blue wave compelling. The potential of $2000 checks making PS5 purchases more likely also makes an interesting set up for Sony. 
-
-News over the weekend re: large EU grants to ASML will further provide a lift to foreign tech. 
+The final thing worth mentioning appears to be a huge acceleration in US unemployment per data tracking. This has not been mentioned much, but increases the likelihood of progressively extreme fiscal actions which will turn the dollar into a dumpster fire vs EUR and CNY. Given heightened social unrest, there will be pressure to do politically popular things such as legalizing sports betting and marijuana. 
 
 
-Boiling it all down into a book:
+Given that more Americans voted for Trump than Obama, despite his loss -this might seem like a "consensus building" exercise - but I believe it will backfire. Americans are installing signal en masse (glued at #1 on the app store) - likely planning for a surveillance state to be implemented. The media is highlighting likelihood of further violence. I believe this will come to pass, and the Patriot Act will be invoked to deem protestors as enemy combatants. Big Tech will likely play along, and it will be messy, ugly and unpleasant for years to come. 
 
-### 1 Foreign Tech Book (30% of Capital)
+I think over the next week American equity risk premiums will begin to derate in a relative space to international equities. 
 
-Core thesis of this book is that ECB keeps printing, that Russia is scapegoated for global problems to the benefit of China, and that European tech stimulus finds its way into European growth stocks at the expense of Value stocks especially due to viral acceleration. 
+I think the US Home Builder (XHB) space is especially interesting as a short. Skyrocketing Lumber prices should weigh on margins, while eviction moratoriums from the Blue Wave are likely not home owner friendly. The long end asymmetrically effects mortgage costs. 
 
+On the flip side, Equinix is interesting on the long side as increasing demand for Private data hosting should increase after the cartel-like action of big tech companies. 
+
+A slew of positive data out of Europe and the backdrop of China forming internatinoal ties, along with the weak dollar as a matter of policy will likely accelerate US equity sale (in a relative space) into a crescendo. 
+
+At the same time stories around vaccine shortages and a perverse incentive to hoarde vaccines to curtail immigration during difficult economic times are quite negative for emerging markets broadly. Saudi Arabia and Russia are primary beneficiaries of Trump's policies and likely are good funding shorts both on the equity side and through EMLC (credit).
+
+In the backdrop - however, the Fed's unlimited support has led animal spirits interest in trading products - with brokerages seeing triple digit year on year gains. There have not been many mentions of financial transaction taxes. Coinbase is #50 in the US app store, and animal spirits are very much en force. I believe that crypto is a "buy the dip" story and many trading oriented names like VIRT, JPM and MKTX are relatively appealing. 
+
+### This Week's book (download)
+[Download Percentage Weights](https://goodalexander.com/files/week2_indicative.csv)
+
+
+### 1 Gibbons - Decline & Fall (59% of Capital)
+
+The theory of this book is that US equity premiums decline massively relative to international. 
+
+- ESGE Europe Index (ESGD):+5%
+- ESG EM index (ESGE): +4%
+- International energy (IXC): +5%
 - Chinternet (CQQQ) : +3%  
 - ASML (ASML Semi) : +2%
 - Sony (SNE)  : +1%
 - Spotify (SPOT) - Spotify: +1%
 - AstraZeneca (AZN) : +1%
-- Yandex (YNDX) - : -2%
-- Europe Value (EFV) : -5%
+- US Low Volatility ETF (USMV): -10%
+- Home Builders (XHB) -7%
+- US Energy (XLE): -5%
 - EMB - EM Debt: -10%
 - IAGG - Intl Treasuries: +5%
 
-### 2 US "Green Old Deal Book" (20% of Cap)
+[ 
+Cut trade from last week
+Europe Value (EFV) : -5%
+Yandex (YNDX) - : -2%
+Hannon Armstrong Sustainable Infra (HASI): +2%
+US MREITs (REM): -2%
 
-This book expresses the idea that Nuclear is the focus of the Biden admin's clean energy focus. Similarly, Nuclear powering hydrogen production is a big narrative from the DOE. Russia and Emerging markets focused on travel and energy are funding shorts, as it's likely a virus mutation weakens the Astra Zeneca story (constant MRNA updates needed etc).
+]
 
-- Nextera (NEE): +1.5%
-- Cameco (CCJ): +1.5%
+### 2 US "Green Old Deal Book" (28% of Cap)
+
+After last week's enormous run in Lithium, the risk reward there is less appealing and adding lean to Cameco and Norilsk. Biden's heavy focus on Autos / American workers should play out this week along with the weak dollar. Pairing that with midcaps. 
+
+- Nextera (NEE): +2.5%
+- Cameco (CCJ): +2.5%
 - Linde (LIN): +1%
-- Ormat (ORA): .5%
-- Ballard Power (BLDP): .5%
 - NRG (NRG): +1%
 - BHP Billiton (BHP): +1%
 - Vale (VALE): +1%
-- Lithium ETF (LIT): +1%
-- Chile (CHL): +1% 
+- Norilsk (NILSY): +3%
+- Long Ford (F): +1%
+- Long GM (GM): +1%
+
+- Midcap 400 (IJH): -6%
 - Russia (RSX): -5%
 - Saudi (KSA): -3%
-- Thailand (THD): -2%
 
-### 3 Blue Wave Laggards (11% of Cap)
+[Cut: - Ormat (ORA): .5%
+- Ballard Power (BLDP): .5%,
+- Lithium ETF (LIT): +1%, 
+- Chile (CHL): +1% 
+- Thailand (THD): -2%]
 
-With ICLN pricing in massive likelihood of a blue wave, as are many assets, International energy and sustainable infra vs MReits are appealing risk reward as Biden follows through with threats to curtail energy production and a Democratic senate can put into place eviction bans which could lower housing prices and hurt MReits. 
+### 3 Blue Wave Laggards (0% of Cap)
 
-- British Petroleum (BP): .5%
-- Equinor (EQNR): .5%
-- International Energy (IXC): 3%
-- Hannon Armstrong Sustainable Infra (HASI): +2%
-- US Energy (XLE): -3%
-- US MREITs (REM): -2%
+This book is getting grouped in to the decline and fall book
 
-### 4 Virus Acceleration (22% of Capital)
 
-The basic bet here is that Biden is a lot more friendly to big Tech than the market realizes, and that will begin to price in this week as people think deeply about Blue Wave gap moves. Facebook banning voter ads from Republicans in Georgia... here we go
+### 4 Virus Acceleration (35% of Capital)
 
-- Facebook (FB): +1.5%
+After the debacle with big Tech this book needs substantial changes. Adding in some of the stocks which rely on trading to this book swapping out big tech. Blue Wave narratives likely hurt biotech and benefit vaccine cos.
+
+- Long Equinix (EQIX): +2%
+- Long Gold (GLD): +1.5%
+- Long Silver (SLV): +1%
+- Long Moderna (MRNA): .5%
+- Long BionTex (BNTX): .5%
+- Comcast (CMCSA): +.5% 
+- Long MarketAxes (MKTX): .5%
+- Long Virtu (VIRT): .5%
+- Long TradeWeb (TW): .5%
+
+- Short South Africa (EZA): 3%
+- Short Emerging Markets Local Debt: -15%
+- Long Muni Debt (VTEB): + 10%
+
+
+[ Trades that are cut : - Facebook (FB): +1.5%
 - Google (GOOG): +1%
 - Amazon (AMZN): +1%
 - Activision (ATVI): +.5%
 - Square (SQ): +.5%
-- Comcast (CMCSA): +.5% 
+
 - Zoom (ZM): +.5%
 
 - Regional Banks (KRE): -2.5%
 - High Yield Debt (HYG): -8%
 - TIPs (TIP): +6%
+]
 
 ### 5 Commodity Inflation (8% of Capital)
 
-I like the story of Vietnam increasingly being a destination for low cost inputs / manufacturing, which is a story played out in Last Week's data. Should benefit from declining energy costs as well without being hit *too* badly from a covid accel. Low volatility Emerging Markets, mostly mega caps, I think underperform as people looking to play offense on the USD and energy weights hold it down. 
+Continue to think this story is intact as shipping costs explode - no need to churn. 
 
 - DBA (Agriculture): +1.5%
 - Vietnam (VNM): +2.5%
@@ -155,101 +204,164 @@ I like the story of Vietnam increasingly being a destination for low cost inputs
 
 ### 6 UK Tech Narrative (4% of Capital)
 
-Ultimately, think the UK is really picking up steam as an international tech hub and as the USD weakness story decelerates I think GBPUSD trades higher.  
+London Housing beat keeps this trade alive -- worth owning GBP vs USD as reserve diversification continues 
 
-- Long GBPUSD (FXB): +4%
+-  GBPUSD (FXB): +4%
 
-### 7 IG Corporate Steepener (16% of Capital)
+### 7 IG Corporate Short (23% of Capital)
 
-I think the Fed's ability to absorb the front end of the curve is far higher in the near term absent Yellen coming out and making a policy statement about duration. This moves the narrative out to the defecit and being anti-corporate. The 50 bps of yield pick up you get for underwriting an obscene amount of policy risk with breakevens north of 2% feels unreasonable 
+At this point, bonds should outright not be owned. 
+-  Base Metals (DBB): +3%
+- TIps (TIP): +5%
+-  VCLT -15%
 
-- Long USIG +10%
-- Short VCLT -6%
+### 8 Policy Initiatives (16% of Capital)
 
+Big Tech's actions likely cause some rough declines. At the same time Microsoft has more/less stayed out of the fray. Interesting risk reward owning a few sketchier policy initiatives vs Big Tech
 
-### 8 Cyber Security (6% of Capital)
+-  Cyber Security (BUG) +3%
+-  Microsoft (MSFT): +1.5%
+-  Scotts Miracle Grow (SMG): +.5%
+-  Canopy Growth Corp (CGC): +.5%
+-  Innovative Properties: IIPR +.5%
+-  GW Pharmaceuticals: GWPH +.5%
+-  Sports Betting ETF: 1.5% 
 
-Biden said there was going to be a massive investment and I believe we should take him at face value. At the same time the regulatory environment for Telco, net neutrality etc makes cable players likely a short
+- Nasdaq (QQQ) -4%
+- S&P (SPY) -4%)
 
-- Long BUG +3%
-- Short VZ -1.5%
-- Short CHTR -1.5%
+### 9: Privacy (1.5% of Cap)
 
+Think the narrative around capital hill continues to reverberate in privacy cryptos vs BTC throughout the week
+
+- Long ZCash (ZEC): +.25% - spot ref 84
+- Long Dash (DASH): +.25% - spot ref 125.58
+- Long Monero (XMR): +.25% - spot ref 151.65
+- Short Bitcoin (BTC) -.75% - 36,000
+
+I think the narrative around untrustworhty government gives a bid to privacy coins vs Bitcoin this week. 
 
 ## MACRO TAKES AND HEADLINES
 
+## THIS week in Data
+
+Largest Growth In Interest:
+
+- Unemployment Benefits: +658%
+- Unemployment +685%
+- Microsoft Teams: +361%
+- NY.gov (and various state websites) +300% 
+- Brokerage Interest: (robinhood, IBKR etc) +300%
+- Apple Stock: +186%
+- Sell Puts: +140%
+- AUDJPY: +120%
+- EM Bonds: +100%
+- Amazon Stocks : +89%
+- Credit Check Agencies: +80%
+- Silver ETF: +87%
+
+Largest declines in Interest:
+- EM Investment management: -85%
+- GSuite: -58%
+- USDJPY: -50%
+- Google Cloud: -40%
+- Credit Event: -40%
+- CPI: -27%
+- AWS -25%
+- World Bank: -20%
+
+
 ### US Bullish:
-- Mania. "U.S. companies sold $368 billion in new stock last year, 54% more than the prior high, according to data compiled by Bloomberg." [Source](https://www.bloomberg.com/news/articles/2021-01-02/dizzying-valuations-ipo-craze-tick-boxes-on-bubble-checklist?srnd=premium&sref=ammEe8p0)
-- Foundries are at capacity due to Semiconductor growth implying a strong tech sector [Source: Trendforce](https://www.trendforce.com/presscenter/news/20201229-10617.html)
-- Tesla modestly beats delivery estimates (500k vehicles) [Source : PR](https://seekingalpha.com/pr/18137225-tesla-q4-2020-vehicle-production-deliveries)
-- Redbook 8.9% year on year vs 6.5% last 
-- Chicago PMI surprises to the upside and US continuing & initial claims are below consensus
-- Fauci reasserting positivity on Vaccine Roll out. "“We have an agreement with CVS and Walgreens, and we are starting to ship vaccines to those locations as allocated by the states -- that is really the key point.” [Source: BBG](https://www.bloomberg.com/news/articles/2021-01-03/fauci-says-u-s-covid-vaccine-pace-picking-up-after-slow-start?srnd=premium&sref=ammEe8p0)
+
+- Cyber security breaches in New Zealand will likely boost the sector [Source: Twitter](https://twitter.com/ReserveBankofNZ/status/1348076607542497280)
+- Treasury announces re-opening PPP [Source: Mnuchin, Twitter](https://twitter.com/stevenmnuchin1/status/1347612378020655105)
+- "In fact, securities trading was among the most common uses - across nearly every income bracket - for the government stimulus checks issued in May, according to software and data aggregation company Envestnet Yodlee. For many consumers, trading was the second or third most common use for the funds, behind only increasing savings and cash withdrawals. In fact, Americans that earned between $35,000 and $75,000 annually traded stocks about 90% more than the week prior to receiving their stimulus check." Seeking Alpha
+- Crazy skyrocket move out of DDD after raising guidance for quarter 
+- Good continuing claims / initial jobless claims 787k vs 800k 
+- Strong ISM non manufacturing 
+
 
 ### US Bearish:
-- AOC engages in political blacklisting of rivals after previously calling to make  persecution lists. Hawley escalates Trump contetested election narrative. [Source: Twitter](https://twitter.com/AOC/status/1345511042743324672)
-- China is allying with Russia. In developing China-Russia strategic cooperation, we see no limit, no forbidden zone and no ceiling to how far this cooperation can go," he said." [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/02/c_139636820.htm)
-- Dallas FEd Manufacturing Decelerated
-- "Zombie firms are sitting on an unprecedented $2 trillion of obligations. Budget Balance is 20% of GDP" [Source: Bloomberg](https://www.bloomberg.com/news/articles/2020-12-30/ten-ways-covid-19-has-changed-the-world-economy-forever?srnd=economics-vp&sref=ammEe8p0)
+
+- Massive increase in shipping rates due to Green requirements shows how the "energy transition" is probably inflationary and bad for earnings. [Source: BBG](https://www.bloomberg.com/news/articles/2021-01-08/ship-orders-slump-50-with-owners-unsure-which-green-fuel-to-use?srnd=economics-vp&sref=ammEe8p0)
+- Massive coordinated censorship and deplatforming of Trump supporters shows that the US is transitioning to a non democratic regime, imminently. [Underlying Article: Tech Crunch](https://techcrunch.com/2021/01/10/stripe-reportedly-joins-the-tech-platforms-booting-president-trump-from-their-services/)
+- Wash Po making sensationalist arguments about further attacks which will inevitably result in Patriot Act application [Wash Po](https://www.washingtonpost.com/technology/2021/01/09/trump-twitter-protests/)
+- Weaponized passive investing via State Street imposing diversity requirements. Should raise cost of capital. [Seeking Alpha]
+- Seems like Biden is going to Prosecute Trump. [Source: Twitter](https://twitter.com/JoeBiden/status/1348004115121647622). AOC calling for prosecution. Likely massive increase in likelihood of civil war. 
+- "Not wealthy and well connected." Biden. [Source: Twitter](https://twitter.com/JoeBiden/status/1347704641136463872). Echoed by Yellen. "One thing is clear from the jobs report: We need to invest in small businesses. Not only will they be at the center of the recovery, they have been the hardest hit. We recognize that, and will provide assistance and focus on the businesses that serve the hardest hit communities." Yellen has repeatedly highlighted 
+- US red book +5.5% vs +8.9% last 
+- CAD RMBI -1.7% yoy 
+- ADP non farm change -123k vs +88 expects - terrible number
+- Larger than expected trade balance -68.1 vs -65 expects
 
 ### Asia Bullish
-- Re: the Astrazeneca Vaccine: "It doesn't need to be kept at ultra-low temperatures and will cost about $4 a dose, compared to the $20 per vial from Pfizer and $33 for Moderna's (NASDAQ:MRNA) vaccine."
-- Japan Housing starts beat: -3.7% vs -4.9% expected. Seems positive.
-- Some positive commentary re: the Chinese on Biden admin intentions  [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/02/c_139636820.htm)
-- Spike in Chinese train travel, reaches +5.1% GDP, an implicit guidance for GDP growth [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/02/c_139637176.htm)
-- Massive Li Auto delivery number. "The Company’s deliveries for the fourth quarter reached 14,464, 67.0% higher than those for the third quarter and 20.5% above the top end of the Company’s guidance."[Source: PR](https://seekingalpha.com/pr/18137192-li-auto-inc-december-2020-delivery-update)
-- Deeper integration with China / Chile / Belt and Road. [Source: Economist Article](https://twitter.com/TheEconomist/status/1345539395894603777?s=20)
-- Vietnam CPI .19% showing minimal inflationary prolems with 4.48% GDP growth and 9.5% industrial production. $20B FDI is an acceleration vs 17.2$B last
-- HK Imports and Exports increased 5%+ month on month
 
+- Commentary from party on Opening."-- At a time when cooperation and coordination are more important than ever, China is expected to continue to open up to the world and safeguard a multilateral trading system." [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/05/c_139644073.htm)
+- Singapore GDP -3.8% vs -4.5% expects
+- Japan PMI 50 vs 49.7 expects 
+- Big positive Japan Household spending #: 1.1% vs -1.5% expects
 
 ### Asia Bearish
-- The NYSE's delisting of China Mobile has provoked the CCP to make a statement re: intending to harm US investors. "The move will not only harm the legitimate rights and interests of Chinese enterprises, but also the interests of investors from other countries, including the United States, said the spokesperson, adding that it will seriously weaken the confidence of all parties in the U.S. capital market.". [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/02/c_139637149.htm)
-- Japan Construction Orders -4.7% yoy vs -.1% yoy last, signaling declining confidence
-- Chinese Industrial profit YoY 15.5% vs 28.8% last, a marked derivative acceleration 
-- Large Japanese Industrial production miss (0% vs 1.2% expects, 4% last)
-- Korean indusrial production misses .5% vs 1% expects with retail sales month on month at -1%
-- At the end of the day, Asia is still locked down Macau GGR down 20%
+
+- China announcing another "focus on the rule of law". Seems a bit like another corruption crackdown. [Source: Xinhua](http://www.xinhuanet.com/english/2021-01/10/c_139656578.htm)
+- Fiscal discipline. "On the fiscal front, Finance Minister Liu Kun has pledged to make fiscal policy more sustainable in terms of expenditure scale and policy strength, and keep the overall government leverage ratio at a stable level to leave policy space for combating future risks and challenges."
+- Aussie Manu PMI missed 
+- China Caixin Manu PMI 53 vs 54.8 expects and 54.9 last
+- India PMI weaker than expects 56.4 vs 56.6 expects
+- Sing Retail sales -1.9% vs -8.5% last
+
 
 ### Europe Bullish
-
-- Contrarian narrative on UK seed investing. "UK technology companies attracted a record $15bn (£11.2bn) in venture capital funding in 2020, including the creation of seven “unicorn” firms valued at more than $1bn. The firms raised more money from VC investors than the rest of Europe combined, according to research by the data provider Dealroom. The $15bn total compares with the previous record of $14.8bn in 2019." [Source: The Guardian](https://www.theguardian.com/business/2020/dec/29/uk-tech-firms-record-15bn-venture-capital-funding-unicorns-2020)
-- UK housing prices up 7.3% year on year vs 6.7% expects and 6.5% last 
-- Major beat on KOF Switzerland leading indicator at 104.3 vs 100.5 expects 
+- Bizarre launch of IMF Russian page -- might suggest thawing tensions. [Source: IMF Twitter](https://twitter.com/KGeorgieva/status/1347520974359556096)
+- Digital Euro contract will likely be outsourced. "Certain practical arrangements regarding the distribution of and access to a digital euro could in principle be outsourced, but would need to be subject to strict Eurosystem supervision." [Source: ECB](https://www.ecb.europa.eu/euro/html/digitaleuro-report.en.html)
+- Switzerland procure.ch PMI 58 vs 54 expects 55 last
+- Major beat in UK mortgage approvals 105k s 82.5 expects, surge in mortgage lending (+1b beat)
+- Huge beat in German retail sales 5.6% vs 3.9% expects
+- German unemploymgnet gains -37k vs +10k expects
+- Large French Consumer confidence beat: 95 vs 91 expects, 89 last 
+- Spanish Service PMI major beat: 48 vs 45 expects, 39.5 last 
+- Massive German Exporst #
+- Large beat in German Factory Orders
 
 ### Europe Bearish
-- Spanish Retail Sales were -4.3% yoy vs -3% last, signlading deterioration 
+- German PMI miss 58.3 vs 58.6 expects 
+- Large decline in BOE cosumer credit -1.54$B vs -1.5 expects
+- Italian Service PMI disastrous: 39.7 vs 45 expects
+- Europe markit Composite PMI Miss 49.1 vs 49.8 expects(still accel)
+- Decline in Europe service sentiment -17.4 vs -15 expect
+- Disastrous retail sales #: -2.9% vs +.8% expects (Eurozone)
+- Iran enriching Nuclear [Source](https://www.i24news.tv/en/news/international/middle-east/1610084499-iran-threatens-to-start-enriching-uranium-to-90-percent-report)
 
 ### Commodity Bullish
-- "Third, although the U.S. is oil self-sufficient and became the biggest producer in the world for the first time in 70 years, the drilling rig count fell by 75%. It has begun to recover, Finley said, but it is still only one-third of pre-Covid 19 levels and well below what’s needed to stabilize production." [Chicago Fed Commentary](https://www.chicagofed.org/publications/blogs/chicago-fed-insights/2020/eos-part-2)
-- Water shortages are bullish for crop prices. Chinese water shortage narrative trending [Economist](https://twitter.com/TheEconomist/status/1345502899368026119)
-- Strong South African Trade balance in November 36.7$B vs 23$B expects 
-- Brazilian unemployment surprises 14.3% vs 14.7% expects with inflation surprising to the downside
-- Absurd crude draw: -4.8 M BBL v -2.1 expected vs 2.7 last 
-- India granted emergency approval for the virus vaccine developed by AstraZeneca Plc and the University of Oxford.
+
+- Surging covid infection rates. "Over the past week, the coronavirus case count has averaged 247,000 as of Friday, more than 3.7 times the summertime peak in late July. With Thursday’s COVID-19 related death toll exceeding 4,000 for the first time in a single day, the nation has averaged 2,982 deaths a day over the past week, the highest during the pandemic." [Source: CNN](https://us.cnn.com/2021/01/09/health/us-coronavirus-saturday/index.html)
+- Larger than expected Crude draw -1.6m BBL vs -1.5B last, then massive Crude Oil inventory number -8M bbl vs -2.1 M BBL expectations - no possible explanation other than hoarding
+
 
 
 ### Commodity Bearish
-- Vaccine shortages highlight that shutdowns likely to extend til summer. [Economist Tweet](https://twitter.com/TheEconomist/status/1345520012640059392)
-- Huge beat in distillate stocks w 3.095m vs .52 expects
-- Brazilian budget surplus surprises to the downside @ -18B vs -9$B expects and last +2.95B
-- Oregon Covid escalation -- more deaths. Argues further lockdowns. [Oregon News](https://www.koin.com/news/health/coronavirus/oregon-logs-1500-covid-deaths-hospitalizations-increase/)
+- Once again huge distillate stock # -- 6.4M bbl vs 2.3 M expects
+- Refinery Utilization 1.3% vs .6% expects
+
 
 ### Bond Bullish
-- New York Fed outlines thinking around geopolitical interconnectedness in paper re: Chinese slow down. Signals potential further justification for money printing [New York Fed Paper](https://www.newyorkfed.org/medialibrary/media/research/epr/pdf2/EPR_2020_vol26no4?la=en)
-- Municipalities bearish commentary about budget strains likely justifies more money printing. Non profits similarly disastrous "In fiscal year 2020, state revenue declined 1% for the first time since the Great Recession, and states expect greater revenue declines ahead. While state income tax returns reflected a strong 2019, 2021 will reflect the downturn in 2020, Kerns said.... Going forward, Newberger sees a dire situation for nonprofits, adding that 10% to 40% may close their doors for lack of funds... At the end of the day, those speaking to the current economic issues facing major industrial, business, and nonprofit sectors made it clear that the U.S. economy faces serious challenges, sparked largely by the Covid-19 pandemic. At the same time, these speakers expressed some optimism. They said they expect to see a slow uptick in economic activity overall in 2021, but believe it will likely be 2022 before economic life returns to what we perceive as normal." [Chicago Fed Commentary](https://www.chicagofed.org/publications/blogs/chicago-fed-insights/2020/eos-part-2)
-- Record Arkansas case load, implying post holiday surge in Covid cases is real [Source: Asa Hutchinson](https://twitter.com/AsaHutchinson?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1345145969806110720%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2021-01-02%2Fn-y-passes-1-million-cases-u-k-reaches-record-virus-update) Similar surge in Florida
-- Reflation is now consensus. " Over the past week, the eurodollar options market has seen rising demand for structures that would profit from higher Treasury yields and a steeper yield curve -- trades that could pay off if Democrats win both races to secure a Senate majority." [Bloomberg](https://www.bloomberg.com/news/articles/2021-01-02/treasury-market-s-bets-on-2021-reflation-face-january-reckoning?srnd=fixed-income&sref=ammEe8p0)
+-Swiss CPI -.8% vs -.7% expects
+- French CPI 0% 
+- German CPI -.3% yoy -- so deflation 
+- Eurozone Core CPI is -3.% yoy 
+
+- The Chicago Fed considers muni buying: "According to our estimates, the MLF appears to have reduced Illinois muni yields by more than 200 bps, thus helping to alleviate some of the budgetary pressures. In all, our results suggest that the MLF has been a helpful addition to the Fed policy toolkit.". [Source](https://www.chicagofed.org/publications/chicago-fed-letter/2020/449)
+
+- Fed paper establishes a framework that Monetary Policy affects other countries, which is almost always a basis for further easing. "The sizeable role of production linkages in transmission of U.S. monetary policy has a number of important implications. First, if international trade in intermediate goods continues to grow and global supply chains become longer and more complex, the impact of U.S. monetary policy on other countries is likely to increase as well. To the extent that this transmission channel is independent of capital flows and related policies, the results present one of the mechanisms by which capital controls may not be effective in insulating economies from foreign monetary policy actions." [Source](https://libertystreeteconomics.newyorkfed.org/2021/01/the-international-spillover-of-us-monetary-policy-via-global-production-linkages.html)
+
+- Digital Euro comments. Mid 2021 Launch. Would allow rates to go deeply negative in Europe. "Key quote: Anonymity may have to be ruled out, not only because of legal obligations related to money laundering and terrorist financing, but also in order to limit the scope of users of the digital euro when necessary – for example to exclude some non-euro area users and prevent excessive capital flows". [Source: ECB](https://www.ecb.europa.eu/pub/pdf/other/Report_on_a_digital_euro~4d7268b458.en.pdf#page=27)
+
+- Commentary from the fed is very much focused on employment and allows for substantial inflation overshoot. "As announced in the September statement and reiterated in November and December, with inflation running persistently below 2 percent, our policy will aim to achieve inflation outcomes that keep inflation expectations well anchored at our 2 percent longer-run goal.3 We expect to maintain an accommodative stance of monetary policy until these outcomes—as well as our maximum-employment mandate—are achieved. We also expect it will be appropriate to maintain the current target range for the federal funds rate at 0 to 1/4 percent until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment, until inflation has risen to 2 percent, and until inflation is on track to moderately exceed 2 percent for some time." [Source: Fed, Clarida](https://www.federalreserve.gov/newsevents/speech/clarida20210108a.htm)
 
 ### Bond Bearish
-- Democratic Senate odds surge to over 50% on FTX. [FTX Website](https://ftx.com/trade/DEMSENATE). "Perdue’s chance for last-minute barnstorming was curtailed after he decided to quarantine after coming into close contact with someone who tested positive for coronavirus, meaning he’ll likely skip Trump’s Monday rally and his own event on election night ... "A photo of Loeffler posing beside a former Ku Klux Klan leader -- she says she was unaware of his affiliation -- bolstered those perceptions, said Bruce, along with her earlier criticisms of the Black Lives Matter movement."[Source Bloomberg](https://www.bloomberg.com/news/articles/2021-01-02/-it-s-just-unprecedented-senate-hinges-on-georgia-runoff-chaos?srnd=premium&sref=ammEe8p0)
+- ISM Manufacturing prices out of control: +77.6 vs 65.7 last
+- Biden says $2k checks. [Source: Twitter](https://twitter.com/JoeBiden/status/1348430675238678528)
 
-- Trump continues to sow division in Republican party, making it clear he will be a force of Chaos. This removes any barrier to extreme fiscal outlooks / MMT, blue wave policiies. Source[Trump Twitter](https://twitter.com/realDonaldTrump/status/1345500654694002688)
-- Fed continues to argue weaponizing the Treasury to accomplish political objectives Source[Yellen Twitter Account](https://twitter.com/JanetYellen/status/1336071689583665152)
-- Yellen embraces populist monetary policy. Source: [Yellen Twitter Account](https://twitter.com/JanetYellen/status/1344759453271396356)
-
-
-
-
+-"“I myself would have no inclination or think there’s any need to think in the near term about adjusting the duration of the maturity of our purchases,” he said." -[Source: Bloomberg, Clarida]
 
 
