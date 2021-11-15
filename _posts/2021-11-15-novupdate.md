@@ -1,9 +1,10 @@
 ---
 layout:     post
 title:      Mid Nov Market Update
-date:       2021-01-11 11:21:29
+date:       2021-11-15 11:21:29
 summary:    Thinking about best risk reward opportunities
 ---
+
 
 ## General Market Take
 
@@ -59,83 +60,9 @@ TO DO ON SECTORS: need to add IWM, IJH into scoring framework. sloppy sloppy
 
 Very bullish on Bitcoin overall. ETF flows should continue to be price support for asset (yes, even w modest spot etf disappointment). Crazed Tether printing should keep price up. Modestly bullish on eth quantitatively. Qualitatively, much more bullish on Bitcoin due to Taproot upgrade coming, lightning network calendar etc. Think ETH is a funding trade above 50% APY with shitcoin longs. 
 
-## Coins I'm Doing Due Dilligence On
-
-1. district0x
-2. the-sandbox
-3. verasity
-4. origin-protocol
-5. keep3rv1
-6. enjin-coin
-7. 0x
-8. 1inch
-9. voyager-token
-10.  loom-network
-11.  adx-net
-12.  radio-caca
-13.  edgeware
-14.  neo
-15.  aragon
-16.  keeperdao
-17.  sushiswap
-18.  digibyte
-19.  okb
-20.  polkastarter
-21.  xyo
-22.  trust-wallet-token
-23.  alien-worlds
-24.  yearn-finance-ii
 
 Have a bullish bias on these names due to trend, data tracking, internal data. 
 
-## Tech names I am looking into due to good data tracking 
-
-1. DISCA
-2. YELP
-3. TTWO
-4. GOOGL
-5. RBLX
-6. FB
-7. MTCH
-8. MSFT
-9. SPOT
-10.  TWTR
-11.  ATVI
-12.  SQ
-13.  AMZN
-14.  SNAP
-15.  ADV
-16.  NFLX
-17.  PINS
-18.  DIS
-19.  ROKU
-20.  DDI
-21.  PYPL
-22.  BMBL
-23.  TOY
-24.  UBER
-25.  SIRI
-26.  DASH
-27.  APP
-28.  WMT
-29.  ZM
-30.  TGT
-
-## Some Microcap shitcos I am looking into
-1. PALT
-2. ZIVO
-3. TKAT
-4. ANY
-5. LIFE
-6. PHUN
-7. NNVC
-8. DBGI
-9. OLB
-10.  RWLK
-11.  BMRA
-12.  RNAZ
-13.  OCGN
-14.  MRIN
 
 ## The week Ahead
 
