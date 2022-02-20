@@ -63,6 +63,8 @@ I’d like to end this with an observation that Peter Thiel isn’t a dumb guy. 
 **
 None of this is investment advice, solicitation for securities, and is solely market commentary. I hold no liability for any decisions you make based on this piece
 
+# Subscribe to Get These By Email
+
 <div id="revue-embed">
   <form action="https://www.getrevue.co/profile/goodalexander/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
   <div class="revue-form-group">
