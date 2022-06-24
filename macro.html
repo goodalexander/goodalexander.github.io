@@ -7,37 +7,6 @@ tags: macro
 
 Below you will find our table of macro assets and scoring methods.
 
-
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['table']});
-      google.charts.setOnLoadCallback(drawTable);
-
-      function drawTable() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Weight');
-        data.addColumn('boolean', 'Current Position');
-        data.addRows([
-          ['Stocks',  {v: 10000, f: '-30%'}, true],
-          ['Bonds',   {v:8000,   f: '+5%'},  false],
-          ['Gold', {v: 12500, f: '10%'}, true],
-          ['Bitcoin',   {v: 7000,  f: '-2%'},  true]
-        ]);
-
-        var table = new google.visualization.Table(document.getElementById('table_div'));
-
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
-      }
-    </script>
-  </head>
-  <body>
-    <div id="table_div"></div>
-  </body>
-</html>
-
 Next I want to look at a chart
 
 <html>
