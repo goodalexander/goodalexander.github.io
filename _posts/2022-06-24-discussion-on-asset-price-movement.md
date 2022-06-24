@@ -40,3 +40,26 @@ summary:    A 35 point summary of how I define speculation, its 6 core component
 33. Parting thought ½ : I wrote this partly out of annoyance at existing classifications of speculation. Short term speculation is studying and profiting from asset movement, as discussed definitionally - crossing spreads with the intention of gain. Long/Short equities, Macro, Quant, Merger Arb, etc - are sloppy categorizations because they do not - in their very essence, come from asset movement - but rather come from asset definition - which is arbitrary. Discourse on short term speculation also drifts with annoying frequency into market making - when they are in some ways opposites (taking vs providing liquidity)
 34. Parting thought 2/2 : the idea of a “quant fund” while somewhat descriptive in the age of machine learning and “AI” is useful, but dangerous. In the framework above, Flows and Post Catalyst trading are innately more quantitative - and can even be reduced into machine learning or AI based strategies. In fact - with enough external data (imagine a full exhaust of Twitter or Google) - it might be possible to turn all of the above into “quant” strategies. But the core pillars, I’d argue - regardless of whether a human or machine implements them - come from first principles of how assets move. Also - the decision to allocate capital to something, and to turn a quant strategy on or off will likely (for better or worse) be made by a person. Or perhaps this is just the coping of an analyst who does not code well enough
 35. This comprises my understanding of speculation. If I fail in my speculation, this diatribe will be easily discarded. If I succeed perhaps it will be of interest in the future - but from this perspective is best stated in advance. Pre-catalyst, if you will. Fin.
+
+# Subscribe to Get These By Email
+
+<div id="revue-embed">
+  <form action="https://www.getrevue.co/profile/goodalexander/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+  <div class="revue-form-group">
+    <label for="member_email">Email address</label>
+    <input class="revue-form-field" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
+  </div>
+  <div class="revue-form-group">
+    <label for="member_first_name">First name <span class="optional">(Optional)</span></label>
+    <input class="revue-form-field" placeholder="First name... (Optional)" type="text" name="member[first_name]" id="member_first_name">
+  </div>
+  <div class="revue-form-group">
+    <label for="member_last_name">Last name <span class="optional">(Optional)</span></label>
+    <input class="revue-form-field" placeholder="Last name... (Optional)" type="text" name="member[last_name]" id="member_last_name">
+  </div>
+  <div class="revue-form-actions">
+    <input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit">
+  </div>
+  <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
+  </form>
+</div>
