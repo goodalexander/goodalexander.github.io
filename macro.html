@@ -38,61 +38,46 @@ Below you will find our table of macro assets and scoring methods.
   </body>
 </html>
 
+Next I want to look at a chart
+
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+			google.charts.load('current', {'packages':['line', 'corechart']});
+	 		google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
+			function drawChart() {
 
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
+				var button = document.getElementById('change-chart');
+				var chartDiv = document.getElementById('chart_div');
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+				var data = new google.visualization.DataTable();
+				data.addColumn('date', 'Month');
+				data.addColumn('number', "Average Temperature");
+				data.addColumn('number', "Average Hours of Daylight");
 
-        chart.draw(data, options);
+				data.addRows([
+					[new Date(2014, 0),  -.5,  5.7],
+					[new Date(2014, 1),   .4,  8.7],
+					[new Date(2014, 2),   .5,   12],
+					[new Date(2014, 3),  2.9, 15.3],
+					[new Date(2014, 4),  6.3, 18.6],
+					[new Date(2014, 5),    9, 20.9],
+					[new Date(2014, 6), 10.6, 19.8],
+					[new Date(2014, 7), 10.3, 16.6],
+					[new Date(2014, 8),  7.4, 13.3],
+					[new Date(2014, 9),  4.4,  9.9],
+					[new Date(2014, 10), 1.1,  6.6],
+					[new Date(2014, 11), -.2,  4.5]
+				]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
     </script>
   </head>
   <body>
-    <div id="curve_chart"</div>
-  </body>
-</html>
-
-Auto loaded compact
-
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current');   // Don't need to specify chart libraries!
-      google.charts.setOnLoadCallback(drawVisualization);
-
-      function drawVisualization() {
-        var wrapper = new google.visualization.ChartWrapper({
-          chartType: 'LineChart',
-          dataSourceUrl: 'http://spreadsheets.google.com/tq?key=pCQbetd-CptGXxxQIG7VFIQ&pub=1',
-          query: 'SELECT A,D WHERE D > 100 ORDER BY D',
-          options: {'title': 'Countries'},
-          containerId: 'vis_div'
-        });
-        wrapper.draw()
-      }
-    </script>
-  </head>
-  <body style="font-family: Arial;border: 0 none;">
-    <div id="vis_div" style="width: 600px; height: 400px;"></div>
+    <div id="chart_div"></div>
   </body>
 </html>
