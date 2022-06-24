@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Discussion on the Study of Asset Price Movement
-date:       2021-11-18 11:21:29
-summary:    A 35 point summary of how I define speculation, its 6 core components and thoughts around implementation 
+date:       2022-06-24 11:21:29
+summary:    A 35 point summary of how I define speculation, its 6 core components and thoughts around implementation
 ---
 
 1. Investors are not traders. Investors focus on the capital return potential of assets, adjusted for a discount rate. Traders focus on capturing the movement of assets. An investor may trade, to swap into a more appealing capital return or asset. But a trader would rarely invest - as that would suppose capital returns made up a higher percentage of an asset’s return profile than its movement. This is seldom the case. For example, the S&P 500 routinely moves more in 1 day than its annual dividend payment.
