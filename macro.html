@@ -81,13 +81,14 @@ Now let's look at a table in context of said chart
       function drawTable() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Name');
-        data.addColumn('number', 'Weight');
+        data.addColumn('number', 'Rank');
         data.addColumn('number', 'Z Score');
+        data.addColumn('number', 'Z Score 365');
         data.addRows([
-          ['Stocks',  {v: 10000, f: '-30%'}, {v: 10000, f: '-30%'}],
-          ['Bonds',   {v:8000,   f: '+5%'},  {v: 10000, f: '-30%'}],
-          ['Gold', {v: 12500, f: '10%'}, {v: 10000, f: '-30%'}],
-          ['Bitcoin',   {v: 7000,  f: '-2%'},  {v: 10000, f: '-30%'}]
+          ['Stocks',  {v: 10000, f: '-30%'}, {v: 10000, f: '-30%'},{v: 10000, f: '-30%'}],
+          ['Bonds',   {v:8000,   f: '+5%'},  {v: 10000, f: '-30%'},{v: 10000, f: '-30%'}],
+          ['Gold', {v: 12500, f: '10%'}, {v: 10000, f: '-30%'},{v: 10000, f: '-30%'}],
+          ['Bitcoin',   {v: 7000,  f: '-2%'},  {v: 10000, f: '-30%'},{v: 10000, f: '-30%'}]
         ]);
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
