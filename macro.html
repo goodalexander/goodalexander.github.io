@@ -18,12 +18,15 @@ Next I want to look at a chart
 
 	   function drawCurveTypes() {
 	      var data = new google.visualization.DataTable();
-	      data.addColumn('number', 'X');
+	      data.addColumn('date', 'X');
 	      data.addColumn('number', 'Dogs');
 	      data.addColumn('number', 'Cats');
 
 	      data.addRows([
-	        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9]
+	        [new Date(2000, 8, 5), 0, 0],
+					[new Date(2000, 8, 6), 10, 5],   
+					[new Date(2000, 8, 7), 23, 15],
+					[new Date(2000, 8, 8), 17, 9]
 	      ]);
 
 	      var options = {
