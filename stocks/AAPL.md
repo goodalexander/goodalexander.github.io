@@ -1,7 +1,7 @@
 ---
 layout: page
 title: AAPL
-permalink: /stocks/AAPL
+permalink: /equity/AAPL
 tags: stocks
 ---
 
