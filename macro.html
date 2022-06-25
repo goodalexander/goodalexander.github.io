@@ -320,6 +320,7 @@ Value of $1 Risk Weighted in
       google.charts.setOnLoadCallback(drawEuropeTable);
       google.charts.setOnLoadCallback(drawAmericasTable);
       google.charts.setOnLoadCallback(drawGlobalTable);
+      google.charts.setOnLoadCallback(drawCorrelTable);
 
 
       function drawAsiaTable() {
@@ -384,10 +385,34 @@ Value of $1 Risk Weighted in
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
+      function drawCorrelTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'GLD');
+        data.addColumn('number', 'S&P');
+        data.addColumn('number', '30Y');
+        data.addColumn('number', 'CMDT');
+        data.addColumn('number', 'USD');
+        data.addColumn('number', 'BTC');
+        data.addRows([['GLD',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ['S&P',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ['30Y',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ['CMDT',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ['USD',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ['BTC',{v: 1, f: '1'},  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],
+                      ]);
+
+        var table = new google.visualization.Table(document.getElementById('correl_table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+
 
     </script>
   </head>
   <body>
+    Correlation Matrix
+    <div id="correl_table_div"></div>
     Top Moves Globally
     <div id="global_table_div"></div>
     Top Moves in Europe Upd1
