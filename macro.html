@@ -30,8 +30,8 @@ Next I want to look at a chart
 	      data.addColumn('number', '30Y');
         data.addColumn('number', 'GLD');
         data.addColumn('number', 'CMDT');
-        data.addColumn('number', 'BTC');
         data.addColumn('number', 'USD');
+        data.addColumn('number', 'BTC');
 
 	      data.addRows([
         [new Date(2021,6,25),1.005,0.985,1.004,0.996,1.001,0.987],
@@ -296,6 +296,15 @@ Next I want to look at a chart
 	        vAxis: {
 	          title: 'Popularity'
 	        },
+          axes: {
+            y: {
+                all: {
+                    range: {
+                        max: 1.8,
+                        min: .5
+                    }
+                },
+
 	        series: {
 	          1: {curveType: 'function'}
 	        }
