@@ -23,26 +23,20 @@ Next I want to look at a chart
 	   function drawCurveTypes() {
 	      var data = new google.visualization.DataTable();
 	      data.addColumn('date', 'X');
-	      data.addColumn('number', 'Dogs');
-	      data.addColumn('number', 'Cats');
+	      data.addColumn('number', 'Stocks');
+	      data.addColumn('number', 'Bonds');
+        data.addColumn('number', 'Gold');
+        data.addColumn('number', 'Commodities');
+        data.addColumn('number', 'Bitcoin');
+        data.addColumn('number', 'Dollar');
 
 	      data.addRows([
-	        [new Date(2000, 8, 5), 0, 0],
-					[new Date(2000, 8, 6), 10, 5],
-					[new Date(2000, 8, 7), 23, 15],
-					[new Date(2000, 8, 8), 17, 9],
-					[new Date(2000, 8, 9), 18, 9],
-					[new Date(2000, 8, 10), 21, 12],
-					[new Date(2000, 8, 11), 23, 13],
-					[new Date(2000, 8, 12), 15, 15],
-					[new Date(2000, 8, 13), 16, 21],
-					[new Date(2000, 8, 14), 25, 15],
-					[new Date(2000, 8, 15), 42, 15],
-					[new Date(2000, 8, 16), 24, 13],
-					[new Date(2000, 8, 17), 42, 12],
-					[new Date(2000, 8, 18), 42, 11],
-					[new Date(2000, 8, 19), 44, 10],
-					[new Date(2000, 8, 20), 45, 9]
+	        [new Date(2000, 8, 5), 0, 0,1,2,3,4],
+					[new Date(2000, 8, 6), 10, 5,4,3,1,2],
+					[new Date(2000, 8, 7), 23, 15,2,3,1,2],
+					[new Date(2000, 8, 8), 17, 9,4,5,3,2],
+					[new Date(2000, 8, 9), 18, 9,5,2,3,5],
+					[new Date(2000, 8, 10), 21,12,4,2,3,4],
 
 	      ]);
 
