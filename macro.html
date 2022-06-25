@@ -77,6 +77,7 @@ Next I want to look at a chart
       google.charts.setOnLoadCallback(drawAsiaTable);
       google.charts.setOnLoadCallback(drawEuropeTable);
       google.charts.setOnLoadCallback(drawAmericasTable);
+      google.charts.setOnLoadCallback(drawGlobalTable);
 
 
       function drawAsiaTable() {
@@ -133,10 +134,27 @@ Next I want to look at a chart
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
+      function drawGlobalTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'Rank');
+        data.addColumn('number', 'Z');
+        data.addColumn('number', 'Z30');
+        data.addColumn('number', 'Z90');
+        data.addColumn('number', 'Z365');
+        data.addRows([ ['Copper',  {v: 1, f: '1'}, {v: -4.304176658759667, f: '-4.3'},{v: -3.7375995052808353, f: '-3.7'},{v: -4.984105191038846, f: '-5.0'},{v: -4.19082527995932, f: '-4.2'}],['Europe HY Index',  {v: 2, f: '2'}, {v: -2.4870152383294184, f: '-2.5'},{v: -1.667389820183133, f: '-1.7'},{v: -2.2612451536387144, f: '-2.3'},{v: -3.532410741166407, f: '-3.5'}],['Chilean Peso',  {v: 3, f: '3'}, {v: -2.452931653279215, f: '-2.5'},{v: -2.4062782244740633, f: '-2.4'},{v: -2.825298775180968, f: '-2.8'},{v: -2.127217960182614, f: '-2.1'}],['Korea Equities',  {v: 4, f: '4'}, {v: -2.44348333773805, f: '-2.4'},{v: -1.7288100227114456, f: '-1.7'},{v: -2.910315551702816, f: '-2.9'},{v: -2.6913244387998887, f: '-2.7'}],['PIIGS Stocks',  {v: 5, f: '5'}, {v: -2.4432526934183314, f: '-2.4'},{v: -2.9583280984121214, f: '-3.0'},{v: -2.25486356863677, f: '-2.3'},{v: -2.1165664132061024, f: '-2.1'}],['Turkey 2Y',  {v: 6, f: '6'}, {v: 2.343524892795148, f: '2.3'},{v: 1.7254952738573086, f: '1.7'},{v: 2.307468211262295, f: '2.3'},{v: 2.9976111932658394, f: '3.0'}],['Colombia Stocks',  {v: 7, f: '7'}, {v: -2.1993202056572447, f: '-2.2'},{v: -1.93840753899687, f: '-1.9'},{v: -2.742071485832239, f: '-2.7'},{v: -1.9174815921426245, f: '-1.9'}],['Asia Ex Japan vs EM',  {v: 8, f: '8'}, {v: 2.1747555723787886, f: '2.2'},{v: 1.5869515984867266, f: '1.6'},{v: 2.4697595741352103, f: '2.5'},{v: 2.467555544514428, f: '2.5'}],['Norway 2Y',  {v: 9, f: '9'}, {v: 2.162084895217076, f: '2.2'},{v: 1.695395513577332, f: '1.7'},{v: 2.2896281800391387, f: '2.3'},{v: 2.501230992034757, f: '2.5'}],['Sweden Stocks',  {v: 10, f: '10'}, {v: -2.130654064350168, f: '-2.1'},{v: -1.7975803748957406, f: '-1.8'},{v: -2.1539709016878645, f: '-2.2'},{v: -2.4404109164669, f: '-2.4'}],]);
+
+        var table = new google.visualization.Table(document.getElementById('global_table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+
 
     </script>
   </head>
   <body>
+    Top Moves Globally
+    <div id="global_table_div"></div>
     Top Moves in Europe
     <div id="europe_table_div"></div>
     Top Moves in Asia
