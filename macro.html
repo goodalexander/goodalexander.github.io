@@ -68,15 +68,17 @@ Next I want to look at a chart
   </body>
 </html>
 
-### Top Z Score Moves Globally
 
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawGlobalTable);
       google.charts.setOnLoadCallback(drawAsiaTable);
       google.charts.setOnLoadCallback(drawEuropeTable);
+      google.charts.setOnLoadCallback(drawAmericasTable);
+
 
       function drawAsiaTable() {
         var data = new google.visualization.DataTable();
@@ -107,6 +109,23 @@ Next I want to look at a chart
 
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
+
+      function drawAmericasTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('number', 'Rank');
+        data.addColumn('number', 'Z');
+        data.addColumn('number', 'Z30');
+        data.addColumn('number', 'Z90');
+        data.addColumn('number', 'Z365');
+        data.addRows([ ['Chilean Peso',  {v: 1, f: '1'}, {v: -2.452931653279215, f: '-2.5'},{v: -2.4062782244740633, f: '-2.4'},{v: -2.825298775180968, f: '-2.8'},{v: -2.127217960182614, f: '-2.1'}],['Colombia Stocks',  {v: 2, f: '2'}, {v: -2.1993202056572447, f: '-2.2'},{v: -1.93840753899687, f: '-1.9'},{v: -2.742071485832239, f: '-2.7'},{v: -1.9174815921426245, f: '-1.9'}],['Brazil Stocks',  {v: 3, f: '3'}, {v: -2.0191647030082844, f: '-2.0'},{v: -1.724088780074966, f: '-1.7'},{v: -2.211652356104742, f: '-2.2'},{v: -2.1217529728451456, f: '-2.1'}],['Base Metals',  {v: 4, f: '4'}, {v: -1.7640990054272463, f: '-1.8'},{v: -2.399743072141037, f: '-2.4'},{v: -2.3178910311302166, f: '-2.3'},{v: -0.5746629130104853, f: '-0.6'}],['Argentina',  {v: 5, f: '5'}, {v: -1.7588097970680607, f: '-1.8'},{v: -1.244699126808458, f: '-1.2'},{v: -1.8652543920587235, f: '-1.9'},{v: -2.1664758723370006, f: '-2.2'}],['High Yield',  {v: 6, f: '6'}, {v: -1.7322394057357762, f: '-1.7'},{v: -0.7762757067659707, f: '-0.8'},{v: -1.6070120312670428, f: '-1.6'},{v: -2.8134304791743143, f: '-2.8'}],['Hotels',  {v: 7, f: '7'}, {v: -1.7039321592576175, f: '-1.7'},{v: -1.3746780908867733, f: '-1.4'},{v: -2.248084059464546, f: '-2.2'},{v: -1.489034327421533, f: '-1.5'}],['IG CDX',  {v: 8, f: '8'}, {v: 1.6440378064048484, f: '1.6'},{v: 0.6777371209493576, f: '0.7'},{v: 1.5329851659199472, f: '1.5'},{v: 2.7213911323452398, f: '2.7'}],['Agribusiness',  {v: 9, f: '9'}, {v: -1.6017551325575903, f: '-1.6'},{v: -1.6498652778644884, f: '-1.6'},{v: -2.055573477381195, f: '-2.1'},{v: -1.0998266424270873, f: '-1.1'}],['Mortgage Reits',  {v: 10, f: '10'}, {v: -1.5878801618932243, f: '-1.6'},{v: -0.6292316781846785, f: '-0.6'},{v: -1.633347196403306, f: '-1.6'},{v: -2.501061611091689, f: '-2.5'}]       ]);
+
+        var table = new google.visualization.Table(document.getElementById('americas_table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+
+
     </script>
   </head>
   <body>
@@ -114,6 +133,8 @@ Next I want to look at a chart
     <div id="europe_table_div"></div>
     Top Moves in Asia
     <div id="asia_table_div"></div>
+    Top Moves in Americas
+    <div id="americas_table_div"></div>
 
   </body>
 </html>
