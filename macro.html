@@ -521,7 +521,7 @@ Value of $1 Risk Weighted in
         ['A7',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
                       ]);
 
-        var table = new google.visualization.Table(document.getElementById('g10Signals'));
+        var table = new google.visualization.Table(document.getElementById('macroSignals'));
 
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
@@ -549,6 +549,8 @@ Value of $1 Risk Weighted in
     <div id="gemTable"></div>
     G10 Signals
     <div id="g10Signals"></div>
+    Macro Signals
+    <div id="macroSignals"></div>
 
   </body>
 </html>
