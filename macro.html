@@ -324,6 +324,7 @@ Value of $1 Risk Weighted in
       google.charts.setOnLoadCallback(drawGlobalTable);
       google.charts.setOnLoadCallback(drawCorrelTable);
       google.charts.setOnLoadCallback(drawGTenTable);
+      google.charts.setOnLoadCallback(drawEMTable);
 
 
       function drawAsiaTable() {
@@ -459,10 +460,10 @@ Value of $1 Risk Weighted in
         ['A12',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'}],
         ['A13',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'}],
         ['A14',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'}],
-        ['A15',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'}],      
+        ['A15',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'}],
                       ]);
 
-        var table = new google.visualization.Table(document.getElementById('gten_table'));
+        var table = new google.visualization.Table(document.getElementById('gemTable'));
 
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
@@ -474,7 +475,7 @@ Value of $1 Risk Weighted in
     <div id="correl_table_div"></div>
     Top Moves Globally
     <div id="global_table_div"></div>
-    Top Moves in Europe Upd1
+    Top Moves in Europe Up
     <div id="europe_table_div"></div>
     Top Moves in Asia
     <div id="asia_table_div"></div>
@@ -482,6 +483,8 @@ Value of $1 Risk Weighted in
     <div id="americas_table_div"></div>
     G10 Key Stats
     <div id="gten_table"></div>
+    EM Stats
+    <div id="gemTable"></div>
 
   </body>
 </html>
