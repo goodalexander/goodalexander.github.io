@@ -325,6 +325,8 @@ Value of $1 Risk Weighted in
       google.charts.setOnLoadCallback(drawCorrelTable);
       google.charts.setOnLoadCallback(drawGTenTable);
       google.charts.setOnLoadCallback(drawEMTable);
+      google.charts.setOnLoadCallback(drawG10Signals);
+      google.charts.setOnLoadCallback(drawMacroSignals);
 
 
       function drawAsiaTable() {
@@ -468,6 +470,38 @@ Value of $1 Risk Weighted in
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
+      function drawG10Signals() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'FX');
+        data.addColumn('number', 'Score');
+        data.addColumn('number', 'Rates');
+        data.addColumn('number', 'Eq');
+        data.addColumn('number', 'Econ');
+        data.addColumn('number', 'PPP');
+        data.addColumn('number', 'Vol');
+
+        data.addRows([['A1',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A2',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A3',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A4',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A5',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A6',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A7',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A8',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A9',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A10',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A11',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A12',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A13',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A14',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+        ['A15',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'}],
+                      ]);
+
+        var table = new google.visualization.Table(document.getElementById('g10Signals'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+
     </script>
   </head>
   <body>
@@ -485,6 +519,8 @@ Value of $1 Risk Weighted in
     <div id="gten_table"></div>
     EM Stats
     <div id="gemTable"></div>
+    G10 Signals
+    <div id="g10Signals"></div>
 
   </body>
 </html>
