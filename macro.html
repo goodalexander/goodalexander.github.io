@@ -298,7 +298,10 @@ Value of $1 Risk Weighted in
 
 	        series: {
 	          1: {curveType: 'function'}
-	        }
+	        },
+          chart: {
+            height: 150%
+          }
 	      };
 
 	      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -410,17 +413,15 @@ Value of $1 Risk Weighted in
 
       function drawGTenTable() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Country');
-        data.addColumn('number', 'Eqt Z');
-        data.addColumn('number', 'Rate Z');
-        data.addColumn('number', 'EPS Z');
-        data.addColumn('number', 'FX Z');
-        data.addColumn('number', 'EYield');
+        data.addColumn('string', 'SOV');
+        data.addColumn('number', 'EQ');
+        data.addColumn('number', 'R8');
+        data.addColumn('number', 'EPS');
+        data.addColumn('number', 'FX');
+        data.addColumn('number', 'EY');
         data.addColumn('number', '5Y');
         data.addColumn('number', 'ERP');
-        data.addColumn('number', 'Growth');
-
-
+        data.addColumn('number', 'REVG');
         data.addRows([['A1',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'},{v: 7.0, f: '7.0'},{v: 8.0, f: '8.0'}],
         ['A2',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'},{v: 7.0, f: '7.0'},{v: 8.0, f: '8.0'}],
         ['A3',{v: 1.0, f: '1.0'}, {v: 2.0, f: '2.0'}, {v: 3.0, f: '3.0'},{v: 4.0, f: '4.0'},{v: 5.0, f: '5.0'},{v: 6.0, f: '6.0'},{v: 7.0, f: '7.0'},{v: 8.0, f: '8.0'}],
