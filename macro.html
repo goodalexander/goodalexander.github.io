@@ -181,10 +181,10 @@ Value of $1 Risk Weighted in
       function drawEMTable() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'SOV');
-        data.addColumn('number', 'EQ');
-        data.addColumn('number', 'R8');
+        data.addColumn('number', 'Equity');
+        data.addColumn('number', 'Rates');
         data.addColumn('number', 'FX');
-        data.addColumn('number', 'FXVol');
+        data.addColumn('number', 'FX Volatility');
         data.addRows([['China',{v: 0.03645218111223858, f: '0.0'}, {v: 0.543218260381209, f: '0.5'}, {v: -1.5634146341463455, f: '-1.6'},{v: 0.46259563987003505, f: '0.5'}],
 ['Singapore',{v: -1.7733604443214799, f: '-1.8'}, {v: 1.9295611097823482, f: '1.9'}, {v: -1.3701681660833778, f: '-1.4'},{v: 1.1513226562086092, f: '1.2'}],
 ['Korea',{v: -2.1291353674360955, f: '-2.1'}, {v: 2.230328690566867, f: '2.2'}, {v: -1.6525635725351977, f: '-1.7'},{v: 1.5558170162188327, f: '1.6'}],
@@ -277,10 +277,13 @@ Value of $1 Risk Weighted in
     <p></p>
     <font color="black">EM Stats</font>
     <div id="gemTable"></div>
+    <font color="grey">Above are Z scores of movements</font>
+
     <font color="black">G10 Signals</font>
     <div id="g10Signals"></div>
-    <font color="grey">Signals are z scores. A Z score of +3 would be a strong buy. Please consult
-    relevant disclaimer page. Not advice</font>
+    <font color="grey">Signals are z scores. A Z score of +3 would be a strong buy. A strong signal would imply an FX cross has strong interest rate, equity, economic and valuation support.
+      PPP stands for purchase power parity. Vol refers to the 3 month at the the money implied volatility of the FX pair.
+      Please consult relevant disclaimer page. Not advice</font>
     <p></p>
     <font color="black">Macro Signals</font>
     <div id="macroSignals"></div>
