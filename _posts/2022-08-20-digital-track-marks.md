@@ -43,7 +43,7 @@ There are even real life meetups. But the whole point of those meet-ups is the s
 
 The people who ran out of money writing, or trading, or philosophizing, or modeling - they ended up as journalists. They’re the most hopeless addicts of all. When they try to quit they’re not allowed to. They’ve been placed in charge of the narrative, and are paid to exist full time by their corporate overlords who “need to be where people are”. 
 
-But their words are permeated with hatred. Their high is perennially ruined - because they know they’re not there to *be someone*. They are there to *say something* for “something” (a corporation). And that isn’t why the drug feels good. That’s why you can read so many articles about this topic. Journalists instinctively don’t like social media. The traditional media doesn’t mesh well with this den of addiction to self-reclassification. Despite laws that say otherwise, corporations aren’t believably people - leaving to an uncanny valley which journalists can never fully overcome online in a personified space. 
+But their words are permeated with hatred. Their high is perennially ruined - because they know they’re not there to *be someone*. They are there to *say something* for “someone” (a corporation). And that isn’t why the drug feels good. That’s why you can read so many articles about this topic. Journalists instinctively don’t like social media. The traditional media doesn’t mesh well with this den of addiction to self-reclassification. Despite laws that say otherwise, corporations aren’t believably people - leaving to an uncanny valley which journalists can never fully overcome online in a personified space. 
 
 This is not true of the countless lifestyle purveyors. They are called “influencers”, but in reality they are drug dealers. They sell illusions. 
 
@@ -61,7 +61,7 @@ I am not above it all.
 
 I look down at my own arms and see the same digital track marks. 
 
-I’ve tried to escape from my past. Mediocre tech founder. Just another speculator in an entire era of people who have made fortunes speculating. An endless string of failed relationships with people who loved me but I felt nothing for. 34 years old. Basically a corpse in half the games I’m involved in. “Cringe AF”, as the young ones say. What if I could be someone who helps other people escape the system like I did? Like an old mentory? Even as I type it, I know it’s a lie - it’s something I’m writing to get high. 
+I’ve tried to escape from my past. Mediocre tech founder. Just another speculator in an entire era of people who have made fortunes speculating. An endless string of failed relationships with people who loved me but I felt nothing for. 34 years old. Basically a corpse in half the games I’m involved in. “Cringe AF”, as the young ones say. What if I could be someone who helps other people escape the system like I did? Like an old mentor...? Even as I type it, I know it’s a lie - it’s something I’m writing to get high. 
 
 The first step to kicking addiction is to see it for what it is though. 
 
@@ -91,11 +91,11 @@ Social media is addictive because it delivers the druglike joy of pretending to 
 
 This begs the question... if you can get through the crashes, the manias, the depressions - the throes of an addict - use the drug without succumbing to it… can pretending give way to unstoppable, accelerated motion? Amidst the beating drums and raging fires, like the Donald or Elon, can we channel the high, put on ancient masks and become something different? Can we lead our tribes to new civilizations or planets? To victory and spoils? In our trance, can we reinvent Gold and conquer and populate a new Digital World?
 
-Or will we slowly ruin ourselves in the high of digital identity, ambushed and deprived of our physical gold. Brutally massacred, and later perhaps studied, like Mayans. Junkies staring into VR headsets, in makeshift camps in San Francisco. 
+Or will we slowly ruin ourselves in the morphine slur of digital identity, ambushed and deprived of our physical gold. Brutally massacred, and later perhaps studied, like Mayans. Junkies staring into VR headsets, in makeshift camps in San Francisco. 
 
 I'd like to find out. 
 
 What the fuck else am I going to do?
 
-“He who controls the spice controls the universe.”
+“He who controls the Spice controls the universe.”
 Dune
