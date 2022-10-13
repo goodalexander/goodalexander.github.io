@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Tokyo Swerve: Careful What You Wish For
+title:      Tokyo Swerve- Careful What You Wish For
 date:       2022-10-12 11:21:29
 summary:    extreme FX and interest rate volatility paints a picture of 2 very different worlds. which shall we step into?
 ---
