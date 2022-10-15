@@ -36,17 +36,18 @@ Value of $1 Risk Weighted in
 	      ]);
 
 	      var options = {
+	      		gridlines: {
+                color: 'none'
+            },
 
             vAxis: {
             viewWindow: {max:  160,
                     min: 50}
             },
-            chartArea: {  width: "95%", height: "70%" },
+            chartArea: {  width: "90%", height: "70%" },
              legend: { position: 'top', 
              alignment: 'center' ,orientation: 'vertical',maxLines: 4},
-                 gridlines: {
-                 	interval:0
-                 },
+            
 
 	        series: {
 	          1: {curveType: 'function'}
