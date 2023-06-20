@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Cracks in the Fishbowl 
-date:       2022-10-12 11:21:29
+date:       2023-06-19 11:21:29
 summary:    a reflection on Nietzsche, Artificial Intelligence, goldfish, and new Gods
 ---
 
@@ -50,7 +50,7 @@ When I was in college I met Victor Niederhoffer, Soros’ trading apprentice - a
 
 This love of markets has continued to this day. But sadly, my marriage with trading has been ruined by the new mistress of universal consciousness. 
 
-To vastly oversimplify - I do a rigorous good job tracking historical trading strategies and how they perform - both with, and without my own personal judgment (which includes trading journals). I have 3 basic systems for my own investing: a set of statistical strategies informed by data and market indicators (quant), a system to summarize what those strategies are saying so I can understand them (context), and my human judgment and accompanying profits. 
+To vastly oversimplify - I do a rigorous job tracking historical trading strategies and how they perform - both with, and without my own personal judgment (which includes trading journals). I have 3 basic systems for my own investing: a set of statistical strategies informed by data and market indicators (quant), a system to summarize what those strategies are saying so I can understand them (context), and my human judgment and accompanying profits. 
 
 Early in 2023 I asked, “Could GPT3 replace various parts of my trading system?” The answer appeared to be yes, specifically with generating peer sets and generating new market indicators. However GPT 3 could not seem to ingest things like market news, or my own trading journals and make good decisions. One night I tried running an ambitious experiment - could I replicate the results of my own judgment with trading journals and market data as an input?
 
