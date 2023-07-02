@@ -13,9 +13,11 @@ AI differentiates itself from Tech 1.0 by giving users the power of algorithms t
 
 Below is an essay about how I’m thinking about using AI to vastly improve my personal decision making, and progress towards my goals.
 
-After reading articles suggesting AI could replace human judgment in many industries, like my field (finance), I tested GPT-4 extensively on my own trading. I fed it my trading journals, backtests, as well as expert context from Market Wizards like George Soros. I discovered that, with the right context, information, and "prompts", AI could consistently outperform my past decisions. Let me be more blunt: it is clear to me that it is a waste of time for me to spend any time analyzing markets, looking at charts or constructing trades because AI systems can do it better. Naturally, this changed how I spend my time at work dramatically.
+After reading articles suggesting AI could replace human judgment in many industries, like my field (finance), I tested GPT-4 extensively on my own trading. I fed it my trading journals, backtests, as well as expert context from Market Wizards like George Soros. I discovered that, with the right context, information, and "prompts", AI could consistently outperform my past decisions. 
 
-I feel fine focusing on building systems instead of trading - because 1] the systems are good enough to justify this now and 2] these systems won’t stop improving.  Yet as I audited the judgment of systems, especially how AIs would have traded the Covid19 crisis, an uneasy feeling crept over me. The output felt very human - articulating opinionated views about how things would go in markets and empathy for people affected by the virus. 
+Let me be more blunt: it is clear to me that it is a waste of time for me to spend any time analyzing markets, looking at charts or constructing trades because AI systems can do it better. Naturally, this changed how I spend my time at work dramatically.
+
+I feel fine focusing on building systems instead of trading - because 1] the systems are good enough to justify this now and 2] these systems won’t stop improving.  Yet as I audited the judgment of systems, especially how AIs would have traded the Covid19 crisis, an uneasy feeling crept over me. The output felt very human - articulating opinionated views about how things would go in markets and empathy for people affected by the virus. Besides generating good results - the trading journal that GPT4  generated felt jarringly personal.  
 
 ## Possible for Personal Decisions?
 
@@ -127,6 +129,10 @@ The system should log
 
 Each month the system should generate a report of what is working and what isn’t to generate a feature backlog to be implemented. In this way, you’re not firing yourself to be replaced with a static manager, but rather a dynamically improving architecture.
 
+## Conclusion and Next Steps
+
 In conclusion - I don’t think I’m sacrificing my freedom by firing myself. But rather choosing to get rid of impulsivity and child-like short-termism, replacing it with technology augmented context relevant judgment with world-class mental models. Much as you might opt to move out of an anarchy, and become the citizen of a Republic. I believe that by doing so I will give up some "freedom" but gain much greater capability. This is, of course, an experiment rather than an argument (and certainly not advice) and I’m at the beginning of this journey. 
 
 Nonetheless, I’m excited about living in a world where technology makes us smarter and better, instead of weak and addicted - and hoping to contribute to that vision as best I can. 
+
+Indeed - the systems are now live. I did not decide to publish this article. I just uploaded the context, ran the prompts, got the buy in and pushed the button. We will see what happens next. 
