@@ -31,13 +31,13 @@ However - I wanted to write my higher order thoughts down so that other people m
 
 With this foundation in place, let's delve into the eight core systems that are crucial to the process of 'firing yourself' and allowing AI to take over your decision-making process.
 
-1. Default Settings.
+## 1 Default Settings
 
 A Default Setting has three parts, an A] Objective Function, B] Constraints, and C] Values. An objection function is the north star - what you’re moving towards, specifically. The constraints are what you’re willing to sacrifice, and what you’re not in order to go there. The values are the underlying judgments that you’ve made to actually decide these things. 
 
 Just as an example: your Objective Function might be building a healthy food business and bringing wellness to as many people as possible through holistic food. You might be unwilling to sacrifice your time with your family to do this, but you are willing to risk most of your savings (Constraints). The values underpinning this Objective Function and Constraints might be your day to day experience, living up to your family’s dreams and your own visceral feeling of how much better things are now you’re healthy. 
 
-2. Scoring
+## 2 Scoring
 
 The scoring system has two core parts:
 1] A set of three to four metrics that allow you to clearly quantify your progress towards your objective function
@@ -45,7 +45,7 @@ The scoring system has two core parts:
 
 Per the example above you might track 1] your weekly sales 2] your repeat rate 3] progress on your new product pipeline and 4] your brand’s digital engagement. And you might have a system that asks you questions about actions you've taken to drive sales, greater customer loyalty, product innovation and marketing efficiency. Note this is very business oriented - but your own scoring system might have much more personal objectives. 
 
-3. Decision Making 
+## 3 Decision Making
 
 After you’ve defined your values and how to quantify them - the primary next action is to *stop making your own decisions*. It would be impossible to say you’ve “fired yourself” if you keep putting your ego in charge. 
 
@@ -60,7 +60,7 @@ Whenever I need to make a big decision, my agreement is to use this system if at
 
 Per the example – you might be tempted to work over the weekend if you have a big product launch coming. You might be gearing up to tell your wife. Instead, if you’ve “fired yourself” - you would run a prompt that used your decision making system and follow the decision that had the highest score. 
 
-4. Tactical Tracking 
+## 4 Tactical Tracking
 
 Most of the time, you’re not making decisions. You’re taking action. The question is, how well are those actions going and contributing to your Objective Function?
 
@@ -69,7 +69,7 @@ A tactical system has:
 2] A context relevant way for you to upload other things that have moved your Objective Function the right direction. If your objective function is reaching enlightenment, you might want specific tooling for meditation. If your objective function is athletic, workout logging could make sense. 
 3] A KPI sheet - A KPI sheet should give you an idea of how much work you’re doing and how effective that work is at moving you towards your goals. It should be something you can look at every day. And it should be referenced in your system if possible. 
 
-5. Compliance 
+## 5 Compliance
  
 Ideally a compliance system should have 
 1] A morning check in, similar to a corporate stand up - where goals are set 
@@ -77,7 +77,7 @@ Ideally a compliance system should have
 
 The compliance system should have push notifications to insist that you actually follow through. If you ignore the push notifications, that should be logged and flow back into your KPIs. I call these “compliance events” - i.e. User Did Not Show Up to Stand Up. It sounds inhumane but they are quite similar to what is common at most start ups. Why would we demand less of our own lives? 
 
-6. Coaching / Error Handling 
+## 6 Coaching / Error Handling
 
 A coaching system has four major elements
 1] A weekly recap of how KPIs are tracking, with wins, losses and context relevant recommendations
@@ -85,7 +85,7 @@ A coaching system has four major elements
 3] A system to ingest personal context from coaching chats. This ensures the systems have a good and full picture of both my ethical boundaries as well as my current emotional state. 
 4] The “professional help” off ramp/ onramp. There are some situations where OpenAI and other AI based systems will deem themselves unworthy (i.e. severe emotional distress, major life events like divorce or death, and legal situations) and suggest the user gets professional help - such as a trained doctor, financial advisor, lawyer, therapist etc. As a result there needs to be a system for the user to voluntarily upload the content of these consultations back into the system, or upload the key summaries in a way that preserves confidentiality and upholds ethical and legal considerations. 
 
-7. Indoctrination
+## 7 Indoctrination 
 
 Imagine your coach is Tony Robbins, your priest or your guru. Indoctrination are the exercises he assigns you to improve your buy in and performance.
 
@@ -95,7 +95,7 @@ Indoctrination consists of:
 
 And tooling for each of these. 
 
-8. System Meta
+## 8 System Meta and Feature Suggestions 
 
 The system should log 
 1] How much each part of the system is being used 
