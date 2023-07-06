@@ -26,9 +26,7 @@ To be clear these are my personal views, and the plan below is my personalized/ 
 
 ## Diet
 
-I am ripping off and modifying Bryan Johnson’s  diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
-
-(note: Bryan Johnson is an internet entrepreneur who drastically overhauled his health and diet with the Blueprint Protocol he created)
+I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
 
 ### Morning shake:
 * 8 oz water
@@ -86,7 +84,11 @@ I am ripping off and modifying Bryan Johnson’s  diet with the inclusion of dai
 * Feeding window (6:30 AM - 1 PM) 
 * unless meal with friends (kept to minimum) - try to schedule early
 
-## Exercise
+## Wellness
+
+Below is my blueprint for top physical/emotional performance.
+
+### Workouts 
 
 The agreements here -
 1. Periodically consult a personal trainer for advice (every 2 months) to ensure all forms are correct.
@@ -95,9 +97,7 @@ The agreements here -
  
 I do not agree with the overall principle Bryan Johnson advocates of training the same muscles every day as that seems to contradict most peer reviewed literature / resting time so have had to do this custom.  
 
-Current workouts
-
-### MONDAY: CHEST/TRICEPS + (at full gym)
+#### MONDAY: CHEST/TRICEPS + (at full gym)
 * BENCH PRESS (BARBELL): 4 SETS X 6-8 REPS 
 * INCLINE BENCH PRESS (DUMBELL): 4 SETS X 10-12 REPS
 * DECLINE PRESS (DUMBELL): 4 SETS X 10-12 REPS 
@@ -107,7 +107,7 @@ Current workouts
 * TRICEP PUSHDOWN: 4 SETS X 10-12 REPS
 * 3 mile run
 
-### TUESDAY: BACK/BICEPS (at full gym)
+#### TUESDAY: BACK/BICEPS (at full gym)
 * DEADLIFT: 4 SETS X 6-8 REPS 
 * PULLUPS: 4 SETS X TO FAILURE 
 * SEATED ROWS 4 SETS X 10-12 REPS
@@ -117,7 +117,7 @@ Current workouts
 * CONCENTRATION CURLS: 4 SETS X 10-12 REPS 
 * 3 mile run
 
-### WEDNESDAY: LEGS  (at full gym)
+#### WEDNESDAY: LEGS  (at full gym)
 * SQUATS: 4 SETS X 6-8 REPS 
 * ROMANIAN DEADLIFTS: 4 SETS X 10-12 REPS 
 * WALKING LUNGES (DUMBBELLS) 4 SETS X 10-12 REPS (EACH LEG)
@@ -126,7 +126,7 @@ Current workouts
 * LEG EXTENSIONS: 3 SETS X 10-12 REPS
 * Rowing machine (21 minutes)
 
-### THURSDAY: SHOULDERS  (at full gym)
+#### THURSDAY: SHOULDERS  (at full gym)
 * STANDING OVERHEAD PRESS (BARBELL): 4 SETS X 6-8 REPS 
 * DUMBBELL LATERAL RAISES: 4 SETS X 10-12 REPS
 * ARNOLD PRESS: 4 SETS X 10-12 REPS 
@@ -142,7 +142,7 @@ Current workouts
 * HAMMER CURLS: 3 SETS X 10-12 REPS
 * CLOSE GRIP BENCH PRESS: 3 SETS X 10-12 REPS
 
-### SATURDAY: CORE AND GRIP (home gym)
+#### SATURDAY: CORE AND GRIP (home gym)
 * Swim immediately on wake up (20 mins) 
 * DUMBBELL DEADLIFTS: 4 SETS X 6-8 REPS
 * PLANK WITH DUMBBELL DRAG: 3 SETS X 10-12 REPS
@@ -150,7 +150,7 @@ Current workouts
 * DUMBBELL PLANK ROWS: 3 SETS X 10-12 REPS 
 * DUMBBELL PINCH HOLD: 3 SETS X 30 SEC - 1 MIN
 
-### SUNDAY: FULL BODY (home gym)
+#### SUNDAY: FULL BODY (home gym)
 * DUMBBELL GOBLET SQUAT: 4 SETS X 10-12 REPS
 * BULGARIAN SPLIT SQUATS: 4 SETS X 10-12 REPS EACH LEG
 * RENEGADE ROWS: 4 SETS X 10-12 REPS
@@ -167,12 +167,13 @@ Current workouts
 * 1 hour wind down prior to bed with no blue light (ideally I use this for language practice or if I am cooked, listen to an audiobook)
 * If I wake up at 5:50 or earlier then do the beach walk 1rst thing in the morning. 
 
-## Mental Health
+### Mental / Wellness
+
 * 15 mins mindfulness a day (5 mins at end of 25 min pomodoros, 3 times) - logged on apple watch 
 * Daily phone screen time sub 2 hours
 * Should be practicing Spanish daily to integrate into local community. Best time for this is 1 hour before bed via physical book 
 
-### Stress Zero: Adjusted CBT Protocol
+#### Stress Zero: Adjusted CBT Protocol
 
 Once a day, I run a process called Stress Zero in order to directly bump my HRV and try and get my stress to zero. The best times to do this are on morning walks or on the way back from work 
 
@@ -195,7 +196,7 @@ I've made the decision to let AI systems augmented with context and KPIs fully s
 6. Reference the Default Setting when definining personal and corporate milestones or making large strategic decisions
 7. Periodically improve and refine systems to make 1-6 better 
 
-### Daily processes:
+### Daily Professional Processes:
 * 9:40 AM - review morning trading execution, ensure risk systems have worked 
 * 9:45-10 AM: Prepare for stand up via taking yesterday’s tasks/ pomodoros/ etc as well as Milestone document and running through GPT4  
 * 10 AM: morning stand up notes uploaded to Database. Morning stand up should always state what milestones are being worked
@@ -204,7 +205,7 @@ I've made the decision to let AI systems augmented with context and KPIs fully s
 * 8-8:30 PM Actively do leisure activities (could be calling friends randomly, reading online garbage, watching funny videos, watching TV, playing video games) 
 * All work done via Pomodoros (25 min blocks w 5 min breaks) where content of Pomodoros is logged to the database 
 
-### Weekly processes (Sunday)
+### Weekly Processes (Sunday)
 * 1-2 hours spent writing weekly reviewing past week and
 * Updating Sprint Plan / Milestone Document
 * Grocery shopping / meal prep (lentil dish is bulk preparation) 
@@ -231,6 +232,7 @@ It's very likely that implementing this plan will have substantial costs to my c
 There is really no point implementing a process without a set of desired outcomes.
 
 Value: on a macro level, extend consciousness through the universe and on a personal level gain access to technology to extend my own consciousness 
+
 Criterion: Creating a valuable company in the AI space (ie top 2% founder financial outcome in AI start-up sector)
 
 Health constraints:
