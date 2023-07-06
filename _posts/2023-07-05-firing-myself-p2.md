@@ -165,11 +165,11 @@ The idea of firing yourself is essentially using AI augmentation to improve deci
 * 2-3 hours of feature implementation of software features to improve overall systems architecture
 * Maid every other week 
 
-## Some Important Conceptual Point
+## Some Important Conceptual Points
 
-To me - diet and exercise are not the holy grail, as in the Blueprint protocol advocated by Bryan Johnson. I view health as a constraint - something I’m not willing to compromise to achieve professional success. 
+I share a goal of radical life extension with Bryan Johnson, but because I lack his financial resources I view health as a constraint instead of the primary optimization function. That is to say - building a valuable company is more likely to unlock cutting edge health-tech than working out. However, not dying or killing yourself to build said company also makes sense.  
 
-Furthermore - it’s important to avoid “analysis paralysis” - and the tracking here I try and keep very minimal. For example, I don’t actually track my diet or exercise (like logging all my weight), I just follow the Blueprint perfectly. For my daily KPI updates, the vast majority of them are automated. 
+Furthermore - it’s important to avoid “analysis paralysis” - and the tracking here I try and keep very minimal. For example, I don’t actually track my diet or exercise (like logging all my weight), I just follow the Blueprint perfectly. When appropriate I'll have coaches change the diet / exercise params. For my daily KPI updates, the vast majority of them are automated. 
 
 I devote my brain damage capacity to analyzing professional workflows, writing code and building a company. 
 
