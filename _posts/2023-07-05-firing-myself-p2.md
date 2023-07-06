@@ -163,6 +163,16 @@ Current workouts
 * Daily phone screen time sub 2 hours
 * Should be practicing Spanish daily to integrate into local community. Best time for this is 1 hour before bed via physical book 
 
+### Stress Zero: Adjusted CBT Protocol
+
+Once a day, I run a process called Stress Zero in order to directly bump my HRV and try and get my stress to zero. The best times to do this are on morning walks or on the way back from work 
+
+1. I record these exercises in the OtterAI app so that I have logs of stressors and intentions over time for analysis
+2. Every exercise starts out with an Intention - i.e. a spiritual goal, that flows from my perception of a higher power. I try and keep the Intention something profound and meaningful to me and link it to the tactical space
+3. Next there is gratitude - I explicitly talk about something I'm grateful for and why
+4. Next are stressors. I identify a stressor, and then I "debunk" the stressor. The way I do this is typically A] Acknowledging the positive underlying intent of the Stressor B] Identifying irrational threads in the stressor so that the stressor falls in on itself C] Identify the self defeating nature of the stressor - i.e. typically if you're super stressed about something you're not taking action towards the positive intention
+5. When possible, try and link defeating the stressors to the Gratitude, or Intention functions to maximize repetition 
+
 ## Firing Myself
 
 The idea of firing yourself is essentially using AI augmentation to improve decision making by using the absolute minimum amount of judgment on a daily/weekly basis. I wrote about this in my last post with a detailed roadmap for building out software tools to augment this. For this to work effectively you need A] large amounts of regularly uploaded qualitative context B] quantitative KPIs that suggest how well things are moving forward. AI tools can only make high quality decisions on your behalf if they’re armed with full context. 
