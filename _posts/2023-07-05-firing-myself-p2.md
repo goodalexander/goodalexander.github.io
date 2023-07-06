@@ -24,11 +24,15 @@ I believe it's important to execute professionally (with a constraint of health)
 
 To be clear these are my personal views, and the plan below is my personalized/ adapted roadmap to achieving my goals. Logistically, I believe it is critical to outline / implement a blueprint like this *prior* to starting a company rather than after the fact which is why I'm doing this now. Please consult relevant professionals before copying any of this. I cover ideal diet, exercise, mental health/wellness, personal automation and compliance tactics.  
 
-## Diet
+## Wellness
+
+Below is my blueprint for top physical/emotional performance. 
+
+### Diet
 
 I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
 
-### Morning shake:
+#### Morning shake:
 * 8 oz water
 * 1 tablespoon spirulina
 * 2 scoops Vital Protein Collagen Peptides
@@ -38,7 +42,7 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * 2 tsp matcha powder
 * vitamix/ shaker bottle 
 
-### Super Veggie
+#### Super Veggie
 * 1 cup lentils
 * 2 cups broccoli 
 * 1 cup cauliflower
@@ -55,14 +59,14 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * Seasonal vegetable / fruit additions – ideally in season/ rotating
 * Prepared in air fryer
 
-### Berry/ Nut Shake
+#### Berry/ Nut Shake
 * 1 cup Mixed berries (raspberries, blackberries, blueberries) - frozen
 * .75 cups Almonds, walnuts 
 * 1 cup Kefir or greek yogurt (prefer Kefir)
 * Matcha powder, cinnamon, cocoa powder
 * Blended in Vitamix 
 
-### Supplements (in progress)
+#### Supplements (in progress)
 
 #### Morning Pill Pack:
 * turmeric curcumin 500 mg
@@ -80,17 +84,13 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * creatine (2.5g)
 * ginger (1.15g)
 
-### Meals with friends:
+#### Meals with friends:
 * Always order salad, veggies, or the healthiest thing on the menu (will eat meat if that’s what it means)
 * If eating with a friend that day do not consume berry/ nut shake as that’s close to 700 calories. Instead consume 2 scoop of protein w water 
 
-### Feeding Window
+#### Feeding Window
 * Feeding window (6:30 AM - 1 PM) 
 * unless meal with friends (kept to minimum) - try to schedule early
-
-## Wellness
-
-Below is my blueprint for top physical/emotional performance.
 
 ### Workouts 
 
@@ -165,7 +165,7 @@ I do not agree with the overall principle Bryan Johnson advocates of training th
 * 1 full hour of medium intensity elliptical training 
 * 1 hour of sauna + stretching
 
-## Sleep and morning routine
+### Sleep and morning routine
 * 9:50 bedtime, no alarm wake up
 * 8 hour sleep goal -- if I need more, so be it  
 * 1 hour wind down prior to bed with no blue light (ideally I use this for language practice or if I am cooked, listen to an audiobook)
