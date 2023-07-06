@@ -2,7 +2,7 @@
 layout:     post
 title:      Firing Myself P2
 date:       2023-07-05 11:21:29
-summary:   full tactical 
+summary:    minimum viable execution marching towards the singularity 
 ---
 
 ## Minimum Viable Execution
@@ -184,7 +184,16 @@ Once a day, I run a process called Stress Zero in order to directly bump my HRV 
 
 ## Firing Myself / Autonomous Self 
 
-The idea of firing yourself is essentially using AI augmentation to improve decision making by using the absolute minimum amount of judgment on a daily/weekly basis. I wrote about this in my last post with a detailed roadmap for building out software tools to augment this. I'd note that part of the goal here is actually minimizing the amount of thought and tracking done - so whenever possible (for example, collecting a KPI) - the KPI is implemented via a cron job or a tech process rather than me logging it myself. For this to work effectively you need A] large amounts of regularly uploaded qualitative context B] quantitative KPIs that suggest how well things are moving forward. AI tools can only make high quality decisions on your behalf if they’re armed with full context. 
+I've made the decision to let AI systems augmented with context and KPIs fully supplant most of my personal and professional choices. I wrote about this in my last post ["Fire Yourself"](https://goodalexander.com/2023/07/02/firing-myself/) but here I want to delve into the minimum viable execution for this system. 
+
+### Autonomous Self / Corporation Agreements
+1. Continually upload as much context as possible to internal tracking software
+2. Always update KPIs so that this context is framed in terms of objective performance
+3. Constantly use the best AI models to parse this context and help me apply it to moving towards KPIs
+4. Whenever possible automated collection of context, and KPIs to minimize mental overhead
+5. Clearly define and be bought into your Objective Function (what I'm working towards), your Constraints (what I'm willing to give up) and my Values (the things underpinning my objective function/ constraints). I call the Objective Function, Constraints and Values my 'Default Setting'
+6. Reference the Default Setting when definining personal and corporate milestones or making large strategic decisions
+7. Periodically improve and refine systems to make 1-6 better 
 
 ### Daily processes:
 * 9:40 AM - review morning trading execution, ensure risk systems have worked 
@@ -202,17 +211,9 @@ The idea of firing yourself is essentially using AI augmentation to improve deci
 * 2-3 hours of feature implementation of software features to improve overall systems architecture
 * Maid every other week 
 
-## Some Important Conceptual Points
-
-I share a goal of radical life extension with Bryan Johnson, but because I lack his financial resources I view health as a constraint instead of the primary optimization function. That is to say - building a valuable company is more likely to unlock cutting edge health-tech than working out. However, not dying or killing yourself to build said company also makes sense.  
-
-Furthermore - it’s important to avoid “analysis paralysis” - and the tracking here I try and keep very minimal. For example, I don’t actually track my diet or exercise (like logging all my weight), I just follow the Blueprint perfectly. When appropriate I'll have coaches change the diet / exercise params. For my daily KPI updates, the vast majority of them are automated. This said - mile time, bench press and pull ups can serve as rough check-in levels to ensure I'm moving forward along with Apple Watch HRV measures and periodically tested V02 max. 
-
-I devote my brain damage capacity to analyzing professional workflows, writing code and building a company. 
-
 ## Flexibility and Acknowledging Limitations
 
-With all this said, my goal is 100% compliance.
+Though the system above is challening to implement, my goal is 100% compliance.
 
 I want to outline actively what happens if 
 1. KPIs don’t get updated 
@@ -223,13 +224,14 @@ I want to outline actively what happens if
 
 If I dip below 80% compliance my plan is to hire a personal coach or compliance expert to get me back up to 100%. I am agreeing here to implement this protocol at least until Jan 5, 2024
 
-It's very likely that implementing this plan will have substantial costs to my personal life and relationships that I'm willing to bear in the near term. Over the medium term I hope that I can build a community of individuals with similar interests and goals, which is part of my motivation sharing this piece publicly. 
+It's very likely that implementing this plan will have substantial costs to my current personal life and relationships that I'm willing to bear in the near term. Over the medium term I hope that I can build a community of individuals with similar interests and goals, which is part of my motivation sharing this piece publicly. I've seen early signs that loneliness will be a short term phenomenon but want to be self-aware that most people will view this post as crazy. 
 
 ## Acceptance Criteria and Discussion 
 
 There is really no point implementing a process without a set of desired outcomes.
 
-Primary objective: Creating a valuable company in the AI space (ie top 2% founder financial outcome in AI start-up sector)
+Value: on a macro level, extend consciousness through the universe and on a personal level gain access to technology to extend my own consciousness 
+Criterion: Creating a valuable company in the AI space (ie top 2% founder financial outcome in AI start-up sector)
 
 Health constraints:
 * HRV (heart rate variability, as measured by Apple Watch) above 80
