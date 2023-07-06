@@ -7,20 +7,24 @@ summary:   full tactical
 
 ## Minimum Viable Execution
 
-I want to get full tactical about what minimum viable execution of firing myself actually means.
+Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I'm implementing until at least Januart 5 2024.
 
-Most systems break apart because we do not even realize they’re running. You stop logging your workout. And progressive overload becomes more of a theory, something you have in the back of your mind. Before disappearing entirely. 
+This post is meant to be an addendum to my previous post "Fire Yourself" where I zone in specifically on Personal Automation tactics. 
 
-My mentor, and one of the best portfolio managers I know (shout out JDP) constantly emphasizes “process over outcome”. Tracking process is crucial to strong systems. 
+My objective outlining this protocol is:
+1. Creating a blueprint for strict adherence and being clear around my goals
+2. Creating a valuable company with a strong constraint of health
 
-My concept of minimum viable execution has three parts:
-1. It should be as minimal as possible 
-2. It is non negotiable
-3. I am committing to 100% compliance to it for 6 months (until Jan 5 2024)
+The last time I made a start-up - I want to say *it* destroyed my physical and mental health. But the closer-to-truth statement is that *I* destroyed my physical and mental health because I did not have a process in place. 
+
+I believe it's important to execute professionally (with a constraint of health) in the near term because:
+1. I believe we're at an epochal moment in terms of bringing consciousness into the world via Artificial Intelligence
+2. Extremely valuable companies can be built in this time with strong network effects because of compounding effects of training, data collection, and other factors
+3. There are likely going to be breakthroughs regarding human biology that will be accessible to early adopters who show they're capable of executing in the AI era while respecting /building their biological capability 
 
 ## Diet
 
-I am ripping off and modifying Bryan Johnson’s diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and quitting caffeine 
+I am ripping off and modifying Bryan Johnson’s diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
 
 ### Morning shake:
 * 8 oz water
@@ -54,7 +58,7 @@ I am ripping off and modifying Bryan Johnson’s diet with the inclusion of dair
 
 ### Supplements (in progress)
 
-Morning:
+#### Morning Pill Pack:
 * turmeric curcumin 500 mg
 * ginger 1.1g
 * creatine 5g
@@ -64,7 +68,7 @@ Morning:
 * flaxseed oil 1300 mg
 * ashwaganda 200 mg 
 
-Evening pill pack:
+#### Evening Pill Pack
 * Taurine (500mg)
 * flaxseed oil (1.3g)
 * creatine (2.5g)
@@ -76,7 +80,7 @@ Evening pill pack:
 
 ### Feeding Window
 * Feeding window (6:30 AM - 1 PM) 
-* unless meal with friends (kept to minimum) - try to schedule early 
+* unless meal with friends (kept to minimum) - try to schedule early
 
 ## Exercise
 
@@ -154,7 +158,8 @@ Current workouts
 * 1 hour of sauna + stretching
 
 ## Sleep and morning routine
-* 9:50 bedtime, no alarm wake up 
+* 9:50 bedtime, no alarm wake up
+* 8 hour sleep goal -- if I need more, so be it  
 * 1 hour wind down prior to bed with no blue light (ideally I use this for language practice or if I am cooked, listen to an audiobook)
 * If I wake up at 5:50 or earlier then do the beach walk 1rst thing in the morning. 
 
@@ -173,9 +178,9 @@ Once a day, I run a process called Stress Zero in order to directly bump my HRV 
 4. Next are stressors. I identify a stressor, and then I "debunk" the stressor. The way I do this is typically A] Acknowledging the positive underlying intent of the Stressor B] Identifying irrational threads in the stressor so that the stressor falls in on itself C] Identify the self defeating nature of the stressor - i.e. typically if you're super stressed about something you're not taking action towards the positive intention
 5. When possible, try and link defeating the stressors to the Gratitude, or Intention functions to maximize repetition 
 
-## Firing Myself
+## Firing Myself / Autonomous Self 
 
-The idea of firing yourself is essentially using AI augmentation to improve decision making by using the absolute minimum amount of judgment on a daily/weekly basis. I wrote about this in my last post with a detailed roadmap for building out software tools to augment this. For this to work effectively you need A] large amounts of regularly uploaded qualitative context B] quantitative KPIs that suggest how well things are moving forward. AI tools can only make high quality decisions on your behalf if they’re armed with full context. 
+The idea of firing yourself is essentially using AI augmentation to improve decision making by using the absolute minimum amount of judgment on a daily/weekly basis. I wrote about this in my last post with a detailed roadmap for building out software tools to augment this. I'd note that part of the goal here is actually minimizing the amount of thought and tracking done - so whenever possible (for example, collecting a KPI) - the KPI is implemented via a cron job or a tech process rather than me logging it myself. For this to work effectively you need A] large amounts of regularly uploaded qualitative context B] quantitative KPIs that suggest how well things are moving forward. AI tools can only make high quality decisions on your behalf if they’re armed with full context. 
 
 ### Daily processes:
 * 9:40 AM - review morning trading execution, ensure risk systems have worked 
@@ -212,8 +217,18 @@ I want to outline actively what happens if
 4. Pomodoros don’t get updated / done 
 5. Other MVEs not reached
 
-In the event that I'm unable to maintain the outlined routines and KPIs, I will invoke a 'manual override' by enlisting the help of personal coaches or compliance experts. This will ensure adherence to the process, or the revision of the process until it becomes manageable. Health is a non-negotiable aspect, and so irrespective of other setbacks, the health plan will be continually executed. While I don't anticipate this situation, I want to make it clear that failure isn't an option. Should there be a slip, it merely indicates that it's time to call in the professionals
+if I dip below 80% compliance my plan is to hire a personal coach or compliance expert to get me back up to 100%. I am agreeing here to implement this protocol at least until Jan 5, 2024
 
-I think it’s important to recognize that executing this plan will likely severely hinder or lower the quality of my personal relationships, and that’s something I’m prepared to accept (and already have hah!). I won’t be able to fully complete every workout or commit to doing a specified number of Pomodoros - but at least a vast majority of this, I can do every day. And I’m emotionally bought into ensuring baseline execution. Obviously, I don’t encourage you to do any of this. This is just something I feel I need to do. It will be lonely. 
+## Acceptance Criteria
 
-But over time I hope to attract like minded people and a community around my authentic thoughts which I think will make this less lonely over time. Sorry in advance, friends. 
+There is really no point implementing a process without a set of desired outcomes.
+
+Primary objective: Creating a valuable company in the AI space (ie top 2% founder financial outcome in AI start-up sector)
+
+Health constraints:
+* HRV above 80
+* 47 VO2 Max
+* Deep sleep consistently > 1 hr 
+* 3 mile run < 17 mins
+* 6 rep bench press > 225
+* 20+ pull ups 
