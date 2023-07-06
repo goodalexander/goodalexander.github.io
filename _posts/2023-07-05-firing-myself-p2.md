@@ -9,7 +9,7 @@ summary:    minimum viable execution marching towards the singularity
 
 Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I'm implementing until at least January 5 2024.
 
-This post is meant to be an addendum to my previous post ["Fire Yourself"](https://goodalexander.com/2023/07/02/firing-myself/) where I zone in specifically on Personal Automation tactics. That post, in a nutshell, talked about how to use AI tools like GPT4 to make better regular decisions with less energy. 
+This post is meant to be an addendum to my previous post ["Firing Myself"](https://goodalexander.com/2023/07/02/firing-myself/) where I zone in specifically on Personal Automation tactics. That post, in a nutshell, talked about how to use AI tools like GPT4 to make better regular decisions with less energy. 
 
 My objective outlining this protocol is:
 1. Creating a blueprint for strict adherence and being clear around my goals
@@ -22,7 +22,7 @@ I believe it's important to execute professionally (with a constraint of health)
 2. Extremely valuable companies can be built in this time with strong network effects because of compounding effects of training, data collection, and other factors
 3. There are likely going to be breakthroughs regarding human biology that will be accessible to early adopters who show they're capable of executing in the AI era while respecting /building their biological capability
 
-To be clear these are my personal views, and the plan below is my personalized/ adapted roadmap to achieving my goals. Please consult relevant professionals before copying any of this. I cover ideal diet, exercise, mental health/wellness, personal automation and compliance tactics.  
+To be clear these are my personal views, and the plan below is my personalized/ adapted roadmap to achieving my goals. Logistically, I believe it is critical to outline / implement a blueprint like this *prior* to starting a company rather than after the fact which is why I'm doing this now. Please consult relevant professionals before copying any of this. I cover ideal diet, exercise, mental health/wellness, personal automation and compliance tactics.  
 
 ## Diet
 
@@ -35,7 +35,8 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * 2 teaspoons ceylon cinnamon
 * 1 scoop whey protein 
 * 1 tablespoon raw cacao
-* 2 tsp matcha powder 
+* 2 tsp matcha powder
+* vitamix/ shaker bottle 
 
 ### Super Veggie
 * 1 cup lentils
@@ -44,19 +45,22 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * 1 tbsp olive oil
 * 1 tsp paprika
 * Juice of 1 lemon 
-* ½ oz raw almonds  
+* ½ oz raw almonds
+* prepared in bulk. Lentils cooked via Instant Pot. Pureed with bulk cooked vegetables via Vitamix.  
 
 ### Protein Assortment
 * High protein tofu or Quorn (mycoprotein)
 * Air fried green banana + fresh root vegetables
 * Kimchi 
-* Seasonal vegetable / fruit additions – ideally in season/ rotating 
+* Seasonal vegetable / fruit additions – ideally in season/ rotating
+* Prepared in air fryer
 
 ### Berry/ Nut Shake
-* Mixed berries (raspberries, blackberries, blueberries) - frozen
-* Almonds, walnuts 
-* Kefir or greek yogurt (prefer Kefir)
+* 1 cup Mixed berries (raspberries, blackberries, blueberries) - frozen
+* .75 cups Almonds, walnuts 
+* 1 cup Kefir or greek yogurt (prefer Kefir)
 * Matcha powder, cinnamon, cocoa powder
+* Blended in Vitamix 
 
 ### Supplements (in progress)
 
@@ -68,7 +72,7 @@ I am ripping off and modifying [Bryan Johnson’s](https://www.bryanjohnson.co) 
 * garlic 350 mg
 * taurine 500 mg
 * flaxseed oil 1300 mg
-* ashwaganda 200 mg 
+* ashwaganda 400 mg 
 
 #### Evening Pill Pack
 * Taurine (500mg)
@@ -133,7 +137,7 @@ I do not agree with the overall principle Bryan Johnson advocates of training th
 * REAR DELT FLYS (DUMBBELLS) 4 SETS X 10-12 REPS
 * 3 mile run 
 
-### FRIDAY: ARMS (home gym)
+#### FRIDAY: ARMS (home gym)
 * Swim immediately on wake up (20 mins)
 * ALTERNATING DUMBBELL CURLS: 4 SETS X 10-12 REPS
 * OVERHEAD TRICEP EXT (DUMBBELL): 4 SETS X 10-12 REPS
@@ -185,14 +189,14 @@ Once a day, I run a process called Stress Zero in order to directly bump my HRV 
 
 ## Firing Myself / Autonomous Self 
 
-I've made the decision to let AI systems augmented with context and KPIs fully supplant most of my personal and professional choices. I wrote about this in my last post ["Fire Yourself"](https://goodalexander.com/2023/07/02/firing-myself/) but here I want to delve into the minimum viable execution for this system. 
+I've made the decision to let AI systems augmented with context and KPIs fully supplant most of my personal and professional choices. I wrote about this in my last post ["Firing Myself"](https://goodalexander.com/2023/07/02/firing-myself/) but here I want to delve into the minimum viable execution for this system. 
 
 ### Autonomous Self / Corporation Agreements
 1. Continually upload as much context as possible to internal tracking software
 2. Always update KPIs so that this context is framed in terms of objective performance
 3. Constantly use the best AI models to parse this context and help me apply it to moving towards KPIs
 4. Whenever possible automated collection of context, and KPIs to minimize mental overhead
-5. Clearly define and be bought into your Objective Function (what I'm working towards), your Constraints (what I'm willing to give up) and my Values (the things underpinning my objective function/ constraints). I call the Objective Function, Constraints and Values my 'Default Setting'
+5. Clearly define and be bought into my Objective Function (what I'm working towards), my Constraints (what I'm willing to give up) and my Values (the things underpinning my objective function/ constraints). I call the Objective Function, Constraints and Values my 'Default Setting'
 6. Reference the Default Setting when definining personal and corporate milestones or making large strategic decisions
 7. Periodically improve and refine systems to make 1-6 better 
 
