@@ -52,6 +52,24 @@ I am ripping off and modifying Bryan Johnson’s diet with the inclusion of dair
 * Kefir or greek yogurt (prefer Kefir)
 * Matcha powder, cinnamon, cocoa powder
 
+### Supplements (in progress)
+
+Morning:
+* turmeric curcumin 500 mg
+* ginger 1.1g
+* creatine 5g
+* b complex
+* garlic 350 mg
+* taurine 500 mg
+* flaxseed oil 1300 mg
+* ashwaganda 200 mg 
+
+Evening pill pack:
+* Taurine (500mg)
+* flaxseed oil (1.3g)
+* creatine (2.5g)
+* ginger (1.15g)
+
 ### Meals with friends:
 * Always order salad, veggies, or the healthiest thing on the menu (will eat meat if that’s what it means)
 * If eating with a friend that day do not consume berry/ nut shake as that’s close to 700 calories. Instead consume 2 scoop of protein w water 
