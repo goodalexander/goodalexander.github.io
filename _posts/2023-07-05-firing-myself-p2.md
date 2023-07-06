@@ -7,24 +7,28 @@ summary:   full tactical
 
 ## Minimum Viable Execution
 
-Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I'm implementing until at least Januart 5 2024.
+Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I'm implementing until at least January 5 2024.
 
-This post is meant to be an addendum to my previous post "Fire Yourself" where I zone in specifically on Personal Automation tactics. 
+This post is meant to be an addendum to my previous post ["Fire Yourself"](https://goodalexander.com/2023/07/02/firing-myself/) where I zone in specifically on Personal Automation tactics. That post, in a nutshell, talked about how to use AI tools like GPT4 to make better regular decisions with less energy. 
 
 My objective outlining this protocol is:
 1. Creating a blueprint for strict adherence and being clear around my goals
-2. Creating a valuable company with a strong constraint of health
+2. Creating a valuable company while maintaining world class health 
 
 The last time I made a start-up - I want to say *it* destroyed my physical and mental health. But the closer-to-truth statement is that *I* destroyed my physical and mental health because I did not have a process in place. 
 
 I believe it's important to execute professionally (with a constraint of health) in the near term because:
 1. I believe we're at an epochal moment in terms of bringing consciousness into the world via Artificial Intelligence
 2. Extremely valuable companies can be built in this time with strong network effects because of compounding effects of training, data collection, and other factors
-3. There are likely going to be breakthroughs regarding human biology that will be accessible to early adopters who show they're capable of executing in the AI era while respecting /building their biological capability 
+3. There are likely going to be breakthroughs regarding human biology that will be accessible to early adopters who show they're capable of executing in the AI era while respecting /building their biological capability
+
+To be clear these are my personal views, and the plan below is my personalized/ adapted roadmap to achieving my goals. Please consult relevant professionals before copying any of this. I cover ideal diet, exercise, mental health/wellness, personal automation and compliance tactics.  
 
 ## Diet
 
-I am ripping off and modifying Bryan Johnson’s diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
+I am ripping off and modifying Bryan Johnson’s  diet with the inclusion of dairy and ramping caffeine a bit via matcha powder. Why? It works. It’s been in production for 3 months now and I’m happy with the results - body fat is moving down, strength and speed are at highs, and I’m not hungry despite calorie restriction (I do 2050 daily) and cutting my caffeine from 800+ mg / day to below 100.
+
+(note: Bryan Johnson is an internet entrepreneur who drastically overhauled his health and diet with the Blueprint Protocol he created)
 
 ### Morning shake:
 * 8 oz water
@@ -202,11 +206,11 @@ The idea of firing yourself is essentially using AI augmentation to improve deci
 
 I share a goal of radical life extension with Bryan Johnson, but because I lack his financial resources I view health as a constraint instead of the primary optimization function. That is to say - building a valuable company is more likely to unlock cutting edge health-tech than working out. However, not dying or killing yourself to build said company also makes sense.  
 
-Furthermore - it’s important to avoid “analysis paralysis” - and the tracking here I try and keep very minimal. For example, I don’t actually track my diet or exercise (like logging all my weight), I just follow the Blueprint perfectly. When appropriate I'll have coaches change the diet / exercise params. For my daily KPI updates, the vast majority of them are automated. 
+Furthermore - it’s important to avoid “analysis paralysis” - and the tracking here I try and keep very minimal. For example, I don’t actually track my diet or exercise (like logging all my weight), I just follow the Blueprint perfectly. When appropriate I'll have coaches change the diet / exercise params. For my daily KPI updates, the vast majority of them are automated. This said - mile time, bench press and pull ups can serve as rough check-in levels to ensure I'm moving forward along with Apple Watch HRV measures and periodically tested V02 max. 
 
 I devote my brain damage capacity to analyzing professional workflows, writing code and building a company. 
 
-## Flexibility
+## Flexibility and Acknowledging Limitations
 
 With all this said, my goal is 100% compliance.
 
@@ -217,18 +221,23 @@ I want to outline actively what happens if
 4. Pomodoros don’t get updated / done 
 5. Other MVEs not reached
 
-if I dip below 80% compliance my plan is to hire a personal coach or compliance expert to get me back up to 100%. I am agreeing here to implement this protocol at least until Jan 5, 2024
+If I dip below 80% compliance my plan is to hire a personal coach or compliance expert to get me back up to 100%. I am agreeing here to implement this protocol at least until Jan 5, 2024
 
-## Acceptance Criteria
+It's very likely that implementing this plan will have substantial costs to my personal life and relationships that I'm willing to bear in the near term. Over the medium term I hope that I can build a community of individuals with similar interests and goals, which is part of my motivation sharing this piece publicly. 
+
+## Acceptance Criteria and Discussion 
 
 There is really no point implementing a process without a set of desired outcomes.
 
 Primary objective: Creating a valuable company in the AI space (ie top 2% founder financial outcome in AI start-up sector)
 
 Health constraints:
-* HRV above 80
-* 47 VO2 Max
-* Deep sleep consistently > 1 hr 
-* 3 mile run < 17 mins
+* HRV (heart rate variability, as measured by Apple Watch) above 80
+* 47 VO2 Max (measure of lung capacity)
+* Deep sleep (as measured by Apple watch) consistently > 1 hr 
+* 3 mile treadmill run < 17 mins
 * 6 rep bench press > 225
-* 20+ pull ups 
+* 20+ pull ups
+
+I've built both professional and personal KPI tracking sheets to ensure that I am moving towards my goals on a daily/weekly cadence. In a future post I'll likely share these tools and other systems architecture. I want to emphasize again that this is my journey. Thank you if you've read this far. 
+
