@@ -7,7 +7,7 @@ baseurl:     ""
 url:         "https://goodalexander.com"
 date_format: "%b %-d, %Y"
 header_pages:
- - macro.html
+ - ai-decisions.html
  - routine.html
 
 # Google services
