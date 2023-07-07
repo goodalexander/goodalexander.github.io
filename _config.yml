@@ -2,13 +2,14 @@
 title:       GoodAlexander
 email:       goodalexander@gmail.com
 author:      Alex Good
-description: "Building my understanding of markets, data analytics"
+description: "applied accelerationism - health, trading"
 baseurl:     ""
 url:         "https://goodalexander.com"
 date_format: "%b %-d, %Y"
 header_pages:
  - macro.html
  - stocks.html
+ - routine.html
 
 # Google services
 google_verification:
