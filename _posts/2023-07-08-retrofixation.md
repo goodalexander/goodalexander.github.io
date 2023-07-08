@@ -9,7 +9,7 @@ summary:    naming negative nostalgia. exploring clarity in a world with infinit
 
 A single concept applies to bad investing, bad decision making, and bad feelings. The idea is living in the past. 
 
-I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video here: https://www.youtube.com/watch?v=-SeRmOwHYOQ&t=125s.
+I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video about it [here](https://www.youtube.com/watch?v=-SeRmOwHYOQ&t=125s)
 
 But nostalgia evokes a positive feeling. Like a fireplace. “The times of yore”. Before mobile phones. Oatmeal. Hiking. Mittens. I like nostalgia. 
 
