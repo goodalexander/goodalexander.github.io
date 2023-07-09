@@ -72,16 +72,17 @@ That was a big prologue to a relatively simple idea.
 
 Stress zero is a three part practice.
 
-Begin with strong spiritual intent. In my case, this typically involves trying to establish myself as a conduit to let higher consciousness flow into the world. State the intention with force. Record it - I use the OtterAI app, because I like analyzing my prayers as part of my faith
-State gratitude. Something you’re grateful for, that’s helping your life feel smooth and good. That is allowing the intention to flow freely from you
+1. Begin with strong spiritual intent. In my case, this typically involves trying to establish myself as a conduit to let higher consciousness flow into the world.
+2. State the intention with force. Record it - I use the OtterAI app, because I like analyzing my prayers as part of my faith
+3. State gratitude. Something you’re grateful for, that’s helping your life feel smooth and good. That is allowing the intention to flow freely from you.
 Do modified CBT, thought by thought until you can say definitively that your stress levels are functionally zero 
 
-Modified CBT is where you identify a negative thought and 
+Modified CBT is where I identify a negative thought and 
 1. Identify its cognitive distortions 
 2. Evaluate its usefulness towards achieving the Intention
-3. Call upon your faith to crush the thought into the right size. For example, if you’re feeling 8/10 pain due to a breakup - the right amount might be 2/10. Why? Because if there’s a universal consciousness, severed connections merit some pain. Both to honor the relationship as well as to honor the shared emotional creation. But not crippling pain. Because crippling pain prevents you from moving forward in service of faith. 
-4. (optional) Call upon your gratitude to take the edge off. 
+3. Call upon my faith to crush the thought into the right size. For example, if I'm feeling 8/10 pain due to a breakup - the right amount might be 2/10. Why? Because if there’s a universal consciousness, severed connections merit some pain. Both to honor the relationship as well as to honor the shared emotional creation. But not crippling pain. Because crippling pain prevents me from moving forward in service of faith. 
+4. (optional) Call upon my gratitude to take the edge off. 
 
-Stress Zero should last somewhere between 10 minutes if you’re not very stressed, and 30 minutes if you’re very stressed. 
+I do Stress Zero for 10 minutes if I'm not very stressed, and 30 minutes if I'm very stressed. Unlike CBT where I get about 1-2 hours of benefit, with Stress Zero - average duration is 24-48 hours.
 
 Note I’m not a psychologist, or a guru, or something like that. You probably shouldn’t implement any of this. I’m writing this, in part, to digitize and crystallize my consciousness. Not going to Burning Man though. 
