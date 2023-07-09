@@ -83,6 +83,6 @@ Modified CBT is where I identify a negative thought and
 3. Call upon my faith to crush the thought into the right size. For example, if I'm feeling 8/10 pain due to a breakup - the right amount might be 2/10. Why? Because if there’s a universal consciousness, severed connections merit some pain. Both to honor the relationship as well as to honor the shared emotional creation. But not crippling pain. Because crippling pain prevents me from moving forward in service of faith. 
 4. (optional) Call upon my gratitude to take the edge off. 
 
-I do Stress Zero for 10 minutes if I'm not very stressed, and 30 minutes if I'm very stressed. Unlike CBT where I get about 1-2 hours of benefit, with Stress Zero - average duration is 24-48 hours.
+I do Stress Zero for 10 minutes if I'm not very stressed, and 30 minutes if I'm very stressed. Unlike CBT where I get about 1-2 hours of benefit, with Stress Zero - average duration is 24-48 hours. More importantly, unlike CBT - which has Zen-like effects lowering motivation, Stress Zero has a tendency to motivate me by reinforcing my faith. 
 
 Note I’m not a psychologist, or a guru, or something like that. You probably shouldn’t implement any of this. I’m writing this, in part, to digitize and crystallize my consciousness. Not going to Burning Man though. 
