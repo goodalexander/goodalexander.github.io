@@ -18,7 +18,7 @@ So Post 08, after the crash, with Steve Jobs ascendant - I became more open to a
 
 So I became at least a little open to the idea of ‘spiritual healing’ or shamanic this and that. I went to a few yoga classes. And I picked up the basic idea of “setting intentions” and “gratitude”. 
 
-I’m a big fan of empirics in life observations. I keep very good journals about my life decisions, and what went wrong and what went poorly. And I can say with a good deal of confidence that bad outcomes have resulted when:
+I’m a big fan of empirics in life observations. I keep very good journals about my life decisions, and what went well and what went poorly. And I can say with a good deal of confidence that bad outcomes have resulted when:
 I did not have clearly defined intentions or the activities I was engaging in went directly against my intention
 I was not routinely grateful for my life, the people in my life or what I was working on 
 
