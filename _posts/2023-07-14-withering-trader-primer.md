@@ -28,11 +28,11 @@ Once you have a good model of what comprises good analysis, with its features, t
 Broad deployment of “synthetic analysts” will take at least 12 months -- because the initial systems, even if rushed, are just coming online now. And the average hold period of larger funds is such that it takes some time before any meaningful model can be built on trading information (as opposed to HFTs where this information hits within hours). 
 
 This creates a sort of 5 part formula for a hedge fund’s success in applying LLMs to investing:
-Low hold time/ higher frequency but still qualitative strategies (need text to work) 
-Analysts write up analysis in detail, transparently shared or at least tracked (especially when they change opinions)
-Large number of analysts
-An alpha capture team 
-Internal AI researchers that can loop back all of the findings into a privately trained model that can then be deployed 
+1. Low hold time/ higher frequency but still qualitative strategies (need text to work) 
+2. Analysts write up analysis in detail, transparently shared or at least tracked (especially when they change opinions)
+3. Large number of analysts
+4. An alpha capture team 
+5. Internal AI researchers that can loop back all of the findings into a privately trained model that can then be deployed 
 
 Intuitively this favors very large hedge funds. Simplistically if you have more text on more trades, with larger quant teams you’re going to win. This creates an enormous bar for an incumbent (yours truly) for succeeding in this space. I will address this bar later but next I want to discuss data
 
@@ -156,16 +156,15 @@ So let’s review.
 
 The Sword:
 
-ALAD I (Alternative LLM Alternative Data) Real time and historical parsing of all important market data including earnings releases, transcripts, central bank data releases
-ALAD II - Real time parsing of all company relevant text blocks including influencer content, corporate tweets, news events, podcasts, product reviews 
+* ALAD I (Alternative LLM Alternative Data) Real time and historical parsing of all important market data including earnings releases, transcripts, central bank data releases
+* ALAD II - Real time parsing of all company relevant text blocks including influencer content, corporate tweets, news events, podcasts, product reviews 
 Trained LLM Analysts for each important sector to analyze parsed information in context of history. 
 LLM Content Creator Bots that apply LLM Analyst workflows to the market mosaic combined with 
 Backtests / real time implementation on all of the above 
-
 The Battle:
-Live trading (my own + external capital) 
-A web property broadcasting 1-4 with intensive data tracking
-My Twitter account 
+* Live trading (my own + external capital) 
+* A web property broadcasting 1-4 with intensive data tracking
+* My Twitter account 
 
 The Question “If human judgment is to die in capital markets who will plunge the sword?”
 
