@@ -13,7 +13,7 @@ Why?
 
 1. Playing god is very dangerous and unpopular.
 2. Mainstream religions (Islam and Christianity) might have outright extreme moral objections that could result in violence. 
-3. Human trials are illegal and widely regarded as unacceptable but will likely be required to make step-change progress in biotech. Thus secrecy will be built into any “great leaps forward”
+3. Extreme moral and legal challenges around human testing 
 4. Democratic countries or  majoritarian systems will not willingly allow a couple individuals to functionally become gods ala the immortals in Altered Carbon
 5. Limited adoption would lead to social unrest (i.e. why are these people allowed to extend their lives while we are not). This becomes even more severe when applied to offspring (think, Gattaca)
 
