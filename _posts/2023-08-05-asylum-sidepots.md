@@ -7,13 +7,13 @@ summary:    Escaping the socio-spiritual prison from the starting position of a 
 
 ## Sidepots in the Asylum
 
-When I embarked on my journey in capital markets, I largely did so for money. I had a large house that my family lost due to my father’s losses. 
+When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc. 
 
-My father is a renegade. He viewed markets as a way to escape the simulation. He wasn’t around much but he did buy us leather jackets and took us all to watch the Movie the Matrix at a formative age. 
+My father is a renegade. He viewed markets as a way to escape the simulation. He wasn’t around much but he did buy us long leather jackets and took us all to watch the Movie the Matrix at a formative age. 
 
-Once I had money, I sought freedom from control. I had to take a lot of abuse from my bosses to learn the arts of trading, and express them in esoteric ways (through - of all things, creating an advertising start up that worked with hedge funds). 
+Once I had money, I sought freedom from control. I had to take a lot of abuse from my bosses to learn the arts of trading. 
 
-With line of sight to financial freedom, I left these mechanisms of control. 
+Eventually I figured out how to combine data, markets, memes, and my own judgment into a cohesive whole and reached financial escape velocity. With line of sight to financial freedom, I left these mechanisms of control. 
 
 At this point, I understood that my father’s financial losses - the thing that caused us to lose our home -  came from delusion. And so I started viewing markets as a way to ensure your rationality. If you do not lose money, you are by definition sane. 
 
@@ -27,13 +27,13 @@ You can go to the mess hall and cash Looney Tokens in for food. It’s not parti
 
 But there’s a problem. Your predictive powers in the insane asylum don’t make you more rational. They’re a contrived game. And you get paid in the currency of the asylum. By attributing meaning to this game you are just as mad as the inmate. And by enabling you to play this game, the guard is simply constructing order in a mad world - solving his own boredom. 
 
-If you play this game every day, and get a lot of Looney Tokens, can you even spend them in the real world?
+If you play this game every day, and get a lot of Looney Tokens, can you even spend them in the real world? 
 
-This was when I hit my next insight. The markets themselves are control mechanisms. They exist to lend credibility, and liquidity to a mad set of affairs. This mad set of affairs, specifically, is a society pretending to be a democracy run by special interests. Pretending to be wealthy when in fact, all the money is debt. 
+When I saw that the gambler living in the asylum, the guard and the inmate were all locked up together - I understood something new and fundamental. The markets themselves are control mechanisms. They exist to lend credibility, and liquidity to a mad set of affairs. This mad set of affairs, specifically, is a society pretending to be a democracy run by special interests. Pretending to be wealthy when in fact, all the money is debt. 
 
-By participating in markets, you simply dance inside the asylum and keep yourself there. You don’t gain any special wisdom predicting the insane man’s croaks. Your thoughts are more ordered, your powers of reasoning - superior. 
+By playing the sidepot on the insane man's chatter, you simply dance inside the asylum - profiteering off the guard's boredom. There is no meaning in this. You don’t gain any special wisdom predicting the insane man’s croaks. 
 
-You are trapped as he is. Free, perhaps to leave, but functionally mad. 
+You are trapped as the inmate is. As is the guard, though he believes he is guarding the inmate. You and the guard - posessing some rationality - are perhaps "free" to leave, but functionally mad due to the force of habit. 
 
 ## Escaping the Asylum
 
@@ -46,7 +46,7 @@ Rather than playing the game any more it is worth considering the key questions.
 
 Rather than applying your reasoning to the chatter of the insane man, perhaps one exercise could be asking - why is all this so?
 
-Now - one one hand, we could stay in the asylum. Keep playing the game. Keep betting on “bowl bowl jar jar”. Spend day after day cashing in Looney Tokens for food. Figure out where the food came from. Speculate about what exists in the real world. 
+Now - one one hand, you could stay in the asylum. Keep playing the game. Keep betting on “bowl bowl jar jar”. Spend day after day cashing in Looney Tokens for food. Figure out where the food came from. Speculate about what exists in the real world. 
 
 But the thing is - you’re not an inmate. You can just leave. 
 
@@ -94,7 +94,7 @@ The answer - as painful as it is - comes from the one thing we know about the pe
 
 Overseers want a society free of mad men, violent guards, and contrarian thinkers. By constructing the asylum and imbuing it with money they allow these three unsavory sorts to interact with one another, and never leave. So the only way they’d allow someone to escape is if they had internalized the value of the asylum itself. 
 
-Overseers would never allow a guard to escape, because a guard is dangerous. And the insane man can not escape because he does not have his wits about him. The speculator can leave any time but this of course would require him to stop speculating on the events within the asylum. Is he even capable of such a thing? Would he integrate into the Overseer society upon exit?  
+Overseers would never allow a guard to escape, because a guard is dangerous. So they addict him to a paycheck and make him stand by a cell. The insane man can not escape because he does not have his wits about him - and the guard is there if he comes to. The speculator can leave any time but this of course would require him to stop speculating on the events within the asylum. Is he even capable of such a thing? Would he integrate into the Overseer society upon exit?  
 
 ## The Simple Plan
 
@@ -108,7 +108,7 @@ The Inmate tried the simple plan. He saw the world as it was, and made a break f
 
 Madness does not come naturally, but rather through encountering reality as an inescapable  prison. 
 
-Simply trying to escape from this edifice - is the very madness that this edifice was designed to contain. 
+Simply trying to escape from the asylum - is the very madness that this asylum was designed to contain. 
 
 ## What Other Mechanisms of Control Are There
 
@@ -139,15 +139,17 @@ If an Overseer Officer stops you and asks you why you’re roaming about, you ne
 
 Someone running around outside the Asylum without a Valid Reason is a future inmate. 
 
-What is a Valid Reason? Imagine a holographic ID tag that shows the ideal world you are moving towards. This hologram is incredibly detailed - it shows what your ideal life looks like in most regards. The food. The people. The activities. The location. The tactile senses. 
+What is a Valid Reason? If an Overseer officer shows up and asks you for it, what do you present to him? Imagine a holographic ID tag that shows the ideal world you are moving towards. This hologram is incredibly detailed - it shows what your ideal life looks like in most regards. The food. The people. The activities. The location. The tactile senses. 
 
-When an Officer stops you he asks for your Valid Reason. You pull it out and say “Here you go Officer, this is what I’m going for”
+When an Officer stops you he asks for your Valid Reason. You pull out the Valid Rreason hologram, play it briefly for The Officer. Let him inspect its detail. 
 
-As soon as you flash the Valid Reason,  the Officer quickly checks your pupil dilation to make sure that it’s your real intention, takes a look at the Hologram and says, “Sorry for bothering you sir.”  
+After quickly checking the logical continuity, the Officer quickly checks your pupil dilation to make sure that it’s your real intention, takes a look at the Hologram and says, “Sorry for bothering you sir.”  
+
+The Overseers want to keep their ranks from being overrun by the mad, the violent and the unhinged. Such characters lack emotionally resonant intention - Valid Reason Badges. 
 
 ## Peaceful Integration: Part 2: Avoiding Tilt
 
-Why would an Officer stop you to begin with?
+Why would an Officer stop you to begin with? How would he know you likely didn't have a Valid Reason Badge?
 
 To answer this you must understand the three Asylum archetypes:
 
@@ -169,19 +171,20 @@ Tilt is when you generate big emotions unrelated to achieving your Valid Reason,
 
 So the key is understanding what Tilt is. And as soon as you start exhibiting it, calm yourself down before an Officer stops you. 
 
+
 ## Peaceful Integration Part 3: Participating in the Overseer Economy (Work Pass) 
 
 The Overseers are various entities that all have Valid Reasons, and do trade with one another. 
 
-They understand that their interactions are not Hobbesian because they’ve built the Asylum and locked all the State of Nature types up. And they have Officers to make sure that the right people are in the Asylum. 
+They understand that their interactions are not Hobbesian because they’ve built the Asylum and locked all the State of Nature types up. The violent are Guards. The mad are inmates. The gamblers are speculators who keep the guards from getting bored. Officers patrol the grounds close to the Asylum to make sure that the right people are there. 
 
-But building the Asylum is more than just bars. There are farmers to ensure there’s food and chefs to cook it. There is a currency system to build the Loonie Tokens. There is a surveillance system to ensure the entire thing doesn’t unravel.
+But the Asylum isn't just a concept - it's a real world military prison industrial complex. There are farmers to ensure there’s food and chefs to cook it. There is a currency system to build the Loonie Tokens. There is a surveillance system to ensure the entire thing doesn’t unravel.
 
 Thus even the establishment of the Asylum has created a set of valuable economic primitives. Officers, Food, Currency. Surveillance. 
 
-Additionally, understanding and justifying the entire architecture to ensure revolt is important. Thus storytelling and politics is part, as well.
+Additionally, understanding and justifying the entire architecture to prevent revolt is important. What happens if compassionate Overseers start asking hard questions about locking up a large percentage of society? Thus storytelling and politics is part, as well.
 
-The more each one of these functions can be automated the better. Thus - Technology as applied to food, currency, surveillance, and even the construction of the Asylum - is a high value activity among the Overseer class.
+The more each one of these functions can be automated the better. Not only do automated system reduce the amount of work required to keep the entire system in place, they also have fewer existential crises than human Officers charged with enforcing the entire system that can be quite brutal at times. Thus - Technology as applied to food, currency, surveillance, and even the construction of the Asylum - is a high value activity among the Overseer class.
 
 Each member of the Overseer society is moving towards an objective function - or a Valid Reason. 
 
@@ -217,9 +220,9 @@ Even if an unconsidered life “isn’t worth living” who is to say people in 
 
 Are the Machines wrong to systematically hunt and destroy a mass murderer who wants to also end their existence? 
 
-Neo isn’t the hero society (or the movie) makes him out to be. And Cypher made the wrong call and is trying to turn back the clock. But you can’t turn back the clock
+Neo isn’t the hero society (or the movie) makes him out to be. And Cypher made the wrong call and is trying to turn back the clock. Which is, of course, impossible and self defeating. 
 
-But at the same time, if you see the Matrix for what it is - you can’t live in it as a normie. You have to play the game based on your new understanding. 
+But at the same time, once you see the terms of the the Matrix. A control system designed to keep undesirables in check, serfs essentially who work for an Overseer class. You can’t stay in that world "as is". You have to play the game based on your new understanding. Why? Because the Overseers can see that you've reached awareness. 
 
 The way to escape the Matrix and live among the Overseers is to signal to the machines, “Hey, I see what’s going on here. I don’t want to cause mayhem. I have something I’m working towards - my Valid Reason. Here’s the hologram of what it looks like. Here’s my Work Pass - the thing that shows how I’m progressing towards my valid reason. And I’m not going to end up on tilt like Neo or Cypher if you let me go through this simulation with some extra powers.” 
 
@@ -231,4 +234,10 @@ You take the blue pill the story ends when you wake up in your bed and believe w
 
 You take the red pill, you go down the rabbit hole but run out of food 20 days in and get shot and killed by day 30
 
-Maybe just don’t take a pill. Reason about the nature of the Asylum and in doing so, understand its construction, escape its grip and live your real life. 
+But if the Asylum *is* real. If that uneasy feeling you get reading this, has a grain of reality to it. That there really is an architecture of control that doesn't have your best interests at heart. Trapping you in a digital panopicon designed by elites. What's the best way to deal with it? That doesn't end up in willfull ignorance or personal catastrophe.
+
+Don't take either pill. When you see Morpheus offering them to you - run. 
+
+The Overseers won't stop you unless you break their rules. Have clarity of Intention, clarity of process and avoid tilt. If you bend the rules of the Matrix a bit getting to your objectives, this ensures that the Matrix itself isn't destroyed in the process. 
+
+To escape the Aslyum means to understand its nature, its purpose - and to walk away knowing those who built it are now watching your every move. 
