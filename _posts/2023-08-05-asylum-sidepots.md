@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Asylum Sidepots. How to Escape the Matrix and Stay Out
-date:       2023-07-29 11:21:29
+date:       2023-08-05 11:21:29
 summary:    Escaping the socio-spiritual prison from the starting position of a speculator 
 ---
 
