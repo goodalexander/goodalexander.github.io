@@ -19,7 +19,7 @@ The content creators, of course - play their role. But mostly, they are “hits�
 
 Brands are powerful because they’re *not people* and can therefore infiltrate your mind more easily than an influencer. It’s not to say that people can’t become brands. That’s a whole other topic - Trumps, and Kardashians - are indeed a thing. But that brand is part of “The Trump Organization” or “The Kardashian Company”.
 
-Today we won’t be talking about how to turn yourself into a brand, or something so mundane, but rather something more simple.
+Today we won’t be talking about how to turn yourself into a brand, but a higher order economic and philosophical concept. I call it Memecraft. The art of maximizing your free will in the distraction economy. 
 
 ## Defining a Meme
 
