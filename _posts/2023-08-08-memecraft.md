@@ -77,6 +77,10 @@ Thankfully there’s a way out.
 You can apply the basic principles of social media and advertising within your own mind to prevent “The Feed” from taking it over.
 
 There are really four attributes here. I like visualizing a magical knight in armor to correctly contextualize each of the elements
+1. The Helmet of Truth - knowing what you want, exactly
+2. The Gauntlet of Balance - keeping away emotional tilt, and maintaining self dialogue
+3. The Blade of Souls - an economic engine to exploit and profit from memes
+4. The Island Fortress - a literal physical sanctuary that keeps you separate from the meme economy. I argue Puerto Rico is best. 
 
 ### The Helmet of Truth.
 
@@ -102,7 +106,7 @@ Second - the gauntlet summons a small demon, angel, fairy or whatever abstractio
 
 The helmet is a long term, stable vision whereas the Gauntlet is tactical. Much as your social media feed is constantly shifting, and trying to get you off balance in various ways. So must your gauntlet swat away memes at different angles. Much as your group chats provide you endless dialogue that pulls you back into “the current thing”, so the demon summoned by your gauntlet must bring you back to your vision. 
 
-### The Problem: Money 
+#### The Problem: Money 
 
 Now if you have a gauntlet and a helm, you have a lot of defense but you have no offense capability. You can avoid being pulled into memes, for a bit, perhaps. But how are you supposed to make money?
 
@@ -159,7 +163,7 @@ If you read enough news to fully understand financial markets - for example - yo
 
 A blade is separate from the knight’s body but moves in the arc of intention. Maintaining this separation is more possible through technology - so technology should be used. 
 
-### The Island Retreat
+### The Island Fortress 
 
 In practice - following Memecraft lands you squarely in 3 worlds.
 
