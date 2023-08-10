@@ -2,7 +2,7 @@
 layout:     post
 title:      Enlightened Hedonism 
 date:       2023-08-10 11:21:29
-summary:    mental models for those pursuing Faustian bargains with future Intelligence 
+summary:    a philosophy for simple folk pursuing Faustian bargains with future Intelligence 
 ---
 
 All things are either addictive, or non addictive.
