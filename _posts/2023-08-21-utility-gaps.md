@@ -2,8 +2,7 @@
 layout:     post
 title:      Utility Gaps
 date:       2023-08-21 11:21:29
-summary:    What the Optimization Bros Have Wrong and How to Fix It:
-Self Help, Causes, and the Utility Gap
+summary:    What the Optimization Bros Have Wrong and How to Fix It
 ---
 ## Willpower and Capability Gaps
 
@@ -157,7 +156,7 @@ For whatever reason there is a huge disconnect between what you are actually doi
 
 It’s important to note that having utility gaps isn’t something you need to feel bad about. If anything - you should feel good about identifying them, because you can fix them. 
 
-The Solution 
+## The Solution 
 
 This has been a long and winding piece but I’d like to conclude with an actionable solution
 
@@ -175,8 +174,8 @@ You might love redheads and live in India. That’s a problem. You can’t easil
 
 Third - make a plan. Insofar as it’s possible - come up with a plan to 
 leave the Causes that are most responsible for your largest Utility Gaps. Do so without making a fuss. Think of it like doing an Irish exit at a really messy party.
-Proactively close utility gaps. Fly from Puerto Rico to Iselin New Jersey once a month and eat the really good stuff. Relocate to Dublin. Whatever it takes to make your predictable utility curve align with your life.
 
+Proactively close utility gaps. Fly from Puerto Rico to Iselin New Jersey once a month and eat the really good stuff. Relocate to Dublin. Whatever it takes to make your predictable utility curve align with your life.
 
 ## Conclusion
 
