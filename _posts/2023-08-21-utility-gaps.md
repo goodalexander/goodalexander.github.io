@@ -197,7 +197,7 @@ So you waste your time on your iPhone instead. And in your weakened state, scrol
 
 This system is great for shareholders and terrible for you. 
 
-You don’t need to overclock yourself and be 10x as effective living a life you don’t even like, making money for some guy you don’t even like.
+You don’t need to overclock yourself and be 10x as effective living a life you don’t even like, making money for a boss you hate.
 
 That’s why self-help literature is a waste of time. It’s vampires telling you 10 easy tricks to improve your blood quality. Willpower and Capability Gaps are only worth addressing once you know what you want to exert your will towards, and what capabilities will aid you specifically in pursuit of your goals.
 
