@@ -52,7 +52,7 @@ The answer is obvious - just hard to confront.
 
 People don’t like their lives very much. Their baseline engagement with day to day reality and choices is so low, that random messages pumped in by advertisers actually seem pretty good in comparison. 
 
-Why Monk Mode and Unplugging Doesn’t Work
+## Why Monk Mode and Unplugging Doesn’t Work
 
 This also explains why the growing trend of “monk mode” does not work. If you unplug from all your apps, group chats, and “mute notifications from everyone”. That also doesn’t do anything. 
 
@@ -64,7 +64,7 @@ This of course - begs the question, “How do people get into situations to begi
 
 People are not stupid, or irrational. If you ask why someone is unhappy, the answer is invariably that they “have to” do something. Why do they “have to” do something? Typically - it’s because they are a victim of a Cause. 
 
-The Tyranny of Causes
+## The Tyranny of Causes
 
 Causes are internally consistent, well architected idea structures attached to formal or informal organizational structures.
 
