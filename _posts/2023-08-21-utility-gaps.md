@@ -151,8 +151,8 @@ Food. There’s a guy who considers himself a “Foodie”. He’s constantly re
 
 Utility Gaps are a very vast concept but essentially have two essential conditions:
 
-If you took the time to really study your preferences and behavior - you’d identify things you really like
-For whatever reason there is a huge disconnect between what you are actually doing and what you like 
+1. If you took the time to really study your preferences and behavior - you’d identify things you really like
+2. For whatever reason there is a huge disconnect between what you are actually doing and what you like 
 
 It’s important to note that having utility gaps isn’t something you need to feel bad about. If anything - you should feel good about identifying them, because you can fix them. 
 
