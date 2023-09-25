@@ -31,13 +31,14 @@ I made some changes prior to this event and documenting what they are:
 8. Spending time in airports / airplanes end up scrolling a lot on the phone to kill time. Vastly overestimated amount of deep work I could get done 
 
 By and far the most important life change I made was regular travel to NYC over weekends. This was - for the most part - a big mistake.
-Inevitable large delays on airlines. Often times airlines have no wifi so there are productivity holes that force you to work more on weekdays to make up for lost time
-Had to shift bedtime later to accommodate for travel delays / consistency with NYC social scene 
+Inevitable large delays on airlines. Often times airlines have no wifi so there are productivity holes that force you to work more on weekdays to make up for lost time.
+Had to shift bedtime later to accommodate for travel delays / consistency with NYC social scene. 
+
 End up forming short term relationships that have chaotic follow on because you’re going back to Puerto Rico. I did not anticipate this and should have.
 
 The second “meta problem” was that the non-compliance with Saturday/ Sunday workout plans made my entire diet /exercise plan more of a guideline than a strict regimen. This was not good. I think it’s far better to spell out exactly what you’re going to do rather than what you’re going to aspirationally do. 
 
-To do the amount of Cardio that I want to do along with the amount of weight training, I also split my cardio up into 2 sessions. This did not originally have a negative affect on HRV but it *did* when I started layering in late eating and losing control of my overall diet/exercise routine. Essentially I was operating in too much of a caloric deficit - and so would inhale like 400 calories, often at night - otherwise I'd get too hungry to sleep. 
+To do the amount of Cardio that I want to do along with the amount of weight training, I also split my exericse up into 2 sessions. This did not originally have a negative affect on HRV but it *did* when I started layering in late eating and losing control of my overall diet/exercise routine. Essentially I was operating in too much of a caloric deficit - and so would inhale like 400 calories, often at night - otherwise I'd get too hungry to sleep. The time committment was also too high to be sustainable, especially going into earnings season. 
 
 The other note here - is I’m still in optically very good shape. I think that’s also part of the problem. My secret KPI was my abdominal definition not my overall health metrics, but I know for sure that the health metrics are the first thing to go as the workout intensity and energy levels are dropping far before physiological changes kick in. 
 
