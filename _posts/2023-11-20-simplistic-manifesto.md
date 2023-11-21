@@ -191,5 +191,10 @@ The only way to bet big enough is to make a staggering amount of money. The only
 
 The bet could blow up if China wins the Cold War. You don’t want to be in a situation where you make enough money to afford life extending tech but aren’t allowed to buy it. 
 
+Don't lose your will to live - defeats the point. And you can't extend your life while destroying your health. 
+
+Those are the constraints.
+
+Outside of that -
 Whatever it takes. 
 
