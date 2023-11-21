@@ -91,7 +91,7 @@ You create a new moral framework where race doesn’t matter, if we are all seco
 
 This sounds like a demonization of e/acc in crypto, but it’s the opposite.
 
-If you’re a white or Indian engineer in the US with a brain, it is insane to think that blue collar Trump voters or AOC are going to protect your interests in the long run. They are going to completely fuck you. And if China wins a cold war, all bets are off as to your personal safety, your possessions, or even your personal safety.
+If you’re a white or Indian engineer in the US with a brain, it is insane to think that blue collar Trump voters or AOC are going to protect your interests in the long run. They are going to completely fuck you. And if China wins a cold war, all bets are off as to your status, your possessions, or even your personal safety.
 
 Even if the base case is the US wins the cold war, the odds aren’t high enough for you to bet your entire life on it. So therefore it’s easy to underwrite a huge number of rational talented people in the tech industry migrate into both accelerationist AI work and crypto. Just out of risk aversion. 
 
