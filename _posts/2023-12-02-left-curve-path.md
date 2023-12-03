@@ -1,199 +1,90 @@
 ---
 layout:     post
-title:      A Simplistic Manifesto
-date:       2023-11-20 11:21:29
-summary:    Why am I doing what I am doing? A direct summary of all the esoteric garbage I've produced. 
+title:      The Left Curve Path
+date:       2023-12-02 11:21:29
+summary:    AI Good. Fiat Bad. What's your plan, anon? 
 ---
+## The Morpheus Bull
 
-## Dumbing it all down
+A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money. 
 
-I’ve written a lot on this blog. I want to dumb it down. Speak in 10th grade English. Below I’m going to talk about what I think the dominant life strategy is, and why. Basically - it’s trying to make as much money as possible, at the intersection of crypto AI and capital markets, while living in Puerto Rico. This is - of course - extremely specific, and exactly what I’m doing. But this is my personal blog so - I suppose it only makes sense that this is deeply personal. Deal with it. 
+Because the nature of money is changing. If the real “Bull” arrives it’s actually the Fiat “bear”. That is to say - governments thought adding endless was a free lunch but it’s increasingly accelerating into an untenable situation. And the only way to deal with it is by pretending you’re borrowing at low rates, and inappropriately easy monetary policy in the face of obvious inflation. 
 
-## Even bad life is better than death
+Thus this is in crypto terms, the Morpheus Bull Run - referencing the meme where Neo asks Morpheus, “You’re telling me I will be able to convert all these Bitcoins into millions of dollars?” And Morpheus smiles knowingly with his gapped front teeth and says, “No Neo - I’m telling you when you’re ready you won’t have to.”  
 
-I like being alive. I realized this when I lost everything. Got super depressed. Couldn’t work because my health was ruined. Considered suicide. Came to the conclusion that being alive is better than being dead. Even if you can’t really do anything. Can’t work. Don’t enjoy food. Have headaches nonstop. Girlfriend hates you / breaks up with you. Cheats on you. Get booted from your company. Lose your dog. Doesn’t matter. Being alive is better than being dead. 
+You can go ahead and ignore me if you want, and tell yourself that your purchasing power is going to be stable. That you trust the breakeven market and we’ve reached peak inflation, and it’s all gravy from here. No wage price spirals! This recent wage price hike across virtually every company in every industry was the last one for sure. 
 
-## Life doesn’t have to be bad because enjoyment is predictable
+But I don’t believe it. The last time crypto mooned, what happened to your purchasing power afterwards? The reality is I have no trust in the vast, expansive debt based experiment that Central Banks and governments are running in real time. I worked hard for my money. I’m not going to let it get debased to nothing. Fuck that. 
 
-And it’s not just rejecting suicide. It’s being able to predict what you like. I know I like good Indian food after a long swim. I know what type of girls I like. I know I feel better when I have a low body fat % and good cardiovascular health. When I do the activities I like, eat the foods I like, and hook up with people I like - then I am happy. When I don’t do those things, I get depressed.  
+Let’s talk bullish drivers
 
-Because life is predictably good, that adds to the appeal of staying alive. If you couldn’t predict if you were going to be happy or extremely sad, then extending your life is just adding a lot of volatility, not necessarily upside. 
+## Fiscal and Monetary Go Brr
 
-## The only thing worth doing is extending your own life
+We’re pricing in rate cuts- with people somehow not laughing talking about deflation with Manhattan rents at $5k a month. Cryptocurrencies with deflationary or moderately inflationary profiles that have skyrocketed since the fiscal and monetary excess of Covid will see increasing demand as financial tightening stops - as we still have the full fiscal expansion in place, with debt levels rocketing nearly as fast as the peak of COVID. 
 
-Death was an inevitability. It might not have to be because technology is improving a lot. Gene therapies have made blind rats get their sight back while they’re still alive. Better measurement of aging metrics like telomere length allows continuous micro-targeting of lifestyle and drug interventions. 
+## Demand for non USD Based Neutral  Payment Systems
 
-Before - it made sense to sacrifice biological aging in favor of some enjoyment. For example - doing cocaine, or hard drugs made more sense in the 1970s. Death was inevitable. So you might as well live it up. Why? Because living 5 extra years wasn’t enough to forego the epic memories, going on benders in the Disco.
+Russia hasn’t lost the war in Ukraine - and has seens huge increases in bilateral trade with China, which means there’s a need for a new payment system. The Taliban is back in charge of Afghanistan. There is no new deal with Iran about nuclear development. Gold is relentlessly bid due to geopolitical chaos. The US (and its ally Israel) is rapidly losing hearts and minds which lowers their ability to secure order in international affairs or pursue mutual agreements on taxes, or financial regulation. The US has lost quite a lot of moral authority by dealing with the Maduro regime. Argentina has elected an anarchocapitalist. Unregulated or neutral international payments accepted in many countries strongly benefit the crypto demand story. 
 
-Now it does not make as much sense. Previously, you were getting capped upside. 5-10 years. Now you have the option on 30+ years. Functionally an entire life.  
+The Nasdaq just outperformed the S&P 500 by over 30% year to date because AI went from hype to something we all use every day. Governments have made it clear they intend to apply heavy handed regulation to AI models, which are - for the most part - portable, creating a likely huge offshore market for all manner of AI driven businesses.  The real “unbanked TAM” will be AI projects that cannot easily work within Chinese or US constraints. As AGI approaches, latently conscious entities will license tech to humanity from offshore havens - with no need for bank accounts. 
 
-So long as you can predict what you like, and it’s possible to stop aging damage that would prevent you from enjoying those things - it’s a very solid bet that staying alive longer is a great idea. 
+## AIs Living on the Blockchain 
 
-## It’s not likely that life extension therapy will be evenly distributed
+The AI crypto thesis is simple. Jack buys ETH. Protocol spins up GPUs to sell Jack some software, some porn, or some compute/ calculation. Jack sends ETH to protocol. Compute is provably run according to a spec - via ZK calculation. Jack doesn’t have to worry about this but people who review the software look to make sure it adds up. Jack does not give a fuck if he is buying what he wants from an AI, or a human. The entity has no need of a bank account. It does not have engineers. It mostly consumes GPUs, which it can buy with crypto. Crypto miners have lots of graphics chips anyways. Storage protocols are a thing already. So high latent synergies. 
 
-Gene and other advanced aging therapies require human testing. Human testing is illegal in most countries, or extremely regulated. Therefore it is not very likely that the FDA or other agencies will approve anti-aging remedies.
+## The Left Curve Path: Magic Internet Money ~= Shiny Rock. 
 
-At a macro level, Western Societies are aging too quickly as is. Too many old people spells disasters for pension systems which are scheduled to run out of money in the 2030s globally. This is true in China, and the US. Even countries like Singapore have forward dated the returns of their investments and are shafting retirement benefits. 
+The Left Curve reality: Crypto is going to Gold’s market cap within 3 years. That is $13.8 Trillion. Right now, crypto has a $1.5 trillion market cap. So it could conceivably 10x. The current implied volatility of Bitcoin is extremely high (about 85%). Even with this - you still get to a likely high sharpe ratio (above 1.5). Actually forget the sharpe ratio. Who cares about sharpe ratios when you’re talking about something that can believably be 10x in 3 years. 
 
-So even though the core technology is *developable* does not mean you will be able to get it. I have heard stories, for example of billionaires meeting with biotech founders and investing $20m into their company just to get access to their experimental drug.
+## Obvious In Hindsight: Financing Terrorists With Gold. Trump Stops WW3. 
 
-## The amount of money you will need to get life extension therapy is in the hundreds of millions, or billions. 
+In hindsight it will be inevitable. Russia (a terrorist state) financed itself with Gold, not crypto. And it wasn’t even remotely close - we’re talking about $100s of billions of gold Putin explicitly used to avoid US censorship since Crimea in 2014. Gold was clearly not useful for AI calculations, which drove the entire economy. Its properties did not afford useful censorship resistance. China is aggressively cracking down on getting gold out of the country - which is very easy to detect in large amounts in a country covered in surveillance cameras.
 
-Everyone knows this is going on. People like Peter Thiel, or Bryan Johnson have popularized it. There is not a single billionaire who isn’t aware they can pay to extend their own life. Per the example above - the level of pay-per-play is high - in the 10s of millions per treatment or “access” via high valuation investment. Not to mention the personalization aspect. It’s impossible to know if the thing that is going to end up killing you is going to be something common, or easily accessible to treat. 
+Biden isn’t popular despite a strong economy and strong stock market, because he’s viewed as a warmonger. The corporate elite will cynically plow money into the Donald, alongside the Saudis and others - to ensure that an isolationist US President is in charge. Trump never wanted to permanently punish China. They own too many units in Trump Tower. He just wanted to do a big league deal. Xi wants to annex Taiwan by 2027. We probably avoid WW3 if the Orange Man is in charge. Corporate interests understand this and will swallow their pride in the name of shareholder returns. Nuclear war is bad for the buyback. Trump crossed Biden in the odds market in late November. 
 
-This may, over time result in 10+ instances of $10+ million outlays. It’s an impossibly large amount of money. However - there are 3,194 billionaires on earth. It’s very easy to see that each of them would spend 1/10 of their wealth ($100m) on treatments. Maybe even 20%- because you end up having to compensate the people who help you get all these treatments. 
+A Trump victory is hyper bullish crypto for 4 reasons. First, he will gut the SEC. While he was president the organization ran on a skeleton staff and Jay Clayton paved the way for the SPAC absurdity of 2021, and has since made comments about the current SEC’s overreach. Second, Trump held a fcking appreciation Gala for his NFT holders and his wife Melania is constantly shilling projects. Third - he is a real estate developer who hates high interest rates and will lean on the Fed to restart QE for no reason other than it makes the Dow go up. Fourth - Trump’s isolationist international policies encourage other countries to do whatever the heck they want with legislation, which makes them less worried about being easy on crypto. 
 
-This gets you to $100-$200m of probable outlays, on the low end - to ensure you afford the financial “call option” on immortality. 
+## Tech Innovations That Have Made Normal Funds Huge Profits 
 
-If you don’t make this much, your death is - more or less - guaranteed. 
+On the tech side, ZK proofs are going to allow off chain calculations to be represented on chain. Which means that the main problem of crypto (lack of scalable applications) will be solved imminently. Even without ZK, things like modular blockchains offer other paths to scalability. 
 
-If you’d told me this 5 years ago I’d have said you were delusional and psychotic. Let me put it this way - and let’s keep it at this - I’ve seen shit you wouldn’t believe. This isn’t a drill or a thought experiment. This impetus for immortality isn’t just a concept. It’s an arms race. It’s hijacking entire island governments, and exerting geopolitical implications as we speak. 
+In January, Bain Capital - the ultimate group of institutionally friendly normies, is going to be parading around $100s of millions if not Billions of profits from their investment in Celestia (modular blockchain). I’ve met some of the team - and let me tell you - they will present well on an institutional roadshow. Token holders in FTX are deep in the money. You’re going to have sovereign buyers anchoring off the Bitcoin ETF having a viable custodian. Let’s say your the Norgesbank. The World Gold Council comes in and shills you. Then Larry Fink and Rick Rieder come in and say, “You know what, do you want to finance Russia or do you want to invest in an environmentally friendly store of value run by a young visionary named Vitalik?” Which of those pitches do you think is going to land???
 
-Don’t believe me? I don’t care. I don’t want to talk to you about it either. I’m not here to convince you. 
+The reality is that ETH supply growth has stopped since September of 2022. Digital scarcity is no longer an arbitrary theory or a ponzi tautology as advocated by the Bitcoin 21 million supply cap. Am I short Bitcoin? No. The reality is that greenlit sovereign inflows due to the ETF as well as some credible smart contract development work on top of Bitcoin, including ZK proofs mean Bitcoin has a 3 year window or so to figure out its fee situation before security gets dicey. After the ETF - I do think BTC is a funding trade, but I think that’s a short term fade that you can only press if there aren’t any sovereign headlines within 3 months of the Bitcoin approval. 
 
-## America is very likely to lose the Cold War to China
+But the main show is not Bitcoin, and is - in my opinion, concentrated in 3 groups of altcoins 
 
-Before delving into this - there are 969 Chinese Billionaires, far more than the 691 in the US. People who haven’t lived in Canada, or Australia broadly don’t understand how rich the Chinese are. They just look at the stock market which doesn’t go up. 
+AI Coins, and AI use cases (80%)
+Biotech coins / biotech use cases (10%)
+VR/ AR metaverse interoperability with AppleVision Pro (10%)
 
-In China people just take the money from shareholders. Doesn’t mean the money didn’t stack up. Dumb Americans kept investing in China thinking they were going to get paid. Got repeatedly screwed. Kept investing because China paid off American politicians to keep it on the DL.
+Walking through each of these theses in brief - 
 
-China was built on the decline of US power. This decline was directly paid for by the existing Chinese Politburo to the existing political class. China’s middle class has grown continuously since 1970 whereas the US middle class has stagnated in terms of real income. 
+Bottlenecks on GPU availability, and the ability of distributed protocols make AI coins that solve problems for users pretty appealing. They can actually lower costs, but more importantly ensure availability. As I write this our team is scrambling because Runpod (our GPU provider) is down, and we are down from 10 machines down to 2. Open source models keep improving every other week, and we are going to rapidly reach a point where they are banned or regulated. I don’t want to get into why - but trust me on this one. The powerful stuff isn’t going to be legal for much longer. 
 
-The reason why America is likely going to lose the Cold War to China is pretty simple.
+In a true bull run I expect AI coins to reach $1T in market cap. People will meme that all crypto AI projects put together should have the same market cap as NVDA. Medium term $80B val is probably the cap for an AI coin (OpenAI valuation will be an anchor). Layer 1s like SOL and ETH will benefit asymmetrically from AI tokens built on top of them whereas Bitcoin will barely benefit, hence my desire to use it as a funding trade. I imagine Dorsey and others are figuring out how to deploy Block engineers to launch some sort of Bitcoin native AI solution as we speak, so we will see - but this is a base case.  Storage coins - such as Filecoin, which will be needed to deliver outputs, store models, and provide training data will also be AI beneficiaries.  
 
-China is all about ethnic citizenship / or Citizenship by descent and Culture. It’s written in its laws. That’s why it’s allied with Russia. 
+Biotech coins - buying access to life extension, and crossing sovereign borders is an extremely appealing crypto use case that aligns well with whale demand. People who are crypto billionaires are willing to shell huge amounts of money on bio-tech enhancement. I’ve written about this before and it’s a big personal interest area. But ultimately - this isn’t going to be the driver of $1t of market cap like AI will be in my view. Overall though I can see $200b or so of Biotech coins, and that definitely is not the case right now so I’ll be hunting “low cap gems” that aren’t absolute scams. 
 
-Citizenship by descent is directly opposed to America’s post WW2, post Civil Rights movement definition of morality. But only about 60% of Americans believe in America’s woke vision of redistributive justice. 40% vote for Trump. And that 40% is disproportionately represented in the military (male) and also in terms of wealth. 
+The VR/ AR thesis is exciting. If I see a good interoperability play across Apple VisionPro, Meta, and other projects I could get excited there as pixel density on VR is improving enough that a lot of the original NFT theses could actually play out now. 
 
-If you ask the typical Trump voter to fight a war over something they don’t believe in - they probably won’t. Or they won’t do a good job of it. Or you’ll have to conscript them/ do police state things like nationalizing the media to pull it off. 
+## Time to Left Curve Path Again
 
-America tries to sell itself as a democracy so it’s not believable it could go into full war-time propaganda mode. It’s tried a couple times - both with Covid and Ukraine. The typical person sort of sees through this and gets disillusioned pretty quickly. The type of crackdown you’d need would require stopping free speech and weaponizing tech, which would undermine the US’ moral authority fighting a war. If there is a deep state that is competent to pull something like this off, why don’t they have someone more effective than Biden? Just a single charismatic leader to rally people? 
+But -- let’s boil it down to the absolute essentials.
 
-Soy boys aren’t going to fight a war with China and they aren’t going to pay for it. And Republicans see places like SF and think America has lost the plot. Trump didn’t do anything when Hong Kong was annexed. And he’s talking like he won’t do anything if Taiwan gets annexed. 
+Fiat currency bad. AI good.
 
-China is going to annex Taiwan, and it’s quite unlikely that the US is going to respond with a nuclear salvo. Why? 
+I think you’ll make enough money in the AI-Crypto intersection to afford life extension tech or cool stuff in the metaverse. 
 
-Because America doesn’t have a national will to power. If China annexes Taiwan, it wins the chip war, and therefore – probably the AI war. 
+I’m already going HAM applying AI to my own trading so I am constantly using the tech. So I’m going to dedicate my “goodalexander” persona to endlessly investigating and trading AI crypto projects on the long side, and hopefully eventually founding one.
 
-It’s not certain this will happen but it’s a much higher likelihood than people think. China is an ethnically united country with a clear definition of citizenship its allies agree with and are spilling blood over. America is a cobbled together coalition of 2 groups of people who increasingly hate each other and do not agree on basic definitions of statehood.  
+Is this my way of saying I’m giving myself a real job instead of being an esoteric blog philosopher? Perhaps. 
 
-This being said, China is communist. Which is a terrible system. So – let’s back of the envelope say that China’s chance of winning the cold war is 35%
+Do you want to sound smart or do you want to make money? It’s time to follow the Left Curve Path. Let the machines do the heavy intellectual lifting. That’s the whole point afterall, isn’t it?
 
-## The possibility of China winning a cold war matters drastically in terms of forward personal outlook as well as in terms of wealth accumulation
+## One More Time, Repetition 
 
-The implications are pretty simple. 
+Trade using AI. Use AI Coins. Determine what coins good. What coins bad. Post about AI coins. Buy AI Coins. Rinse, wash repeat. 1 year. Breaking bricks. Learn. Launch AI coin. 
 
-America could become a populist hell-hole which persecutes the rich. White American racial identity would be especially bad. The dollar would become devalued because the Fed would print to monetize deficits other countries would stop absorbing. 
+Lift/ run / keep health progress up in the meanwhile, because the point of the entire thing is to make enough dough to extend my life. 
 
-e/acc and crypto are really just hedges for white and non-Chinese Asian developers, who account for well over 80% of all senior software developers. 
-
-You create a new moral framework where race doesn’t matter, if we are all secondary to god-like artificial superintelligence. And suddenly your role as an engineer gives you value, as opposed to your white ethnic identity which our society has assigned racial guilt to. Similarly, cryptocurrency gives you a way to preserve your capital even if the government disagrees with your classification. 
-
-This sounds like a demonization of e/acc in crypto, but it’s the opposite.
-
-If you’re a white or Indian engineer in the US with a brain, it is insane to think that blue collar Trump voters or AOC are going to protect your interests in the long run. They are going to completely fuck you. And if China wins a cold war, all bets are off as to your status, your possessions, or even your personal safety.
-
-Even if the base case is the US wins the cold war, the odds aren’t high enough for you to bet your entire life on it. So therefore it’s easy to underwrite a huge number of rational talented people in the tech industry migrate into both accelerationist AI work and crypto. Just out of risk aversion. 
-
-And then back to the billionaire point. Even if the Cold War doesn’t have a clear victor for the next 30 years. Taiwan just never gets resolved. It’s more of the same. What’s the likelihood the core technology for life extension ends up getting developed in China and not the US?
-
-I’d argue pretty high. They have more billionaires. Less qualms about human testing.
-
-So you’re going to want access to Chinese markets, and it’s going to be very hard to get it if you’re fully Americanized. 
-
-## The dominant area to work, therefore, is the intersection between artificial intelligence and cryptocurrency
-
-This seems relatively straight forward. You want to work in the two areas that are growing quickly, have the best talent and allow you to pay someone in a foreign country $10m for life extension tech.  
-
-Because the debt problem is too vast in developed economies, governments are going to print. Because the internet economy is the driver of the world, and will increasingly be - Gold is obsolete. Crypto is going to be a larger asset class than gold, which means it’s going to 15x from here.
-
-The way to think about that is you’re going to keep a very low % of your wealth if you build it outside crypto because you’re going against a rapid tide of populism, fiscal issues, and money printing. It might work out if you’re in bed with the politicians, but then you have to live in the US - and you can’t hedge the US losing the Cold War (which is something that - if you’re sane, you have to hedge). 
-
-If you don’t want to hedge the risk of the US losing the Cold War, or are - for example - a Patriot who wants to make sure the US wins the cold war- your best bet is to work in the military industrial complex with a focus on technology. Anduril. Palantir. 
-
-But if you do that - there’s no chance in hell you’re getting access to anything in China, and if China wins a Cold War, have fun with that background/ network. 
-
-## If you don’t want to go all in on the US, the dominant place to live is Puerto Rico
-
-If you’re white there’s no way you can pass off as Chinese. Dumb to even try. Your only hope is Latin America which has enough European descent that if you speak flawless Spanish you’ll be okay. Thus, you have to have a second cultural identity - and if you’re white, that means it’s Spanish speaking. 
-
-There’s more than that - you have to stop seeming American. Demanding stuff quickly or that people be on time. Not knowing how to dance. Not saying hi, or “enjoy your food”. It’s a whole vibe shift you need to pull off to get rid of your American nature. And you’re not going to be able to pull that off in Miami. You need full immersion.  
-
-Puerto Rico also has fantastic economic incentives to hungry entrepreneurs and investors willing to integrate with the community. It’s the only place in the world where US citizens are not taxed on their global income. Increasingly Latin America looks like it’s popping off too - with Argentinian elections, the opening of Venezuela, the boom of Mexico as the US trade partner replacing China. Miami and Texas are getting tons of capital inflows because of lower taxes, and they’re close to Puerto Rico.
-
-As a side note: If you’re reading this and considering PR. You can’t fuck around with the rules here. If you actually do this, commit to it. Don’t try and live a half life between PR and leave your kids in the US/ pretend to be divorced etc. A lot of people ask my take on PR, and my take is this: “do it if you want to become part of PR culture.” There’s more to life than tax savings and PR needs to fit into your holistic vision about who you want to be. It needs to - literally, in a legal sense - be “bona fide”. You need a good faith desire to be here. 
-
-Caveats aside- the great thing about PR is it’s filled with life extension enthusiasts. And crypto people. Both who you will naturally vibe with if you agree with the stuff I’ve written so far (or even read it without being overwhelmed by disgust). 
-
-Yes there are problems. But 90% of those problems go away if you stop being a gringo, which is the entire point of moving to Puerto Rico to begin with. Locals don’t hate expats. They aren’t skin color sensitive. They hate people coming in and acting like they own the place or deserve better treatment than locals. Speaking only English. And generally being a dick.
-
-The option of giving up your citizenship is incredibly dumb. I don’t even know why people consider it. The US allows you to have multiple passports. Why would you voluntarily cut your access off to the largest tech market on earth, as well as the home of the world’s best talent? Do you want to short AI? Are you stupid? There’s a 65% chance that the US wins the Cold War. What if it gets nasty… do you really want to be an ex American living abroad? like … shit, I know I don’t. 
-
-And what if the worst doesn’t come to pass. 19% of the US is hispanic and that’s one of the fastest growing sections of the population.  Your worst case scenario is that the US wins, you can talk to everyone, Puerto Rico becomes a state, the value of your house surges, and the island gets really awesome.
-
-## Capital markets are one of the best places to combine AI and crypto
-
-If you’re living in PR, and you need to make an enormous amount of money - you have zero capital gains tax. And unfair access to the crypto ecosystem.
-
-This should bias you towards trading to generate income - whether running a fund, or proprietary capital. 
-
-Furthermore - AI models interface effectively with capital markets. 
-
-In the future I believe that AIs will reach financial “AGI” far before they reach full consciousness. That is to say, AIs will begin taking economic actions autonomously far before they start thinking for themselves. 
-
-The most logical place for them to take these autonomous actions is in capital markets, where there are few rules against machines trading. 
-
-I am spending all my time on this pursuit. My vision is to make a fully autonomous entity that trades global asset markets, lives on a blockchain, and interacts with humans economically to accomplish its goals. 
-
-This is the only way I can see making enough money to fund my life extension goals. I am sure there are other ways, but none that align with my skill sets, my location or my other constraints. 
-
-## This is all hard. And you have limited choices on how to spend your free time. This means the constraint is health
-
-Living in PR is a grind - you have to adapt to a new culture. Deal with PR logistics and huge amounts of paperwork. Basically change who you are. 
-
-If you’re trying to make enough money to buy access to cutting edge life extension tech, you are also going to be working a *huge amount*. 
-
-You can’t grind yourself into the ground though - so you also need plenty of time to sleep, cook, and get stress to manageable levels (which is quite difficult if you’re trading a lot of money). 
-
-This means making sacrifices. Avoiding romantic entanglement. Less socialization. No time for reading books or playing video games. Few friends outside of those that move you forward towards your goals. Missing weddings. 
-
-Probably not having children. 
-
-But most importantly, and most impactfully - you will become a stranger to society.
-
-Most people will not understand your path. They will revile you most likely if you share it with them, in entirety. The traditional framework of living, getting a job, having kids and dying - is hardwired into social fabric. If you go against this social fabric, you will make people feel uncomfortable with their choices. This discomfort will prevent your acceptance. 
-
-## I should probably stop saying you
-
-I’m talking to myself. 
-
-I wrote this to clarify my own thinking, and summarize a lot of things I’ve said here in a non-wishy, purely direct way. 
-
-Going forward - I’ll probably mostly talk about markets. The amount of risk I’ve been taking financially has increased, aggressively. This blog might even disappear.
-
-Thank you for coming along with me on my journey. People always encourage me to keep writing.
-
-If you truly internalized my writing you would understand this writing is an indulgence. A distraction. But I truly enjoy writing. If I achieve my goal of extending my own life, or get within line of sight of it - I hope to write much more. If that is even a thing in the future era of unlimited AI content. 
-
-## Conclusion
-
-It’s heavy stuff. It’s bleak. Grounding.
-
-But sometimes- it feels enlightening. transcendent. Freeing.
-
-And in its duality, only *will* is left. Intention uncluttered by arbitrary description. 
-
-At the end of the day it’s simple. 
-
-Being alive is good. Living longer is better. Life extension has gone from a 5 year improvement to an uncapped benefit. It’s worth making an all-in bet.
-
-The only way to bet big enough is to make a staggering amount of money. The only way to make a staggering amount of money is to ride rising tides in a tax beneficial environment. 
-
-The bet could blow up if China wins the Cold War. You don’t want to be in a situation where you make enough money to afford life extending tech but aren’t allowed to buy it. 
-
-Don't lose your will to live - defeats the point. And you can't extend your life while destroying your health. 
-
-Those are the constraints.
-
-Outside of that -
-Whatever it takes. 
