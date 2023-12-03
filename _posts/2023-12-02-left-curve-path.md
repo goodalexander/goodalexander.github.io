@@ -4,6 +4,14 @@ title:      The Left Curve Path
 date:       2023-12-02 11:21:29
 summary:    AI Good. Fiat Bad. What's your plan, anon? 
 ---
+## What Is The Left Curve
+
+Most internet denizens know this meme by now... but, for reference
+
+![LeftCurve](https://goodalexander.com/images/AIGOOD.png)
+
+It pays to keep it really simple. 
+
 ## The Morpheus Bull
 
 A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money. 
