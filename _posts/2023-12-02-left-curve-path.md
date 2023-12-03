@@ -8,7 +8,7 @@ summary:    AI Good. Fiat Bad. What's your plan, anon?
 
 A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money. 
 
-Because the nature of money is changing. If the real “Bull” arrives it’s actually the Fiat “bear”. That is to say - governments thought adding endless was a free lunch but it’s increasingly accelerating into an untenable situation. And the only way to deal with it is by pretending you’re borrowing at low rates, and inappropriately easy monetary policy in the face of obvious inflation. 
+Because the nature of money is changing. If the real “Bull” arrives it’s actually the Fiat “bear”. That is to say - governments thought adding endless debt was a free lunch but it’s increasingly accelerating into an untenable situation. And the only way to deal with it is by pretending you’re borrowing at low rates, and inappropriately easy monetary policy in the face of obvious inflation. 
 
 Thus this is in crypto terms, the Morpheus Bull Run - referencing the meme where Neo asks Morpheus, “You’re telling me I will be able to convert all these Bitcoins into millions of dollars?” And Morpheus smiles knowingly with his gapped front teeth and says, “No Neo - I’m telling you when you’re ready you won’t have to.”  
 
@@ -24,7 +24,7 @@ We’re pricing in rate cuts- with people somehow not laughing talking about def
 
 ## Demand for non USD Based Neutral  Payment Systems
 
-Russia hasn’t lost the war in Ukraine - and has seens huge increases in bilateral trade with China, which means there’s a need for a new payment system. The Taliban is back in charge of Afghanistan. There is no new deal with Iran about nuclear development. Gold is relentlessly bid due to geopolitical chaos. The US (and its ally Israel) is rapidly losing hearts and minds which lowers their ability to secure order in international affairs or pursue mutual agreements on taxes, or financial regulation. The US has lost quite a lot of moral authority by dealing with the Maduro regime. Argentina has elected an anarchocapitalist. Unregulated or neutral international payments accepted in many countries strongly benefit the crypto demand story. 
+Russia hasn’t lost the war in Ukraine - and has seens huge increases in bilateral trade with China, which means there’s a need for a new payment system. The Taliban is back in charge of Afghanistan. There is no new deal with Iran about nuclear development. Gold is relentlessly bid due to geopolitical chaos. The US and its ally Israel are rapidly losing hearts and minds which lowers their ability to secure order in international affairs or pursue mutual agreements on taxes, or financial regulation. The US has lost quite a lot of moral authority by dealing with the Maduro regime. Argentina has elected an anarchocapitalist. Unregulated or neutral international payments accepted in many countries strongly benefit the crypto demand story. 
 
 ## AIs Living on the Blockchain: The Real Unbanked TAM 
 
