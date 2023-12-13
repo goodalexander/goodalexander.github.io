@@ -13,7 +13,7 @@ First - I believe the market is rigged. There isn’t a printer that goes brr. C
 
 This is a good business. It wouldn’t be if Central Banks stopped rigging markets. But they won’t. Because there isn’t adequate demand for the mountain of debt created by an unprecedented fiscal blowout which also raises inflation. 
 
-## Fundamental Volatility is Compressed
+## Rigging Compresses Fundamental Volatility
 
 Second - because the market is rigged, it compresses the fundamental volatility of stocks to only a couple days around earnings. Everyone has credit card data, real time Instragram download data and much more powerful tools than they did 10 years ago - to measure the performance of companies. Company management also has far more intra-quarter meetings. So when you see something like META stock dropping 26% on earnings - you have to ask - how? 
 
@@ -22,7 +22,8 @@ How can a $300b stock with nearly perfect real time information and constant inv
 My answer? The omnipresence of ETFs combined with the endless bid from asset price manipulation means that while companies aren’t releasing earnings, their prices are driven by totally non-fundamental actors. So even though earnings volatility should drop if we live in a real-time data driven society, this is not true in practice because the market is rigged. And rigging moves fundamental volatility into an explosive, quarterly format. 
 
 I profit on this volatility in two ways. First - I design strategies to react to earnings very quickly and at scale. And second - I identify options which systematically misprice earnings vol. This is the other side of the coin. I have an idea - intra-quarter, how assets get distorted, which gives me an idea about the risk reward of responding to earnings. As earnings are kind of like the bubble of that distortion getting popped. I know better than other people how full the balloon is.
-## The Rigging Results in the Destruction of Purchasing Power 
+
+## Rigging Results in the Destruction of Purchasing Power 
 
 Third - the periodic debasement of currencies due to this endless rigging is exploitable. Central banks cannot (or do not) coordinate their intervention. And the debt driven system is based on proximity to the hegemony (which is the US). 
 
