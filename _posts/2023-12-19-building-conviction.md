@@ -22,4 +22,16 @@ order and fix currency.
 
 Currency - if it is to continue to exist - will be Consciousness. 
 
-<div style="height: 100vh"><script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-background-color="#08090c" data-text-color="#FFFFFF" data-button-color="#ff1a75" data-button-text-color="#FFFFFF" data-title="goodalexander" data-description="crypto trading" data-site="https://goodalexander.ghost.io/" async></script></div>
+
+<div style="height: 60vh">
+  <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" 
+          data-background-color="#08090c" <!-- Adjust this color to match your site's background -->
+          data-text-color="#FFFFFF" 
+          data-button-color="#ff1a75" 
+          data-button-text-color="#FFFFFF" 
+          data-title="Subscribe to goodalexander" 
+          data-description="Stay updated with the latest in crypto trading" 
+          data-site="https://goodalexander.ghost.io/" 
+          async>
+  </script>
+</div>
