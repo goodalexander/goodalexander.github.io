@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>https://postfiatorg.github.io/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on goodalexander</title>
+    <link>https://goodalexander.github.io/tags/</link>
+    <description>Recent content in Tags on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.github.io/papermod-cover.png</url>
+      <link>https://goodalexander.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://goodalexander.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Dec 2023 11:21:29 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blackprint</title>
+      <link>https://goodalexander.github.io/tags/blackprint/</link>
+      <pubDate>Thu, 28 Dec 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/blackprint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>long-form</title>
+      <link>https://goodalexander.github.io/tags/long-form/</link>
+      <pubDate>Thu, 28 Dec 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/long-form/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>markets</title>
+      <link>https://goodalexander.github.io/tags/markets/</link>
+      <pubDate>Tue, 12 Dec 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/markets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>crypto</title>
+      <link>https://goodalexander.github.io/tags/crypto/</link>
+      <pubDate>Sat, 02 Dec 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/crypto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>philosophy</title>
+      <link>https://goodalexander.github.io/tags/philosophy/</link>
+      <pubDate>Mon, 20 Nov 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>health</title>
+      <link>https://goodalexander.github.io/tags/health/</link>
+      <pubDate>Sun, 24 Sep 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/tags/health/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
