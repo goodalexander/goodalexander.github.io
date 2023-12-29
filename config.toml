@@ -50,7 +50,7 @@ disableXML = true
 
 [params]
   env = "production"
-  description = "Good PaperMod"
+  description = "goodalexander: financial cyberpunk. crypto investment and equity options trading"
   author = "goodalexander"
   # author = ["Me", "You"]
   defaultTheme = "auto"
