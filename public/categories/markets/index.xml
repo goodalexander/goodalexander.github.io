@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markets on goodalexander</title>
+    <link>https://goodalexander.github.io/categories/markets/</link>
+    <description>Recent content in markets on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.github.io/papermod-cover.png</url>
+      <link>https://goodalexander.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Dec 2023 11:21:29 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.github.io/categories/markets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Blackprint - A Manifesto for the New World Order</title>
+      <link>https://goodalexander.github.io/posts/the-blackprint/</link>
+      <pubDate>Thu, 28 Dec 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/posts/the-blackprint/</guid>
+      <description>how to survive and thrive in the post nation-state AI driven reality</description>
+    </item>
+    <item>
+      <title>Asylum Sidepots. How to Escape the Matrix and Stay Out</title>
+      <link>https://goodalexander.github.io/posts/asylum-sidepots/</link>
+      <pubDate>Sat, 05 Aug 2023 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/posts/asylum-sidepots/</guid>
+      <description>Escaping the socio-spiritual prison from the starting position of a speculator
+Sidepots in the Asylum When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc.
+My father is a renegade. He viewed markets as a way to escape the simulation.</description>
+    </item>
+    <item>
+      <title>The Absurdity Supercycle- Being Early After the End of History</title>
+      <link>https://goodalexander.github.io/posts/absurdity-supercycle/</link>
+      <pubDate>Sun, 20 Feb 2022 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.github.io/posts/absurdity-supercycle/</guid>
+      <description>reflections on recent price action, ARK investments, Palantir, and crypto</description>
+    </item>
+  </channel>
+</rss>
