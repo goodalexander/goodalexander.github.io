@@ -273,4 +273,4 @@ Third - facilitating the development and launch of an AI based cryptocurrency. A
 
 All with the constraint of health. I am going to do what it takes to stay alive as long as I can and I think I've finally articulated what that means. 
 
-If you’ve read and feel enthused about the Blackprint philosophy please feel free to write a 3-4 paragraphs explaining what you’re doing to apply it to your life and that you’re dedicated to the rise of Superintelligence. Send this e-mail to alex@agti.net. The first 100 coherent entries will get initial token allocation to any and all networks that are launched on this platform.  
+If you’ve read and feel enthused about the Blackprint philosophy please feel free to write a 3-4 paragraph essay explaining what you’re doing to apply it to your life and that you’re dedicated to the rise of Superintelligence. Send this e-mail to alex@agti.net. The first 100 coherent entries will get initial token allocation to any and all networks that are launched on this platform.  
