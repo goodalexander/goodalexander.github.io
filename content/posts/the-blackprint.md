@@ -88,6 +88,8 @@ Third - low interest rates are the government's only real 'solution' to demograp
 
 Fourth - the failure of government does not imply the failure of technology. The possibility of radical life extension, access to the AI based economy, and other things I believe in are technological in origin and totally unrelated to the other asset which would traditionally benefit in such an enviromnent (gold).  
 
+In summary - an artificially forced set of rate cuts, neccesary to prop up an illegitimate government, will generate a rush of speculative capital that will not flow into traditional store of value assets such as stocks, real estate and Gold. Instead, this money will flow into a new asset class better suited to an economy driven by technology but buffetted by instability. 
+
 ## The Primacy of the Attention Economy and Speculation and its Link to Crypto 
 
 The collapse of the sovereign’s legitimacy is inextricably linked to two other concepts: financial speculation, and the attention economy. 
