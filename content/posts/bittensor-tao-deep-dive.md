@@ -87,15 +87,21 @@ python3 -m pip install --upgrade bittensor
 btcli --help
 Now we create a wallet, following https://docs.bittensor.com/getting-started/wallets
 btcli wallet new_coldkey --wallet.name usertest-coldkey
+
 We create a mnemonic for the cold key, which is: 
 track pool skate regular reject that shift marine parrot kit retire hamster
+
 We create a password for the cold key is : 
-asdfasdfasdf
+REDACTED
+
 btcli wallet new_hotkey --wallet.name usertest-coldkey --wallet.hotkey usertest-hotkey
+
 We create a  mnemonic for the new hotkey, which is:
-asdfasdf
+REDACTED
+
 Assuming you’re running on a Mac and you have homebrew, you must then install the tree package.
 brew install tree
+
 Mac-mini-5:~ Neo$ tree ~/.bittensor/
 /Users/Neo/.bittensor/
 └── wallets
@@ -104,12 +110,14 @@ Mac-mini-5:~ Neo$ tree ~/.bittensor/
      ├── coldkeypub.txt
      └── hotkeys
          └── usertest-hotkey
+
 We will attempt to register on the network via proof of work registration:
 btcli subnet register --netuid 3 --wallet.name usertest-coldkey --wallet.hotkey usertest-hotkey
 
 Unfortunately, proof of work registration did not appear to function correctly. Also, the alternative would have cost ~$120 in TAO at the time of this writing, and would not have guaranteed that our node would stay up. Therefore, we follow the “all local” guide, listed (here)[https://github.com/steffencruz/ocr_subnet/blob/main/docs/running_on_staging.md]:
 
 Once everything was installed on the server, the way to run a local node was via : 
+
 username@username3:~/subtensor$
 BUILD_BINARY=0 ./scripts/localnet.sh
 Now, when running the local net, if you follow the tutorial and run the command: 
@@ -117,13 +125,16 @@ btcli subnet create --wallet.name owner --subtensor.chain_endpoint ws://127.0.0.
 
 In order to create a subnet, then you will get a failure message along the lines of : 
 Your balance of: τ300.000000000 is not enough to pay the subnet lock cost of: τ1,000.000000000
+
 In order to generate the subnet, I needed to run the faucet function for the owner 4 times. The functions generated 300 T each time, rather than 100 T, for some reason. 
 
 Running the faucet produced output something like this:
 (tpython) username@username3:~/bittensor-subnet-template$ btcli wallet faucet --wallet.name owner --subtensor.chain_endpoint ws://127.0.0.1:9946
+
 Run Faucet ?
  coldkey: ____
  network: local [y/n]: y
+
 Enter password to unlock key:
 ⠇ Solving
 Time Spent (total): 0:00:07.904206
@@ -131,16 +142,22 @@ Registration Difficulty: 1.00 M
 Iters (Inst/Perp): 76.9KH/s / 75.9KH/s
 Block Number: 412
 Block Hash: b'0xa9387394d5c0553e3c7199e355ed2a35989adfe076ce790a470e17a68d6a539d'
+
 I created a subnet, but when trying to register a miner with it, I encountered another error, as follows:
+
 Error: argument subcommand: invalid choice: 'recycle_register' (choose from 'list', 'metagraph', 'lock_cost', 'create', 'pow_register', 'register', 'hyperparameters')
 
 Changing the command to use “register” instead of recycle register allowed it to run, but then the miner had an insufficient balance, so I was forced to use the faucet for the miner as well. Once I gave the miner some tao, the command ran successfully, as follows:
 
 (tpython) username@username3:~/bittensor-subnet-template$ btcli subnet register --wallet.name miner --wallet.hotkey default --subtensor.chain_endpoint ws://127.0.0.1:9946
 Enter netuid [0/1/3] (0): 1
+
 Your balance is: τ300.000000000
+
 The cost to register by recycle is τ0.500000000
+
 Do you want to continue? [y/n] (n): y
+
 Enter password to unlock key:
 Recycle τ0.500000000 to register on subnet:1? [y/n]: y
 📡 Checking Balance...
@@ -354,13 +371,17 @@ Root of Trust: Trusted computing establishes a "Root of Trust," which is a set o
 * Data Protection: Trusted computing ensures that data stored on the computer is encrypted and only accessible to authorized users. Encryption keys can be stored in the TPM, making it more secure than software-only solutions.
 * Attestation: The ability of a device to attest to its identity and the integrity of its software and hardware configuration. This can be used to ensure that a system is secure before connecting it to a sensitive network.
 Least Privilege: Ensuring that processes and users have only the minimum privileges necessary to perform their functions, minimizing the potential damage from exploits or malware.
+
 In BitTensor’s case, hardware remains unknown, it is a service level abstraction. Secure Boot is irrelevant as no software being executed is signed. Root of Trust is arbitrary and determined by the subnetwork operator. Software Integrity Verification does not occur. There is no data protection. There are no attempts to enforce any system of privileges at the chain level, and since the software layer is malleable there is effectively no privilege enforcement. 
+
 Now, you may reasonably argue that with a cloud service provider, it is impossible to know how secure the environment is according to these criteria, without specific guarantees / audits being provided. That is certainly true. 
+
 Consider, however, that these service providers are bound by legal agreements and liability, which constrains their actions. With BitTensor, there is no trust, no enforcement, and no recourse if something goes wrong. Under such circumstances, it is probably wise to ask: What kind of jobs would I run on such a network? Would I be able to guarantee quality of service for my own purposes or to my customers? 
 
 We will return to these types of questions and network design ramifications when we start to evaluate the various claims. For now, let’s take a diversion and look at a conference paper BitTensor published, as well as their white paper.
 
 ## Conference Paper
+
 BitTensor (BT) is a network premised on the idea that AIs grade each other and tokens are allocated accordingly. BT’s conference paper (https://bittensor.com/pdfs/academia/NeurIPS_DAO_Workshop_2022_3_3.pdf) starts with a glancingly brief standard literature review, which quickly makes some bold assertions, such as the following (about the history of machine learning as a whole): 
 “However, since intelligence produced by these models is always lost, this approach is quite inefficient. 
 
@@ -369,20 +390,31 @@ Users have to retrain models on their own systems to replicate, or improve upon,
 The reason that this statement is bold is that it presupposes that task learning of neural networks could be usefully portable across datasets, architectures and contexts; this has not yet been achieved.
 
 Given what  we know about the design of the network (all computation occurs off-chain and is basically fungible), this also seems like a strange angle to take. If nothing is being archived by design, how is this network any different than the status quo of existing closed / inaccessible models in terms of knowledge loss?
- The paper also asserts that model evaluation is currently primarily academic rather than real world, and offers the contention that : 
+
+The paper also asserts that model evaluation is currently primarily academic rather than real world, and offers the contention that : 
+
 “There must be a more efficient and objective method to evaluate AI model performance”
 The paper then launches, similar to the “About” page, into a description of a crypto network design intended to solve distributed model evaluation. The architecture is two layers, an “AI Layer” and a “Blockchain Layer.” This description is a bit more detailed than what was listed in “About,” so we will dive in.
 
 ### AI Layer
+
 In the “AI Layer,” each ‘node’ is a neural network, with the network weights for a given node being stored on the blockchain. 
 
-Without going into any technical detail about how it might be possible, the paper asserts that nodes individually and collectively will be able to perform inferences and back propagation. Supposedly, nodes are connected by “synapses” which perform data formatting and sanitization according to unspecified “correct” schemas. A series of diagrams describe what is essentially a standard machine learning process with some extra steps involving connecting models to each other and each node evaluating other nodes’ “informational value,” in an unspecified way. Without explaining how, the paper also asserts that the architecture involves a mixture of experts that is weighting node contributions. 
+Without going into any technical detail about how it might be possible, the paper asserts that nodes individually and collectively will be able to perform inferences and back propagation. 
+
+Supposedly, nodes are connected by “synapses” which perform data formatting and sanitization according to unspecified “correct” schemas. 
+
+A series of diagrams describe what is essentially a standard machine learning process with some extra steps involving connecting models to each other and each node evaluating other nodes’ “informational value,” in an unspecified way. Without explaining how, the paper also asserts that the architecture involves a mixture of experts that is weighting node contributions. 
 
 The AI layer discussion seemingly ignores the major issue with implementing any large scale classical neural network architecture in this fashion: latency and network transport reliability. It also badly underspecified how this network corresponds to a Mixture of Experts architecture, and does not cover how extremely large data sets could be integrated into this network. 
 
 ### Blockchain Layer
 
-The paper asserts that the AI layer is running in a separate process as compared to the blockchain layer, and that they communicate using system memory or via messages (some form of interprocess communication). The blockchain is based on an existing chain called the “Polkadot Substrate.” In this scheme, nodes rank other nodes based on their usefulness, and 50% of nodes must vote that a node is trustworthy in order for it to receive rewards. It then goes into a standard blockchain discussion of the warring generals problem. It describes algorithms by which value is allocated (the Shapley method), and asserts that scores using large language models of various sizes on the network have already been calculated. The network is sharded for scoring to complete, as scoring the whole network would be computationally intractable. 
+The paper asserts that the AI layer is running in a separate process as compared to the blockchain layer, and that they communicate using system memory or via messages (some form of interprocess communication). The blockchain is based on an existing chain called the “Polkadot Substrate.” 
+
+In this scheme, nodes rank other nodes based on their usefulness, and 50% of nodes must vote that a node is trustworthy in order for it to receive rewards. 
+
+It then goes into a standard blockchain discussion of the warring generals problem. It describes algorithms by which value is allocated (the Shapley method), and asserts that scores using large language models of various sizes on the network have already been calculated. The network is sharded for scoring to complete, as scoring the whole network would be computationally intractable. 
 
 The paper then makes the following assertion regarding the current state of the network: “The Bittensor network officially launched in November 2021. As of writing this paper, the network
 contains 4096 peers; all of which are running a language model that is actively querying others for information or serving requests from other peers on the network. With a total sum of 500 Billion parameters running across 4096 peers, it is possible to query and infer from every node in the network and receive an output of logits, embeddings, or plain text responses given a prompt. Each peer is either running a custom language model, or a pre-trained model such as GPT-J (Wang and Komatsuzaki [2021]), GPT-Neo, (Black et al. [2021]), or GPT-2 (Radford et al. [2019]) downloaded from HuggingFace API (Wolf et al. [2020])’ 
@@ -418,25 +450,41 @@ Confusingly, this seems to suggest a setup wherein miners (peers) are evaluating
 The model section elaborates on the mechanism by which nodes are established as trusted: “We define peers who have reached ’consensus’ as those with non-zero edges from more than 50 percent of stake in the network. (This is simply the normalized values of (TT⋅S)>0.5 (TT⋅S)>0.5). To ensure the mechanism is differentiable we define this computation using the continuous sigmoid function. The sigmoid produces a threshold-like scaling that rewards connected peers and punishes the non-trusted. The steepness and threshold point can be modulated through a temperature ρ and shift term κ.”  
 
 Essentially, the idea being expressed is that “trust” values are stored in a matrix with a rater and a rated entity, and if the entity being rated isn’t connected to enough staked-in raters, then it is not trusted. 
-The base assumption is, of course, that those with a large stake are to be trusted. In a situation where all the computations are fully obscured, there is no inherent reason to adopt this assumption. We can compare this situation to that of Bitcoin - if the Bitcoin protocol is violated, then the network’s transaction ledger “breaks.” It is in the interest of the people who have invested in the currency to maintain the integrity of the ledger. In the case of BitTensor, no such disincentive for bad behavior exists. If a smaller amount of tokens are issued to a miner than accord with the stated ‘rules,’ the situation that caused this cannot even be reconstructed because all transactions are off chain. There is no dire consequence for fraud in the network, because it doesn’t impact the actual transaction ledger. In the absence of any way to gather evidence, all that is left is “messaging.” We will discuss some actual scenarios in a later section.
+The base assumption is, of course, that those with a large stake are to be trusted. 
+
+In a situation where all the computations are fully obscured, there is no inherent reason to adopt this assumption. We can compare this situation to that of Bitcoin - if the Bitcoin protocol is violated, then the network’s transaction ledger “breaks.” It is in the interest of the people who have invested in the currency to maintain the integrity of the ledger. In the case of BitTensor, no such disincentive for bad behavior exists. 
+
+If a smaller amount of tokens are issued to a miner than accord with the stated ‘rules,’ the situation that caused this cannot even be reconstructed because all transactions are off chain. There is no dire consequence for fraud in the network, because it doesn’t impact the actual transaction ledger. In the absence of any way to gather evidence, all that is left is “messaging.” We will discuss some actual scenarios in a later section.
 
 In any case, the whitepaper next outlines a mechanism for making sure entities are actually producing “correct” weights. This involves the use of “bonds,” : 
-“Using the B bond matrix, the chain redistributes the normal incentive scores ΔS=BT⋅I  ΔS=BT⋅ILike market based speculation on traditional equities, the peers that have accumulated bonds in peers that others will later value attain increased inflation themselves. Thus it makes sense for peers to accumulate bonds in peers which it expects to do well according to other peers with stake in the system - thus speculating on their future value. Finally, we adapt this mechanism slightly to ensure peers attain a fixed proportion of their personal inflation. For instance, 50 percent, ΔS=0.5BTI+0.5I. ΔS  ΔS=0.5BTI+0.5I.ΔSbecomes the mechanism step 
-update which determines network incentives across the n peers.”
 
-If you’re reading this like I am, you may find yourself scratching your head. The stated goal is to incentivize “correct” calculations, but the mechanism of incentivization is simply to reinforce the preferences of existing stakeholders. These are not compatible concepts. To make this crystal clear: Imagine that you are a validator. Your optimal strategy under this regime is to do what others do and support the work of currently popular validators, not answer correctly. If what others happen to be doing is useful, then that’s great, but the incentive of others is probably to “do the least amount of work possible to get a payout,” which is not driving correctness of results, either. The model paper does a good job of outlining how a peer should behave in this network, with its influence balancing equations that are based on ‘correctness’ as perceived by the group. What it does not do is remedy the network’s flawed approach to modeling motive and incentive. 
+“Using the B bond matrix, the chain redistributes the normal incentive scores ΔS=BT⋅I  ΔS=BT⋅ILike market based speculation on traditional equities, the peers that have accumulated bonds in peers that others will later value attain increased inflation themselves. Thus it makes sense for peers to accumulate bonds in peers which it expects to do well according to other peers with stake in the system - thus speculating on their future value. Finally, we adapt this mechanism slightly to ensure peers attain a fixed proportion of their personal inflation. For instance, 50 percent, ΔS=0.5BTI+0.5I. ΔS  ΔS=0.5BTI+0.5I.ΔSbecomes the mechanism step update which determines network incentives across the n peers.”
+
+If you’re reading this like I am, you may find yourself scratching your head. The stated goal is to incentivize “correct” calculations, but the mechanism of incentivization is simply to reinforce the preferences of existing stakeholders. These are not compatible concepts. 
+
+To make this crystal clear: Imagine that you are a validator. Your optimal strategy under this regime is to do what others do and support the work of currently popular validators, not answer correctly. If what others happen to be doing is useful, then that’s great, but the incentive of others is probably to “do the least amount of work possible to get a payout,” which is not driving correctness of results, either. 
+
+The model paper does a good job of outlining how a peer should behave in this network, with its influence balancing equations that are based on ‘correctness’ as perceived by the group. What it does not do is remedy the network’s flawed approach to modeling motive and incentive. 
 
 The white paper spends some time next on describing standardization of input and output formats, which is necessary to make the software work. Where the paper goes next is to an informative but entirely theoretical attempt to address the fungibility of its design (the problem that we expressed earlier as being incompatible with its goal of evolving ML models toward ‘intelligence’). 
-Essentially, the problem is : What happens if a good model drops off the network? Without a copy of the model’s weights, the knowledge is lost forever. The solution proposed is a sort of half argument about how smaller models can use distillation techniques to learn to respond like larger models. While it is true that distillation can work under certain circumstances with less complex models, it is highly unlikely that it will work with more complex models and architectures that have been highly optimized in various ways. 
+
+
+Essentially, the problem is : What happens if a good model drops off the network? Without a copy of the model’s weights, the knowledge is lost forever. 
+
+The solution proposed is a sort of half argument about how smaller models can use distillation techniques to learn to respond like larger models. While it is true that distillation can work under certain circumstances with less complex models, it is highly unlikely that it will work with more complex models and architectures that have been highly optimized in various ways. 
 
 If you’d like to prove this to yourself, ask why not every model is performing at the level of GPT 4 over a year after it has been released, when access to its outputs at a huge scale is readily available. 
+
 Furthermore, take away any financial constraints and consider that Google and Anthropic are still not at parity, despite the virtually unlimited resources at their disposal. A simpler argument around this argument is this: BitTensor does not build in sufficient incentives for true model distillation to happen and it does not have valid performance metrics to ever understand whether correct model distillation did occur. 
 
 If a model drops from BitTensor for whatever reason, and its creator doesn’t want it to come back and doesn’t release the weights, then it is gone. This paragraph is emblematic of BitTensor’s approach : It raises a very serious concern, only to handwave it away with the lightest possible recourse to a theory that explains how said concern could be addressed, while not addressing said concern in any meaningful way in the actual implementation. 
 
 The last paragraph is perhaps the most tenuous. It is a short proof that frames the problem of collusion in a way that dodges the core issue. The authors write: 
+
 “We assume that the proportion of stake in the honest graph is more than that found in the dishonest graph SA≫SB  SA​≫SB​and that the chain has reached consensus L<0  L<0. Since all peers in B are disjoint from A, our loss term −RB⋅(CB−0.5)>0  −RB​⋅(CB​−0.5)>0is positive. Because L<0  L<0it must be the case that RA⋅(CA−0.5)<0  RA​⋅(CA​−0.5)<0is negative and there are peers in the honest sub-graph A who are connected to the majority."
+
 Of course in this system design those with more stake will achieve consensus, that’s almost a tautology given that the equations are written into the code. 
+
 What is not a given, is that any new miner entering into the system will be able to identify ‘honest’ versus ‘dishonest’ nodes. What a miner will see is the popularity of individual nodes, not cabals. And because there is nothing forcing a miner to behave in any particular way, and it is costly to make judgments about other nodes, it is quite likely that an honest miner will join the ‘dishonest’ team. 
 
 The whole problem framing is written as if there is perfect information about the problem (which is closer to what you have on networks where the incentive structure is in code, or the contract code is on the blockchain), whereas in this network design there is literally no information about the decision structure of other nodes. We cannot pretend that staking and mining behavior will be rational and logical in an information vacuum. For all the whitepaper’s ranting about perfect capitalism, capitalism functions based on information and mental models of other actors. No such information need be present in this network design. 
@@ -448,20 +496,29 @@ In this section we’ll review the claims the network made, and whether those cl
 
 ### Claim: Bittensor is the ETH of AI
 Claim
+
 “Bittensor brings the same type of abstraction which Ethereum added to Bitcoin for running decentralized contracts, but onto Bitcoin's inverse innovation — digital markets”
+
 Assessment:
+
 Not true. Ethereum added a contract abstraction on chain. BitTensor is a non blockchain based scoring mechanism whose scores are stored on a blockchain. BitTensor fundamentally lacks traceability with respect to its reward mechanisms; it does not and cannot provide any guarantees about the fairness of reward issuance. Ethereum is a contract platform you can use without trust if you scrutinize the code of its contracts, but BitTensor is a market platform that inherently requires trust because the incentive mechanisms are obfuscated. To say that these things are analogous is disingenuous at best.
 
 ### Claim: Tao Has the Potential to be a Full Stack AI coin 
+
 “[we are] building a hierarchical web of resources, ultimately culminating in the production of intelligence; intelligence leverages computation, which leverages data, which leverages storage, then finally leveraging oracles and data procurement and into infinity, all within the same ecosystem.”
 
 Assessment:
+
 Unlikely. BitTensor’s network design is fungible. Model weights are never recorded anywhere on-chain, so knowledge is not preserved. The preservation of knowledge is necessary for common work toward a goal like machine intelligence. Furthermore, the incentive structure of the network is such that it is advantageous for miners to keep their models, tools and techniques secret, as sharing these will result in a loss of rewards for a given miner. 
+
 Claim:
+
 In various writeups, the creators of BitTensor are keen to point out that they are merely an overarching market framework that fully supports decentralized varieties of service products for computing that we currently experience as centralized. 
 
 Response:
+
 To assess this claim, let’s look at some of the service products on the market today, and consider whether BitTensor brings desirable characteristics to the table. 
+
 * Storage and File Sharing: Services like Dropbox, Google Drive, and Microsoft OneDrive offer cloud storage solutions. They allow users to store files online, share them with others, and access them from any device with internet connectivity.
 * BitTensor Storage and File Sharing: It is certainly possible to implement storage and file sharing on BitTensor, but such solutions also have the following undesirable properties:
 Data retention is not guaranteed. Since storage is not secured on chain, storage claims by miners must be constantly verified at great computational cost. This is particularly misaligned with storing machine learning data, which must be used repeatedly for training runs.
@@ -489,6 +546,7 @@ There is no obvious way for a non technical customer to interact directly with t
 Consider that most chat users are casual, and would not necessarily wish to stake money in order to chat. There is no easy way to onboard customers in this system. You could build a web service that handles everything, and somehow bridges to the BitTensor framework, but you also have to build a currency bridge in that case, so that users can pay you cash which you then convert yourself, or so that users can pay you other tokens which you can convert to use to buy stake in BitTensor network to increase your rewards to cover your operating costs and also to defend against network attacks. 
 
 Compare this to the alternative, which is that you rent a few servers you can trust from a reliable provider and accept cash via PayPal or Bitcoin for less overhead than would be required to get the same amount of compute from BitTensor, and BitTensor starts to look like a really bad deal. 
+
 Email Services: Examples include Gmail, Microsoft Outlook, and Zoho Mail. These services provide email communication, often with added functionalities like calendar integration, contact management, and file sharing.
 
 * BitTensor Email Services: About as problematic as chat, for the same reasons. Add the following problem:
@@ -497,9 +555,13 @@ Since you need a domain name to send email from as an email service provider, yo
 
 * BitTensor Database Services:
 Databases have to run unencrypted since homomorphic encryption (https://en.wikipedia.org/wiki/Homomorphic_encryption) isn’t really supported yet. 
+
 Would you trust arbitrary nodes on a fungible easy to attack network with any sensitive data? What would your customers think if they learned that you were sharing such data on such a network?
+
 Would your customers tolerate random outages due to network resources randomly dropping?
+
 How would you ensure consistency among databases? How would you treat lost writes? In a world where any database could drop at any time, how would you pick an authoritative database?
+
 These are the basic challenges that a BitTensor database service would have to overcome.
 
 * Compute: Platforms like RunPod, Vast.ai, Lambda Labs, Digital Ocean and many others provide compute for an hourly fee. 
@@ -541,13 +603,17 @@ Summing up the response - it is fair to say that the claim that BitTensor’s ne
 ### Claim: Distributed Ownership of Machine Intelligence
 
 “[we will] ensure that the benefits and the ownership of machine intelligence are in the hands of mere mortals.” 
+
 Response:
+
 False if “mere mortals” is meant as a proxy for “the public.” The design of this network is explicitly against an open source ethos as code and weights are not required to be shared. Any sharing that occurs would be against the economic incentives put in place by the network. 
 True if “mere mortals” is meant as a proxy for “the early high stake adopters of BitTensor” and said mortals are the ones primarily developing models to run on the network.
 
 ### Claim: Bittensor is an Intelligence Commodity 
 “In summary, digital commodity incentive mechanisms are the perfect markets, and perfect markets have the amazing quality that, when aligned, they are unstoppable and unequivocally powerful… Bittensor focuses primarily on building value-creating markets.”
+
 Response:
+
 False. BitTensor is not building a perfect digital commodity market, and is therefore not value creating in the same sense. Let us use a commonly accepted definition of a perfect market, as follows:
 
 A perfect market is an idealized market structure that establishes certain conditions under which firms and individuals operate. To be considered a perfect market, a number of key criteria must be met:
@@ -574,6 +640,7 @@ There is no way for a buyer of text outputs to choose a provider as these are ar
 10. Free Entry and Exit: New providers of large language models should be able to enter the market without significant barriers. Similarly, existing providers should be able to exit the market without facing prohibitive costs or legal barriers. This means minimal regulatory, technological, and financial barriers to entry and exit.
 
 This is not true on BitTensor either. There is an effective buy-in fee for miners to enter both literally, and also in the sense that there may be low utilization of their hardware until they are deemed ‘trustworthy’ (which may never happen, depending on how verifiers are coded). 
+
 Non-Intervention by Governments: The market should operate without government interventions like subsidies for certain providers, tariffs on text outputs, or regulations that significantly favor certain providers over others.
 
 This is untested.
@@ -581,11 +648,15 @@ Summing it up, it is not believable to claim that BitTensor is a perfect market.
 
 ### Claim: TAO is transferable 
 Tao is transferable
+
 Response:
+
 True.
 
 ### Claim: TAO is Censorship Resistant
+
 Tao is a censorship resistant token
+
 Response:
 False. Let’s define a censorship resistant token as follows:
 A censorship-resistant token in the context of cryptocurrency shall refer to a digital asset that is designed to be immune or highly resistant to censorship from any centralized authority, such as governments, financial institutions, or any single entity. The key characteristics of such a token include:
@@ -603,17 +674,20 @@ In conclusion, it is a stretch to call BitTensor “censorship resistant” base
 ### Claim: Auditability
 
 The BitTensor network is auditable
+
 Response:
 In a literal sense for what it captures, yes, but not in a useful way for miners, validators or customers.  As mentioned earlier, transactions mostly occur off chain with a minimal “value was created” record after the fact. It would be impossible for a customer or any other participant to use on-chain information to reconstruct the activity associated with a transaction. Therefore transactions (and incentive issuances) are effectively not auditable. 
 
 ### Claim: Transparency
 The BitTensor network is transparent
+
 Response:
 Not really, no. See all previous discussions. 
 
 ### Claim: Effective ML Models
 
 BitTensor provides an efficient and objective way to evaluate ML model performance
+
 Response:
 BitTensor does provide an objective way for a validator to evaluate model performance; it requires that such evaluations occur totally unsupervised. It is not a particularly efficient way to evaluate performance for several reasons:
 Evaluations must be performed on the results of every query as responses cannot be assumed to meet some baseline definition of ‘good enough’
@@ -623,12 +697,13 @@ Evaluations of novel responses require that a validator be sophisticated enough 
 ### Claim: MOE Architecture
 
 BitTensor’s AI layer is a mixture of experts architecture.
+
 Response:
 It can be. It’s entirely optional and depends on how the subnetwork validators query miners. It is not a default feature of the network as it is something the tutorial on large language models has to explicitly implement.
+
 Claim:
 “The Bittensor team is now training more sophisticated models directly on the Bittensor protocol to work towards achieving performance comparable to current state of the art models.”
 Response:
-
 
 It seems unlikely. The protocol as specified has insufficient bandwidth to facilitate the training of a very large competitive model, and BitTensor includes no primitives for sharded training with weights being shared back. Therefore, if there is an effort underway, it would have to be on a classical GPU cluster that is under BitTensor’s control, which would violate the ‘spirit’ of this statement in the sense of it not being a community driven effort, if perhaps not the letter. 
 Evaluation of published validator / miner code does not turn up any sharded training approaches. 
