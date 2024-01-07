@@ -186,4 +186,4 @@ I breathe in deeply. One more go. To reference the book, “The Diamond Age” -
 The grand joke, perhaps funny to only me, is that it’s entertainment - capitalized by trading - that will allow AI to enter the world of things. 
 
 
-[Surprise Tao Pepe](/images/tao_pepe.png)
+![Surprise Tao Pepe](/images/tao_pepe.png)
