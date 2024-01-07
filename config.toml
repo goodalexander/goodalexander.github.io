@@ -72,7 +72,7 @@ disableXML = true
 
 [params.homeInfoParams]
   Title = "goodalexander: financial cyberpunk"
-  Content = '''Crypto and options trading. Long form writing. Can also [Subscribe to E-Mail Newsletter](https://goodalexander.github.io/subscribe/). Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.github.io/disclaimer)'''
+  Content = '''Crypto and options trading. Long form writing. Can also [Subscribe to E-Mail Newsletter](https://goodalexander.com/subscribe/). Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.github.io/disclaimer)'''
   
   [[params.socialIcons]]
     name = "twitter"
