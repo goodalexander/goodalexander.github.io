@@ -184,3 +184,6 @@ I will go until I’ve made a robotic version of myself that can beat me at my o
 I breathe in deeply. One more go. To reference the book, “The Diamond Age” - I must make my Illustrated Primer. An Illustrated Primer is a mechanical training guide for trading profitably. 
 
 The grand joke, perhaps funny to only me, is that it’s entertainment - capitalized by trading - that will allow AI to enter the world of things. 
+
+
+![Surprise Tao Pepe](/images/tao_pepe.png)
