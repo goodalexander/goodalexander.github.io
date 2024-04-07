@@ -14,6 +14,8 @@ Since 2021, $1 invested in Nvidia and short ARKK continuously rebalanced would b
 
 This article details - what I think is the logical extension of this trend. A new economic primitive called an Agentic Protocol, which is an AI driven cryptocurrency with cash flows that accrue to its holders. 
 
+The rise of AI Agents like Devin as well as new [open source equivalents](https://x.com/jyangballin/status/1775114444370051582) that show promise re: directly replacing engineering teams make this inevitable, in my view. Agentic Protocols are 100% of my focus (I am building one and investing in their rails). And because nobody knows what they are I thought it would be worth taking some time articulating them.   
+
 ARKK failed vs Nvidia - fundamentally because - the vast majority of normal companies including in the tech sector do not really benefit from AI. 
 
 Even though this thesis has 12x-ed - people continue to argue the opposite. That mysteriously, the companies in Cathie Wood’s dumpster fire of a portfolio just haven’t benefited from AI yet. But for some reason, they will soon. 
