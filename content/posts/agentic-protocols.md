@@ -22,7 +22,7 @@ Nvidia has trounced ARKK - fundamentally because - the vast majority of normal c
 
 Even though AI has 12x-ed vs "AI beneficiaries" - people continue to argue and position themselves for the opposite. That mysteriously, the companies in Cathie Wood’s dumpster fire of a portfolio just haven’t benefited from AI yet. But for some reason, they will soon. The AI industry, and even its chat bots are economically aligned to spread this narrative - because the alternative, that AI does not broadly benefit society - will almost certainly incite industry regulation.  
 
-Though ARKK is easy to pick on, it is representative of an entire school of thought - and backed by Tiger Cub, Bill Hwang (who lost all of his own money instead of investors). Thus its underperformance points to a broader failure to recognize that AI does not actually benefit the "innovation economy" - that instead, it replaces it. It's an important asset - not just due to its liquidit and publicity, but because it is a benchmark for IPO valuations and an entire much larger asset class (venture capital). 
+Though ARKK is easy to pick on, it is representative of an entire school of thought - and backed by Tiger Cub, Bill Hwang (who lost all of his own money instead of investors). Thus its underperformance points to a broader failure to recognize that AI does not actually benefit the "innovation economy" - that instead, it replaces it. It's an important asset - not just due to its liquidity and publicity, but because it is a benchmark for IPO valuations and an entire much larger asset class (venture capital). 
 
 Everyone had the wrong bet. Prices have 12x-ed in their faces. And yet the "AI beneficiary" proponents continue to spread their gospel, and collect hundreds of millions of fees annually fleecing retail investors. 
 
@@ -36,8 +36,9 @@ Agentic Protocols are only possible because of the crypto and the ability to acc
 
 At their core - Agentic Protocols - are a bet that AIs do tasks better than people. That they can buy the compute to do these tasks cheaply via distributed protocols. They can sell their work in a native currency that is hard to shut down. And can use the profits to improve themselves and progressively eat the real economy. 
 
-
 ## Short Humans and Long AI
+
+### What is An Agentic Protocol 
 
 Nvidia surging while the so-called innovation economy collapses is where we are now, and where we have been for the last 12 months. But the hyper up-move of Bitcoin, and Crypto AI as well as the onslaught of new AI agent technologies is bringing us to where the puck is headed over the next 12 months. 
 
@@ -55,10 +56,11 @@ An  Agentic Protocol is a rejection of the traditional venture model, as well as
 
 An  Agentic Protocolis an extension of Sam Altman’s projection - that there will be a large number of two person unicorns. 
 
-Before Getting into the Why of an Agentic Corporation I want to state what it is, outright:
+Before Getting into the Why of an Agentic Protocol I want to state what it is, outright:
 
 An  Agentic Protocol is a self-developing AI driven entity that aims to have no human employees. It generates cash flow by licensing IP or other technology products, facilitates network economics or speculates. It has its own native cryptocurrency token which 1] is the currency by which its products are sold or licensed which 2] allows human or AI users to participate in the upside of its financial activities 3] validates and pays for the opex of the system which is primarily compute, training and storage.
 
+### A Visualization of What Agentic Protocols Look Like 
 Because Agentic Protocols are not something most people are familiar with - a quick visualization.
 
 Imagine a set of computer programs, interacting with one another acting as digital engineers. Controlled by a product manager - an open source GPT. This manager tells them what code to write. They iteratively test the code, using compute resources they buy from crypto protocols such as IONet. They store their output using storage protocols such as Filecoin or Arweave. Then sell the outputs to either other protocols or people. 
@@ -70,6 +72,8 @@ Some Agentic Protocols will be influencer farms, others hedge funds, others on-c
 An  Agentic Protocol rather than hiring, raising money, or focusing on optics/ IPOs focuses on the utility of its community (as well as community ownership),  and development and deployment of models that allows its financial output to be higher. 
 
 When you boil it down - if AI valuations are right - ranging from Nvidia, to Bittensor in crypto - the all in bet to make is that AI Agents can generate huge amounts of cash flow for a very small number of owners in a way that generates broken unit economics vs human employees. 
+
+### Structurally Higher Intelligence Margins vs Corporations 
 
 You want to scalably harvest the value of AI application and short the prices of model deployment, and compute. I will refer to this as the term “Intelligence Margin” - which is the spread between the cost of compute and the potential revenue of compute. 
 
@@ -103,15 +107,15 @@ A cryptocurrency token sits on top of a network and allows users of a product on
 
 A cash flow business is a non-speculative entity that delivers a low risk product - such as a coffee brand, or consulting services to a small set of customers 
 
-At its core - an  Agentic Protocol is a mix of a Cash Flow Business and a Cryptocurrency Token. It’s a cryptocurrency that aims to use AI to generate sufficient cash flow such that its token supply is continuously increasing for the benefit of its users, who also use the protocol in a way that generates utility for the service that it is selling. 
+At its core - an  Agentic Protocol is a mix of a Cash Flow Business and a Cryptocurrency Token. It’s a cryptocurrency that aims to use AI to generate sufficient cash flow such that its token supply is continuously decreasing for the benefit of its users, who also use the protocol in a way that generates utility for the service that it is selling. 
 
-At its core - an Agentic Protocol is a rejection of the previous wealth model in the pre-AI era where your proximity to humans is what mattered. It is a rejection of venture. Of Wall Street. And even of crypto.
+At its core - an Agentic Protocol is a rejection of the previous wealth model in the pre-AI era where your proximity to humans is what mattered. It is a rejection of venture. Of Wall Street. And even of crypto. 
 
 It’s the ultimate doomer asset class. Crypto with cashflows and capital returns. 
 
 ## Hyper Deflationary Censorship Resistant Swarm of AI Powered Digital Hornets
 
-Ethena is one of the first crypto projects that has reached astronomical valuations because its protocol generates massive cash flows.
+Ethena is one of the first crypto projects that has reached astronomical valuations because it generates massive cash flows.
 
 As geopolitical issues worsen in the Middle East, the US and China continue to accelerate their cold war, the Ukrainian theater of war shows no sign of ending - we are in a market where Gold is skyrocketing, at the same time as long bonds are rising. 
 
@@ -161,7 +165,7 @@ Agentic Protocols are likely to generate funds on speculation, deployment of sys
 
 In the future - as the economy becomes more and more AI based, Agentic Protocols will do business with one another in ways that are - essentially unintelligible to human analysts. The life cycle of entire industries and companies will be weeks long (look at Github development now). The entire investing paradigm in such a world would change fundamentally. Thus - treasury management will be a key 
 
-An interesting historical analogue would be Royal Dutch Shell - which made fortunes speculating for decades in Southeast Asia before finding and exploiting any real oil reserves. 
+An interesting historical analogue would be Royal Dutch Shell - [which made fortunes speculating for decades in Southeast Asia](https://www.amazon.com/Prize-Epic-Quest-Money-Power/dp/B0CVHGNZ27/ref=sr_1_1?crid=2QZEMUMUW3ZGI&dib=eyJ2IjoiMSJ9.TOKJ7Z6rmunQi_ru2HlTmesC72eAWPYUT9sQjjwgoCNy3cBhbg2vrKcaRziA3_D1Wnd8ZEYGoTpFVZBEodpad-3A3mqXPuVwndEwon4LI_yBtH8Ky1bLri8R1fbG_QVewyT9Vjp6sjwl1EqLeO0bVk4RM0W5sTY32CbWPevmym6IgTHaSe5RO-bFfZn20hpneQTOLJr9gjS1tQEzHYwST6bHThPti7gbceVMktXvFJ0.WSSa_6Om03Bo8TxKmSJA7WD69ToCTgmxabksF_NcA5E&dib_tag=se&keywords=the+prize&qid=1712500787&sprefix=the+prize%2Caps%2C157&sr=8-1) before finding and exploiting any real oil reserves. 
 
 ### Expenses 
 
@@ -180,6 +184,8 @@ This will also provide surface area for Agentic Protocols to gain traction with 
 There also may be a world in which Agentic Protocols simply register as crypto securities - an idea that has been surfaced by Blackrock and others. 
 
 The key point to get across - that as real economic entities - not scams, or memes - Agentic Protocols will gain far more traction and mindshare with traditional conservative capital markets participants. 
+
+The final regulatory tailwind for Agentic Protocols is the ARKK adjacent SPAC boom which made a joke of US capital markets with a huge number of so called Innovation Company IPOs in 2021. Most of these companies are down over 50%, and many - including the first and most prominent (Virgin Galactic) [are down over 80%](https://www.contracts-for-difference.com/features/spacs-disasters/). A sudden boom in cash flow generating technology companies with completely auditable operations would actually be a breath of fresh air from an investor protection perspective. 
 
 ### Censorship Resistance and Security Classification 
 
@@ -205,21 +211,21 @@ Because we cannot predict which country will do better - but that there are acce
 
 The solution is "post sovereign AI" - which is currently being built, that daisy chains links to all the different AI systems outside of the sovereign sandboxes. Though there are some architectural inefficiencies inherent in this system (because you essentially need to use crypto protocols, which is very cumbersome) - these inefficiencies are being overcome and you can currently buy compute and storage on blockchains for cost parity or even a discount vs centralized source. 
 
-The historical analog here would be Glencore - which harvested large profits from inefficiently linked commodity markets (which were so because of 
+The historical analog here would be Glencore - which harvested large profits from inefficiently linked commodity markets (which existed because of the Cold War between capitalism and communism which is now reaccelerating)
 
 And we also know that the amount of war and conflict is constantly increasing - both due to the cold war between the US and China, but also due to the second order effects of the US withdrawing from its role as the World Policeman (which is now seeming to result in conflict in Iran and Israel). 
 
 ### Declining Human Intelligence and Birth Rates
 
-Student test scores globally are in free fall and have not reversed since COVID. "Global average math scores plummeted by approximately 15 points since 2018—the equivalent of three-fourths of a year of learning—but countries such as Germany, Iceland, and the Netherlands saw their PISA math scores drop by at least 25 points" - per OECD data. Note that this is occurring at the zenith of so-called "digital learning" technology. 
+Student test scores globally have been in free fall since COVID and have not recovered. "Global average math scores plummeted by approximately 15 points since 2018—the equivalent of three-fourths of a year of learning—but countries such as Germany, Iceland, and the Netherlands saw their PISA math scores drop by at least 25 points" - per OECD data. [Note that this is occurring](https://heytutor.com/resources/blog/student-test-scores-are-falling-across-the-world-is-the-pandemic-to-blame/#:~:text=Global%20average%20math%20scores%20plummeted,dip%20in%20average%20math%20scores.) at the zenith of so-called "digital learning" technology. 
 
-The global TFR has more than halved over the past 70 years, from around five children for each female in 1950 to 2.2 children in 2021—with over half of all countries and territories (110 of 204) below the population replacement level of 2.1 births per female as of 2021.
+The global TFR has more than halved over the past 70 years, from around five children for each female in 1950 to 2.2 children in 2021—with over half of all countries and territories (110 of 204) below the population replacement level of [2.1 births per female as of 2021](https://www.healthdata.org/news-events/newsroom/news-releases/lancet-dramatic-declines-global-fertility-rates-set-transform).
 
-In April, ResumeBuilder.com surveyed 1,344 managers and business leaders and found 74% believe GenZ is more difficult to work with than other generations. This is a US based study but similar phenomena are arising in Asia - where a generation of youth has basically checked out from a system where it is impossible to afford a house or family. 
+In April, ResumeBuilder.com surveyed 1,344 managers and business leaders and [found 74% believe GenZ is more difficult to work with](https://www.resumebuilder.com/3-in-4-managers-find-it-difficult-to-work-with-genz/) than other generations. This is a US based study but similar phenomena are [arising in Asia](https://www.atlanticcouncil.org/blogs/econographics/youth-unemployment-in-china-new-metric-same-mess/#:~:text=After%20a%20six%2Dmonth%20absence,for%20December%202023%3A%2014.9%20percent.) - where a generation of youth has basically checked out from a system where it is impossible to afford a house or family. 
 
-Tik Tok was the first major AI application and we've seen what it has done to attention spans and work productivity. And The Tik Tok induced brain death was prior to the age of hyper-AI advancement. The age of incelibacy and declining birth rates was before mass adopted virtual reality headsets get supercharged with insanely addictive digital pornography.  
+Tik Tok was the first major AI application and we've seen what it has done to [attention spans](https://www.amazon.com/Attention-Span-Finding-Fighting-Distraction/dp/1335449418) and work productivity. And The Tik Tok induced brain death was prior to the age of hyper-AI advancement. The age of incelibacy and declining birth rates was before mass adopted virtual reality headsets get supercharged with insanely addictive digital pornography.  
 
-ChatGPT has been around for 12 months. And yet, Biden and Trump - two inept geriatrics, are set to be the leaders of the free world. So clearly Chatbots haven't really moved the needle on our sociopolitical intelligence. Nor will they be allowed to - for the most part, as incumbent political parties constrict their usage to retain power. 
+ChatGPT has been around since November 2022. And yet, Biden and Trump - two inept geriatrics, are set to be the leaders of the free world. So clearly Chatbots haven't really moved the needle on our sociopolitical intelligence. Nor will they be allowed to - for the most part, as incumbent political parties constrict their usage to retain power. 
 
 In 12 months we are going to be wondering why corporate productivity isn’t improving. Why EPS didn’t budge that much. The dawning horror of equity markets as they realize that all the distraction. All the digital addiction. All the vices of society are not going to be "solve" by AI. They're going to be hyper amplified.
 
@@ -227,7 +233,7 @@ It's naiive to argue that humans are going to get smarter because of technology 
 
 ### Increasing Cost of Capital and Taxation
 
-Global debt to GDP is above 3:1 and the fungibility of debt across nations is declining due to geopolitical conflict. This lowers bond market liquidity when it is most needed. War and rising commodity costs, which are endemic to the hedgemon backing away from a role as a policeman - will further exacerbate fiscal problems. Because global wealth disparity is nearing all time highs - it's more or less inevitable that governments act increasingly aggressively to tax the rich. Because rich command most of the capital currently and see where things are going, there will be an animal spirits bid for not just crypto - but crypto native economic models such as Agentic Protocols.
+Global debt to GDP is [above 3:1](https://www.reuters.com/business/global-debt-hits-new-record-high-313-trillion-iif-2024-02-21/#:~:text=%22Around%2055%25%20of%20this%20rise,to%20nearly%20330%25%20in%202023) and the fungibility of debt across nations is declining due to [geopolitical conflict](https://asia.nikkei.com/Spotlight/Datawatch/What-is-behind-the-40-drop-in-China-s-U.S.-Treasury-holdings). This lowers bond market liquidity when it is most needed. War and rising commodity costs, which are endemic to the hedgemon backing away from a role as a policeman - will further exacerbate fiscal problems. Because global wealth disparity is nearing [all time highs](https://wid.world/news-article/whats-new-about-wealth-inequality-in-the-world/#:~:text=The%202023%20update%20of%20the,inequality%20data%20up%20to%202022.&text=The%20top%2010%25%20own%20nearly,almost%20entirely%20deprived%20of%20wealth.) - it's more or less inevitable that governments act increasingly aggressively to tax the rich. Because rich command most of the capital currently and see where things are going, there will be an animal spirits bid for not just crypto - but crypto native economic models such as Agentic Protocols.
 
 The resulting game theory will make it very difficult for any one country to agree on regulating Agentic Protocols. The only real way to put the cat back in the bag would be global agreements which will be impossible to reach while the world's 2 tech super powers are engaged in a cold war. 
 
@@ -238,17 +244,17 @@ As the Utopian "Innovation Investments" fail, IPO stocks struggle, it will becom
 
 ## Conclusion: The Railway to Freedom Is Built But The Train Only Leaves Once
 
-The rails for Agentic Protocols are coming online. Within the next 6 months there will be 15+ major infrastructure launches in the crypto AI arena that will lower the marginal cost structure of creating agentic corporations to close to zero (or even negative when you incorporate airdrops). These launches are already pre-announced and most are heavily oversubscribed by crypto funds who are anxious to capitalize on the AI boom.
+The rails for Agentic Protocols are coming online. Within the next 6 months there will be 15+ major infrastructure launches in the crypto AI arena that will lower the marginal cost structure of creating Agentic Protocols to close to zero (or even negative when you incorporate airdrops). These launches are already pre-announced and most are heavily oversubscribed by crypto funds who are anxious to capitalize on the AI boom.
 
 The resulting rails will be a subsidy to Agentic Protocols the same way that Cloud was a subsidy to B2B Saas. 
 
-Right now everyone is thinking how to build rails, and very vew people are thinking how to build cash flow machines on top of them. This is by far the most exciting thing I've seen in my career. We are talking about a multi billion dollar subsidy for maybe 60-70 actual products being built on top (at most). Imagine Amazon giving your start up a $40 million cloud credit. That's the type of tailwind that Agentic Protocols have because they're still so contrarian. 
+Right now everyone is thinking how to build rails, and very few people are thinking how to build cash flow machines on top of them. This is by far the most exciting thing I've seen in my career. We are talking about a multi billion dollar subsidy for maybe 60-70 actual products being built on top (at most). Imagine Amazon giving your start up a $40 million cloud credit. That's the type of tailwind that Agentic Protocols have because they're still so contrarian. 
 
-This certainly won't happen all at once - but once again - we are so early that virtually nobody is talking about this, despite the fact we have billions of dollars of already pre-committed compute and storage subsidies coming online. Even if you bet on Agentic Corporations from a career perspective - and you're wrong, you probably end up with an extreme margin of safety because there will be such demand for AI Automation services inside traditional corporations - the entire edifice is extremely derisked. 
+This certainly won't happen all at once - but once again - we are so early that virtually nobody is talking about this, despite the fact we have billions of dollars of already pre-committed compute and storage subsidies coming online. Even if you bet on Agentic Protocols from a career perspective - and you're wrong, you probably end up with an extreme margin of safety because there will be such demand for AI Automation services inside traditional corporations - the entire edifice is extremely derisked. 
 
 If you know how to code. Do you really want to build in Biden's America? Or Trumplandia? Do you want to underwrite your business's compatibility with the AOC (or insert_populist_here regime)? 
 
-Do you want to be beholden to the cloud giants who are going to merge with the US government? Do you want to cut off your exit plan and your optionality in the age of superintelligence?
+Do you want to be beholden to the cloud giants which are going to merge with the US government? Do you want to cut off your exit plan and your optionality in the age of superintelligence?
 
 Why? To pay for Bezos yacht or absorb the fiscal deficit? 
 
