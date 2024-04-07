@@ -169,6 +169,18 @@ Traditional corporations might spend on lawyers, share based comp for employees,
 
 Agentic Protocols are crypto native and therefore spend funds on compute from platforms like IONet, storage/hosting from protocols like Filecoin and Arweave, or tasks from the growing array of networks providing calculation overlays (such as Render). Worldcoin will be important in an Agentic Protocol world to verify human tasks - such as customer interaction. 
 
+### Governance and Regulation 
+
+While traditional corporations rely heavily on boards, and traditional share issuances - Agentic protocols will resemble autonomous DAOs - where various stakeholders with protocol ownership and economic value vote to make changes to protocol that increases cash flows.
+
+Compared to existing DAOs, which are notoriously poorly managed due to checked out human 'community managers', Agentic Protocols will be far more professionalized and resemble in "form" a more formal public company. This overhead would be prohibitively high for a human start up - but the reporting capability of a purely algorithmic entity is much higher. 
+
+This will also provide surface area for Agentic Protocols to gain traction with regulators, as compared to other cryptocurrency protocols. Real free cash flow generating entities with public on-chain governance, and extensive reporting that have no human employees or officers and are therefore not securities are a primitive that should be more comfortable for regulators, than say - meme coins, or protocols with massive issuance entirely reliant on "pumps" for value creation
+
+There also may be a world in which Agentic Protocols simply register as crypto securities - an idea that has been surfaced by Blackrock and others. 
+
+The key point to get across - that as real economic entities - not scams, or memes - Agentic Protocols will gain far more traction and mindshare with traditional conservative capital markets participants. 
+
 ### Censorship Resistance and Security Classification 
 
 Traditional cryptocurrency networks have a problem. Crypto markets are constantly changing. For example, the Solana Blockchain has recently faced congestion that has made it unusable. Developers need to work to quickly patch the bug. Because the network requires "common enterprise" of these developers to fix the bug, it conflicts with the laws of many countries which would classify such essential bug mashing as the action of a corporation.  
