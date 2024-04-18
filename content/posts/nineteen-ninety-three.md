@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
-title: "1993"
-date: 2024-04-18T11:21:29Z
+title: "Nineteen Ninety Three"
+date: 2024-04-17T11:21:29Z
 draft: false
 summary: "The end of nostalgia"
 categories: ["markets"]
