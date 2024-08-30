@@ -55,6 +55,8 @@ The second node is the Post Fiat Foundation node, which oversees my own personal
 
 I’ve designed both a locally hosted wallet for security as well as a discord wallet for convenience. Feel free to join my Discord if you’d like to take part in the experiment. 
 
+[Discord Link](https://discord.gg/U6HjgDSmhR)
+
 ## Acceptance Criteria
 
 For me to accept the Post Fiat hypothesis I’d want to see two things
