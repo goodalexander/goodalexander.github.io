@@ -11,7 +11,7 @@ tags: ["long-form","markets"]
 
 In my previous piece, Post Fiat - I discussed how there’s a third model of decision making thanks to AI. Namely, a trustless algorithmic context rich model - which differs fundamentally from that proposed by democratic consensus or authoritarian cults of personality. In that piece I thoroughly cover societal and sociopolitical discussion. In this piece I’ll discuss the more individualistic ramifications of that claim. 
 
-If you want to join the Post Fiat Discord, (follow this link)[https://discord.gg/U6HjgDSmhR]
+If you want to join the Post Fiat Discord, [follow this link](https://discord.gg/U6HjgDSmhR)
 
 The problem with various Eastern philosophies is that they advocate removing the self, but do not replace it with something more powerful. The result is a great sense of inner peace that is susceptible to problems in the outside world. The reason monasteries are built away from society - is precisely because of this vulnerability. The imposition of self, in most cases, is due to external circumstances. The more traumatic those circumstances, the greater the subsequent desire to remove the self. 
 
@@ -127,7 +127,7 @@ The clincher for me is that in an economy of AI agents - it will become increasi
 
 So give it a try if you’d like
 
-I’ve begun implementing this system in (my discord)[https://discord.gg/U6HjgDSmhR] and also have a local python wallet for the rewards to be stored for security reasons. If you want to be part of the experiment feel free to reach out. 
+I’ve begun implementing this system in [my discord](https://discord.gg/U6HjgDSmhR) and also have a local python wallet for the rewards to be stored for security reasons. If you want to be part of the experiment feel free to reach out. 
 
 
 # Subscribe to Get These By Email
