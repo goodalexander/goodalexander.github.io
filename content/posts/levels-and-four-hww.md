@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Levelsio, Amazon Sellers, and the New 4 Hour Workweek"
-date: 2024-08-30T11:21:29Z
+date: 2024-08-29T10:21:29Z
 draft: false
 summary: "AI as a sociocultural movement that enables solo entrepreneurs and bootstrappers"
 categories: ["markets"]
