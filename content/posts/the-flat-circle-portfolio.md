@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "The Flat Circle Portfolio"
-date: 2024-10-03T11:21:29Z
+date: 2024-10-02T10:21:29Z
 draft: false
 summary: "Monetizing the ouroborous economy"
 categories: ["markets"]
