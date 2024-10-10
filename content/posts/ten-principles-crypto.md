@@ -41,7 +41,10 @@ Crypto networks should solve a major problem in existing markets. Here are the b
 ## 8 Focus on security and stability before growth. 
 
 The focus on a crypto network should not be revenue, it should be sound monetary policy. Unlike a stock which assumes regulators will take care of bad actors - a crypto network needs to take care of bad actors via its tokenomics, and tech stack. Too many projects are focused on getting users - but put those users at risk. This only brings pain to both users and exchanges. The growth in the market comes from people demanding sound money. The growth takes care of itself. The “Sound Money” doesn’t. 
-9 Proactively cultivate a sound investor base. The crypto investment case should be designed to dovetail well with family office and Ultra High Net Worth individual demands. The vast majority of low net worth crypto buyers globally want and need stability in their finances - and are better off owning stablecoins. The people who can responsibly take on high volatility assets are ultra high net worth people and their investment arms. The goal of a crypto network should be to cultivate this investor base, not a retail investor base. Retail users are valuable and should be respected, but should not be aggressively solicited for investment. This is a huge focus of regulators - making sure that average people don’t get screwed investing in things they don’t understand. 
+
+## 9 Proactively cultivate a sound investor base. 
+
+The crypto investment case should be designed to dovetail well with family office and Ultra High Net Worth individual demands. The vast majority of low net worth crypto buyers globally want and need stability in their finances - and are better off owning stablecoins. The people who can responsibly take on high volatility assets are ultra high net worth people and their investment arms. The goal of a crypto network should be to cultivate this investor base, not a retail investor base. Retail users are valuable and should be respected, but should not be aggressively solicited for investment. This is a huge focus of regulators - making sure that average people don’t get screwed investing in things they don’t understand. 
 
 ## 10 Be friends with the banks. 
 
