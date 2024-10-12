@@ -39,7 +39,7 @@ Third - he can launch a fund in order to cash himself out of his initial investm
 The dominant strategies are a mix of 2 and 3. Because he’s an investor and financially rational. 
 So I think that’s the path he has to go down - because of his doxed wallets and articulated investment strategy.
 
-##The problem with the cult theory
+## The problem with the cult theory
 
 The thing about cults, is that really strong cults. Like religions. Do not allow membership in multiple cults. And the existing landscape of meme coins is too disparate.
 
