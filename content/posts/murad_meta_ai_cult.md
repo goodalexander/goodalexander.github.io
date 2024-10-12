@@ -21,7 +21,7 @@ The cult is not the coin, or the community. The cult is Murad.
 
 Murad is a strong candidate for running a cult. He lost everything and was crushed by the industry despite being a true believer. His old videos show boyish naivete. And then, he emerged from the ashes with a new thesis and made it all back. This is fundamentally appealing to Millenials, who similarly - are a bit older, and have been destroyed by society. And want to “make it all back”
 
-Murad, is therefore - meme coin Jesus. Offering forgiveness for mediocre careers via hyper gambling. Turning the foul water of decaying youth into the sweet wine of belief and promises of gains. 
+Murad, is therefore - meme coin Jesus. Offering forgiveness for mediocre careers via hyper gambling. Turning the foul water of decaying youth into the sweet wine of belief and promises of gains. He has even grown long dark hair with a beard to add resonance to this image. 
 
 ## The Opportunity
 
