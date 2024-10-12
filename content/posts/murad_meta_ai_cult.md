@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Murad Meta and AI Cult Coins"
-date: 2024-10-10T11:21:29Z
+date: 2024-10-12T11:21:29Z
 draft: false
 summary: "How the Murad Meta inevitably transitions to AI cults (the Post Fiat series)"
 categories: ["markets"]
