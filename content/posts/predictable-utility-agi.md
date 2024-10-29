@@ -61,4 +61,10 @@ The questions about whether you’re “worthy of survival” must be discarded 
 Thus to me the only three sentences are
 1. Life is worth living because predictable utility
 2. It’s possible that life could be extended but getting access to that before AGI hits will be extremely difficult, not just about money, but about getting this particular problem right
-3. Even if it’s a long shot, it’s the only thing worth doing for me
+3. Even if it’s a long shot, it’s the only thing worth doing for me.
+
+# Subscribe to Get These By Email
+
+<div style="height: 50vh">
+<script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-background-color="#2B2B2B" data-text-color="#FFFFFF" data-button-color="#ff1a75" data-button-text-color="#FFFFFF" data-title="goodalexander" data-description="crypto trading" data-site="https://goodalexander.ghost.io/" async></script>
+</div>
