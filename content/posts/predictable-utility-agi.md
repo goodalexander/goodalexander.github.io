@@ -13,7 +13,7 @@ The expression “The only thing certain in life is death and taxes”. There’
 
 Predictable utility. It turns out that we enjoy doing the same things we always enjoy. This sounds mundane. You used to like playing video games? Chances are you still do. You enjoyed blackberries for the last 10 years? Chances are the next handful of blackberries you’ll eat, you will also enjoy. Hate having fights and thinking about taxes? The next fight you have and the next time you’ll pay taxes won’t be pleasant.
 
-Predictable utility is so obvious that people miss it. If you stack things with positive expected utility, that are not addicted - into a basket. You can more or less guarantee that life will be pretty good. 
+Predictable utility is so obvious that people miss it. If you stack things with positive expected utility, that are not addictive - into a basket. You can more or less guarantee that life will be pretty good. 
 
 Now some people will say “Must be nice to be able to do things that you like, I can’t afford that.” What I found when my body was destroyed and I quite literally couldn’t work. At one point - one of the lowest points of my life was telling my girlfriend I’d potentially need her to support us. After being a hedge fund trader. She lost all attraction to me. And everything got worse. So trust me - I get it.
 
