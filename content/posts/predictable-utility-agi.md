@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Predictable Utility, Life Extension and AGI"
-date: 2023-12-19T11:21:29Z
+date: 2024-10-29T11:21:29Z
 draft: false
 ---
 
