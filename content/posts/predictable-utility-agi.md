@@ -52,7 +52,7 @@ What’s more - after AGI hits - in 3-5 years, it will be drastically harder to 
 
 My father is a cancer doctor and has been for 40 years. The patients who survive long odds seemingly have one thing in common. A powerful will to live. They want to keep going - so they follow instructions, keep their health up in other aspects of life, and try experimental therapies. Get second opinions.
 
-That is the mentality I think needs to be brought to the current situation. Life is worth living. Death is the base case. Fight.
+That is the mentality I think needs to be brought to the current situation. Life is worth living. Death is the base case. Fight. Use the full scope of the new experimental technology available - especially AI. It's the only way to move fast enough. Everything is at stake. 
 
 The old social paradigm of your life “being worth something” because of your status. Because you’re a provider. Because you were a “good person” etc. Goes out the window when confronted with the reality that life is worth living, life extension is possible, and the results are not going to be accessible as a base case. 
 
