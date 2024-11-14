@@ -244,3 +244,20 @@ Don't take either pill. When you see Morpheus offering them to you - run.
 The Overseers won't stop you unless you break their rules. Have clarity of Intention, clarity of process and avoid tilt. If you bend the rules of the Matrix a bit getting to your objectives, this ensures that the Matrix itself isn't destroyed in the process. 
 
 To escape the Aslyum means to understand its nature, its purpose - and to walk away knowing those who built it are now watching your every move. 
+
+
+<div style="height: 30vh">  
+    <script 
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
+        data-background-color="#2B2B2B"    
+        data-text-color="#ffffff"
+        data-button-color="#2d2d2d"       
+        data-button-text-color="#ffffff"
+        data-title="goodalexander" 
+        data-description="Navigating the Post Fiat reality" 
+        data-site="https://goodalexander.ghost.io/" 
+        data-locale="en" 
+        async>
+    </script>
+</div>
+
