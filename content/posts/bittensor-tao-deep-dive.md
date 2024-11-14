@@ -800,10 +800,18 @@ If we are right about our fundamental thesis that machine intelligence accrues f
 
 We hope you enjoyed our report. If you have feedback, e-mail alex@agti.net and remember to subscribe to get these by email 
 
-<div style="height: 50vh">
-    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-background-color="#2B2B2B" data-text-color="#FFFFFF" data-button-color="#ff1a75" data-button-text-color="#FFFFFF" data-title="goodalexander" data-description="crypto trading" data-site="https://goodalexander.ghost.io/" async></script>
+<div style="height: 30vh">  
+    <script 
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
+        data-background-color="#2B2B2B"    
+        data-text-color="#ffffff"
+        data-button-color="#2d2d2d"       
+        data-button-text-color="#ffffff"
+        data-title="goodalexander" 
+        data-description="Navigating the Post Fiat reality" 
+        data-site="https://goodalexander.ghost.io/" 
+        data-locale="en" 
+        async>
+    </script>
 </div>
 
-If you've come this far - please enjoy this extremely rare Tao Pepe. 
-
-![Surprise Tao Pepe](/images/tao_pepe.png)
