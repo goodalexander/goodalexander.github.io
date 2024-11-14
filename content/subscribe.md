@@ -5,6 +5,8 @@ url: "/subscribe"
 summary: "subscribe to goodalexander"
 ---
 
+Thanks for your interest in GoodAlexander - the form below will subscribe you to my Ghost Newsletter for free 
+
 <div style="height: 50vh">  
     <script 
         src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
