@@ -15,7 +15,7 @@ Thanks for your interest in GoodAlexander - the form below will subscribe you to
         data-button-color="#2d2d2d"       
         data-button-text-color="#ffffff"
         data-title="goodalexander" 
-        data-description="crypto trading" 
+        data-description="Navigating the Post Fiat reality" 
         data-site="https://goodalexander.ghost.io/" 
         data-locale="en" 
         async>
