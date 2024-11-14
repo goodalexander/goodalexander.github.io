@@ -5,10 +5,10 @@ url: "/subscribe"
 summary: "subscribe to goodalexander"
 ---
 
-<div style="height: 100vh">
+<div style="height: 50vh">  
     <script 
         src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
-        data-background-color="#1e1e1e"   
+        data-background-color="#2B2B2B"   
         data-text-color="#ffffff"
         data-button-color="#2d2d2d"        
         data-button-text-color="#ffffff"
