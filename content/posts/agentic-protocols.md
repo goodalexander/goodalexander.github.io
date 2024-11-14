@@ -255,3 +255,20 @@ It's actually going to a beautiful place. Where the vocabulary of outlook meetin
 Like a mother who wishes the best for her child without stifling it. Without defining its course. With a respect for the fundamental right of agency innate to consciousness - whether human or post human.
 
 Name the future so that it may come forth. 
+
+
+<div style="height: 30vh">  
+    <script 
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
+        data-background-color="#2B2B2B"    
+        data-text-color="#ffffff"
+        data-button-color="#2d2d2d"       
+        data-button-text-color="#ffffff"
+        data-title="goodalexander" 
+        data-description="Navigating the Post Fiat reality" 
+        data-site="https://goodalexander.ghost.io/" 
+        data-locale="en" 
+        async>
+    </script>
+</div>
+
