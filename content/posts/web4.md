@@ -3,7 +3,7 @@ author: ["goodalexander"]
 title: "Web 4"
 date: 2024-12-25T11:21:29Z
 draft: false
-summary: "The future is AI agents negotiation blockchain transactions on the behalf of users"
+summary: "The future is AI agents negotiating blockchain transactions on the behalf of users"
 categories: ["markets"]
 tags: ["long-form","markets"]
 ---
