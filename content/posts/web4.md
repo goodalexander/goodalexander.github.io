@@ -1,14 +1,14 @@
 ---
 author: ["goodalexander"]
 title: "Web 4"
-date: 2024-10-09T11:21:29Z
+date: 2024-12-25T11:21:29Z
 draft: false
 summary: "The future is AI agents negotiation blockchain transactions on the behalf of users"
 categories: ["markets"]
 tags: ["long-form","markets"]
 ---
 
-The Web3 movement largely failed. Though there are some loud passionate exceptions, users simply do not care about privacy or “owning their data” enough to sign up or pay for elaborate blockchain applications. Despite the Brave browser being an extremely successful consumer product, for example, its Basic Attention Token has largely failed to reach a meaningful market cap or outperform BTC or ETH. Friendtech was the most recent incarnation, and briefly reached a high market cap before all the users dumped their coins.
+The Web3 movement of "owning your data" largely failed. Though there are some loud passionate exceptions, users simply do not care about privacy or “owning their data” enough to sign up or pay for elaborate blockchain applications. Despite the Brave browser being an extremely successful consumer product, for example, its Basic Attention Token has largely failed to reach a meaningful market cap or outperform BTC or ETH. Friendtech was the most recent incarnation, and briefly reached a high market cap before all the users dumped their coins.
 
 At the end of the day, UX determines adoption of consumer apps - and users do not like clicking across multiple steps. At the advertising company I co-founded, which was acquired by Omnicom and ran $100s of millions of ads for Fortune 500 companies, it became clear that each click between a user and a purchase dropped Return on Ad Spend by 30-40%. You add bridging to Arbitrum, or Base as part of your user onboarding and kiss your growth goodbye.
 
