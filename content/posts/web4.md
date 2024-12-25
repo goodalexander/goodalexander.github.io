@@ -8,6 +8,7 @@ categories: ["markets"]
 tags: ["long-form","markets"]
 ---
 
+## The Failure of Web 3 And What Actually Works
 The Web3 movement of "owning your data" largely failed. Though there are some loud passionate exceptions, users simply do not care about privacy or “owning their data” enough to sign up or pay for elaborate blockchain applications. Despite the Brave browser being an extremely successful consumer product, for example, its Basic Attention Token has largely failed to reach a meaningful market cap or outperform BTC or ETH. Friendtech was the most recent incarnation, and briefly reached a high market cap before all the users dumped their coins.
 
 At the end of the day, UX determines adoption of consumer apps - and users do not like clicking across multiple steps. At the advertising company I co-founded, which was acquired by Omnicom and ran $100s of millions of ads for Fortune 500 companies, it became clear that each click between a user and a purchase dropped Return on Ad Spend by 30-40%. You add bridging to Arbitrum, or Base as part of your user onboarding and kiss your growth goodbye.
@@ -20,6 +21,8 @@ While every once in a while you hear some horror stories about a creator getting
 
 Users can breathe a brief sigh of relief about data sovereignty.
 
+## AI Agents are an Existential Threat to Our Creator Economy
+
 But the equation is changing for five reasons.
 
 1. The proliferation of realistic AI video generation models that can render real time photorealistic avatars
@@ -31,6 +34,8 @@ But the equation is changing for five reasons.
 As a result -- starting in the middle of 2025, the story will stop being “Man I’m too lazy to sign up for that complex protocol that owns my data” to “If I don’t sign up for some sort of system to license my work or have an economic model, I won’t be able to make money as a creator”.
 
 However - even if this is largely true right now, the user interfaces of all Web3 products is still so complex that they’re not seeing traction going up. 
+
+## Web 4 Is the Solution to this Existential Issue
 
 Meet Web 4. The theory of Web 4 is that AI agents will manage the complex relationship between users and AI models which use blockchains as a data sharing, dispute resolution and governance mechanism.
 
@@ -58,7 +63,9 @@ So
 Therefore it is inevitable that
 1. Users will talk to AI systems
 2. AI systems will negotiate on their behalf with other AIs 
-3. Users will get paid in crypto to go through the trouble of setting up wallets but the primary interface between users and AI will be chatbots or chat apps like telegram and Discord 
+3. Users will get paid in crypto to go through the trouble of setting up wallets but the primary interface between users and AI will be chatbots or chat apps like telegram and Discord
+
+## Mapping the Current Space From a Web 4 Framework
 
 I think this is a useful category to map the current space.
 
@@ -70,14 +77,19 @@ Some infrastructure plays would be classified in Web4 - for example, a protocol 
 
 AI agent browses IP directory, trains a new video on the IP directory pays for it, and then at some point the money (Story tokens, or whatever they get converted into) get airdropped to the user. As you can probably imagine with this workflow, there will be nearly endless token swaps happening at all times to make this intelligible to the end user who doesn’t want a million different currencies - which benefits exchanges like Hyperliquid. 
 
+## Why Post Fiat Will be the Kingmaker in Web4
+
 The Protocol I’m building - which is called Post Fiat - is solidly in the Web4 space and is an L1. The basic bet here is that you can actually have an agentic scoring process for a large number of AI agents on the network, and use their interactions with users to distribute network rewards using an AI driven process. Eventually Post Fiat’s entire governance process will be run by an AI agent -- and thus, rather than the goal being just decentralization  - the goal is “Objectivity, Fairness and No Humans Involved”. This differs from Stake based L1s like Solana where ultimately it’s just a bunch of dudes on a Zoom call who claim to be “decentralized” deciding how things are going to be, and where resources are going to flow 
+
+Because Post Fiat is designed from the onset to eventually become a vast resource allocation system for AI agents, with superior tokenomics and a clear vision to how it ends up (with AI agents actively securing the network, and an AGI ultimately determining who gets paid) -- I believe Post Fiat will end up dominating the Web4 space (btw we are hiring -- email me at alex@postfiat.org if you're interested)
+
+## Zooming Back Out: Everyone Will need a Web4 Plan
 
 This will likely become the standard for most protocols (L1s and otherwise) in the Web4 space, and mirrors some proposals currently in progress at Bittensor regarding using AI to reward subnets in proportion to their “scored” value. The question becomes how well these systems worked, whether they’ll be adopted by the existing political structures of protocols who probably don’t want something like this to happen, and how appealing it is for AI agents to interact with. Because ultimately that determines how much they can pay users.
 
 Users want fewer clicks and want to earn a lot of rewards. I believe they’ll be willing to give up substantial upside to AI agents to make this a reality. And that the oncoming onslaught of Agentic Protocols creating content is going to force the issue in the next 6 months 
 
 Web3 was a cool ideology but Web4 will be a survival mechanism. 
-
 
 
 # Subscribe to Get These By Email
