@@ -80,7 +80,7 @@ What near term tactics and milestones do you need to accomplish your strategy?
 
 If you want AI assistance clarifying these things here is a [tool to help you create your context document](https://docs.google.com/document/d/e/2PACX-1vQQYM5dYyRDOeq2fvhZqKfF2KMPJ4luXEUlJ2dTOStQflBZR1F6onH7JgQMvMQi6JfAAOwBY9_EXDjn/pub)
 
-Here is an (example of my context document)[https://docs.google.com/document/d/19yYSt_6jFxEBhHlFkspJbYoTfmjJks53Crn_shIY8UI/edit?usp=sharing]
+Here is an [example of my context document](https://docs.google.com/document/d/19yYSt_6jFxEBhHlFkspJbYoTfmjJks53Crn_shIY8UI/edit?usp=sharing)
 
 ### Step 3 Improve Your Context Document with AI Tools
 
@@ -100,7 +100,9 @@ Once you have your context, it is used to generate relevant tasks that inform yo
 
 The task flow is to request a task, accept it or refuse it, submit it for verification then check your reward to ensure you did things right. 
 
-![The Flow of Tasks in Your Local Wallet](/images/post_fiat_user_flow.png)
+
+![The Flow of Tasks in Your Local Wallet](/images/pft_user_flow.png)
+
 
 The above picture is for the local wallet. In discord slash commands the series of actions are:
 Similarly, the flow on the Discord wallet slash commands:
