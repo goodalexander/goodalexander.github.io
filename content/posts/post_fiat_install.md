@@ -143,7 +143,7 @@ Alternatively in the Discord Tool you can use the following functions
 
 In Discord you can use the function /pf_chart to see your progress over time in terms of PFT generation 
 
-![An Example of PF Chart](/images/postfiat_manyasone_message.png)
+![An Example of PF Chart](/images/pf_chart_demo.png)
 
 ### Step 8: Understanding the Airdrop and Further Rewards
 
