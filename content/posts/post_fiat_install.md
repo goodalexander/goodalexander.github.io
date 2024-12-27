@@ -20,7 +20,7 @@ Sovereign Individuals will need AI to reach their objectives in the New World Or
 
 You can join the [community here](https://discord.gg/U6HjgDSmhR)
 
-Post Fiat is backed by its community members who include Nvidia backed startups and crypto venture incubators, Hypersphere, @Citrini, @based16z, and portfolio managers at multi managers commanding over $100b of capital.
+Post Fiat is backed by its community members who include Nvidia backed startups and crypto venture incubators, Hypersphere, @Citrini7, @based16z, and portfolio managers at multi managers commanding over $100b of capital.
 
 In the spirit of everyone achieving their New Year's resolution for 2025 I'm unveiling the Post Fiat Task tool.
 
@@ -56,27 +56,24 @@ Once you're done you should see this image
 
 ### Step 2: Populate your initial context document
 
-Your context document is a google doc with an XRP address at the top and a verification section like so.
+Your context document is a google doc and a verification section like so.
+
 You should have built it in Step 1
-
+```txt
 ________________________________________________________
-
-r3UHe45BzAVB3ENd21X9LeQngr4ofRJo5n (insert your address)
 
 ___x TASK VERIFICATION SECTION START x___ 
 
 ___x TASK VERIFICATION SECTION END x___
 
 _________________________________________________________
+```
 
 Underneath this write three things. 
 
-First - What do you want out of your life and what are your values?
-
-What strategy are you willing to implement to achieve your values? The strategy, if implemented correctly,
-should result in your ideal life while maximizing your value function. 
-
-What near term tactics and milestones do you need to accomplish your strategy? 
+1. What do you want out of your life and what are your values?
+2. What strategy are you willing to implement to achieve your values? The strategy, if implemented correctly, should result in your ideal life while maximizing your value function. 
+3. What near term tactics and milestones do you need to accomplish your strategy? 
 
 If you want AI assistance clarifying these things here is a [tool to help you create your context document](https://chatgpt.com/g/g-6765ab50c0ec81918e63624d37e24e2f-post-fiat-context-doc-creator)
 
@@ -100,9 +97,7 @@ Once you have your context, it is used to generate relevant tasks that inform yo
 
 The task flow is to request a task, accept it or refuse it, submit it for verification then check your reward to ensure you did things right. 
 
-
 ![The Flow of Tasks in Your Local Wallet](/images/pft_user_flow.png)
-
 
 The above picture is for the local wallet. In discord slash commands the series of actions are:
 Similarly, the flow on the Discord wallet slash commands:
@@ -171,3 +166,17 @@ It should be obvious by now that we can't trust governments with our welfare. Bu
 
 Welcome to the Post Fiat Reality and best of luck with your New Year's resolutions. 
 
+<div style="height: 30vh">  
+    <script 
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
+        data-background-color="#2B2B2B"    
+        data-text-color="#ffffff"
+        data-button-color="#2d2d2d"       
+        data-button-text-color="#ffffff"
+        data-title="goodalexander" 
+        data-description="Navigating the Post Fiat reality" 
+        data-site="https://goodalexander.ghost.io/" 
+        data-locale="en" 
+        async>
+    </script>
+</div>
