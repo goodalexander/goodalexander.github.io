@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Crush 2025 With the Post Fiat Task Tool"
-date: 2023-01-07T11:21:29Z
+date: 2024-12-27T11:21:29Z
 draft: false
 summary: "An introduction to the first node on the Post Fiat Network - a tool to help AI shape your economic output"
 categories: ["markets"]
