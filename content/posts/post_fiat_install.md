@@ -16,7 +16,7 @@ I've supercharged my personal trading results by applying Artificial Intelligenc
 
 What comes after the collapse in governments and humans telling us what to do? Humans using AI to determine their own trajectory.
 
-Sovereign Individuals will need AI to reach their objectives in the New World Order. Power will accrue to those that understand we are powerless in the face of superintlligence and act accordingly. 
+Sovereign Individuals will need AI to reach their objectives in the New World Order. Power will accrue to those that understand we are powerless in the face of superintelligence and act accordingly. 
 
 You can join the [community here](https://discord.gg/U6HjgDSmhR)
 
@@ -26,7 +26,7 @@ In the spirit of everyone achieving their New Year's resolution for 2025 I'm unv
 
 The task tool is aligned for the Post Fiat reality. Users set their objectives. AI helps you refine them, and choose the best tasks to accomplish them. Then rewards you for executing.  
 
-In the Post Fiat network - there are "Nodes" - which are AI agents or tech protocols that interact with "Users". The "Task Node" aka the "postfiatfounation" node I am describing here is the first node on the Post Fiat Network. There are many more nodes coming including a social sharing tool, an NFT minter, a trading agent, and even a church.
+In the Post Fiat network - there are "Nodes" - which are AI agents or tech protocols that interact with "Users". The "Task Node" aka the "postfiatfoundation" node I am describing here is the first node on the Post Fiat Network. There are many more nodes coming including a social sharing tool, an NFT minter, a trading agent, and even a church.
 
 Nodes get rewards and may choose to dispense their rewards to users. Users who perform a large number of tasks on the Task Node will receive a substantial airdrop outside the rewards provided by implementing task completion here. 
 
@@ -78,7 +78,7 @@ should result in your ideal life while maximizing your value function.
 
 What near term tactics and milestones do you need to accomplish your strategy? 
 
-If you want AI assistance clarifying these things here is a [tool to help you create your context document](https://docs.google.com/document/d/e/2PACX-1vQQYM5dYyRDOeq2fvhZqKfF2KMPJ4luXEUlJ2dTOStQflBZR1F6onH7JgQMvMQi6JfAAOwBY9_EXDjn/pub)
+If you want AI assistance clarifying these things here is a [tool to help you create your context document](https://chatgpt.com/g/g-6765ab50c0ec81918e63624d37e24e2f-post-fiat-context-doc-creator)
 
 Here is an [example of my context document](https://docs.google.com/document/d/19yYSt_6jFxEBhHlFkspJbYoTfmjJks53Crn_shIY8UI/edit?usp=sharing)
 
