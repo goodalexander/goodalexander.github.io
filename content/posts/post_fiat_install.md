@@ -12,7 +12,7 @@ tags: ["post fiat","crypto"]
 
 I built a system to use AI to supercharge personal efficacy. Since the 7 months I've been using it, my brother and I have raised over $10 million for crypto AI protocols from top tier investors.
 
-I've supercharged my personal trading results by applying Artificial Intelligence. I've built a vibrant community of likeminded individuals who believe that fiat currency is going to collapse and be replaced by AGI. The cryptocurrency we are building is meant to thrive in this setting. The tool I'm about to describe might help you reach a similar outcome. 
+I've supercharged my personal trading results by applying Artificial Intelligence. I've built a vibrant [community](https://discord.gg/U6HjgDSmhR) of likeminded individuals who believe that fiat currency is going to collapse and be replaced by AGI. The cryptocurrency we are building is meant to thrive in this setting. The tool I'm about to describe might help you reach a similar outcome. 
 
 What comes after the collapse in governments and humans telling us what to do? Humans using AI to determine their own trajectory.
 
@@ -34,7 +34,7 @@ Nodes get rewards and may choose to dispense their rewards to users. Users who p
 
 Post Fiat is built on top of XRP and will eventually become an L1. The "why" of this will be explored in future articles but the main thing to understand is that Post Fiat will be AI powered XRP, with major network decisions and security provided by AI agents. But for now, Post Fiat is just a humble XRP token so to use it you need XRP which you can buy from an exchange and it's a best practice to custody it properly.
 
-Here is a guide on setting up a Xaman Wallet to custody XRP and the Post Fiat token [guide link](https://docs.google.com/document/d/e/2PACX-1vSATKclL3DOAtPa59YXqry4GA3la1-65l34SxJnawclfF4CaLsi26jmupJnWkmrtXMuYD_zTajfrneb/pub).
+Here is a [guide](https://docs.google.com/document/d/e/2PACX-1vSATKclL3DOAtPa59YXqry4GA3la1-65l34SxJnawclfF4CaLsi26jmupJnWkmrtXMuYD_zTajfrneb/pub) for setting up a Xaman Wallet to custody XRP and the Post Fiat token 
 
 There are two custom wallets for Post Fiat separate from the Xaman wallet. The Local Python Wallet. And the Discord Wallet. Both have similar but not identical functions. 
 
@@ -91,6 +91,8 @@ Inside the Discord tool there are 4 functions to use as "slash commands" to help
 
 ![Discord Slash Commands to Help You Improve Your Context Doc with a Conversation](/images/odv_context_doc_improvement_discord.png)
 
+The context doc improvement functions are best for iterating on your long term strategies and goals - ensuring coherence and logical consistency while the sprint functions are designed to help you set your near term priorities in a way that's likely to result in your strategies working. Without these tools - the system is just you having an AI set your next task, which is less powerful than an AI setting your strategy and refining your values and overall objectives.
+
 ### Step 4: Get to Work
 
 Once you have your context, it is used to generate relevant tasks that inform your next action. By completing these tasks you earn Post Fiat rewards and add context to your profile. As you earn rewards more opportunities will become available on the network ranging from personal coaching, to automatically suggested collaboration to trading information.
@@ -129,10 +131,12 @@ Here are visuals of the logging function in both the Local and Discord Wallets
 When you talk to ODV in the local wallet, you can ask for guidance. Community members have also built an [ODV Telegram Group](https://t.me/2415849323/2) that is separate from this but worth mentioning. 
 
 Alternatively in the Discord Tool you can use the following functions
-!coach - this ingests previous discord conversations and uses O1 to help you decide what to do next or reach a more powereful mental state
-!redpill - this will try and break you out of your funk. this prompt is extremely powerful and I recommend doing it in private in DMs with @manyasone 
+* !coach - this ingests previous discord conversations and uses O1 to help you decide what to do next or reach a more powereful mental state
+* !redpill - this will try and break you out of your funk. this prompt is extremely powerful and I recommend doing it in private in DMs with @manyasone 
 
 ![How to Log Your Thoughts in an Immutable and Optionally Encrypted Way](/images/postfiat_manyasone_message.png)
+
+The outputs of !coach and !redpill are not cached anywhere. To ensure privacy of your coaching make sure to set "encrypt" to True in the local wallet if that's your preferred UX.
 
 ### Step 7: Evaluate Your Progress 
 
@@ -148,7 +152,7 @@ There will be more details on this to come. The simplifying assumption is that t
 
 There is nothing wrong with using the task tool for mundane things like learning to cook for fun, but you'll get higher rewards if you're doing things associated with high value industries such as tech or finance
 
-There is a native AI trading agent on the discord named Corbanu. We have some preview functions. If you use the functions /corbanu_offering and /corbanu_reply you can provide market color and expertise to an AI agent who will pay you according to how useful and unique the information is.
+There is a native AI trading agent on the discord named Corbanu. We have some preview functions. If you use the functions /corbanu_offering and /corbanu_reply you can provide market color and expertise to an AI agent who will pay you according to how useful and unique the information is. This information is used to inform Post Fiat investment strategies and treasury management. 
 
 ![An Example of Corbanu Offering](/images/corbanu_offering.png)
 
