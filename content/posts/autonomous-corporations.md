@@ -8,6 +8,16 @@ categories: ["markets"]
 tags: ["post fiat","crypto"]
 ---
 
+## The Simple Summary 
+
+This is a long article so I want to state the conclusions up front.
+
+Corporations with no people will emerge that are tradable, like stocks. Because they will hoover up all data in the world, the biggest problem for anyone doing white collar work is building economic alignment around the data they generate while working. Otherwise the base case is AI agent copies being made of you. Economic networks and protocols are needed that make this possible. In this article I discuss
+
+1. How we got to this place and why it’s a linear result of current tech trends
+2. How this results in a fundamentally new relationship between creators or professionals and the data output from their work  
+3. How [Post Fiat](https://x.com/PostFiatOrg) and [Story Protocol](https://x.com/StoryProtocol) address these issues.
+
 ## Agentic Protocols -> Autonomous Corporations
 
 In the piece Agentic Protocols I wrote about a new class of investment, namely an AI agent that generates profits without any people involved. That lives on-chain and returns profits to token holders via burn mechanisms. 
