@@ -16,7 +16,7 @@ Corporations with no people will emerge that are tradable, like stocks. Because 
 
 1. How we got to this place and why it’s a linear result of current tech trends
 2. How this results in a fundamentally new relationship between creators or professionals and the data output from their work  
-3. How [Post Fiat](https://x.com/PostFiatOrg) and [Story Protocol](https://x.com/StoryProtocol) address these issues.
+3. How [Post Fiat](https://x.com/PostFiatOrg) and [Story](https://x.com/StoryProtocol) address these issues.
 
 ## Agentic Protocols -> Autonomous Corporations
 
@@ -47,7 +47,7 @@ But this contains an important nuance. The argument isn’t that you should bet 
 
 When I worked at Palantir the most common complaint about Big Data was “I don’t want Data, I want Insights”. The company’s success has shown that wrapping proprietary insight generation on top of Data is a good bet. It’s burning Data as its cost and outputting Insights. However these Insights are not easily fungible across companies -- as they often contain trade secrets. The more familiar model to improving Data’s sustainable value is Intellectual Property.
 
-To see how this actually flows through to a company’s financials - consider Netflix. Netflix is up 176% over the past 5 years and 89% in the last year alone. Investors appreciate the forward looking impact the AI transition will have on content centric businesses. To understand how big this effect might become, let’s take a look at Netflix cash flow statement 
+To see how this actually flows through to a company’s financials - consider Netflix. Netflix is up 176% over the past 5 years, 89% in the last year alone and 13% in the last week after extremely strong earnings. Investors appreciate the forward looking impact the AI transition will have on content centric businesses. To understand how big this effect might become, let’s take a look at Netflix cash flow statement 
 
 ![Netflix Cashflow Statement](/images/goodalexander_2.png)
 
@@ -63,7 +63,7 @@ Before the AI paradigm shift, you could get ahead in the world by having better 
 
 Similarly, the equity value of any data aggregator, or business predicated on analysis of public data sets will also go to zero. 
 
-This leads me to three folow ons to the agentic protocol theory:
+This leads me to three follow ons to the agentic protocol theory:
 
 1. Agentic Corporations will be valuable to the extent they have a moat around their data - as pure data plays will face commoditization pressure. As the cost of launching AI agents trends to zero, so too will the market cap of commoditized AI agents launched on public data sets 
 2. Networks that facilitate the formation of group IP will gain value insofar as they easily integrate with AI agents, who in turn share IP benefits with their users who provide them with unique training data 
