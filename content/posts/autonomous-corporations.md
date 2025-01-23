@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Keeping What's Yours in the Age of Autonomous Corporations"
-date: 2021-12-27T11:21:29Z
+date: 2025-01-23T11:21:29Z
 draft: false
 summary: "Eternal recurrence, digital dopplegangers, and the input costs of the agent economy"
 categories: ["markets"]
