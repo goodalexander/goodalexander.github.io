@@ -29,8 +29,8 @@ disableXML = true
       url = "tags/"
       weight = 10
     [[languages.en.menu.main]]
-      name = "Positions"
-      url = "positions/"
+      name = "Trading"
+      url = "trading/"
       weight = 20
     [[languages.en.menu.main]]
       name = "Search"
