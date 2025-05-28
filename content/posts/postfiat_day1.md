@@ -8,6 +8,8 @@ categories: ["markets"]
 tags: ["crypto"]
 ---
 
+## Write the things, anon. Also what have you been doing lately
+
 I clearly don't have time to write endless long form content but people seem to want me to write things. And I suppose I have things to say.
 
 The original vision of the Post Fiat Wallet -- which is an AI agent that basically tells you what to do next and gives you rewards for doing so. Then over time qualifies your credibility and connects you with other individuals in a Hive Mind. As it turns out. Is quite complex to build. Even with AI agent coding tools.
@@ -24,15 +26,21 @@ Good example - if you ask it for a particular Fed speaker's opinion on inflation
 
 I am sounding bearish but that's just because I'm in the weeds actually doing things.
 
+## Great. What's the plan, Stan?
+
 But I guess the point of this blog is for us to answer the question concretely -- how do you make it before AGI, and it's a journal -- and nobody has context of anything I'm working on
 
 So I'll outline my big bets / thematics and how I'm thinking about things
+
+### Advise the Ambient
 
 My brother - Travis, runs a crypto AI start up called Ambient that I helped incubate and advise. It's backed by A16z and Superscrypt. Travis ran AI R&D for a big agtech start up and his co-founder Max used to work with me at Perpetua and has been the founding engineer at a bunch of things (Blend, Cockroach Labs etc). Ambient simply put is AI bitcoin. That sounds audacious but if you follow TSMC and global fab capacity trends, basically everyone is heavily investing against AI data center capacity and despite the increasing hashpower of Bitcoin there isn't nearly as much investment against BTC miner capacity. Which - if you think about it makes sense. BTC has a market cap which is 33% less than Nvidia. and Nvidia is just 1 company. AI is ultimately a lot bigger than crypto. 
 
 People in crypto tend to get this wrong and think that crypto is bigger than AI. So the Ambient bet is that AI driven proof of work can get more hashpower than BTC. And the mining subsidy that runs on the network allows Ambient, as a network to sell Deepseek R1 (which just launched a banger open source model) -- at a discount. So unlike SOL which can have network fees from anywhere from <$1m a day to $20m a day, Ambient usage should be consistently extremely high. This creates a flyhweel where this means more hash power, and ecosystem products. And there are a whole lot of people who rightfully don't trust model resellers so 'verified inference' as it calls, basically allows you to use AI / LLM in your work and prove you're not being man-in-the-middled with your IP. Which is great for financial use cases.
 
 So I advise on that. But that's not most of my time. Most of my time is spent on Post Fiat. 
+
+### Run the Post Fiat
 
 At a very high level when I made Post Fiat I started with the question "If Fiat currency is going away, what do I want to keep my money in?"
 
@@ -43,6 +51,8 @@ And when you really study currency, it's not about shareholder returns. Currenci
 The "Not your keys not your coins" meme. Was literally the basis of most historical sovereign defaults. So it's a bit ironic -- that now Michael Saylor, who has probably spent more time than anyone studying the history of money. Isn't willing to verify his BTC holdings via proof of reserves. It's almost like we are just doomed to repeat history in stupid, highly leveraged ways. Because schools are really bad and nobody learns anything. But I digress
 
 So Post Fiat - is basically a new vision of currency. Currency as a coordination mechanism. And the rough idea is to take the most simple viable cryptocurrency that you can (XRP). Rip out the centralizing elements, and replace it with an AI based system to route value to people in accordance with how much value they produce. And because you can't really bribe AIs, that system is pretty svelte. And most people already trust chatbots more than they trust their politicians. 
+
+## Okay but what *is* Post Fiat and why should it exist 
 
 It all sounds pretty abstract but there are three levels to it. 
 1. A blockchain AI system that defines all your personal tasks
@@ -67,6 +77,8 @@ I actually think this logic is obvious and inescapable. But most people refuse t
 
 But then-- that's super Zoomed out. Zoomed in, brass tacks, tactical. I'm making a cryptocurrency. It issues commands linked with money to people. We're making a new L1 that is going to do this. 
 
+## Cool story bro how do you make number go up 
+
 But I'm also a creature of markets -- and I know people don't really want a token where there's going to be a ton of selling pressure. 
 
 Which brings us to the next question I'm navigating:
@@ -90,6 +102,7 @@ And we have no idea if it ever will invent anything. Or if that's 3 years away o
 
 I think the cool contrarian bet in AI capital markets is that the real edge in markets isn't from analytics. It's from coordination effects. In our community we have something called "the data lake". I don't know anyone's name, but everyone is on Twitter. And has the capability of ramping narratives. Engaging different communities. So you start with a great analytics stack while we are in a rising tide and there's still edge doing that. But over time the edge goes to zero. And by that time you have a strong, vetted community using the Post Fiat Task Node -- who serve as the intelligence architecture for the alpha engine going forward. That is "Contributing to the Data Lake" or how to think about it -- it's the only real moat
 
+## Give me a summary you're losing me 
 
 But yes that's mostly the strategy. 
 
@@ -100,6 +113,8 @@ But I wanted to just kind of put it out there even though it's not perfect
 3. Applying AI to capital markets is the first, best, and most conservative use case to put that bet on without selling too many tokens
 
 I think where I'm contrarian is that I don't think things like XRP are bubbles. I think they are indicators or smoke alarms. And that our job in the crypto space is to take absurdity and transmute it into life rafts for the coming fiat currency collapse.
+
+### Addendum: the people want an ETF 
 
 One final thought on branding -- apparently 70% of my X audience wants me to launch an ETF. I have a pretty clean idea of how to do that so I want to spell out the ETF thesis here
 
@@ -118,7 +133,16 @@ Delirium
 1. Long bubbles that are forming as measured by convergence of AI hallucination, narrative, and data tracking that are in uptrends
 2. Short collasping bubbles with opposite effects via put options
 
-Okay so apparently I have a lot to say. I'm going to keep ranting. Sometimes strategic, sometimes tactical. Try to keep a daily cadence. I think it's important to document weird times in history, and how many times is fiat currency going to fail at the same time as human intelligence becomes obsolete. Thanks for joining me on the Post Fiat Journey
+I'm going to look into what that takes and potentially use Post Fiat as indexing tech to publish the weights of the index in the meanwhile and provide them to task node members
+
+## End of Rant
+
+Okay so apparently I have a lot to say. I'm going to keep ranting. Sometimes strategic, sometimes tactical. Try to keep a daily cadence. I think it's important to document weird times in history, and how many times is fiat currency going to fail at the same time as human intelligence becomes obsolete. 
+
+Thanks for joining me on the Post Fiat Journey. This post was all over the place. I feel like one of those "Spider's cobweb on caffeine" memes. 
+
+What I really want to do here though is help people understand what Post Fiat is, why I'm building it and the specifics of how I'm making this a thing.
+Even though it's ugly, not poetic or hard to understand. Fuck it. 
 
 
 <div style="height: 30vh">  
