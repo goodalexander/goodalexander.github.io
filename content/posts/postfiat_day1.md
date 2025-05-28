@@ -26,6 +26,9 @@ The OpenAI responses API was originally quite nifty because it enabled both web 
 
 Good example - if you ask it for a particular Fed speaker's opinion on inflation, the vectorDB has a hard time understanding the dates of different filings. So to make the entire thing work you need to spam dates through the data sets, or do fancy hacks to make it work. Which of course is going to limit its adoption. 
 
+It's still decent though. And Claude web search and sycronous tool calls are pretty insane.
+Also  -- here's one link you absolutely need to read (https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices)[Claude 4 Best Practices]
+
 I am sounding bearish but that's just because I'm in the weeds actually doing things.
 
 ## Great. What's the plan, Stan?
@@ -89,8 +92,10 @@ Which brings us to the next question I'm navigating:
 
 There are some higher order principles I've established to answer this question -- namely
 
-1. Treat the currency as an e-commerce product and maximize its conversion rate across the full stack. That means doing non traditional things like launching merch, memeing on X, and running ad optimizaitons to know exactly who is buying my token, why and waht messaging resonates best 
-2. Create cash flowing enterprises bolted on to the currency from the get go. This brings me to my big "BD bet"
+1. Treat the currency as an e-commerce product and maximize its conversion rate across the full stack. That means doing non traditional things like launching merch, memeing on X, and running ad optimizaitons to know exactly who is buying my token, why and waht messaging resonates best
+2. Keep costs low. If people don't work, fire them fast. Be frugal. Live in PR. Do smart tax things. Whatever it takes to sell the lowest number of tokens to see Post Fiat to conclusion as possible
+3. Consider alternative financing mechanisms such as ICOs where the holder base is more aligned with the project rather than accountable to fiat based LPs 
+4. Create cash flowing enterprises bolted on to the currency from the get go. This brings me to my big "BD bet"
 
 My big BD bet is that
 1. AI capital markets is where you want to be. Every single hedge fund and investment bank is all hands on deck re: integrating AI into its process
