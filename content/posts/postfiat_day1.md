@@ -14,6 +14,8 @@ I clearly don't have time to write endless long form content but people seem to 
 
 The original vision of the Post Fiat Wallet -- which is an AI agent that basically tells you what to do next and gives you rewards for doing so. Then over time qualifies your credibility and connects you with other individuals in a Hive Mind. As it turns out. Is quite complex to build. Even with AI agent coding tools.
 
+So that is what I have been doing. Day in, and day out. Making a big update to our existing system that allows AI to augment your judgment and rewards you for doing things that are good for you. in addition to hiring ppl to do the things, and working w institutional clients (if you want to work for me and are a cracked C++ engineer, or a python AI master email alex@agti.net)
+
 Generally there's a lot of hype when AI coding products come out. There's always some guy who says "Look at these 96 websites that I shipped with ChatGPT using Codex" in the first 24 hours of launch. Then it's inevitably som AI boot camp he's selling. That's the cynical side.
 
 On the flip side, Claude Code is vastly improving the cadence at which you can ship things. Windsurf seems to have endless cascade errors. And Cursor requires too elaborate of instructions and hand holding re the parts of the codebase referenced. Whereas Claude Code is a happy medium between being able to do things that reference the entire code base, and also moving really fast.
