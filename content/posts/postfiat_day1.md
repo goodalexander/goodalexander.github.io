@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 1"
-date: 2024-04-06T11:21:29Z
+date: 2025-05-28T11:21:29Z
 draft: false
 summary: "Making it before AGI -- day 1 / journal"
 categories: ["markets"]
