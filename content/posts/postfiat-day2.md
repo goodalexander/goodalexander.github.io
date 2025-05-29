@@ -140,7 +140,22 @@ I find the existing narratives about things like Hyperliquid or most crypto prot
 
 A giant, self compounding on chain financial hive mind. That - in my view, is how you make it going into AGI. Not as individuals, but through AI coordinated collective action 
 
+## Concrete Product Things
 
+So this was all a big complex discussion of what is actually being done but translating it into clean product features and tying it back to what I talked about yesterday
+
+1. You need a good, on chain indexing product that uses blockchains and encryption effectively
+2. You need a good compliance product for receiving information from internet anons -- who are paid in Post Fiat Tokens to provide data or expertise
+3. This compliance and indexing product should be linked. For example - when there is an index update you shouldn't just have the membership. You should have the reasoning used to generate the index components, the underlying compliance hashes,
+
+So it's basically
+Asset A, weight, reasoning, model selection, prompt hash, compliance hash
+
+or something like that -- in a big JSON blob with a protocol for when it's published vs when it's decrypted for the public (in case you're running a transparent ETF)
+
+I feel like this is an anticlimatic ending but this is a blog so I guess you just have to deal with that bc this needed to be recorded somewhere. But yes
+
+Concretely: THIS INDEXING PRODUCT WILL POWER THE POST FIAT STRATEGY ETF 
 
 <div style="height: 30vh">  
     <script 
