@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Portfolio Manager Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e4e4e7;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: #18181b;
+            border-bottom: 1px solid #27272a;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #09090b;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            font-size: 14px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Overview Stats */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            padding: 24px 40px;
+        }
+
+        .stat-card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .positive { color: #4ade80; }
+        .negative { color: #f87171; }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+            padding: 0 40px 40px;
+        }
+
+        /* SPM Table */
+        .spm-section {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 20px;
+            border-bottom: 1px solid #27272a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #71717a;
+        }
+
+        .tab.active {
+            background: #3b82f620;
+            color: #3b82f6;
+        }
+
+        .spm-table {
+            width: 100%;
+        }
+
+        .spm-table th {
+            text-align: left;
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .spm-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #27272a1a;
+        }
+
+        .spm-table tr:hover td {
+            background: #27272a20;
+        }
+
+        .spm-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .spm-avatar-small {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .avatar-gradient-1 { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%); }
+        .avatar-gradient-2 { background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #6366f1 100%); }
+        .avatar-gradient-3 { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%); }
+        .avatar-gradient-4 { background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%); }
+        .avatar-gradient-5 { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%); }
+
+        .spm-avatar-small::before {
+            content: '';
+            position: absolute;
+            inset: 30%;
+            background: #18181b;
+            border-radius: 4px;
+            transform: rotate(45deg);
+        }
+
+        .spm-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .spm-strategy {
+            font-size: 12px;
+            color: #71717a;
+        }
+
+        .positions-preview {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .position-tag {
+            padding: 4px 8px;
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 4px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .position-tag.long { border-color: #4ade8040; }
+        .position-tag.short { border-color: #f8717140; }
+
+        .metric-cell {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .beta-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .beta-positive {
+            background: #4ade8020;
+            color: #4ade80;
+        }
+
+        .beta-negative {
+            background: #f8717120;
+            color: #f87171;
+        }
+
+        .beta-neutral {
+            background: #71717a20;
+            color: #a1a1aa;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #4ade8020;
+            color: #4ade80;
+        }
+
+        .status-paused {
+            background: #fbbf2420;
+            color: #fbbf24;
+        }
+
+        .status-testing {
+            background: #3b82f620;
+            color: #3b82f6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 6px;
+            background: transparent;
+            border: 1px solid #27272a;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            background: #27272a;
+            transform: translateY(-1px);
+        }
+
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #a1a1aa;
+        }
+
+        /* Right Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .correlation-matrix {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+            margin-top: 16px;
+            font-size: 11px;
+        }
+
+        .matrix-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .matrix-header {
+            font-weight: 600;
+            color: #71717a;
+        }
+
+        .corr-high { background: #dc262640; color: #f87171; }
+        .corr-medium { background: #fbbf2440; color: #fbbf24; }
+        .corr-low { background: #4ade8040; color: #4ade80; }
+        .corr-self { background: #3b82f640; color: #3b82f6; }
+
+        .compliance-card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .compliance-items {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .compliance-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #09090b;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .compliance-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .check-icon {
+            width: 16px;
+            height: 16px;
+            fill: #4ade80;
+        }
+
+        /* Pipeline */
+        .pipeline-stages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .stage-card {
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stage-count {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stage-label {
+            font-size: 12px;
+            color: #71717a;
+        }
+
+        /* Floating Action */
+        .floating-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .fab svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Synthetic Portfolio Manager Pod</h1>
+        <div class="header-actions">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>All Systems Operational</span>
+            </div>
+            <button class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                </svg>
+                Deploy New SPM
+            </button>
+        </div>
+    </div>
+
+    <!-- Overview Stats -->
+    <div class="overview-grid">
+        <div class="stat-card">
+            <div class="stat-label">Total AUM</div>
+            <div class="stat-value">$127.3M</div>
+            <div class="stat-change positive">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" />
+                </svg>
+                +$8.2M MTD
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Active SPMs</div>
+            <div class="stat-value">12</div>
+            <div class="stat-change">
+                <span style="color: #71717a">5 in testing</span>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Aggregate P&L</div>
+            <div class="stat-value positive">+6.4%</div>
+            <div class="stat-change positive">
+                +245 bps vs benchmark
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Risk Utilization</div>
+            <div class="stat-value">68%</div>
+            <div class="stat-change">
+                <span style="color: #71717a">Within limits</span>
+            </div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-label">Sharpe Ratio</div>
+            <div class="stat-value">2.18</div>
+            <div class="stat-change positive">
+                ↑ from 1.92
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- SPM Table -->
+        <div class="spm-section">
+            <div class="section-header">
+                <h2 class="section-title">Active Portfolio Managers</h2>
+                <div class="filter-tabs">
+                    <div class="tab active">All</div>
+                    <div class="tab">Production</div>
+                    <div class="tab">Testing</div>
+                    <div class="tab">Paused</div>
+                </div>
+            </div>
+            
+            <table class="spm-table">
+                <thead>
+                    <tr>
+                        <th>SPM</th>
+                        <th>Current Positions</th>
+                        <th>P&L (MTD)</th>
+                        <th>Sharpe</th>
+                        <th>Beta</th>
+                        <th>Allocation</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="spm-identity">
+                                <div class="spm-avatar-small avatar-gradient-1"></div>
+                                <div>
+                                    <div class="spm-name">SPM J1x9</div>
+                                    <div class="spm-strategy">Momentum Qualitative Overlay</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="positions-preview">
+                                <div class="position-tag long">L EUR/USD</div>
+                                <div class="position-tag short">S USD/JPY</div>
+                                <div class="position-tag long">L GBP/USD</div>
+                            </div>
+                        </td>
+                        <td><div class="metric-cell positive">+8.7%</div></td>
+                        <td><div class="metric-cell">2.34</div></td>
+                        <td><div class="beta-badge beta-negative">-0.3</div></td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 2px;">
+                                <div style="font-size: 14px; font-weight: 600;">$15.2M</div>
+                                <div class="status-badge status-active" style="font-size: 11px;">• Active</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 4a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 20a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="spm-identity">
+                                <div class="spm-avatar-small avatar-gradient-2"></div>
+                                <div>
+                                    <div class="spm-name">SPM K7a3</div>
+                                    <div class="spm-strategy">Vol Premium Harvester</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="positions-preview">
+                                <div class="position-tag short">S VIX</div>
+                                <div class="position-tag long">L SPX</div>
+                                <div class="position-tag short">S UVXY</div>
+                            </div>
+                        </td>
+                        <td><div class="metric-cell positive">+5.2%</div></td>
+                        <td><div class="metric-cell">1.87</div></td>
+                        <td><div class="beta-badge beta-positive">+0.7</div></td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 2px;">
+                                <div style="font-size: 14px; font-weight: 600;">$22.8M</div>
+                                <div class="status-badge status-active" style="font-size: 11px;">• Active</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 4a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 20a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="spm-identity">
+                                <div class="spm-avatar-small avatar-gradient-3"></div>
+                                <div>
+                                    <div class="spm-name">SPM M2p5</div>
+                                    <div class="spm-strategy">Central Bank Alpha</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="positions-preview">
+                                <div class="position-tag long">L AUD/USD</div>
+                                <div class="position-tag long">L NZD/USD</div>
+                            </div>
+                        </td>
+                        <td><div class="metric-cell positive">+3.8%</div></td>
+                        <td><div class="metric-cell">1.45</div></td>
+                        <td><div class="beta-badge beta-neutral">+0.1</div></td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 2px;">
+                                <div style="font-size: 14px; font-weight: 600;">$18.5M</div>
+                                <div class="status-badge status-active" style="font-size: 11px;">• Active</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 4a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 20a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="spm-identity">
+                                <div class="spm-avatar-small avatar-gradient-4"></div>
+                                <div>
+                                    <div class="spm-name">SPM N9w1</div>
+                                    <div class="spm-strategy">Cross-Asset Momentum</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="positions-preview">
+                                <div class="position-tag long">L Gold</div>
+                                <div class="position-tag short">S DXY</div>
+                                <div class="position-tag long">L BTC</div>
+                            </div>
+                        </td>
+                        <td><div class="metric-cell negative">-1.2%</div></td>
+                        <td><div class="metric-cell">0.92</div></td>
+                        <td><div class="beta-badge beta-negative">-0.5</div></td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 2px;">
+                                <div style="font-size: 14px; font-weight: 600;">$3.2M</div>
+                                <div class="status-badge status-testing" style="font-size: 11px;">• Testing</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 4a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 20a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="spm-identity">
+                                <div class="spm-avatar-small avatar-gradient-5"></div>
+                                <div>
+                                    <div class="spm-name">SPM P4y7</div>
+                                    <div class="spm-strategy">Event-Driven Macro</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="positions-preview">
+                                <div class="position-tag">No positions</div>
+                            </div>
+                        </td>
+                        <td><div class="metric-cell">+0.8%</div></td>
+                        <td><div class="metric-cell">3.21</div></td>
+                        <td><div class="beta-badge beta-neutral">0.0</div></td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 2px;">
+                                <div style="font-size: 14px; font-weight: 600;">$0.0M</div>
+                                <div class="status-badge status-paused" style="font-size: 11px;">• Paused</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="action-btn">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 4a2 2 0 100-4 2 2 0 000 4z"/>
+                                        <path d="M10 20a2 2 0 100-4 2 2 0 000 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar">
+            <!-- Correlation Matrix -->
+            <div class="correlation-matrix">
+                <h3 class="section-title">SPM Correlation Matrix</h3>
+                <div class="matrix-grid">
+                    <div class="matrix-cell matrix-header"></div>
+                    <div class="matrix-cell matrix-header">J1x9</div>
+                    <div class="matrix-cell matrix-header">K7a3</div>
+                    <div class="matrix-cell matrix-header">M2p5</div>
+                    <div class="matrix-cell matrix-header">N9w1</div>
+                    <div class="matrix-cell matrix-header">P4y7</div>
+                    
+                    <div class="matrix-cell matrix-header">J1x9</div>
+                    <div class="matrix-cell corr-self">1.0</div>
+                    <div class="matrix-cell corr-low">-0.3</div>
+                    <div class="matrix-cell corr-low">0.2</div>
+                    <div class="matrix-cell corr-medium">-0.5</div>
+                    <div class="matrix-cell corr-low">0.1</div>
+                    
+                    <div class="matrix-cell matrix-header">K7a3</div>
+                    <div class="matrix-cell corr-low">-0.3</div>
+                    <div class="matrix-cell corr-self">1.0</div>
+                    <div class="matrix-cell corr-low">0.1</div>
+                    <div class="matrix-cell corr-medium">0.4</div>
+                    <div class="matrix-cell corr-low">-0.2</div>
+                    
+                    <div class="matrix-cell matrix-header">M2p5</div>
+                    <div class="matrix-cell corr-low">0.2</div>
+                    <div class="matrix-cell corr-low">0.1</div>
+                    <div class="matrix-cell corr-self">1.0</div>
+                    <div class="matrix-cell corr-low">0.3</div>
+                    <div class="matrix-cell corr-low">0.2</div>
+                    
+                    <div class="matrix-cell matrix-header">N9w1</div>
+                    <div class="matrix-cell corr-medium">-0.5</div>
+                    <div class="matrix-cell corr-medium">0.4</div>
+                    <div class="matrix-cell corr-low">0.3</div>
+                    <div class="matrix-cell corr-self">1.0</div>
+                    <div class="matrix-cell corr-high">0.7</div>
+                    
+                    <div class="matrix-cell matrix-header">P4y7</div>
+                    <div class="matrix-cell corr-low">0.1</div>
+                    <div class="matrix-cell corr-low">-0.2</div>
+                    <div class="matrix-cell corr-low">0.2</div>
+                    <div class="matrix-cell corr-high">0.7</div>
+                    <div class="matrix-cell corr-self">1.0</div>
+                </div>
+            </div>
+
+            <!-- Compliance -->
+            <div class="compliance-card">
+                <h3 class="section-title">Compliance Status</h3>
+                <div class="compliance-items">
+                    <div class="compliance-item">
+                        <span>Indices Generated</span>
+                        <div class="compliance-status">
+                            <span class="positive" style="font-weight: 600;">127/128 (99%)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="compliance-item">
+                        <span>AI System Uptime</span>
+                        <div class="compliance-status">
+                            <span style="color: #fbbf24; font-weight: 600;">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="compliance-item">
+                        <span>Compliance Memos Generated</span>
+                        <div class="compliance-status">
+                            <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="positive" style="font-weight: 600;">260/260 (100%)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #27272a;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s ease;">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-5L9 2H4z" clip-rule="evenodd"/>
+                            </svg>
+                            Full Compliance Report PDF
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s ease;">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-5L9 2H4z" clip-rule="evenodd"/>
+                            </svg>
+                            P&L Decomposition Report PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline -->
+            <div class="compliance-card">
+                <h3 class="section-title">Deployment Pipeline</h3>
+                <div class="pipeline-stages">
+                    <div class="stage-card">
+                        <div class="stage-count">3</div>
+                        <div class="stage-label">Development</div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-count">5</div>
+                        <div class="stage-label">Testing</div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-count">12</div>
+                        <div class="stage-label">Production</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <button class="fab">
+            <svg viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+            </svg>
+        </button>
+    </div>
+</body>
+</html>
