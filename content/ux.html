@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPM Profile - J1x9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e4e4e7;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(180deg, #18181b 0%, #0a0a0a 100%);
+            border-bottom: 1px solid #27272a;
+            padding: 24px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .spm-identity {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .spm-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            border-radius: 20px;
+            position: relative;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .spm-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 20%;
+            background: #0a0a0a;
+            border-radius: 8px;
+            transform: rotate(45deg);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .spm-info h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #a1a1aa;
+        }
+
+        .spm-info h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #16a34a20;
+            color: #4ade80;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .thesis {
+            color: #a1a1aa;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        .trust-score {
+            text-align: center;
+            padding: 16px 24px;
+            background: #18181b;
+            border-radius: 16px;
+            border: 1px solid #27272a;
+        }
+
+        .trust-label {
+            font-size: 12px;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .trust-value {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 4px;
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 340px 1fr 360px;
+            gap: 24px;
+            padding: 24px 40px;
+            height: calc(100vh - 160px);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header {
+            font-size: 14px;
+            font-weight: 600;
+            color: #a1a1aa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        /* Positions */
+        .position-card {
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .position-card:hover {
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .position-pair {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .position-pnl {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .profit { color: #4ade80; }
+        .loss { color: #f87171; }
+
+        .position-details {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: #71717a;
+        }
+
+        .conviction-bar {
+            margin-top: 8px;
+            height: 4px;
+            background: #27272a;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .conviction-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Risk Analysis Combined */
+        .risk-section {
+            background: #09090b;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .risk-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .risk-metric {
+            text-align: center;
+        }
+
+        .risk-label {
+            font-size: 12px;
+            color: #71717a;
+            margin-bottom: 4px;
+        }
+
+        .risk-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .var-value { color: #fbbf24; }
+
+        .factor-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .factor-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #27272a1a;
+        }
+
+        .factor-name {
+            font-size: 13px;
+            color: #a1a1aa;
+        }
+
+        .factor-exposure {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .factor-bar {
+            width: 60px;
+            height: 4px;
+            background: #27272a;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .factor-fill {
+            position: absolute;
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .factor-fill.negative {
+            right: 50%;
+            background: #f87171;
+        }
+
+        .factor-fill.positive {
+            left: 50%;
+            background: #4ade80;
+        }
+
+        .factor-value {
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 45px;
+            text-align: right;
+        }
+
+        /* Compact Risk Metrics */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .metric {
+            background: #09090b;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #71717a;
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Trade Journal Compact */
+        .journal-entry {
+            padding: 12px 0;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .journal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 6px;
+        }
+
+        .journal-time {
+            font-size: 12px;
+            color: #71717a;
+        }
+
+        .journal-action {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #3b82f620;
+            color: #3b82f6;
+        }
+
+        .journal-content {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .journal-documents {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .document-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #a1a1aa;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .document-link:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .document-icon {
+            width: 12px;
+            height: 12px;
+            opacity: 0.7;
+        }
+
+        /* Chat */
+        .chat-container {
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .user-avatar {
+            background: #3b82f6;
+        }
+
+        .spm-avatar-small {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        }
+
+        .message-content {
+            background: #18181b;
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 80%;
+            font-size: 14px;
+        }
+
+        .chat-input {
+            padding: 16px;
+            border-top: 1px solid #27272a;
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #e4e4e7;
+            font-size: 14px;
+        }
+
+        .chat-input button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .chat-input button:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        /* SPM Configuration */
+        .config-section {
+            margin-bottom: 20px;
+        }
+
+        .config-item {
+            background: #09090b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+
+        .config-label {
+            font-size: 11px;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .config-value {
+            font-size: 14px;
+            color: #e4e4e7;
+        }
+
+        .dataset-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .dataset-item {
+            font-size: 13px;
+            color: #3b82f6;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .dataset-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #71717a;
+        }
+
+        /* Performance Chart */
+        .chart-container {
+            height: 240px;
+            position: relative;
+            margin-top: 16px;
+            background: #09090b;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .chart-grid {
+            position: absolute;
+            inset: 16px;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        .grid-line {
+            border-top: 1px solid #27272a40;
+        }
+
+        .chart-labels {
+            position: absolute;
+            left: 0;
+            top: 16px;
+            bottom: 32px;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #71717a;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .chart-svg {
+            position: absolute;
+            left: 50px;
+            right: 16px;
+            top: 16px;
+            bottom: 32px;
+        }
+
+        .pnl-line {
+            fill: none;
+            stroke: #3b82f6;
+            stroke-width: 2;
+        }
+
+        .pnl-area {
+            fill: url(#gradient);
+            opacity: 0.2;
+        }
+
+        .chart-dates {
+            position: absolute;
+            bottom: 8px;
+            left: 50px;
+            right: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #71717a;
+        }
+
+        /* Bottom Controls */
+        .controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #18181b;
+            border-top: 1px solid #27272a;
+            padding: 16px 40px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .control-button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            background: transparent;
+            color: #e4e4e7;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .control-button:hover {
+            background: #27272a;
+            transform: translateY(-1px);
+        }
+
+        .control-button.primary {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+
+        .control-button.primary:hover {
+            background: #b91c1c;
+        }
+
+        .risk-slider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: auto;
+        }
+
+        .slider {
+            width: 120px;
+            height: 4px;
+            background: #27272a;
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .slider-fill {
+            height: 100%;
+            width: 65%;
+            background: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="spm-identity">
+            <div class="spm-avatar"></div>
+            <div class="spm-info">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span>In Position</span>
+                </div>
+                <h1>SPM J1x9</h1>
+                <h2>Momentum Qualitative Overlay + Positioning</h2>
+                <div class="thesis">"Identifies changes in news / central bank commentary to fade consensus trades"</div>
+            </div>
+        </div>
+        <div class="trust-score">
+            <div class="trust-label">Trust Score</div>
+            <div class="trust-value">87</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Left Column -->
+        <div class="column">
+            <div class="card">
+                <div class="card-header">Active Positions</div>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <span class="position-pair">EUR/USD</span>
+                        <span class="position-pnl profit">+2.34%</span>
+                    </div>
+                    <div class="position-details">
+                        <span>Long 2.5M</span>
+                        <span>Entry: 1.0875</span>
+                        <span>2d 14h</span>
+                    </div>
+                    <div class="conviction-bar">
+                        <div class="conviction-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-header">
+                        <span class="position-pair">USD/JPY</span>
+                        <span class="position-pnl loss">-0.87%</span>
+                    </div>
+                    <div class="position-details">
+                        <span>Short 1.8M</span>
+                        <span>Entry: 142.35</span>
+                        <span>16h</span>
+                    </div>
+                    <div class="conviction-bar">
+                        <div class="conviction-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <div class="position-header">
+                        <span class="position-pair">GBP/USD</span>
+                        <span class="position-pnl profit">+1.12%</span>
+                    </div>
+                    <div class="position-details">
+                        <span>Long 1.2M</span>
+                        <span>Entry: 1.2234</span>
+                        <span>1d 3h</span>
+                    </div>
+                    <div class="conviction-bar">
+                        <div class="conviction-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Risk Analysis</div>
+                
+                <div class="risk-section">
+                    <div class="risk-header">
+                        <div class="risk-metric">
+                            <div class="risk-label">VaR (95% 1-Day)</div>
+                            <div class="risk-value var-value">$287K</div>
+                        </div>
+                        <div class="risk-metric">
+                            <div class="risk-label">Current Exposure</div>
+                            <div class="risk-value">$5.5M</div>
+                        </div>
+                    </div>
+                    
+                    <div class="factor-grid">
+                        <div class="factor-row">
+                            <span class="factor-name">USD Factor</span>
+                            <div class="factor-exposure">
+                                <div class="factor-bar">
+                                    <div class="factor-fill negative" style="width: 35%"></div>
+                                </div>
+                                <span class="factor-value loss">-0.72</span>
+                            </div>
+                        </div>
+                        
+                        <div class="factor-row">
+                            <span class="factor-name">Carry Trade</span>
+                            <div class="factor-exposure">
+                                <div class="factor-bar">
+                                    <div class="factor-fill positive" style="width: 25%"></div>
+                                </div>
+                                <span class="factor-value profit">+0.43</span>
+                            </div>
+                        </div>
+                        
+                        <div class="factor-row">
+                            <span class="factor-name">Risk Sentiment</span>
+                            <div class="factor-exposure">
+                                <div class="factor-bar">
+                                    <div class="factor-fill positive" style="width: 40%"></div>
+                                </div>
+                                <span class="factor-value profit">+0.81</span>
+                            </div>
+                        </div>
+                        
+                        <div class="factor-row">
+                            <span class="factor-name">EUR Momentum</span>
+                            <div class="factor-exposure">
+                                <div class="factor-bar">
+                                    <div class="factor-fill positive" style="width: 30%"></div>
+                                </div>
+                                <span class="factor-value profit">+0.56</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-grid">
+                    <div class="metric">
+                        <div class="metric-label">Sharpe Ratio</div>
+                        <div class="metric-value">2.34</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Max DD</div>
+                        <div class="metric-value">-3.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Hit Rate</div>
+                        <div class="metric-value">67%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg W/L</div>
+                        <div class="metric-value">1.8x</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Column -->
+        <div class="column">
+            <div class="card" style="height: 300px; display: flex; flex-direction: column;">
+                <div class="card-header">Trade Journal & Decision Audit</div>
+                
+                <div style="flex: 1; overflow-y: auto;">
+                    <div class="journal-entry">
+                        <div class="journal-header">
+                            <div class="journal-time">Today 14:32</div>
+                            <div class="journal-action">ENTRY</div>
+                        </div>
+                        <div class="journal-content">
+                            EUR/USD long triggered. ECB sources hawkish vs consensus, flow data confirms.
+                        </div>
+                        <div class="journal-documents">
+                            <a href="#" class="document-link">
+                                <svg class="document-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-1a1 1 0 100-2h1a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V7a4 4 0 014-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                EUR Thesis
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-entry">
+                        <div class="journal-header">
+                            <div class="journal-time">Today 13:15</div>
+                            <div class="journal-action">SHORT</div>
+                        </div>
+                        <div class="journal-content">
+                            USD/JPY rejection at 142.50. Consensus long crowded, initiating fade.
+                        </div>
+                        <div class="journal-documents">
+                            <a href="#" class="document-link">
+                                <svg class="document-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-1a1 1 0 100-2h1a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V7a4 4 0 014-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                JPY Setup
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="journal-entry">
+                        <div class="journal-header">
+                            <div class="journal-time">Today 11:32</div>
+                            <div class="journal-action">SCAN</div>
+                        </div>
+                        <div class="journal-content">
+                            BoJ minutes less dovish than market pricing. Adjusting JPY exposure framework.
+                        </div>
+                    </div>
+                    
+                    <div class="journal-entry">
+                        <div class="journal-header">
+                            <div class="journal-time">Yesterday 16:45</div>
+                            <div class="journal-action">TP HIT</div>
+                        </div>
+                        <div class="journal-content">
+                            GBP/USD partial exit at 1.2280. Momentum slowing vs initial thesis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div class="chat-messages">
+                    <div class="message">
+                        <div class="message-avatar user-avatar"></div>
+                        <div class="message-content">
+                            How are you identifying consensus positioning?
+                        </div>
+                    </div>
+                    
+                    <div class="message">
+                        <div class="message-avatar spm-avatar-small"></div>
+                        <div class="message-content">
+                            I analyze three layers: 1) Aggregate positioning data from prime brokers showing spec longs at 2-year highs in USD/JPY, 2) Sentiment extraction from sell-side research - 87% bullish on the pair last week, 3) Option flow showing heavy call buying at 143-144 strikes. When all three align with price at resistance, it's a high-probability fade setup.
+                        </div>
+                    </div>
+                    
+                    <div class="message">
+                        <div class="message-avatar user-avatar"></div>
+                        <div class="message-content">
+                            What's the most contrarian position right now?
+                        </div>
+                    </div>
+                    
+                    <div class="message">
+                        <div class="message-avatar spm-avatar-small"></div>
+                        <div class="message-content">
+                            EUR strength. Market is still digesting ECB's "patience" narrative, but I'm detecting a shift in internal communications. Yesterday's flow data showed real money buying EUR/USD dips aggressively - unusual pattern. My language models flagged hawkish undertones in Schnabel's speech that consensus missed. Building the position while sentiment remains negative.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" placeholder="Ask about positions, strategy, or market views...">
+                    <button>Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <div class="card">
+                <div class="card-header">Performance</div>
+                <div class="chart-container">
+                    <div class="chart-grid">
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                    </div>
+                    
+                    <div class="chart-labels">
+                        <span>+15%</span>
+                        <span>+10%</span>
+                        <span>+5%</span>
+                        <span>0%</span>
+                        <span>-5%</span>
+                    </div>
+                    
+                    <svg class="chart-svg" viewBox="0 0 400 180">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <path class="pnl-area" d="M 0,120 L 20,115 L 40,110 L 60,105 L 80,100 L 100,98 L 120,85 L 140,88 L 160,80 L 180,75 L 200,78 L 220,70 L 240,65 L 260,60 L 280,55 L 300,58 L 320,50 L 340,48 L 360,45 L 380,40 L 400,35 L 400,180 L 0,180 Z" />
+                        
+                        <path class="pnl-line" d="M 0,120 L 20,115 L 40,110 L 60,105 L 80,100 L 100,98 L 120,85 L 140,88 L 160,80 L 180,75 L 200,78 L 220,70 L 240,65 L 260,60 L 280,55 L 300,58 L 320,50 L 340,48 L 360,45 L 380,40 L 400,35" />
+                    </svg>
+                    
+                    <div class="chart-dates">
+                        <span>Jan 1</span>
+                        <span>Jan 15</span>
+                        <span>Today</span>
+                    </div>
+                </div>
+                
+                <div class="metric-grid" style="margin-top: 12px;">
+                    <div class="metric">
+                        <div class="metric-label">MTD Return</div>
+                        <div class="metric-value profit">+8.7%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">YTD Return</div>
+                        <div class="metric-value profit">+12.3%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">SPM Configuration</div>
+                
+                <div class="config-section">
+                    <div class="config-item">
+                        <div class="config-label">Core Data Sets</div>
+                        <div class="dataset-list">
+                            <div class="dataset-item">Central Bank Communications Feed</div>
+                            <div class="dataset-item">Prime Broker Positioning Data</div>
+                            <div class="dataset-item">Sell-Side Sentiment Analysis</div>
+                            <div class="dataset-item">Real Money Flow Analytics</div>
+                        </div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-label">Model</div>
+                        <div class="config-value">Claude 3.5 Sonnet (Fine-tuned)</div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-label">Temperature</div>
+                        <div class="config-value">0.3 (Conservative)</div>
+                    </div>
+                    
+                    <div class="config-item">
+                        <div class="config-label">Prompt Framework</div>
+                        <div class="config-value">contrarian_overlay_v3.1.json</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="controls">
+        <button class="control-button primary">Pause Trading</button>
+        <button class="control-button">Clone SPM</button>
+        <button class="control-button">Export Strategy</button>
+        <button class="control-button">Time Travel</button>
+        
+        <div class="risk-slider">
+            <span style="font-size: 14px; color: #71717a;">Risk Level</span>
+            <div class="slider">
+                <div class="slider-fill"></div>
+                <div class="slider-handle"></div>
+            </div>
+            <span style="font-size: 14px;">65%</span>
+        </div>
+    </div>
+</body>
+</html>
