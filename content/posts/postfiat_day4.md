@@ -39,9 +39,19 @@ But he was tracking store data. Not the data that mattered. The apes buying thin
 
 ## Holder Churn Matters 
 
-This coincidence, was more or less non repeatable. We see it in crypto all the time. People gang up and start driving up an asset. But rarely do they stick around. Assets like BTC, ADA and XRP have loyal user bases so they can defy gravity. One of SOL's weaknesses is that it marketed itself to mercenaries not idealogues. Anatoly and Mert constantly talk about how much they love making money. They don't really stand for anything other than launching tokens. So if a better place to launch tokens shows up people leave easily. And if tokens aren't hot for whatever reason they divest. Even Pump Fun - their biggest app is probably just going to launch its own token. 
+This coincidence, was more or less non repeatable in equities. But in crypto it's a whole other story. 
 
-But what I realized through running a lot of advertisements on things like GameStop (I ran an options calculator website for a while) -- is that there is a really big untapped alpha. 
+Assets like BTC, ADA and XRP have loyal user bases so they can defy gravity. 
+
+The vast majority of assets do not. One of SOL's weaknesses is that it marketed itself to mercenaries not idealogues. Anatoly and Mert constantly talk about how much they love making money. They don't really stand for anything other than launching tokens. So if a better place to launch tokens shows up people leave easily. And if tokens aren't hot for whatever reason they divest. Even Pump Fun - their biggest app is probably just going to launch its own token. 
+
+And part of ETH's problem is that it marketed itself as gasoline for the web3 economy. And nobody is really excited about owning Gasoline. Even if we all recognize it's very important. 
+
+So there are really 2 types of asset alpha.
+1. Building an ideology - which gives moneyness to your asset, detering mercenaries
+2. The idea I'm going to talk about next. Intention Mapping 
+
+But what I realized through running a lot of advertisements on things like GameStop (I ran an options calculator website for a while) -- is that all attention is not created equal, and that intention follows a relatively long user journey. Far longer than the milliseconds or seconds in the Payment for Order Flow World. 
 
 ## Intention Precedes Financial Activity. And Attention only roughly = Intention
 
@@ -49,7 +59,9 @@ People begin looking for financial ideas far before they start buying them. In o
 
 This makes sense and lines up with how most people approach investing. 
 
-The Attention/ Intentino dynamic should be familiar to anyone in ad tech. You could get unlimited impressions from weird kindle or airline TV display ads. But nobody from those ads would ever buy anything. Because you can't check out on a kindle / Airline TV display. And with small brands, that would basically just be lighting money on fire. I think it probably is for big brands too but that's a whole other discussion. 
+The Attention/ Intention dynamic should be familiar to anyone in ad tech. You could get unlimited impressions from weird kindle or airline TV display ads. But nobody from those ads would ever buy anything. Because you can't check out on a kindle / Airline TV display. And with small brands, that would basically just be lighting money on fire. I think it probably is for big brands too but that's a whole other discussion. 
+
+You can get a million twitter bots shilling some stupid token but no real people will buy it. same idea. 
 
 ## LLMs are the Ultimate Intention Extractors 
 
@@ -68,7 +80,7 @@ ____
 
 Some of you might be observing something here. This trait of LLMs, their ability to convert unstructured into structured data. Is actually the entire premise of Post Fiat's consensus mechanism. And it has a lot to do with *why* we are on XRP which we talked about yesterday.
 
-But in this regards -- I feel like we now have the context to talk about why the Post Fiat Task Node is potentially the world's most powerful alpha engine.
+But in this regards -- I feel like we now have the context to talk about why the Post Fiat Task Node is potentially the world's most powerful alpha engine. Because it can measure intention, and aggregate the alpha into a token which appreciates, begetting further intention signals from its members. 
 
 ## What is the Task Node
 First
@@ -114,7 +126,15 @@ The next several blog posts I probably want to make about actually improving exe
 
 So that was a mouthful. Maybe not as good as my other pieces, but as I said if I write evey day the quality threshhold is going to drop aggressively. 
 
-Over time though - I genuinely believe the Task Node is going to be a huge alpha engine and a driver of the Post Fiat Token's value. I'm in it for the long run. 
+The thing I really want to get across is this:
+1. Intention. not attention. Is all you need
+2. Post Fiat is a mechanism to turn intention into structured data
+3. This structured data will drive investment returns and flow back to the token
+4. Over time this will drive the token up which will bring in more intention
+5. But this is the financing mechanism for a capital I Intention, which is to make a new form of money. I.e. Go "Post Fiat"
+6. So that there will not be a churn problem with our token like SOL or so many other tech coins 
+
+Preacher Out. 
 
 
 <div style="height: 30vh">  
