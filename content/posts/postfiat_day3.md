@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 3"
-date: 2025-05-29T11:21:29Z
+date: 2025-05-30T11:21:29Z
 draft: false
 summary: "Okay. Why XRP"
 categories: ["markets"]
