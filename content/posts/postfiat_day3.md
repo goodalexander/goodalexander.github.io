@@ -19,6 +19,12 @@ Source: https://mmalmi.github.io/satoshi/
 
 This is something that comes up a lot. People in crypto get very triggered by it.
 
+## Just to Clear Things Up
+
+Post Fiat will be a new L1. It is an XRP token right now. It will use XRP's security model, and have many of the same properties. But it will replace the UNL selection process. And the tokenomics - which favor a central entity. With an AI based social contract runnable by anyone with a GPU and access to open source AI models. 
+
+We are currently developing the mainnet, at which point the Post Fiat Token will leave XRP. Post Fiat Tokens -- will convert 1:1 into mainnet tokens. So what I'm writing about here is why I selected XRP as a model for a new network. And while I am long XRP as many of you know, Post Fiat is by far the larger economic interest for me. 
+
 ## Battle Tested
 What it boils down to is pretty simple.
 
@@ -70,6 +76,8 @@ The second, massive reason to build an XRP fork -- is economic. Both Proof of St
 The big change is that investment banks and hedge funds are willing to engage in crypto in a deep, meaningful way. And that wasn't true for most of XRP's history. So XRP in some ways had a regulatory moat because it was the only entity with the stones to sue the US govt and operate in the US. And the only org with the warchest. But now - people actually want to do business with crypto companies. And especially with AI companies. 
 
 With Trump - however, tariffs and OFAC treatment of Iran - are still going to be hard. So in many ways, the investment bank is a far less spicy part of the bank to interact with. And financial institutions are primarily engaging with crypto in a capital markets capacity (underwriting MSTR debt issuances, SPACs, ETFs, futures products etc). Not in a remittance or actual payments capacity
+
+So Post Fiat -- is starting out where the action is. Vs where we thought the action would be in 2013. 
 
 ## Application of Large Language Models to Crypto's Largest Unstructured Database of Plain English Memos 
 
