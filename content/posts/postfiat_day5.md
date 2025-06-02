@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 5"
-date: 2025-05-31T11:21:29Z
+date: 2025-06-01T11:21:29Z
 draft: false
 summary: "Crypto AI Bull Case From Here"
 categories: ["markets"]
