@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 6"
-date: 2025-06-01T11:21:29Z
+date: 2025-06-02T11:21:29Z
 draft: false
 summary: "Self talk. Running on fumes "
 categories: ["markets"]
