@@ -24,13 +24,15 @@ ARKK's largest win, TSLA - which got it a lot of marketing and assets via Elon M
 ## Elon's Turn
 
 Tweet, June 3
----------
-"I’m sorry, but I just can’t stand it anymore.
+
+----
+
+I’m sorry, but I just can’t stand it anymore.
 
 This massive, outrageous, pork-filled Congressional spending bill is a disgusting abomination.
+Shame on those who voted for it: you know you did wrong. You know it.
 
-Shame on those who voted for it: you know you did wrong. You know it."
----------
+----
 
 This is a regime shift. 
 
@@ -101,7 +103,7 @@ The organization forecast that GDP growth in the United States will slow to near
 19. **The Financial Game Is a Path** Financial markets will benefit heavily from AI integration - and there will be a 'middle upper class' of individuals who successfully apply AI to financial markets and cryptocurrency to benefit from this vast surge in speculation. This is also to some extent structural to LLMs, which are well suited to financial applications as they do not require new data but rather repetive processing 
 20. **Populism and Asset Confiscation** Over time it will become increasingly clear that tech is destroying society but it's already too late to stop it. Society will nonetheless become violently populist and begin imposing wealth taxes -- which will lead to global support for CBDCs that make tiered taxation possible, and make capital flight and bank runs more difficult. This populism will drive equity derating as corporate debt is senior to equity, and the 20 year US treasury market is already down 40%+ over 5 years on the back of ratings downgrades. There is not a world where the government defaults before corporations do 
 21. **The Trend is Already Being Confirmed** People have already started buying Bitcoin and Gold in an animal spirits manner. They would not be doing this if AI was going to lead to 10% GDP growth. Most of what I'm saying is beginning to be priced into markets across the board. I anticipate this will become a global phenomenon, with the only 'solution' of politicians being to print money to fund social programs to keep social unrest at bay 
-22. ** DOOM is Inevitable ** The DOOM ETF is therefore inevitability as an asset. As people begin to see that the dominant capital formation structure is betting on continuation of network effects and addiction loops they will have no choice but to pile in
+22. **DOOM is Inevitable** The DOOM ETF is therefore inevitability as an asset. As people begin to see that the dominant capital formation structure is betting on continuation of network effects and addiction loops they will have no choice but to pile in
 23. **Fiat brought us DOOM. It's time to Go Post Fiat** The fees from the DOOM ETF will power the liferaft. The Post Fiat Network
 24. **The Native Cryptographic AI Liferaft** The Post Fiat network is extra sovereign money. That embeds AI into its membership core to ensure they do not fall subject to the generative world addiction. And powers financial institutions applying AI to their investment processes to participate in the coming financial manias 
 25. **Loops** As DOOM goes up -- fees will flow into the native PFT token, attracting more capital and intelligence into the network. This capital and intelligence will be used to enahnce analytics, expand coverage universe and improve the slippage profile of the ETF. The ETF will serve like the Bridgewater All Weather fund. A low fee alternative. Over time -- more structures will be built, likely crypto native trading vaults 
@@ -146,7 +148,11 @@ I think the first step here is:
 1. Assembling a clean Bloomberg Index available to professional subscribers
 2. Using the Post Fiat indexing tool to create a consumable index only availabe to Post Fiat wallet holders
 3. Building some track record and ensuring the DOOM ETF process works / with production LLM tools
-4. Media -- I don't think selling the DOOM ETF will be hard but it needs to be a high quality evisceration of the decaying empire 
+4. Media -- I don't think selling the DOOM ETF will be hard but it needs to be a high quality evisceration of the decaying empire
+
+## Final Comment
+
+I'm building Post Fiat because I think DOOM is the base case. But right now there's no easy way to put that on in tradfi markets. And if that can finance effective life raft building, then I will do what it takes for our community/stakeholders to head to the Post Fiat Future
 
 <div style="height: 30vh">  
     <script 
