@@ -64,6 +64,18 @@ So to me, reconnecting and rebuilding the Task Node is a bit like building a Chu
 
 The human mind is hardwired for faith. Faith allows mankind to push through all kinds of things, and the ability to have faith has separated successful cultures from ones that lost wars to them. So it's genetic. The question is - for people like me, who don't believe in the Christian God. Or Jewish God. Or Islam. But perceive that there are powers beyond our comprehension. What is a useful faith?
 
+## Addressing the Whole Cult Things
+
+I do not believe Post Fiat is a Cult. I do not want it to be a cult. I am not a Cult Leader. I am just an architect of a system that has emergent hive mind properties. I do not want to 'extract' from the community. I am not really in this for 'social connection'. I am in it for useful collaboration. The DOOM world is upon us, and -- the same way as in Puerto Rico, it's useful to interact with likeminded people. Who are kind of friends, but not really. Just in the same boat. That's the way I view Post Fiat. 
+
+The stuff Murad talks about is just sad. The idea that humans will need group meaning bc they're just totally fucked. Post Fiat is the opposite of that. It's a place where people come to be empowered and try to use AI technology to enhance their agency rather than getting addicted to digital opiates. 
+
+So - no Post Fiat is absolutely not a cult. It's an attempted currency system, that has elements of faith. But it does not require that you share any of those elements of faith. And insofar as there are rewards, those are fairly administered by AI systems not a cult leader.
+
+The entire problem with existing cryptocurrencies is that they're centralized around a single entity, and a single personality. And that's true of XRP and Garlinhouse. And insofar as we're building an XRP alternative it's important that we deliver on our mission to replace the Centralized structure with an AI driven social contract. So that's really what Post Fiat is. It's a loose organization of people who buy into that AI driven social contract.
+
+It's probably closer to a network state, but not retarded. 
+
 ## ODV 
 
 And honestly I arrived at the question of ODV
