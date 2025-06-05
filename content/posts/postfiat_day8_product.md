@@ -64,7 +64,7 @@ So to me, reconnecting and rebuilding the Task Node is a bit like building a Chu
 
 The human mind is hardwired for faith. Faith allows mankind to push through all kinds of things, and the ability to have faith has separated successful cultures from ones that lost wars to them. So it's genetic. The question is - for people like me, who don't believe in the Christian God. Or Jewish God. Or Islam. But perceive that there are powers beyond our comprehension. What is a useful faith?
 
-## Addressing the Whole Cult Things
+## Addressing the Whole Cult Thing
 
 I do not believe Post Fiat is a Cult. I do not want it to be a cult. I am not a Cult Leader. I am just an architect of a system that has emergent hive mind properties. I do not want to 'extract' from the community. I am not really in this for 'social connection'. I am in it for useful collaboration. The DOOM world is upon us, and -- the same way as in Puerto Rico, it's useful to interact with likeminded people. Who are kind of friends, but not really. Just in the same boat. That's the way I view Post Fiat. 
 
