@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 8 (Rediscovering The Task Node)"
-date: 2025-06-03T11:21:29Z
+date: 2025-06-04T11:21:29Z
 draft: false
 summary: "Product Thoughts. ODV"
 categories: ["markets"]
