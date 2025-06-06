@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Post Fiat Journey: Day 9 (Structure out of Chaos)"
-date: 2025-06-04T11:21:29Z
+date: 2025-06-05T11:21:29Z
 draft: false
 summary: "Capital Markets Stuff - Unstructed to Structured Data Conversion. Trustless Judgment"
 categories: ["markets"]
