@@ -11,8 +11,7 @@ tags: ["crypto"]
 
 Going back to this quote from Bloomberg I probably mentioned previously - as it's very relevant to the Post Fiat Story
 
------
-Igor Tulchinsky made a fortune by outwitting human traders. Now he’s banking
+_Igor Tulchinsky made a fortune by outwitting human traders. Now he’s banking
 on large language models to make his hedge fund even smarter.
 
 It’s a cloudy March morning in Midtown Manhattan and Igor Tulchinsky is
@@ -22,8 +21,7 @@ models for his hedge fund WorldQuant. “The first thing that the LLM can do is
 it can structure data and 80% of data that’s out there is unstructured,” says
 Tulchinsky, dressed in all black, his piercing blue eyes gleaming with
 excitement. “It’s like a free lunch.”
------
-
+_
 Today I wanted to just dive into how I think about back end data stuff for AI trading agents.
 
 Essentially - markets are a video game. But it doesn't seem like a video game. Until you convert it into structured data. Which is basically, summaries and standardized ways of looking at things. 
