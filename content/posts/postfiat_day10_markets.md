@@ -28,7 +28,7 @@ That's also why you can predict what LLMs are going to say. They are literally d
 So this is level 1 of understanding it. The photo above basically shows that if you run 30 different queries 100 different times you always get the same mode. But interestingly, outside of Mode, LLMs also have a finger print. So check out the table below
 
 ## Exhibit 2: Standard Deviation Fingerprints
-![Encoding Fingerprints](/images/blog10_encoding_fingerprint.png)
+![Encoding Fingerprints](/images/image_2_std_fingerprint.png)
 
 These are the standard deviations from running those terms through Claude Haiku. "A blue whale dives" has 0 standard deviation. But "A tiny ant works" has a very high standard deviation in relative space. That is to say, if you run it 100 times -- it's likely to generate more different results from Claude Haiku. This standard deviation property creates a finger print such that if you've run a model a bunch of times you know which one has run. Even if you don't have the model weights. 
 
@@ -66,20 +66,20 @@ So basically we apply this to the Validators. You can find the example code here
 
 So we can see the top performing validators here
 
-shadow.haas.berkeley.edu
+_**shadow.haas.berkeley.edu**_
 **Organization:** UC Berkeley Haas School of Business\n\n**Credibility Assessment:** This is a prestigious public university business school with significant institutional weight and academic reputation. However, as an educational institution, it has moderate censorship resistance and limited technical infrastructure for rapid network upgrades compared to specialized technology organizations.
 **Score:** 85
 
-ripple.ittc.ku.edu
+_**ripple.ittc.ku.edu**_
 **Organization:** University of Kansas Information and Telecommunication Technology Center (ITTC)\n\n**Credibility Assessment:** ITTC is a legitimate research center at a major state university with strong technological capabilities and academic independence. However, it has moderate institutional size compared to global megacorps or sovereign entities, and limited censorship resistance as a state-funded institution.
 **Score:** 75
 
 And the lowest performing validators here
-ekiserrepe.es	
+*_*ekiserrepe.es	**_
 **Organization:** Ekiserrepe.es appears to be an unknown Spanish website or domain with no clear organizational identity or public presence.\n\n**Credibility Assessment:** This organization lacks institutional size, has no demonstrated censorship resistance capabilities, and shows no evidence of technological expertise for network operations. The domain appears to be either inactive, personal, or represents a very small entity with minimal public footprint.
 **Score:** 15
 
-jon-nilsen.no	-	**Organization:** Jon Nilsen (Individual/Personal Website)\n\n**Credibility Assessment:** This appears to be a personal website belonging to an individual named Jon Nilsen. As a personal site with no apparent institutional backing, it lacks significant economic weight, censorship resistance, and proven technical capabilities for network operations.\n\n**Score:** 15\n\nThe low score reflects the individual nature of this validator, limited institutional size, uncertain technical capabilities, and lack of established credibility in blockchain validation
+_**jon-nilsen.no**_	-	**Organization:** Jon Nilsen (Individual/Personal Website)\n\n**Credibility Assessment:** This appears to be a personal website belonging to an individual named Jon Nilsen. As a personal site with no apparent institutional backing, it lacks significant economic weight, censorship resistance, and proven technical capabilities for network operations.\n\n**Score:** 15\n\nThe low score reflects the individual nature of this validator, limited institutional size, uncertain technical capabilities, and lack of established credibility in blockchain validation
 katczynski.net-	**Organization:** Katczynski.net appears to be a personal website or blog, likely referencing Theodore Kaczynski (the Unabomber). \n\n**Credibility Assessment:** This is a small personal website with minimal institutional size, unknown technological capabilities, and unclear governance structure. While potentially censorship-resistant due to its independent nature, it lacks the scale, resources, and established reputation necessary for high credibility in validator operations.
 **Score:** 15
 
@@ -206,3 +206,14 @@ This 0.995+ correlation emerges because:
         async>
     </script>
 </div>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
