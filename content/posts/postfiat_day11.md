@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Singapore Musings: Day 11"
-date: 2025-06-08T11:21:29Z
+date: 2025-06-07T11:21:29Z
 draft: false
 summary: "Non Libertarian Crypto. Seethe. Singapore. "
 categories: ["markets"]
@@ -80,14 +80,3 @@ The real interesting attribute of LLMs is how they can make this possible withou
         async>
     </script>
 </div>
-
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$']],
-      displayMath: [['$$', '$$']]
-    }
-  };
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
