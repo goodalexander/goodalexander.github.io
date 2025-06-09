@@ -2,7 +2,7 @@
 title: "Subscribe"
 layout: "post"
 url: "/subscribe"
-summary: "subscribe to goodalexander"
+summary: "subscribe to the Post Fiat Newsletter by goodalexander"
 ---
 
 Thanks for your interest in GoodAlexander - the form below will subscribe you to my Ghost Newsletter for free 
@@ -14,8 +14,8 @@ Thanks for your interest in GoodAlexander - the form below will subscribe you to
         data-text-color="#ffffff"
         data-button-color="#2d2d2d"       
         data-button-text-color="#ffffff"
-        data-title="goodalexander" 
-        data-description="Navigating the Post Fiat reality" 
+        data-title="The Post Fiat Newsletter" 
+        data-description="Navigating the Post Fiat reality (by goodalexander)" 
         data-site="https://goodalexander.ghost.io/" 
         data-locale="en" 
         async>
