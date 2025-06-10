@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Useful Financial Collectives: Day 13"
-date: 2025-06-07T11:21:29Z
+date: 2025-06-10T11:21:29Z
 draft: false
 summary: "Apes together strong version 8,134 "
 categories: ["markets"]
