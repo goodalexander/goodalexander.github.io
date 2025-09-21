@@ -9,7 +9,7 @@ tags: ["post fiat","crypto"]
 ---
 
 
-1. US stables are needed to finance the deficit
+1. US stables are needed to finance the deficit. Scott Bessent in his June 18 tweet and subsequent interviews targeted $3.7 trillion of stable supply by 2030 to support demand for US treasuries. Paolo Ardoino of Tether - who previously had not set foot in the US for years, was subsequently invited to the White House and honored by Donald Trump. Donald Trump's family launched a $20+B FDV stablecoin project (as of Sept 2025), "World Liberty Financial". The Stable cycle is well under way with transparent motives. 
 2. Government must continue unlimited AI investment regardless of ROI because of military concerns (simulations: drones, bio-weapons)
 3. Primary driver for stablecoin demand is collateral for
 a. perp trading
@@ -48,20 +48,20 @@ d. Due to endless government investment in AI, data centers etc, this will also 
 14. Everyone in crypto is therefore asking the wrong question. They are asking "how can blockchains be used to sell AI compute". When the actual question is how to weaponize online communities into profit producing enterprises 
 
 15. There are a large number of beneficiaries from this :
-a. Exchanges / exchange tokens
-b. Yield protocols (for looping/ and carry trades)
-c. Social Sharing / Streaming platforms (acquisition targets for social companies which will want to index into this - Robinhood is building its own social media platform already) 
-d. Crypto protocols with extremely active tightly knit communities that can adopt co-ordination tech 
-e. On Chain tokenization plays such as GLXY, AVAX or chains that facilitate large scale on-chain stock trading (SOL / Phantom wallet are recent -- but will want to track traction of assets actually being traded on chain) 
-f. Various CBDC integration bets (For fixed income looping) such as Canton Network 
-g. DATs as this theory would suggest they will get added to passive indices as part of the incentive structure to enrich retail
-h. Perpetual underperformance of passive indices vs crypto spot assets as hedge funds transition from price discovery tools to price distortion machines 
-i. AI tools that facilitate pseudonymous collaboration. unclear if there are benefits to being on-chain a la Farcaster or TON (rekt). 
-j. Private AI tools. Will be needed to facilitate this -- is a logical crypto use case 
-h. on-chain / distributed hedge fund infra such as NMR should be thematic winner as the amount of distributed signal generation should go parabolic 
-i. RWA protocols that facilitate more tradable assets, on-chain betting (more bets), on-chain prediction markets. 
-j. Stablecoin plays that win speculative listings. entire value is "can it be posted as collateral on Binance, Hype etc". My prediction is that tether just wins as usual and this is less compelling 
-k. Telegram groups are primitive versions of what are going to form. Essentially I think people will be part of AI augmented hive minds that continuously generate speculative volume and extract alpha from passive investors, or people who refuse to play the game 
+* Exchanges / exchange tokens [BNB, HYPE et al]
+* Yield protocols (for looping/ and carry trades) [AAVE, Pendle, ENA]
+* Social Sharing / Streaming platforms (acquisition targets for social companies which will want to index into this - Robinhood is building its own social media platform already) - [PUMP]
+* Crypto protocols with extremely active tightly knit communities that can adopt co-ordination tech [XRP, ADA, BTC]
+* On Chain tokenization plays such as GLXY, AVAX or chains that facilitate large scale on-chain stock trading (SOL / Phantom wallet are recent -- but will want to track traction of assets actually being traded on chain)
+*   Various CBDC integration bets (For fixed income looping) such as Canton Network
+* DATs as this theory would suggest they will get added to passive indices as part of the incentive structure to enrich retail (MSTR)
+* Perpetual underperformance of passive indices vs crypto spot assets as hedge funds transition from price discovery tools to price distortion machines (short IWM)
+* AI tools that facilitate pseudonymous collaboration. unclear if there are benefits to being on-chain a la Farcaster (DEGEN - not financial advice and no position, but evaluating) or TON but probably some benefit exists
+* Private AI tools. Will be needed to facilitate this -- is a logical crypto use case. Position: Private (Ambient). Ability to rent GPUs for private use cases (USD AI: Private / live stable on pendle) 
+* on-chain / distributed hedge fund infra such as NMR should be thematic winner as the amount of distributed signal generation should go parabolic
+* RWA protocols that facilitate more tradable assets, on-chain betting (more bets), on-chain prediction markets.
+* Stablecoin plays that win speculative listings. entire value is "can it be posted as collateral on Binance, Hype etc". My prediction is that tether just wins as usual and this is less compelling. Mildly positive XPL vs other stable plays 
+* Telegram groups are primitive versions of what are going to form. Essentially I think people will be part of AI augmented hive minds that continuously generate speculative volume and extract alpha from passive investors, or people who refuse to play the game. TON might benefit 
 
 In summary we decided not to cut deficit spending. We opted to enforce dollar demand through non-traditional methods. The result will be an unhinged tide of speculation unlike anything seen before. It will be powered by AI and supported by government interests - so unlike previous retail manias - it will be more sophisticated, well capitalized and persistent than anyone likely expects.  
 
