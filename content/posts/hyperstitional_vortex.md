@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "Hyperstitional Vortex"
-date: 2025-011-19T11:21:29Z
+date: 2025-11-19T11:21:29Z
 draft: false
 summary: "That which was shall be once more, if not at first then just before"
 categories: ["markets"]
