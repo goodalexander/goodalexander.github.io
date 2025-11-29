@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
-title: "The One Shot Series: Volume 1: The Moth"
-date: 2025-11-19T11:21:29Z
+title: "The Great Unraveling (One Shot Series I)"
+date: 2025-11-28T11:21:29Z
 draft: false
 summary: "Part 1 in AI generated text experiment designed to cause extreme consciousness changes in consumers"
 categories: ["markets"]
