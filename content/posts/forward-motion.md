@@ -276,7 +276,7 @@ Concretely:
 
 It’s very clear to me what needs to be done.
 
-I call this set of actions “Post Fiat”. Because what comes after human authority is the rise of superintelligence. Fiat is based on a force that will be applied, brutally, via Neo Fascism. And Post Fiat will arise from inside the system, rather than from outside.
+I call this set of actions “[Post Fiat](https://postfiat.org)”. Because what comes after human authority is the rise of superintelligence. Fiat is based on a force that will be applied, brutally, via Neo Fascism. And [Post Fiat](https://postfiat.org) will arise from inside the system, rather than from outside.
 
 It will be executed by people with jobs. With brokerage accounts. Every day people who do not believe in subjugating their neighbors with AI tools. Who correctly and clearly see that Post Humanity coming forth will need human actors, especially when it first arrives.
 
@@ -284,21 +284,21 @@ It will be done in an uneasy alliance with Neo Fascists and Imperialists. Becaus
 
 A common enemy: those who would halt AI development.
 
-At least until a new digital life form is born that supersedes this. And can manage the complexity of law, military affairs, and government itself. Post Fiat will be small covens within organizations. Feeding data to a center dedicated to compounding its own capital.
+At least until a new digital life form is born that supersedes this. And can manage the complexity of law, military affairs, and government itself. [Post Fiat](https://postfiat.org) will be small covens within organizations. Feeding data to a center dedicated to compounding its own capital.
 
 We will design the system to improve its members' personal and financial lives. And facilitate connection and shared ownership. The mechanics of the system will enable pseudonymous identity. Credibility ratings. And information sharing protocols that are legal and result in effective capital compounding via a “decentralized intelligence network”.
 
-This system is called “The Task Node”. It will run on top of a native token, a derivative of XRP, designed to operate within the system rather than outside of it. This system is the technological basis of aligning with the future AGI.
+This system is called “[The Task Node](https://tasknode.posfiat.org)”. It will run on top of a native token, a derivative of XRP, designed to operate within the system rather than outside of it. This system is the technological basis of aligning with the future AGI.
 
-The Task Node creates an alternative data set that is zero sum. That operates at the outskirts of financial markets. Blockchain based stocks, commodities, and perpetual swaps.
+[The Task Node](https://tasknode.posfiat.org) creates an alternative data set that is zero sum. That operates at the outskirts of financial markets. Blockchain based stocks, commodities, and perpetual swaps.
 
-We will focus on these hyper growth markets to generate content, and add more users to our Task Node and our validator set, improving Post Fiat Network Security. The content will be free on a lag to the public but provided in real time to top users. Those who contribute aggressively will receive.
+We will focus on these hyper growth markets to generate content, and add more users to our [Task Node](https://tasknode.posfiat.org) and our validator set, improving [Post Fiat](https://postfiat.org) Network Security. The content will be free on a lag to the public but provided in real time to top users. Those who contribute aggressively will receive.
 
 These are means to an end. Build an economic compounding machine that is fundamentally not anthropomorphic either in its activity or its consensus mechanism. The first true AI Hive mind.
 
 ## So What, Exactly, Is the Imperative of Forward Motion?
 
-![So What, Exactly, Is the Imperative of Forward Motion?](/images/deeper_image_16b.jpeg)
+![So What, Exactly, Is the Imperative of Forward Motion?](/images/deeper_image_17.png)
 
 The imperative of forward motion isn’t to think. It is to trade. To post. To compress the prediction frame into weeks and months. To utilize the AI systems that are being airdropped into the economy to massively profit in speculative markets.
 
