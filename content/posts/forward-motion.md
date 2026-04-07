@@ -1,3 +1,4 @@
+---
 author: ["goodalexander"]
 title: "The Imperative of Forward Motion"
 date: 2026-04-07T11:21:29Z
