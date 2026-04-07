@@ -32,13 +32,17 @@ Power does not rescue bad desires. A genius can be a fool. The true promise of A
 
 You can be handed infinite power and still lose everything if you ask for the wrong thing.
 
+
+
 ## An Axiomatic Need for Evolution
 
 ![An Axiomatic Need for Evolution](/images/deeper_image_3.jpeg)
 
 Seeing AGI accurately means acknowledging our humanity is more of an obstacle than a virtue. 
 
-A chimp gets the banana he wished for and the story ends. A human gets the banana and has the energy to wonder what he’s missing in life. The chimp cannot understand this delta. More intelligence means less satisfaction. 
+A chimp gets the banana he wished for and the story ends. A human gets the banana and has the energy to wonder what he’s missing in life. The chimp cannot understand this delta. More intelligence often means less satisfaction - but only due to nuanced understanding. Most would not give up the understanding despite its costs. 
+
+The movement towards AGI is - at some level, predicated on understanding that moving from chimp to human was desirable despite the pain it caused. 
 
 This is why we build data centers, train systems that can improve themselves, and prepare to merge with them. Not to corner a banana market. But to stop being monkeys.
 
