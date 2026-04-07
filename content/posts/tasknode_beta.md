@@ -95,6 +95,8 @@ Be careful to store your seed phrase (a 24 word phrase). This backup phrase will
 
 As soon as you have an X or Github account Linked you will receive a 12 PFT airdrop. 
 
+![Linked accounts in Task Node settings](/images/linked_accounts.png)
+
 ### Dashboard
 
 Here you can send or receive PFT, manage your wallets. manage your transactions and see your outstanding, verified, refused and rewarded tasks. 
@@ -113,12 +115,24 @@ How the Task Flow works
 
 This flow occurs in the dashboard. When you pop out tasks you should see whether a task is classified as “personal”, “network” or “alpha” along with a Task ID. If you click Task ID you will see task forensics that help you understand the history of the task 
 
+![Task dashboard showing accepted work](/images/complete_task.png)
+
+![Submitting evidence for a task](/images/upload.png)
+
+![Verification flow inside the dashboard](/images/verification.png)
+
+![Rewarded task state](/images/rewarded.png)
+
 ### Context
 You set your context and upload an encrypted version to IPFS. This context ought to include your high level value, strategy and tactics. 
 
 A value is something that you want for its own sake. Something that motivates you at a high level. A strategy is how you plan on reaching your value. Your tactics are the specific actions you need to take to advance your strategy. 
 
 Click Context Advice in order to get a specific recommendation to improve your context document. This can be slow but is well worth it as getting your strategy is important before you begin execution
+
+![Context page for values, strategy, and tactics](/images/context_page.png)
+
+![Context advice and document builder](/images/context_build.png)
 
 ### Settings
 See your active wallet and linked accounts (Github and X)
@@ -134,6 +148,8 @@ You can have multiple wallets associated with the Task Node. One of these wallet
 ### Task Chat
 
 Task Chat is the home of all the major chat functions in Post Fiat. Here is a brief description of each. 
+
+![Task Chat module selection and workflow](/images/module_chat.png)
 
 The Task Chat function guide is 
 
@@ -192,6 +208,8 @@ This is an internal guide to help you with the app
 
 You start by publishing a key to the PFT network. This is a public encryption key that allows you to interact with other wallets. Once you have another user’s address you can add them to your contact list and send them messages with PFT attached. Private messages are encrypted only between you and the other user. 
 
+![Agent and messaging view](/images/agent_view.png)
+
 ### Profile
 
 The profile page has two components. Private and public
@@ -202,7 +220,10 @@ When you complete tasks you become associated with certain tickers. These are th
 
 You see a sybil score (which is decomposed by how many real accounts you’ve linked, how many times you’ve tried to sybil the task node, and how many accounts you’re messaging) as well as a real time feed of your rewards
 
+![Public profile and leaderboard views](/images/leaderboard.png)
+
 #### Private Profile
 
 Your private profile has your Linked Wallets and which one you want to be visible on your profile page. It also contains some useful debug information for while we are in beta such as what’s feeding your task generation as well as the most recent runs for your profile pages
 
+![Public activity display controls](/images/clean_public_display.png)
