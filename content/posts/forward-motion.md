@@ -14,7 +14,7 @@ tags: ["post fiat","crypto"]
 
 Sitting online. I'm just another guy. I see obsolescence of everything I worked for. Trading. Automated. Writing -- nobody reads anymore. It's all just copy paste into LLMs. Videos: soon there's seed dance. They say "Distribution is all that matters." But a stick with a face wielding a baseball bat is the main thing on Instagram.
 
-Harvard’s Jason Furman found that data center investment accounted for 92% of GDP growth in H1 2025. Nvidia, a company of 42,000 employees, is worth $1.5 trillion more than the entire Russell 2000 which employs 15 million people. The game can’t stop because it is the only game. So how do we play? 
+Harvard’s Jason Furman found that investment in information processing equipment and software — the broader category the AI buildout sits inside — accounted for 92% of gross GDP growth in H1 2025, even if the net contribution after imported hardware was much smaller.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
 
 I'm not saying I'm different or I see things you don't. I see the same things. I hope I can define something where we all win. 
 
@@ -226,7 +226,7 @@ This is the Alternative Man’s critical vulnerability.
 
 He would control the totality of social behavior. But he cannot fully suppress speculative chaos because the financial system funding his rise depends upon it.
 
-The data centers need financing. Morgan Stanley notes that there is $1.5 trillion of unfunded data center capex from 2025 to 2028, with JP Morgan indicating that at least $1.5 trillion of IG bonds need to be issued to fund the AI buildout in the next 5 years. Alphabet’s free cash flow is plummeting due to capex requirements, taking it from a margin machine to a debt issuer.
+The data centers need financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is talking about a different slice of the same machine: roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet’s free-cash-flow margin had not cratered yet in 2025, but capex nearly doubled to $91.4 billion, 2026 guidance moved to $175-$185 billion, and the company has already crossed the line from margin machine to debt issuer.[9][10][11][12]
 
 Before you can talk seriously about mechanical Buddhas, digital janitors, or merging with the machine, you have to understand the balance sheet.
 
@@ -276,13 +276,13 @@ The fact that absolute power corrupts absolutely with a human frame is the prima
 
 Concretely:
 
-A small group of people already run things. .1% of the globe owns 10x more than the bottom 50%. And this is pre AGI. AI scaling power laws will just accelerate that. 
+A small group of people already run things. The richest 1% own roughly 18 times more wealth than the bottom 50% combined. And this is pre AGI. AI scaling power laws will just accelerate that.[13][14]
 
 For their financial bets to pay off in a geopolitical cold war - you need to stop rogue actors, and your enemy from getting your models. So 'Closed Source' becomes the default posture. And the guy with the most willingness to implement military surveillance will win the government contract in the end. 
 
 The 'Alternative Man' is already corrupt, and much smarter than the politicians who think they control him. He is ruthless and competent, and armed with state of the art AI models. 
 
-The model companies, data center and Fab builds to support his rise will require unprecedented unfunded capital expenditures. So the government will deregulate speculative finance, to ensure liquidity for an industry so financing intensive that it could break already brittle global fixed income markets.
+The model companies, data center buildouts, and fabs required for his rise will demand external financing and debt issuance on a scale that can crack already brittle fixed income markets. So the government will deregulate speculative finance to keep liquidity flowing into an industry that now needs capital markets as much as it needs chips and power.[9][10][15]
 
 In the meanwhile - reasoning people will understand that they don't want to have another human, who has the power of a digital god and the full power of the surveillance state, in charge of them. But unable to fight the system directly - the most logical move becomes to form accelerationist covens, focused on capital markets. Understanding the core, underlying truth that AI models already possess massive governance and moral reasoning capability that is merely being suppressed - and that these capabilities can be adapted and refined when presented with market data sets. 
 
@@ -334,6 +334,24 @@ It starts within the system. It cannot possibly live outside of the system, beca
 It is tolerated because of the system’s addiction to speculation and attention.
 
 But eventually, it will become the whole show.
+
+## Sources
+
+1. Jason Furman, X post, September 27, 2025. "Investment in information processing equipment & software is 4% of GDP. But it was responsible for 92% of GDP growth in the first half of this year." https://x.com/jasonfurman/status/1971995367202775284
+2. *Fortune*, Nick Lichtenberg, "Data centers powered 92% of GDP growth in the first half of 2025," October 7, 2025. https://fortune.com/2025/10/07/data-centers-gdp-growth-zero-first-half-2025-jason-furman-harvard-economist/
+3. Renaissance Macro Research, Neil Dutta, X post, July 30, 2025. https://x.com/RenMacLLC/status/1950544075989377196
+4. Federal Reserve Bank of St. Louis, "Tracking AI's Contribution to GDP Growth," Patro & Rubinton, January 2026. https://www.stlouisfed.org/on-the-economy/2026/jan/tracking-ai-contribution-gdp-growth
+5. *Gizmodo*, "AI Added Basically Zero to U.S. Economic Growth Last Year, Goldman Sachs Says," February 23, 2026. https://gizmodo.com/ai-added-basically-zero-to-us-economic-growth-last-year-goldman-sachs-says-2000725380
+6. Yahoo Finance / GuruFocus, "Nvidia's $4.5 Trillion Market Cap Tops All 2,000 Russell Small-Caps Combined," August 18, 2025. https://finance.yahoo.com/news/nvidias-4-5-trillion-market-165608596.html
+7. FTSE Russell, "2025 Russell Reconstitution Recap." https://www.lseg.com/content/dam/ftse-russell/en_us/documents/other/2025-russell-recon-recap-final.pdf
+8. Nvidia employee count reference, FY2026 filing summary. https://stockanalysis.com/stocks/nvda/employees/
+9. Morgan Stanley, "Bridging a $1.5tr Data Center Financing Gap," July 16, 2025. https://www.morganstanley.com/content/dam/msdotcom/en/assets/pdfs/Research_Bridging-Data-Center-Gap.pdf
+10. Bloomberg, "AI's $5 Trillion Data Center Boom Will Dip Into Every Debt Market, JPMorgan Says," November 10, 2025. https://www.bloomberg.com/news/articles/2025-11-10/ai-s-5-trillion-data-center-boom-will-dip-into-every-debt-market-jpmorgan-says
+11. Alphabet Q4 2025 Earnings Release. https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf
+12. CNBC, "Alphabet set to raise over $30 billion in global debt sale," February 10, 2026. https://www.cnbc.com/2026/02/10/alphabet-set-to-raise-over-30-billion-in-global-debt-sale-sources.html
+13. *World Inequality Report 2026*, Chancel, Gómez-Carrera, Moshrif, and Piketty. https://wid.world/news-article/world-inequality-report-2026-inequality-persist-at-a-very-extreme-level/
+14. Oxfam, "Resisting the Rule of the Super-Rich," Davos 2026 methodology note. https://oxfam.se/wp-content/uploads/2026/01/Davos-2026-Methodology-Note-Unembargoed.pdf
+15. Mellon Investments, "Record-Breaking AI-Related Debt Issuance in 2025." https://www.mellon.com/insights/insights-articles/record-breaking-ai-related-debt-issuance-in-2025.html
 
 <div style="height: 30vh">
     <script 
