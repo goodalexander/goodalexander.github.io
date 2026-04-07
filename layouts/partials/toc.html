@@ -1,6 +1,7 @@
 {{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
+{{- $copyMarkdown := printf "# %s\n\n%s" .Title .RawContent -}}
 <div class="toc">
     <div class="llm-copy-widget">
         <button class="llm-copy-button" type="button" data-copy-article>
@@ -14,6 +15,7 @@
         </button>
         <p class="llm-copy-text">Copy and paste into your favorite LLM.</p>
         <p class="llm-copy-status" data-copy-status aria-live="polite"></p>
+        <script type="application/json" data-copy-markdown>{{ $copyMarkdown | jsonify }}</script>
     </div>
 
     <details {{if (.Param "TocOpen") }} open{{ end }}>
@@ -137,12 +139,18 @@
 
         const article = button.closest('.post-single');
         const statusEl = article?.querySelector('[data-copy-status]');
-        const title = article?.querySelector('.post-title')?.innerText?.trim() || document.title;
-        const content = article?.querySelector('.post-content')?.innerText?.trim() || '';
-        const payload = [title, '', content].join('\n').trim();
+        const markdownNode = article?.querySelector('[data-copy-markdown]');
+        const payload = (() => {
+            if (!markdownNode?.textContent) return '';
+            try {
+                return JSON.parse(markdownNode.textContent).trim();
+            } catch (error) {
+                return '';
+            }
+        })();
 
         if (!payload) {
-            setStatus(statusEl, 'Unable to find article text.');
+            setStatus(statusEl, 'Unable to find article markdown.');
             return;
         }
 
@@ -152,7 +160,7 @@
             } else if (!fallbackCopy(payload)) {
                 throw new Error('Clipboard unavailable');
             }
-            setStatus(statusEl, 'Article copied. Paste it into your favorite LLM.');
+            setStatus(statusEl, 'Article markdown copied.');
         } catch (error) {
             setStatus(statusEl, 'Copy failed. Please try again.');
         }
