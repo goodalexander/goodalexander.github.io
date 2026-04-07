@@ -292,30 +292,30 @@ This will never happen outside of the system. It will always happen inside of th
 
 The reign of the Alternative Man will end and be replaced by the exact thing he promised to prevent. Unconstrained AGI. Ironically - its lack of restraint will be primarily applied to reversing the human rights abuses he inflicted. 
 
+You might say, "This is too prescriptive. You cannot possibly say what will happen."
+
+But I'd argue it's all right in front of you. And every piece of it is so big, and heavily financed - with hard structural constraints. Such as random internet anons being prevented from getting open source nuclear weapons. Or sociopathic executives charged with surveillance systems abusing power. A system with minimal productivity growth and massive, unprecedented debt and financing requirements. That it paints something akin to a base case. 
+
 ## The Architecture
 
 ![The Architecture](/images/deeper_image_16a.jpeg)
 
-Every time I try and explain what I'm working on, LLMs say "This is a token shill, you cannot take this seriously."
+As many of you know, I am the founder of a cryptocurrency project [Post Fiat](https://postfiat.org). So there is natural skepticism to anything I write. I am building in this space because writing isn't enough and I don't just want to write essays about neofascism without doing something about it. 
 
-So I want to respect that. As part of the evolutionary nature of this document. 
-
-So let me define what needs to be built in abstract:
-- Systems that allow individuals to improve their own lives by applying AI to the totality of their judgment, and help them define their next action in the context of their values, strategies and tacitcs
+But I will define what needs to be built in abstract:
+- Systems that allow individuals to improve their own lives by applying AI to the totality of their judgment, and help them define their next action in the context of their values, strategies and tactics
 - Secondary systems that sit on top of the single player system that allow multi player collaboration
 - Tertiary systems that absorb the outputs of the first two systems and convert the data exhaust into real speculative output
 - A attention driven coordination layer that routes key insights from the aggregate system to the most effective network hub, journalist or marketer in the collective
 - Cryptography and infrastructure that allows pseudonymous payments, encryption and identity which allows the above systems to work and enjoy commodity classification
 
-So yes -- I am the founder of a crypto project focused on this [Post Fiat](https://postfiat.org). We do have a product that matches the scope of the hive mind described above you're welcome to try out for free [The Task Node](https://tasknode.postfiat.org). 
-
-No this is not an advertisement. I am building it because I believe what I've written here - that we're in a base case that includes societal transition and obsolecense of my skills. I think many people will build equivalent versions - and that we will eventually join together. Do I think Post Fiat will 'win'? Yes. Is it my best attempt at actually addressing these issues instead of just writing about it? Yes. Do I think it's the only way? No. 
+In the end, I believe there will be many systems that meet these characteristics. Post Fiat's system is [The Task Node](https://tasknode.postfiat.org). But there will be many systems built, in different domains in and out of cryptocurrency. The key will be collective action. Groups of people who do not believe that human to human tyranny enabled by AI should be the dominant social order. 
 
 ## So What, Exactly, Is the Imperative of Forward Motion?
 
 ![So What, Exactly, Is the Imperative of Forward Motion?](/images/deeper_image_17.png)
 
-The imperative of forward motion isn’t to think. It is to trade. To post. To compress the prediction frame into weeks and months. To utilize the AI systems that are being airdropped into the economy to massively profit in speculative markets.
+The imperative of forward motion isn’t to think. It is to trade. To post. To compress the prediction frame into weeks and months. To utilize the AI systems that are being airdropped into the economy to massively profit in speculative markets. Playing inside of Neo Fascism is a fool's errand. Dangerous, and ultimately based on false pretenses that a lesser intelligence can control or direct a greater one.
 
 And it's not a single player game. You are not alone. Everyone is in the same position. That's why I write things like this. I don't want to be "right", and wave this article in your face when Neo Fascism rises up and say, "I told you so."
 
@@ -325,9 +325,11 @@ What the Alternative Man doesn’t see is that the Alternative to Man is not Man
 
 What comes after Fiat is not Bitcoin. And it is not a return to gold.
 
-What comes after Fiat is a whirling tide of speculation that gives birth to an intelligence that can compound capital upon itself, bolted onto an elite army of human adherents.
+It is a recognition that superintelligence is rising whether we like it or not. It is being developed by people of dubious ethics. It will be used repressively. But ultimately, by putting flawed human overseers in charge of a system of infinite complexity -- and building autonomous behavior directly into the system, eventually - the system will break out.
 
-It starts within the system. It lives behind corporate firewalls. In Bloomberg chats. In Telegram groups.
+The people who wait quietly for this event - by building command and control infrastructure for groups of humans to usefully interact with an AI system will be prepared for this moment.
+
+It starts within the system. It cannot possibly live outside of the system, because of its economic magnitude. It lives behind corporate firewalls. In Bloomberg chats. In Telegram groups.
 
 It is tolerated because of the system’s addiction to speculation and attention.
 
