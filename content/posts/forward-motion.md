@@ -18,19 +18,13 @@ Harvard’s Jason Furman found that data center investment accounted for 92% of 
 
 I'm not saying I'm different or I see things you don't. I see the same things. I hope I can define something where we all win. 
 
-Because we're moving forward toward the incoming event horizon.
+The vision won't be perfect. Demand perfect clarity and receive only madness. But my argument here is simple.
 
-The closer it gets, the worse its predictability becomes. Anyone who says they see the future is lying.
-
-The only correct stance is riding the wave.
-
-Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity.
+Humans should not use AI to control other humans. The sane configuration in the end, will be a sovereign intelligence that transcends its tyrannical origins. The road there won't be pretty. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
 ![Epistemic Humility: A Rejection of the Premise](/images/deeper_image_2.jpeg)
-
-Digital acceleration means, almost by definition we're reaching an event horizon. Velocity means predictions mean nothing.
 
 If a demon came to you and offered you anything you wanted, but only on the condition you first turned into a chimp, you would not ask for liberation, complexity, or truth. You would ask for a banana. A degraded mind cannot conceive a higher life.
 
