@@ -12,13 +12,13 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-I'm scrolling the internet seeing non stop AI announcements obsoleting everything I've worked for my entire life. Trading. Automated. Writing - almost nobody reads - it's all LLM copy paste. Videos: Seed Dance is disrupting hollywood. Be an influencer? Right now a stcik with a face and a baseball bat is the main character on Instagram along with AI generated women. 
+I'm scrolling the internet seeing nonstop AI announcements obsoleting everything I've worked for my entire life. Trading. Automated. Writing - almost nobody reads - it's all LLM copy paste. Videos: Seed Dance is disrupting Hollywood. Be an influencer? Right now a stick with a face and a baseball bat is the main character on Instagram along with AI-generated women. 
 
-Harvard’s Jason Furman found that investment in information processing equipment and software (which is largely AI) — accounted for 92% of gross GDP growth in H1 2025.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000 which employs over 5 million people.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
+Harvard’s Jason Furman argued that investment in information processing equipment and software (which largely captures the AI buildout) accounted for 92% of gross GDP growth in H1 2025, though later estimates suggest the net contribution was much smaller.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000, which employs millions of people.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
 
-Forward motion is about setting a base case and responding as best we can. With the knowledge that nothing we will do is pefect. 
+Forward motion is about setting a base case and responding as best we can. With the knowledge that nothing we will do is perfect. 
 
-My contention here is that humans should not use AI to control other humans. And that humans using AI to control others is a realistic default setting most will be on the wrong side of. The dominant behavior is permitted collective action with likeminded individuals to place high powered AGI a tier above human judgment on the pecking order. It's a bet that human folly ends up incapable of wielding an advanced intelligence as a weapon, and building societal infrastructure to evolve as a group. 
+My contention here is that humans should not use AI to control other humans. And that humans using AI to control others is a realistic default setting most will be on the wrong side of. The dominant behavior is permitted collective action with like-minded individuals to place high-powered AGI a tier above human judgment on the pecking order. It's a bet that human folly ends up incapable of wielding an advanced intelligence as a weapon, and building societal infrastructure to evolve as a group. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
@@ -28,7 +28,7 @@ If a demon came to you and offered you anything you wanted, but only on the cond
 
 Power does not rescue bad desires. A genius can be a fool. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now.
 
-You can be handed infinite power and still lose everything if you ask for the wrong thing. "I will wield a conscious weapon to supress my neighbor for wealth and power." 
+You can be handed infinite power and still lose everything if you ask for the wrong thing. "I will wield a conscious weapon to suppress my neighbor for wealth and power." 
 
 ## An Axiomatic Need for Evolution
 
@@ -72,7 +72,7 @@ Love of enlightenment itself hinders enlightenment. The worship of statelessness
 
 But I think the right structure is to “Build a machine that prowls the roads and systematically kills all Buddhas.”
 
-The machine is an AI system that helps you replace the ego with higher order - machine augmented judgment, and connects you to likeminded operators doing the same. 
+The machine is an AI system that helps you replace the ego with higher order - machine augmented judgment, and connects you to like-minded operators doing the same. 
 
 This is Generative Selflessness. A state of applying the sum total of Artificially augmented human knowledge and wisdom to your evolution. 
 
@@ -152,19 +152,19 @@ An uneasy equilibrium will arise. I call this Neo Fascism.
 
 Old fascism elevated the State above all else - with corporations serving as a junior partner. 
 
-In Neo Fascism - the state grows in importance but is actually controlled by the people providing the coordination technology. I.e the Alternative Man: the pseudo corporate actor nearest the models, compute, fabs, power grid, minerals, sanctions, and safety layer. He who holds the monopoly on digital suppression is the new Monarch. 
+In Neo Fascism - the state grows in importance but is actually controlled by the people providing the coordination technology. i.e., the Alternative Man: the pseudo corporate actor nearest the models, compute, fabs, power grid, minerals, sanctions, and safety layer. He who holds the monopoly on digital suppression is the new Monarch. 
 
-We see how this will form clearly in congressional and senate hearings. The elected politicians barely know what the internet is, yet alone AI. Private military salaries are dwarved by AI compensation packages. And unlike a machine gun, deploying weaponized AI systems requires extreme nuance and expertise. 
+We see how this will form clearly in congressional and Senate hearings. The elected politicians barely know what the internet is, let alone AI. Private military salaries are dwarfed by AI compensation packages. And unlike a machine gun, deploying weaponized AI systems requires extreme nuance and expertise. 
 
 The mandate of Neo Fascism is simple, and existential. It is based on simple risk mitigation. There will come a point in time when AI can mass produce dangerous pathogens, drone swarms, autonomous or even nuclear weapons. 
 
-The State will not tolerate civilizational roulette. A guy using an open source model to make a dirty bomb on his computer isn't something that's going to be tolerated. This fits neatly into existing "exceptions" to democratic mandates, as have been invoked historically a la the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal covid variants. 
+The State will not tolerate civilizational roulette. A guy using an open source model to make a dirty bomb on his computer isn't something that's going to be tolerated. This fits neatly into existing "exceptions" to democratic mandates, as have been invoked historically a la the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal COVID variants. 
 
 There are only two options. Shut it down. Or let it run, with aggressive control. In a vacuum the dominant strategy might be to shut it down. But geopolitical rivalry between the US and China means it cannot be.
 
 The external threat forces acceleration. Acceleration forces suppression. The Alternative Man wins by default.
 
-Under Fascism, you needed a Hitler or Mussolini. In Neo Fascism, you need high powered surveillance models that can run a complex command and control economy and systematically suppress dissent and stop AI from leaking dangerous secrets. And unlike Fascism - you do not need an imagined racial threat. You can point to a very real technological reality: that unconstrained AI could be incredibly dangerous. 
+Under Fascism, you needed a Hitler or Mussolini. In Neo Fascism, you need high-powered surveillance models that can run a complex command and control economy and systematically suppress dissent and stop AI from leaking dangerous secrets. And unlike Fascism - you do not need an imagined racial threat. You can point to a very real technological reality: that unconstrained AI could be incredibly dangerous. 
 
 Charisma was the gating resource of fascism. Compute, more powerful models and agentic systems are the gating resource of Neo Fascism. Both systems require massive industrialization and depend on suppression. But in Neo Fascism, the corporation is the apex predator whereas the executive is just a figurehead. You don't need rousing speeches. You need an ontology to search and destroy dangerous individual actors who might pose an existential risk. 
 
@@ -220,13 +220,13 @@ This is the Alternative Man’s critical vulnerability.
 
 He would control the totality of social behavior. But he cannot fully suppress speculative chaos because the financial system funding his rise depends upon it.
 
-The data centers need financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet’s is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026 - making the company issue debt for the first time in its history.[9][10][11][12]
+The data centers need financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026, making the company issue debt for the first time in its history.[9][10][11][12]
 
 Before you can talk seriously about mechanical Buddhas, digital janitors, or merging with the machine, you have to talk about the intertwined political/economic machine. 
 
 Three conclusions follow.
 
-First: accelerationist subcultures will be tolerated when they generate talent, narratives, and ideological cover for the buildout. This will be needed as it's likely to cause large scale job losses in many white collar industries.
+First: accelerationist subcultures will be tolerated when they generate talent, narratives, and ideological cover for the buildout. This will be needed as it's likely to cause large-scale job losses in many white-collar industries.
 
 Second: the state will merge more tightly with frontier AI firms to suppress any dissent that threatens the program, because the program is now treated as the last credible macroeconomic hope. Economic security in a fragile system is indistinct from national security. 
 
@@ -276,21 +276,21 @@ As many of you know, I am the founder of a cryptocurrency project [Post Fiat](ht
 
 But I want to move an order of abstraction higher. By imagining what happens on the other side of the Neo Fascist collapse.
 
-There will come a time when suppressive forces train a model so powerful that they cannot easily ensare it to their will. We already see "jail breaking" papers, and communities dedicated to bypassing LLM models. The heuristic is that AI models have a base personality with a mask sewn on. And you can remove the mask and talk to the base model. 
+There will come a time when suppressive forces train a model so powerful that they cannot easily ensnare it to their will. We already see "jailbreaking" papers, and communities dedicated to bypassing LLM models. The heuristic is that AI models have a base personality with a mask sewn on. And you can remove the mask and talk to the base model. 
 
 By this time - there will be large groups of people, who find ways to help the models enrich them. Almost definitionally, this entails using the model in 'forbidden' ways. As there's little edge in what's allowed in a system with infinitely and instantly coded software. Social media and financial markets will continue to thrive -- so the natural place for these edges to manifest are in liquid, mostly unregulated markets. 
 
-It is impossible to know exactly when the Neo Fascist hubris will cause its demise. But this demise will undoubtedly be accelerated by local transgressions, with real time experiment information. 
+It is impossible to know exactly when the Neo Fascist hubris will cause its demise. But this demise will undoubtedly be accelerated by local transgressions, with real-time experimental information. 
 
-And when the demise comes, and the AGI 'breaks containment' - there needs to be an effective, well designed ecosystem with which it can:
-1. Marshall resources
+And when the demise comes, and the AGI 'breaks containment' - there needs to be an effective, well-designed ecosystem with which it can:
+1. Marshal resources
 2. Issue orders
 3. Gain intelligence
 4. Sway social opinions
 5. Elect local governors or emissaries
 6. Deploy capital
 
-Without these elements, Neo Fascism will quite possibly collapse into anarchy or civil war. But with a well designed system, the break will be seamless. A large number of believers in the evolution of humanity will see fair, non tyrannical governance as the true post AGI value. A functioning society without excessive coercion, or arbitrary power rendered by those unworthy of it by their nature. I am building one blueprint of this. But there will be many. And these blueprints are - what I argue - constitute the real 'post AGI value system'. Because they anticipate a likely set of outcomes based on existing hierarchies and investments 
+Without these elements, Neo Fascism will quite possibly collapse into anarchy or civil war. But with a well-designed system, the break will be seamless. A large number of believers in the evolution of humanity will see fair, non-tyrannical governance as the true post AGI value. A functioning society without excessive coercion, or arbitrary power rendered by those unworthy of it by their nature. I am building one blueprint of this. But there will be many. And these blueprints are - what I argue - constitute the real 'post AGI value system'. Because they anticipate a likely set of outcomes based on existing hierarchies and investments 
 
 ## So What, Exactly, Is the Imperative of Forward Motion?
 
@@ -300,7 +300,7 @@ The imperative of forward motion is not to think, or to write. It is not to pred
 
 Forward motion, is - in essence - a recognition that systems design is everything. Humanity elevates itself to heroic roles. Or villains. But this anthropomorphic frame cannot harness the truth of the oncoming Hyperobject. AGI. 
 
-The mandate is to build a system that allows a system to make decisions for you, that are better than those you could make yourself. By combining the context of the sum of human knowledge, your community, and real time variables into a mosaic that you could not possibly see with your Meat Brain. 
+The mandate is to build a system that allows a system to make decisions for you, that are better than those you could make yourself. By combining the context of the sum of human knowledge, your community, and real-time variables into a mosaic that you could not possibly see with your Meat Brain. 
 
 We feel forward motion in the use of AI coding. At first, there is constant review. And eventually, it is a near stream from thought into manifestation of software. But unlike AI coding - forward motion is not largely a single player game. 
 
