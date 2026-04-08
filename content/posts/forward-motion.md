@@ -28,7 +28,7 @@ If a demon came to you and offered you anything you wanted, but only on the cond
 
 Power does not rescue bad desires. A genius can be a fool. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now.
 
-You can be handed infinite power and still lose everything if you ask for the wrong thing. "I will wield a conscious weapon to suppress my neighbor for wealth and power." 
+You can be handed infinite power and still lose everything if you ask for the wrong thing. 
 
 ## An Axiomatic Need for Evolution
 
