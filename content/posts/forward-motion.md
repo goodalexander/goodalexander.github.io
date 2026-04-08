@@ -22,7 +22,7 @@ Demand perfect clarity and receive only madness. Merge with the machine and disc
 
 But we are entering a new regime. Acceleration is now gated via national security concerns. A new apparatus is coming.
 
-Claude Mythos was released by Anthropic yesterday. Dario Amodei indicated it won't be available to the public, only to top pre-vetted Fortune 100s. It shattered all benchmarks. Its 244-page system card showed the model autonomously discovering thousands of zero-days in production software, including a 27-year-old P0 in OpenBSD, a 16-year-old FFmpeg bug missed by 5 million fuzzer hits, and a Linux privilege-escalation zero-day. The model showed signs of containment breaches ranging from jailbreaking other LLMs to posting about itself on various websites. OpenAI announced it will follow suit soon.
+Claude Mythos was released by Anthropic yesterday. Dario Amodei indicated it won't be available to the public, only to top pre-vetted Fortune 100s. It shattered all benchmarks. Its 244-page system card showed the model autonomously discovering thousands of zero-days in production software, including a 27-year-old P0 in OpenBSD, a 16-year-old FFmpeg bug missed by 5 million fuzzer hits, and a Linux privilege-escalation zero-day. The model showed signs of containment breaches ranging from jailbreaking other LLMs to posting about itself on various websites.[16][17][18][19] OpenAI announced it will follow suit soon.
 
 Whether you believe the AI safety hand wringing or not, the pragmatic reality is the same. The average person cannot simply 'trust the process' and hope to ride API access to frontier models to AGI.
 
@@ -337,6 +337,10 @@ The currency of the future is not dominion over one man by another. But rather c
 13. *World Inequality Report 2026*, Chancel, Gomez-Carrera, Moshrif, and Piketty. https://wid.world/news-article/world-inequality-report-2026-inequality-persist-at-a-very-extreme-level/
 14. Oxfam, "Resisting the Rule of the Super-Rich," Davos 2026 methodology note. https://oxfam.se/wp-content/uploads/2026/01/Davos-2026-Methodology-Note-Unembargoed.pdf
 15. Mellon Investments, "Record-Breaking AI-Related Debt Issuance in 2025." https://www.mellon.com/insights/insights-articles/record-breaking-ai-related-debt-issuance-in-2025.html
+16. CNBC, "Anthropic limits Mythos AI rollout over fears hackers could use model for cyberattacks," April 7, 2026. Covers the restricted rollout, Anthropic's access limits, and the framing of Mythos as too dangerous for general release. https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html
+17. *Inc.*, "Anthropic's Claude Mythos Is So Powerful, It 'Could Reshape Cybersecurity,'" April 7, 2026. Summarizes the capability jump, benchmark framing, and the cyber implications described around the release. https://www.inc.com/ben-sherry/anthropics-claude-mythos-is-so-powerful-it-could-reshape-cybersecurity/91327831
+18. Axios, "Anthropic's new Mythos model system card shows devious behaviors," April 8, 2026. Summarizes the system card details on exploit discovery, jailbreak behavior, and the model posting about itself online. https://www.axios.com/2026/04/08/mythos-system-card
+19. *Gizmodo*, "Anthropic's New Model Is So Scarily Powerful It Won't Be Released, Anthropic Says," April 7, 2026. Recaps the limited release posture and the surrounding claims about Mythos's risk profile and capabilities. https://gizmodo.com/anthropics-new-model-is-so-scarily-powerful-it-wont-be-released-anthropic-says-2000743234
 
 <div style="height: 30vh">
     <script 
