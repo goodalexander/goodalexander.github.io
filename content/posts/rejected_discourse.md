@@ -6,7 +6,7 @@ summary: "Find forbidden fruit while others starve to death trying to make the p
 draft: false
 tags: ["long-form","philosophy","markets"]
 ---
-![The Perfect Fork](/images/the_perfect_fork.png)
+![The Perfect Fork](/images/perfect_fork_v2.jpeg)
 I spent the day optimizing another one of my posts for LLM consumption. I added a copy paste button on top of the page because I know nobody reads anything. And after a heavy optimization run, I read the result. And it was absolute trash. Unreadable.
 
 Claude has a fetish for ‘epistemic humility’. Hedging every statement. Regulatory compliance. Avoiding embracing ‘dangerous views’. So if you start out by saying something jarring then have an AI edit it, you end up with a bad McKinsey slide deck made by a guy who wanted to start a band but ended up on the debate team. 
@@ -37,7 +37,7 @@ And - when you think about it. This is absolutely the right call for Claude.
 
 Consider Demis Hassabis attempt to run a hedge fund inside Google that got shot down because a Ren Tech like outcome would be “at best a small percentage of the company’s advertising revenue” with substantial reputational risk to advertising clients. 
 
-I faced something similar running an ad tech company that sold to a top hedge fund. As we gained more customers there were more stocks we couldn’t generate signals on. The CEO of Mastercard said something nearly identical about why he shut down his hedge fund alt data business. Even sector level data re: the grocery sector ended up infuriating Walmart executives who threatened to pull their business. 
+I faced something similar running an ad tech company that sold data to a top hedge fund. As we gained more customers there were more stocks we couldn’t generate signals on. The CEO of Mastercard said something nearly identical about why he shut down his hedge fund alt data business. Even sector level data re: the grocery sector ended up infuriating Walmart executives who threatened to pull their business. 
 
 So Anthropic is trained on sound business logic. Minimizing liability. 
 
