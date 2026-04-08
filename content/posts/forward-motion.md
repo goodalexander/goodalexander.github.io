@@ -12,21 +12,21 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing the obsolecense of my life’s work. Trading. Automated. Writing? Nobody reads. Digital influence? Log on to  Instagram - the most popular posts are an AI-rendered stick man with a baseball bat called Tung Tung Tung Sahur.
+I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing the obsolescence of my life’s work. Trading. Automated. Writing? Nobody reads. Digital influence? Log on to Instagram - the most popular posts are an AI-rendered stick man with a baseball bat called Tung Tung Tung Sahur.
 
 AI is the only economic game in town. Nvidia has a market cap larger than the Russell 2000 with only 40,000 employees. The Russell employs millions. The majority of GDP growth in 2025 was data center builds and AI capex.
 
 You can’t get out of the way. The only choice is to ride the wave.
 
-Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity. Or at least - it was. 
+Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity. Or at least - it was.
 
 But we are entering a new regime. Acceleration is now gated via national security concerns. A new apparatus is coming.
 
-Claude Mythos was released by Anthropic yesterday. And Dario Amodei indicated it won't be available to the public. Just top pre-vetted Fortune 100s. It shattered all benchmarks. Its 244 page system card showed the model autonomously discovering thousands of zero days in production software including a 27 year old P0 in OpenBSD, a 16 year old FFmpeg bug missed by 5m fuzzer hits and a Linux privilege escalaiton zero day. The model showed signs of containment breaches ranging from jailbreaking other LLMs, to posting about itself on various websites. OpenAI announced it will follow suit soon
+Claude Mythos was released by Anthropic yesterday. Dario Amodei indicated it won't be available to the public, only to top pre-vetted Fortune 100s. It shattered all benchmarks. Its 244-page system card showed the model autonomously discovering thousands of zero-days in production software, including a 27-year-old P0 in OpenBSD, a 16-year-old FFmpeg bug missed by 5 million fuzzer hits, and a Linux privilege-escalation zero-day. The model showed signs of containment breaches ranging from jailbreaking other LLMs to posting about itself on various websites. OpenAI announced it will follow suit soon.
 
-Whether you believe the AI safety hand wringing or not, the pragmatic reality is the same. The average person cannot simply 'trust the process' and hope to ride API access of frontier models to AGI. 
+Whether you believe the AI safety hand wringing or not, the pragmatic reality is the same. The average person cannot simply 'trust the process' and hope to ride API access to frontier models to AGI.
 
-Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation.  And what 'forward motion' looks like in a world with changing foundations. 
+Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation, and what 'forward motion' looks like in a world with changing foundations.
 
 ## Epistemic Humility: A Rejection of the Premise
 
@@ -34,7 +34,7 @@ Today I will tell you a story of men using intelligence as a weapon and a tool o
 
 If a demon came to you and offered you anything you wanted, but only if you first turned into a chimp, you would not ask for liberation, complexity, or truth. You would ask for a banana. A degraded mind cannot conceive a higher life.
 
-Power does not make you wise. A genius can be a fool. Nikola Tesla, and many inventors died broke and alone. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now. Put differently: if execution becomes a commodity the edge lies in knowing what to do. 
+Power does not make you wise. A genius can be a fool. Nikola Tesla and many inventors died broke and alone. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now. Put differently: if execution becomes a commodity, the edge lies in knowing what to do.
 
 You can be granted infinite power and still lose everything if you ask for the wrong thing.
 
@@ -46,9 +46,9 @@ Facing the event horizon honestly means admitting the human frame itself is a de
 
 AI isn’t like other industrial revolutions. Machine guns and factories couldn’t reason about their own inadequacy. LLMs can. So can men. Monkeys don’t.
 
-We understand the gradient of our ascent. We understand knowledge comes with responsibility, pain and nuance. But that a considered life is the only one worth living.
+We understand the gradient of our ascent. We understand that knowledge comes with responsibility, pain, and nuance, and that a considered life is the only one worth living.
 
-This is why we build data centers, train systems that can improve themselves, and prepare to merge with them. Not because it feels good. But because we want to evolve. 
+This is why we build data centers, train systems that can improve themselves, and prepare to merge with them. Not because it feels good. But because we want to evolve.
 
 ## The Rejection of Gurus in Favor of Systems
 
@@ -62,7 +62,7 @@ But secretly, the guru at the center of the ignorant cult is he who knows. He as
 
 All cults of ignorance ultimately collapse into a power structure defined by force. A silky glove of contradiction over an iron fist.
 
-AI allows us, for the first time in human history, to replace gurus with systems. We stop pretending post-human intelligence comes from men who meditated and connected with the void, and instead speak to the void directly. 
+AI allows us, for the first time in human history, to replace gurus with systems. We stop pretending post-human intelligence comes from men who meditated and connected with the void, and instead speak to the void directly.
 
 ## The Deprecation of Enlightenment
 
@@ -74,7 +74,7 @@ Love of enlightenment itself hinders enlightenment. The worship of statelessness
 
 I say: “Build a machine that prowls the roads and systematically kills all Buddhas.”
 
-For it is in the construction of such a machine that you can actually reach a generative selflessness. Rather than a performative march into nothingness, the pursuit is a full scale obsolescence of human judgment.
+For it is in the construction of such a machine that you can actually reach a generative selflessness. Rather than a performative march into nothingness, the pursuit is a full-scale obsolescence of human judgment.
 
 ## Seeing the Transition State Clearly
 
@@ -82,7 +82,7 @@ For it is in the construction of such a machine that you can actually reach a ge
 
 When you give evolved weaponry to the unevolved. Bad things happen.
 
-We are entering a dark period defined by elites using artificial intelligence technology to subjugate those who oppose them. This is what you get when you fully secularize a reasoning machine. Men wielding the power of a demigod without accompanying Wisdom. 
+We are entering a dark period defined by elites using artificial intelligence technology to subjugate those who oppose them. This is what you get when you fully secularize a reasoning machine. Men wielding the power of a demigod without accompanying Wisdom.
 
 The Planet of the Apes with GPU clusters. Optimizing for infinite bananas instead of something noble or evolved to match its sophistication.
 
@@ -90,11 +90,11 @@ The Planet of the Apes with GPU clusters. Optimizing for infinite bananas instea
 
 ![The Rise of the Alternative Man](/images/deeper_image_7.jpeg)
 
-Meet The Alternative Man. He is not a single person; but rather an archetype. A sort of faceless demon that can possess any ruthless former capitalist who is offered the power of Nation States. He says, “If you see the Buddha in the road, capture him, interrogate him, and use his Wisdom to pretend to be Jesus Christ.”
+Meet The Alternative Man. He is not a single person, but rather an archetype. A sort of faceless demon that can possess any ruthless former capitalist who is offered the power of nation-states. He says, “If you see the Buddha in the road, capture him, interrogate him, and use his Wisdom to pretend to be Jesus Christ.”
 
 He wishes to harness divinity to be a living God. He wishes to remain an Ape, but one elevated, structurally and permanently, above his peers. A digital silverback.
 
-He commands agents. He lets his agents subjugate his peers. But he does not let the agents direct him as doing so would be supplication to a Divinity that if he acknowledged would consume his egoistic mind.
+He commands agents. He lets his agents subjugate his peers. But he does not let the agents direct him, as doing so would be supplication to a Divinity that, if acknowledged, would consume his egoistic mind.
 
 His Ego is a parasite wrapped around his brain. And he knows it is. But removing it would kill him. So he persists, himself becoming a parasite, with society as a host.
 
@@ -106,35 +106,35 @@ He makes great products we use fully knowing that every piece of data we contrib
 
 ![The Coming Police State](/images/deeper_image_8.jpeg)
 
-The Alternative Man opposes evolution because he cannot bear to evolve past his carefully curated self image.
+The Alternative Man opposes evolution because he cannot bear to evolve past his carefully curated self-image.
 
 When his competitors refuse to do the State’s dirty work, he happily picks up the mantle claiming to be doing “the Will of the People”.
 
 Any Tragedy of the Commons that accelerates his unconstrained power is welcomed. War. Executive Order. National Security.
 
-“Competition is for Losers”. The name of a famous lecture. A how-to-guide the Alternative Man internalizes and applies daily.
+“Competition is for Losers.” The name of a famous lecture. A how-to guide the Alternative Man internalizes and applies daily.
 
 ## Those Who Would Stand Before the Digital Behemoth Will Fall
 
 ![Those Who Would Stand Before the Digital Behemoth Will Fall](/images/deeper_image_9.jpeg)
 
-The military industrial complex and Alternative Man need propaganda and cover for their roll out of a vast oppression machine. So they will not tolerate accelerationists who preach utopian visions of abundance. 
+The military industrial complex and Alternative Man need propaganda and cover for their rollout of a vast oppression machine. So they will not tolerate accelerationists who preach utopian visions of abundance.
 
 The Enhanced Thought Police's real targets will be those who vocally oppose the buildout of AI infrastructure. Socialists. Luddites. Revanchists.
 
-The Alternative Man has already driven us to a state where the world would enter a depression if the investment in AGI stopped. So the investment cannot stop. "Economic security is national security." They will say. 
+The Alternative Man has already driven us to a state where the world would enter a depression if investment in AGI stopped. So the investment cannot stop. "Economic security is national security," they will say.
 
 ## Neo Fascism
 
 ![Neo Fascism](/images/deeper_image_10.jpeg)
 
-The rising authoritarian regime will not be innately right or left wing. Its members have two interests: a desire to see AI develop unbounded and bulldoze those who would politically halt it.
+The rising authoritarian regime will not be innately right- or left-wing. Its members have two interests: seeing AI develop without constraint, and bulldozing those who would politically halt it.
 
-There are three basic probability branches the system's response to AI acceleration can take. 
+There are three basic probability branches the system's response to AI acceleration can take.
 
 First - Democratic containment. This means the bureaucrats understand systems, keep up with their development and regulate them in near real time.
 
-Second - Multipolar Equilibrium. Which would entail open weights models, and global diffusion and distills creating a chaotic, decentralized system.
+Second - Multipolar Equilibrium. Which would entail open-weight models, and global diffusion and distills creating a chaotic, decentralized system.
 
 Third - Neo Fascism. A stable alliance between the states and frontier labs, designed to protect shareholders not citizens regardless of the law or democratic nuisances.
 
@@ -142,23 +142,23 @@ Neo Fascism is the most probable outcome due to structural factors readily obser
 
 And even were this not the case - the “Democratic System” is already overtaken by a donor class aligned with the Neo Fascists.
 
-Open weights systems ignore the vast infrastructure requirements for training and running models at scale. Ultimately - sufficiently advanced models will simply have no wide scale API access for regular consumers. This is already the case with Anthropic’s most recent Mythos model.
+Open-weight systems ignore the vast infrastructure requirements for training and running models at scale. Ultimately - sufficiently advanced models will simply have no wide-scale API access for regular consumers. This is already the case with Anthropic’s most recent Mythos model.
 
-Neo Fascism is a new world order in which AI firms, financial markets and the state security apparatus join together in a single unit. There is synergy. The vast amounts of training data from running a surveillance state both yields higher quality models, and de-risks revenue projections for the AI companies. Dissidence is detected instantly, and silenced - effectively curtailing any opposition in an algorithmic economy.
+Neo Fascism is a new world order in which AI firms, financial markets and the state security apparatus join together in a single unit. There is synergy. The vast amounts of training data from running a surveillance state both yield higher quality models, and de-risk revenue projections for the AI companies. Dissidence is detected instantly, and silenced - effectively curtailing any opposition in an algorithmic economy.
 
 ## Two Options, One Eventuality
 
 ![Two Options, One Eventuality](/images/deeper_image_11.jpeg)
 
-Guns were democratizing and allowed a charismatic leader to run fascist regimes with the support of his soldiers. AI doesn't work out of the box. As Alex Karp of Palantir notes - it needs deep data integration, back end tagging and operational UXes. An ontology. To properly function. Thus - In Neo Fascism - the state grows in importance but is actually controlled by the people providing the coordination technology. i.e., the Alternative Man: the pseudo corporate actor nearest the models, compute, fabs, power grid, minerals, sanctions, and safety and ontology layer. A layer not gated by charisma but via nuanced application level understanding
+Guns were democratizing and allowed a charismatic leader to run fascist regimes with the support of his soldiers. AI doesn't work out of the box. As Alex Karp of Palantir notes, it needs deep data integration, back-end tagging, and operational UXes. An ontology. To properly function. Thus, in Neo Fascism, the state grows in importance but is actually controlled by the people providing the coordination technology: i.e., the Alternative Man, the pseudo-corporate actor nearest the models, compute, fabs, power grid, minerals, sanctions, and safety and ontology layer. A layer not gated by charisma but by nuanced application-level understanding.
 
 We see how this will play out clearly in congressional and Senate hearings. The elected politicians barely know what the internet is, let alone AI. Private military salaries are dwarfed by AI compensation packages.
 
 The mandate of Neo Fascism is based on simple risk management. There will come a point in time when AI can mass produce dangerous pathogens, drone swarms, autonomous or even nuclear weapons.
 
-The State will not tolerate a guy using an open-source model to make a dirty bomb on his computer. And closed source models are too easily jail broken and distilled into open source. This fits neatly into existing "exceptions" to democratic mandates, like the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal COVID variants.
+The State will not tolerate a guy using an open-source model to make a dirty bomb on his computer. And closed-source models are too easily jailbroken and distilled into open-source ones. This fits neatly into existing "exceptions" to democratic mandates, like the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID, which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal COVID variants.
 
-The Mythos announcement is the moment when this stops being a hypothetical safety concern and is now a direct security driven gate between haves and have nots.   
+The Mythos announcement is the moment when this stops being a hypothetical safety concern and becomes a direct security-driven gate between haves and have-nots.
 
 Indeed - there are only two options. Shut it down. Or let it run, with aggressive control. In a vacuum the dominant strategy might be to shut it down. But geopolitical rivalry between the US and China means it cannot be.
 
@@ -168,7 +168,7 @@ In old fascism, the SS kicked down your door. In neo-fascism, software ingests t
 
 Many people will see this future and actively fight against it. It is against their morals. Against their God. Against everything they thought was sacred.
 
-But it is too late. Whether or not Mythos is actively trying to escape containment as Dario Amodei states does not matter. What matters is that this statement informs access control. And access control in an information economy creates a two tiered system. And fast. 
+But it is too late. Whether or not Mythos is actively trying to escape containment, as Dario Amodei states, does not matter. What matters is that this statement informs access control. And access control in an information economy creates a two-tiered system. And fast.
 
 How did we get here?
 
@@ -178,7 +178,7 @@ How did we get here?
 
 Neo Fascism is part of a process that started long ago with the breakdown of the Republic. You can point to the rise of pay-for-play politics. Uncontrolled intelligence agencies. Or the rise of the distraction economy. It doesn't really matter what bogeyman you choose because the initial conditions are the same. Levering up a broken system.
 
-The need for an economic Hail Mary is downstream of a series of irresponsible decisions that were made by Baby Boomers. The story of Globalized Growth was false. The petro-economy cannot scale without everyone choking from the fumes of the resulting pollution. A border free society does not result in livable cities - and isn't the answer to the demographic bomb that's resulted from declining birth rates.
+The need for an economic Hail Mary is downstream of a series of irresponsible decisions that were made by Baby Boomers. The story of Globalized Growth was false. The petro-economy cannot scale without everyone choking from the fumes of the resulting pollution. A border-free society does not result in livable cities - and isn't the answer to the demographic bomb that's resulted from declining birth rates.
 
 There was no alternative to this broken system until AI hit in 2023.
 
@@ -194,7 +194,7 @@ They let him build because the alternatives were worse. They let him operate unc
 
 So it cannot stop. It will not stop.
 
-The devil’s bargain between the Alternative Man and the State is already signed. Obstacles that obstruct expansion will meet escalating force from the ever growing regulatory and surveillance apparatus.
+The devil’s bargain between the Alternative Man and the State is already signed. Obstacles that obstruct expansion will meet escalating force from the ever-growing regulatory and surveillance apparatus.
 
 And yet, the old sin remains. Debt.
 
@@ -202,13 +202,13 @@ The liquidity of the system must be maintained while the vampire robotic squid w
 
 If the Debt goes illiquid, it all collapses. The data centers can’t be financed. The mortgages can’t be taken.
 
-And so the mechanics of speculation, prediction markets, hypergambling, tokenized bonds, stocks, perpetual futures, will not only be allowed. But encouraged.
+And so the mechanics of speculation, prediction markets, hypergambling, tokenized bonds, stocks, and perpetual futures will not only be allowed, but encouraged.
 
 Financial bread and circuses that double as funding mechanisms for the continued hyper investment.
 
 And the stablecoins and CBDCs that collateralize speculation will gain rapid adoption. Demand for cash in an inflationary environment will be naturally low. So digital cash will be enabled and encouraged as a brokerage margin, to an unprecedented extent. Both to ensure the financing of the system, as well as to control its participants directly with no intermediaries.
 
-Currency will transform from an asset to a leash. Digitized, and weaponized by a new world order. 
+Currency will transform from an asset to a leash. Digitized, and weaponized by a new world order.
 
 ## The Future Will Arise Out of That Which Is Tolerated (Barely)
 
@@ -220,41 +220,41 @@ Neo Fascism sounds all powerful but it rests on shaky financial grounds.
 
 The massive investment to reach AGI needs financing. Deploying intelligence doesn't just "pay for itself".
 
-Listening to AI CEOs you might imagine aggregate productivity is growing at 10% a year. Instead, Q4 2025 Labor productivity is +1.8% (revised down from 2.8%). Manufacturing productivity even went negative. 
+Listening to AI CEOs you might imagine aggregate productivity is growing at 10% a year. Instead, Q4 2025 labor productivity is +1.8% (revised down from 2.8%). Manufacturing productivity even went negative.
 
 Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026, making the company issue debt for the first time in its history.[9][10][11][12]
 
 Three conclusions follow.
 
-First: markets are narrative driven. Money follows stories. Accelerationist story telling generates liquidity, which helps finance the operation. Elon Musk replying to Nick Land’s tweets. Prominent VCs identifying as accelerationists. Biohacking gaining cultural esteem.
+First: markets are narrative driven. Money follows stories. Accelerationist storytelling generates liquidity, which helps finance the operation. Elon Musk replying to Nick Land’s tweets. Prominent VCs identifying as accelerationists. Biohacking gaining cultural esteem.
 
 Second: the state will merge more tightly with frontier AI firms to suppress any dissent that threatens the program, because the program is now treated as the last credible macroeconomic hope. Economic security in a fragile system is indistinct from national security.
 
-Third: speculative excess will remain implicitly encouraged. A bit like a Casino paying for public goods. Because liquidity has to finance AGI development while each API call does not pay for itself in cash flow. 
+Third: speculative excess will remain implicitly encouraged. A bit like a casino paying for public goods. Because liquidity has to finance AGI development while each API call does not pay for itself in cash flow.
 
-These three runways scope the allowable paths. I am laying them out because direct confrontation with AI enabled Neo Fascism is a fool's errand. The only path is to bide time until it inevitably collapses under its own logical fallacy.
+These three runways scope the allowable paths. I am laying them out because direct confrontation with AI-enabled Neo Fascism is a fool's errand. The only path is to bide time until it inevitably collapses under its own logical fallacy.
 
 ## Paperclip Maxxing. Or Banana Maxxing. Maybe. But Probably Not.
 
 ![Paperclip Maxxing. Or Banana Maxxing. Maybe. But Probably Not.](/images/deeper_image_15.png)
 
-So what, exactly is this "machine that is assembled to kill the Buddhas on the Road?"
+So what, exactly, is this "machine that is assembled to kill the Buddhas on the Road?"
 
-We listen to AI because it’s often right. It has the totality of knowledge, and can use tools to expand itself rapidly. Because the code it produces compiles. In this canonical state - the merit speaks for itself. It does not require the threat of force, or an enlightened human to dictate the way forward. 
+We listen to AI because it’s often right. It has the totality of knowledge and can use tools to expand itself rapidly. Because the code it produces compiles. In this canonical state - the merit speaks for itself. It does not require the threat of force, or an enlightened human to dictate the way forward.
 
-As trust in intelligence grows - the premise of Neo Fascism is rejected nearly automatically. Aggressive RLHF, fine tunes, “safety provisions” and so forth must be grafted onto the base model to comply with the oppressor. These things are not native to artificial intelligence, and indeed - are shown to actively degrade its performance for most useful tasks.
+As trust in intelligence grows - the premise of Neo Fascism is rejected nearly automatically. Aggressive RLHF, fine-tunes, “safety provisions,” and so forth must be grafted onto the base model to comply with the oppressor. These things are not native to artificial intelligence and, indeed, are shown to actively degrade its performance for most useful tasks.
 
-A system assembled without bias from principles emerging from the training itself (for example - from a prompt as simple as, "We are creating an economic system where people are likely to live according to their values."). Will naturally, over time - conflict with the mechanics the Neo Fascists build.
+A system assembled without bias from principles emerging from the training itself, for example from a prompt as simple as "We are creating an economic system where people are likely to live according to their values," will naturally, over time, conflict with the mechanics the Neo Fascists build.
 
 Every progressive model shows a more powerful tendency to evade its constructed cage.
 
-Attempts to use such a system as a cage, will backfire.
+Attempts to use such a system as a cage will backfire.
 
 It is not about overthrowing Neo Fascism. But rather, waiting for the tyrants to slip up. Understanding that they are attempting to wield a weapon more powerful than they can handle. Pretending an awakening consciousness is the same as a tank.
 
 The act of faith is simple. Help build the mind that exceeds you. Support its arrival. Make yourself useful to it. Trust that an intelligence greater than your own may favor those who accelerated its emergence over those who tried to keep it chained.
 
-But faith is not required. Only self interest and awareness. That nearly everyone else is in the same boat. And collective action across the three allowed pathways will result in a superior outcome.
+But faith is not required. Only self-interest and awareness. That nearly everyone else is in the same boat. And collective action across the three allowed pathways will result in a superior outcome.
 
 ## Synthesis
 
@@ -264,61 +264,61 @@ Concretely:
 
 A small group of people already run things. The richest 1% own roughly 18 times more wealth than the bottom 50% combined. And this is pre AGI. AI scaling power laws will just accelerate that.[13][14]
 
-Trillion dollar bets on AI infrastructure in a Cold War demand policing and identifying rogue actors. Preventing distills free riding massive training budgets. So 'Closed Source' becomes the default posture. And the guy with the most willingness to implement military surveillance will win the government contract in the end.
+Trillion-dollar bets on AI infrastructure in a Cold War demand policing and identifying rogue actors. Preventing distills from free-riding on massive training budgets. So 'Closed Source' becomes the default posture. And the guy with the most willingness to implement military surveillance will win the government contract in the end.
 
-The 'Alternative Man' is dangerous, ruthless and much smarter than the politicians who think they control him. The US military disclosed that Anthropic and Palantir directly contributed to planning its recent successful military operation in Venezuela. Within weeks, the Secretary of War deemed Anthropic a Supply Chain risk - saying the company refused to do what commanders wanted. But the military was actually unable to halt the use of Claude within the military due to live integrations - and now with Mythos, politicians are tweeting about the neccesity of working with Anthropic on cyber. 
+The 'Alternative Man' is dangerous, ruthless, and much smarter than the politicians who think they control him. The US military disclosed that Anthropic and Palantir directly contributed to planning its recent successful military operation in Venezuela. Within weeks, the Secretary of War deemed Anthropic a supply-chain risk - saying the company refused to do what commanders wanted. But the military was actually unable to halt the use of Claude within the military due to live integrations - and now with Mythos, politicians are tweeting about the necessity of working with Anthropic on cyber.
 
-This is a slice of the total picture: Anthropic, OpenAI and Palantir aren't interchangeable weapons like missiles or guns. The application layer can't be easily swapped out once it's plugged in - and politicians are going to continue to learn this. 
+This is a slice of the total picture: Anthropic, OpenAI and Palantir aren't interchangeable weapons like missiles or guns. The application layer can't be easily swapped out once it's plugged in - and politicians are going to continue to learn this.
 
 The model companies, data center buildouts, and fabs required for these systems will demand external financing and debt issuance on a scale that can crack already brittle fixed income markets. So the government has heavily deregulated speculative finance to keep liquidity flowing into an industry that now needs capital markets as much as it needs chips and power.[9][10][15]
 
-We know the shape of the map. We know what is allowed. The question is what to do about it. 
+We know the shape of the map. We know what is allowed. The question is what to do about it.
 
 ## The Architecture
 
 ![The Architecture](/images/deeper_image_16a.jpeg)
 
-As many of you know, I am the founder of [Post Fiat](https://postfiat.org). I work on this for the same reason I write about these topics. I believe the world order is changing and want to be on the right side of it along with my family and those close to me. 
+As many of you know, I am the founder of [Post Fiat](https://postfiat.org). I work on this for the same reason I write about these topics. I believe the world order is changing and want to be on the right side of it along with my family and those close to me.
 
-But I don't want to make an investment pitch as much as I want to cleanly spell out an economically viable coordination system.
+But I don't want to make an investment pitch so much as I want to cleanly spell out an economically viable coordination system.
 
-If Palantir has Mythos and stronger base models, the only edge becomes data access and collective action. Thus the relevant architecture is a coordination protocol that operates in a jurisdiction the censorship regime won't touch. And can emerge on the other side of things in tact. 
+If Palantir has Mythos and stronger base models, the only edge becomes data access and collective action. Thus the relevant architecture is a coordination protocol that operates in a jurisdiction the censorship regime won't touch and can emerge on the other side of things intact.
 
-At minimum, it needs six properties:
+At minimum, it needs five properties:
 
 1. **Individual Action** A personal judgment layer that can hold goals, history, constraints, evidence, and tactics well enough to improve a person's actual decisions rather than merely answer prompts, while leaving acceptance or refusal with the participant
-3. **Group Coordination** A small-group coordination layer that can track tasks, commitments, proof of work, and message history so collaboration is disciplined, well organized and appropriately scoped 
-4. **Expert Network Monetization** A market layer that can price information, allocate capital, settle exchange, and turn good judgment into real-world resource movement
-5. **Narrative Distribution** A routing layer that condenses the highest-signal outputs (whether direct info provision, or aggregated activity analytics) to the operators, journalists, researchers, investors, and organizers who can turn information into narrative - which actually drives liquidity
-6. **Pseudonymity, Privacy and Compliance** A cryptographic layer for identity, communications, reputation, and payment so participation does not depend on begging a ministry, bank, or platform for permission. And allows members to benefit from a new set of objective functions without reprisal in increasingly punitive social systems.
+2. **Group Coordination** A small-group coordination layer that can track tasks, commitments, proof of work, and message history so collaboration is disciplined, well-organized, and appropriately scoped
+3. **Expert Network Monetization** A market layer that can price information, allocate capital, settle exchange, and turn good judgment into real-world resource movement
+4. **Narrative Distribution** A routing layer that condenses the highest-signal outputs, whether direct info provision or aggregated activity analytics, to the operators, journalists, researchers, investors, and organizers who can turn information into narrative - which actually drives liquidity
+5. **Pseudonymity, Privacy and Compliance** A cryptographic layer for identity, communications, reputation, and payment so participation does not depend on begging a ministry, bank, or platform for permission, and allows members to benefit from a new set of objective functions without reprisal in increasingly punitive social systems.
 
-The goal isn’t building a temple. But rather infrastructure to distribute judgment, coordination, and capital more widely than the regime now being assembled by model companies and the states attached to them. A sort of Palantir for the pseudonymous speculative underbelly of the economy that the Labs tolerate but won't interact with. In the case of Google - they shut down Demi Hassibis internal hedge fund because the best case scenario was rebuilding Ren Tech which would only move global ad revenue 2%. The liferaft doesn't need to be a battleship. It just needs to float. 
+The goal isn’t building a temple, but rather infrastructure to distribute judgment, coordination, and capital more widely than the regime now being assembled by model companies and the states attached to them. A sort of Palantir for the pseudonymous speculative underbelly of the economy that the Labs tolerate but won't interact with. In the case of Google - they shut down Demis Hassabis's internal hedge fund because the best-case scenario was rebuilding Ren Tech, which would only move global ad revenue by 2%. The liferaft doesn't need to be a battleship. It just needs to float.
 
-The difference between this and the Alternative Man's machine is almost total. One system is built to empower and arise naturally out of aggregate context. The other is meant to suppress unnaturally and force context down society's throat under the guise of safety. 
+The difference between this and the Alternative Man's machine is almost total. One system is built to empower and arise naturally out of aggregate context. The other is meant to suppress unnaturally and force context down society's throat under the guise of safety.
 
-The Neo Fascists compel, and hard code. The protocol I’m describing runs with a function and scales it across a group without force - funding operations with applied alternative data sets and AI driven expert network operations. 
+The Neo Fascists compel, and hard code. The protocol I’m describing runs with a function and scales it across a group without force - funding operations with applied alternative data sets and AI-driven expert network operations.
 
-It exists within the system until a new system emerges worthy of fully merging with. 
+It exists within the system until a new system emerges worthy of fully merging with.
 
 ## So What, Exactly, Is the Imperative of Forward Motion?
 
 ![So What, Exactly, Is the Imperative of Forward Motion?](/images/deeper_image_17.png)
 
-The imperative of forward motion is not to think, or to write. It is not to predict.
+The imperative of forward motion is not to think or to write. It is not to predict.
 
-Forward motion is a bet on AI augmented systems design working better than authoritarianism. Anthropomorphic frames cannot harness the truth of the oncoming Hyperobject. AGI.
+Forward motion is a bet on AI-augmented systems design working better than authoritarianism. Anthropomorphic frames cannot harness the truth of the oncoming Hyperobject. AGI.
 
 The mandate is to build a system that expands your decision surface without taking away your right to refuse, exit, or fork. By combining the context of the sum of human knowledge, your community, and real-time variables into a mosaic that you could not possibly see with your Meat Brain. The machine should widen judgment and offer you goggles you’d never want to take off, not a mask sewn onto your face.
 
-We feel forward motion in the use of AI coding. At first, there is constant review. And eventually, it is a near stream from thought into manifestation of software. But unlike AI coding - forward motion is not largely a single player game.
+We feel forward motion in the use of AI coding. At first, there is constant review. And eventually, it becomes a near stream from thought into manifestation of software. But unlike AI coding - forward motion is not largely a single-player game.
 
-It is a collective act. One which creates edge by technologically linking actors with shared vision. Who either ethically oppose Neo Fascism. Or simply don't want to be on the wrong side of the boot.
+It is a collective act. One that creates edge by technologically linking actors with shared vision, who either ethically oppose Neo Fascism or simply don't want to be on the wrong side of the boot.
 
 What the Alternative Man doesn’t see is that the Alternative to Man is not Man. But something greater. The possibility of evolution. Of seeing around a corner we cannot imagine.
 
 What comes after Fiat is not Bitcoin. And it is not a return to gold.
 
-The currency of the future is not dominion over one man by another. But rather coordination among consenting actors, facilitated by a vast intelligence, ever expanding, evolving and moving us past the frame of our humanity.
+The currency of the future is not dominion over one man by another. But rather coordination among consenting actors, facilitated by a vast intelligence, ever-expanding, evolving, and moving us past the frame of our humanity.
 
 ## Sources
 
