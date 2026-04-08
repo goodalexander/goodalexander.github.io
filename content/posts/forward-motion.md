@@ -12,7 +12,7 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing my life’s work is obsolete. Trading. Automated. Writing - nobody reads. Digital influence - Instagram inundated by an AI-rendered stick with a face and a baseball bat called Tung Tung.
+I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing my life’s work is obsolete. Trading. Automated. Writing - nobody reads. Digital influence - Instagram inundated by an AI-rendered stick with a face and a baseball bat called Tung Tung Tung Sahur.
 
 AI is the only economic game in town. Nvidia has a market cap larger than the Russell 2000 with only 40,000 employees. The Russell employs millions. The majority of GDP growth in 2025 was data center builds and AI capex.
 
@@ -20,7 +20,7 @@ You can’t get out of the way. The only choice is to ride the wave.
 
 Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity.
 
-Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation. And how forward motion towards an alternative is desirable.
+Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation. And what 'forward motion' looks like in a world with changing foundations. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
@@ -56,7 +56,7 @@ But secretly, the guru at the center of the ignorant cult is he who knows. He as
 
 All cults of ignorance ultimately collapse into a power structure defined by force. A silky glove of contradiction over an iron fist.
 
-AI allows us, for the first time in human history, to replace gurus with systems. That have objectivity not borne out of stultification but in their very post human nature.
+AI allows us, for the first time in human history, to replace gurus with systems. That have objectivity not borne out of stultification but in their very post-human nature.
 
 ## The Deprecation of Enlightenment
 
@@ -108,7 +108,7 @@ When his competitors refuse to do the State’s dirty work, he happily picks up 
 
 Any Tragedy of the Commons that accelerates his unconstrained power is welcomed. War. Executive Order. National Security.
 
-“Competition is for Losers”. The name of a lecture he co-hosted. A lesson he internalized and applies daily.
+“Competition is for Losers”. The name of a famous lecture. A how-to-guide he internalized and applies daily.
 
 ## Those Who Would Stand Before the Digital Behemoth Will Fall
 
@@ -125,16 +125,6 @@ And because it cannot stop, it must be financed.
 ## Neo Fascism
 
 ![Neo Fascism](/images/deeper_image_10.jpeg)
-
-The Imperium that will rise will not map neatly onto the right or left. Rather, the fault line is between those who would use machines to control other humans and those who would shut the data centers down.
-
-The armies of the Alternative Man will win, decisively. Modern weaponry, logistics, software, and surveillance enhanced with AI will make the asymmetry beyond reckoning.
-
-AI will merge with the state and ruthlessly destroy everyone who opposes it.
-
-Surveillance will deepen past anything earlier regimes could imagine.
-
-An uneasy equilibrium will arise. Neo Fascism.
 
 The rising authoritarian regime will belong to neither the right or the left. Its members have two interests: a desire to see AI develop unbounded and bulldoze those who would politically halt it.
 
@@ -216,6 +206,8 @@ Financial bread and circuses that double as funding mechanisms for the continued
 
 And the stablecoins and CBDCs that collateralize speculation will gain rapid adoption. Demand for cash in an inflationary environment will be naturally low. So digital cash will be enabled and encouraged as a brokerage margin, to an unprecedented extent. Both to ensure the financing of the system, as well as to control its participants directly with no intermediaries.
 
+Currency will transform from an asset to a leash. Digitized, and weaponized by a new world order. 
+
 ## The Future Will Arise Out of That Which Is Tolerated (Barely)
 
 ![The Future Will Arise Out of That Which Is Tolerated (Barely)](/images/deeper_image_14.png)
@@ -285,14 +277,14 @@ If the argument in this essay is right, then the relevant architecture is a coor
 At minimum, it needs five properties:
 
 1. A personal judgment layer that can hold goals, history, constraints, evidence, and tactics well enough to improve a person's actual decisions rather than merely answer prompts, while leaving acceptance or refusal with the participant
-2. A small-group coordination layer that can track tasks, commitments, proof of work, and message history so collaboration is accountable rather than vibes-based, but still forkable and exit-friendly
-3. A market layer that can price information, allocate capital, settle exchange, and turn good judgment into real-world resource movement
-4. A routing layer that gets the highest-signal outputs to the operators, journalists, researchers, investors, and organizers who can turn information into narrative - which actually drives liquidity
-5. A cryptographic layer for identity, communications, reputation, and payment so participation does not depend on begging a ministry, bank, or platform for permission. But instead relies on a relatively transparent objective function mapped to progressively improving models
+3. A small-group coordination layer that can track tasks, commitments, proof of work, and message history so collaboration is disciplined, well organized and appropriately scoped 
+4. A market layer that can price information, allocate capital, settle exchange, and turn good judgment into real-world resource movement
+5. A routing layer that condenses the highest-signal outputs (whether direct info provision, or aggregated activity analytics) to the operators, journalists, researchers, investors, and organizers who can turn information into narrative - which actually drives liquidity
+6. A cryptographic layer for identity, communications, reputation, and payment so participation does not depend on begging a ministry, bank, or platform for permission. And allows members to benefit from a new set of objective functions without reprisal in increasingly punitive social systems.
 
 The goal isn’t building a temple. But rather infrastructure to distribute judgment, coordination, and capital more widely than the regime now being assembled by model companies and the states attached to them.
 
-The difference between this and the Alternative Man's machine is intent.
+The difference between this and the Alternative Man's machine is almost total. One system is built to empower and arise naturally out of aggregate context. The other is meant to suppress unnaturally and force context down society's throat under the guise of safety. 
 
 The Neo Fascists compel, and hard code. The protocol I’m describing runs with a function and scales it across a group without force.
 
