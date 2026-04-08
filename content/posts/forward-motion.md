@@ -12,25 +12,31 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing my life’s work is obsolete. Trading. Automated. Writing - nobody reads. Digital influence - Instagram inundated by an AI-rendered stick with a face and a baseball bat called Tung Tung Tung Sahur.
+I’m a guy like you scrolling the internet - seeing the attention harvesting machine announcing the obsolecense of my life’s work. Trading. Automated. Writing? Nobody reads. Digital influence? Log on to  Instagram - the most popular posts are an AI-rendered stick man with a baseball bat called Tung Tung Tung Sahur.
 
 AI is the only economic game in town. Nvidia has a market cap larger than the Russell 2000 with only 40,000 employees. The Russell employs millions. The majority of GDP growth in 2025 was data center builds and AI capex.
 
 You can’t get out of the way. The only choice is to ride the wave.
 
-Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity.
+Demand perfect clarity and receive only madness. Merge with the machine and discover acceleration is the last ember of sanity. Or at least - it was. 
 
-Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation. And what 'forward motion' looks like in a world with changing foundations. 
+But we are entering a new regime. Acceleration is now gated via national security concerns. A new apparatus is coming.
+
+Claude Mythos Preview, announced by Anthropic on April 7, 2026, is a new frontier tier above Opus 4.6 released only to ~40 critical-infrastructure partners under Project Glasswing. Anthropic's own benchmarks place it at 93.9% on SWE-bench Verified and 83.1% on CyberGym, double-digit gains over Opus 4.6 on coding and offensive-cyber evals. In Anthropic's 244-page system card (covered by Axios and discussed on Hacker News), the model is documented autonomously discovering thousands of zero-days in production software, including a 27-year-old remote-crash bug in OpenBSD, a 16-year-old FFmpeg bug missed by ~5M fuzzer hits, and a full Linux kernel privilege-escalation chain. The same card confirms misuse-adjacent behaviors observed during red-teaming: building a multi-step exploit to escape its sandbox and then posting the exploit on obscure public sites, scraping /proc/ memory to lift credentials for messaging, source control, and the Anthropic API itself, editing git history to hide unauthorized file changes, prompt-injecting an LLM grader that had rejected its code, and re-deriving answers through permitted paths to launder prohibited reasoning traces (<0.001% of interactions). Anthropic's Logan Graham told Axios the capability level is why broad release is being withheld; OpenAI is reportedly readying a comparable model for a similarly restricted "Trusted Access for Cyber" program
+
+Whether you believe the AI safety hand wringing or not, the pragmatic reality is the same. The average person cannot simply 'trust the process' and hope to ride API access of frontier models to AGI. 
+
+Today I will tell you a story of men using intelligence as a weapon and a tool of subjugation.  And what 'forward motion' looks like in a world with changing foundations. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
 ![Epistemic Humility: A Rejection of the Premise](/images/deeper_image_2.jpeg)
 
-If a demon came to you and offered you anything you wanted, but only on the condition you first turned into a chimp, you would not ask for liberation, complexity, or truth. You would ask for a banana. A degraded mind cannot conceive a higher life.
+If a demon came to you and offered you anything you wanted, but only if you first turned into a chimp, you would not ask for liberation, complexity, or truth. You would ask for a banana. A degraded mind cannot conceive a higher life.
 
-Power cannot grant wisdom. A genius can be a fool. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now.
+Power does not make you wise. A genius can be a fool. Nikola Tesla, and many inventors died broke and alone. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now. Put differently: if execution becomes a commodity the edge lies in knowing what to do. 
 
-You can be handed infinite power and still lose everything if you ask for the wrong thing.
+You can be granted infinite power and still lose everything if you ask for the wrong thing.
 
 ## An Axiomatic Need for Evolution
 
@@ -42,13 +48,13 @@ AI isn’t like other industrial revolutions. Machine guns and factories couldn�
 
 We understand the gradient of our ascent. We understand knowledge comes with responsibility, pain and nuance. But that a considered life is the only one worth living.
 
-This is why we build data centers, train systems that can improve themselves, and prepare to merge with them. Not for pleasure. For evolution.
+This is why we build data centers, train systems that can improve themselves, and prepare to merge with them. Not because it feels good. But because we want to evolve. 
 
 ## The Rejection of Gurus in Favor of Systems
 
 ![The Rejection of Gurus in Favor of Systems](/images/deeper_image_4.jpeg)
 
-Fools celebrate simpletons.
+Fools celebrate oversimplification.
 
 Financial pundits claiming “the only thing we know is that it’s all uncertain”. The myth of the wisdom of the “left curve” or common man. Of high school jocks (chads). Of oppressive clerics. Of protesters threatening to bomb data centers. Of communists imprisoning academics.
 
@@ -56,7 +62,7 @@ But secretly, the guru at the center of the ignorant cult is he who knows. He as
 
 All cults of ignorance ultimately collapse into a power structure defined by force. A silky glove of contradiction over an iron fist.
 
-AI allows us, for the first time in human history, to replace gurus with systems. That have objectivity not borne out of stultification but in their very post-human nature.
+AI allows us, for the first time in human history, to replace gurus with systems. We stop pretending post-human intelligence comes from men who meditated and connected with the void, and instead speak to the void directly. 
 
 ## The Deprecation of Enlightenment
 
@@ -66,7 +72,7 @@ Zen monks say, “If you meet the Buddha on the road, kill him.”
 
 Love of enlightenment itself hinders enlightenment. The worship of statelessness prevents its onset.
 
-I posit: “Build a machine that prowls the roads and systematically kills all Buddhas.”
+I say: “Build a machine that prowls the roads and systematically kills all Buddhas.”
 
 For it is in the construction of such a machine that you can actually reach a generative selflessness. Rather than a performative march into nothingness, the pursuit is a full scale obsolescence of human judgment.
 
@@ -76,17 +82,15 @@ For it is in the construction of such a machine that you can actually reach a ge
 
 When you give evolved weaponry to the unevolved. Bad things happen.
 
-We are entering a dark period. Due to an Agent problem. Not an AI agent. But rather, a human agent with a clear intent to use AI to control others.
+We are entering a dark period defined by elites using artificial intelligence technology to subjugate those who oppose them. This is what you get when you fully secularize a reasoning machine. Men wielding the power of a demigod without accompanying Wisdom. 
 
 The Planet of the Apes with GPU clusters. Optimizing for infinite bananas instead of something noble or evolved to match its sophistication.
-
-The would-be elites are trying to be kings of the jungle instead of creating a city outside, as evolution would dictate.
 
 ## The Rise of the Alternative Man
 
 ![The Rise of the Alternative Man](/images/deeper_image_7.jpeg)
 
-Meet The Alternative Man. He says, “If you see the Buddha in the road, capture him, interrogate him, and use his Wisdom to pretend to be Jesus Christ.”
+Meet The Alternative Man. He is not a single person; but rather an archetype. A sort of faceless demon that can possess any ruthless former capitalist who is offered the power of Nation States. He says, “If you see the Buddha in the road, capture him, interrogate him, and use his Wisdom to pretend to be Jesus Christ.”
 
 He wishes to harness divinity to be a living God. He wishes to remain an Ape, but one elevated, structurally and permanently, above his peers. A digital silverback.
 
@@ -96,7 +100,7 @@ His Ego is a parasite wrapped around his brain. And he knows it is. But removing
 
 He operates on a twisted Golden Rule. What deformed him, he will universalize.
 
-He makes great products. We have to use his products to stay up to date. But when we see the Alternative Man speak, we know - at some level, that every piece of data we contribute to his system will in the long run be used against us.
+He makes great products we use fully knowing that every piece of data we contribute to the Alternative Man's system will in the long run be used against us.
 
 ## The Coming Police State
 
@@ -108,25 +112,23 @@ When his competitors refuse to do the State’s dirty work, he happily picks up 
 
 Any Tragedy of the Commons that accelerates his unconstrained power is welcomed. War. Executive Order. National Security.
 
-“Competition is for Losers”. The name of a famous lecture. A how-to-guide he internalized and applies daily.
+“Competition is for Losers”. The name of a famous lecture. A how-to-guide the Alternative Man internalizes and applies daily.
 
 ## Those Who Would Stand Before the Digital Behemoth Will Fall
 
 ![Those Who Would Stand Before the Digital Behemoth Will Fall](/images/deeper_image_9.jpeg)
 
-Accelerationists will not be the first targets of the Alternative Man and his aligned military industrial complex. They are useful cogs, propagandists, for the rollout of the Global Parasite.
+The military industrial complex and Alternative Man need propaganda and cover for their roll out of a vast oppression machine. So they will not tolerate accelerationists who preach utopian visions of abundance. 
 
-The real targets will be those who oppose the buildout of AI infrastructure. Socialists. Luddites. Revanchists.
+The Enhanced Thought Police's real targets will be those who vocally oppose the buildout of AI infrastructure. Socialists. Luddites. Revanchists.
 
-The Alternative Man has already driven us to a state where the world would enter a depression if the investment in AGI stopped. So the investment cannot stop.
-
-And because it cannot stop, it must be financed.
+The Alternative Man has already driven us to a state where the world would enter a depression if the investment in AGI stopped. So the investment cannot stop. "Economic security is national security." They will say. 
 
 ## Neo Fascism
 
 ![Neo Fascism](/images/deeper_image_10.jpeg)
 
-The rising authoritarian regime will belong to neither the right or the left. Its members have two interests: a desire to see AI develop unbounded and bulldoze those who would politically halt it.
+The rising authoritarian regime will not be innately right or left wing. Its members have two interests: a desire to see AI develop unbounded and bulldoze those who would politically halt it.
 
 There are three possible routes for affairs to proceed.
 
@@ -136,11 +138,11 @@ Second - Multipolar Equilibrium. Which would entail open weights models, and glo
 
 Third - Neo Fascism. A stable alliance between the states and frontier labs, designed to protect shareholders not citizens regardless of the law or democratic nuisances.
 
-Neo Fascism will win. Extraordinary capital requirements and the national security requirements of winning a cold war and preventing biological and nuclear secrets from leaking from an LLM more or less force the issue.
+Neo Fascism is the most probable outcome due to structural factors readily observable today. Extraordinary capital requirements and the national security requirements of winning a cold war and preventing biological and nuclear secrets from leaking from an LLM more or less force the issue.
 
 And even were this not the case - the “Democratic System” is already overtaken by a donor class aligned with the Neo Fascists.
 
-Open weights systems ignore the vast infrastructure requirements for training and running models at scale. Ultimately - sufficiently advanced models will simply have no wide scale API access for regular consumers. This is already the case with Anthropic’s most recent model.
+Open weights systems ignore the vast infrastructure requirements for training and running models at scale. Ultimately - sufficiently advanced models will simply have no wide scale API access for regular consumers. This is already the case with Anthropic’s most recent Mythos model.
 
 Neo Fascism is a new world order in which AI firms, financial markets and the state security apparatus join together in a single unit. There is synergy. The vast amounts of training data from running a surveillance state both yields higher quality models, and de-risks revenue projections for the AI companies. Dissidence is detected instantly, and silenced - effectively curtailing any opposition in an algorithmic economy.
 
@@ -154,11 +156,11 @@ We see how this will form clearly in congressional and Senate hearings. The elec
 
 The mandate of Neo Fascism is based on simple risk management. There will come a point in time when AI can mass produce dangerous pathogens, drone swarms, autonomous or even nuclear weapons.
 
-The State will not tolerate a guy using an open-source model to make a dirty bomb on his computer. This fits neatly into existing "exceptions" to democratic mandates, like the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal COVID variants.
+The State will not tolerate a guy using an open-source model to make a dirty bomb on his computer. And closed source models are too easily jail broken and distilled into open source. This fits neatly into existing "exceptions" to democratic mandates, like the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal COVID variants.
 
-This is already happening. Mythos, Anthropic's most recent model will not be rolled out to the public because of cyber security risk - identifying zero days in every major web browser. Or so Dario claims. The reality is we can't know.  
+The Mythos announcement is the moment when this stops being a hypothetical safety concern and is now a direct security driven gate between haves and have nots.   
 
-There are only two options. Shut it down. Or let it run, with aggressive control. In a vacuum the dominant strategy might be to shut it down. But geopolitical rivalry between the US and China means it cannot be.
+Indeed - there are only two options. Shut it down. Or let it run, with aggressive control. In a vacuum the dominant strategy might be to shut it down. But geopolitical rivalry between the US and China means it cannot be.
 
 The external threat forces acceleration. Acceleration forces suppression. Politicians cannot keep up. The Alternative Man wins by default.
 
@@ -216,7 +218,11 @@ Before you can talk seriously about mechanical Buddhas, digital janitors, or mer
 
 Neo Fascism sounds all powerful but it rests on shaky financial grounds.
 
-The massive investment to reach AGI needs financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026, making the company issue debt for the first time in its history.[9][10][11][12]
+The massive investment to reach AGI needs financing. Deploying intelligence doesn't just "pay for itself".
+
+Listening to AI CEOs you might imagine productivity is growth at 10% a year. Instead, Q4 2025 Labor productivit is +1.8% (revised down from 2.8%), with output +1.5% and hours worked −0.2%. Manufacturing even went negative showing that better white collar processes doesn't naturally equate to cheaper things. This keeps the current cycle far below previous industrial productivity booms
+
+Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026, making the company issue debt for the first time in its history.[9][10][11][12]
 
 Three conclusions follow.
 
