@@ -12,13 +12,13 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-I'm scrolling the internet seeing nonstop AI announcements obsoleting everything I've worked for my entire life. Trading. Automated. Writing - almost nobody reads - it's all LLM copy paste. Videos: Seed Dance is disrupting Hollywood. Be an influencer? Right now a stick with a face and a baseball bat is the main character on Instagram along with AI-generated women. 
+I'm scrolling the internet seeing nonstop AI announcements obsoleting everything I've worked for my entire life. Trading. Automated. Writing - almost nobody reads - it's all LLM copy paste. Videos: Seed Dance is disrupting Hollywood. Be an influencer? Right now a stick with a face and a baseball bat is the main character on Instagram. 
 
-Harvard’s Jason Furman argued that investment in information processing equipment and software (which largely captures the AI buildout) accounted for 92% of gross GDP growth in H1 2025, though later estimates suggest the net contribution was much smaller.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000, which employs millions of people.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
+Harvard’s Jason Furman argued that investment in information processing equipment and software (which largely captures the AI buildout) accounted for 92% of gross GDP growth in H1 2025.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000, which employs millions of people.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
 
 Forward motion is about setting a base case and responding as best we can. With the knowledge that nothing we will do is perfect. 
 
-My contention here is that humans should not use AI to control other humans. And that humans using AI to control others is a realistic default setting most will be on the wrong side of. The dominant behavior is permitted collective action with like-minded individuals to place high-powered AGI a tier above human judgment on the pecking order. It's a bet that human folly ends up incapable of wielding an advanced intelligence as a weapon, and building societal infrastructure to evolve as a group. 
+My contention is that humans should not use AI to control other humans. And that humans using AI to control others is a realistic default setting most will be on the wrong side of. The dominant behavior is permitted collective action with like-minded individuals to place high-powered AGI a tier above human judgment on the pecking order. It's a bet that human folly ends up incapable of wielding an advanced intelligence as a weapon, and building societal infrastructure to evolve as a group. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
