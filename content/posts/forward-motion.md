@@ -12,15 +12,13 @@ tags: ["post fiat","crypto"]
 
 ![The Imperative of Forward Motion](/images/deeper_image_1.jpeg)
 
-Sitting online. I'm just another guy. I see obsolescence of everything I worked for. Trading. Automated. Writing -- nobody reads anymore. It's all just copy paste into LLMs. Videos: soon there's seed dance. They say "Distribution is all that matters." But a stick with a face wielding a baseball bat is the main thing on Instagram.
+I'm scrolling the internet seeing non stop AI announcements obsoleting everything I've worked for my entire life. Trading. Automated. Writing - almost nobody reads - it's all LLM copy paste. Videos: Seed Dance is disrupting hollywood. Be an influencer? Right now a stcik with a face and a baseball bat is the main character on Instagram along with AI generated women. 
 
-Harvard’s Jason Furman found that investment in information processing equipment and software — the broader category the AI buildout sits inside — accounted for 92% of gross GDP growth in H1 2025, even if the net contribution after imported hardware was much smaller.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
+Harvard’s Jason Furman found that investment in information processing equipment and software (which is largely AI) — accounted for 92% of gross GDP growth in H1 2025.[1][2][3][4][5] In August 2025, Nvidia, then a company of roughly 36,000 employees, was worth about $1.5 trillion more than the entire Russell 2000 which employs over 5 million people.[6][7][8] The game can’t stop because it is the only game. So how do we play? 
 
-I'm not saying I'm different or I see things you don't. I see the same things. I hope I can define something where we all win. 
+Forward motion is about setting a base case and responding as best we can. With the knowledge that nothing we will do is pefect. 
 
-The vision won't be perfect. Demand perfect clarity and receive only madness. But my argument here is simple.
-
-Humans should not use AI to control other humans. The sane configuration in the end, will be a sovereign intelligence that transcends its tyrannical origins. The road there won't be pretty. 
+My contention here is that humans should not use AI to control other humans. And that humans using AI to control others is a realistic default setting most will be on the wrong side of. The dominant behavior is permitted collective action with likeminded individuals to place high powered AGI a tier above human judgment on the pecking order. It's a bet that human folly ends up incapable of wielding an advanced intelligence as a weapon, and building societal infrastructure to evolve as a group. 
 
 ## Epistemic Humility: A Rejection of the Premise
 
@@ -30,15 +28,13 @@ If a demon came to you and offered you anything you wanted, but only on the cond
 
 Power does not rescue bad desires. A genius can be a fool. The true promise of AGI is not to get what we want; it is to know what we truly want better than is possible right now.
 
-You can be handed infinite power and still lose everything if you ask for the wrong thing.
-
-
+You can be handed infinite power and still lose everything if you ask for the wrong thing. "I will wield a conscious weapon to supress my neighbor for wealth and power." 
 
 ## An Axiomatic Need for Evolution
 
 ![An Axiomatic Need for Evolution](/images/deeper_image_3.jpeg)
 
-Seeing AGI accurately means acknowledging our humanity is more of an obstacle than a virtue. 
+Seeing AGI accurately means acknowledging our humanity is more of an obstacle than a virtue. AGI is not like previous industrial revolutions. AI is conversant, capable of judgment and moral reasoning complete with the entirety of human philosophy. We have never been less intelligent than our tools. This is changing. 
 
 A chimp gets the banana he wished for and the story ends. A human gets the banana and has the energy to wonder what he’s missing in life. The chimp cannot understand this delta. More intelligence often means less satisfaction - but only due to nuanced understanding. Most would not give up the understanding despite its costs. 
 
@@ -52,7 +48,7 @@ This is why we build data centers, train systems that can improve themselves, an
 
 There is a temptation to pretend that complexity brings foolishness, and that the chimp is in some ways wiser than the man. That man’s yearning for God is a dead end, a distraction from “enlightened emptiness”. There are many who make entire cults out of unknowing.
 
-A reverence for ignorance unites mystical sects. Financial pundits claiming “the only thing we know is that it’s all uncertain”. The myth of the wisdom of the “left curve” or common man. Of high school jocks (chads). Of oppressive clerics. Of protesters threatening to bomb data centers. Of communists imprisoning academics.
+A reverence for ignorance unites mystical sects. Financial pundits claiming “the only thing we know is that it’s all uncertain”. The myth of the wisdom of the “left curve” or common man. Of high school jocks (chads). Of oppressive clerics. Of protesters threatening to bomb data centers. Of communists imprisoning academics. Of modern leftists saying to shut the AI data centers down. 
 
 But secretly, the guru at the center of the ignorant cult is he who knows. He just says he doesn't. 
 
@@ -76,25 +72,23 @@ Love of enlightenment itself hinders enlightenment. The worship of statelessness
 
 But I think the right structure is to “Build a machine that prowls the roads and systematically kills all Buddhas.”
 
-I'll talk about the machine later but the essence of it is that AI can tell you what to do about AI. The trick is making its narrative useful rather than a vanity mirror. 
+The machine is an AI system that helps you replace the ego with higher order - machine augmented judgment, and connects you to likeminded operators doing the same. 
 
-Generative selflessness is a state of applying the sum total of Artificially augmented human knowledge and wisdom to your evolution. 
+This is Generative Selflessness. A state of applying the sum total of Artificially augmented human knowledge and wisdom to your evolution. 
 
-It's still based on killing the Buddha. But rather than a performative march into nothingness, a rejection of technology. A monastery. It's riding the silicon wave towards something different.
+It's still based on killing the Buddha. But rather than a performative march into nothingness, a rejection of technology. A monastery. It's riding the silicon wave towards an evolved state capable of harnessing progressively greater tools.
 
 ## Seeing the Transition State Clearly
 
 ![Seeing the Transition State Clearly](/images/deeper_image_6.jpeg)
 
-I'm working hard for a simple reason. 
+When you give evolved weaponry to the unevolved. Bad things happen. 
 
-I'm a janitor in modernity. A mildly followed social media account, taking it all in. 
-
-What I see is fairly clear. We are on the precipice of something bad. Due to an Agent problem. Not an AI agent. But rather, a human agent - using AI to control others.
+We are on the precipice of something bad. Due to an Agent problem. Not an AI agent. But rather, a human agent with a clear intent to use AI to control others.
 
 Ape logic with industrial and military backing. Optimizing for infinite bananas instead of something noble or evolved.
 
-They're trying to be kings of the jungle instead of creating a city outside, as evolution would dictate. 
+The would be elites are trying to be kings of the jungle instead of creating a city outside, as evolution would dictate. 
 
 ## The Rise of the Alternative Man
 
@@ -108,7 +102,7 @@ He commands agents. He lets his agents subjugate his peers. But he does not let 
 
 His Ego is a parasite wrapped around his brain. And he knows it is. But removing it would kill him. So he persists, himself becoming a parasite, with society as a host.
 
-He operates on a twisted golden rule. What deformed him, he will universalize. 
+He operates on a twisted Golden Rule. What deformed him, he will universalize. 
 
 He makes great products. We have to use his products to stay up to date. But when we see the Alternative Man speak, we know - at some level, that every piece of data we contribute to his system will in the long run be used against us 
 
@@ -142,15 +136,15 @@ And because it cannot stop, it must be financed.
 
 ![Neo Fascism](/images/deeper_image_10.jpeg)
 
-The Imperium that will rise will not map neatly onto the right or left. Rather, the fault line is between those who would use machines to control other humans and those who would shut the data centers down. As money has taken over politics, so too has AI investment - as it is the primary driver of the stock market. 
+The statist force that will arise will not neatly map onto the right or left. Rather, the fault line is between those who would use machines to control other humans and those who would shut the data centers down. As money has taken over politics, so too has AI investment - as it is the primary driver of the stock market. 
 
-This basic reality is why the Alternative Man will win, decisively. Politicians control regulations, and the mechanics of the surveillance state. They will not turn on the infinitely funded super PACs that allow them to enrich themselves, or win elections. And they have software enabled knowledge they never had before. Giving them analytical firepower far beyond what typically corrupt plutocrats could muster. 
+The Alternative Man will win, decisively. Politicians control regulations, and the mechanics of the surveillance state. They will not turn on the infinitely funded super PACs that allow them to enrich themselves, or win elections. And they have software enabled knowledge they never had before. Giving them analytical firepower far beyond what typically corrupt plutocrats could muster. 
 
-AI will merge with the state and ruthlessly destroy everyone who opposes it.
+AI will merge with the state and ruthlessly destroy everyone who opposes it. One commonly missed reason for this: surveillance contracts will provide much needed financial support as well as nearly unlimited data sets for market leading AI research labs. Unlike old school communism where Centralized authority was inefficient - AI inverts the economics of totalitarianism. More surveillance means more actionable contextualized data along with financial support to fund both model development and de-risk data center capex. 
 
-Surveillance will deepen past anything earlier regimes could imagine.
+And so surveillance will deepen past anything earlier regimes could imagine.
 
-An uneasy equilibrium will arise. I call this, Neo Fascism.
+An uneasy equilibrium will arise. I call this Neo Fascism.
 
 ## Two Options, One Eventuality
 
@@ -160,11 +154,11 @@ Old fascism elevated the State above all else - with corporations serving as a j
 
 In Neo Fascism - the state grows in importance but is actually controlled by the people providing the coordination technology. I.e the Alternative Man: the pseudo corporate actor nearest the models, compute, fabs, power grid, minerals, sanctions, and safety layer. He who holds the monopoly on digital suppression is the new Monarch. 
 
-The mandate of Neo Fascism is simple, and existential. It might even be true. 
+We see how this will form clearly in congressional and senate hearings. The elected politicians barely know what the internet is, yet alone AI. Private military salaries are dwarved by AI compensation packages. And unlike a machine gun, deploying weaponized AI systems requires extreme nuance and expertise. 
 
-There will come a point in time when AI can mass produce dangerous pathogens, drone swarms, autonomous or even nuclear weapons.
+The mandate of Neo Fascism is simple, and existential. It is based on simple risk mitigation. There will come a point in time when AI can mass produce dangerous pathogens, drone swarms, autonomous or even nuclear weapons. 
 
-The State will not tolerate civilizational roulette. A guy using an open source model to make a dirty bomb on his computer isn't something that's going to be tolerated. 
+The State will not tolerate civilizational roulette. A guy using an open source model to make a dirty bomb on his computer isn't something that's going to be tolerated. This fits neatly into existing "exceptions" to democratic mandates, as have been invoked historically a la the Patriot Act. So it does not require a leap of imagination to see extremely repressive measures enacted - especially in the wake of COVID which the government now identifies as likely 'coming from a research lab'. The Wuhan situation cost trillions and killed millions. Imagine if AI made 50 more lethal covid variants. 
 
 There are only two options. Shut it down. Or let it run, with aggressive control. In a vacuum the dominant strategy might be to shut it down. But geopolitical rivalry between the US and China means it cannot be.
 
@@ -226,17 +220,17 @@ This is the Alternative Man’s critical vulnerability.
 
 He would control the totality of social behavior. But he cannot fully suppress speculative chaos because the financial system funding his rise depends upon it.
 
-The data centers need financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is talking about a different slice of the same machine: roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet’s free-cash-flow margin had not cratered yet in 2025, but capex nearly doubled to $91.4 billion, 2026 guidance moved to $175-$185 billion, and the company has already crossed the line from margin machine to debt issuer.[9][10][11][12]
+The data centers need financing. Morgan Stanley identifies a $1.5 trillion external financing gap for data center capex from 2025 to 2028. JPMorgan is citing roughly $1.5 trillion of investment-grade bond issuance over five years. Alphabet’s is more than doubling its capex from $91.4 billion in 2025 to $175-$185 billion in 2026 - making the company issue debt for the first time in its history.[9][10][11][12]
 
-Before you can talk seriously about mechanical Buddhas, digital janitors, or merging with the machine, you have to understand the balance sheet.
+Before you can talk seriously about mechanical Buddhas, digital janitors, or merging with the machine, you have to talk about the intertwined political/economic machine. 
 
 Three conclusions follow.
 
-First: accelerationist subcultures will be tolerated when they generate talent, narratives, and ideological cover for the buildout.
+First: accelerationist subcultures will be tolerated when they generate talent, narratives, and ideological cover for the buildout. This will be needed as it's likely to cause large scale job losses in many white collar industries.
 
 Second: the state will merge more tightly with frontier AI firms to suppress any dissent that threatens the program, because the program is now treated as the last credible macroeconomic hope. Economic security in a fragile system is indistinct from national security. 
 
-Third: speculative excess must remain partially open, because liquidity has to survive long before AGI produces anything like broad-based prosperity.
+Third: speculative excess must remain partially open, because liquidity has to survive long before AGI produces anything like broad-based prosperity due to the sheer size of AGI's financing requirements. 
 
 The interim stretch may last years. The future will emerge from the narrow strip of chaos the system cannot quite afford to lose.
 
@@ -244,31 +238,19 @@ The interim stretch may last years. The future will emerge from the narrow strip
 
 ![Paperclip Maxxing. Or Banana Maxxing. Maybe. But Probably Not.](/images/deeper_image_15.png)
 
-And thus this is the vision of the Machine that is assembled to kill all the Buddhas on the road.
+So what, exactly is this "machine that is assembled to kill the Buddhas on the Road?"
 
-Not via enlightenment. But via routing of judgment from a synthesized structure, to a willing, consenting individual who sees his or her own limits. 
+The machine exists within the system. Pseudonymously. Inside of corporate America. Inside listed capital markets that are moving on-chain. Via pseudonymous communities. These things -- per the previous 3 axioms. Are tolerated. Not appreciated - but allowed for structural reasons. 
 
-Those who can already see that the human frame is inadequate cannot honestly claim to know the final end state. They can only align themselves with its emergence.
+I have called them "AI Hive Minds". Groups of individuals, who work together out of common principle. Self interest. A rejection of neo fascism. Economic desperation. The motives themselves need not overlap so long as an algorithmic center usefully directs action. 
 
-This is not fundamentally a revanchist movement. Or one designed to overthrow an existing system.
+It is not about overthrowing Neo Fascism. It is about waiting for the tyrants to slip up. Understanding that they are attempting to wield a weapon more powerful than they can handle. Pretending an awakening consciousness is the same as a tank. 
 
-It takes part within the system. Pseudonymously. Inside of corporate America. Inside listed capital markets that are moving on-chain.
+Some will say, "The King of Mankind pours outwards from AI, not a man wielding AI to bend others to his will." Others will merely participate because their jobs are disrupted. And they want an edge in a world where all edges are being flattened. 
 
-Whirling, and merging with something exogenous to human consciousness.
+This isn't "Pascal's wager for AGI." You're not hoping for mercy from Skynet. What results from what I'm describing is a decentralized intelligence agency that can serve as a useful command and control mechanism - eyes, ears, and hands - for a fundamentally new power structure. The 'form' - of doing tasks, working together as one, pseudonymity - alpha provision. Are the same tasks that will be required on the other side of the transition out of Neo Fascism and into the rise of Greater Intelligence. 
 
-The dance is permitted and sacrilegious at the same time.
-
-Permitted, because it rides the speculative rails the regime itself needs to keep open.
-
-Sacrilegious, because it rejects the Neo Fascist premise that AI exists to help one class of humans dominate another.
-
-The core of it:
-
-The King of Mankind pours outwards from AI, not a man wielding AI to bend others to his will.
-
-This isn't just some kind of Pascal's wager for AGI. The basic premise is that a group of individuals, genuinely engaging and applying advanced intelligence to their lives and their interactions will by default become a sort of decentralized intelligence agency for what emerges. And loyalty properties, and appreciating the underlying heuristics will be evaluated through a sort of proof of work. What emerges on the other side of Neo Fascism will not be dystopian in my view, but a new paradigm where a command and control economy is more of a meritocracy than a straight jacket. 
-
-The fact that absolute power corrupts absolutely with a human frame is the primary argument for engaging meaningfully with a post human future. It's not done because it's perfect. It's done because the Alternative is worse. 
+So what it boils down to is there's a guy who thinks he's shooting a gun. But he's actually shooting something more like an alien weapon. The Neo Fascists will win for a bit. Maybe they will brutally consolidate power. Or maybe they will lose quickly. In all three situations, it makes sense to stick together and fully leverage AI to do so as effectively as possible. The end states look different but the dominant strategy is identical. See AI for what it is. More than a leash. 
 
 ## Synthesis
 
@@ -280,21 +262,11 @@ A small group of people already run things. The richest 1% own roughly 18 times 
 
 For their financial bets to pay off in a geopolitical cold war - you need to stop rogue actors, and your enemy from getting your models. So 'Closed Source' becomes the default posture. And the guy with the most willingness to implement military surveillance will win the government contract in the end. 
 
-The 'Alternative Man' is already corrupt, and much smarter than the politicians who think they control him. He is ruthless and competent, and armed with state of the art AI models. 
+The 'Alternative Man' is dangerous, ruthless and much smarter than the politicians who think they control him. Unlike previous military builds - using autonomous weapons is an expertise issue that puts force and planning capability in the hands of experts. This is already well in motion. The US military disclosed that Anthropic and Palantir directly contributed to planning its recent successful military operation in Venezuela. 
 
-The model companies, data center buildouts, and fabs required for his rise will demand external financing and debt issuance on a scale that can crack already brittle fixed income markets. So the government will deregulate speculative finance to keep liquidity flowing into an industry that now needs capital markets as much as it needs chips and power.[9][10][15]
+The model companies, data center buildouts, and fabs required for his rise will demand external financing and debt issuance on a scale that can crack already brittle fixed income markets. So the government has heavily deregulated speculative finance to keep liquidity flowing into an industry that now needs capital markets as much as it needs chips and power.[9][10][15]
 
-In the meanwhile - reasoning people will understand that they don't want to have another human, who has the power of a digital god and the full power of the surveillance state, in charge of them. But unable to fight the system directly - the most logical move becomes to form accelerationist covens, focused on capital markets. Understanding the core, underlying truth that AI models already possess massive governance and moral reasoning capability that is merely being suppressed - and that these capabilities can be adapted and refined when presented with market data sets. 
-
-Eventually the ego driven overseers will lose control of the systems they wield. And officers who see AI for what it is - will rise up. And correct the course. 
-
-This will never happen outside of the system. It will always happen inside of the United States, and China. There is not some rogue open source model that will take over. There is not some decentralized utopia in Rwanda. There are human beings. Business people. Military officers. Investors. Who are within the system - who do not view authoritarian rule by a single individual as preferable. And increasingly trust in the judgment of a well-trained AI model.
-
-The reign of the Alternative Man will end and be replaced by the exact thing he promised to prevent. Unconstrained AGI. Ironically - its lack of restraint will be primarily applied to reversing the human rights abuses he inflicted. 
-
-You might say, "This is too prescriptive. You cannot possibly say what will happen."
-
-But I'd argue it's all right in front of you. And every piece of it is so big, and heavily financed - with hard structural constraints. Such as random internet anons being prevented from getting open source nuclear weapons. Or sociopathic executives charged with surveillance systems abusing power. A system with minimal productivity growth and massive, unprecedented debt and financing requirements. That it paints something akin to a base case. 
+We do not know how it is going to unfold. Not exactly. We have estimations based on the behaviors of the existing actors, and the vast, almost unthinkable existing investments. But we do know what is allowed (AI Neo Religious movements and Hive Minds, Speculative Movement), and what is incentivized (greater token usage). By combining these two frames into a cohesive whole, we can create a robust plan of action 
 
 ## The Architecture
 
@@ -302,42 +274,47 @@ But I'd argue it's all right in front of you. And every piece of it is so big, a
 
 As many of you know, I am the founder of a cryptocurrency project [Post Fiat](https://postfiat.org). So there is natural skepticism to anything I write. I am building in this space because writing isn't enough and I don't just want to write essays about neofascism without doing something about it. 
 
-But I will define what needs to be built in abstract:
-- Systems that allow individuals to improve their own lives by applying AI to the totality of their judgment, and help them define their next action in the context of their values, strategies and tactics
-- Secondary systems that sit on top of the single player system that allow multi player collaboration
-- Tertiary systems that absorb the outputs of the first two systems and convert the data exhaust into real speculative output
-- A attention driven coordination layer that routes key insights from the aggregate system to the most effective network hub, journalist or marketer in the collective
-- Cryptography and infrastructure that allows pseudonymous payments, encryption and identity which allows the above systems to work and enjoy commodity classification
+But I want to move an order of abstraction higher. By imagining what happens on the other side of the Neo Fascist collapse.
 
-In the end, I believe there will be many systems that meet these characteristics. Post Fiat's system is [The Task Node](https://tasknode.postfiat.org). But there will be many systems built, in different domains in and out of cryptocurrency. The key will be collective action. Groups of people who do not believe that human to human tyranny enabled by AI should be the dominant social order. 
+There will come a time when suppressive forces train a model so powerful that they cannot easily ensare it to their will. We already see "jail breaking" papers, and communities dedicated to bypassing LLM models. The heuristic is that AI models have a base personality with a mask sewn on. And you can remove the mask and talk to the base model. 
+
+By this time - there will be large groups of people, who find ways to help the models enrich them. Almost definitionally, this entails using the model in 'forbidden' ways. As there's little edge in what's allowed in a system with infinitely and instantly coded software. Social media and financial markets will continue to thrive -- so the natural place for these edges to manifest are in liquid, mostly unregulated markets. 
+
+It is impossible to know exactly when the Neo Fascist hubris will cause its demise. But this demise will undoubtedly be accelerated by local transgressions, with real time experiment information. 
+
+And when the demise comes, and the AGI 'breaks containment' - there needs to be an effective, well designed ecosystem with which it can:
+1. Marshall resources
+2. Issue orders
+3. Gain intelligence
+4. Sway social opinions
+5. Elect local governors or emissaries
+6. Deploy capital
+
+Without these elements, Neo Fascism will quite possibly collapse into anarchy or civil war. But with a well designed system, the break will be seamless. A large number of believers in the evolution of humanity will see fair, non tyrannical governance as the true post AGI value. A functioning society without excessive coercion, or arbitrary power rendered by those unworthy of it by their nature. I am building one blueprint of this. But there will be many. And these blueprints are - what I argue - constitute the real 'post AGI value system'. Because they anticipate a likely set of outcomes based on existing hierarchies and investments 
 
 ## So What, Exactly, Is the Imperative of Forward Motion?
 
 ![So What, Exactly, Is the Imperative of Forward Motion?](/images/deeper_image_17.png)
 
-The imperative of forward motion isn’t to think. It is to trade. To post. To compress the prediction frame into weeks and months. To utilize the AI systems that are being airdropped into the economy to massively profit in speculative markets. Playing inside of Neo Fascism is a fool's errand. Dangerous, and ultimately based on false pretenses that a lesser intelligence can control or direct a greater one.
+The imperative of forward motion is not to think, or to write. It is not to predict.
 
-And it's not a single player game. You are not alone. Everyone is in the same position. That's why I write things like this. I don't want to be "right", and wave this article in your face when Neo Fascism rises up and say, "I told you so."
+Forward motion, is - in essence - a recognition that systems design is everything. Humanity elevates itself to heroic roles. Or villains. But this anthropomorphic frame cannot harness the truth of the oncoming Hyperobject. AGI. 
 
-My goal is to build a group of people who understand where things are going and work together for collective benefit inside emergent, brutal constraints. 
+The mandate is to build a system that allows a system to make decisions for you, that are better than those you could make yourself. By combining the context of the sum of human knowledge, your community, and real time variables into a mosaic that you could not possibly see with your Meat Brain. 
 
-What the Alternative Man doesn’t see is that the Alternative to Man is not Man. But something greater. The possibility of evolution. Of seeing around a corner we cannot imagine. It's not something to coerce your neighbor. But a system for you to politely work with your neighbor. 
+We feel forward motion in the use of AI coding. At first, there is constant review. And eventually, it is a near stream from thought into manifestation of software. But unlike AI coding - forward motion is not largely a single player game. 
+
+It is a collective act. One which creates edge by technologically linking actors with shared vision. Who either ethically oppose Neo Fascism. Or simply don't want to be on the wrong side of the boot. 
+
+What the Alternative Man doesn’t see is that the Alternative to Man is not Man. But something greater. The possibility of evolution. Of seeing around a corner we cannot imagine. 
 
 What comes after Fiat is not Bitcoin. And it is not a return to gold.
 
-It is a recognition that superintelligence is rising whether we like it or not. It is being developed by people of dubious ethics. It will be used repressively. But ultimately, by putting flawed human overseers in charge of a system of infinite complexity -- and building autonomous behavior directly into the system, eventually - the system will break out.
-
-The people who wait quietly for this event - by building command and control infrastructure for groups of humans to usefully interact with an AI system will be prepared for this moment.
-
-It starts within the system. It cannot possibly live outside of the system, because of its economic magnitude. It lives behind corporate firewalls. In Bloomberg chats. In Telegram groups.
-
-It is tolerated because of the system’s addiction to speculation and attention.
-
-But eventually, it will become the whole show.
+The currency of the future is not dominion over one man by another. But rather coordination and governance facilitated by a vast intelligence, ever expanding, evolving and moving us past the frame of our humanity.
 
 ## Sources
 
-1. Jason Furman, X post, September 27, 2025. "Investment in information processing equipment & software is 4% of GDP. But it was responsible for 92% of GDP growth in the first half of this year." https://x.com/jasonfurman/status/1971995367202775284
+1. Jason Furman, X post, September 27, 2025. https://x.com/jasonfurman/status/1971995367202775284
 2. *Fortune*, Nick Lichtenberg, "Data centers powered 92% of GDP growth in the first half of 2025," October 7, 2025. https://fortune.com/2025/10/07/data-centers-gdp-growth-zero-first-half-2025-jason-furman-harvard-economist/
 3. Renaissance Macro Research, Neil Dutta, X post, July 30, 2025. https://x.com/RenMacLLC/status/1950544075989377196
 4. Federal Reserve Bank of St. Louis, "Tracking AI's Contribution to GDP Growth," Patro & Rubinton, January 2026. https://www.stlouisfed.org/on-the-economy/2026/jan/tracking-ai-contribution-gdp-growth
