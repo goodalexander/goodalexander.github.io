@@ -270,7 +270,7 @@ A small group of people already run things. The richest 1% own roughly 18 times 
 
 Trillion-dollar bets on AI infrastructure in a Cold War demand policing and identifying rogue actors. Preventing distills from free-riding on massive training budgets. So 'Closed Source' becomes the default posture. And the guy with the most willingness to implement military surveillance will win the government contract in the end.
 
-The 'Alternative Man' is dangerous, ruthless, and much smarter than the politicians who think they control him. The US military disclosed that Anthropic and Palantir directly contributed to planning its recent successful military operation in Venezuela. Within weeks, the Secretary of War deemed Anthropic a supply-chain risk - saying the company refused to do what commanders wanted. But the military was actually unable to halt the use of Claude within the military due to live integrations - and now with Mythos, politicians are tweeting about the necessity of working with Anthropic on cyber.
+The 'Alternative Man' is dangerous, ruthless, and much smarter than the politicians who think they control him. 
 
 This is a slice of the total picture: Anthropic, OpenAI and Palantir aren't interchangeable weapons like missiles or guns. The application layer can't be easily swapped out once it's plugged in - and politicians are going to continue to learn this.
 
@@ -284,9 +284,9 @@ We know the shape of the map. We know what is allowed. The question is what to d
 
 As many of you know, I am the founder of [Post Fiat](https://postfiat.org). I work on this for the same reason I write about these topics. I believe the world order is changing and want to be on the right side of it along with my family and those close to me.
 
-But I don't want to make an investment pitch so much as I want to cleanly spell out an economically viable coordination system.
+But I don't want to make an investment pitch so much as I want to cleanly spell out what I think a median individual needs to do in order to thrive in the system I've outlined above. 
 
-If Palantir has Mythos and stronger base models, the only edge becomes data access and collective action. Thus the relevant architecture is a coordination protocol that operates in a jurisdiction the censorship regime won't touch and can emerge on the other side of things intact.
+If Palantir has Mythos and stronger base models, the only edge becomes data access and collective action. Thus the relevant architecture is a coordination protocol that operates in a jurisdiction the Neo Fascist regime won't touch - and has believable upside on the other side.
 
 At minimum, it needs five properties:
 
@@ -297,6 +297,8 @@ At minimum, it needs five properties:
 5. **Pseudonymity, Privacy and Compliance** A cryptographic layer for identity, communications, reputation, and payment so participation does not depend on begging a ministry, bank, or platform for permission, and allows members to benefit from a new set of objective functions without reprisal in increasingly punitive social systems.
 
 The goal isn’t building a temple, but rather infrastructure to distribute judgment, coordination, and capital more widely than the regime now being assembled by model companies and the states attached to them. A sort of Palantir for the pseudonymous speculative underbelly of the economy that the Labs tolerate but won't interact with. In the case of Google - they shut down Demis Hassabis's internal hedge fund because the best-case scenario was rebuilding Ren Tech, which would only move global ad revenue by 2%. The liferaft doesn't need to be a battleship. It just needs to float.
+
+Post Fiat is but one of many liferafts being built. It's less "Pascal's Wager for AI" and getting an infinite reward. And more about concretely advancing, step by step, towards the singularity. Without malicious intent. 
 
 The difference between this and the Alternative Man's machine is almost total. One system is built to empower and arise naturally out of aggregate context. The other is meant to suppress unnaturally and force context down society's throat under the guise of safety.
 
