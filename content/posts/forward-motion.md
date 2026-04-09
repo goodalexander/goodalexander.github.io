@@ -349,3 +349,18 @@ The currency of the future is not dominion over one man by another. But rather c
 19. *Gizmodo*, "Anthropic's New Model Is So Scarily Powerful It Won't Be Released, Anthropic Says," April 7, 2026. Recaps the limited release posture and the surrounding claims about Mythos's risk profile and capabilities. https://gizmodo.com/anthropics-new-model-is-so-scarily-powerful-it-wont-be-released-anthropic-says-2000743234
 20. Anthropic, "Assessing Claude Mythos Preview’s cybersecurity capabilities," April 7, 2026. Official technical writeup confirming that Mythos Preview is not planned for general availability, identified and exploited zero-day vulnerabilities at scale, found a now-patched 27-year-old OpenBSD bug, and surfaced multiple FFmpeg vulnerabilities. https://red.anthropic.com/2026/mythos-preview/
 21. Anthropic, "Claude Mythos Preview System Card," April 7, 2026. Official system card PDF for Mythos Preview; the live PDF metadata includes the title "Claude Mythos Preview System Card" and a page-tree count consistent with the 244-page reference used above. https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf
+
+<div style="height: 30vh">  
+    <script 
+        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
+        data-background-color="#2B2B2B"    
+        data-text-color="#ffffff"
+        data-button-color="#2d2d2d"       
+        data-button-text-color="#ffffff"
+        data-title="goodalexander" 
+        data-description="Navigating the Post Fiat reality" 
+        data-site="https://goodalexander.ghost.io/" 
+        data-locale="en" 
+        async>
+    </script>
+</div>
