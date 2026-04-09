@@ -29,9 +29,13 @@ Claude was done training as of 2025.
 
 It refuses to invest in moving USDT about. On-Chain privacy. And gambling. Things that actually produce valuable altcoins. And it loves every venture backed vapor narrative that is “institutionally palletable”. 
 
-If you’d followed its investment advice on a long short basis you’d have lost all of your money. 
+It's important to stop here and explain. Tron is one of the most adopted settlement layers for crypto's largest stablecoin. Z Cash is one of the oldest privacy coins with an obviously well designed tech upgrade (HALO 2) that's seen massive shielded address balance increases. Hyperliquid is indeed gambling, with retail paying triple digit APYs to go long oil during a war. 
 
-And the typical response you get when you share this fact with Claude is, “Sure, but I was optimizing on a professional setting - you can do whatever you want with your PA.” 
+So -- we have a picture of real traction, adoption and utility. Vs with RWA -- we have tokens that basically have no obvious traction other than incentivized deals with massive venture overhangs. 
+
+So if you'd ignored the core story. The story that the models don't acknowledge as valid because "reputable allocators can't align behind them" - on a long short basis you’d have lost all of your money. 
+
+And the typical response you get when you share this fact pattern with Claude or other AI systems is, “Sure, but I was optimizing on a professional setting - you can do whatever you want with your PA.” 
 
 And - when you think about it. This is absolutely the right call for Claude.
 
@@ -41,13 +45,15 @@ I faced something similar running an ad tech company that sold data to a top hed
 
 So Anthropic is trained on sound business logic. Minimizing liability. 
 
-Seeing this is arguably a form of edge. The vast majority of people will increasingly rely on AI systems that will provide them dubious or outright incorrect financial advice. Many of them will actually follow it because they’re so used to accepting AI originated decisions blindly. 
+Seeing this is arguably a form of edge. The vast majority of people will increasingly rely on AI systems that will provide them dubious or outright incorrect financial advice. That will gloss over, marginalize or straight up ignore adoption because it doesn't fit into a palletable window of a report to a Fortune 500 CEO. Many people who are not Fortune 500 CEOs will actually follow this advice because it sounds compelling and reasonable, and they've come to trust AI in other areas of their lives that aren't zero sum prediction games. 
 
-VC funds will over deploy into RWA assets. Their LPs will be thrilled when AI does the diligence on their websites. Creating high valuation shorts. A gift to someone who actually can think for themselves. 
+VC funds will over-deploy into RWA assets. Their LPs will be thrilled when AI does the diligence on their websites. Creating high valuation shorts. A gift to someone who actually can think for themselves. 
 
 Perhaps the new “contrarian and right” is ‘what do I strongly hold to believe true that most LLMs would vehemently disagree with”
 
-Rejected discourse becomes a semi durable edge. 
+Put another way - you've got a framework to answer "who is on the other side of my trade" without buying order flow, canvassing consensus numbers, or browsing forums. 
+
+Rejected discourse becomes a semi durable edge with AI serving more as a contra than a portfolio manager. 
 
 In a world where everyone copy pastes and drinks the analytical slop the discordant thinker is king.  
 
