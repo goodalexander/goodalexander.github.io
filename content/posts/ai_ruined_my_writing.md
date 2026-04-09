@@ -9,7 +9,7 @@ tags: ["post fiat","crypto"]
 ---
 
 <video controls playsinline style="width: 100%; height: auto;">
-    <source src="/images/video_alien.mov" type="video/quicktime">
+    <source src="/images/video_alien2.mp4" type="video/mp4">
 </video>
 
 ## Drank the Koolaid and it Feels Bad
