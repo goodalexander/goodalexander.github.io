@@ -247,7 +247,7 @@
   function filteredRows() {
     const query = (refs.search.value || "").trim().toLowerCase();
     const scope = refs.scope.value || "all";
-    const limit = parseNumber(refs.limit.value, 25);
+    const limit = parseNumber(refs.limit.value, 150);
     const weights = getNormalizedWeights().normalized;
 
     const rows = state.rows
