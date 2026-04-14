@@ -33,7 +33,11 @@
       "latency_norm": 92.8498,
       "composite_score": 94.0576,
       "openrouter_created": 1772564061,
-      "openrouter_created_at": "2026-03-03T18:54:21+00:00"
+      "openrouter_created_at": "2026-03-03T18:54:21+00:00",
+      "preset_key": "best_iterative_chat",
+      "preset_label": "Best Iterative Chat",
+      "preset_score": 94.0576,
+      "preset_rank": 1
     },
     "open_weight": {
       "candidate_model_key": "z-ai/glm-5",
@@ -60,7 +64,11 @@
       "latency_norm": 70.0442,
       "composite_score": 87.8328,
       "openrouter_created": 1770829182,
-      "openrouter_created_at": "2026-02-11T16:59:42+00:00"
+      "openrouter_created_at": "2026-02-11T16:59:42+00:00",
+      "preset_key": "best_iterative_chat",
+      "preset_label": "Best Iterative Chat",
+      "preset_score": 87.8328,
+      "preset_rank": 18
     },
     "closed_source": {
       "candidate_model_key": "openai/gpt-5.3-chat",
@@ -87,7 +95,11 @@
       "latency_norm": 92.8498,
       "composite_score": 94.0576,
       "openrouter_created": 1772564061,
-      "openrouter_created_at": "2026-03-03T18:54:21+00:00"
+      "openrouter_created_at": "2026-03-03T18:54:21+00:00",
+      "preset_key": "best_iterative_chat",
+      "preset_label": "Best Iterative Chat",
+      "preset_score": 94.0576,
+      "preset_rank": 1
     }
   },
   "model_aggregates": [
@@ -4277,5 +4289,319 @@
       "openrouter_created": 1771342990,
       "openrouter_created_at": "2026-02-17T15:43:10+00:00"
     }
-  ]
+  ],
+  "winner_presets": {
+    "best_decisionmaker": {
+      "label": "Best Decisionmaker",
+      "weights": {
+        "quality": 100.0,
+        "cost": 0.0,
+        "latency": 0.0
+      },
+      "winners": {
+        "overall": {
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "reasoning_effort": "high",
+          "label": "Anthropic: Claude Opus 4.6",
+          "source_tags": [
+            "livebench_reasoning",
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 2,
+          "livebench_rank": 1,
+          "livebench_reasoning_score": 88.673,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 86.3667,
+          "quality_success_only_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_cost_sum": 6.1154,
+          "response_latency_ms_mean": 48570.6457,
+          "quality_norm": 100.0,
+          "cost_norm": 79.2075,
+          "latency_norm": 61.5866,
+          "composite_score": 85.1985,
+          "openrouter_created": 1770219050,
+          "openrouter_created_at": "2026-02-04T15:30:50+00:00",
+          "preset_key": "best_decisionmaker",
+          "preset_label": "Best Decisionmaker",
+          "preset_score": 100.0,
+          "preset_rank": 1
+        },
+        "open_weight": {
+          "candidate_model_key": "z-ai/glm-5.1",
+          "candidate_model_id": "z-ai/glm-5.1",
+          "reasoning_effort": null,
+          "label": "Z.ai: GLM 5.1",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": true,
+          "usage_rank": 19,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 83.3111,
+          "quality_success_only_mean": 83.3111,
+          "response_cost_mean": 0.0227,
+          "response_cost_sum": 1.360195,
+          "response_latency_ms_mean": 61440.0893,
+          "quality_norm": 95.5145,
+          "cost_norm": 95.384,
+          "latency_norm": 49.3614,
+          "composite_score": 83.9436,
+          "openrouter_created": 1775578025,
+          "openrouter_created_at": "2026-04-07T16:07:05+00:00",
+          "preset_key": "best_decisionmaker",
+          "preset_label": "Best Decisionmaker",
+          "preset_score": 95.5145,
+          "preset_rank": 3
+        },
+        "closed_source": {
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "reasoning_effort": "high",
+          "label": "Anthropic: Claude Opus 4.6",
+          "source_tags": [
+            "livebench_reasoning",
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 2,
+          "livebench_rank": 1,
+          "livebench_reasoning_score": 88.673,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 86.3667,
+          "quality_success_only_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_cost_sum": 6.1154,
+          "response_latency_ms_mean": 48570.6457,
+          "quality_norm": 100.0,
+          "cost_norm": 79.2075,
+          "latency_norm": 61.5866,
+          "composite_score": 85.1985,
+          "openrouter_created": 1770219050,
+          "openrouter_created_at": "2026-02-04T15:30:50+00:00",
+          "preset_key": "best_decisionmaker",
+          "preset_label": "Best Decisionmaker",
+          "preset_score": 100.0,
+          "preset_rank": 1
+        }
+      }
+    },
+    "best_iterative_chat": {
+      "label": "Best Iterative Chat",
+      "weights": {
+        "quality": 50.0,
+        "cost": 25.0,
+        "latency": 25.0
+      },
+      "winners": {
+        "overall": {
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "reasoning_effort": null,
+          "label": "OpenAI: GPT-5.3 Chat",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 67,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 82.0556,
+          "quality_success_only_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_cost_sum": 1.169877,
+          "response_latency_ms_mean": 15659.998,
+          "quality_norm": 93.6715,
+          "cost_norm": 96.0376,
+          "latency_norm": 92.8498,
+          "composite_score": 94.0576,
+          "openrouter_created": 1772564061,
+          "openrouter_created_at": "2026-03-03T18:54:21+00:00",
+          "preset_key": "best_iterative_chat",
+          "preset_label": "Best Iterative Chat",
+          "preset_score": 94.0576,
+          "preset_rank": 1
+        },
+        "open_weight": {
+          "candidate_model_key": "z-ai/glm-5",
+          "candidate_model_id": "z-ai/glm-5",
+          "reasoning_effort": null,
+          "label": "Z.ai: GLM 5",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": true,
+          "usage_rank": 15,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 80.9389,
+          "quality_success_only_mean": 80.9389,
+          "response_cost_mean": 0.0137,
+          "response_cost_sum": 0.820376,
+          "response_latency_ms_mean": 39667.4305,
+          "quality_norm": 92.0323,
+          "cost_norm": 97.2222,
+          "latency_norm": 70.0442,
+          "composite_score": 87.8328,
+          "openrouter_created": 1770829182,
+          "openrouter_created_at": "2026-02-11T16:59:42+00:00",
+          "preset_key": "best_iterative_chat",
+          "preset_label": "Best Iterative Chat",
+          "preset_score": 87.8328,
+          "preset_rank": 18
+        },
+        "closed_source": {
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "reasoning_effort": null,
+          "label": "OpenAI: GPT-5.3 Chat",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 67,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 82.0556,
+          "quality_success_only_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_cost_sum": 1.169877,
+          "response_latency_ms_mean": 15659.998,
+          "quality_norm": 93.6715,
+          "cost_norm": 96.0376,
+          "latency_norm": 92.8498,
+          "composite_score": 94.0576,
+          "openrouter_created": 1772564061,
+          "openrouter_created_at": "2026-03-03T18:54:21+00:00",
+          "preset_key": "best_iterative_chat",
+          "preset_label": "Best Iterative Chat",
+          "preset_score": 94.0576,
+          "preset_rank": 1
+        }
+      }
+    },
+    "best_classifier": {
+      "label": "Best Classifier",
+      "weights": {
+        "quality": 10.0,
+        "cost": 30.0,
+        "latency": 60.0
+      },
+      "winners": {
+        "overall": {
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "reasoning_effort": null,
+          "label": "OpenAI: GPT-5.4 Mini",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 27,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 75.3167,
+          "quality_success_only_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_cost_sum": 0.327403,
+          "response_latency_ms_mean": 9743.397,
+          "quality_norm": 83.7792,
+          "cost_norm": 98.8971,
+          "latency_norm": 98.4703,
+          "composite_score": 91.2315,
+          "openrouter_created": 1773748178,
+          "openrouter_created_at": "2026-03-17T11:49:38+00:00",
+          "preset_key": "best_classifier",
+          "preset_label": "Best Classifier",
+          "preset_score": 97.1292,
+          "preset_rank": 1
+        },
+        "open_weight": {
+          "candidate_model_key": "xiaomi/mimo-v2-flash",
+          "candidate_model_id": "xiaomi/mimo-v2-flash",
+          "reasoning_effort": null,
+          "label": "Xiaomi: MiMo-V2-Flash",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": true,
+          "usage_rank": 23,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 63.2278,
+          "quality_success_only_mean": 63.2278,
+          "response_cost_mean": 0.0006,
+          "response_cost_sum": 0.038428,
+          "response_latency_ms_mean": 11785.5323,
+          "quality_norm": 66.0333,
+          "cost_norm": 99.8979,
+          "latency_norm": 96.5304,
+          "composite_score": 82.1237,
+          "openrouter_created": 1765731308,
+          "openrouter_created_at": "2025-12-14T16:55:08+00:00",
+          "preset_key": "best_classifier",
+          "preset_label": "Best Classifier",
+          "preset_score": 94.4909,
+          "preset_rank": 8
+        },
+        "closed_source": {
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "reasoning_effort": null,
+          "label": "OpenAI: GPT-5.4 Mini",
+          "source_tags": [
+            "openrouter_token_usage_weekly"
+          ],
+          "open_weight": false,
+          "usage_rank": 27,
+          "livebench_rank": null,
+          "livebench_reasoning_score": null,
+          "response_count": 60,
+          "planned_count": 60,
+          "success_rate": 1.0,
+          "quality_mean": 75.3167,
+          "quality_success_only_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_cost_sum": 0.327403,
+          "response_latency_ms_mean": 9743.397,
+          "quality_norm": 83.7792,
+          "cost_norm": 98.8971,
+          "latency_norm": 98.4703,
+          "composite_score": 91.2315,
+          "openrouter_created": 1773748178,
+          "openrouter_created_at": "2026-03-17T11:49:38+00:00",
+          "preset_key": "best_classifier",
+          "preset_label": "Best Classifier",
+          "preset_score": 97.1292,
+          "preset_rank": 1
+        }
+      }
+    }
+  },
+  "default_winner_preset": "best_iterative_chat"
 }

@@ -227,17 +227,42 @@
   }
 
   function buildDefaultPayload(summary) {
+    const defaultPresetKey = summary.default_winner_preset || "best_iterative_chat";
+    const winnerPresets = summary.winner_presets || {};
+
+    function compactWinner(row) {
+      if (!row) {
+        return null;
+      }
+      return {
+        candidate_model_key: row.candidate_model_key || null,
+        candidate_model_id: row.candidate_model_id || null,
+        label: row.label || null,
+        preset_score: Number.isFinite(Number(row.preset_score)) ? Number(row.preset_score) : null,
+      };
+    }
+
     return {
       generated_at: summary.generated_at,
+      default_winner_preset: defaultPresetKey,
       default_weights: DEFAULT_WEIGHTS,
       candidate_count: summary.candidate_count,
       scorer_count: summary.scorer_count,
       canon_example_count: summary.canon_example_count,
-      winners: {
-        overall: summary.winners?.overall?.candidate_model_key || null,
-        open_weight: summary.winners?.open_weight?.candidate_model_key || null,
-        closed_source: summary.winners?.closed_source?.candidate_model_key || null,
-      },
+      winner_presets: Object.fromEntries(
+        Object.entries(winnerPresets).map(([key, preset]) => [
+          key,
+          {
+            label: preset.label || key,
+            weights: preset.weights || null,
+            winners: {
+              overall: compactWinner(preset.winners?.overall),
+              open_weight: compactWinner(preset.winners?.open_weight),
+              closed_source: compactWinner(preset.winners?.closed_source),
+            },
+          },
+        ]),
+      ),
     };
   }
 
