@@ -38,14 +38,17 @@
       quality: {
         range: root.querySelector('[data-role="quality-range"]'),
         number: root.querySelector('[data-role="quality-number"]'),
+        value: root.querySelector('[data-role="quality-value"]'),
       },
       cost: {
         range: root.querySelector('[data-role="cost-range"]'),
         number: root.querySelector('[data-role="cost-number"]'),
+        value: root.querySelector('[data-role="cost-value"]'),
       },
       latency: {
         range: root.querySelector('[data-role="latency-range"]'),
         number: root.querySelector('[data-role="latency-number"]'),
+        value: root.querySelector('[data-role="latency-value"]'),
       },
     },
   };
@@ -189,6 +192,9 @@
     const clamped = clamp(parseNumber(value, DEFAULT_WEIGHTS[metric]), 0, 100);
     refs.controls[metric].range.value = String(clamped);
     refs.controls[metric].number.value = String(clamped);
+    if (refs.controls[metric].value) {
+      refs.controls[metric].value.textContent = String(clamped);
+    }
   }
 
   function buildDefaultPayload(summary) {
@@ -212,6 +218,33 @@
     }
   }
 
+  function setHTML(element, value) {
+    if (element) {
+      element.innerHTML = value;
+    }
+  }
+
+  function displayLabel(row) {
+    const label = String(row?.label || "").trim();
+    if (label.includes(":")) {
+      return label.split(":").slice(1).join(":").trim() || label;
+    }
+    return label || String(row?.candidate_model_key || "Unknown model");
+  }
+
+  function buildMetricMarkup(metrics) {
+    return metrics
+      .map(
+        (metric) => `
+          <div class="pfb-card-metric">
+            <div class="pfb-card-metric-key">${metric.key}</div>
+            <div class="pfb-card-metric-value">${metric.value}</div>
+          </div>
+        `,
+      )
+      .join("");
+  }
+
   function renderWinnerCard(element, label, row) {
     if (!element) {
       return;
@@ -220,35 +253,37 @@
       element.innerHTML = "";
       return;
     }
-    element.innerHTML = "";
+    const badgeMap = {
+      overall: "01",
+      open_weight: "02",
+      closed_source: "03",
+    };
+    const role = element.getAttribute("data-role");
+    const badge = badgeMap[role] || "00";
 
-    const labelNode = document.createElement("div");
-    labelNode.className = "pfb-card-label";
-    labelNode.textContent = label;
-
-    const modelNode = document.createElement("div");
-    modelNode.className = "pfb-card-model";
-    modelNode.textContent = row.candidate_model_key || row.label || "Unknown model";
-
-    const metricsNode = document.createElement("div");
-    metricsNode.className = "pfb-card-metrics";
-    metricsNode.innerHTML = [
-      `Composite ${formatScore(row.composite_score)}`,
-      `Quality ${formatScore(row.quality_mean)}`,
-      `Cost ${formatCurrency(row.response_cost_mean)}`,
-      `Latency ${formatLatency(row.response_latency_ms_mean)}`,
-    ]
-      .map((item) => `<span>${item}</span>`)
-      .join("");
-
-    element.append(labelNode, modelNode, metricsNode);
+    setHTML(
+      element,
+      `
+        <div class="pfb-card-label"><span class="pfb-card-rank">${badge}</span>${label}</div>
+        <div class="pfb-card-model-id">${row.candidate_model_key || row.candidate_model_id || ""}</div>
+        <div class="pfb-card-model">${displayLabel(row)}</div>
+        <div class="pfb-card-metrics">
+          ${buildMetricMarkup([
+            { key: "Composite", value: formatScore(row.composite_score) },
+            { key: "Quality", value: formatScore(row.quality_mean) },
+            { key: "Cost / req", value: formatCurrency(row.response_cost_mean) },
+            { key: "Latency", value: formatLatency(row.response_latency_ms_mean) },
+          ])}
+        </div>
+      `,
+    );
   }
 
   function renderStaticSummary(summary) {
-    setText(refs.generatedAt, `Run: ${formatTimestamp(summary.generated_at)}`);
-    setText(refs.candidateCount, `${summary.candidate_count || 0} candidates`);
-    setText(refs.canonCount, `${summary.canon_example_count || 0} canon examples`);
-    setText(refs.scorerCount, `${summary.scorer_count || 0} scorers`);
+    setText(refs.generatedAt, formatTimestamp(summary.generated_at));
+    setText(refs.candidateCount, String(summary.candidate_count || 0));
+    setText(refs.canonCount, String(summary.canon_example_count || 0));
+    setText(refs.scorerCount, String(summary.scorer_count || 0));
     refs.defaultJson.textContent = JSON.stringify(buildDefaultPayload(summary), null, 2);
     if (refs.methodologyPrompt) {
       refs.methodologyPrompt.textContent = PLAIN_ENGLISH_SCORING_PROMPT;
@@ -337,39 +372,34 @@
       return;
     }
     if (!rows.length) {
-      refs.liveLeader.innerHTML = '<div class="pfb-card-label">Live Reweighted Leader</div><div class="pfb-card-model">No rows match the current filters.</div>';
+      refs.liveLeader.innerHTML = '<div class="pfb-card-label"><span class="pfb-card-rank">LIVE</span>Live Reweighted Leader</div><div class="pfb-card-model">No rows match the current filters.</div>';
       return;
     }
 
     const leader = rows[0];
-    refs.liveLeader.innerHTML = "";
-
-    const labelNode = document.createElement("div");
-    labelNode.className = "pfb-card-label";
-    labelNode.textContent = "Live Reweighted Leader";
-
-    const modelNode = document.createElement("div");
-    modelNode.className = "pfb-card-model";
-    modelNode.textContent = leader.candidate_model_key;
-
-    const metricsNode = document.createElement("div");
-    metricsNode.className = "pfb-card-metrics";
-    metricsNode.innerHTML = [
-      `Score ${formatScore(leader.dynamicScore)}`,
-      `Quality ${formatScore(leader.quality_mean)}`,
-      `Cost ${formatCurrency(leader.response_cost_mean)}`,
-      `Latency ${formatLatency(leader.response_latency_ms_mean)}`,
-      `Q ${formatScore(normalizedWeights.quality * 100)}% / C ${formatScore(normalizedWeights.cost * 100)}% / L ${formatScore(normalizedWeights.latency * 100)}%`,
-    ]
-      .map((item) => `<span>${item}</span>`)
-      .join("");
-
-    refs.liveLeader.append(labelNode, modelNode, metricsNode);
+    setHTML(
+      refs.liveLeader,
+      `
+        <div class="pfb-card-label"><span class="pfb-card-rank">LIVE</span>Live Reweighted Leader</div>
+        <div class="pfb-card-model-id">${leader.candidate_model_key || leader.candidate_model_id || ""}</div>
+        <div class="pfb-card-model">${displayLabel(leader)}</div>
+        <div class="pfb-card-metrics">
+          ${buildMetricMarkup([
+            { key: "Score", value: formatScore(leader.dynamicScore) },
+            { key: "Quality", value: formatScore(leader.quality_mean) },
+            { key: "Cost / req", value: formatCurrency(leader.response_cost_mean) },
+            { key: "Latency", value: formatLatency(leader.response_latency_ms_mean) },
+          ])}
+        </div>
+      `,
+    );
   }
 
   function renderWeightSummary(normalizedWeights) {
-    const text = `Effective weighting: quality ${formatScore(normalizedWeights.quality * 100)}% | cost ${formatScore(normalizedWeights.cost * 100)}% | latency ${formatScore(normalizedWeights.latency * 100)}%`;
-    setText(refs.weightSummary, text);
+    setHTML(
+      refs.weightSummary,
+      `Effective · Q <b>${formatScore(normalizedWeights.quality * 100)}%</b> · C <b>${formatScore(normalizedWeights.cost * 100)}%</b> · L <b>${formatScore(normalizedWeights.latency * 100)}%</b>`,
+    );
   }
 
   function renderTable() {
@@ -380,29 +410,46 @@
     refs.tableBody.innerHTML = "";
 
     rows.forEach((row, index) => {
-      const tr = document.createElement("tr");
-
-      const badgeClass = row.open_weight ? "pfb-badge pfb-badge-open" : "pfb-badge pfb-badge-closed";
+      const rank = index + 1;
+      const rowDiv = document.createElement("div");
+      const topClass = rank === 1 ? " is-top-1" : rank === 2 ? " is-top-2" : rank === 3 ? " is-top-3" : "";
+      const badgeClass = row.open_weight ? "pfb-tag pfb-tag-open" : "pfb-tag pfb-tag-closed";
       const badgeText = row.open_weight ? "Open" : "Closed";
 
-      tr.innerHTML = `
-        <td class="pfb-rank">${index + 1}</td>
-        <td class="pfb-model">
+      rowDiv.className = `pfb-row${topClass}`;
+      rowDiv.innerHTML = `
+        <div class="pfb-rank">${String(rank).padStart(2, "0")}</div>
+        <div class="pfb-model">
           <span class="pfb-model-id"></span>
           <span class="pfb-model-label"></span>
-        </td>
-        <td class="pfb-metric">${formatScore(row.dynamicScore)}</td>
-        <td class="pfb-rank">${row.defaultRank}</td>
-        <td class="pfb-metric">${formatScore(row.quality_mean)}</td>
-        <td class="pfb-metric">${formatCurrency(row.response_cost_mean)}</td>
-        <td class="pfb-metric">${formatLatency(row.response_latency_ms_mean)}</td>
-        <td class="pfb-metric">${formatPercent(row.success_rate)}</td>
-        <td><span class="${badgeClass}">${badgeText}</span></td>
+        </div>
+        <div class="pfb-cell">
+          <span class="pfb-cell-value is-score">${formatScore(row.dynamicScore)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-score" style="width:${formatScore(row.dynamicScore)}%"></div></div>
+        </div>
+        <div class="pfb-default-rank">${String(row.defaultRank).padStart(2, "0")}</div>
+        <div class="pfb-cell">
+          <span class="pfb-cell-value">${formatScore(row.quality_mean)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-quality" style="width:${formatScore(row.qualityNormClient)}%"></div></div>
+        </div>
+        <div class="pfb-cell">
+          <span class="pfb-cell-value">${formatCurrency(row.response_cost_mean)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-cost" style="width:${formatScore(row.costNormClient)}%"></div></div>
+        </div>
+        <div class="pfb-cell">
+          <span class="pfb-cell-value">${formatLatency(row.response_latency_ms_mean)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-latency" style="width:${formatScore(row.latencyNormClient)}%"></div></div>
+        </div>
+        <div class="pfb-cell">
+          <span class="pfb-cell-value">${formatPercent(row.success_rate)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-success" style="width:${formatScore(Number(row.success_rate || 0) * 100)}%"></div></div>
+        </div>
+        <div><span class="${badgeClass}">${badgeText}</span></div>
       `;
 
-      tr.querySelector(".pfb-model-id").textContent = row.candidate_model_key || "";
-      tr.querySelector(".pfb-model-label").textContent = row.label || "";
-      fragment.appendChild(tr);
+      rowDiv.querySelector(".pfb-model-id").textContent = row.candidate_model_key || "";
+      rowDiv.querySelector(".pfb-model-label").textContent = row.label || "";
+      fragment.appendChild(rowDiv);
     });
 
     refs.tableBody.appendChild(fragment);
