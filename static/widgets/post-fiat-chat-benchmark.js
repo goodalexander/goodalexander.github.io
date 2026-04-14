@@ -105,6 +105,16 @@
     return `${(Number(milliseconds || 0) / 1000).toFixed(2)}s`;
   }
 
+  function formatDaysOld(value) {
+    if (!Number.isFinite(value)) {
+      return "n/a";
+    }
+    if (value < 1) {
+      return "<1";
+    }
+    return String(Math.round(value));
+  }
+
   function formatLivebenchScore(value) {
     if (!Number.isFinite(Number(value))) {
       return "n/a";
@@ -126,32 +136,50 @@
     return Math.max(0, Math.min(1, fraction)) * 100;
   }
 
+  function computeDaysOld(createdTimestamp) {
+    const timestamp = Number(createdTimestamp || 0);
+    if (!Number.isFinite(timestamp) || timestamp <= 0) {
+      return null;
+    }
+    return Math.max(0, (Date.now() - timestamp * 1000) / 86400000);
+  }
+
   function prepareRows(rows) {
     const qualityValues = rows.map((row) => Number(row.quality_mean || 0));
     const costValues = rows.map((row) => Number(row.response_cost_mean || 0));
     const latencyValues = rows.map((row) => Number(row.response_latency_ms_mean || 0));
+    const ageValues = rows
+      .map((row) => computeDaysOld(row.openrouter_created))
+      .filter((value) => Number.isFinite(value));
     const qualityMin = Math.min(...qualityValues);
     const qualityMax = Math.max(...qualityValues);
     const costMin = Math.min(...costValues);
     const costMax = Math.max(...costValues);
     const latencyMin = Math.min(...latencyValues);
     const latencyMax = Math.max(...latencyValues);
+    const ageMin = ageValues.length ? Math.min(...ageValues) : 0;
+    const ageMax = ageValues.length ? Math.max(...ageValues) : 0;
 
-    return rows.map((row, index) => ({
-      ...row,
-      defaultRank: index + 1,
-      qualityNormClient: normalizeMetric(Number(row.quality_mean || 0), qualityMin, qualityMax, false),
-      costNormClient: normalizeMetric(Number(row.response_cost_mean || 0), costMin, costMax, true),
-      latencyNormClient: normalizeMetric(Number(row.response_latency_ms_mean || 0), latencyMin, latencyMax, true),
-      searchableText: [
-        row.candidate_model_key,
-        row.candidate_model_id,
-        row.label,
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase(),
-    }));
+    return rows.map((row, index) => {
+      const daysOldClient = computeDaysOld(row.openrouter_created);
+      return {
+        ...row,
+        defaultRank: index + 1,
+        qualityNormClient: normalizeMetric(Number(row.quality_mean || 0), qualityMin, qualityMax, false),
+        costNormClient: normalizeMetric(Number(row.response_cost_mean || 0), costMin, costMax, true),
+        latencyNormClient: normalizeMetric(Number(row.response_latency_ms_mean || 0), latencyMin, latencyMax, true),
+        daysOldClient,
+        ageNormClient: Number.isFinite(daysOldClient) ? normalizeMetric(daysOldClient, ageMin, ageMax, true) : 0,
+        searchableText: [
+          row.candidate_model_key,
+          row.candidate_model_id,
+          row.label,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase(),
+      };
+    });
   }
 
   function getNormalizedWeights() {
@@ -442,8 +470,8 @@
           <div class="pfb-bar"><div class="pfb-bar-fill is-latency" style="width:${formatScore(row.latencyNormClient)}%"></div></div>
         </div>
         <div class="pfb-cell">
-          <span class="pfb-cell-value">${formatPercent(row.success_rate)}</span>
-          <div class="pfb-bar"><div class="pfb-bar-fill is-success" style="width:${formatScore(Number(row.success_rate || 0) * 100)}%"></div></div>
+          <span class="pfb-cell-value">${formatDaysOld(row.daysOldClient)}</span>
+          <div class="pfb-bar"><div class="pfb-bar-fill is-age" style="width:${formatScore(row.ageNormClient)}%"></div></div>
         </div>
         <div><span class="${badgeClass}">${badgeText}</span></div>
       `;

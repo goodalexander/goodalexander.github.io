@@ -31,7 +31,9 @@
       "quality_norm": 93.6715,
       "cost_norm": 96.0376,
       "latency_norm": 92.8498,
-      "composite_score": 94.0576
+      "composite_score": 94.0576,
+      "openrouter_created": 1772564061,
+      "openrouter_created_at": "2026-03-03T18:54:21+00:00"
     },
     "open_weight": {
       "candidate_model_key": "z-ai/glm-5",
@@ -56,7 +58,9 @@
       "quality_norm": 92.0323,
       "cost_norm": 97.2222,
       "latency_norm": 70.0442,
-      "composite_score": 87.8328
+      "composite_score": 87.8328,
+      "openrouter_created": 1770829182,
+      "openrouter_created_at": "2026-02-11T16:59:42+00:00"
     },
     "closed_source": {
       "candidate_model_key": "openai/gpt-5.3-chat",
@@ -81,7 +85,9 @@
       "quality_norm": 93.6715,
       "cost_norm": 96.0376,
       "latency_norm": 92.8498,
-      "composite_score": 94.0576
+      "composite_score": 94.0576,
+      "openrouter_created": 1772564061,
+      "openrouter_created_at": "2026-03-03T18:54:21+00:00"
     }
   },
   "model_aggregates": [
@@ -108,7 +114,9 @@
       "quality_norm": 93.6715,
       "cost_norm": 96.0376,
       "latency_norm": 92.8498,
-      "composite_score": 94.0576
+      "composite_score": 94.0576,
+      "openrouter_created": 1772564061,
+      "openrouter_created_at": "2026-03-03T18:54:21+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.2-chat",
@@ -133,7 +141,9 @@
       "quality_norm": 92.1383,
       "cost_norm": 96.2418,
       "latency_norm": 89.4973,
-      "composite_score": 92.5039
+      "composite_score": 92.5039,
+      "openrouter_created": 1765389783,
+      "openrouter_created_at": "2025-12-10T18:03:03+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.1-chat",
@@ -158,7 +168,9 @@
       "quality_norm": 86.0626,
       "cost_norm": 97.2018,
       "latency_norm": 97.6017,
-      "composite_score": 91.7322
+      "composite_score": 91.7322,
+      "openrouter_created": 1763060302,
+      "openrouter_created_at": "2025-11-13T18:58:22+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.4-mini",
@@ -183,7 +195,9 @@
       "quality_norm": 83.7792,
       "cost_norm": 98.8971,
       "latency_norm": 98.4703,
-      "composite_score": 91.2315
+      "composite_score": 91.2315,
+      "openrouter_created": 1773748178,
+      "openrouter_created_at": "2026-03-17T11:49:38+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-haiku-4.5",
@@ -208,7 +222,9 @@
       "quality_norm": 87.286,
       "cost_norm": 96.7525,
       "latency_norm": 89.7746,
-      "composite_score": 90.2748
+      "composite_score": 90.2748,
+      "openrouter_created": 1760547638,
+      "openrouter_created_at": "2025-10-15T17:00:38+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-5v-turbo",
@@ -233,7 +249,9 @@
       "quality_norm": 92.3504,
       "cost_norm": 95.9763,
       "latency_norm": 80.0788,
-      "composite_score": 90.189
+      "composite_score": 90.189,
+      "openrouter_created": 1775061458,
+      "openrouter_created_at": "2026-04-01T16:37:38+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.2-codex",
@@ -259,7 +277,9 @@
       "quality_norm": 84.2521,
       "cost_norm": 96.8342,
       "latency_norm": 94.7657,
-      "composite_score": 90.026
+      "composite_score": 90.026,
+      "openrouter_created": 1768409315,
+      "openrouter_created_at": "2026-01-14T16:48:35+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5-chat",
@@ -284,7 +304,9 @@
       "quality_norm": 81.9605,
       "cost_norm": 97.6716,
       "latency_norm": 97.3417,
-      "composite_score": 89.7336
+      "composite_score": 89.7336,
+      "openrouter_created": 1754587837,
+      "openrouter_created_at": "2025-08-07T17:30:37+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.2::medium",
@@ -310,7 +332,9 @@
       "quality_norm": 91.4043,
       "cost_norm": 95.0368,
       "latency_norm": 81.0263,
-      "composite_score": 89.7179
+      "composite_score": 89.7179,
+      "openrouter_created": 1765389775,
+      "openrouter_created_at": "2025-12-10T18:02:55+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.1-codex",
@@ -336,7 +360,9 @@
       "quality_norm": 84.9453,
       "cost_norm": 95.8742,
       "latency_norm": 92.9725,
-      "composite_score": 89.6843
+      "composite_score": 89.6843,
+      "openrouter_created": 1763060298,
+      "openrouter_created_at": "2025-11-13T18:58:18+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-max",
@@ -361,7 +387,9 @@
       "quality_norm": 86.7802,
       "cost_norm": 98.2639,
       "latency_norm": 85.5904,
-      "composite_score": 89.3537
+      "composite_score": 89.3537,
+      "openrouter_created": 1758662808,
+      "openrouter_created_at": "2025-09-23T21:26:48+00:00"
     },
     {
       "candidate_model_key": "xiaomi/mimo-v2-pro",
@@ -386,7 +414,9 @@
       "quality_norm": 85.769,
       "cost_norm": 98.3864,
       "latency_norm": 86.6276,
-      "composite_score": 89.138
+      "composite_score": 89.138,
+      "openrouter_created": 1773863643,
+      "openrouter_created_at": "2026-03-18T19:54:03+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-4.20",
@@ -411,7 +441,9 @@
       "quality_norm": 80.7536,
       "cost_norm": 97.6103,
       "latency_norm": 96.3378,
-      "composite_score": 88.8638
+      "composite_score": 88.8638,
+      "openrouter_created": 1774979019,
+      "openrouter_created_at": "2026-03-31T17:43:39+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3.1-pro-preview-customtools",
@@ -436,7 +468,9 @@
       "quality_norm": 90.3767,
       "cost_norm": 90.8292,
       "latency_norm": 83.2489,
-      "composite_score": 88.7079
+      "composite_score": 88.7079,
+      "openrouter_created": 1772045923,
+      "openrouter_created_at": "2026-02-25T18:58:43+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-5-turbo",
@@ -461,7 +495,9 @@
       "quality_norm": 90.7927,
       "cost_norm": 96.5686,
       "latency_norm": 76.513,
-      "composite_score": 88.6668
+      "composite_score": 88.6668,
+      "openrouter_created": 1773583573,
+      "openrouter_created_at": "2026-03-15T14:06:13+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3.1-pro-preview::high",
@@ -487,7 +523,9 @@
       "quality_norm": 90.5969,
       "cost_norm": 90.8088,
       "latency_norm": 82.4161,
-      "composite_score": 88.6047
+      "composite_score": 88.6047,
+      "openrouter_created": 1771509627,
+      "openrouter_created_at": "2026-02-19T14:00:27+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.3-codex::high",
@@ -513,7 +551,9 @@
       "quality_norm": 91.8692,
       "cost_norm": 93.3619,
       "latency_norm": 75.6873,
-      "composite_score": 88.1969
+      "composite_score": 88.1969,
+      "openrouter_created": 1771959164,
+      "openrouter_created_at": "2026-02-24T18:52:44+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-5",
@@ -538,7 +578,9 @@
       "quality_norm": 92.0323,
       "cost_norm": 97.2222,
       "latency_norm": 70.0442,
-      "composite_score": 87.8328
+      "composite_score": 87.8328,
+      "openrouter_created": 1770829182,
+      "openrouter_created_at": "2026-02-11T16:59:42+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-sonnet-4.5",
@@ -564,7 +606,9 @@
       "quality_norm": 89.1943,
       "cost_norm": 90.2165,
       "latency_norm": 82.2496,
-      "composite_score": 87.7137
+      "composite_score": 87.7137,
+      "openrouter_created": 1759161676,
+      "openrouter_created_at": "2025-09-29T16:01:16+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5-codex",
@@ -589,7 +633,9 @@
       "quality_norm": 83.3551,
       "cost_norm": 95.5882,
       "latency_norm": 88.306,
-      "composite_score": 87.6511
+      "composite_score": 87.6511,
+      "openrouter_created": 1758643403,
+      "openrouter_created_at": "2025-09-23T16:03:23+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-4.1-fast",
@@ -615,7 +661,9 @@
       "quality_norm": 78.6902,
       "cost_norm": 99.6528,
       "latency_norm": 90.9657,
-      "composite_score": 86.9997
+      "composite_score": 86.9997,
+      "openrouter_created": 1763587502,
+      "openrouter_created_at": "2025-11-19T21:25:02+00:00"
     },
     {
       "candidate_model_key": "minimax/minimax-m2.7",
@@ -640,7 +688,9 @@
       "quality_norm": 87.9383,
       "cost_norm": 98.9992,
       "latency_norm": 72.2877,
-      "composite_score": 86.7909
+      "composite_score": 86.7909,
+      "openrouter_created": 1773836697,
+      "openrouter_created_at": "2026-03-18T12:24:57+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4.1",
@@ -665,7 +715,9 @@
       "quality_norm": 77.7606,
       "cost_norm": 96.2418,
       "latency_norm": 94.9045,
-      "composite_score": 86.6669
+      "composite_score": 86.6669,
+      "openrouter_created": 1744651385,
+      "openrouter_created_at": "2025-04-14T17:23:05+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-sonnet-4",
@@ -690,7 +742,9 @@
       "quality_norm": 81.5201,
       "cost_norm": 91.1356,
       "latency_norm": 91.3178,
-      "composite_score": 86.3734
+      "composite_score": 86.3734,
+      "openrouter_created": 1747930371,
+      "openrouter_created_at": "2025-05-22T16:12:51+00:00"
     },
     {
       "candidate_model_key": "xiaomi/mimo-v2-omni",
@@ -715,7 +769,9 @@
       "quality_norm": 77.1081,
       "cost_norm": 99.2239,
       "latency_norm": 91.714,
-      "composite_score": 86.2885
+      "composite_score": 86.2885,
+      "openrouter_created": 1773863703,
+      "openrouter_created_at": "2026-03-18T19:55:03+00:00"
     },
     {
       "candidate_model_key": "kwaipilot/kat-coder-pro-v2",
@@ -740,7 +796,9 @@
       "quality_norm": 75.844,
       "cost_norm": 99.5507,
       "latency_norm": 93.7683,
-      "composite_score": 86.2518
+      "composite_score": 86.2518,
+      "openrouter_created": 1774649310,
+      "openrouter_created_at": "2026-03-27T22:08:30+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-v3.2-exp",
@@ -765,7 +823,9 @@
       "quality_norm": 80.9167,
       "cost_norm": 99.3668,
       "latency_norm": 82.8939,
-      "composite_score": 86.0235
+      "composite_score": 86.0235,
+      "openrouter_created": 1759150481,
+      "openrouter_created_at": "2025-09-29T12:54:41+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-opus-4.5::medium",
@@ -791,7 +851,9 @@
       "quality_norm": 94.3239,
       "cost_norm": 81.3317,
       "latency_norm": 74.0001,
-      "composite_score": 85.9949
+      "composite_score": 85.9949,
+      "openrouter_created": 1764010580,
+      "openrouter_created_at": "2025-11-24T18:56:20+00:00"
     },
     {
       "candidate_model_key": "minimax/minimax-m2.1",
@@ -816,7 +878,9 @@
       "quality_norm": 77.7035,
       "cost_norm": 99.1626,
       "latency_norm": 87.0683,
-      "composite_score": 85.4095
+      "composite_score": 85.4095,
+      "openrouter_created": 1766454997,
+      "openrouter_created_at": "2025-12-23T01:56:37+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-v3.2",
@@ -842,7 +906,9 @@
       "quality_norm": 79.8809,
       "cost_norm": 99.3056,
       "latency_norm": 82.5104,
-      "composite_score": 85.3945
+      "composite_score": 85.3945,
+      "openrouter_created": 1764594642,
+      "openrouter_created_at": "2025-12-01T13:10:42+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-opus-4.6::high",
@@ -868,7 +934,9 @@
       "quality_norm": 100.0,
       "cost_norm": 79.2075,
       "latency_norm": 61.5866,
-      "composite_score": 85.1985
+      "composite_score": 85.1985,
+      "openrouter_created": 1770219050,
+      "openrouter_created_at": "2026-02-04T15:30:50+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-4-fast",
@@ -893,7 +961,9 @@
       "quality_norm": 71.7909,
       "cost_norm": 99.6528,
       "latency_norm": 96.3258,
-      "composite_score": 84.8901
+      "composite_score": 84.8901,
+      "openrouter_created": 1758240090,
+      "openrouter_created_at": "2025-09-19T00:01:30+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-plus-02-15",
@@ -918,7 +988,9 @@
       "quality_norm": 89.5205,
       "cost_norm": 98.7541,
       "latency_norm": 61.2839,
-      "composite_score": 84.7698
+      "composite_score": 84.7698,
+      "openrouter_created": 1771229416,
+      "openrouter_created_at": "2026-02-16T08:10:16+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3-flash-preview",
@@ -943,7 +1015,9 @@
       "quality_norm": 73.1283,
       "cost_norm": 98.6315,
       "latency_norm": 93.7421,
-      "composite_score": 84.6576
+      "composite_score": 84.6576,
+      "openrouter_created": 1765987078,
+      "openrouter_created_at": "2025-12-17T15:57:58+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-397b-a17b",
@@ -968,7 +1042,9 @@
       "quality_norm": 87.3511,
       "cost_norm": 97.5899,
       "latency_norm": 66.1366,
-      "composite_score": 84.6072
+      "composite_score": 84.6072,
+      "openrouter_created": 1771223018,
+      "openrouter_created_at": "2026-02-16T06:23:38+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5",
@@ -993,7 +1069,9 @@
       "quality_norm": 90.3115,
       "cost_norm": 93.4028,
       "latency_norm": 64.145,
-      "composite_score": 84.5427
+      "composite_score": 84.5427,
+      "openrouter_created": 1754587413,
+      "openrouter_created_at": "2025-08-07T17:23:33+00:00"
     },
     {
       "candidate_model_key": "perplexity/sonar",
@@ -1018,7 +1096,9 @@
       "quality_norm": 74.7186,
       "cost_norm": 96.732,
       "latency_norm": 91.7289,
-      "composite_score": 84.4745
+      "composite_score": 84.4745,
+      "openrouter_created": 1738013808,
+      "openrouter_created_at": "2025-01-27T21:36:48+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen-plus",
@@ -1043,7 +1123,9 @@
       "quality_norm": 73.218,
       "cost_norm": 99.5302,
       "latency_norm": 90.983,
-      "composite_score": 84.2373
+      "composite_score": 84.2373,
+      "openrouter_created": 1738409840,
+      "openrouter_created_at": "2025-02-01T11:37:20+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5-mini",
@@ -1068,7 +1150,9 @@
       "quality_norm": 80.2968,
       "cost_norm": 98.9379,
       "latency_norm": 77.2201,
-      "composite_score": 84.1879
+      "composite_score": 84.1879,
+      "openrouter_created": 1754587407,
+      "openrouter_created_at": "2025-08-07T17:23:27+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-coder-next",
@@ -1093,7 +1177,9 @@
       "quality_norm": 72.6145,
       "cost_norm": 99.5098,
       "latency_norm": 91.6733,
-      "composite_score": 84.103
+      "composite_score": 84.103,
+      "openrouter_created": 1770164101,
+      "openrouter_created_at": "2026-02-04T00:15:01+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3.1-flash-lite-preview",
@@ -1118,7 +1204,9 @@
       "quality_norm": 70.1516,
       "cost_norm": 99.3873,
       "latency_norm": 96.4997,
-      "composite_score": 84.0476
+      "composite_score": 84.0476,
+      "openrouter_created": 1772512673,
+      "openrouter_created_at": "2026-03-03T04:37:53+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-5.1",
@@ -1143,7 +1231,9 @@
       "quality_norm": 95.5145,
       "cost_norm": 95.384,
       "latency_norm": 49.3614,
-      "composite_score": 83.9436
+      "composite_score": 83.9436,
+      "openrouter_created": 1775578025,
+      "openrouter_created_at": "2026-04-07T16:07:05+00:00"
     },
     {
       "candidate_model_key": "google/gemini-2.5-pro",
@@ -1168,7 +1258,9 @@
       "quality_norm": 83.2083,
       "cost_norm": 92.116,
       "latency_norm": 73.958,
-      "composite_score": 83.1226
+      "composite_score": 83.1226,
+      "openrouter_created": 1750169544,
+      "openrouter_created_at": "2025-06-17T14:12:24+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3-pro-image-preview",
@@ -1193,7 +1285,9 @@
       "quality_norm": 82.0339,
       "cost_norm": 91.7075,
       "latency_norm": 76.5001,
-      "composite_score": 83.0688
+      "composite_score": 83.0688,
+      "openrouter_created": 1763653797,
+      "openrouter_created_at": "2025-11-20T15:49:57+00:00"
     },
     {
       "candidate_model_key": "minimax/minimax-m2.5",
@@ -1218,7 +1312,9 @@
       "quality_norm": 79.5139,
       "cost_norm": 99.2647,
       "latency_norm": 73.7957,
-      "composite_score": 83.0221
+      "composite_score": 83.0221,
+      "openrouter_created": 1770908502,
+      "openrouter_created_at": "2026-02-12T15:01:42+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-v3.1-terminus",
@@ -1243,7 +1339,9 @@
       "quality_norm": 73.3404,
       "cost_norm": 99.4281,
       "latency_norm": 84.9992,
-      "composite_score": 82.777
+      "composite_score": 82.777,
+      "openrouter_created": 1758548275,
+      "openrouter_created_at": "2025-09-22T13:37:55+00:00"
     },
     {
       "candidate_model_key": "google/gemma-4-26b-a4b-it",
@@ -1268,7 +1366,9 @@
       "quality_norm": 76.7737,
       "cost_norm": 99.7141,
       "latency_norm": 77.4245,
-      "composite_score": 82.6715
+      "composite_score": 82.6715,
+      "openrouter_created": 1775227989,
+      "openrouter_created_at": "2026-04-03T14:53:09+00:00"
     },
     {
       "candidate_model_key": "minimax/minimax-m2",
@@ -1293,7 +1393,9 @@
       "quality_norm": 72.2639,
       "cost_norm": 99.2034,
       "latency_norm": 86.9216,
-      "composite_score": 82.6632
+      "composite_score": 82.6632,
+      "openrouter_created": 1761252093,
+      "openrouter_created_at": "2025-10-23T20:41:33+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.1::high",
@@ -1319,7 +1421,9 @@
       "quality_norm": 91.233,
       "cost_norm": 91.4828,
       "latency_norm": 56.6697,
-      "composite_score": 82.6546
+      "composite_score": 82.6546,
+      "openrouter_created": 1763060305,
+      "openrouter_created_at": "2025-11-13T18:58:25+00:00"
     },
     {
       "candidate_model_key": "xiaomi/mimo-v2-flash",
@@ -1344,7 +1448,9 @@
       "quality_norm": 66.0333,
       "cost_norm": 99.8979,
       "latency_norm": 96.5304,
-      "composite_score": 82.1237
+      "composite_score": 82.1237,
+      "openrouter_created": 1765731308,
+      "openrouter_created_at": "2025-12-14T16:55:08+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-medium-3.1",
@@ -1369,7 +1475,9 @@
       "quality_norm": 73.9439,
       "cost_norm": 98.8154,
       "latency_norm": 81.7755,
-      "composite_score": 82.1197
+      "composite_score": 82.1197,
+      "openrouter_created": 1755095639,
+      "openrouter_created_at": "2025-08-13T14:33:59+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.1-codex-mini",
@@ -1394,7 +1502,9 @@
       "quality_norm": 67.0363,
       "cost_norm": 99.1013,
       "latency_norm": 95.0661,
-      "composite_score": 82.06
+      "composite_score": 82.06,
+      "openrouter_created": 1763057820,
+      "openrouter_created_at": "2025-11-13T18:17:00+00:00"
     },
     {
       "candidate_model_key": "moonshotai/kimi-k2",
@@ -1419,7 +1529,9 @@
       "quality_norm": 69.1649,
       "cost_norm": 98.6315,
       "latency_norm": 90.8764,
-      "composite_score": 81.9594
+      "composite_score": 81.9594,
+      "openrouter_created": 1752263252,
+      "openrouter_created_at": "2025-07-11T19:47:32+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-r1",
@@ -1444,7 +1556,9 @@
       "quality_norm": 80.2234,
       "cost_norm": 97.9167,
       "latency_norm": 67.7994,
-      "composite_score": 81.5407
+      "composite_score": 81.5407,
+      "openrouter_created": 1737381095,
+      "openrouter_created_at": "2025-01-20T13:51:35+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-sonnet-4.6::high",
@@ -1470,7 +1584,9 @@
       "quality_norm": 94.1771,
       "cost_norm": 85.5392,
       "latency_norm": 51.855,
-      "composite_score": 81.4371
+      "composite_score": 81.4371,
+      "openrouter_created": 1771342990,
+      "openrouter_created_at": "2026-02-17T15:43:10+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-chat-v3.1",
@@ -1495,7 +1611,9 @@
       "quality_norm": 73.0875,
       "cost_norm": 99.2851,
       "latency_norm": 78.7618,
-      "composite_score": 81.0555
+      "composite_score": 81.0555,
+      "openrouter_created": 1755779628,
+      "openrouter_created_at": "2025-08-21T12:33:48+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.6-plus",
@@ -1520,7 +1638,9 @@
       "quality_norm": 86.1523,
       "cost_norm": 98.2026,
       "latency_norm": 52.3195,
-      "composite_score": 80.7067
+      "composite_score": 80.7067,
+      "openrouter_created": 1775133557,
+      "openrouter_created_at": "2026-04-02T12:39:17+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-next-80b-a3b-instruct",
@@ -1545,7 +1665,9 @@
       "quality_norm": 63.6927,
       "cost_norm": 99.6528,
       "latency_norm": 95.4494,
-      "composite_score": 80.6219
+      "composite_score": 80.6219,
+      "openrouter_created": 1757612213,
+      "openrouter_created_at": "2025-09-11T17:36:53+00:00"
     },
     {
       "candidate_model_key": "google/gemini-3.1-flash-image-preview",
@@ -1570,7 +1692,9 @@
       "quality_norm": 63.5622,
       "cost_norm": 98.5294,
       "latency_norm": 96.6596,
-      "composite_score": 80.5784
+      "composite_score": 80.5784,
+      "openrouter_created": 1772119558,
+      "openrouter_created_at": "2026-02-26T15:25:58+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-4",
@@ -1596,7 +1720,9 @@
       "quality_norm": 73.6584,
       "cost_norm": 92.7288,
       "latency_norm": 82.1104,
-      "composite_score": 80.539
+      "composite_score": 80.539,
+      "openrouter_created": 1752087689,
+      "openrouter_created_at": "2025-07-09T19:01:29+00:00"
     },
     {
       "candidate_model_key": "google/gemma-4-31b-it",
@@ -1621,7 +1747,9 @@
       "quality_norm": 82.3927,
       "cost_norm": 99.6324,
       "latency_norm": 57.5168,
-      "composite_score": 80.4836
+      "composite_score": 80.4836,
+      "openrouter_created": 1775148486,
+      "openrouter_created_at": "2026-04-02T16:48:06+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-code-fast-1",
@@ -1646,7 +1774,9 @@
       "quality_norm": 64.9323,
       "cost_norm": 99.469,
       "latency_norm": 91.4104,
-      "composite_score": 80.186
+      "composite_score": 80.186,
+      "openrouter_created": 1756238927,
+      "openrouter_created_at": "2025-08-26T20:08:47+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-122b-a10b",
@@ -1671,7 +1801,9 @@
       "quality_norm": 81.1695,
       "cost_norm": 97.2835,
       "latency_norm": 60.5317,
-      "composite_score": 80.0386
+      "composite_score": 80.0386,
+      "openrouter_created": 1772053789,
+      "openrouter_created_at": "2026-02-25T21:09:49+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-coder",
@@ -1696,7 +1828,9 @@
       "quality_norm": 64.3206,
       "cost_norm": 99.3464,
       "latency_norm": 90.4604,
-      "composite_score": 79.612
+      "composite_score": 79.612,
+      "openrouter_created": 1753230546,
+      "openrouter_created_at": "2025-07-23T00:29:06+00:00"
     },
     {
       "candidate_model_key": "google/gemini-2.5-flash",
@@ -1721,7 +1855,9 @@
       "quality_norm": 60.765,
       "cost_norm": 99.2443,
       "latency_norm": 96.9175,
-      "composite_score": 79.423
+      "composite_score": 79.423,
+      "openrouter_created": 1750172488,
+      "openrouter_created_at": "2025-06-17T15:01:28+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-3",
@@ -1746,7 +1882,9 @@
       "quality_norm": 67.4116,
       "cost_norm": 93.7296,
       "latency_norm": 88.8991,
-      "composite_score": 79.363
+      "composite_score": 79.363,
+      "openrouter_created": 1749582908,
+      "openrouter_created_at": "2025-06-10T19:15:08+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4.5",
@@ -1771,7 +1909,9 @@
       "quality_norm": 69.3851,
       "cost_norm": 98.7949,
       "latency_norm": 77.3667,
-      "composite_score": 78.7329
+      "composite_score": 78.7329,
+      "openrouter_created": 1753471347,
+      "openrouter_created_at": "2025-07-25T19:22:27+00:00"
     },
     {
       "candidate_model_key": "moonshotai/kimi-k2-thinking",
@@ -1796,7 +1936,9 @@
       "quality_norm": 86.0137,
       "cost_norm": 97.7124,
       "latency_norm": 44.9874,
-      "composite_score": 78.6818
+      "composite_score": 78.6818,
+      "openrouter_created": 1762440622,
+      "openrouter_created_at": "2025-11-06T14:50:22+00:00"
     },
     {
       "candidate_model_key": "google/gemini-2.5-flash-lite-preview-09-2025",
@@ -1821,7 +1963,9 @@
       "quality_norm": 58.1307,
       "cost_norm": 99.7549,
       "latency_norm": 96.8082,
-      "composite_score": 78.2061
+      "composite_score": 78.2061,
+      "openrouter_created": 1758819686,
+      "openrouter_created_at": "2025-09-25T17:01:26+00:00"
     },
     {
       "candidate_model_key": "arcee-ai/trinity-large-thinking",
@@ -1846,7 +1990,9 @@
       "quality_norm": 61.3522,
       "cost_norm": 99.326,
       "latency_norm": 89.6576,
-      "composite_score": 77.922
+      "composite_score": 77.922,
+      "openrouter_created": 1775058318,
+      "openrouter_created_at": "2026-04-01T15:45:18+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-small-2603",
@@ -1871,7 +2017,9 @@
       "quality_norm": 57.4621,
       "cost_norm": 99.6119,
       "latency_norm": 97.0161,
-      "composite_score": 77.888
+      "composite_score": 77.888,
+      "openrouter_created": 1773695685,
+      "openrouter_created_at": "2026-03-16T21:14:45+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-large",
@@ -1896,7 +2044,9 @@
       "quality_norm": 71.4973,
       "cost_norm": 95.8538,
       "latency_norm": 72.4309,
-      "composite_score": 77.8198
+      "composite_score": 77.8198,
+      "openrouter_created": 1708905600,
+      "openrouter_created_at": "2024-02-26T00:00:00+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4.1-mini",
@@ -1921,7 +2071,9 @@
       "quality_norm": 57.5273,
       "cost_norm": 99.2647,
       "latency_norm": 96.7261,
-      "composite_score": 77.7613
+      "composite_score": 77.7613,
+      "openrouter_created": 1744651381,
+      "openrouter_created_at": "2025-04-14T17:23:01+00:00"
     },
     {
       "candidate_model_key": "amazon/nova-2-lite-v1",
@@ -1946,7 +2098,9 @@
       "quality_norm": 58.0493,
       "cost_norm": 99.1013,
       "latency_norm": 95.3144,
-      "composite_score": 77.6286
+      "composite_score": 77.6286,
+      "openrouter_created": 1764696672,
+      "openrouter_created_at": "2025-12-02T17:31:12+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-vl-235b-a22b-instruct",
@@ -1971,7 +2125,9 @@
       "quality_norm": 62.9098,
       "cost_norm": 99.2647,
       "latency_norm": 84.8817,
-      "composite_score": 77.4915
+      "composite_score": 77.4915,
+      "openrouter_created": 1758668687,
+      "openrouter_created_at": "2025-09-23T23:04:47+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4.6",
@@ -1996,7 +2152,9 @@
       "quality_norm": 79.2856,
       "cost_norm": 98.5498,
       "latency_norm": 51.057,
-      "composite_score": 77.0445
+      "composite_score": 77.0445,
+      "openrouter_created": 1759235576,
+      "openrouter_created_at": "2025-09-30T12:32:56+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4.7",
@@ -2021,7 +2179,9 @@
       "quality_norm": 85.4102,
       "cost_norm": 97.7328,
       "latency_norm": 39.2427,
-      "composite_score": 76.949
+      "composite_score": 76.949,
+      "openrouter_created": 1766378014,
+      "openrouter_created_at": "2025-12-22T04:33:34+00:00"
     },
     {
       "candidate_model_key": "mistralai/devstral-2512",
@@ -2046,7 +2206,9 @@
       "quality_norm": 56.932,
       "cost_norm": 98.8971,
       "latency_norm": 94.5137,
-      "composite_score": 76.8187
+      "composite_score": 76.8187,
+      "openrouter_created": 1765285419,
+      "openrouter_created_at": "2025-12-09T13:03:39+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-9b",
@@ -2071,7 +2233,9 @@
       "quality_norm": 60.3327,
       "cost_norm": 99.7958,
       "latency_norm": 83.221,
-      "composite_score": 75.9206
+      "composite_score": 75.9206,
+      "openrouter_created": 1773152396,
+      "openrouter_created_at": "2026-03-10T14:19:56+00:00"
     },
     {
       "candidate_model_key": "mistralai/ministral-14b-2512",
@@ -2096,7 +2260,9 @@
       "quality_norm": 55.0808,
       "cost_norm": 99.5302,
       "latency_norm": 92.1715,
-      "composite_score": 75.4658
+      "composite_score": 75.4658,
+      "openrouter_created": 1764681735,
+      "openrouter_created_at": "2025-12-02T13:22:15+00:00"
     },
     {
       "candidate_model_key": "stepfun/step-3.5-flash",
@@ -2121,7 +2287,9 @@
       "quality_norm": 74.8981,
       "cost_norm": 99.6324,
       "latency_norm": 50.2108,
-      "composite_score": 74.9099
+      "composite_score": 74.9099,
+      "openrouter_created": 1769728337,
+      "openrouter_created_at": "2026-01-29T23:12:17+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4.5-air",
@@ -2146,7 +2314,9 @@
       "quality_norm": 55.2928,
       "cost_norm": 99.5098,
       "latency_norm": 89.2041,
-      "composite_score": 74.8249
+      "composite_score": 74.8249,
+      "openrouter_created": 1753471258,
+      "openrouter_created_at": "2025-07-25T19:20:58+00:00"
     },
     {
       "candidate_model_key": "openai/o4-mini",
@@ -2171,7 +2341,9 @@
       "quality_norm": 56.1246,
       "cost_norm": 97.5899,
       "latency_norm": 89.178,
-      "composite_score": 74.7543
+      "composite_score": 74.7543,
+      "openrouter_created": 1744820942,
+      "openrouter_created_at": "2025-04-16T16:29:02+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-235b-a22b",
@@ -2196,7 +2368,9 @@
       "quality_norm": 57.8862,
       "cost_norm": 98.652,
       "latency_norm": 84.1582,
-      "composite_score": 74.6456
+      "composite_score": 74.6456,
+      "openrouter_created": 1745875757,
+      "openrouter_created_at": "2025-04-28T21:29:17+00:00"
     },
     {
       "candidate_model_key": "moonshotai/kimi-k2.5",
@@ -2222,7 +2396,9 @@
       "quality_norm": 92.277,
       "cost_norm": 97.7737,
       "latency_norm": 15.3397,
-      "composite_score": 74.4168
+      "composite_score": 74.4168,
+      "openrouter_created": 1769487076,
+      "openrouter_created_at": "2026-01-27T04:11:16+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-coder-plus",
@@ -2247,7 +2423,9 @@
       "quality_norm": 54.1347,
       "cost_norm": 98.7949,
       "latency_norm": 90.1859,
-      "composite_score": 74.3126
+      "composite_score": 74.3126,
+      "openrouter_created": 1758662707,
+      "openrouter_created_at": "2025-09-23T21:25:07+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-vl-32b-instruct",
@@ -2272,7 +2450,9 @@
       "quality_norm": 54.1266,
       "cost_norm": 99.7345,
       "latency_norm": 89.1432,
-      "composite_score": 74.2827
+      "composite_score": 74.2827,
+      "openrouter_created": 1761231332,
+      "openrouter_created_at": "2025-10-23T14:55:32+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-30b-a3b-instruct-2507",
@@ -2297,7 +2477,9 @@
       "quality_norm": 51.4924,
       "cost_norm": 99.7549,
       "latency_norm": 93.2011,
-      "composite_score": 73.9852
+      "composite_score": 73.9852,
+      "openrouter_created": 1753806965,
+      "openrouter_created_at": "2025-07-29T16:36:05+00:00"
     },
     {
       "candidate_model_key": "tngtech/deepseek-r1t2-chimera",
@@ -2322,7 +2504,9 @@
       "quality_norm": 64.0516,
       "cost_norm": 99.3668,
       "latency_norm": 65.9386,
-      "composite_score": 73.3521
+      "composite_score": 73.3521,
+      "openrouter_created": 1751986985,
+      "openrouter_created_at": "2025-07-08T15:03:05+00:00"
     },
     {
       "candidate_model_key": "inception/mercury-2",
@@ -2347,7 +2531,9 @@
       "quality_norm": 46.9743,
       "cost_norm": 99.3873,
       "latency_norm": 100.0,
-      "composite_score": 73.334
+      "composite_score": 73.334,
+      "openrouter_created": 1772636275,
+      "openrouter_created_at": "2026-03-04T14:57:55+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-3-mini",
@@ -2372,7 +2558,9 @@
       "quality_norm": 53.7922,
       "cost_norm": 99.5302,
       "latency_norm": 85.8194,
-      "composite_score": 73.2335
+      "composite_score": 73.2335,
+      "openrouter_created": 1749583245,
+      "openrouter_created_at": "2025-06-10T19:20:45+00:00"
     },
     {
       "candidate_model_key": "google/gemini-2.5-flash-lite",
@@ -2397,7 +2585,9 @@
       "quality_norm": 45.7756,
       "cost_norm": 99.7549,
       "latency_norm": 97.8201,
-      "composite_score": 72.2816
+      "composite_score": 72.2816,
+      "openrouter_created": 1753200276,
+      "openrouter_created_at": "2025-07-22T16:04:36+00:00"
     },
     {
       "candidate_model_key": "aion-labs/aion-2.0",
@@ -2422,7 +2612,9 @@
       "quality_norm": 72.2435,
       "cost_norm": 98.1413,
       "latency_norm": 46.2561,
-      "composite_score": 72.2211
+      "composite_score": 72.2211,
+      "openrouter_created": 1771881306,
+      "openrouter_created_at": "2026-02-23T21:15:06+00:00"
     },
     {
       "candidate_model_key": "google/gemini-2.5-flash-image",
@@ -2447,7 +2639,9 @@
       "quality_norm": 46.4688,
       "cost_norm": 99.3056,
       "latency_norm": 95.4026,
-      "composite_score": 71.9115
+      "composite_score": 71.9115,
+      "openrouter_created": 1759870431,
+      "openrouter_created_at": "2025-10-07T20:53:51+00:00"
     },
     {
       "candidate_model_key": "bytedance-seed/seed-2.0-lite",
@@ -2472,7 +2666,9 @@
       "quality_norm": 70.8693,
       "cost_norm": 98.5498,
       "latency_norm": 44.1696,
-      "composite_score": 71.1145
+      "composite_score": 71.1145,
+      "openrouter_created": 1773157231,
+      "openrouter_created_at": "2026-03-10T15:40:31+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-opus-4.6-fast",
@@ -2497,7 +2693,9 @@
       "quality_norm": 96.0528,
       "cost_norm": 0.0,
       "latency_norm": 91.8596,
-      "composite_score": 70.9913
+      "composite_score": 70.9913,
+      "openrouter_created": 1775592472,
+      "openrouter_created_at": "2026-04-07T20:07:52+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-vl-30b-a3b-instruct",
@@ -2522,7 +2720,9 @@
       "quality_norm": 46.5259,
       "cost_norm": 99.5711,
       "latency_norm": 90.93,
-      "composite_score": 70.8882
+      "composite_score": 70.8882,
+      "openrouter_created": 1759794476,
+      "openrouter_created_at": "2025-10-06T23:47:56+00:00"
     },
     {
       "candidate_model_key": "mistralai/ministral-8b-2512",
@@ -2547,7 +2747,9 @@
       "quality_norm": 45.4249,
       "cost_norm": 99.5915,
       "latency_norm": 93.0916,
-      "composite_score": 70.8832
+      "composite_score": 70.8832,
+      "openrouter_created": 1764681654,
+      "openrouter_created_at": "2025-12-02T13:20:54+00:00"
     },
     {
       "candidate_model_key": "deepseek/deepseek-chat",
@@ -2572,7 +2774,9 @@
       "quality_norm": 50.3263,
       "cost_norm": 99.1217,
       "latency_norm": 83.2106,
-      "composite_score": 70.7462
+      "composite_score": 70.7462,
+      "openrouter_created": 1735241320,
+      "openrouter_created_at": "2024-12-26T19:28:40+00:00"
     },
     {
       "candidate_model_key": "nvidia/nemotron-3-nano-30b-a3b",
@@ -2597,7 +2801,9 @@
       "quality_norm": 49.4781,
       "cost_norm": 99.8162,
       "latency_norm": 82.5104,
-      "composite_score": 70.3207
+      "composite_score": 70.3207,
+      "openrouter_created": 1765731275,
+      "openrouter_created_at": "2025-12-14T16:54:35+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-235b-a22b-thinking-2507",
@@ -2622,7 +2828,9 @@
       "quality_norm": 64.0759,
       "cost_norm": 98.9175,
       "latency_norm": 53.9543,
-      "composite_score": 70.2559
+      "composite_score": 70.2559,
+      "openrouter_created": 1753449557,
+      "openrouter_created_at": "2025-07-25T13:19:17+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-opus-4",
@@ -2647,7 +2855,9 @@
       "quality_norm": 83.3225,
       "cost_norm": 55.433,
       "latency_norm": 56.9639,
-      "composite_score": 69.7605
+      "composite_score": 69.7605,
+      "openrouter_created": 1747931245,
+      "openrouter_created_at": "2025-05-22T16:27:25+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-32b",
@@ -2672,7 +2882,9 @@
       "quality_norm": 51.207,
       "cost_norm": 99.6324,
       "latency_norm": 75.7752,
-      "composite_score": 69.4554
+      "composite_score": 69.4554,
+      "openrouter_created": 1745875945,
+      "openrouter_created_at": "2025-04-28T21:32:25+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-35b-a3b",
@@ -2697,7 +2909,9 @@
       "quality_norm": 67.9416,
       "cost_norm": 96.5686,
       "latency_norm": 40.9894,
-      "composite_score": 68.3603
+      "composite_score": 68.3603,
+      "openrouter_created": 1772053822,
+      "openrouter_created_at": "2026-02-25T21:10:22+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-3.5-haiku",
@@ -2722,7 +2936,9 @@
       "quality_norm": 40.9477,
       "cost_norm": 97.7533,
       "latency_norm": 91.2665,
-      "composite_score": 67.7288
+      "composite_score": 67.7288,
+      "openrouter_created": 1730678400,
+      "openrouter_created_at": "2024-11-04T00:00:00+00:00"
     },
     {
       "candidate_model_key": "meta-llama/llama-4-maverick",
@@ -2747,7 +2963,9 @@
       "quality_norm": 39.8875,
       "cost_norm": 99.5711,
       "latency_norm": 89.1661,
-      "composite_score": 67.1281
+      "composite_score": 67.1281,
+      "openrouter_created": 1743881822,
+      "openrouter_created_at": "2025-04-05T19:37:02+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5-nano",
@@ -2772,7 +2990,9 @@
       "quality_norm": 47.4066,
       "cost_norm": 99.6936,
       "latency_norm": 73.3819,
-      "composite_score": 66.9722
+      "composite_score": 66.9722,
+      "openrouter_created": 1754587402,
+      "openrouter_created_at": "2025-08-07T17:23:22+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-oss-120b",
@@ -2797,7 +3017,9 @@
       "quality_norm": 46.3138,
       "cost_norm": 99.6732,
       "latency_norm": 73.6199,
-      "composite_score": 66.4802
+      "composite_score": 66.4802,
+      "openrouter_created": 1754414231,
+      "openrouter_created_at": "2025-08-05T17:17:11+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-flash-02-23",
@@ -2822,7 +3044,9 @@
       "quality_norm": 72.0274,
       "cost_norm": 99.183,
       "latency_norm": 20.5837,
-      "composite_score": 65.9554
+      "composite_score": 65.9554,
+      "openrouter_created": 1772053776,
+      "openrouter_created_at": "2026-02-25T21:09:36+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-30b-a3b",
@@ -2847,7 +3071,9 @@
       "quality_norm": 42.1466,
       "cost_norm": 99.7141,
       "latency_norm": 78.9674,
-      "composite_score": 65.7437
+      "composite_score": 65.7437,
+      "openrouter_created": 1745878604,
+      "openrouter_created_at": "2025-04-28T22:16:44+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.4-nano::xhigh",
@@ -2873,7 +3099,9 @@
       "quality_norm": 48.8093,
       "cost_norm": 98.4069,
       "latency_norm": 63.8797,
-      "composite_score": 64.9763
+      "composite_score": 64.9763,
+      "openrouter_created": 1773748187,
+      "openrouter_created_at": "2026-03-17T11:49:47+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4o",
@@ -2898,7 +3126,9 @@
       "quality_norm": 34.7497,
       "cost_norm": 94.5874,
       "latency_norm": 95.6173,
-      "composite_score": 64.926
+      "composite_score": 64.926,
+      "openrouter_created": 1715558400,
+      "openrouter_created_at": "2024-05-13T00:00:00+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3.5-27b",
@@ -2923,7 +3153,9 @@
       "quality_norm": 78.0379,
       "cost_norm": 96.7525,
       "latency_norm": 4.5124,
-      "composite_score": 64.3352
+      "composite_score": 64.3352,
+      "openrouter_created": 1772053810,
+      "openrouter_created_at": "2026-02-25T21:10:10+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4-32b",
@@ -2948,7 +3180,9 @@
       "quality_norm": 41.5757,
       "cost_norm": 99.7753,
       "latency_norm": 73.7748,
-      "composite_score": 64.1754
+      "composite_score": 64.1754,
+      "openrouter_created": 1753376617,
+      "openrouter_created_at": "2025-07-24T17:03:37+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-coder-30b-a3b-instruct",
@@ -2973,7 +3207,9 @@
       "quality_norm": 32.3683,
       "cost_norm": 99.8162,
       "latency_norm": 91.7295,
-      "composite_score": 64.0706
+      "composite_score": 64.0706,
+      "openrouter_created": 1753972379,
+      "openrouter_created_at": "2025-07-31T14:32:59+00:00"
     },
     {
       "candidate_model_key": "google/gemma-3-27b-it",
@@ -2998,7 +3234,9 @@
       "quality_norm": 34.9943,
       "cost_norm": 99.7958,
       "latency_norm": 85.9908,
-      "composite_score": 63.9438
+      "composite_score": 63.9438,
+      "openrouter_created": 1741756359,
+      "openrouter_created_at": "2025-03-12T05:12:39+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-small-3.2-24b-instruct",
@@ -3023,7 +3261,9 @@
       "quality_norm": 30.3376,
       "cost_norm": 99.8162,
       "latency_norm": 94.1505,
-      "composite_score": 63.6605
+      "composite_score": 63.6605,
+      "openrouter_created": 1750443016,
+      "openrouter_created_at": "2025-06-20T18:10:16+00:00"
     },
     {
       "candidate_model_key": "mistralai/devstral-small",
@@ -3048,7 +3288,9 @@
       "quality_norm": 27.4588,
       "cost_norm": 99.8775,
       "latency_norm": 98.9111,
-      "composite_score": 63.4265
+      "composite_score": 63.4265,
+      "openrouter_created": 1752160751,
+      "openrouter_created_at": "2025-07-10T15:19:11+00:00"
     },
     {
       "candidate_model_key": "google/gemma-3-12b-it",
@@ -3073,7 +3315,9 @@
       "quality_norm": 30.0929,
       "cost_norm": 99.8979,
       "latency_norm": 93.0234,
-      "composite_score": 63.2768
+      "composite_score": 63.2768,
+      "openrouter_created": 1741902625,
+      "openrouter_created_at": "2025-03-13T21:50:25+00:00"
     },
     {
       "candidate_model_key": "z-ai/glm-4.7-flash",
@@ -3098,7 +3342,9 @@
       "quality_norm": 52.1204,
       "cost_norm": 99.6732,
       "latency_norm": 49.138,
-      "composite_score": 63.263
+      "composite_score": 63.263,
+      "openrouter_created": 1768833913,
+      "openrouter_created_at": "2026-01-19T14:45:13+00:00"
     },
     {
       "candidate_model_key": "mistralai/ministral-3b-2512",
@@ -3123,7 +3369,9 @@
       "quality_norm": 27.8829,
       "cost_norm": 99.7549,
       "latency_norm": 95.9268,
-      "composite_score": 62.8619
+      "composite_score": 62.8619,
+      "openrouter_created": 1764681560,
+      "openrouter_created_at": "2025-12-02T13:19:20+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen-turbo",
@@ -3148,7 +3396,9 @@
       "quality_norm": 28.886,
       "cost_norm": 99.9592,
       "latency_norm": 93.5828,
-      "composite_score": 62.8285
+      "composite_score": 62.8285,
+      "openrouter_created": 1738410974,
+      "openrouter_created_at": "2025-02-01T11:56:14+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4o-2024-05-13",
@@ -3173,7 +3423,9 @@
       "quality_norm": 33.9749,
       "cost_norm": 88.0106,
       "latency_norm": 91.4324,
-      "composite_score": 61.8482
+      "composite_score": 61.8482,
+      "openrouter_created": 1715558400,
+      "openrouter_created_at": "2024-05-13T00:00:00+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-5.4::xhigh",
@@ -3199,7 +3451,9 @@
       "quality_norm": 83.8526,
       "cost_norm": 78.6152,
       "latency_norm": 0.0,
-      "composite_score": 61.5801
+      "composite_score": 61.5801,
+      "openrouter_created": 1772734352,
+      "openrouter_created_at": "2026-03-05T18:12:32+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4o-mini-2024-07-18",
@@ -3224,7 +3478,9 @@
       "quality_norm": 26.1051,
       "cost_norm": 99.7549,
       "latency_norm": 92.0658,
-      "composite_score": 61.0077
+      "composite_score": 61.0077,
+      "openrouter_created": 1721260800,
+      "openrouter_created_at": "2024-07-18T00:00:00+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4o-mini",
@@ -3249,7 +3505,9 @@
       "quality_norm": 25.1998,
       "cost_norm": 99.6732,
       "latency_norm": 93.649,
-      "composite_score": 60.9305
+      "composite_score": 60.9305,
+      "openrouter_created": 1721260800,
+      "openrouter_created_at": "2024-07-18T00:00:00+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-oss-20b",
@@ -3274,7 +3532,9 @@
       "quality_norm": 32.2786,
       "cost_norm": 99.857,
       "latency_norm": 78.3878,
-      "composite_score": 60.7005
+      "composite_score": 60.7005,
+      "openrouter_created": 1754414229,
+      "openrouter_created_at": "2025-08-05T17:17:09+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-8b",
@@ -3299,7 +3559,9 @@
       "quality_norm": 36.2991,
       "cost_norm": 99.7141,
       "latency_norm": 69.5395,
-      "composite_score": 60.4629
+      "composite_score": 60.4629,
+      "openrouter_created": 1745876632,
+      "openrouter_created_at": "2025-04-28T21:43:52+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-oss-safeguard-20b",
@@ -3324,7 +3586,9 @@
       "quality_norm": 22.2559,
       "cost_norm": 99.8366,
       "latency_norm": 96.8655,
-      "composite_score": 60.3035
+      "composite_score": 60.3035,
+      "openrouter_created": 1761752836,
+      "openrouter_created_at": "2025-10-29T15:47:16+00:00"
     },
     {
       "candidate_model_key": "amazon/nova-lite-v1",
@@ -3349,7 +3613,9 @@
       "quality_norm": 21.8481,
       "cost_norm": 99.857,
       "latency_norm": 97.2845,
-      "composite_score": 60.2094
+      "composite_score": 60.2094,
+      "openrouter_created": 1733437363,
+      "openrouter_created_at": "2024-12-05T22:22:43+00:00"
     },
     {
       "candidate_model_key": "openai/gpt-4.1-nano",
@@ -3374,7 +3640,9 @@
       "quality_norm": 21.5382,
       "cost_norm": 99.857,
       "latency_norm": 97.414,
-      "composite_score": 60.0868
+      "composite_score": 60.0868,
+      "openrouter_created": 1744651369,
+      "openrouter_created_at": "2025-04-14T17:22:49+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen3-vl-8b-instruct",
@@ -3399,7 +3667,9 @@
       "quality_norm": 30.2154,
       "cost_norm": 99.7141,
       "latency_norm": 78.9789,
-      "composite_score": 59.781
+      "composite_score": 59.781,
+      "openrouter_created": 1760463308,
+      "openrouter_created_at": "2025-10-14T17:35:08+00:00"
     },
     {
       "candidate_model_key": "amazon/nova-micro-v1",
@@ -3424,7 +3694,9 @@
       "quality_norm": 20.4127,
       "cost_norm": 99.9387,
       "latency_norm": 96.7129,
-      "composite_score": 59.3692
+      "composite_score": 59.3692,
+      "openrouter_created": 1733437237,
+      "openrouter_created_at": "2024-12-05T22:20:37+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-small-3.1-24b-instruct",
@@ -3449,7 +3721,9 @@
       "quality_norm": 32.4907,
       "cost_norm": 99.1626,
       "latency_norm": 73.3276,
-      "composite_score": 59.3679
+      "composite_score": 59.3679,
+      "openrouter_created": 1742238937,
+      "openrouter_created_at": "2025-03-17T19:15:37+00:00"
     },
     {
       "candidate_model_key": "meta-llama/llama-4-scout",
@@ -3474,7 +3748,9 @@
       "quality_norm": 19.7358,
       "cost_norm": 99.7753,
       "latency_norm": 96.207,
-      "composite_score": 58.8635
+      "composite_score": 58.8635,
+      "openrouter_created": 1743881519,
+      "openrouter_created_at": "2025-04-05T19:31:59+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen-2.5-72b-instruct",
@@ -3499,7 +3775,9 @@
       "quality_norm": 25.6321,
       "cost_norm": 99.7958,
       "latency_norm": 82.9943,
-      "composite_score": 58.5136
+      "composite_score": 58.5136,
+      "openrouter_created": 1726704000,
+      "openrouter_created_at": "2024-09-19T00:00:00+00:00"
     },
     {
       "candidate_model_key": "meta-llama/llama-3.3-70b-instruct",
@@ -3524,7 +3802,9 @@
       "quality_norm": 22.9408,
       "cost_norm": 99.6119,
       "latency_norm": 85.3076,
-      "composite_score": 57.7003
+      "composite_score": 57.7003,
+      "openrouter_created": 1733506137,
+      "openrouter_created_at": "2024-12-06T17:28:57+00:00"
     },
     {
       "candidate_model_key": "google/gemma-2-9b-it",
@@ -3549,7 +3829,9 @@
       "quality_norm": 16.3024,
       "cost_norm": 100.0,
       "latency_norm": 96.1232,
-      "composite_score": 57.182
+      "composite_score": 57.182,
+      "openrouter_created": null,
+      "openrouter_created_at": null
     },
     {
       "candidate_model_key": "mistralai/mistral-small-24b-instruct-2501",
@@ -3574,7 +3856,9 @@
       "quality_norm": 19.0427,
       "cost_norm": 99.9183,
       "latency_norm": 88.2489,
-      "composite_score": 56.5632
+      "composite_score": 56.5632,
+      "openrouter_created": 1738255409,
+      "openrouter_created_at": "2025-01-30T16:43:29+00:00"
     },
     {
       "candidate_model_key": "liquid/lfm-2-24b-a2b",
@@ -3599,7 +3883,9 @@
       "quality_norm": 18.276,
       "cost_norm": 99.9592,
       "latency_norm": 84.7696,
-      "composite_score": 55.3202
+      "composite_score": 55.3202,
+      "openrouter_created": 1772048711,
+      "openrouter_created_at": "2026-02-25T19:45:11+00:00"
     },
     {
       "candidate_model_key": "nvidia/nemotron-3-super-120b-a12b",
@@ -3624,7 +3910,9 @@
       "quality_norm": 19.5156,
       "cost_norm": 99.6119,
       "latency_norm": 79.8082,
-      "composite_score": 54.6128
+      "composite_score": 54.6128,
+      "openrouter_created": 1773245239,
+      "openrouter_created_at": "2026-03-11T16:07:19+00:00"
     },
     {
       "candidate_model_key": "mistralai/mistral-nemo",
@@ -3649,7 +3937,9 @@
       "quality_norm": 13.8477,
       "cost_norm": 99.857,
       "latency_norm": 89.3981,
-      "composite_score": 54.2376
+      "composite_score": 54.2376,
+      "openrouter_created": 1721347200,
+      "openrouter_created_at": "2024-07-19T00:00:00+00:00"
     },
     {
       "candidate_model_key": "sao10k/l3-lunaris-8b",
@@ -3674,7 +3964,9 @@
       "quality_norm": 10.4878,
       "cost_norm": 100.0,
       "latency_norm": 95.5992,
-      "composite_score": 54.1437
+      "composite_score": 54.1437,
+      "openrouter_created": 1723507200,
+      "openrouter_created_at": "2024-08-13T00:00:00+00:00"
     },
     {
       "candidate_model_key": "anthropic/claude-3-haiku",
@@ -3699,7 +3991,9 @@
       "quality_norm": 15.4135,
       "cost_norm": 99.04,
       "latency_norm": 86.529,
-      "composite_score": 54.099
+      "composite_score": 54.099,
+      "openrouter_created": 1710288000,
+      "openrouter_created_at": "2024-03-13T00:00:00+00:00"
     },
     {
       "candidate_model_key": "meta-llama/llama-3.1-70b-instruct",
@@ -3724,7 +4018,9 @@
       "quality_norm": 20.535,
       "cost_norm": 99.1013,
       "latency_norm": 75.4045,
-      "composite_score": 53.894
+      "composite_score": 53.894,
+      "openrouter_created": 1721692800,
+      "openrouter_created_at": "2024-07-23T00:00:00+00:00"
     },
     {
       "candidate_model_key": "google/gemma-3-4b-it",
@@ -3749,7 +4045,9 @@
       "quality_norm": 14.6795,
       "cost_norm": 99.9183,
       "latency_norm": 84.2657,
-      "composite_score": 53.3858
+      "composite_score": 53.3858,
+      "openrouter_created": 1741905510,
+      "openrouter_created_at": "2025-03-13T22:38:30+00:00"
     },
     {
       "candidate_model_key": "qwen/qwen-2.5-7b-instruct",
@@ -3774,7 +4072,9 @@
       "quality_norm": 11.1809,
       "cost_norm": 99.9592,
       "latency_norm": 90.8424,
-      "composite_score": 53.2908
+      "composite_score": 53.2908,
+      "openrouter_created": 1729036800,
+      "openrouter_created_at": "2024-10-16T00:00:00+00:00"
     },
     {
       "candidate_model_key": "meta-llama/llama-3.1-8b-instruct",
@@ -3799,7 +4099,9 @@
       "quality_norm": 11.6376,
       "cost_norm": 99.9592,
       "latency_norm": 87.8623,
-      "composite_score": 52.7742
+      "composite_score": 52.7742,
+      "openrouter_created": 1721692800,
+      "openrouter_created_at": "2024-07-23T00:00:00+00:00"
     },
     {
       "candidate_model_key": "qwen/qwq-32b",
@@ -3824,7 +4126,9 @@
       "quality_norm": 46.2078,
       "cost_norm": 99.2851,
       "latency_norm": 8.3338,
-      "composite_score": 50.0086
+      "composite_score": 50.0086,
+      "openrouter_created": 1741208814,
+      "openrouter_created_at": "2025-03-05T21:06:54+00:00"
     },
     {
       "candidate_model_key": "x-ai/grok-4.20-multi-agent",
@@ -3849,7 +4153,9 @@
       "quality_norm": 0.0,
       "cost_norm": 66.4624,
       "latency_norm": 80.1712,
-      "composite_score": 36.6584
+      "composite_score": 36.6584,
+      "openrouter_created": 1774979158,
+      "openrouter_created_at": "2026-03-31T17:45:58+00:00"
     }
   ],
   "scorers": [
@@ -3890,7 +4196,9 @@
         "top_k",
         "top_p",
         "verbosity"
-      ]
+      ],
+      "openrouter_created": 1770219050,
+      "openrouter_created_at": "2026-02-04T15:30:50+00:00"
     },
     {
       "model_id": "openai/gpt-5.4",
@@ -3924,7 +4232,9 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "openrouter_created": 1772734352,
+      "openrouter_created_at": "2026-03-05T18:12:32+00:00"
     },
     {
       "model_id": "anthropic/claude-sonnet-4.6",
@@ -3963,7 +4273,9 @@
         "top_k",
         "top_p",
         "verbosity"
-      ]
+      ],
+      "openrouter_created": 1771342990,
+      "openrouter_created_at": "2026-02-17T15:43:10+00:00"
     }
   ]
 }
