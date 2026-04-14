@@ -1,3 +1,50 @@
+.pfb-page {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 123, 0, 0.09), transparent 28%),
+    linear-gradient(180deg, #0b1014, #11171d 42%, #0d1318);
+  color: #e5e7eb;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.pfb-page-shell {
+  width: min(1440px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.pfb-page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.pfb-page-mark {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(229, 231, 235, 0.68);
+}
+
+.pfb-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pfb-page-nav a {
+  color: rgba(229, 231, 235, 0.88);
+  text-decoration: none;
+}
+
+.pfb-page-nav a:hover {
+  color: #ff7b00;
+}
+
 .pfb-widget {
   --pfb-bg: var(--theme, #101418);
   --pfb-panel: var(--entry, #161b22);
