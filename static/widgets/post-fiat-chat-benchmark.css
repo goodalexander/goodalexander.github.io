@@ -878,6 +878,7 @@ a {
   border-radius: var(--pfb-radius);
   background: var(--pfb-panel);
   padding: 20px 22px;
+  scroll-margin-top: 24px;
 }
 
 .pfb-methodology[open] {

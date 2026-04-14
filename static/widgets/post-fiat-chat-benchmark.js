@@ -29,6 +29,7 @@
     reset: root.querySelector('[data-role="reset-weights"]'),
     methodologyScorers: root.querySelector('[data-role="methodology-scorers"]'),
     methodologyPrompt: root.querySelector('[data-role="methodology-prompt"]'),
+    methodology: root.querySelector('#methodology'),
     winnerCards: {
       overall: root.querySelector('[data-role="winner-overall"]'),
       open_weight: root.querySelector('[data-role="winner-open-weight"]'),
@@ -497,6 +498,15 @@
     });
   }
 
+  function syncMethodologyAnchor() {
+    if (!refs.methodology) {
+      return;
+    }
+    if (window.location.hash === "#methodology") {
+      refs.methodology.open = true;
+    }
+  }
+
   async function init() {
     const summaryUrl = root.getAttribute("data-summary-url");
     if (!summaryUrl) {
@@ -505,6 +515,8 @@
     }
 
     Object.keys(DEFAULT_WEIGHTS).forEach((metric) => syncWeightControl(metric, DEFAULT_WEIGHTS[metric]));
+    syncMethodologyAnchor();
+    window.addEventListener("hashchange", syncMethodologyAnchor);
 
     try {
       const response = await fetch(summaryUrl, { cache: "no-store" });
