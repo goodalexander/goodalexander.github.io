@@ -10,7 +10,7 @@
     latency: 25,
   };
   const PLAIN_ENGLISH_SCORING_PROMPT =
-    "Each judge receives the capped task history, capped chat history, the selected chat modality, the recent chat, the exact model input, and the candidate response. The judge then scores the response from 0 to 100 on relevance, insight, and alignment with the user's request, and returns JSON whose top-level score is the rounded average of those three dimensions.";
+    "The Post Fiat Task node has 20 canonical prompts designed to move users toward their objectives, ranging from task generation, motivation, brainstorming, and visualization. These 20 canonical prompts use real user data along with task and context metadata associated with them. The benchmark works by simulating interactions with these 20 canonical prompts using real user data and live latency output from OpenRouter.";
 
   const refs = {
     generatedAt: root.querySelector('[data-role="generated-at"]'),
