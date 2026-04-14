@@ -27,8 +27,6 @@
     scope: root.querySelector('[data-role="scope"]'),
     limit: root.querySelector('[data-role="limit"]'),
     reset: root.querySelector('[data-role="reset-weights"]'),
-    tabButtons: Array.from(root.querySelectorAll('[data-role="tab-button"]')),
-    tabPanels: Array.from(root.querySelectorAll('[data-role="tab-panel"]')),
     methodologyScorers: root.querySelector('[data-role="methodology-scorers"]'),
     methodologyPrompt: root.querySelector('[data-role="methodology-prompt"]'),
     winnerCards: {
@@ -53,7 +51,6 @@
   };
 
   const state = {
-    activeTab: "ranking",
     summary: null,
     rows: [],
   };
@@ -302,20 +299,6 @@
     refs.methodologyScorers.appendChild(fragment);
   }
 
-  function setActiveTab(tabName) {
-    state.activeTab = tabName;
-    refs.tabButtons.forEach((button) => {
-      const isActive = button.getAttribute("data-tab") === tabName;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-selected", isActive ? "true" : "false");
-    });
-    refs.tabPanels.forEach((panel) => {
-      const isActive = panel.getAttribute("data-tab") === tabName;
-      panel.classList.toggle("is-active", isActive);
-      panel.hidden = !isActive;
-    });
-  }
-
   function filteredRows() {
     const query = (refs.search.value || "").trim().toLowerCase();
     const scope = refs.scope.value || "all";
@@ -446,12 +429,6 @@
   }
 
   function bindEvents() {
-    refs.tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        setActiveTab(button.getAttribute("data-tab") || "ranking");
-      });
-    });
-
     Object.keys(refs.controls).forEach((metric) => {
       const control = refs.controls[metric];
       control.range.addEventListener("input", () => {
@@ -481,7 +458,6 @@
     }
 
     Object.keys(DEFAULT_WEIGHTS).forEach((metric) => syncWeightControl(metric, DEFAULT_WEIGHTS[metric]));
-    setActiveTab(state.activeTab);
 
     try {
       const response = await fetch(summaryUrl, { cache: "no-store" });

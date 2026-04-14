@@ -58,107 +58,101 @@
           </header>
 
           <div class="pfb-body">
-            <div class="pfb-tab-row" role="tablist" aria-label="Benchmark sections">
-              <button class="pfb-tab is-active" type="button" role="tab" aria-selected="true" data-role="tab-button" data-tab="ranking">Ranking</button>
-              <button class="pfb-tab" type="button" role="tab" aria-selected="false" data-role="tab-button" data-tab="methodology">Methodology</button>
-            </div>
-
-            <section class="pfb-tab-panel is-active" data-role="tab-panel" data-tab="ranking">
-              <section class="pfb-card-grid">
-                <article class="pfb-card" data-role="winner-overall"></article>
-                <article class="pfb-card" data-role="winner-open-weight"></article>
-                <article class="pfb-card" data-role="winner-closed-source"></article>
-              </section>
-
-              <article class="pfb-card pfb-card-live" data-role="live-leader"></article>
-
-              <section class="pfb-controls">
-                <div class="pfb-controls-head">
-                  <div>
-                    <div class="pfb-section-label">Reweighting Controls</div>
-                    <p class="pfb-controls-copy">
-                      Raw slider values are normalized to 100% in the browser, then used to
-                      recompute the ranking score from the benchmark's quality, cost, and
-                      latency axes.
-                    </p>
-                  </div>
-                  <button class="pfb-reset" type="button" data-role="reset-weights">Reset 50 / 25 / 25</button>
-                </div>
-
-                <div class="pfb-slider-grid">
-                  <div class="pfb-slider-card">
-                    <label for="pfb-quality-range">Quality <span>Higher is better</span></label>
-                    <div class="pfb-slider-inputs">
-                      <input id="pfb-quality-range" data-role="quality-range" type="range" min="0" max="100" step="1" value="50">
-                      <input data-role="quality-number" type="number" min="0" max="100" step="1" value="50">
-                    </div>
-                  </div>
-
-                  <div class="pfb-slider-card">
-                    <label for="pfb-cost-range">Cost <span>Lower is better</span></label>
-                    <div class="pfb-slider-inputs">
-                      <input id="pfb-cost-range" data-role="cost-range" type="range" min="0" max="100" step="1" value="25">
-                      <input data-role="cost-number" type="number" min="0" max="100" step="1" value="25">
-                    </div>
-                  </div>
-
-                  <div class="pfb-slider-card">
-                    <label for="pfb-latency-range">Latency <span>Higher is worse</span></label>
-                    <div class="pfb-slider-inputs">
-                      <input id="pfb-latency-range" data-role="latency-range" type="range" min="0" max="100" step="1" value="25">
-                      <input data-role="latency-number" type="number" min="0" max="100" step="1" value="25">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="pfb-toolbar">
-                  <input data-role="search" type="search" placeholder="Filter models by id or label">
-                  <select data-role="scope">
-                    <option value="all">All candidates</option>
-                    <option value="open">Open-weight only</option>
-                    <option value="closed">Closed-source only</option>
-                  </select>
-                  <select data-role="limit">
-                    <option value="25">Show top 25</option>
-                    <option value="50">Show top 50</option>
-                    <option value="100">Show top 100</option>
-                    <option value="150" selected>Show all 150</option>
-                  </select>
-                </div>
-
-                <div class="pfb-meta-row">
-                  <span class="pfb-chip" data-role="weight-summary">Effective weighting: quality 50.00% | cost 25.00% | latency 25.00%</span>
-                  <span class="pfb-chip" data-role="displayed-count">0 rows shown</span>
-                </div>
-              </section>
-
-              <div data-role="state-message">
-                <div class="pfb-empty">Loading benchmark data...</div>
-              </div>
-
-              <section class="pfb-table-card">
-                <div class="pfb-table-wrap">
-                  <table class="pfb-table">
-                    <thead>
-                      <tr>
-                        <th>Rank</th>
-                        <th>Model</th>
-                        <th>Current Score</th>
-                        <th>Default Rank</th>
-                        <th>Quality</th>
-                        <th>Cost / Response</th>
-                        <th>Latency</th>
-                        <th>Success</th>
-                        <th>Type</th>
-                      </tr>
-                    </thead>
-                    <tbody data-role="table-body"></tbody>
-                  </table>
-                </div>
-              </section>
+            <section class="pfb-card-grid">
+              <article class="pfb-card" data-role="winner-overall"></article>
+              <article class="pfb-card" data-role="winner-open-weight"></article>
+              <article class="pfb-card" data-role="winner-closed-source"></article>
             </section>
 
-            <section class="pfb-tab-panel" data-role="tab-panel" data-tab="methodology" hidden>
+            <article class="pfb-card pfb-card-live" data-role="live-leader"></article>
+
+            <section class="pfb-controls">
+              <div class="pfb-controls-head">
+                <div>
+                  <div class="pfb-section-label">Reweighting Controls</div>
+                  <p class="pfb-controls-copy">
+                    Raw slider values are normalized to 100% in the browser, then used to
+                    recompute the ranking score from the benchmark's quality, cost, and
+                    latency axes.
+                  </p>
+                </div>
+                <button class="pfb-reset" type="button" data-role="reset-weights">Reset 50 / 25 / 25</button>
+              </div>
+
+              <div class="pfb-slider-grid">
+                <div class="pfb-slider-card">
+                  <label for="pfb-quality-range">Quality <span>Higher is better</span></label>
+                  <div class="pfb-slider-inputs">
+                    <input id="pfb-quality-range" data-role="quality-range" type="range" min="0" max="100" step="1" value="50">
+                    <input data-role="quality-number" type="number" min="0" max="100" step="1" value="50">
+                  </div>
+                </div>
+
+                <div class="pfb-slider-card">
+                  <label for="pfb-cost-range">Cost <span>Lower is better</span></label>
+                  <div class="pfb-slider-inputs">
+                    <input id="pfb-cost-range" data-role="cost-range" type="range" min="0" max="100" step="1" value="25">
+                    <input data-role="cost-number" type="number" min="0" max="100" step="1" value="25">
+                  </div>
+                </div>
+
+                <div class="pfb-slider-card">
+                  <label for="pfb-latency-range">Latency <span>Higher is worse</span></label>
+                  <div class="pfb-slider-inputs">
+                    <input id="pfb-latency-range" data-role="latency-range" type="range" min="0" max="100" step="1" value="25">
+                    <input data-role="latency-number" type="number" min="0" max="100" step="1" value="25">
+                  </div>
+                </div>
+              </div>
+
+              <div class="pfb-toolbar">
+                <input data-role="search" type="search" placeholder="Filter models by id or label">
+                <select data-role="scope">
+                  <option value="all">All candidates</option>
+                  <option value="open">Open-weight only</option>
+                  <option value="closed">Closed-source only</option>
+                </select>
+                <select data-role="limit">
+                  <option value="25">Show top 25</option>
+                  <option value="50">Show top 50</option>
+                  <option value="100">Show top 100</option>
+                  <option value="150" selected>Show all 150</option>
+                </select>
+              </div>
+
+              <div class="pfb-meta-row">
+                <span class="pfb-chip" data-role="weight-summary">Effective weighting: quality 50.00% | cost 25.00% | latency 25.00%</span>
+                <span class="pfb-chip" data-role="displayed-count">0 rows shown</span>
+              </div>
+            </section>
+
+            <div data-role="state-message">
+              <div class="pfb-empty">Loading benchmark data...</div>
+            </div>
+
+            <section class="pfb-table-card">
+              <div class="pfb-table-wrap">
+                <table class="pfb-table">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Model</th>
+                      <th>Current Score</th>
+                      <th>Default Rank</th>
+                      <th>Quality</th>
+                      <th>Cost / Response</th>
+                      <th>Latency</th>
+                      <th>Success</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody data-role="table-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <details class="pfb-methodology">
+              <summary class="pfb-methodology-summary">Methodology</summary>
               <section class="pfb-method-grid">
                 <article class="pfb-card">
                   <div class="pfb-section-label">Judge Panel</div>
@@ -196,7 +190,7 @@
                   </p>
                 </article>
               </section>
-            </section>
+            </details>
           </div>
         </section>
       </div>
