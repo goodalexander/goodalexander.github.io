@@ -4603,5 +4603,451 @@
       }
     }
   },
-  "default_winner_preset": "best_iterative_chat"
+  "default_winner_preset": "best_iterative_chat",
+  "preset_summaries": {
+    "best_decisionmaker": {
+      "label": "Best Decisionmaker",
+      "weights": {
+        "quality": 100.0,
+        "cost": 0.0,
+        "latency": 0.0
+      },
+      "winners": {
+        "overall": {
+          "rank": 1,
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "label": "Anthropic: Claude Opus 4.6",
+          "open_weight": false,
+          "preset_score": 100.0,
+          "quality_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_latency_ms_mean": 48570.6457
+        },
+        "open_weight": {
+          "rank": 3,
+          "candidate_model_key": "z-ai/glm-5.1",
+          "candidate_model_id": "z-ai/glm-5.1",
+          "label": "Z.ai: GLM 5.1",
+          "open_weight": true,
+          "preset_score": 95.5145,
+          "quality_mean": 83.3111,
+          "response_cost_mean": 0.0227,
+          "response_latency_ms_mean": 61440.0893
+        },
+        "closed_source": {
+          "rank": 1,
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "label": "Anthropic: Claude Opus 4.6",
+          "open_weight": false,
+          "preset_score": 100.0,
+          "quality_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_latency_ms_mean": 48570.6457
+        }
+      },
+      "top_overall": [
+        {
+          "rank": 1,
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "label": "Anthropic: Claude Opus 4.6",
+          "open_weight": false,
+          "preset_score": 100.0,
+          "quality_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_latency_ms_mean": 48570.6457
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "anthropic/claude-opus-4.6-fast",
+          "candidate_model_id": "anthropic/claude-opus-4.6-fast",
+          "label": "Anthropic: Claude Opus 4.6 (Fast)",
+          "open_weight": false,
+          "preset_score": 96.0528,
+          "quality_mean": 83.6778,
+          "response_cost_mean": 0.4897,
+          "response_latency_ms_mean": 16702.4107
+        },
+        {
+          "rank": 3,
+          "candidate_model_key": "z-ai/glm-5.1",
+          "candidate_model_id": "z-ai/glm-5.1",
+          "label": "Z.ai: GLM 5.1",
+          "open_weight": true,
+          "preset_score": 95.5145,
+          "quality_mean": 83.3111,
+          "response_cost_mean": 0.0227,
+          "response_latency_ms_mean": 61440.0893
+        }
+      ],
+      "top_open_weight": [
+        {
+          "rank": 3,
+          "candidate_model_key": "z-ai/glm-5.1",
+          "candidate_model_id": "z-ai/glm-5.1",
+          "label": "Z.ai: GLM 5.1",
+          "open_weight": true,
+          "preset_score": 95.5145,
+          "quality_mean": 83.3111,
+          "response_cost_mean": 0.0227,
+          "response_latency_ms_mean": 61440.0893
+        },
+        {
+          "rank": 8,
+          "candidate_model_key": "moonshotai/kimi-k2.5",
+          "candidate_model_id": "moonshotai/kimi-k2.5",
+          "label": "MoonshotAI: Kimi K2.5",
+          "open_weight": true,
+          "preset_score": 92.277,
+          "quality_mean": 81.1056,
+          "response_cost_mean": 0.011,
+          "response_latency_ms_mean": 97254.6088
+        },
+        {
+          "rank": 10,
+          "candidate_model_key": "z-ai/glm-5",
+          "candidate_model_id": "z-ai/glm-5",
+          "label": "Z.ai: GLM 5",
+          "open_weight": true,
+          "preset_score": 92.0323,
+          "quality_mean": 80.9389,
+          "response_cost_mean": 0.0137,
+          "response_latency_ms_mean": 39667.4305
+        }
+      ],
+      "top_closed_source": [
+        {
+          "rank": 1,
+          "candidate_model_key": "anthropic/claude-opus-4.6::high",
+          "candidate_model_id": "anthropic/claude-opus-4.6",
+          "label": "Anthropic: Claude Opus 4.6",
+          "open_weight": false,
+          "preset_score": 100.0,
+          "quality_mean": 86.3667,
+          "response_cost_mean": 0.1019,
+          "response_latency_ms_mean": 48570.6457
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "anthropic/claude-opus-4.6-fast",
+          "candidate_model_id": "anthropic/claude-opus-4.6-fast",
+          "label": "Anthropic: Claude Opus 4.6 (Fast)",
+          "open_weight": false,
+          "preset_score": 96.0528,
+          "quality_mean": 83.6778,
+          "response_cost_mean": 0.4897,
+          "response_latency_ms_mean": 16702.4107
+        },
+        {
+          "rank": 4,
+          "candidate_model_key": "anthropic/claude-opus-4.5::medium",
+          "candidate_model_id": "anthropic/claude-opus-4.5",
+          "label": "Anthropic: Claude Opus 4.5",
+          "open_weight": false,
+          "preset_score": 94.3239,
+          "quality_mean": 82.5,
+          "response_cost_mean": 0.0915,
+          "response_latency_ms_mean": 35503.0418
+        }
+      ]
+    },
+    "best_iterative_chat": {
+      "label": "Best Iterative Chat",
+      "weights": {
+        "quality": 50.0,
+        "cost": 25.0,
+        "latency": 25.0
+      },
+      "winners": {
+        "overall": {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "label": "OpenAI: GPT-5.3 Chat",
+          "open_weight": false,
+          "preset_score": 94.0576,
+          "quality_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_latency_ms_mean": 15659.998
+        },
+        "open_weight": {
+          "rank": 18,
+          "candidate_model_key": "z-ai/glm-5",
+          "candidate_model_id": "z-ai/glm-5",
+          "label": "Z.ai: GLM 5",
+          "open_weight": true,
+          "preset_score": 87.8328,
+          "quality_mean": 80.9389,
+          "response_cost_mean": 0.0137,
+          "response_latency_ms_mean": 39667.4305
+        },
+        "closed_source": {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "label": "OpenAI: GPT-5.3 Chat",
+          "open_weight": false,
+          "preset_score": 94.0576,
+          "quality_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_latency_ms_mean": 15659.998
+        }
+      },
+      "top_overall": [
+        {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "label": "OpenAI: GPT-5.3 Chat",
+          "open_weight": false,
+          "preset_score": 94.0576,
+          "quality_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_latency_ms_mean": 15659.998
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "openai/gpt-5.2-chat",
+          "candidate_model_id": "openai/gpt-5.2-chat",
+          "label": "OpenAI: GPT-5.2 Chat",
+          "open_weight": false,
+          "preset_score": 92.5039,
+          "quality_mean": 81.0111,
+          "response_cost_mean": 0.0185,
+          "response_latency_ms_mean": 19189.1553
+        },
+        {
+          "rank": 3,
+          "candidate_model_key": "openai/gpt-5.1-chat",
+          "candidate_model_id": "openai/gpt-5.1-chat",
+          "label": "OpenAI: GPT-5.1 Chat",
+          "open_weight": false,
+          "preset_score": 91.7322,
+          "quality_mean": 76.8722,
+          "response_cost_mean": 0.0138,
+          "response_latency_ms_mean": 10657.7907
+        }
+      ],
+      "top_open_weight": [
+        {
+          "rank": 18,
+          "candidate_model_key": "z-ai/glm-5",
+          "candidate_model_id": "z-ai/glm-5",
+          "label": "Z.ai: GLM 5",
+          "open_weight": true,
+          "preset_score": 87.8328,
+          "quality_mean": 80.9389,
+          "response_cost_mean": 0.0137,
+          "response_latency_ms_mean": 39667.4305
+        },
+        {
+          "rank": 22,
+          "candidate_model_key": "minimax/minimax-m2.7",
+          "candidate_model_id": "minimax/minimax-m2.7",
+          "label": "MiniMax: MiniMax M2.7",
+          "open_weight": true,
+          "preset_score": 86.7909,
+          "quality_mean": 78.15,
+          "response_cost_mean": 0.005,
+          "response_latency_ms_mean": 37305.6795
+        },
+        {
+          "rank": 27,
+          "candidate_model_key": "deepseek/deepseek-v3.2-exp",
+          "candidate_model_id": "deepseek/deepseek-v3.2-exp",
+          "label": "DeepSeek: DeepSeek V3.2 Exp",
+          "open_weight": true,
+          "preset_score": 86.0235,
+          "quality_mean": 73.3667,
+          "response_cost_mean": 0.0032,
+          "response_latency_ms_mean": 26140.5565
+        }
+      ],
+      "top_closed_source": [
+        {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.3-chat",
+          "candidate_model_id": "openai/gpt-5.3-chat",
+          "label": "OpenAI: GPT-5.3 Chat",
+          "open_weight": false,
+          "preset_score": 94.0576,
+          "quality_mean": 82.0556,
+          "response_cost_mean": 0.0195,
+          "response_latency_ms_mean": 15659.998
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "openai/gpt-5.2-chat",
+          "candidate_model_id": "openai/gpt-5.2-chat",
+          "label": "OpenAI: GPT-5.2 Chat",
+          "open_weight": false,
+          "preset_score": 92.5039,
+          "quality_mean": 81.0111,
+          "response_cost_mean": 0.0185,
+          "response_latency_ms_mean": 19189.1553
+        },
+        {
+          "rank": 3,
+          "candidate_model_key": "openai/gpt-5.1-chat",
+          "candidate_model_id": "openai/gpt-5.1-chat",
+          "label": "OpenAI: GPT-5.1 Chat",
+          "open_weight": false,
+          "preset_score": 91.7322,
+          "quality_mean": 76.8722,
+          "response_cost_mean": 0.0138,
+          "response_latency_ms_mean": 10657.7907
+        }
+      ]
+    },
+    "best_classifier": {
+      "label": "Best Classifier",
+      "weights": {
+        "quality": 10.0,
+        "cost": 30.0,
+        "latency": 60.0
+      },
+      "winners": {
+        "overall": {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "label": "OpenAI: GPT-5.4 Mini",
+          "open_weight": false,
+          "preset_score": 97.1292,
+          "quality_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_latency_ms_mean": 9743.397
+        },
+        "open_weight": {
+          "rank": 8,
+          "candidate_model_key": "xiaomi/mimo-v2-flash",
+          "candidate_model_id": "xiaomi/mimo-v2-flash",
+          "label": "Xiaomi: MiMo-V2-Flash",
+          "open_weight": true,
+          "preset_score": 94.4909,
+          "quality_mean": 63.2278,
+          "response_cost_mean": 0.0006,
+          "response_latency_ms_mean": 11785.5323
+        },
+        "closed_source": {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "label": "OpenAI: GPT-5.4 Mini",
+          "open_weight": false,
+          "preset_score": 97.1292,
+          "quality_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_latency_ms_mean": 9743.397
+        }
+      },
+      "top_overall": [
+        {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "label": "OpenAI: GPT-5.4 Mini",
+          "open_weight": false,
+          "preset_score": 97.1292,
+          "quality_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_latency_ms_mean": 9743.397
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "openai/gpt-5.1-chat",
+          "candidate_model_id": "openai/gpt-5.1-chat",
+          "label": "OpenAI: GPT-5.1 Chat",
+          "open_weight": false,
+          "preset_score": 96.3278,
+          "quality_mean": 76.8722,
+          "response_cost_mean": 0.0138,
+          "response_latency_ms_mean": 10657.7907
+        },
+        {
+          "rank": 3,
+          "candidate_model_key": "openai/gpt-5-chat",
+          "candidate_model_id": "openai/gpt-5-chat",
+          "label": "OpenAI: GPT-5 Chat",
+          "open_weight": false,
+          "preset_score": 95.9025,
+          "quality_mean": 74.0778,
+          "response_cost_mean": 0.0115,
+          "response_latency_ms_mean": 10931.4058
+        }
+      ],
+      "top_open_weight": [
+        {
+          "rank": 8,
+          "candidate_model_key": "xiaomi/mimo-v2-flash",
+          "candidate_model_id": "xiaomi/mimo-v2-flash",
+          "label": "Xiaomi: MiMo-V2-Flash",
+          "open_weight": true,
+          "preset_score": 94.4909,
+          "quality_mean": 63.2278,
+          "response_cost_mean": 0.0006,
+          "response_latency_ms_mean": 11785.5323
+        },
+        {
+          "rank": 13,
+          "candidate_model_key": "mistralai/mistral-small-2603",
+          "candidate_model_id": "mistralai/mistral-small-2603",
+          "label": "Mistral: Mistral Small 4",
+          "open_weight": true,
+          "preset_score": 93.8394,
+          "quality_mean": 57.3889,
+          "response_cost_mean": 0.002,
+          "response_latency_ms_mean": 11274.1717
+        },
+        {
+          "rank": 18,
+          "candidate_model_key": "qwen/qwen3-next-80b-a3b-instruct",
+          "candidate_model_id": "qwen/qwen3-next-80b-a3b-instruct",
+          "label": "Qwen: Qwen3 Next 80B A3B Instruct",
+          "open_weight": true,
+          "preset_score": 93.5348,
+          "quality_mean": 61.6333,
+          "response_cost_mean": 0.0018,
+          "response_latency_ms_mean": 12923.4172
+        }
+      ],
+      "top_closed_source": [
+        {
+          "rank": 1,
+          "candidate_model_key": "openai/gpt-5.4-mini",
+          "candidate_model_id": "openai/gpt-5.4-mini",
+          "label": "OpenAI: GPT-5.4 Mini",
+          "open_weight": false,
+          "preset_score": 97.1292,
+          "quality_mean": 75.3167,
+          "response_cost_mean": 0.0055,
+          "response_latency_ms_mean": 9743.397
+        },
+        {
+          "rank": 2,
+          "candidate_model_key": "openai/gpt-5.1-chat",
+          "candidate_model_id": "openai/gpt-5.1-chat",
+          "label": "OpenAI: GPT-5.1 Chat",
+          "open_weight": false,
+          "preset_score": 96.3278,
+          "quality_mean": 76.8722,
+          "response_cost_mean": 0.0138,
+          "response_latency_ms_mean": 10657.7907
+        },
+        {
+          "rank": 3,
+          "candidate_model_key": "openai/gpt-5-chat",
+          "candidate_model_id": "openai/gpt-5-chat",
+          "label": "OpenAI: GPT-5 Chat",
+          "open_weight": false,
+          "preset_score": 95.9025,
+          "quality_mean": 74.0778,
+          "response_cost_mean": 0.0115,
+          "response_latency_ms_mean": 10931.4058
+        }
+      ]
+    }
+  }
 }

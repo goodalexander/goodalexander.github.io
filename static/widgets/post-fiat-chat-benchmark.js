@@ -18,6 +18,7 @@
     canonCount: root.querySelector('[data-role="canon-count"]'),
     scorerCount: root.querySelector('[data-role="scorer-count"]'),
     defaultJson: root.querySelector('[data-role="default-json"]'),
+    presetSummary: root.querySelector('[data-role="preset-summary"]'),
     liveLeader: root.querySelector('[data-role="live-leader"]'),
     tableBody: root.querySelector('[data-role="table-body"]'),
     stateMessage: root.querySelector('[data-role="state-message"]'),
@@ -228,15 +229,29 @@
 
   function buildDefaultPayload(summary) {
     const winnerPresets = summary.winner_presets || {};
+    const presetSummaries = summary.preset_summaries || {};
     const decisionmakerPreset = winnerPresets.best_decisionmaker || {};
     const classifierPreset = winnerPresets.best_classifier || {};
+    const presetOrder = ["best_decisionmaker", "best_iterative_chat", "best_classifier"];
 
     function compactWinnerKey(row) {
       return row?.candidate_model_key || null;
     }
 
+    function compactRankRow(row) {
+      if (!row) {
+        return null;
+      }
+      return {
+        rank: Number.isFinite(Number(row.rank)) ? Number(row.rank) : null,
+        candidate_model_key: row.candidate_model_key || null,
+        preset_score: Number.isFinite(Number(row.preset_score)) ? Number(row.preset_score) : null,
+      };
+    }
+
     return {
       generated_at: summary.generated_at,
+      default_winner_preset: summary.default_winner_preset || "best_iterative_chat",
       default_weights: DEFAULT_WEIGHTS,
       decisionmaker_weights: decisionmakerPreset.weights || {
         quality: 100,
@@ -266,6 +281,22 @@
         open_weight: compactWinnerKey(classifierPreset.winners?.open_weight),
         closed_source: compactWinnerKey(classifierPreset.winners?.closed_source),
       },
+      preset_summaries: presetOrder.map((key) => {
+        const preset = presetSummaries[key] || {};
+        return {
+          preset_key: key,
+          label: preset.label || key,
+          weights: preset.weights || null,
+          winners: {
+            overall: compactWinnerKey(preset.winners?.overall),
+            open_weight: compactWinnerKey(preset.winners?.open_weight),
+            closed_source: compactWinnerKey(preset.winners?.closed_source),
+          },
+          top_overall: (preset.top_overall || []).map(compactRankRow).filter(Boolean),
+          top_open_weight: (preset.top_open_weight || []).map(compactRankRow).filter(Boolean),
+          top_closed_source: (preset.top_closed_source || []).map(compactRankRow).filter(Boolean),
+        };
+      }),
     };
   }
 
@@ -348,7 +379,69 @@
     renderWinnerCard(refs.winnerCards.overall, "Default Overall Winner", summary.winners?.overall);
     renderWinnerCard(refs.winnerCards.open_weight, "Default Open-Weight Winner", summary.winners?.open_weight);
     renderWinnerCard(refs.winnerCards.closed_source, "Default Closed-Source Winner", summary.winners?.closed_source);
+    renderPresetSummary(summary);
     renderMethodologyScorers(summary.scorers || []);
+  }
+
+  function renderPresetSummary(summary) {
+    if (!refs.presetSummary) {
+      return;
+    }
+
+    const presetOrder = ["best_decisionmaker", "best_iterative_chat", "best_classifier"];
+    const presetSummaries = summary.preset_summaries || {};
+    const badgeMap = {
+      best_decisionmaker: "D",
+      best_iterative_chat: "I",
+      best_classifier: "C",
+    };
+
+    function compactRows(rows) {
+      return (rows || []).filter(Boolean).slice(0, 3);
+    }
+
+    refs.presetSummary.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+
+    presetOrder.forEach((key) => {
+      const preset = presetSummaries[key];
+      if (!preset) {
+        return;
+      }
+      const article = document.createElement("article");
+      article.className = "pfb-preset";
+
+      const winners = preset.winners || {};
+      const topOverall = compactRows(preset.top_overall);
+
+      article.innerHTML = `
+        <div class="pfb-card-label"><span class="pfb-card-rank">${badgeMap[key] || "P"}</span>${preset.label || key}</div>
+        <div class="pfb-preset-weights">Q ${Number(preset.weights?.quality || 0)} · C ${Number(preset.weights?.cost || 0)} · L ${Number(preset.weights?.latency || 0)}</div>
+        <div class="pfb-preset-winners">
+          <div class="pfb-preset-row"><span class="pfb-preset-row-key">Overall</span><span class="pfb-preset-row-value">${winners.overall?.candidate_model_key || "n/a"}</span></div>
+          <div class="pfb-preset-row"><span class="pfb-preset-row-key">Open-weight</span><span class="pfb-preset-row-value">${winners.open_weight?.candidate_model_key || "n/a"}</span></div>
+          <div class="pfb-preset-row"><span class="pfb-preset-row-key">Closed-source</span><span class="pfb-preset-row-value">${winners.closed_source?.candidate_model_key || "n/a"}</span></div>
+        </div>
+        <div class="pfb-preset-top-label">Top overall</div>
+        <div class="pfb-preset-top">
+          ${topOverall
+            .map(
+              (row) => `
+                <div class="pfb-preset-top-row">
+                  <span class="pfb-preset-top-rank">#${row.rank}</span>
+                  <span class="pfb-preset-top-model">${row.candidate_model_key || "n/a"}</span>
+                  <span class="pfb-preset-top-score">${formatScore(row.preset_score)}</span>
+                </div>
+              `,
+            )
+            .join("")}
+        </div>
+      `;
+
+      fragment.appendChild(article);
+    });
+
+    refs.presetSummary.appendChild(fragment);
   }
 
   function renderMethodologyScorers(scorers) {
