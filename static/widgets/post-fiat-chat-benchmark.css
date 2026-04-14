@@ -185,6 +185,102 @@
   gap: 1.25rem;
 }
 
+.pfb-tab-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pfb-tab {
+  border: 1px solid var(--pfb-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--pfb-muted);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.65rem 0.95rem;
+  cursor: pointer;
+}
+
+.pfb-tab:hover {
+  color: var(--pfb-text);
+  border-color: color-mix(in srgb, var(--pfb-accent) 26%, var(--pfb-border) 74%);
+}
+
+.pfb-tab.is-active {
+  background: var(--pfb-accent-soft);
+  border-color: rgba(255, 123, 0, 0.35);
+  color: var(--pfb-accent);
+}
+
+.pfb-tab-panel {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pfb-method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pfb-method-copy {
+  margin: 0;
+  color: var(--pfb-muted);
+  line-height: 1.7;
+}
+
+.pfb-judge-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.pfb-judge-card {
+  border: 1px solid color-mix(in srgb, var(--pfb-border) 82%, transparent 18%);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.95rem;
+}
+
+.pfb-judge-model {
+  font-family: var(--pfb-code);
+  font-size: 0.96rem;
+  word-break: break-word;
+}
+
+.pfb-judge-label {
+  margin-top: 0.35rem;
+  color: var(--pfb-muted);
+  font-size: 0.86rem;
+}
+
+.pfb-judge-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  margin-top: 0.75rem;
+  color: var(--pfb-muted);
+  font-size: 0.82rem;
+}
+
+.pfb-method-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pfb-method-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid color-mix(in srgb, var(--pfb-border) 84%, transparent 16%);
+  color: var(--pfb-text);
+  font-size: 0.84rem;
+}
+
 .pfb-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -447,6 +543,7 @@
 }
 
 @media (max-width: 1100px) {
+  .pfb-method-grid,
   .pfb-hero-grid,
   .pfb-card-grid,
   .pfb-slider-grid,
