@@ -8,214 +8,263 @@
       name="description"
       content="Interactive explorer for the latest Post Fiat chat benchmark, with live quality-cost-latency reweighting."
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="/widgets/post-fiat-chat-benchmark.css">
   </head>
   <body class="pfb-page">
-    <main class="pfb-page-shell">
-      <header class="pfb-page-head">
-        <div class="pfb-page-mark">goodalexander / benchmarks</div>
-        <nav class="pfb-page-nav" aria-label="Benchmark links">
+    <main class="pfb-wrap">
+      <nav class="pfb-nav">
+        <div class="pfb-brand">
+          <div class="pfb-brand-logo"></div>
+          <div class="pfb-brand-name">goodalexander <span>/ benchmarks</span></div>
+        </div>
+        <div class="pfb-nav-links" aria-label="Benchmark links">
           <a href="/">Home</a>
-          <a href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">Summary JSON</a>
-          <a href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference JSON</a>
-        </nav>
-      </header>
+          <a href="/benchmarks/post-fiat-chat-benchmark/" class="is-active">Chat</a>
+          <a href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">Summary</a>
+          <a href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference</a>
+        </div>
+      </nav>
 
-      <div
-        class="pfb-widget"
-        data-summary-url="/benchmarks/post-fiat-chat-benchmark-latest-summary.json"
-      >
-        <section class="pfb-shell">
-          <header class="pfb-hero">
-            <div class="pfb-kicker">
-              <span class="pfb-pill pfb-pill-accent">Interactive Ranking Widget</span>
-              <span class="pfb-pill" data-role="generated-at">Loading latest run...</span>
-              <span class="pfb-pill" data-role="candidate-count">Loading candidates...</span>
-              <span class="pfb-pill" data-role="canon-count">Loading canon...</span>
-              <span class="pfb-pill" data-role="scorer-count">Loading scorers...</span>
+      <div class="pfb-widget" data-summary-url="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">
+        <section class="pfb-hero">
+          <div class="pfb-crumbs">
+            <span class="pfb-live-pill">Latest Run</span>
+            <span class="pfb-sep">/</span>
+            <span data-role="generated-at">Loading run timestamp...</span>
+            <span class="pfb-sep">/</span>
+            <span>OpenRouter candidate pool + LiveBench reasoning judges</span>
+          </div>
+
+          <div class="pfb-hero-grid">
+            <div>
+              <h1 class="pfb-title">Post Fiat Chat Benchmark</h1>
+              <p class="pfb-deck">
+                An interactive ranking of chat models across <b>quality</b>, <b>cost</b>, and <b>latency</b>.
+                The default run weights quality at 50% with cost and latency at 25% each. Reweight the inputs
+                below to hot-load a different ranking order without rerunning the benchmark.
+              </p>
+              <div class="pfb-hero-actions">
+                <a class="pfb-btn pfb-btn-primary" href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">Download Summary JSON</a>
+                <a class="pfb-btn" href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference Source JSON</a>
+              </div>
             </div>
 
-            <div class="pfb-hero-grid">
-              <div>
-                <h1 class="pfb-title">Post Fiat Chat Benchmark</h1>
-                <p class="pfb-lede">
-                  This page loads the latest completed benchmark run into a live ranking
-                  table. The default benchmark uses 50% quality, 25% cost, and 25%
-                  latency. You can reweight those inputs on the fly to hot-load a
-                  different ranking order without rerunning the benchmark.
-                </p>
-                <div class="pfb-link-row">
-                  <a class="pfb-link" href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">Download Local Summary JSON</a>
-                  <a class="pfb-link" href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference Source JSON</a>
-                </div>
-              </div>
-
-              <aside class="pfb-machine">
-                <div class="pfb-section-label">Default Winners JSON</div>
-                <pre data-role="default-json">Loading default winners...</pre>
-              </aside>
-            </div>
-          </header>
-
-          <div class="pfb-body">
-            <section class="pfb-card-grid">
-              <article class="pfb-card" data-role="winner-overall"></article>
-              <article class="pfb-card" data-role="winner-open-weight"></article>
-              <article class="pfb-card" data-role="winner-closed-source"></article>
-            </section>
-
-            <article class="pfb-card pfb-card-live" data-role="live-leader"></article>
-
-            <section class="pfb-controls">
-              <div class="pfb-controls-head">
-                <div>
-                  <div class="pfb-section-label">Reweighting Controls</div>
-                  <p class="pfb-controls-copy">
-                    Raw slider values are normalized to 100% in the browser, then used to
-                    recompute the ranking score from the benchmark's quality, cost, and
-                    latency axes.
-                  </p>
-                </div>
-                <button class="pfb-reset" type="button" data-role="reset-weights">Reset 50 / 25 / 25</button>
-              </div>
-
-              <div class="pfb-slider-grid">
-                <div class="pfb-slider-card">
-                  <label for="pfb-quality-range">Quality <span>Higher is better</span></label>
-                  <div class="pfb-slider-inputs">
-                    <input id="pfb-quality-range" data-role="quality-range" type="range" min="0" max="100" step="1" value="50">
-                    <input data-role="quality-number" type="number" min="0" max="100" step="1" value="50">
-                  </div>
-                </div>
-
-                <div class="pfb-slider-card">
-                  <label for="pfb-cost-range">Cost <span>Lower is better</span></label>
-                  <div class="pfb-slider-inputs">
-                    <input id="pfb-cost-range" data-role="cost-range" type="range" min="0" max="100" step="1" value="25">
-                    <input data-role="cost-number" type="number" min="0" max="100" step="1" value="25">
-                  </div>
-                </div>
-
-                <div class="pfb-slider-card">
-                  <label for="pfb-latency-range">Latency <span>Higher is worse</span></label>
-                  <div class="pfb-slider-inputs">
-                    <input id="pfb-latency-range" data-role="latency-range" type="range" min="0" max="100" step="1" value="25">
-                    <input data-role="latency-number" type="number" min="0" max="100" step="1" value="25">
-                  </div>
-                </div>
-              </div>
-
-              <div class="pfb-toolbar">
-                <input data-role="search" type="search" placeholder="Filter models by id or label">
-                <select data-role="scope">
-                  <option value="all">All candidates</option>
-                  <option value="open">Open-weight only</option>
-                  <option value="closed">Closed-source only</option>
-                </select>
-                <select data-role="limit">
-                  <option value="25">Show top 25</option>
-                  <option value="50">Show top 50</option>
-                  <option value="100">Show top 100</option>
-                  <option value="150" selected>Show all 150</option>
-                </select>
-              </div>
-
-              <div class="pfb-meta-row">
-                <span class="pfb-chip" data-role="weight-summary">Effective weighting: quality 50.00% | cost 25.00% | latency 25.00%</span>
-                <span class="pfb-chip" data-role="displayed-count">0 rows shown</span>
-              </div>
-            </section>
-
-            <div data-role="state-message">
-              <div class="pfb-empty">Loading benchmark data...</div>
-            </div>
-
-            <section class="pfb-table-card">
-              <div class="pfb-table-wrap">
-                <table class="pfb-table">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Model</th>
-                      <th>Current Score</th>
-                      <th>Default Rank</th>
-                      <th>Quality</th>
-                      <th>Cost / Response</th>
-                      <th>Latency</th>
-                      <th>Success</th>
-                      <th>Type</th>
-                    </tr>
-                  </thead>
-                  <tbody data-role="table-body"></tbody>
-                </table>
-              </div>
-            </section>
-
-            <details class="pfb-methodology">
-              <summary class="pfb-methodology-summary">Methodology</summary>
-              <section class="pfb-method-grid">
-                <article class="pfb-card">
-                  <div class="pfb-section-label">Judge Panel</div>
-                  <p class="pfb-method-copy">
-                    These three judge models are used as references to the current LiveBench reasoning score. The benchmark selects the top LiveBench reasoning models that are available through OpenRouter for the scoring panel used in this run.
-                  </p>
-                  <div class="pfb-judge-list" data-role="methodology-scorers">
-                    <article class="pfb-judge-card">
-                      <div class="pfb-judge-model">anthropic/claude-opus-4.6</div>
-                      <div class="pfb-judge-label">Anthropic: Claude Opus 4.6</div>
-                      <div class="pfb-judge-meta">
-                        <span>LiveBench rank 1</span>
-                        <span>Reasoning score 88.6730</span>
-                      </div>
-                    </article>
-                    <article class="pfb-judge-card">
-                      <div class="pfb-judge-model">openai/gpt-5.4</div>
-                      <div class="pfb-judge-label">OpenAI: GPT-5.4</div>
-                      <div class="pfb-judge-meta">
-                        <span>LiveBench rank 2</span>
-                        <span>Reasoning score 88.1155</span>
-                      </div>
-                    </article>
-                    <article class="pfb-judge-card">
-                      <div class="pfb-judge-model">anthropic/claude-sonnet-4.6</div>
-                      <div class="pfb-judge-label">Anthropic: Claude Sonnet 4.6</div>
-                      <div class="pfb-judge-meta">
-                        <span>LiveBench rank 3</span>
-                        <span>Reasoning score 86.3750</span>
-                      </div>
-                    </article>
-                  </div>
-                </article>
-
-                <article class="pfb-card">
-                  <div class="pfb-section-label">Scoring Prompt</div>
-                  <p class="pfb-method-copy" data-role="methodology-prompt">
-                    Each judge receives the capped task history, capped chat history, the selected chat modality, the recent chat, the exact model input, and the candidate response. The judge then scores the response from 0 to 100 on relevance, insight, and alignment with the user&apos;s request, and returns a JSON score whose top-level score is the rounded average of those three dimensions.
-                  </p>
-                </article>
-
-                <article class="pfb-card">
-                  <div class="pfb-section-label">Inputs To Each Judge</div>
-                  <div class="pfb-method-list">
-                    <span class="pfb-method-chip">Task history with a cap at message time</span>
-                    <span class="pfb-method-chip">Chat history with a cap at message time</span>
-                    <span class="pfb-method-chip">Selected chat modality</span>
-                    <span class="pfb-method-chip">Recent chat</span>
-                    <span class="pfb-method-chip">Exact model input</span>
-                    <span class="pfb-method-chip">Candidate response output</span>
-                  </div>
-                </article>
-
-                <article class="pfb-card">
-                  <div class="pfb-section-label">Quality Aggregation</div>
-                  <p class="pfb-method-copy">
-                    The benchmark quality score is the mean of the three judge scores for each candidate response set. Cost and latency are measured separately, then combined with quality in the public ranking weights.
-                  </p>
-                </article>
-              </section>
-            </details>
+            <aside class="pfb-machine">
+              <div class="pfb-section-label">Default Winners JSON</div>
+              <pre data-role="default-json">Loading default winners...</pre>
+            </aside>
           </div>
         </section>
+
+        <section class="pfb-stat-strip">
+          <article class="pfb-stat">
+            <div class="pfb-stat-key">Candidates</div>
+            <div class="pfb-stat-value" data-role="candidate-count">-</div>
+            <div class="pfb-stat-sub">OpenRouter weekly usage pool</div>
+          </article>
+          <article class="pfb-stat">
+            <div class="pfb-stat-key">Scorers</div>
+            <div class="pfb-stat-value" data-role="scorer-count">-</div>
+            <div class="pfb-stat-sub">LiveBench references</div>
+          </article>
+          <article class="pfb-stat">
+            <div class="pfb-stat-key">Canon Examples</div>
+            <div class="pfb-stat-value" data-role="canon-count">-</div>
+            <div class="pfb-stat-sub">Capped task and chat histories</div>
+          </article>
+          <article class="pfb-stat">
+            <div class="pfb-stat-key">Quality Weight</div>
+            <div class="pfb-stat-value">50%</div>
+            <div class="pfb-stat-sub">Default benchmark mix</div>
+          </article>
+          <article class="pfb-stat">
+            <div class="pfb-stat-key">Cost / Latency</div>
+            <div class="pfb-stat-value">25 · 25</div>
+            <div class="pfb-stat-sub">Default benchmark mix</div>
+          </article>
+        </section>
+
+        <div class="pfb-section-head">
+          <h2>Default Winners</h2>
+          <div class="pfb-meta">Weights · Q <b>50</b> · C <b>25</b> · L <b>25</b></div>
+        </div>
+
+        <section class="pfb-winners">
+          <article class="pfb-winner pfb-winner-hero" data-role="winner-overall"></article>
+          <article class="pfb-winner" data-role="winner-open-weight"></article>
+          <article class="pfb-winner" data-role="winner-closed-source"></article>
+        </section>
+
+        <div class="pfb-section-head">
+          <h2>Live Reweighted Leader</h2>
+          <div class="pfb-meta" data-role="weight-summary">Effective · Q <b>50.00%</b> · C <b>25.00%</b> · L <b>25.00%</b></div>
+        </div>
+
+        <article class="pfb-winner pfb-live-winner" data-role="live-leader"></article>
+
+        <div class="pfb-section-head">
+          <h2>Reweighting Controls</h2>
+          <div class="pfb-meta" data-role="displayed-count">0 rows shown</div>
+        </div>
+
+        <section class="pfb-panel">
+          <div class="pfb-sliders">
+            <div class="pfb-slider-cell">
+              <div class="pfb-slider-label">
+                <span class="pfb-slider-name">Quality</span>
+                <span class="pfb-slider-direction">higher is better</span>
+              </div>
+              <div class="pfb-slider-row">
+                <input id="pfb-quality-range" data-role="quality-range" type="range" min="0" max="100" step="1" value="50">
+                <span class="pfb-slider-value" data-role="quality-value">50</span>
+              </div>
+              <input class="pfb-slider-number" data-role="quality-number" type="number" min="0" max="100" step="1" value="50">
+            </div>
+
+            <div class="pfb-slider-cell">
+              <div class="pfb-slider-label">
+                <span class="pfb-slider-name">Cost</span>
+                <span class="pfb-slider-direction">lower is better</span>
+              </div>
+              <div class="pfb-slider-row">
+                <input id="pfb-cost-range" data-role="cost-range" type="range" min="0" max="100" step="1" value="25">
+                <span class="pfb-slider-value" data-role="cost-value">25</span>
+              </div>
+              <input class="pfb-slider-number" data-role="cost-number" type="number" min="0" max="100" step="1" value="25">
+            </div>
+
+            <div class="pfb-slider-cell">
+              <div class="pfb-slider-label">
+                <span class="pfb-slider-name">Latency</span>
+                <span class="pfb-slider-direction">lower is better</span>
+              </div>
+              <div class="pfb-slider-row">
+                <input id="pfb-latency-range" data-role="latency-range" type="range" min="0" max="100" step="1" value="25">
+                <span class="pfb-slider-value" data-role="latency-value">25</span>
+              </div>
+              <input class="pfb-slider-number" data-role="latency-number" type="number" min="0" max="100" step="1" value="25">
+            </div>
+          </div>
+
+          <div class="pfb-panel-actions">
+            <button class="pfb-btn" type="button" data-role="reset-weights">Reset 50 / 25 / 25</button>
+          </div>
+        </section>
+
+        <div class="pfb-filters">
+          <div class="pfb-search">
+            <input data-role="search" type="search" placeholder="Filter models by id or label">
+          </div>
+          <div class="pfb-select">
+            <select data-role="scope">
+              <option value="all">All candidates</option>
+              <option value="open">Open-weight only</option>
+              <option value="closed">Closed-source only</option>
+            </select>
+          </div>
+          <div class="pfb-select">
+            <select data-role="limit">
+              <option value="25">Show top 25</option>
+              <option value="50">Show top 50</option>
+              <option value="100">Show top 100</option>
+              <option value="150" selected>Show all 150</option>
+            </select>
+          </div>
+        </div>
+
+        <div data-role="state-message">
+          <div class="pfb-empty">Loading benchmark data...</div>
+        </div>
+
+        <section class="pfb-table-frame">
+          <div class="pfb-thead">
+            <div>Rank</div>
+            <div>Model</div>
+            <div>Score</div>
+            <div>Default</div>
+            <div>Quality</div>
+            <div>Cost / Req</div>
+            <div>Latency</div>
+            <div>Success</div>
+            <div>Type</div>
+          </div>
+          <div class="pfb-tbody" data-role="table-body"></div>
+        </section>
+
+        <details class="pfb-methodology">
+          <summary class="pfb-methodology-summary">Methodology</summary>
+          <section class="pfb-method-grid">
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Judge Panel</div>
+              <p class="pfb-method-copy">
+                These three judge models are used as references to the current LiveBench reasoning score. The benchmark selects the top LiveBench reasoning models that are available through OpenRouter for the scoring panel used in this run.
+              </p>
+              <div class="pfb-judge-list" data-role="methodology-scorers">
+                <article class="pfb-judge-card">
+                  <div class="pfb-judge-model">anthropic/claude-opus-4.6</div>
+                  <div class="pfb-judge-label">Anthropic: Claude Opus 4.6</div>
+                  <div class="pfb-judge-meta">
+                    <span>LiveBench rank 1</span>
+                    <span>Reasoning score 88.6730</span>
+                  </div>
+                </article>
+                <article class="pfb-judge-card">
+                  <div class="pfb-judge-model">openai/gpt-5.4</div>
+                  <div class="pfb-judge-label">OpenAI: GPT-5.4</div>
+                  <div class="pfb-judge-meta">
+                    <span>LiveBench rank 2</span>
+                    <span>Reasoning score 88.1155</span>
+                  </div>
+                </article>
+                <article class="pfb-judge-card">
+                  <div class="pfb-judge-model">anthropic/claude-sonnet-4.6</div>
+                  <div class="pfb-judge-label">Anthropic: Claude Sonnet 4.6</div>
+                  <div class="pfb-judge-meta">
+                    <span>LiveBench rank 3</span>
+                    <span>Reasoning score 86.3750</span>
+                  </div>
+                </article>
+              </div>
+            </article>
+
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Scoring Prompt</div>
+              <p class="pfb-method-copy" data-role="methodology-prompt">
+                Each judge receives the capped task history, capped chat history, the selected chat modality, the recent chat, the exact model input, and the candidate response. The judge then scores the response from 0 to 100 on relevance, insight, and alignment with the user&apos;s request, and returns a JSON score whose top-level score is the rounded average of those three dimensions.
+              </p>
+            </article>
+
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Inputs To Each Judge</div>
+              <div class="pfb-method-list">
+                <span class="pfb-method-chip">Task history with a cap at message time</span>
+                <span class="pfb-method-chip">Chat history with a cap at message time</span>
+                <span class="pfb-method-chip">Selected chat modality</span>
+                <span class="pfb-method-chip">Recent chat</span>
+                <span class="pfb-method-chip">Exact model input</span>
+                <span class="pfb-method-chip">Candidate response output</span>
+              </div>
+            </article>
+
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Quality Aggregation</div>
+              <p class="pfb-method-copy">
+                The benchmark quality score is the mean of the three judge scores for each candidate response set. Cost and latency are measured separately, then combined with quality in the public ranking weights.
+              </p>
+            </article>
+          </section>
+        </details>
+
+        <footer class="pfb-foot">
+          <div>Post Fiat chat benchmark · machine-readable summary + live client-side reweighting</div>
+          <div><a href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">JSON</a> · <a href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference</a></div>
+        </footer>
       </div>
     </main>
 
