@@ -18,6 +18,7 @@
     canonCount: root.querySelector('[data-role="canon-count"]'),
     scorerCount: root.querySelector('[data-role="scorer-count"]'),
     defaultJson: root.querySelector('[data-role="default-json"]'),
+    copyDefaultJson: root.querySelector('[data-role="copy-default-json"]'),
     presetSummary: root.querySelector('[data-role="preset-summary"]'),
     liveLeader: root.querySelector('[data-role="live-leader"]'),
     tableBody: root.querySelector('[data-role="table-body"]'),
@@ -58,6 +59,7 @@
   const state = {
     summary: null,
     rows: [],
+    defaultJsonText: "",
   };
 
   function clamp(value, min, max) {
@@ -312,6 +314,41 @@
     }
   }
 
+  async function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "readonly");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+
+  async function handleCopyDefaultJson() {
+    if (!refs.copyDefaultJson || !state.defaultJsonText) {
+      return;
+    }
+    const button = refs.copyDefaultJson;
+    const previousLabel = button.textContent;
+    try {
+      await copyText(state.defaultJsonText);
+      button.textContent = "Copied";
+    } catch (error) {
+      button.textContent = "Copy failed";
+    }
+    button.disabled = true;
+    window.setTimeout(() => {
+      button.textContent = previousLabel;
+      button.disabled = false;
+    }, 1600);
+  }
+
   function displayLabel(row) {
     const label = String(row?.label || "").trim();
     if (label.includes(":")) {
@@ -372,7 +409,8 @@
     setText(refs.candidateCount, String(summary.candidate_count || 0));
     setText(refs.canonCount, String(summary.canon_example_count || 0));
     setText(refs.scorerCount, String(summary.scorer_count || 0));
-    refs.defaultJson.textContent = JSON.stringify(buildDefaultPayload(summary), null, 2);
+    state.defaultJsonText = JSON.stringify(buildDefaultPayload(summary), null, 2);
+    refs.defaultJson.textContent = state.defaultJsonText;
     if (refs.methodologyPrompt) {
       refs.methodologyPrompt.textContent = PLAIN_ENGLISH_SCORING_PROMPT;
     }
@@ -645,6 +683,9 @@
       Object.keys(DEFAULT_WEIGHTS).forEach((metric) => syncWeightControl(metric, DEFAULT_WEIGHTS[metric]));
       renderTable();
     });
+    if (refs.copyDefaultJson) {
+      refs.copyDefaultJson.addEventListener("click", handleCopyDefaultJson);
+    }
   }
 
   function syncMethodologyAnchor() {

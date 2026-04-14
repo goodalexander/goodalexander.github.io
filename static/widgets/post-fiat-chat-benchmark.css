@@ -248,6 +248,14 @@ a {
   min-height: 100%;
 }
 
+.pfb-machine-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .pfb-machine::before {
   content: "";
   position: absolute;
@@ -260,7 +268,7 @@ a {
 
 .pfb-section-label {
   display: inline-block;
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -272,13 +280,23 @@ a {
   margin: 0;
   padding: 16px;
   border-radius: var(--pfb-radius-sm);
-  overflow-x: auto;
+  overflow: auto;
+  max-height: 336px;
   background: rgba(9, 12, 20, 0.72);
   border: 1px solid var(--pfb-line);
   color: var(--pfb-ink);
   font-family: var(--pfb-code);
   font-size: 12px;
   line-height: 1.55;
+  white-space: pre;
+  scrollbar-width: thin;
+}
+
+.pfb-btn-compact {
+  padding: 8px 12px;
+  min-height: 34px;
+  font-size: 12px;
+  flex: 0 0 auto;
 }
 
 .pfb-stat-strip {
