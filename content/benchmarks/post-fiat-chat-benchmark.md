@@ -1,0 +1,144 @@
++++
+title = "Post Fiat Chat Benchmark"
+date = 2026-04-14T00:55:00Z
+url = "/benchmarks/post-fiat-chat-benchmark/"
+summary = "Interactive explorer for the latest Post Fiat chat benchmark, with live quality-cost-latency reweighting."
+ShowToc = false
++++
+
+<style>@import url('/widgets/post-fiat-chat-benchmark.css');</style>
+
+<div
+  class="pfb-widget"
+  data-summary-url="/benchmarks/post-fiat-chat-benchmark-latest-summary.json"
+>
+  <section class="pfb-shell">
+    <header class="pfb-hero">
+      <div class="pfb-kicker">
+        <span class="pfb-pill pfb-pill-accent">Interactive Ranking Widget</span>
+        <span class="pfb-pill" data-role="generated-at">Loading latest run...</span>
+        <span class="pfb-pill" data-role="candidate-count">Loading candidates...</span>
+        <span class="pfb-pill" data-role="canon-count">Loading canon...</span>
+        <span class="pfb-pill" data-role="scorer-count">Loading scorers...</span>
+      </div>
+
+      <div class="pfb-hero-grid">
+        <div>
+          <h1 class="pfb-title">Post Fiat Chat Benchmark</h1>
+          <p class="pfb-lede">
+            This page loads the latest completed benchmark run into a live ranking
+            table. The default benchmark uses 50% quality, 25% cost, and 25%
+            latency. You can reweight those inputs on the fly to hot-load a
+            different ranking order without rerunning the benchmark.
+          </p>
+          <div class="pfb-link-row">
+            <a class="pfb-link" href="/benchmarks/post-fiat-chat-benchmark-latest-summary.json">Download Local Summary JSON</a>
+            <a class="pfb-link" href="https://postfiat.org/benchmarks/latest-post-fiat-chat-benchmark-summary.json">Reference Source JSON</a>
+          </div>
+        </div>
+
+        <aside class="pfb-machine">
+          <div class="pfb-section-label">Default Winners JSON</div>
+          <pre data-role="default-json">Loading default winners...</pre>
+        </aside>
+      </div>
+    </header>
+
+    <div class="pfb-body">
+      <section class="pfb-card-grid">
+        <article class="pfb-card" data-role="winner-overall"></article>
+        <article class="pfb-card" data-role="winner-open-weight"></article>
+        <article class="pfb-card" data-role="winner-closed-source"></article>
+      </section>
+
+      <article class="pfb-card pfb-card-live" data-role="live-leader"></article>
+
+      <section class="pfb-controls">
+        <div class="pfb-controls-head">
+          <div>
+            <div class="pfb-section-label">Reweighting Controls</div>
+            <p class="pfb-controls-copy">
+              Raw slider values are normalized to 100% in the browser, then used to
+              recompute the ranking score from the benchmark's quality, cost, and
+              latency axes.
+            </p>
+          </div>
+          <button class="pfb-reset" type="button" data-role="reset-weights">Reset 50 / 25 / 25</button>
+        </div>
+
+        <div class="pfb-slider-grid">
+          <div class="pfb-slider-card">
+            <label for="pfb-quality-range">Quality <span>Higher is better</span></label>
+            <div class="pfb-slider-inputs">
+              <input id="pfb-quality-range" data-role="quality-range" type="range" min="0" max="100" step="1" value="50">
+              <input data-role="quality-number" type="number" min="0" max="100" step="1" value="50">
+            </div>
+          </div>
+
+          <div class="pfb-slider-card">
+            <label for="pfb-cost-range">Cost <span>Lower is better</span></label>
+            <div class="pfb-slider-inputs">
+              <input id="pfb-cost-range" data-role="cost-range" type="range" min="0" max="100" step="1" value="25">
+              <input data-role="cost-number" type="number" min="0" max="100" step="1" value="25">
+            </div>
+          </div>
+
+          <div class="pfb-slider-card">
+            <label for="pfb-latency-range">Latency <span>Lower is better</span></label>
+            <div class="pfb-slider-inputs">
+              <input id="pfb-latency-range" data-role="latency-range" type="range" min="0" max="100" step="1" value="25">
+              <input data-role="latency-number" type="number" min="0" max="100" step="1" value="25">
+            </div>
+          </div>
+        </div>
+
+        <div class="pfb-toolbar">
+          <input data-role="search" type="search" placeholder="Filter models by id or label">
+          <select data-role="scope">
+            <option value="all">All candidates</option>
+            <option value="open">Open-weight only</option>
+            <option value="closed">Closed-source only</option>
+          </select>
+          <select data-role="limit">
+            <option value="25">Show top 25</option>
+            <option value="50">Show top 50</option>
+            <option value="100">Show top 100</option>
+            <option value="150">Show all 150</option>
+          </select>
+        </div>
+
+        <div class="pfb-meta-row">
+          <span class="pfb-chip" data-role="weight-summary">Effective weighting: quality 50.00% | cost 25.00% | latency 25.00%</span>
+          <span class="pfb-chip" data-role="displayed-count">0 rows shown</span>
+        </div>
+      </section>
+
+      <div data-role="state-message">
+        <div class="pfb-empty">Loading benchmark data...</div>
+      </div>
+
+      <section class="pfb-table-card">
+        <div class="pfb-table-wrap">
+          <table class="pfb-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Model</th>
+                <th>Current Score</th>
+                <th>Default Rank</th>
+                <th>Quality</th>
+                <th>Cost / Response</th>
+                <th>Latency</th>
+                <th>Success</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody data-role="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script src="/widgets/post-fiat-chat-benchmark.js"></script>
