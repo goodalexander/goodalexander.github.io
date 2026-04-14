@@ -9,6 +9,8 @@
     cost: 25,
     latency: 25,
   };
+  const PLAIN_ENGLISH_SCORING_PROMPT =
+    "Each judge receives the capped task history, capped chat history, the selected chat modality, the recent chat, the exact model input, and the candidate response. The judge then scores the response from 0 to 100 on relevance, insight, and alignment with the user's request, and returns JSON whose top-level score is the rounded average of those three dimensions.";
 
   const refs = {
     generatedAt: root.querySelector('[data-role="generated-at"]'),
@@ -25,6 +27,10 @@
     scope: root.querySelector('[data-role="scope"]'),
     limit: root.querySelector('[data-role="limit"]'),
     reset: root.querySelector('[data-role="reset-weights"]'),
+    tabButtons: Array.from(root.querySelectorAll('[data-role="tab-button"]')),
+    tabPanels: Array.from(root.querySelectorAll('[data-role="tab-panel"]')),
+    methodologyScorers: root.querySelector('[data-role="methodology-scorers"]'),
+    methodologyPrompt: root.querySelector('[data-role="methodology-prompt"]'),
     winnerCards: {
       overall: root.querySelector('[data-role="winner-overall"]'),
       open_weight: root.querySelector('[data-role="winner-open-weight"]'),
@@ -47,6 +53,7 @@
   };
 
   const state = {
+    activeTab: "ranking",
     summary: null,
     rows: [],
   };
@@ -95,6 +102,13 @@
 
   function formatLatency(milliseconds) {
     return `${(Number(milliseconds || 0) / 1000).toFixed(2)}s`;
+  }
+
+  function formatLivebenchScore(value) {
+    if (!Number.isFinite(Number(value))) {
+      return "n/a";
+    }
+    return Number(value).toFixed(4);
   }
 
   function normalizeMetric(value, minValue, maxValue, invert) {
@@ -239,9 +253,67 @@
     setText(refs.canonCount, `${summary.canon_example_count || 0} canon examples`);
     setText(refs.scorerCount, `${summary.scorer_count || 0} scorers`);
     refs.defaultJson.textContent = JSON.stringify(buildDefaultPayload(summary), null, 2);
+    if (refs.methodologyPrompt) {
+      refs.methodologyPrompt.textContent = PLAIN_ENGLISH_SCORING_PROMPT;
+    }
     renderWinnerCard(refs.winnerCards.overall, "Default Overall Winner", summary.winners?.overall);
     renderWinnerCard(refs.winnerCards.open_weight, "Default Open-Weight Winner", summary.winners?.open_weight);
     renderWinnerCard(refs.winnerCards.closed_source, "Default Closed-Source Winner", summary.winners?.closed_source);
+    renderMethodologyScorers(summary.scorers || []);
+  }
+
+  function renderMethodologyScorers(scorers) {
+    if (!refs.methodologyScorers) {
+      return;
+    }
+
+    refs.methodologyScorers.innerHTML = "";
+    if (!scorers.length) {
+      refs.methodologyScorers.innerHTML = '<div class="pfb-empty">Judge panel metadata is unavailable for this run.</div>';
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    scorers.forEach((scorer) => {
+      const card = document.createElement("article");
+      card.className = "pfb-judge-card";
+
+      const model = document.createElement("div");
+      model.className = "pfb-judge-model";
+      model.textContent = scorer.model_id || scorer.label || "Unknown scorer";
+
+      const label = document.createElement("div");
+      label.className = "pfb-judge-label";
+      label.textContent = scorer.label || "";
+
+      const meta = document.createElement("div");
+      meta.className = "pfb-judge-meta";
+      meta.innerHTML = [
+        `LiveBench rank ${scorer.livebench_rank ?? "n/a"}`,
+        `Reasoning score ${formatLivebenchScore(scorer.livebench_reasoning_score)}`,
+      ]
+        .map((item) => `<span>${item}</span>`)
+        .join("");
+
+      card.append(model, label, meta);
+      fragment.appendChild(card);
+    });
+
+    refs.methodologyScorers.appendChild(fragment);
+  }
+
+  function setActiveTab(tabName) {
+    state.activeTab = tabName;
+    refs.tabButtons.forEach((button) => {
+      const isActive = button.getAttribute("data-tab") === tabName;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+    refs.tabPanels.forEach((panel) => {
+      const isActive = panel.getAttribute("data-tab") === tabName;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
   }
 
   function filteredRows() {
@@ -374,6 +446,12 @@
   }
 
   function bindEvents() {
+    refs.tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setActiveTab(button.getAttribute("data-tab") || "ranking");
+      });
+    });
+
     Object.keys(refs.controls).forEach((metric) => {
       const control = refs.controls[metric];
       control.range.addEventListener("input", () => {
@@ -403,6 +481,7 @@
     }
 
     Object.keys(DEFAULT_WEIGHTS).forEach((metric) => syncWeightControl(metric, DEFAULT_WEIGHTS[metric]));
+    setActiveTab(state.activeTab);
 
     try {
       const response = await fetch(summaryUrl, { cache: "no-store" });
