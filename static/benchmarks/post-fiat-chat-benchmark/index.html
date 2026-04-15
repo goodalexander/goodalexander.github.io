@@ -272,6 +272,20 @@
                 The benchmark quality score is the mean of the three judge scores for each candidate response set. Cost and latency are measured separately, then combined with quality in the public ranking weights.
               </p>
             </article>
+
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Pipeline</div>
+              <p class="pfb-method-copy">
+                The pipeline starts in <code>sprs</code>. It shortlists the top 150 non-free OpenRouter models by current weekly token usage, maps the current LiveBench reasoning leaderboard onto OpenRouter to choose a 3-model judge panel, builds a 20-example canon from real Task Node user history and prompt templates, runs every candidate three times per canon example, scores successful responses with the judge panel, and then publishes redacted public artifacts to <code>postfiat.org</code>. This page reads a mirrored copy of the latest summary JSON so the interactive table can load locally on <code>goodalexander.com</code>.
+              </p>
+            </article>
+
+            <article class="pfb-method-card">
+              <div class="pfb-section-label">Current Ops Caveat</div>
+              <p class="pfb-method-copy">
+                The current full default run is expensive and slow. The last clean 150-model run recorded about $1,634 in API spend, but operationally it should be treated as roughly a $2k batch that can consume most of a day once reruns and publication are included. This needs to be refactored into a cheaper continuously updated pipeline, likely with a much lower-cost judge mix such as Sonnet, GPT, and GLM 5.1 or another strong open model.
+              </p>
+            </article>
           </section>
         </details>
 
