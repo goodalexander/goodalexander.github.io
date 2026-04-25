@@ -114,10 +114,10 @@ disableXML = true
 
   [params.assets]
     disableHLJS = true
-    favicon = "/favicon.ico?v=ga-favicon-v1"
-    favicon16x16 = "/favicon-16x16.png?v=ga-favicon-v1"
-    favicon32x32 = "/favicon-32x32.png?v=ga-favicon-v1"
-    apple_touch_icon = "/apple-touch-icon.png?v=ga-favicon-v1"
-    safari_pinned_tab = "/safari-pinned-tab.svg?v=ga-favicon-v1"
+    favicon = "/favicon.ico?v=ga-favicon-v2"
+    favicon16x16 = "/favicon-16x16.png?v=ga-favicon-v2"
+    favicon32x32 = "/favicon-32x32.png?v=ga-favicon-v2"
+    apple_touch_icon = "/apple-touch-icon.png?v=ga-favicon-v2"
+    safari_pinned_tab = "/safari-pinned-tab.svg?v=ga-favicon-v2"
     theme_color = "#070a0d"
     msapplication_TileColor = "#070a0d"
