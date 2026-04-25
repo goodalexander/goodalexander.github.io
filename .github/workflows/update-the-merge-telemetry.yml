@@ -29,6 +29,7 @@ jobs:
       - name: Pull X follower count
         env:
           X_USERNAME: goodalexander
+          THE_MERGE_WALLET_ADDRESS: rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
