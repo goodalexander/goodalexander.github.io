@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 const DEFAULT_TELEMETRY_PATH = 'static/the-merge/telemetry.json';
 const DEFAULT_HISTORY_FILENAME = 'telemetry-history.json';
 const DEFAULT_USERNAME = 'goodalexander';
+const DEFAULT_WALLET_ADDRESS = 'rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx';
+const DEFAULT_TASKNODE_METRICS_URL = 'https://tasknode.postfiat.org/api/public/merge-telemetry';
 const DEFAULT_HISTORY_RETENTION_DAYS = 365;
 const DEFAULT_TELEMETRY_SERIES_DAYS = 90;
 
@@ -87,7 +89,7 @@ async function fetchJson(url, options = {}) {
       || parsed?.errors?.[0]?.message
       || parsed?.error
       || `HTTP ${response.status}`;
-    throw new Error(`X API request failed (${response.status}): ${message}`);
+    throw new Error(`HTTP request failed (${response.status}): ${message}`);
   }
   return parsed;
 }
@@ -160,6 +162,19 @@ async function fetchXProfile(username) {
       Authorization: authorization,
     },
   });
+}
+
+async function fetchTaskNodeTelemetry({ walletAddress, endpoint }) {
+  const mockResponse = readEnv('THE_MERGE_TASKNODE_MOCK_RESPONSE');
+  if (mockResponse) {
+    return JSON.parse(mockResponse);
+  }
+  if (!walletAddress || !endpoint) {
+    return null;
+  }
+  const url = new URL(endpoint);
+  url.searchParams.set('wallet', walletAddress);
+  return fetchJson(url);
 }
 
 function requireFiniteMetric(value, label) {
@@ -298,6 +313,49 @@ function buildCurrentSnapshot({
   });
 }
 
+function mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry) {
+  if (!taskNodeTelemetry || typeof taskNodeTelemetry !== 'object') {
+    return;
+  }
+  const metrics = taskNodeTelemetry.metrics && typeof taskNodeTelemetry.metrics === 'object'
+    ? taskNodeTelemetry.metrics
+    : {};
+  const allowedMetricKeys = [
+    'tasknode_dau',
+    'task_requests_24h',
+    'task_verifications_24h',
+    'task_updates_24h',
+    'tasks_completed_24h',
+    'rewards_delivered_24h',
+    'pft_rewards_24h',
+    'context_updates_24h',
+    'wallet_interactions_24h',
+    'tasks_verified_all_time',
+    'rewards_paid_all_time',
+  ];
+  telemetry.metrics = telemetry.metrics || {};
+  for (const key of allowedMetricKeys) {
+    const value = toFiniteNumberOrNull(metrics[key]);
+    if (value !== null) {
+      telemetry.metrics[key] = value;
+    }
+  }
+  telemetry.tasknode_telemetry = {
+    source: 'tasknode_public_merge_telemetry',
+    fetched_at: taskNodeTelemetry.generated_at || new Date().toISOString(),
+    wallet_address: taskNodeTelemetry.wallet_address || null,
+  };
+  telemetry.notes = telemetry.notes || {};
+  telemetry.notes.tasknode_public = (
+    'Task Node task, reward, context, wallet, and DAU metrics are fetched from '
+    + 'the public redacted /api/public/merge-telemetry endpoint before history snapshots are written.'
+  );
+  telemetry.notes.contract = (
+    'The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry, '
+    + 'then publishes this static JSON for the dashboard.'
+  );
+}
+
 function mergeSnapshots(existing, incoming) {
   const merged = { ...(existing || {}) };
   Object.entries(incoming).forEach(([key, value]) => {
@@ -375,9 +433,17 @@ async function main() {
   const retentionDays = parsePositiveInteger(readEnv('THE_MERGE_HISTORY_RETENTION_DAYS'), DEFAULT_HISTORY_RETENTION_DAYS);
   const telemetrySeriesDays = parsePositiveInteger(readEnv('THE_MERGE_TELEMETRY_SERIES_DAYS'), DEFAULT_TELEMETRY_SERIES_DAYS);
   const username = readEnv('X_USERNAME') || readEnv('THE_MERGE_X_USERNAME') || DEFAULT_USERNAME;
+  const walletAddress = readEnv('THE_MERGE_WALLET_ADDRESS') || DEFAULT_WALLET_ADDRESS;
+  const taskNodeMetricsUrl = readEnv('THE_MERGE_TASKNODE_METRICS_URL') || DEFAULT_TASKNODE_METRICS_URL;
   const rawTelemetry = await fs.readFile(telemetryPath, 'utf8');
   const telemetry = JSON.parse(rawTelemetry);
-  const profile = await fetchXProfile(username);
+  const [profile, taskNodeTelemetry] = await Promise.all([
+    fetchXProfile(username),
+    fetchTaskNodeTelemetry({ walletAddress, endpoint: taskNodeMetricsUrl }).catch((err) => {
+      console.warn(`Task Node telemetry refresh failed: ${err.message}`);
+      return null;
+    }),
+  ]);
   const data = profile?.data || {};
   const publicMetrics = data.public_metrics || {};
   const followersCount = requireFiniteMetric(publicMetrics.followers_count, 'followers_count');
@@ -403,6 +469,7 @@ async function main() {
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
   telemetry.notes.history = `Daily telemetry snapshots are retained in /the-merge/${DEFAULT_HISTORY_FILENAME}; telemetry.series is derived from that cache.`;
+  mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry);
 
   const currentSnapshot = buildCurrentSnapshot({
     telemetry,
@@ -445,6 +512,7 @@ async function main() {
     followers_count: followersCount,
     following_count: followingCount,
     posts_count: postsCount,
+    tasknode_metrics_source: telemetry.tasknode_telemetry?.source || null,
     fetched_at: fetchedAt,
     telemetry_path: telemetryPath,
     history_path: historyPath,
