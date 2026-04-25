@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const DEFAULT_TELEMETRY_PATH = 'static/the-merge/telemetry.json';
 const DEFAULT_USERNAME = 'goodalexander';
@@ -13,10 +14,57 @@ function encodeForm(value) {
   return encodeURIComponent(value);
 }
 
+function percentEncode(value) {
+  return encodeURIComponent(String(value))
+    .replace(/[!'()*]/g, (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`);
+}
+
 function buildBasicAuth(apiKey, apiSecret) {
   const encodedKey = encodeForm(apiKey);
   const encodedSecret = encodeForm(apiSecret);
   return Buffer.from(`${encodedKey}:${encodedSecret}`).toString('base64');
+}
+
+function buildOAuth1AuthorizationHeader(method, url, {
+  apiKey,
+  apiSecret,
+  accessToken,
+  accessTokenSecret,
+}) {
+  const oauthParams = {
+    oauth_consumer_key: apiKey,
+    oauth_nonce: crypto.randomBytes(16).toString('hex'),
+    oauth_signature_method: 'HMAC-SHA1',
+    oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
+    oauth_token: accessToken,
+    oauth_version: '1.0',
+  };
+  const signatureParams = [
+    ...Array.from(url.searchParams.entries()),
+    ...Object.entries(oauthParams),
+  ];
+  const normalizedParams = signatureParams
+    .map(([key, value]) => [percentEncode(key), percentEncode(value)])
+    .sort(([leftKey, leftValue], [rightKey, rightValue]) => (
+      leftKey === rightKey ? leftValue.localeCompare(rightValue) : leftKey.localeCompare(rightKey)
+    ))
+    .map(([key, value]) => `${key}=${value}`)
+    .join('&');
+  const normalizedUrl = `${url.origin}${url.pathname}`;
+  const baseString = [
+    method.toUpperCase(),
+    percentEncode(normalizedUrl),
+    percentEncode(normalizedParams),
+  ].join('&');
+  const signingKey = `${percentEncode(apiSecret)}&${percentEncode(accessTokenSecret)}`;
+  const signature = crypto
+    .createHmac('sha1', signingKey)
+    .update(baseString)
+    .digest('base64');
+  return `OAuth ${Object.entries({ ...oauthParams, oauth_signature: signature })
+    .sort(([leftKey], [rightKey]) => leftKey.localeCompare(rightKey))
+    .map(([key, value]) => `${percentEncode(key)}="${percentEncode(value)}"`)
+    .join(', ')}`;
 }
 
 async function fetchJson(url, options = {}) {
@@ -70,18 +118,43 @@ async function resolveBearerToken() {
   return tokenPayload.access_token;
 }
 
+async function buildXAuthorizationHeader(method, url) {
+  const apiKey = readEnv('X_API_KEY') || readEnv('TWITTER_API_KEY');
+  const apiSecret = readEnv('X_API_SECRET') || readEnv('TWITTER_API_SECRET');
+  const accessToken = readEnv('X_ACCESS_TOKEN') || readEnv('TWITTER_ACCESS_TOKEN');
+  const accessTokenSecret = readEnv('X_ACCESS_TOKEN_SECRET')
+    || readEnv('X_ACCESS_SECRET')
+    || readEnv('TWITTER_ACCESS_TOKEN_SECRET');
+
+  if (accessToken || accessTokenSecret) {
+    if (!apiKey || !apiSecret || !accessToken || !accessTokenSecret) {
+      throw new Error(
+        'OAuth1 X auth needs X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, and X_ACCESS_TOKEN_SECRET.'
+      );
+    }
+    return buildOAuth1AuthorizationHeader(method, url, {
+      apiKey,
+      apiSecret,
+      accessToken,
+      accessTokenSecret,
+    });
+  }
+
+  return `Bearer ${await resolveBearerToken()}`;
+}
+
 async function fetchXProfile(username) {
   const mockResponse = readEnv('THE_MERGE_X_MOCK_RESPONSE');
   if (mockResponse) {
     return JSON.parse(mockResponse);
   }
 
-  const bearerToken = await resolveBearerToken();
   const url = new URL(`https://api.x.com/2/users/by/username/${encodeURIComponent(username)}`);
   url.searchParams.set('user.fields', 'created_at,public_metrics,verified,verified_type');
+  const authorization = await buildXAuthorizationHeader('GET', url);
   return fetchJson(url, {
     headers: {
-      Authorization: `Bearer ${bearerToken}`,
+      Authorization: authorization,
     },
   });
 }
