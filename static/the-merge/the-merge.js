@@ -16,6 +16,12 @@
     },
     redactions: []
   };
+  var chartHover = {
+    active: false,
+    index: null,
+    cssX: 0,
+    cssY: 0
+  };
 
   var fallbackTelemetry = {
     generated_at: new Date().toISOString(),
@@ -239,6 +245,10 @@
     var growth = formatGrowth(comparison.current, comparison.previous);
     if (!label) return growth;
     return label + " " + (formatter || formatNumber)(comparison.current) + ", " + growth;
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 
   function privateGithub(data) {
@@ -695,6 +705,105 @@
     return { width: width, height: height, ratio: ratio };
   }
 
+  function velocityMetrics() {
+    return [
+      { key: "dau", label: "DAU", color: "#42f2e8" },
+      { key: "loc", label: "LOC", color: "#66f0a8" },
+      { key: "tasks_completed", label: "TASKS", color: "#f3c75f" }
+    ];
+  }
+
+  function movingAverage(values, index, windowSize) {
+    var start = Math.max(0, index - windowSize + 1);
+    var slice = values.slice(start, index + 1);
+    if (!slice.length) return 0;
+    return slice.reduce(function (sum, value) { return sum + Number(value || 0); }, 0) / slice.length;
+  }
+
+  function formatChartValue(key, value) {
+    if (key === "loc") return formatNumber(value);
+    return formatDecimal(value, Number.isInteger(Number(value)) ? 0 : 1);
+  }
+
+  function updateVelocityTooltip(data, metrics, valuesByMetric, averagesByMetric) {
+    var tooltip = byId("velocity-tooltip");
+    var panel = tooltip ? tooltip.closest(".chart-panel") : null;
+    if (!tooltip || !panel || !chartHover.active || chartHover.index == null || !data[chartHover.index]) {
+      if (tooltip) tooltip.classList.remove("is-visible");
+      return;
+    }
+
+    var row = data[chartHover.index];
+    var canvas = byId("velocity-chart");
+    var canvasRect = canvas ? canvas.getBoundingClientRect() : null;
+    var html = ['<div class="tooltip-date">' + escapeHtml(row.date || "") + "</div>"];
+    metrics.forEach(function (metricDef, metricIndex) {
+      var value = valuesByMetric[metricIndex][chartHover.index] || 0;
+      var average = averagesByMetric[metricIndex][chartHover.index] || 0;
+      html.push([
+        '<div class="tooltip-row">',
+        '<span class="tooltip-dot" style="background:' + metricDef.color + '; color:' + metricDef.color + '"></span>',
+        "<span>" + escapeHtml(metricDef.label) + " <span class=\"tooltip-average\">7d " + escapeHtml(formatChartValue(metricDef.key, average)) + "</span></span>",
+        "<strong>" + escapeHtml(formatChartValue(metricDef.key, value)) + "</strong>",
+        "</div>"
+      ].join(""));
+    });
+    tooltip.innerHTML = html.join("");
+
+    var panelRect = panel.getBoundingClientRect();
+    var tooltipWidth = tooltip.offsetWidth || 240;
+    var rawLeft = (canvasRect ? canvasRect.left - panelRect.left : 0) + chartHover.cssX;
+    var rawTop = (canvasRect ? canvasRect.top - panelRect.top : 0) + chartHover.cssY;
+    var left = clamp(rawLeft, tooltipWidth / 2 + 12, panelRect.width - tooltipWidth / 2 - 12);
+    var top = clamp(rawTop, 84, panelRect.height - 14);
+    tooltip.style.left = String(left) + "px";
+    tooltip.style.top = String(top) + "px";
+    tooltip.classList.add("is-visible");
+  }
+
+  function handleVelocityPointerMove(event) {
+    var canvas = byId("velocity-chart");
+    if (!canvas) return;
+    var rect = canvas.getBoundingClientRect();
+    var data = mergedSeries();
+    if (!data.length) return;
+    var padLeft = 54;
+    var padRight = 30;
+    var plotWidth = Math.max(1, rect.width - padLeft - padRight);
+    var cssX = event.clientX - rect.left;
+    var cssY = event.clientY - rect.top;
+    var index = data.length === 1
+      ? 0
+      : Math.round(((cssX - padLeft) / plotWidth) * (data.length - 1));
+    chartHover = {
+      active: true,
+      index: clamp(index, 0, data.length - 1),
+      cssX: cssX,
+      cssY: cssY
+    };
+    drawVelocityChart();
+  }
+
+  function handleVelocityPointerLeave() {
+    chartHover = {
+      active: false,
+      index: null,
+      cssX: 0,
+      cssY: 0
+    };
+    var tooltip = byId("velocity-tooltip");
+    if (tooltip) tooltip.classList.remove("is-visible");
+    drawVelocityChart();
+  }
+
+  function bindVelocityChartInteractions() {
+    var canvas = byId("velocity-chart");
+    if (!canvas) return;
+    canvas.addEventListener("pointermove", handleVelocityPointerMove);
+    canvas.addEventListener("pointerleave", handleVelocityPointerLeave);
+    canvas.addEventListener("pointercancel", handleVelocityPointerLeave);
+  }
+
   function drawVelocityChart() {
     var canvas = byId("velocity-chart");
     if (!canvas) return;
@@ -702,48 +811,139 @@
     var size = sizeCanvas(canvas);
     var data = mergedSeries();
     ctx.clearRect(0, 0, size.width, size.height);
-    if (!data.length) return;
-    var pad = 42 * size.ratio;
-    var w = size.width - pad * 2;
-    var h = size.height - pad * 2;
-    var metrics = [
-      { key: "dau", label: "DAU", color: "#42f2e8" },
-      { key: "loc", label: "LOC", color: "#66f0a8" },
-      { key: "tasks_completed", label: "TASKS", color: "#f3c75f" }
-    ];
-    ctx.strokeStyle = "rgba(255,255,255,0.08)";
-    ctx.lineWidth = 1 * size.ratio;
+    if (!data.length) {
+      updateVelocityTooltip([], [], [], []);
+      return;
+    }
+    var ratio = size.ratio;
+    var left = 54 * ratio;
+    var right = 30 * ratio;
+    var top = 42 * ratio;
+    var bottom = 42 * ratio;
+    var w = size.width - left - right;
+    var h = size.height - top - bottom;
+    var metrics = velocityMetrics();
+    var valuesByMetric = metrics.map(function (metricDef) {
+      return data.map(function (row) { return Number(row[metricDef.key] || 0); });
+    });
+    var averagesByMetric = valuesByMetric.map(function (values) {
+      return values.map(function (_value, index) { return movingAverage(values, index, 7); });
+    });
+    var gradient = ctx.createLinearGradient(0, top, 0, top + h);
+    gradient.addColorStop(0, "rgba(66,242,232,0.08)");
+    gradient.addColorStop(0.48, "rgba(102,240,168,0.025)");
+    gradient.addColorStop(1, "rgba(255,79,95,0.045)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(left, top, w, h);
+
+    ctx.strokeStyle = "rgba(237,247,244,0.07)";
+    ctx.lineWidth = 1 * ratio;
     for (var i = 0; i <= 4; i += 1) {
-      var y = pad + (h / 4) * i;
+      var y = top + (h / 4) * i;
       ctx.beginPath();
-      ctx.moveTo(pad, y);
-      ctx.lineTo(size.width - pad, y);
+      ctx.moveTo(left, y);
+      ctx.lineTo(size.width - right, y);
       ctx.stroke();
     }
-    metrics.forEach(function (metricDef, metricIndex) {
-      var values = data.map(function (row) { return Number(row[metricDef.key] || 0); });
-      var max = Math.max.apply(null, values.concat([1]));
-      ctx.strokeStyle = metricDef.color;
-      ctx.lineWidth = 3 * size.ratio;
+    data.forEach(function (_row, index) {
+      if (index % Math.max(1, Math.ceil(data.length / 7)) !== 0 && index !== data.length - 1) return;
+      var x = left + (data.length === 1 ? 0 : (w * index) / (data.length - 1));
+      ctx.strokeStyle = "rgba(237,247,244,0.04)";
       ctx.beginPath();
-      values.forEach(function (value, index) {
-        var x = pad + (data.length === 1 ? 0 : (w * index) / (data.length - 1));
-        var y = pad + h - (value / max) * h;
-        if (index === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+      ctx.moveTo(x, top);
+      ctx.lineTo(x, top + h);
+      ctx.stroke();
+    });
+
+    metrics.forEach(function (metricDef, metricIndex) {
+      var values = valuesByMetric[metricIndex];
+      var averages = averagesByMetric[metricIndex];
+      var max = Math.max.apply(null, values.concat(averages).concat([1]));
+      function pointFor(value, index) {
+        return {
+          x: left + (data.length === 1 ? 0 : (w * index) / (data.length - 1)),
+          y: top + h - (Number(value || 0) / max) * h
+        };
+      }
+      ctx.save();
+      ctx.globalAlpha = 0.74;
+      ctx.strokeStyle = metricDef.color;
+      ctx.lineWidth = 1.7 * ratio;
+      ctx.setLineDash([4 * ratio, 7 * ratio]);
+      ctx.beginPath();
+      averages.forEach(function (value, index) {
+        var point = pointFor(value, index);
+        if (index === 0) ctx.moveTo(point.x, point.y);
+        else ctx.lineTo(point.x, point.y);
       });
       ctx.stroke();
+      ctx.restore();
+
+      ctx.save();
+      ctx.strokeStyle = metricDef.color;
+      ctx.lineWidth = 2.6 * ratio;
+      ctx.shadowColor = metricDef.color;
+      ctx.shadowBlur = 7 * ratio;
+      ctx.beginPath();
+      values.forEach(function (value, index) {
+        var point = pointFor(value, index);
+        if (index === 0) ctx.moveTo(point.x, point.y);
+        else ctx.lineTo(point.x, point.y);
+      });
+      ctx.stroke();
+      ctx.restore();
+
       ctx.fillStyle = metricDef.color;
-      ctx.font = String(12 * size.ratio) + "px ui-monospace, monospace";
-      ctx.fillText(metricDef.label, pad + metricIndex * 78 * size.ratio, 20 * size.ratio);
+      ctx.font = String(12 * ratio) + "px ui-monospace, monospace";
+      ctx.fillText(metricDef.label, left + metricIndex * 86 * ratio, 20 * ratio);
     });
+
+    if (w > 440 * ratio) {
+      ctx.fillStyle = "rgba(237,247,244,0.54)";
+      ctx.font = String(11 * ratio) + "px ui-monospace, monospace";
+      ctx.fillText("solid actual", left + 260 * ratio, 20 * ratio);
+      ctx.setLineDash([4 * ratio, 6 * ratio]);
+      ctx.strokeStyle = "rgba(237,247,244,0.38)";
+      ctx.beginPath();
+      ctx.moveTo(left + 348 * ratio, 16 * ratio);
+      ctx.lineTo(left + 394 * ratio, 16 * ratio);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillText("7d moving avg", left + 404 * ratio, 20 * ratio);
+    }
+
+    if (chartHover.active && chartHover.index != null && data[chartHover.index]) {
+      var hoverX = left + (data.length === 1 ? 0 : (w * chartHover.index) / (data.length - 1));
+      ctx.strokeStyle = "rgba(237,247,244,0.42)";
+      ctx.lineWidth = 1 * ratio;
+      ctx.beginPath();
+      ctx.moveTo(hoverX, top);
+      ctx.lineTo(hoverX, top + h);
+      ctx.stroke();
+      metrics.forEach(function (metricDef, metricIndex) {
+        var values = valuesByMetric[metricIndex];
+        var averages = averagesByMetric[metricIndex];
+        var max = Math.max.apply(null, values.concat(averages).concat([1]));
+        var value = values[chartHover.index] || 0;
+        var y = top + h - (value / max) * h;
+        ctx.fillStyle = "rgba(5,6,7,0.92)";
+        ctx.strokeStyle = metricDef.color;
+        ctx.lineWidth = 2 * ratio;
+        ctx.beginPath();
+        ctx.arc(hoverX, y, 5 * ratio, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      });
+    }
+
     ctx.fillStyle = "rgba(237,247,244,0.62)";
-    ctx.font = String(11 * size.ratio) + "px ui-monospace, monospace";
+    ctx.font = String(11 * ratio) + "px ui-monospace, monospace";
     data.forEach(function (row, index) {
       if (index % Math.max(1, Math.ceil(data.length / 6)) !== 0 && index !== data.length - 1) return;
-      var x = pad + (data.length === 1 ? 0 : (w * index) / (data.length - 1));
-      ctx.fillText(String(row.date || "").slice(5), x - 14 * size.ratio, size.height - 14 * size.ratio);
+      var x = left + (data.length === 1 ? 0 : (w * index) / (data.length - 1));
+      ctx.fillText(String(row.date || "").slice(5), x - 14 * ratio, size.height - 14 * ratio);
     });
+    updateVelocityTooltip(data, metrics, valuesByMetric, averagesByMetric);
   }
 
   function renderAll() {
@@ -859,6 +1059,7 @@
   function init() {
     animateBackground();
     animateMergeCore();
+    bindVelocityChartInteractions();
     refreshAll(true);
     window.setInterval(function () { refreshAll(false); }, Math.max(10, refreshSeconds) * 1000);
     window.addEventListener("resize", drawVelocityChart);
