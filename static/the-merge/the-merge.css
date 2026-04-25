@@ -76,6 +76,7 @@ body::before {
 
 .back-link,
 .header-status,
+.hero-actions a,
 .hero-actions span,
 .panel-head > span {
   border: 1px solid var(--line);
@@ -88,6 +89,12 @@ body::before {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.hero-actions a {
+  border-color: rgba(102, 240, 168, 0.42);
+  background: rgba(102, 240, 168, 0.12);
+  color: var(--green);
 }
 
 .header-status {

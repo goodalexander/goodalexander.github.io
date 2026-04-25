@@ -519,7 +519,6 @@
     text("operator-name", profile.display_name || profile.handle || "goodalexander");
     text("wallet-line", redactWallet(profile.main_wallet || ""));
     text("last-updated", "last sync " + formatTime(data.generated_at || new Date().toISOString()));
-    text("refresh-rate", String(Number(data.refresh_seconds || refreshSeconds)) + "s refresh");
     text("metric-dau", formatNumber(dau));
     text("metric-dau-delta", (delta >= 0 ? "+" : "") + formatNumber(delta) + " vs prior");
     text("metric-dau-growth", formatWoW(priorSeries, "dau", "average", "7d avg", formatAverageValue));
