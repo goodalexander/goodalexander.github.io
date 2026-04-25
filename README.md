@@ -4,7 +4,8 @@ test ghpages round 4
 ## The Merge X telemetry
 
 `scripts/update-the-merge-x-followers.mjs` refreshes the follower count in
-`static/the-merge/telemetry.json` from X API v2:
+`static/the-merge/telemetry.json` from X API v2 and upserts a daily snapshot in
+`static/the-merge/telemetry-history.json`:
 
 ```bash
 X_BEARER_TOKEN=... node scripts/update-the-merge-x-followers.mjs
@@ -25,3 +26,8 @@ request with OAuth 1.0a user-context credentials. Both paths call:
 The scheduled GitHub Actions workflow `.github/workflows/update-the-merge-telemetry.yml`
 runs every 30 minutes, commits the refreshed telemetry snapshot, and deploys
 GitHub Pages. Configure the needed X credentials as repository Actions secrets.
+
+The history file is the durable cache for growth-rate math. The updater keeps a
+rolling 365-day `snapshots` array and derives `telemetry.series` from it so
+week-over-week dashboard calculations do not depend on transient current values
+or Git history scraping.

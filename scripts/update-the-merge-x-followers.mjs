@@ -3,7 +3,10 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 
 const DEFAULT_TELEMETRY_PATH = 'static/the-merge/telemetry.json';
+const DEFAULT_HISTORY_FILENAME = 'telemetry-history.json';
 const DEFAULT_USERNAME = 'goodalexander';
+const DEFAULT_HISTORY_RETENTION_DAYS = 365;
+const DEFAULT_TELEMETRY_SERIES_DAYS = 90;
 
 function readEnv(name) {
   const value = process.env[name];
@@ -166,19 +169,211 @@ function requireFiniteMetric(value, label) {
   return value;
 }
 
+function toFiniteNumberOrNull(value) {
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function parsePositiveInteger(value, fallback) {
+  const parsed = Number.parseInt(String(value || ''), 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function dateKey(value) {
+  const parsed = value ? new Date(value) : new Date();
+  if (Number.isNaN(parsed.getTime())) {
+    return new Date().toISOString().slice(0, 10);
+  }
+  return parsed.toISOString().slice(0, 10);
+}
+
 function stableStringify(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-function upsertLatestSeriesFollowerCount(telemetry, followersCount) {
-  if (!Array.isArray(telemetry.series) || telemetry.series.length === 0) {
-    return;
+function normalizeSeriesRow(row, fallbackUpdatedAt) {
+  return {
+    date: row.date,
+    updated_at: row.updated_at || fallbackUpdatedAt || undefined,
+    dau: toFiniteNumberOrNull(row.dau),
+    x_followers: toFiniteNumberOrNull(row.x_followers),
+    x_following: toFiniteNumberOrNull(row.x_following),
+    x_posts: toFiniteNumberOrNull(row.x_posts),
+    loc: toFiniteNumberOrNull(row.loc),
+    commits: toFiniteNumberOrNull(row.commits),
+    task_requests: toFiniteNumberOrNull(row.task_requests),
+    task_verifications: toFiniteNumberOrNull(row.task_verifications),
+    task_updates: toFiniteNumberOrNull(row.task_updates),
+    tasks_completed: toFiniteNumberOrNull(row.tasks_completed),
+    rewards: toFiniteNumberOrNull(row.rewards),
+    pft_rewards: toFiniteNumberOrNull(row.pft_rewards),
+    context_updates: toFiniteNumberOrNull(row.context_updates),
+    wallet_interactions: toFiniteNumberOrNull(row.wallet_interactions),
+    github_private_commits: toFiniteNumberOrNull(row.github_private_commits),
+    github_private_loc: toFiniteNumberOrNull(row.github_private_loc),
+    github_private_additions: toFiniteNumberOrNull(row.github_private_additions),
+    github_private_deletions: toFiniteNumberOrNull(row.github_private_deletions),
+    sources: row.sources && typeof row.sources === 'object' ? row.sources : undefined,
+  };
+}
+
+function compactSnapshot(snapshot) {
+  return Object.fromEntries(
+    Object.entries(snapshot).filter(([_key, value]) => value !== undefined)
+  );
+}
+
+function seedHistoryFromTelemetry(telemetry, fetchedAt, retentionDays) {
+  const snapshots = (Array.isArray(telemetry.series) ? telemetry.series : [])
+    .filter((row) => row && row.date)
+    .map((row) => compactSnapshot(normalizeSeriesRow(row, null)));
+  return {
+    schema_version: 1,
+    generated_at: fetchedAt,
+    retention_days: retentionDays,
+    snapshots,
+  };
+}
+
+async function loadHistory(historyPath, telemetry, fetchedAt, retentionDays) {
+  try {
+    const rawHistory = await fs.readFile(historyPath, 'utf8');
+    const parsed = JSON.parse(rawHistory);
+    if (Array.isArray(parsed?.snapshots)) {
+      return {
+        schema_version: 1,
+        generated_at: parsed.generated_at || fetchedAt,
+        retention_days: toFiniteNumberOrNull(parsed.retention_days) || retentionDays,
+        snapshots: parsed.snapshots
+          .filter((row) => row && row.date)
+          .map((row) => compactSnapshot(normalizeSeriesRow(row, row.updated_at || parsed.generated_at || fetchedAt))),
+      };
+    }
+  } catch (err) {
+    if (err?.code !== 'ENOENT') {
+      throw err;
+    }
   }
-  telemetry.series[telemetry.series.length - 1].x_followers = followersCount;
+  return seedHistoryFromTelemetry(telemetry, fetchedAt, retentionDays);
+}
+
+function buildCurrentSnapshot({
+  telemetry,
+  fetchedAt,
+  followersCount,
+  followingCount,
+  postsCount,
+}) {
+  const metrics = telemetry.metrics || {};
+  const privateGithub = telemetry.private_github || {};
+  return compactSnapshot({
+    date: dateKey(fetchedAt),
+    updated_at: fetchedAt,
+    dau: toFiniteNumberOrNull(metrics.tasknode_dau),
+    x_followers: followersCount,
+    x_following: followingCount,
+    x_posts: postsCount,
+    loc: toFiniteNumberOrNull(metrics.loc_today),
+    commits: toFiniteNumberOrNull(metrics.commits_today),
+    task_requests: toFiniteNumberOrNull(metrics.task_requests_24h),
+    task_verifications: toFiniteNumberOrNull(metrics.task_verifications_24h),
+    task_updates: toFiniteNumberOrNull(metrics.task_updates_24h),
+    tasks_completed: toFiniteNumberOrNull(metrics.tasks_completed_24h),
+    rewards: toFiniteNumberOrNull(metrics.rewards_delivered_24h),
+    pft_rewards: toFiniteNumberOrNull(metrics.pft_rewards_24h),
+    context_updates: toFiniteNumberOrNull(metrics.context_updates_24h),
+    wallet_interactions: toFiniteNumberOrNull(metrics.wallet_interactions_24h),
+    github_private_commits: toFiniteNumberOrNull(privateGithub.private_commits_today),
+    github_private_loc: toFiniteNumberOrNull(privateGithub.private_loc_today),
+    github_private_additions: toFiniteNumberOrNull(privateGithub.private_additions_today),
+    github_private_deletions: toFiniteNumberOrNull(privateGithub.private_deletions_today),
+    sources: {
+      x_followers: 'x_api_v2_users_by_username',
+      current_metrics: 'telemetry_snapshot',
+      github_private: 'redacted_private_github_snapshot',
+    },
+  });
+}
+
+function mergeSnapshots(existing, incoming) {
+  const merged = { ...(existing || {}) };
+  Object.entries(incoming).forEach(([key, value]) => {
+    if (value === null || value === undefined) {
+      return;
+    }
+    if (key === 'sources' && typeof value === 'object') {
+      merged.sources = { ...(merged.sources || {}), ...value };
+      return;
+    }
+    merged[key] = value;
+  });
+  return merged;
+}
+
+function upsertHistorySnapshot(history, snapshot, retentionDays, fetchedAt) {
+  const snapshotsByDate = new Map();
+  (Array.isArray(history.snapshots) ? history.snapshots : []).forEach((row) => {
+    if (!row?.date) {
+      return;
+    }
+    snapshotsByDate.set(row.date, row);
+  });
+  snapshotsByDate.set(
+    snapshot.date,
+    compactSnapshot(mergeSnapshots(snapshotsByDate.get(snapshot.date), snapshot))
+  );
+
+  const cutoffMs = Date.parse(`${snapshot.date}T00:00:00.000Z`) - ((retentionDays - 1) * 24 * 60 * 60 * 1000);
+  const snapshots = Array.from(snapshotsByDate.values())
+    .filter((row) => {
+      const rowMs = Date.parse(`${row.date}T00:00:00.000Z`);
+      return Number.isFinite(rowMs) && rowMs >= cutoffMs;
+    })
+    .sort((left, right) => String(left.date).localeCompare(String(right.date)));
+
+  return {
+    schema_version: 1,
+    generated_at: fetchedAt,
+    retention_days: retentionDays,
+    snapshots,
+  };
+}
+
+function buildTelemetrySeries(history, maxDays) {
+  return (Array.isArray(history.snapshots) ? history.snapshots : [])
+    .filter((row) => row && row.date)
+    .slice(-maxDays)
+    .map((row) => compactSnapshot({
+      date: row.date,
+      dau: toFiniteNumberOrNull(row.dau),
+      x_followers: toFiniteNumberOrNull(row.x_followers),
+      loc: toFiniteNumberOrNull(row.loc),
+      commits: toFiniteNumberOrNull(row.commits),
+      task_requests: toFiniteNumberOrNull(row.task_requests),
+      task_verifications: toFiniteNumberOrNull(row.task_verifications),
+      task_updates: toFiniteNumberOrNull(row.task_updates),
+      tasks_completed: toFiniteNumberOrNull(row.tasks_completed),
+      rewards: toFiniteNumberOrNull(row.rewards),
+      pft_rewards: toFiniteNumberOrNull(row.pft_rewards),
+      context_updates: toFiniteNumberOrNull(row.context_updates),
+      wallet_interactions: toFiniteNumberOrNull(row.wallet_interactions),
+      github_private_commits: toFiniteNumberOrNull(row.github_private_commits),
+      github_private_loc: toFiniteNumberOrNull(row.github_private_loc),
+      github_private_additions: toFiniteNumberOrNull(row.github_private_additions),
+      github_private_deletions: toFiniteNumberOrNull(row.github_private_deletions),
+    }));
 }
 
 async function main() {
   const telemetryPath = path.resolve(readEnv('THE_MERGE_TELEMETRY_PATH') || DEFAULT_TELEMETRY_PATH);
+  const historyPath = path.resolve(
+    readEnv('THE_MERGE_HISTORY_PATH') || path.join(path.dirname(telemetryPath), DEFAULT_HISTORY_FILENAME)
+  );
+  const retentionDays = parsePositiveInteger(readEnv('THE_MERGE_HISTORY_RETENTION_DAYS'), DEFAULT_HISTORY_RETENTION_DAYS);
+  const telemetrySeriesDays = parsePositiveInteger(readEnv('THE_MERGE_TELEMETRY_SERIES_DAYS'), DEFAULT_TELEMETRY_SERIES_DAYS);
   const username = readEnv('X_USERNAME') || readEnv('THE_MERGE_X_USERNAME') || DEFAULT_USERNAME;
   const rawTelemetry = await fs.readFile(telemetryPath, 'utf8');
   const telemetry = JSON.parse(rawTelemetry);
@@ -207,11 +402,42 @@ async function main() {
   };
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
-  upsertLatestSeriesFollowerCount(telemetry, followersCount);
+  telemetry.notes.history = `Daily telemetry snapshots are retained in /the-merge/${DEFAULT_HISTORY_FILENAME}; telemetry.series is derived from that cache.`;
+
+  const currentSnapshot = buildCurrentSnapshot({
+    telemetry,
+    fetchedAt,
+    followersCount,
+    followingCount,
+    postsCount,
+  });
+  const loadedHistory = await loadHistory(historyPath, telemetry, fetchedAt, retentionDays);
+  const history = upsertHistorySnapshot(loadedHistory, currentSnapshot, retentionDays, fetchedAt);
+  telemetry.series = buildTelemetrySeries(history, telemetrySeriesDays);
+  telemetry.history = {
+    source: `/the-merge/${DEFAULT_HISTORY_FILENAME}`,
+    generated_at: history.generated_at,
+    retention_days: history.retention_days,
+    snapshots: history.snapshots.length,
+    current_date: currentSnapshot.date,
+  };
 
   const nextTelemetry = stableStringify(telemetry);
+  const nextHistory = stableStringify(history);
+  await fs.mkdir(path.dirname(historyPath), { recursive: true });
   if (nextTelemetry !== rawTelemetry) {
     await fs.writeFile(telemetryPath, nextTelemetry, 'utf8');
+  }
+  let rawHistory = null;
+  try {
+    rawHistory = await fs.readFile(historyPath, 'utf8');
+  } catch (err) {
+    if (err?.code !== 'ENOENT') {
+      throw err;
+    }
+  }
+  if (nextHistory !== rawHistory) {
+    await fs.writeFile(historyPath, nextHistory, 'utf8');
   }
 
   console.log(JSON.stringify({
@@ -221,6 +447,8 @@ async function main() {
     posts_count: postsCount,
     fetched_at: fetchedAt,
     telemetry_path: telemetryPath,
+    history_path: historyPath,
+    history_snapshots: history.snapshots.length,
   }));
 }
 
