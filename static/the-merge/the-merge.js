@@ -427,6 +427,7 @@
     text("metric-dau", formatNumber(dau));
     text("metric-dau-delta", (delta >= 0 ? "+" : "") + formatNumber(delta) + " vs prior");
     text("metric-followers", formatNullableMetric(data, "x_followers", formatCompact));
+    text("metric-followers-source", data.x_profile && data.x_profile.source === "x_api_v2_users_by_username" ? "official X API" : "source pending");
     text("metric-loc", locToday == null ? "n/a" : formatNumber(locToday));
     text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today incl redacted");
     text("metric-tasks", formatNumber(metric(data, "tasks_completed_24h")));
