@@ -113,9 +113,10 @@
             <p class="eyebrow">velocity graph</p>
             <h2>DAUs / LOC / task clears</h2>
           </div>
-          <span id="series-window">10d</span>
+          <span id="series-window">14d + 7d avg</span>
         </div>
         <canvas id="velocity-chart" width="900" height="390" aria-label="velocity chart"></canvas>
+        <div id="velocity-tooltip" class="chart-tooltip" role="status" aria-live="polite"></div>
       </article>
 
       <article class="panel modality-panel">
@@ -171,6 +172,6 @@
       maxGithubCommits: 24
     };
   </script>
-  <script src="/the-merge/the-merge.js?v=task-node-cta-v1" defer></script>
+  <script src="/the-merge/the-merge.js?v=chart-hover-v1" defer></script>
 </body>
 </html>
