@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Merge | goodalexander</title>
+  <meta name="description" content="A live redacted operational telemetry dashboard for goodalexander and Task Node velocity." />
+  <link rel="preload" href="/the-merge/profile-nft.png" as="image" />
+  <link rel="stylesheet" href="/the-merge/the-merge.css" />
+</head>
+<body>
+  <canvas id="merge-field" aria-hidden="true"></canvas>
+  <main class="merge-shell">
+    <header class="merge-header">
+      <a class="back-link" href="/">goodalexander</a>
+      <div class="header-status">
+        <span class="live-dot"></span>
+        <span id="source-status">syncing telemetry</span>
+      </div>
+    </header>
+
+    <section class="hero-grid" aria-labelledby="merge-title">
+      <div class="hero-copy">
+        <p class="eyebrow">public operator telemetry</p>
+        <h1 id="merge-title">The Merge</h1>
+        <p class="hero-line">
+          Code velocity, Task Node activity, context rewrites, wallet movement, DAUs, social gravity, and the current shape of the machine.
+        </p>
+        <div class="hero-actions" aria-label="dashboard status">
+          <span id="last-updated">last sync pending</span>
+          <span>redaction layer active</span>
+          <span id="refresh-rate">30s refresh</span>
+        </div>
+      </div>
+
+      <aside class="operator-panel" aria-label="operator profile">
+        <div class="nft-frame">
+          <img id="profile-nft" src="/the-merge/profile-nft.png" alt="goodalexander profile NFT" />
+        </div>
+        <div>
+          <p class="operator-label">operator</p>
+          <h2 id="operator-name">goodalexander</h2>
+          <p id="wallet-line" class="wallet-line">wallet syncing</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metric-grid" aria-label="top metrics">
+      <article class="metric-tile accent-cyan">
+        <span>Task Node DAUs</span>
+        <strong id="metric-dau">-</strong>
+        <small id="metric-dau-delta">live public usage</small>
+      </article>
+      <article class="metric-tile accent-red">
+        <span>X followers</span>
+        <strong id="metric-followers">-</strong>
+        <small>social gravity</small>
+      </article>
+      <article class="metric-tile accent-green">
+        <span>LOC today</span>
+        <strong id="metric-loc">-</strong>
+        <small id="metric-commits">GitHub pulse</small>
+      </article>
+      <article class="metric-tile accent-gold">
+        <span>Tasks completed</span>
+        <strong id="metric-tasks">-</strong>
+        <small>24h execution clears</small>
+      </article>
+      <article class="metric-tile accent-steel">
+        <span>Rewards delivered</span>
+        <strong id="metric-rewards">-</strong>
+        <small id="metric-pft">PFT settled</small>
+      </article>
+      <article class="metric-tile accent-violet">
+        <span>Context updates</span>
+        <strong id="metric-context">-</strong>
+        <small>downstream memory writes</small>
+      </article>
+    </section>
+
+    <section class="main-grid">
+      <article class="merge-core panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">human x model interface</p>
+            <h2>merge pressure</h2>
+          </div>
+          <strong id="merge-pressure">--</strong>
+        </div>
+        <canvas id="merge-core-canvas" width="720" height="420" aria-label="animated merge pressure field"></canvas>
+      </article>
+
+      <article class="panel chart-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">velocity graph</p>
+            <h2>DAUs / LOC / task clears</h2>
+          </div>
+          <span id="series-window">10d</span>
+        </div>
+        <canvas id="velocity-chart" width="900" height="390" aria-label="velocity chart"></canvas>
+      </article>
+
+      <article class="panel modality-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">modalities</p>
+            <h2>activity mix</h2>
+          </div>
+        </div>
+        <div id="modality-bars" class="modality-bars"></div>
+      </article>
+
+      <article class="panel feed-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">redacted feed</p>
+            <h2>latest emissions</h2>
+          </div>
+          <span id="event-count">0 events</span>
+        </div>
+        <div id="event-feed" class="event-feed"></div>
+      </article>
+
+      <article class="panel github-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">github</p>
+            <h2>commit burn</h2>
+          </div>
+          <span id="github-status">public API</span>
+        </div>
+        <div id="commit-list" class="commit-list"></div>
+      </article>
+
+      <article class="panel wallet-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">ledger</p>
+            <h2>wallet interactions</h2>
+          </div>
+          <span id="wallet-count">--</span>
+        </div>
+        <div id="wallet-events" class="wallet-events"></div>
+      </article>
+    </section>
+  </main>
+  <script>
+    window.THE_MERGE_CONFIG = {
+      telemetryUrl: "/the-merge/telemetry.json",
+      githubUser: "goodalexander",
+      refreshSeconds: 30,
+      githubRefreshSeconds: 300,
+      maxGithubCommits: 24
+    };
+  </script>
+  <script src="/the-merge/the-merge.js" defer></script>
+</body>
+</html>
