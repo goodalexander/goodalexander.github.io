@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-25T19:34:03.746Z",
+  "generated_at": "2026-04-25T19:47:58.377Z",
   "retention_days": 365,
   "snapshots": [
     {
       "date": "2026-04-12",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 25,
       "x_followers": null,
       "x_following": null,
@@ -26,6 +27,7 @@
     },
     {
       "date": "2026-04-13",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 29,
       "x_followers": null,
       "x_following": null,
@@ -47,6 +49,7 @@
     },
     {
       "date": "2026-04-14",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 27,
       "x_followers": null,
       "x_following": null,
@@ -68,6 +71,7 @@
     },
     {
       "date": "2026-04-15",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 26,
       "x_followers": null,
       "x_following": null,
@@ -89,6 +93,7 @@
     },
     {
       "date": "2026-04-16",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 27,
       "x_followers": null,
       "x_following": null,
@@ -110,6 +115,7 @@
     },
     {
       "date": "2026-04-17",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 26,
       "x_followers": null,
       "x_following": null,
@@ -131,6 +137,7 @@
     },
     {
       "date": "2026-04-18",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 32,
       "x_followers": null,
       "x_following": null,
@@ -152,6 +159,7 @@
     },
     {
       "date": "2026-04-19",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 21,
       "x_followers": null,
       "x_following": null,
@@ -173,6 +181,7 @@
     },
     {
       "date": "2026-04-20",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 29,
       "x_followers": null,
       "x_following": null,
@@ -194,6 +203,7 @@
     },
     {
       "date": "2026-04-21",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 27,
       "x_followers": null,
       "x_following": null,
@@ -215,6 +225,7 @@
     },
     {
       "date": "2026-04-22",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 28,
       "x_followers": null,
       "x_following": null,
@@ -236,6 +247,7 @@
     },
     {
       "date": "2026-04-23",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 25,
       "x_followers": null,
       "x_following": null,
@@ -257,6 +269,7 @@
     },
     {
       "date": "2026-04-24",
+      "updated_at": "2026-04-25T19:34:03.746Z",
       "dau": 29,
       "x_followers": null,
       "x_following": null,
@@ -278,10 +291,11 @@
     },
     {
       "date": "2026-04-25",
+      "updated_at": "2026-04-25T19:47:58.377Z",
       "dau": 26,
       "x_followers": 121490,
       "x_following": 1286,
-      "x_posts": 15260,
+      "x_posts": 15261,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -296,7 +310,6 @@
       "github_private_loc": 9534,
       "github_private_additions": 9432,
       "github_private_deletions": 102,
-      "updated_at": "2026-04-25T19:34:03.746Z",
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
