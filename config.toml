@@ -44,6 +44,10 @@ disableXML = true
       name = "Subscribe"
       url = "subscribe/"
       weight = 50
+    [[languages.en.menu.main]]
+      name = "The Merge"
+      url = "the-merge/"
+      weight = 60
       
 [outputs]
   home = ["HTML", "RSS", "JSON"]
