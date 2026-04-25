@@ -119,3 +119,5 @@ disableXML = true
     favicon32x32 = "/favicon-32x32.png?v=ga-favicon-v1"
     apple_touch_icon = "/apple-touch-icon.png?v=ga-favicon-v1"
     safari_pinned_tab = "/safari-pinned-tab.svg?v=ga-favicon-v1"
+    theme_color = "#070a0d"
+    msapplication_TileColor = "#070a0d"
