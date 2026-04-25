@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T19:47:58.377Z",
+  "generated_at": "2026-04-25T20:18:02.309Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -21,7 +21,7 @@
   ],
   "metrics": {
     "tasknode_dau": 26,
-    "x_followers": 121490,
+    "x_followers": 121494,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 1,
@@ -287,7 +287,7 @@
     {
       "date": "2026-04-25",
       "dau": 26,
-      "x_followers": 121490,
+      "x_followers": 121494,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -397,7 +397,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T19:47:58.377Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T20:18:02.309Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -423,8 +423,8 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-04-25T19:47:58.377Z",
-    "followers_count": 121490,
+    "fetched_at": "2026-04-25T20:18:02.309Z",
+    "followers_count": 121494,
     "following_count": 1286,
     "posts_count": 15261,
     "verified": true,
@@ -433,7 +433,7 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-25T19:47:58.377Z",
+    "generated_at": "2026-04-25T20:18:02.309Z",
     "retention_days": 365,
     "snapshots": 14,
     "current_date": "2026-04-25"
