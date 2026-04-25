@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-04-25T17:00:00.000Z",
+  "generated_at": "2026-04-25T17:45:10.000Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
     "display_name": "goodalexander",
     "nft_image": "/the-merge/profile-nft.png",
+    "nft_display_name": "Logit Stream Purifier",
+    "nft_source": "gallery_nft",
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet"
   },
@@ -18,88 +20,63 @@
     "exact alpha"
   ],
   "metrics": {
-    "tasknode_dau": 184,
-    "x_followers": 12984,
-    "commits_today": 9,
-    "loc_today": 2418,
-    "task_requests_24h": 17,
-    "task_verifications_24h": 11,
-    "task_updates_24h": 26,
-    "tasks_completed_24h": 8,
-    "rewards_delivered_24h": 6,
-    "pft_rewards_24h": 18400,
-    "context_updates_24h": 4,
-    "wallet_interactions_24h": 19,
-    "merge_pressure": 91
+    "tasknode_dau": 26,
+    "x_followers": null,
+    "commits_today": null,
+    "loc_today": null,
+    "task_requests_24h": 1,
+    "task_verifications_24h": 0,
+    "task_updates_24h": 0,
+    "tasks_completed_24h": 0,
+    "rewards_delivered_24h": 0,
+    "pft_rewards_24h": 0,
+    "context_updates_24h": 1,
+    "wallet_interactions_24h": 3,
+    "merge_pressure": null,
+    "tasks_verified_all_time": 82,
+    "rewards_paid_all_time": 82
   },
   "series": [
-    { "date": "2026-04-15", "dau": 93, "x_followers": 12722, "loc": 620, "task_requests": 7, "task_verifications": 4, "task_updates": 12, "tasks_completed": 3, "rewards": 2, "context_updates": 1, "wallet_interactions": 5 },
-    { "date": "2026-04-16", "dau": 102, "x_followers": 12764, "loc": 980, "task_requests": 8, "task_verifications": 5, "task_updates": 15, "tasks_completed": 4, "rewards": 3, "context_updates": 1, "wallet_interactions": 7 },
-    { "date": "2026-04-17", "dau": 119, "x_followers": 12810, "loc": 1440, "task_requests": 11, "task_verifications": 7, "task_updates": 18, "tasks_completed": 5, "rewards": 4, "context_updates": 2, "wallet_interactions": 9 },
-    { "date": "2026-04-18", "dau": 126, "x_followers": 12846, "loc": 860, "task_requests": 9, "task_verifications": 6, "task_updates": 16, "tasks_completed": 4, "rewards": 3, "context_updates": 2, "wallet_interactions": 8 },
-    { "date": "2026-04-19", "dau": 143, "x_followers": 12883, "loc": 2140, "task_requests": 13, "task_verifications": 8, "task_updates": 21, "tasks_completed": 6, "rewards": 5, "context_updates": 3, "wallet_interactions": 12 },
-    { "date": "2026-04-20", "dau": 151, "x_followers": 12902, "loc": 1710, "task_requests": 12, "task_verifications": 9, "task_updates": 24, "tasks_completed": 7, "rewards": 5, "context_updates": 2, "wallet_interactions": 11 },
-    { "date": "2026-04-21", "dau": 166, "x_followers": 12931, "loc": 1984, "task_requests": 15, "task_verifications": 10, "task_updates": 22, "tasks_completed": 7, "rewards": 6, "context_updates": 3, "wallet_interactions": 15 },
-    { "date": "2026-04-22", "dau": 173, "x_followers": 12952, "loc": 2250, "task_requests": 16, "task_verifications": 10, "task_updates": 25, "tasks_completed": 8, "rewards": 6, "context_updates": 3, "wallet_interactions": 17 },
-    { "date": "2026-04-23", "dau": 178, "x_followers": 12971, "loc": 1890, "task_requests": 15, "task_verifications": 11, "task_updates": 23, "tasks_completed": 7, "rewards": 5, "context_updates": 4, "wallet_interactions": 16 },
-    { "date": "2026-04-24", "dau": 184, "x_followers": 12984, "loc": 2418, "task_requests": 17, "task_verifications": 11, "task_updates": 26, "tasks_completed": 8, "rewards": 6, "context_updates": 4, "wallet_interactions": 19 }
+    { "date": "2026-04-12", "dau": 25, "x_followers": null, "loc": null, "task_requests": 4, "task_verifications": 2, "task_updates": 2, "tasks_completed": 2, "rewards": 2, "pft_rewards": 6200, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-13", "dau": 29, "x_followers": null, "loc": null, "task_requests": 2, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-14", "dau": 27, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-15", "dau": 26, "x_followers": null, "loc": null, "task_requests": 2, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-16", "dau": 27, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-17", "dau": 26, "x_followers": null, "loc": null, "task_requests": 1, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-18", "dau": 32, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-19", "dau": 21, "x_followers": null, "loc": null, "task_requests": 1, "task_verifications": 1, "task_updates": 1, "tasks_completed": 1, "rewards": 1, "pft_rewards": 10000, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-20", "dau": 29, "x_followers": null, "loc": null, "task_requests": 1, "task_verifications": 1, "task_updates": 1, "tasks_completed": 1, "rewards": 1, "pft_rewards": 2100, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-21", "dau": 27, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-22", "dau": 28, "x_followers": null, "loc": null, "task_requests": 4, "task_verifications": 1, "task_updates": 1, "tasks_completed": 1, "rewards": 1, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-23", "dau": 25, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-24", "dau": 29, "x_followers": null, "loc": null, "task_requests": 1, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 0, "wallet_interactions": null },
+    { "date": "2026-04-25", "dau": 19, "x_followers": null, "loc": null, "task_requests": 0, "task_verifications": 0, "task_updates": 0, "tasks_completed": 0, "rewards": 0, "pft_rewards": 0, "context_updates": 1, "wallet_interactions": null }
   ],
   "events": [
-    {
-      "ts": "2026-04-25T16:49:00.000Z",
-      "type": "reward_delivered",
-      "label": "Reward delivered",
-      "detail": "A redacted product systems task cleared verification and paid out.",
-      "magnitude": "high"
-    },
-    {
-      "ts": "2026-04-25T16:33:00.000Z",
-      "type": "context_update",
-      "label": "Context document updated",
-      "detail": "Operating brief rewritten to sharpen current priorities and reduce model drift.",
-      "magnitude": "medium"
-    },
-    {
-      "ts": "2026-04-25T16:11:00.000Z",
-      "type": "task_verification",
-      "label": "Task verification",
-      "detail": "Evidence package accepted for a redacted dashboard workflow.",
-      "magnitude": "medium"
-    },
-    {
-      "ts": "2026-04-25T15:58:00.000Z",
-      "type": "task_request",
-      "label": "Task request",
-      "detail": "New execution request created for a public growth surface.",
-      "magnitude": "medium"
-    },
-    {
-      "ts": "2026-04-25T15:40:00.000Z",
-      "type": "task_update",
-      "label": "Task update",
-      "detail": "Implementation state changed after a focused code pass.",
-      "magnitude": "low"
-    },
-    {
-      "ts": "2026-04-25T15:18:00.000Z",
-      "type": "wallet_interaction",
-      "label": "Wallet interaction",
-      "detail": "Primary operator wallet emitted a public network action.",
-      "magnitude": "medium",
-      "wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
-    }
+    { "ts": "2026-04-25T17:04:30.936Z", "type": "wallet_interaction", "label": "Wallet interaction", "detail": "Primary wallet emitted an NFTokenMint transaction.", "magnitude": "actual" },
+    { "ts": "2026-04-25T16:40:30.930Z", "type": "wallet_interaction", "label": "Wallet interaction", "detail": "Primary wallet emitted an outbound Payment transaction.", "magnitude": "actual" },
+    { "ts": "2026-04-25T16:40:12.053Z", "type": "context_update", "label": "Context document updated", "detail": "Wallet-linked context revision recorded.", "magnitude": "actual" },
+    { "ts": "2026-04-25T08:07:20.278Z", "type": "wallet_interaction", "label": "Wallet interaction", "detail": "Primary wallet received an inbound Payment transaction.", "magnitude": "actual" },
+    { "ts": "2026-04-24T20:08:15.420Z", "type": "task_request", "label": "Task request", "detail": "Wallet-linked task request recorded.", "magnitude": "actual" },
+    { "ts": "2026-04-22T23:14:26.534Z", "type": "task_verification", "label": "Task verification", "detail": "Wallet-linked task verification recorded.", "magnitude": "actual" },
+    { "ts": "2026-04-22T23:14:26.520Z", "type": "reward_delivered", "label": "Reward delivered", "detail": "Wallet-linked reward settlement recorded.", "magnitude": "actual" },
+    { "ts": "2026-04-22T23:06:03.251Z", "type": "task_update", "label": "Task update", "detail": "Wallet-linked task submission/update recorded.", "magnitude": "actual" }
   ],
   "wallet": {
     "address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
-    "interactions_24h": 19,
+    "interactions_24h": 3,
     "recent": [
-      { "ts": "2026-04-25T16:42:00.000Z", "kind": "reward", "label": "Reward settlement", "value": "redacted PFT" },
-      { "ts": "2026-04-25T15:18:00.000Z", "kind": "memo", "label": "Task memo", "value": "redacted" },
-      { "ts": "2026-04-25T14:52:00.000Z", "kind": "linkage", "label": "Wallet-linked action", "value": "public ledger event" }
+      { "ts": "2026-04-25T17:04:30.936Z", "kind": "NFTokenMint", "label": "NFTokenMint", "value": "outbound" },
+      { "ts": "2026-04-25T16:40:30.930Z", "kind": "Payment", "label": "Payment", "value": "outbound" },
+      { "ts": "2026-04-25T08:07:20.278Z", "kind": "Payment", "label": "Payment", "value": "inbound" }
     ]
   },
   "notes": {
-    "source": "public redacted telemetry contract",
-    "contract": "Task Node should overwrite this JSON from a server-side job with already-redacted metrics."
+    "source": "Task Node database snapshot plus live public GitHub API in browser",
+    "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
+    "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
+    "x_followers": "Pending: no deployed public writer is currently populating X follower count.",
+    "github": "Commit activity is fetched live from public GitHub PushEvents and compare/commit endpoints; it includes pushed public branch activity exposed by GitHub, not private, local, or unpushed commits.",
+    "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot."
   }
 }

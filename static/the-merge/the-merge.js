@@ -28,9 +28,9 @@
     },
     metrics: {
       tasknode_dau: 0,
-      x_followers: 0,
+      x_followers: null,
       commits_today: 0,
-      loc_today: 0,
+      loc_today: null,
       task_requests_24h: 0,
       task_verifications_24h: 0,
       task_updates_24h: 0,
@@ -38,8 +38,8 @@
       rewards_delivered_24h: 0,
       pft_rewards_24h: 0,
       context_updates_24h: 0,
-      wallet_interactions_24h: 0,
-      merge_pressure: 50
+      wallet_interactions_24h: null,
+      merge_pressure: null
     },
     series: [],
     events: [],
@@ -128,7 +128,34 @@
   }
 
   function metric(data, key) {
-    return Number((data.metrics || {})[key] || 0);
+    var value = finiteMetric(data, key);
+    return value == null ? 0 : value;
+  }
+
+  function finiteMetric(data, key) {
+    var raw = (data.metrics || {})[key];
+    if (raw === null || raw === undefined || raw === "") return null;
+    var parsed = Number(raw);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function formatNullableMetric(data, key, formatter) {
+    var value = finiteMetric(data, key);
+    if (value == null) return "n/a";
+    return (formatter || formatNumber)(value);
+  }
+
+  function deriveMergePressure(data, locToday, commitsToday) {
+    var configured = finiteMetric(data, "merge_pressure");
+    if (configured != null) return Math.max(0, Math.min(100, configured));
+    var pressure = 24;
+    pressure += Math.min(28, metric(data, "tasknode_dau"));
+    pressure += Math.min(18, Number(locToday || 0) / 90);
+    pressure += Math.min(12, Number(commitsToday || 0) * 2);
+    pressure += Math.min(8, metric(data, "task_requests_24h") * 2);
+    pressure += Math.min(8, metric(data, "context_updates_24h") * 4);
+    pressure += Math.min(10, metric(data, "wallet_interactions_24h") * 2);
+    return Math.round(Math.max(0, Math.min(100, pressure)));
   }
 
   function cloneJson(value) {
@@ -358,9 +385,10 @@
     var data = state.telemetry || fallbackTelemetry;
     var profile = data.profile || {};
     var today = todayGithub();
-    var locToday = today ? today.loc : metric(data, "loc_today");
-    var commitsToday = today ? today.commits : metric(data, "commits_today");
+    var locToday = today ? today.loc : finiteMetric(data, "loc_today");
+    var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
     var dau = metric(data, "tasknode_dau");
+    var mergePressure = deriveMergePressure(data, locToday, commitsToday);
     var priorSeries = mergedSeries();
     var prev = priorSeries.length > 1 ? Number(priorSeries[priorSeries.length - 2].dau || 0) : 0;
     var delta = prev ? dau - prev : 0;
@@ -372,15 +400,15 @@
     text("refresh-rate", String(Number(data.refresh_seconds || refreshSeconds)) + "s refresh");
     text("metric-dau", formatNumber(dau));
     text("metric-dau-delta", (delta >= 0 ? "+" : "") + formatNumber(delta) + " vs prior");
-    text("metric-followers", formatCompact(metric(data, "x_followers")));
-    text("metric-loc", formatNumber(locToday));
-    text("metric-commits", formatNumber(commitsToday) + " commits today");
+    text("metric-followers", formatNullableMetric(data, "x_followers", formatCompact));
+    text("metric-loc", locToday == null ? "n/a" : formatNumber(locToday));
+    text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today");
     text("metric-tasks", formatNumber(metric(data, "tasks_completed_24h")));
     text("metric-rewards", formatNumber(metric(data, "rewards_delivered_24h")));
     text("metric-pft", formatCompact(metric(data, "pft_rewards_24h")) + " PFT");
     text("metric-context", formatNumber(metric(data, "context_updates_24h")));
-    text("merge-pressure", formatNumber(metric(data, "merge_pressure")));
-    text("wallet-count", formatNumber(metric(data, "wallet_interactions_24h")) + " / 24h");
+    text("merge-pressure", formatNumber(mergePressure));
+    text("wallet-count", finiteMetric(data, "wallet_interactions_24h") == null ? "pending" : formatNumber(metric(data, "wallet_interactions_24h")) + " / 24h");
   }
 
   function renderModalityBars() {
@@ -619,7 +647,10 @@
     var ctx = canvas.getContext("2d");
     function frame(now) {
       var data = state.telemetry || fallbackTelemetry;
-      var pressure = Math.max(0, Math.min(100, metric(data, "merge_pressure")));
+      var today = todayGithub();
+      var locToday = today ? today.loc : finiteMetric(data, "loc_today");
+      var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
+      var pressure = deriveMergePressure(data, locToday, commitsToday);
       var size = sizeCanvas(canvas);
       var ratio = size.ratio;
       var width = size.width;
