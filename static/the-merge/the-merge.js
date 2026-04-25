@@ -146,6 +146,101 @@
     return (formatter || formatNumber)(value);
   }
 
+  function asFiniteNumber(value) {
+    if (value === null || value === undefined || value === "") return null;
+    var parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function formatDecimal(value, maximumFractionDigits) {
+    var numeric = Number(value || 0);
+    if (!Number.isFinite(numeric)) return "0";
+    return new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: maximumFractionDigits == null ? 1 : maximumFractionDigits
+    }).format(numeric);
+  }
+
+  function formatAverageValue(value) {
+    var numeric = Number(value || 0);
+    if (!Number.isFinite(numeric)) return "0";
+    if (Math.abs(numeric) >= 1000) return formatCompact(numeric);
+    return formatDecimal(numeric, Number.isInteger(numeric) ? 0 : 1);
+  }
+
+  function overlayCurrentMetrics(series, data) {
+    var today = dateKey(new Date());
+    var rows = Array.isArray(series) ? series.slice() : [];
+    var row = rows.find(function (entry) { return entry && entry.date === today; });
+    if (!row) {
+      row = { date: today };
+      rows.push(row);
+    }
+    [
+      ["dau", "tasknode_dau"],
+      ["x_followers", "x_followers"],
+      ["tasks_completed", "tasks_completed_24h"],
+      ["rewards", "rewards_delivered_24h"],
+      ["pft_rewards", "pft_rewards_24h"],
+      ["context_updates", "context_updates_24h"],
+      ["wallet_interactions", "wallet_interactions_24h"]
+    ].forEach(function (mapping) {
+      var value = finiteMetric(data, mapping[1]);
+      if (value != null) row[mapping[0]] = value;
+    });
+    return rows.sort(function (left, right) {
+      return String(left.date || "").localeCompare(String(right.date || ""));
+    });
+  }
+
+  function summarizeWindow(rows, key, mode) {
+    if (!Array.isArray(rows) || !rows.length) return null;
+    if (mode === "point") {
+      for (var index = rows.length - 1; index >= 0; index -= 1) {
+        var pointValue = asFiniteNumber(rows[index] && rows[index][key]);
+        if (pointValue != null) return pointValue;
+      }
+      return null;
+    }
+    var total = rows.reduce(function (sum, row) {
+      var value = asFiniteNumber(row && row[key]);
+      return sum + (value == null ? 0 : value);
+    }, 0);
+    return mode === "average" ? total / rows.length : total;
+  }
+
+  function computeWeekOverWeek(series, key, mode) {
+    var rows = (Array.isArray(series) ? series : []).filter(function (row) { return row && row.date; }).slice(-14);
+    if (rows.length < 14) return null;
+    var previousRows = rows.slice(0, 7);
+    var currentRows = rows.slice(7);
+    var current = summarizeWindow(currentRows, key, mode);
+    var previous = summarizeWindow(previousRows, key, mode);
+    if (current == null || previous == null) return null;
+    return { current: current, previous: previous };
+  }
+
+  function formatGrowth(current, previous) {
+    if (previous === 0) {
+      if (current === 0) return "flat WoW";
+      return "new WoW";
+    }
+    var percent = ((current - previous) / Math.abs(previous)) * 100;
+    var absolute = Math.abs(percent);
+    var digits = absolute > 99 ? 0 : absolute >= 10 ? 1 : 1;
+    var formatted = new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: digits
+    }).format(percent);
+    return (percent > 0 ? "+" : "") + formatted + "% WoW";
+  }
+
+  function formatWoW(series, key, mode, label, formatter) {
+    var comparison = computeWeekOverWeek(series, key, mode);
+    if (!comparison) return "WoW history pending";
+    var growth = formatGrowth(comparison.current, comparison.previous);
+    if (!label) return growth;
+    return label + " " + (formatter || formatNumber)(comparison.current) + ", " + growth;
+  }
+
   function privateGithub(data) {
     return data && data.private_github && typeof data.private_github === "object"
       ? data.private_github
@@ -397,9 +492,10 @@
       seriesByDate[row.date].loc = Number(seriesByDate[row.date].loc || 0) + Number(row.loc || 0);
       seriesByDate[row.date].commits = Number(seriesByDate[row.date].commits || 0) + Number(row.commits || 0);
     });
-    return Object.keys(seriesByDate).sort().map(function (key) {
+    var rows = Object.keys(seriesByDate).sort().map(function (key) {
       return seriesByDate[key];
-    }).slice(-14);
+    });
+    return overlayCurrentMetrics(rows, data).slice(-14);
   }
 
   function todayGithub() {
@@ -426,14 +522,20 @@
     text("refresh-rate", String(Number(data.refresh_seconds || refreshSeconds)) + "s refresh");
     text("metric-dau", formatNumber(dau));
     text("metric-dau-delta", (delta >= 0 ? "+" : "") + formatNumber(delta) + " vs prior");
+    text("metric-dau-growth", formatWoW(priorSeries, "dau", "average", "7d avg", formatAverageValue));
     text("metric-followers", formatNullableMetric(data, "x_followers", formatCompact));
     text("metric-followers-source", data.x_profile && data.x_profile.source === "x_api_v2_users_by_username" ? "official X API" : "source pending");
+    text("metric-followers-growth", formatWoW(priorSeries, "x_followers", "point", "", formatCompact));
     text("metric-loc", locToday == null ? "n/a" : formatNumber(locToday));
     text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today incl redacted");
+    text("metric-loc-growth", formatWoW(priorSeries, "loc", "average", "7d avg", formatAverageValue));
     text("metric-tasks", formatNumber(metric(data, "tasks_completed_24h")));
+    text("metric-tasks-growth", formatWoW(priorSeries, "tasks_completed", "sum", "7d total", formatNumber));
     text("metric-rewards", formatNumber(metric(data, "rewards_delivered_24h")));
     text("metric-pft", formatCompact(metric(data, "pft_rewards_24h")) + " PFT");
+    text("metric-rewards-growth", formatWoW(priorSeries, "rewards", "sum", "7d total", formatNumber));
     text("metric-context", formatNumber(metric(data, "context_updates_24h")));
+    text("metric-context-growth", formatWoW(priorSeries, "context_updates", "sum", "7d total", formatNumber));
     text("merge-pressure", formatNumber(mergePressure));
     text("wallet-count", finiteMetric(data, "wallet_interactions_24h") == null ? "pending" : formatNumber(metric(data, "wallet_interactions_24h")) + " / 24h");
   }

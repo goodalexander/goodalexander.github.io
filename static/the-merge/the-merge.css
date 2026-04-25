@@ -266,12 +266,20 @@ h2 {
 }
 
 .metric-tile {
-  min-height: 138px;
+  min-height: 158px;
   padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 12px;
   border-top-width: 3px;
+}
+
+.metric-meta {
+  min-height: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .metric-tile span,
