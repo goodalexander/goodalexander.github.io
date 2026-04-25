@@ -596,12 +596,14 @@
     entries.sort(function (a, b) {
       return new Date(b.ts || 0).getTime() - new Date(a.ts || 0).getTime();
     });
-    text("event-count", formatNumber(entries.length) + " subject signals");
+    text("event-count", formatNumber(entries.length) + " clear updates");
     byId("event-feed").innerHTML = entries.slice(0, 18).map(function (entry) {
       var tone = eventTone(entry.type);
-      var signal = entry.signal ? '<span class="subject-signal">' + escapeHtml(redactText(entry.signal)) + "</span>" : "";
-      var magnitude = entry.magnitude ? '<span class="subject-model">' + escapeHtml(redactText(entry.magnitude)) + "</span>" : "";
-      var model = subjectFeed.model ? '<span class="subject-model">' + escapeHtml(redactText(subjectFeed.model)) + "</span>" : "";
+      var signal = entry.signal ? '<span class="subject-signal">category: ' + escapeHtml(redactText(entry.signal)) + "</span>" : "";
+      var magnitudeText = String(entry.magnitude || "").trim();
+      var showMagnitude = magnitudeText && !/^(actual|recorded|completed)$/i.test(magnitudeText) && !/^llm:/i.test(magnitudeText);
+      var magnitudeLabel = showMagnitude ? magnitudeText : "";
+      var magnitude = magnitudeLabel ? '<span class="subject-model">' + escapeHtml(redactText(magnitudeLabel)) + "</span>" : "";
       return [
         '<article class="event-item subject-event" style="border-left:3px solid ' + tone + '">',
         '<span class="subject-node" style="color:' + tone + '"></span>',
@@ -611,7 +613,7 @@
         '<span class="event-time">' + escapeHtml(formatTime(entry.ts)) + "</span>",
         "</div>",
         '<p class="event-detail">' + escapeHtml(redactText(entry.detail || "")) + "</p>",
-        '<div class="subject-meta">' + signal + magnitude + model + "</div>",
+        '<div class="subject-meta">' + signal + magnitude + "</div>",
         "</div>",
         "</article>"
       ].join("");
