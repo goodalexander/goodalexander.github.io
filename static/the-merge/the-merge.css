@@ -283,9 +283,10 @@ h2 {
 }
 
 .metric-tile strong {
-  font-size: clamp(30px, 4vw, 54px);
+  font-size: 44px;
   line-height: 1;
   font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 .accent-cyan { border-top-color: var(--cyan); }
