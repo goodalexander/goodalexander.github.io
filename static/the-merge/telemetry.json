@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T19:00:58.134Z",
+  "generated_at": "2026-04-25T19:22:22.321Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -21,7 +21,7 @@
   ],
   "metrics": {
     "tasknode_dau": 26,
-    "x_followers": 121470,
+    "x_followers": 121483,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 1,
@@ -274,7 +274,7 @@
     {
       "date": "2026-04-25",
       "dau": 19,
-      "x_followers": 121470,
+      "x_followers": 121483,
       "loc": null,
       "task_requests": 0,
       "task_verifications": 0,
@@ -383,7 +383,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T19:00:58.134Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T19:22:22.321Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths."
@@ -408,10 +408,10 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-04-25T19:00:58.134Z",
-    "followers_count": 121470,
+    "fetched_at": "2026-04-25T19:22:22.321Z",
+    "followers_count": 121483,
     "following_count": 1286,
-    "posts_count": 15258,
+    "posts_count": 15260,
     "verified": true,
     "verified_type": "blue",
     "account_created_at": "2009-02-27T05:18:52.000Z"
