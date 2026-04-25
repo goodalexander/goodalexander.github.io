@@ -192,6 +192,20 @@ function toFiniteNumberOrNull(value) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+function normalizePublicImageUrl(value) {
+  if (typeof value !== 'string') {
+    return null;
+  }
+  const trimmed = value.trim();
+  if (!trimmed || trimmed.startsWith('data:')) {
+    return null;
+  }
+  if (trimmed.startsWith('https://') || trimmed.startsWith('/')) {
+    return trimmed;
+  }
+  return null;
+}
+
 function parsePositiveInteger(value, fallback) {
   const parsed = Number.parseInt(String(value || ''), 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
@@ -340,6 +354,25 @@ function mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry) {
       telemetry.metrics[key] = value;
     }
   }
+  const taskNodeProfile = taskNodeTelemetry.profile && typeof taskNodeTelemetry.profile === 'object'
+    ? taskNodeTelemetry.profile
+    : {};
+  const nftImage = normalizePublicImageUrl(taskNodeProfile.nft_image || taskNodeProfile.nft_image_url);
+  if (nftImage) {
+    telemetry.profile = telemetry.profile || {};
+    telemetry.profile.nft_image = nftImage;
+    const nftThumbnail = normalizePublicImageUrl(taskNodeProfile.nft_thumbnail || taskNodeProfile.nft_thumbnail_url);
+    if (nftThumbnail) {
+      telemetry.profile.nft_thumbnail = nftThumbnail;
+    }
+    if (typeof taskNodeProfile.nft_display_name === 'string' && taskNodeProfile.nft_display_name.trim()) {
+      telemetry.profile.nft_display_name = taskNodeProfile.nft_display_name.trim();
+    }
+    if (typeof taskNodeProfile.nft_source === 'string' && taskNodeProfile.nft_source.trim()) {
+      telemetry.profile.nft_source = taskNodeProfile.nft_source.trim();
+    }
+    telemetry.profile.nft_synced_at = taskNodeTelemetry.generated_at || new Date().toISOString();
+  }
   telemetry.tasknode_telemetry = {
     source: 'tasknode_public_merge_telemetry',
     fetched_at: taskNodeTelemetry.generated_at || new Date().toISOString(),
@@ -347,11 +380,11 @@ function mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry) {
   };
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.tasknode_public = (
-    'Task Node task, reward, context, wallet, and DAU metrics are fetched from '
+    'Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from '
     + 'the public redacted /api/public/merge-telemetry endpoint before history snapshots are written.'
   );
   telemetry.notes.contract = (
-    'The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry, '
+    'The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, '
     + 'then publishes this static JSON for the dashboard.'
   );
 }
@@ -513,6 +546,7 @@ async function main() {
     following_count: followingCount,
     posts_count: postsCount,
     tasknode_metrics_source: telemetry.tasknode_telemetry?.source || null,
+    nft_image_source: telemetry.profile?.nft_source || null,
     fetched_at: fetchedAt,
     telemetry_path: telemetryPath,
     history_path: historyPath,
