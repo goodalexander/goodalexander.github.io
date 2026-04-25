@@ -23,7 +23,7 @@
     profile: {
       handle: "goodalexander",
       display_name: "goodalexander",
-      nft_image: "/the-merge/profile-nft.png",
+      nft_image: "/the-merge/profile-nft-full.jpg",
       main_wallet: "redacted"
     },
     metrics: {
@@ -43,6 +43,7 @@
     },
     series: [],
     events: [],
+    private_github: null,
     wallet: { recent: [] },
     redactions: []
   };
@@ -143,6 +144,24 @@
     var value = finiteMetric(data, key);
     if (value == null) return "n/a";
     return (formatter || formatNumber)(value);
+  }
+
+  function privateGithub(data) {
+    return data && data.private_github && typeof data.private_github === "object"
+      ? data.private_github
+      : {};
+  }
+
+  function privateGithubMetric(data, key) {
+    var raw = privateGithub(data)[key];
+    if (raw === null || raw === undefined || raw === "") return 0;
+    var parsed = Number(raw);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function todayVelocity() {
+    var today = dateKey(new Date());
+    return mergedSeries().find(function (row) { return row.date === today; }) || null;
   }
 
   function deriveMergePressure(data, locToday, commitsToday) {
@@ -364,12 +383,19 @@
     var seriesByDate = {};
     (Array.isArray(data.series) ? data.series : []).forEach(function (row) {
       if (!row || !row.date) return;
-      seriesByDate[row.date] = Object.assign({}, row);
+      var next = Object.assign({}, row);
+      var privateLoc = Number(next.github_private_loc || 0);
+      var privateCommits = Number(next.github_private_commits || 0);
+      next.loc = Number(next.loc || 0) + privateLoc;
+      next.commits = Number(next.commits || 0) + privateCommits;
+      seriesByDate[row.date] = next;
     });
     state.github.series.forEach(function (row) {
       if (!seriesByDate[row.date]) seriesByDate[row.date] = { date: row.date };
-      seriesByDate[row.date].loc = row.loc;
-      seriesByDate[row.date].commits = row.commits;
+      seriesByDate[row.date].github_public_loc = row.loc;
+      seriesByDate[row.date].github_public_commits = row.commits;
+      seriesByDate[row.date].loc = Number(seriesByDate[row.date].loc || 0) + Number(row.loc || 0);
+      seriesByDate[row.date].commits = Number(seriesByDate[row.date].commits || 0) + Number(row.commits || 0);
     });
     return Object.keys(seriesByDate).sort().map(function (key) {
       return seriesByDate[key];
@@ -384,7 +410,7 @@
   function renderMetrics() {
     var data = state.telemetry || fallbackTelemetry;
     var profile = data.profile || {};
-    var today = todayGithub();
+    var today = todayVelocity();
     var locToday = today ? today.loc : finiteMetric(data, "loc_today");
     var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
     var dau = metric(data, "tasknode_dau");
@@ -402,7 +428,7 @@
     text("metric-dau-delta", (delta >= 0 ? "+" : "") + formatNumber(delta) + " vs prior");
     text("metric-followers", formatNullableMetric(data, "x_followers", formatCompact));
     text("metric-loc", locToday == null ? "n/a" : formatNumber(locToday));
-    text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today");
+    text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today incl redacted");
     text("metric-tasks", formatNumber(metric(data, "tasks_completed_24h")));
     text("metric-rewards", formatNumber(metric(data, "rewards_delivered_24h")));
     text("metric-pft", formatCompact(metric(data, "pft_rewards_24h")) + " PFT");
@@ -443,7 +469,8 @@
       reward_delivered: "var(--gold)",
       context_update: "var(--red)",
       wallet_interaction: "var(--violet)",
-      github_commit: "var(--green)"
+      github_commit: "var(--green)",
+      github_private: "var(--violet)"
     };
     return tones[type] || "var(--cyan)";
   }
@@ -451,6 +478,17 @@
   function renderEvents() {
     var data = state.telemetry || fallbackTelemetry;
     var events = (Array.isArray(data.events) ? data.events : []).slice();
+    var privateStats = privateGithub(data);
+    var hasPrivateEvent = events.some(function (event) { return event && event.type === "github_private"; });
+    if (!hasPrivateEvent && (privateGithubMetric(data, "private_commits_today") || privateGithubMetric(data, "private_loc_today"))) {
+      events.push({
+        ts: privateStats.generated_at || data.generated_at,
+        type: "github_private",
+        label: "Private GitHub aggregate",
+        detail: "Authenticated private GitHub activity included as redacted aggregate.",
+        magnitude: formatNumber(privateGithubMetric(data, "private_commits_today")) + " commits / " + formatNumber(privateGithubMetric(data, "private_loc_today")) + " LOC"
+      });
+    }
     state.github.commits.slice(0, 6).forEach(function (commit) {
       events.push({
         ts: commit.ts,
@@ -482,11 +520,30 @@
   function renderGithub() {
     var commits = state.github.commits.slice(0, 10);
     var target = byId("commit-list");
-    if (!commits.length) {
+    var data = state.telemetry || fallbackTelemetry;
+    var privateStats = privateGithub(data);
+    var hasPrivateStats = Boolean(
+      privateGithubMetric(data, "private_author_commits_in_window")
+      || privateGithubMetric(data, "private_author_loc_in_window")
+      || privateGithubMetric(data, "private_commits_today")
+      || privateGithubMetric(data, "private_loc_today")
+    );
+    if (!commits.length && !hasPrivateStats) {
       target.innerHTML = '<article class="commit-item"><p class="commit-title">Waiting for public GitHub pulse.</p><span class="commit-meta">' + escapeHtml(state.github.error || "no commits in current window") + "</span></article>";
       return;
     }
-    target.innerHTML = commits.map(function (commit) {
+    var privateHtml = hasPrivateStats ? [
+      '<article class="commit-item">',
+      '<div class="commit-top">',
+      '<strong>private GitHub aggregate</strong>',
+      '<span class="commit-meta">' + escapeHtml(formatTime(privateStats.generated_at || data.generated_at)) + "</span>",
+      "</div>",
+      '<p class="commit-title">Private repo names and commit messages withheld.</p>',
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "private_commits_today")) + " commits today / +" + formatNumber(privateGithubMetric(data, "private_additions_today")) + " / -" + formatNumber(privateGithubMetric(data, "private_deletions_today")) + " / " + formatNumber(privateGithubMetric(data, "private_loc_today")) + " LOC today</span>",
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "private_author_commits_in_window")) + " commits / " + formatNumber(privateGithubMetric(data, "private_author_loc_in_window")) + " LOC over " + formatNumber(privateGithubMetric(data, "window_days") || 14) + "d</span>",
+      "</article>"
+    ].join("") : "";
+    var publicHtml = commits.map(function (commit) {
       var loc = Number(commit.total || 0);
       return [
         '<article class="commit-item">',
@@ -499,6 +556,7 @@
         "</article>"
       ].join("");
     }).join("");
+    target.innerHTML = privateHtml + publicHtml;
   }
 
   function renderWallet() {
@@ -647,7 +705,7 @@
     var ctx = canvas.getContext("2d");
     function frame(now) {
       var data = state.telemetry || fallbackTelemetry;
-      var today = todayGithub();
+      var today = todayVelocity();
       var locToday = today ? today.loc : finiteMetric(data, "loc_today");
       var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
       var pressure = deriveMergePressure(data, locToday, commitsToday);
