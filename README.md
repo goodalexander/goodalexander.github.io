@@ -5,7 +5,8 @@ test ghpages round 4
 
 `scripts/update-the-merge-x-followers.mjs` refreshes the follower count in
 `static/the-merge/telemetry.json` from X API v2, pulls redacted Task Node metrics
-from the public merge telemetry endpoint, and upserts a daily snapshot in
+and the current wallet NFT profile image from the public merge telemetry endpoint,
+and upserts a daily snapshot in
 `static/the-merge/telemetry-history.json`:
 
 ```bash
@@ -27,8 +28,8 @@ request with OAuth 1.0a user-context credentials. Both paths call:
 The scheduled GitHub Actions workflow `.github/workflows/update-the-merge-telemetry.yml`
 runs every 30 minutes, commits the refreshed telemetry snapshot, and deploys
 GitHub Pages. Configure the needed X credentials as repository Actions secrets.
-Task Node rewards, task counts, context updates, DAU, and wallet-interaction
-counts come from:
+Task Node rewards, task counts, context updates, DAU, wallet-interaction counts,
+and the profile NFT image come from:
 
 `https://tasknode.postfiat.org/api/public/merge-telemetry?wallet=<wallet>`
 
