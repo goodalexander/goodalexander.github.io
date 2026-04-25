@@ -1,46 +1,14 @@
 {
+  "schema_version": 1,
   "generated_at": "2026-04-25T19:34:03.746Z",
-  "refresh_seconds": 30,
-  "profile": {
-    "handle": "goodalexander",
-    "display_name": "goodalexander",
-    "nft_image": "/the-merge/profile-nft-full.jpg?v=private-v1",
-    "nft_display_name": "Logit Stream Purifier",
-    "nft_source": "gallery_nft",
-    "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
-    "wallet_label": "primary operator wallet"
-  },
-  "redactions": [
-    "counterparty",
-    "partner",
-    "client",
-    "seed",
-    "private key",
-    "mnemonic",
-    "exact alpha"
-  ],
-  "metrics": {
-    "tasknode_dau": 26,
-    "x_followers": 121490,
-    "commits_today": null,
-    "loc_today": null,
-    "task_requests_24h": 1,
-    "task_verifications_24h": 0,
-    "task_updates_24h": 0,
-    "tasks_completed_24h": 0,
-    "rewards_delivered_24h": 0,
-    "pft_rewards_24h": 0,
-    "context_updates_24h": 1,
-    "wallet_interactions_24h": 3,
-    "merge_pressure": null,
-    "tasks_verified_all_time": 82,
-    "rewards_paid_all_time": 82
-  },
-  "series": [
+  "retention_days": 365,
+  "snapshots": [
     {
       "date": "2026-04-12",
       "dau": 25,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 4,
@@ -60,6 +28,8 @@
       "date": "2026-04-13",
       "dau": 29,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 2,
@@ -79,6 +49,8 @@
       "date": "2026-04-14",
       "dau": 27,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -98,6 +70,8 @@
       "date": "2026-04-15",
       "dau": 26,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 2,
@@ -117,6 +91,8 @@
       "date": "2026-04-16",
       "dau": 27,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -136,6 +112,8 @@
       "date": "2026-04-17",
       "dau": 26,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -155,6 +133,8 @@
       "date": "2026-04-18",
       "dau": 32,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -174,6 +154,8 @@
       "date": "2026-04-19",
       "dau": 21,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -193,6 +175,8 @@
       "date": "2026-04-20",
       "dau": 29,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -212,6 +196,8 @@
       "date": "2026-04-21",
       "dau": 27,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -231,6 +217,8 @@
       "date": "2026-04-22",
       "dau": 28,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 4,
@@ -250,6 +238,8 @@
       "date": "2026-04-23",
       "dau": 25,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -269,6 +259,8 @@
       "date": "2026-04-24",
       "dau": 29,
       "x_followers": null,
+      "x_following": null,
+      "x_posts": null,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -288,6 +280,8 @@
       "date": "2026-04-25",
       "dau": 26,
       "x_followers": 121490,
+      "x_following": 1286,
+      "x_posts": 15260,
       "loc": null,
       "commits": null,
       "task_requests": 1,
@@ -301,141 +295,13 @@
       "github_private_commits": 4,
       "github_private_loc": 9534,
       "github_private_additions": 9432,
-      "github_private_deletions": 102
-    }
-  ],
-  "events": [
-    {
-      "ts": "2026-04-25T18:00:05.086Z",
-      "type": "github_private",
-      "label": "Private GitHub aggregate",
-      "detail": "Authenticated private GitHub activity included as redacted aggregate.",
-      "magnitude": "4 commits / 9534 LOC today"
-    },
-    {
-      "ts": "2026-04-25T17:04:30.936Z",
-      "type": "wallet_interaction",
-      "label": "Wallet interaction",
-      "detail": "Primary wallet emitted an NFTokenMint transaction.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-25T16:40:30.930Z",
-      "type": "wallet_interaction",
-      "label": "Wallet interaction",
-      "detail": "Primary wallet emitted an outbound Payment transaction.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-25T16:40:12.053Z",
-      "type": "context_update",
-      "label": "Context document updated",
-      "detail": "Wallet-linked context revision recorded.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-25T08:07:20.278Z",
-      "type": "wallet_interaction",
-      "label": "Wallet interaction",
-      "detail": "Primary wallet received an inbound Payment transaction.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-24T20:08:15.420Z",
-      "type": "task_request",
-      "label": "Task request",
-      "detail": "Wallet-linked task request recorded.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-22T23:14:26.534Z",
-      "type": "task_verification",
-      "label": "Task verification",
-      "detail": "Wallet-linked task verification recorded.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-22T23:14:26.520Z",
-      "type": "reward_delivered",
-      "label": "Reward delivered",
-      "detail": "Wallet-linked reward settlement recorded.",
-      "magnitude": "actual"
-    },
-    {
-      "ts": "2026-04-22T23:06:03.251Z",
-      "type": "task_update",
-      "label": "Task update",
-      "detail": "Wallet-linked task submission/update recorded.",
-      "magnitude": "actual"
-    }
-  ],
-  "wallet": {
-    "address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
-    "interactions_24h": 3,
-    "recent": [
-      {
-        "ts": "2026-04-25T17:04:30.936Z",
-        "kind": "NFTokenMint",
-        "label": "NFTokenMint",
-        "value": "outbound"
-      },
-      {
-        "ts": "2026-04-25T16:40:30.930Z",
-        "kind": "Payment",
-        "label": "Payment",
-        "value": "outbound"
-      },
-      {
-        "ts": "2026-04-25T08:07:20.278Z",
-        "kind": "Payment",
-        "label": "Payment",
-        "value": "inbound"
+      "github_private_deletions": 102,
+      "updated_at": "2026-04-25T19:34:03.746Z",
+      "sources": {
+        "x_followers": "x_api_v2_users_by_username",
+        "current_metrics": "telemetry_snapshot",
+        "github_private": "redacted_private_github_snapshot"
       }
-    ]
-  },
-  "notes": {
-    "source": "Task Node database snapshot plus live public GitHub API in browser",
-    "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
-    "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T19:34:03.746Z.",
-    "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
-    "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot.",
-    "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
-    "history": "Daily telemetry snapshots are retained in /the-merge/telemetry-history.json; telemetry.series is derived from that cache."
-  },
-  "private_github": {
-    "generated_at": "2026-04-25T18:00:05.086Z",
-    "window_days": 14,
-    "scanned_repos": 59,
-    "scanned_private_repos": 34,
-    "scanned_branches": 223,
-    "private_author_commits_in_window": 33,
-    "private_author_loc_in_window": 23149,
-    "private_author_additions_in_window": 22536,
-    "private_author_deletions_in_window": 613,
-    "private_commits_today": 4,
-    "private_loc_today": 9534,
-    "private_additions_today": 9432,
-    "private_deletions_today": 102,
-    "redaction": "Private repo names, branch names, commit SHAs, commit messages, and file paths are withheld."
-  },
-  "x_profile": {
-    "source": "x_api_v2_users_by_username",
-    "username": "goodalexander",
-    "user_id": "22110973",
-    "fetched_at": "2026-04-25T19:34:03.746Z",
-    "followers_count": 121490,
-    "following_count": 1286,
-    "posts_count": 15260,
-    "verified": true,
-    "verified_type": "blue",
-    "account_created_at": "2009-02-27T05:18:52.000Z"
-  },
-  "history": {
-    "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-25T19:34:03.746Z",
-    "retention_days": 365,
-    "snapshots": 14,
-    "current_date": "2026-04-25"
-  }
+    }
+  ]
 }
