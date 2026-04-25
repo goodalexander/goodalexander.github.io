@@ -401,7 +401,8 @@
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
-    "history": "Daily telemetry snapshots are retained in /the-merge/telemetry-history.json; telemetry.series is derived from that cache."
+    "history": "Daily telemetry snapshots are retained in /the-merge/telemetry-history.json; telemetry.series is derived from that cache.",
+    "subject_feed": "SPRS DeepSeek V4 Flash generated redacted public subject-log entries from private Task Node activity."
   },
   "private_github": {
     "generated_at": "2026-04-25T18:00:05.086Z",
@@ -437,5 +438,158 @@
     "retention_days": 365,
     "snapshots": 14,
     "current_date": "2026-04-25"
+  },
+  "subject_feed": {
+    "generated_at": "2026-04-25T20:26:20.329804Z",
+    "source": "sprs_deepseek_subject_feed",
+    "model": "deepseek-v4-flash",
+    "fallback": false,
+    "redaction": "Generated from private Task Node and telemetry actions, then abstracted one level up. Raw task titles, exact private implementation details, wallet identifiers, hashes, CIDs, UUIDs, counterparties, and file paths are withheld.",
+    "entries": [
+      {
+        "ts": "2026-04-25T18:00:05.086Z",
+        "type": "github_private",
+        "label": "System velocity conversion",
+        "detail": "The Subject converted private implementation work into deployable system velocity.",
+        "signal": "high velocity",
+        "magnitude": "4 commits / 9534 LOC"
+      },
+      {
+        "ts": "2026-04-25T17:04:30.936Z",
+        "type": "wallet_interaction",
+        "label": "Token minting event",
+        "detail": "The Subject's primary wallet emitted a non-fungible token mint transaction.",
+        "signal": "on-chain action",
+        "magnitude": "actual"
+      },
+      {
+        "ts": "2026-04-25T16:40:30.930Z",
+        "type": "wallet_interaction",
+        "label": "Ledger surface moved",
+        "detail": "The Subject produced a live wallet trace connected to the operating system around the network.",
+        "signal": "ledger",
+        "magnitude": "actual"
+      },
+      {
+        "ts": "2026-04-25T16:40:12.053Z",
+        "type": "context_update",
+        "label": "Memory layer update",
+        "detail": "The Subject updated the memory layer toward growth, execution priority, or strategic self-modeling.",
+        "signal": "context refresh",
+        "magnitude": "recorded"
+      },
+      {
+        "ts": "2026-04-25T16:31:46.499227+00:00",
+        "type": "context_rewrite",
+        "label": "Memory layer shifted",
+        "detail": "The Subject updated the context layer that steers future model behavior and strategic prioritization.",
+        "signal": "memory",
+        "magnitude": "completed"
+      },
+      {
+        "ts": "2026-04-25T16:22:25.459685+00:00",
+        "type": "chat_interaction",
+        "label": "Memory layer shifted",
+        "detail": "The Subject updated the context layer that steers future model behavior and strategic prioritization.",
+        "signal": "memory",
+        "magnitude": "llm:context_full_rewrite"
+      },
+      {
+        "ts": "2026-04-25T08:07:20.278Z",
+        "type": "wallet_interaction",
+        "label": "Ledger surface moved",
+        "detail": "The Subject produced a live wallet trace connected to the operating system around the network.",
+        "signal": "ledger",
+        "magnitude": "actual"
+      },
+      {
+        "ts": "2026-04-24T20:08:15.420522+00:00",
+        "type": "task_request",
+        "label": "Task vector formed",
+        "detail": "The Subject is working around trading IP, backtesting discipline, and information monetization.",
+        "signal": "alpha",
+        "magnitude": "2600"
+      },
+      {
+        "ts": "2026-04-22T23:14:26.534721+00:00",
+        "type": "task_verification",
+        "label": "Work cleared",
+        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
+        "signal": "proof",
+        "magnitude": "0"
+      },
+      {
+        "ts": "2026-04-22T23:06:03.251895+00:00",
+        "type": "task_update",
+        "label": "Work cleared",
+        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
+        "signal": "proof",
+        "magnitude": "2200"
+      },
+      {
+        "ts": "2026-04-22T23:02:06.35517+00:00",
+        "type": "task_request",
+        "label": "Work cleared",
+        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
+        "signal": "proof",
+        "magnitude": "2200"
+      },
+      {
+        "ts": "2026-04-22T17:32:10.806Z",
+        "type": "task_request",
+        "label": "Model evaluation cancellation",
+        "detail": "The Subject cancelled a blind model comparison task due to overlap.",
+        "signal": "scope consolidation",
+        "magnitude": "3200"
+      },
+      {
+        "ts": "2026-04-22T16:47:24.943404+00:00",
+        "type": "task_request",
+        "label": "Task vector formed",
+        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "signal": "task",
+        "magnitude": "2000"
+      },
+      {
+        "ts": "2026-04-22T16:42:47.950856+00:00",
+        "type": "task_request",
+        "label": "Task vector formed",
+        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "signal": "task",
+        "magnitude": "1500"
+      },
+      {
+        "ts": "2026-04-20T15:37:06.771Z",
+        "type": "task_verification",
+        "label": "Investor memo approval",
+        "detail": "The Subject's investor update memo passed verification with high marks.",
+        "signal": "narrative readiness",
+        "magnitude": "2100"
+      },
+      {
+        "ts": "2026-04-20T13:56:30.61405+00:00",
+        "type": "task_request",
+        "label": "Task vector formed",
+        "detail": "The Subject is working around trading IP, backtesting discipline, and information monetization.",
+        "signal": "alpha",
+        "magnitude": "2100"
+      },
+      {
+        "ts": "2026-04-19T17:16:18.676553+00:00",
+        "type": "task_verification",
+        "label": "Work cleared",
+        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
+        "signal": "proof",
+        "magnitude": "10000"
+      },
+      {
+        "ts": "2026-04-19T17:07:52.588234+00:00",
+        "type": "chat_interaction",
+        "label": "Task vector formed",
+        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "signal": "task",
+        "magnitude": "task_alpha"
+      }
+    ]
   }
 }

@@ -580,15 +580,48 @@
       task_update: "var(--steel)",
       reward_delivered: "var(--gold)",
       context_update: "var(--red)",
+      context_rewrite: "var(--red)",
       wallet_interaction: "var(--violet)",
       github_commit: "var(--green)",
-      github_private: "var(--violet)"
+      github_private: "var(--violet)",
+      chat_interaction: "var(--cyan)"
     };
     return tones[type] || "var(--cyan)";
   }
 
+  function renderSubjectFeed(data) {
+    var subjectFeed = data && data.subject_feed && typeof data.subject_feed === "object" ? data.subject_feed : null;
+    var entries = subjectFeed && Array.isArray(subjectFeed.entries) ? subjectFeed.entries.slice() : [];
+    if (!entries.length) return false;
+    entries.sort(function (a, b) {
+      return new Date(b.ts || 0).getTime() - new Date(a.ts || 0).getTime();
+    });
+    text("event-count", formatNumber(entries.length) + " subject signals");
+    byId("event-feed").innerHTML = entries.slice(0, 18).map(function (entry) {
+      var tone = eventTone(entry.type);
+      var signal = entry.signal ? '<span class="subject-signal">' + escapeHtml(redactText(entry.signal)) + "</span>" : "";
+      var magnitude = entry.magnitude ? '<span class="subject-model">' + escapeHtml(redactText(entry.magnitude)) + "</span>" : "";
+      var model = subjectFeed.model ? '<span class="subject-model">' + escapeHtml(redactText(subjectFeed.model)) + "</span>" : "";
+      return [
+        '<article class="event-item subject-event" style="border-left:3px solid ' + tone + '">',
+        '<span class="subject-node" style="color:' + tone + '"></span>',
+        '<div class="subject-body">',
+        '<div class="event-top">',
+        '<span class="event-type" style="color:' + tone + '">' + escapeHtml(redactText(entry.label || entry.type || "subject signal")) + "</span>",
+        '<span class="event-time">' + escapeHtml(formatTime(entry.ts)) + "</span>",
+        "</div>",
+        '<p class="event-detail">' + escapeHtml(redactText(entry.detail || "")) + "</p>",
+        '<div class="subject-meta">' + signal + magnitude + model + "</div>",
+        "</div>",
+        "</article>"
+      ].join("");
+    }).join("");
+    return true;
+  }
+
   function renderEvents() {
     var data = state.telemetry || fallbackTelemetry;
+    if (renderSubjectFeed(data)) return;
     var events = (Array.isArray(data.events) ? data.events : []).slice();
     var privateStats = privateGithub(data);
     var hasPrivateEvent = events.some(function (event) { return event && event.type === "github_private"; });
