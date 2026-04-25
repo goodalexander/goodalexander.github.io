@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T18:00:05.086Z",
+  "generated_at": "2026-04-25T18:22:05.954Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -21,7 +21,7 @@
   ],
   "metrics": {
     "tasknode_dau": 26,
-    "x_followers": null,
+    "x_followers": 106929,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 1,
@@ -383,7 +383,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Pending: no deployed public writer is currently populating X follower count.",
+    "x_followers": "Public fallback from Mixerno on 2026-04-25: 106,929 followers. pftasks user_provider_metrics also has an X OAuth snapshot of 111,173 followers fetched on 2026-01-26.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "A private Task Node job should overwrite this JSON with a fresh redacted snapshot.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths."
