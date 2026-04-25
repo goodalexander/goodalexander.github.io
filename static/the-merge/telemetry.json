@@ -440,7 +440,7 @@
     "current_date": "2026-04-25"
   },
   "subject_feed": {
-    "generated_at": "2026-04-25T20:26:20.329804Z",
+    "generated_at": "2026-04-25T20:57:20.960794Z",
     "source": "sprs_deepseek_subject_feed",
     "model": "deepseek-v4-flash",
     "fallback": false,
@@ -449,146 +449,130 @@
       {
         "ts": "2026-04-25T18:00:05.086Z",
         "type": "github_private",
-        "label": "System velocity conversion",
-        "detail": "The Subject converted private implementation work into deployable system velocity.",
-        "signal": "high velocity",
-        "magnitude": "4 commits / 9534 LOC"
+        "label": "Private code work",
+        "detail": "You wrote private code across multiple repos; commit count and lines changed are public.",
+        "signal": "code",
+        "magnitude": "4 commits / 9534 LOC today"
       },
       {
         "ts": "2026-04-25T17:04:30.936Z",
         "type": "wallet_interaction",
-        "label": "Token minting event",
-        "detail": "The Subject's primary wallet emitted a non-fungible token mint transaction.",
-        "signal": "on-chain action",
-        "magnitude": "actual"
+        "label": "Minted NFT",
+        "detail": "You minted an NFT from your primary wallet.",
+        "signal": "NFT",
+        "magnitude": ""
       },
       {
         "ts": "2026-04-25T16:40:30.930Z",
         "type": "wallet_interaction",
-        "label": "Ledger surface moved",
-        "detail": "The Subject produced a live wallet trace connected to the operating system around the network.",
-        "signal": "ledger",
-        "magnitude": "actual"
+        "label": "Sent wallet payment",
+        "detail": "You sent a payment from your primary wallet; details are hidden.",
+        "signal": "payment",
+        "magnitude": ""
       },
       {
         "ts": "2026-04-25T16:40:12.053Z",
         "type": "context_update",
-        "label": "Memory layer update",
-        "detail": "The Subject updated the memory layer toward growth, execution priority, or strategic self-modeling.",
-        "signal": "context refresh",
-        "magnitude": "recorded"
+        "label": "Updated context doc",
+        "detail": "You updated the context document that tells the AI your goals and workflows.",
+        "signal": "context",
+        "magnitude": ""
       },
       {
-        "ts": "2026-04-25T16:31:46.499227+00:00",
+        "ts": "2026-04-25T16:31:46.499Z",
         "type": "context_rewrite",
-        "label": "Memory layer shifted",
-        "detail": "The Subject updated the context layer that steers future model behavior and strategic prioritization.",
-        "signal": "memory",
-        "magnitude": "completed"
-      },
-      {
-        "ts": "2026-04-25T16:22:25.459685+00:00",
-        "type": "chat_interaction",
-        "label": "Memory layer shifted",
-        "detail": "The Subject updated the context layer that steers future model behavior and strategic prioritization.",
-        "signal": "memory",
-        "magnitude": "llm:context_full_rewrite"
+        "label": "Ran context rewrite",
+        "detail": "You ran a full rewrite of your context document to incorporate recent strategy changes.",
+        "signal": "context",
+        "magnitude": "ultra heavy"
       },
       {
         "ts": "2026-04-25T08:07:20.278Z",
         "type": "wallet_interaction",
-        "label": "Ledger surface moved",
-        "detail": "The Subject produced a live wallet trace connected to the operating system around the network.",
-        "signal": "ledger",
-        "magnitude": "actual"
+        "label": "Received wallet payment",
+        "detail": "You received a payment into your primary wallet; details are hidden.",
+        "signal": "payment",
+        "magnitude": ""
       },
       {
         "ts": "2026-04-24T20:08:15.420522+00:00",
         "type": "task_request",
-        "label": "Task vector formed",
-        "detail": "The Subject is working around trading IP, backtesting discipline, and information monetization.",
-        "signal": "alpha",
-        "magnitude": "2600"
+        "label": "Declined trading task",
+        "detail": "You declined a trading/backtesting task; exact private task details are hidden.",
+        "signal": "trading",
+        "magnitude": "refused"
       },
       {
-        "ts": "2026-04-22T23:14:26.534721+00:00",
+        "ts": "2026-04-22T23:14:26.534Z",
         "type": "task_verification",
-        "label": "Work cleared",
-        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
-        "signal": "proof",
-        "magnitude": "0"
+        "label": "Verified task",
+        "detail": "You verified a collaboration QA task but found the submission failed to meet requirements.",
+        "signal": "QA",
+        "magnitude": "no reward"
       },
       {
-        "ts": "2026-04-22T23:06:03.251895+00:00",
+        "ts": "2026-04-22T23:06:03.251Z",
         "type": "task_update",
-        "label": "Work cleared",
-        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
-        "signal": "proof",
-        "magnitude": "2200"
+        "label": "Submitted QA task",
+        "detail": "You submitted a completed collaboration QA task for reward.",
+        "signal": "QA",
+        "magnitude": "submitted"
       },
       {
         "ts": "2026-04-22T23:02:06.35517+00:00",
         "type": "task_request",
-        "label": "Work cleared",
-        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
-        "signal": "proof",
-        "magnitude": "2200"
+        "label": "Requested task",
+        "detail": "You created a Task Node work item; the public feed keeps the exact assignment redacted.",
+        "signal": "task",
+        "magnitude": "est. 2200 PFT"
       },
       {
         "ts": "2026-04-22T17:32:10.806Z",
         "type": "task_request",
-        "label": "Model evaluation cancellation",
-        "detail": "The Subject cancelled a blind model comparison task due to overlap.",
-        "signal": "scope consolidation",
-        "magnitude": "3200"
+        "label": "Cancelled model test",
+        "detail": "You requested a model evaluation task but later cancelled it.",
+        "signal": "model",
+        "magnitude": "cancelled"
       },
       {
         "ts": "2026-04-22T16:47:24.943404+00:00",
         "type": "task_request",
-        "label": "Task vector formed",
-        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "label": "Cancelled task",
+        "detail": "You closed a Task Node work item; the public feed keeps the exact assignment redacted.",
         "signal": "task",
-        "magnitude": "2000"
+        "magnitude": "cancelled"
       },
       {
-        "ts": "2026-04-22T16:42:47.950856+00:00",
-        "type": "task_request",
-        "label": "Task vector formed",
-        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "ts": "2026-04-20T15:34:00.880516+00:00",
+        "type": "task_update",
+        "label": "Submitted task work",
+        "detail": "You submitted work on a Task Node task; the public feed keeps the task specifics redacted.",
         "signal": "task",
-        "magnitude": "1500"
-      },
-      {
-        "ts": "2026-04-20T15:37:06.771Z",
-        "type": "task_verification",
-        "label": "Investor memo approval",
-        "detail": "The Subject's investor update memo passed verification with high marks.",
-        "signal": "narrative readiness",
-        "magnitude": "2100"
+        "magnitude": "submitted"
       },
       {
         "ts": "2026-04-20T13:56:30.61405+00:00",
         "type": "task_request",
-        "label": "Task vector formed",
-        "detail": "The Subject is working around trading IP, backtesting discipline, and information monetization.",
-        "signal": "alpha",
-        "magnitude": "2100"
+        "label": "Requested trading task",
+        "detail": "You requested a trading task about backtesting, exposure control, and information monetization.",
+        "signal": "trading",
+        "magnitude": "est. 2100 PFT"
       },
       {
-        "ts": "2026-04-19T17:16:18.676553+00:00",
-        "type": "task_verification",
-        "label": "Work cleared",
-        "detail": "The Subject moved a task through verification, turning abstract execution into settled machine-recognized proof.",
-        "signal": "proof",
-        "magnitude": "10000"
-      },
-      {
-        "ts": "2026-04-19T17:07:52.588234+00:00",
-        "type": "chat_interaction",
-        "label": "Task vector formed",
-        "detail": "The Subject created a bounded execution object inside the Task Node control surface.",
+        "ts": "2026-04-19T17:12:42.214725+00:00",
+        "type": "task_update",
+        "label": "Submitted task work",
+        "detail": "You submitted work on a Task Node task; the public feed keeps the task specifics redacted.",
         "signal": "task",
-        "magnitude": "task_alpha"
+        "magnitude": "submitted"
+      },
+      {
+        "ts": "2026-04-19T17:09:08.04452+00:00",
+        "type": "task_request",
+        "label": "Investor memo task",
+        "detail": "You worked on an investor-update task, with the exact memo contents hidden from the public feed.",
+        "signal": "memo",
+        "magnitude": "est. 5200 PFT"
       }
     ]
   }
