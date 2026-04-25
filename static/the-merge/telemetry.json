@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T22:48:56.747Z",
+  "generated_at": "2026-04-25T23:17:52.677Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -21,20 +21,20 @@
   ],
   "metrics": {
     "tasknode_dau": 23,
-    "x_followers": 121518,
+    "x_followers": 121530,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 4,
-    "task_verifications_24h": 2,
-    "task_updates_24h": 2,
-    "tasks_completed_24h": 2,
-    "rewards_delivered_24h": 2,
-    "pft_rewards_24h": 3600,
+    "task_verifications_24h": 4,
+    "task_updates_24h": 4,
+    "tasks_completed_24h": 4,
+    "rewards_delivered_24h": 4,
+    "pft_rewards_24h": 8200,
     "context_updates_24h": 1,
-    "wallet_interactions_24h": 12,
+    "wallet_interactions_24h": 18,
     "merge_pressure": null,
-    "tasks_verified_all_time": 84,
-    "rewards_paid_all_time": 84
+    "tasks_verified_all_time": 86,
+    "rewards_paid_all_time": 86
   },
   "series": [
     {
@@ -287,17 +287,17 @@
     {
       "date": "2026-04-25",
       "dau": 23,
-      "x_followers": 121518,
+      "x_followers": 121530,
       "loc": null,
       "commits": null,
       "task_requests": 4,
-      "task_verifications": 2,
-      "task_updates": 2,
-      "tasks_completed": 2,
-      "rewards": 2,
-      "pft_rewards": 3600,
+      "task_verifications": 4,
+      "task_updates": 4,
+      "tasks_completed": 4,
+      "rewards": 4,
+      "pft_rewards": 8200,
       "context_updates": 1,
-      "wallet_interactions": 12,
+      "wallet_interactions": 18,
       "github_private_commits": 4,
       "github_private_loc": 9534,
       "github_private_additions": 9432,
@@ -397,7 +397,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T22:48:56.747Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-25T23:17:52.677Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry, then publishes this static JSON for the dashboard.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -425,17 +425,17 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-04-25T22:48:56.747Z",
-    "followers_count": 121518,
-    "following_count": 1286,
-    "posts_count": 15266,
+    "fetched_at": "2026-04-25T23:17:52.677Z",
+    "followers_count": 121530,
+    "following_count": 1287,
+    "posts_count": 15268,
     "verified": true,
     "verified_type": "blue",
     "account_created_at": "2009-02-27T05:18:52.000Z"
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-25T22:48:56.747Z",
+    "generated_at": "2026-04-25T23:17:52.677Z",
     "retention_days": 365,
     "snapshots": 14,
     "current_date": "2026-04-25"
@@ -579,7 +579,7 @@
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-04-25T22:48:56.718Z",
+    "fetched_at": "2026-04-25T23:17:52.669Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
