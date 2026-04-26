@@ -596,42 +596,140 @@
   }
 
   function setupProtocol() {
-    const grid = document.getElementById('day-grid');
-    const readout = document.getElementById('protocol-readout');
-    const days = [
-      ['Install the harness.', 'Write context, link identity, select the first concrete task set, and begin logging output.'],
-      ['Stabilize the morning loop.', 'Refresh context, review yesterday, pick 3-4 artifact tasks, and start before negotiating.'],
-      ['Force visible output.', 'Move from chat to artifacts: code, memos, calls, submissions, or published work.'],
-      ['Cut vague work.', 'Reject tasks that do not produce evidence. Replace them with measurable artifacts.'],
-      ['Use the field terminal.', 'Ask Telegram for live coaching when away from the desk, especially during trading or drift.'],
-      ['Run the first brutal review.', 'Compare stated priorities against task history, calendar reality, body state, and market response.'],
-      ['Rewrite the plan.', 'Use Full Rewrite or Sprint Planner to update context from observed behavior.'],
-      ['Restart with higher standards.', 'Begin week two with a sharper context doc and fewer excuses.'],
-      ['Increase throughput.', 'Push code, research, content, or calls through the task lifecycle faster.'],
-      ['Exploit multiplayer pressure.', 'Use leaderboard, messages, and public contribution to make output socially real.'],
-      ['Attack the bottleneck.', 'Ask the system what you are avoiding, then create the task that removes the bottleneck.'],
-      ['Measure the reward loop.', 'Review completed tasks, rewards, refused tasks, and what the verification layer taught you.'],
-      ['Prepare the final rewrite.', 'Ask whether the strategy still deserves belief after two weeks of contact with reality.'],
-      ['Decide whether to stay harnessed.', 'Keep the loop if it outperformed native judgment. Change it if the evidence says otherwise.'],
+    const sequence = document.getElementById('product-sequence');
+    const stage = document.getElementById('product-flow-stage');
+    const steps = [
+      {
+        label: 'Context',
+        route: '/context',
+        title: 'Refresh the operating document.',
+        user: 'What changed since yesterday? Keep the plan honest before we generate work.',
+        system: 'Task Node loads values, strategy, workflows, constraints, linked wallet history, and recent execution deltas.',
+        artifact: 'Active context: what matters, what changed, what cannot be forgotten.',
+        output: 'Working memory offloaded',
+      },
+      {
+        label: 'Sprint Chat',
+        route: '/module-chat?module=sprint_planner',
+        title: 'Ask the system what deserves action.',
+        user: 'Given my context and last tasks, what are the highest leverage artifacts for today?',
+        system: 'Sprint Planner turns the life strategy and execution log into a bounded set of task candidates.',
+        artifact: 'Three to four artifact-grade objectives instead of another free-form conversation.',
+        output: 'Decision load routed',
+      },
+      {
+        label: 'Task Request',
+        route: '/module-chat?surface=task&task_tab=personal',
+        title: 'Convert intention into a proposal card.',
+        user: 'Create a task to make the Human Harness presentation feel like real in-app usage.',
+        system: 'The chat returns a task with reward, deadline, alignment, concrete steps, and one verification artifact.',
+        artifact: 'A task proposal that can be accepted, refused, verified, and remembered.',
+        output: 'Intent becomes object',
+      },
+      {
+        label: 'Dashboard',
+        route: '/dashboard',
+        title: 'Accept the bounded execution object.',
+        user: 'Accept it. Show me the exact proof I need to submit.',
+        system: 'The dashboard makes the task visible, time-bounded, economically weighted, and socially legible.',
+        artifact: 'Accepted task with deadline, reward, and one evidence mode.',
+        output: 'Commitment becomes public',
+      },
+      {
+        label: 'Codex',
+        route: 'local repo + Codex',
+        title: 'Use AI for the artifact, not just advice.',
+        user: 'Implement the task in the repo, test it, commit it, and keep the patch tight.',
+        system: 'Codex reads the codebase, edits the deck, verifies the route, and ships the diff.',
+        artifact: 'Working code, deployed page, commit hash, or a clean unified diff.',
+        output: 'LOC explodes',
+      },
+      {
+        label: 'Telegram',
+        route: '@TaskNode bot',
+        title: 'Keep the loop alive away from the desk.',
+        user: 'I am on my phone. Keep me aligned to the accepted task and my trading rules.',
+        system: 'Telegram loads context, task history, journal mode, and recent work so the mobile chat is not amnesiac.',
+        artifact: 'A field terminal for drift, trading coaching, and task continuity.',
+        output: 'No context loss',
+      },
+      {
+        label: 'Evidence',
+        route: '/tasks/:id/submit',
+        title: 'Submit proof, not vibes.',
+        user: 'Here is the deployed URL and the diff that proves the task is done.',
+        system: 'Task Node packages the evidence against the original verification requirement.',
+        artifact: 'One artifact submitted to one verification mode.',
+        output: 'Execution becomes record',
+      },
+      {
+        label: 'Verify',
+        route: '/tasks/:id/verify',
+        title: 'Let the system close the loop.',
+        user: 'Answer the verification follow-up from the actual patch, not memory.',
+        system: 'The verifier checks the artifact, records the result, updates rewards, and preserves the task history.',
+        artifact: 'Completed task, reward state, and a machine-readable execution trace.',
+        output: 'Work becomes ledger',
+      },
+      {
+        label: 'Rewrite',
+        route: '/module-chat?module=context_full_rewrite',
+        title: 'Regenerate tomorrow from what actually happened.',
+        user: 'What should my context doc learn from this task, the blockers, and the result?',
+        system: 'Mega or Ultra Rewrite proposes a context patch from evidence, task history, and strategic drift.',
+        artifact: 'Approved context update. The next chat starts smarter than the last one.',
+        output: 'Self-model updates',
+      },
     ];
 
     function render(index) {
-      if (readout) {
-        readout.innerHTML = `<span>Day ${index + 1}</span><h3>${days[index][0]}</h3><p>${days[index][1]}</p>`;
+      const step = steps[index];
+      if (stage) {
+        stage.innerHTML = `
+          <div class="browser-frame">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+              <code>${escapeHtml(step.route)}</code>
+            </div>
+            <div class="product-chat-demo">
+              <div class="flow-node">
+                <small>${escapeHtml(String(index + 1).padStart(2, '0'))} / ${escapeHtml(step.label)}</small>
+                <h3>${escapeHtml(step.title)}</h3>
+              </div>
+              <div class="chat-bubble user">
+                <strong>User</strong>
+                <p>${escapeHtml(step.user)}</p>
+              </div>
+              <div class="chat-bubble system">
+                <strong>Task Node</strong>
+                <p>${escapeHtml(step.system)}</p>
+              </div>
+              <div class="artifact-card">
+                <span>Artifact</span>
+                <p>${escapeHtml(step.artifact)}</p>
+              </div>
+              <div class="loop-meter">
+                <span>${escapeHtml(step.output)}</span>
+                <i style="--progress:${((index + 1) / steps.length) * 100}%"></i>
+              </div>
+            </div>
+          </div>
+        `;
       }
-      grid?.querySelectorAll('button').forEach((button, buttonIndex) => {
+      sequence?.querySelectorAll('button').forEach((button, buttonIndex) => {
         button.classList.toggle('is-selected', buttonIndex === index);
       });
     }
 
-    if (!grid) return;
-    days.forEach((_, index) => {
+    if (!sequence) return;
+    sequence.innerHTML = '';
+    steps.forEach((step, index) => {
       const button = document.createElement('button');
       button.type = 'button';
-      button.textContent = String(index + 1);
-      button.setAttribute('aria-label', `Show day ${index + 1}`);
+      button.innerHTML = `<span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(step.label)}</strong><small>${escapeHtml(step.output)}</small>`;
+      button.setAttribute('aria-label', `Show product loop step ${index + 1}: ${step.label}`);
       button.addEventListener('click', () => render(index));
-      grid.appendChild(button);
+      sequence.appendChild(button);
     });
     render(0);
   }
