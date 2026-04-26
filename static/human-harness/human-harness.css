@@ -2552,7 +2552,61 @@ h3 {
 .final-glyph span:nth-child(2) { background: var(--gold); animation: pulse 1.6s ease-in-out infinite 0.3s; }
 .final-glyph span:nth-child(3) { background: var(--ember); animation: pulse 1.6s ease-in-out infinite 0.6s; }
 
-.final-actions { justify-content: center; }
+.final-mantra {
+  position: relative;
+  margin: 32px auto 0;
+  padding: 26px 40px;
+  max-width: 720px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(255, 107, 60, 0.04), rgba(94, 229, 214, 0.04));
+}
+
+.final-mantra p {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.18;
+  color: var(--paper);
+  letter-spacing: -0.005em;
+  text-align: center;
+}
+
+.final-mantra p em {
+  font-style: italic;
+  background: linear-gradient(120deg, var(--cyan-bright), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mantra-quote {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 76px;
+  line-height: 0.5;
+  color: var(--ember);
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+}
+
+.mantra-quote:not(.close) {
+  top: 18px;
+  left: 6px;
+}
+
+.mantra-quote.close {
+  bottom: 4px;
+  right: 6px;
+  color: var(--cyan);
+}
+
+.final-actions { justify-content: center; margin-top: 28px; }
 
 .final-credit {
   margin-top: 48px;
