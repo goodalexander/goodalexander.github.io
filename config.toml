@@ -33,14 +33,6 @@ disableXML = true
       url = "https://tasknode.postfiat.org/"
       weight = 6
     [[languages.en.menu.main]]
-      name = "Tags"
-      url = "tags/"
-      weight = 10
-    [[languages.en.menu.main]]
-      name = "Trading"
-      url = "trading/"
-      weight = 20
-    [[languages.en.menu.main]]
       name = "Search"
       url = "search/"
       weight = 30
