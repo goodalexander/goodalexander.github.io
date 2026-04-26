@@ -1,11 +1,13 @@
 {{- with site.Params.homeInfoParams }}
-<article class="first-entry home-info">
+<article class="first-entry home-info{{ with site.Params.homeCtas }} home-info--cta-only{{ end }}">
+    {{- if not site.Params.homeCtas }}
     <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
     </header>
     <div class="entry-content">
         {{ .Content | markdownify }}
     </div>
+    {{- end }}
     {{- with site.Params.homeCtas }}
     <nav class="home-cta-board" aria-label="Primary calls to action">
         {{- range . }}
