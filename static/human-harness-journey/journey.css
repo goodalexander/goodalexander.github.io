@@ -206,6 +206,14 @@ a {
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(18px);
   pointer-events: auto;
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+
+.journey-ui.is-focus .realm-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) translateX(-24px);
+  pointer-events: none;
 }
 
 .realm-kicker,
@@ -308,7 +316,7 @@ a {
 
 .portal-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 

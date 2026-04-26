@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700;900&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="preload" href="assets/panoramas/01-cold-open.webp" as="image" />
-  <link rel="stylesheet" href="journey.css?v=sigil-v2" />
+  <link rel="preload" href="assets/panoramas/01-cold-open.webp?v=sigil-v4" as="image" />
+  <link rel="stylesheet" href="journey.css?v=sigil-v4" />
 </head>
 <body>
   <div class="loading-screen" id="loading-screen">
@@ -62,15 +62,16 @@
       <div class="portal-meter" aria-hidden="true"><span id="portal-meter"></span></div>
       <div class="portal-actions">
         <button type="button" id="prev-portal" aria-label="Previous portal">Back</button>
+        <button type="button" id="toggle-focus" aria-label="Toggle focused panorama view" aria-pressed="false">Focus</button>
         <button type="button" id="next-portal" aria-label="Next portal">Next</button>
       </div>
-      <p class="portal-hint">Drag to look around inside each world. Mouse wheel zooms. Use arrows to move through the gates.</p>
+      <p class="portal-hint">Drag to look around inside each world. Mouse wheel zooms. Use arrows to move through the gates. Press F for focus.</p>
     </aside>
 
     <nav class="portal-rail" id="portal-rail" aria-label="Fourteen journey portals"></nav>
   </main>
 
-  <script src="journey-data.js?v=sigil-v2"></script>
-  <script type="module" src="journey.js?v=sigil-v2"></script>
+  <script src="journey-data.js?v=sigil-v4"></script>
+  <script type="module" src="journey.js?v=sigil-v4"></script>
 </body>
 </html>
