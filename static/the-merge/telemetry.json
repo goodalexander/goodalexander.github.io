@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T11:20:32.525Z",
+  "generated_at": "2026-04-26T11:47:19.809Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreih273vh6k4zgeky3vyh57uznkkqvldzfkl2s3usmra2mcxad3e67u",
-    "nft_synced_at": "2026-04-26T11:20:32.489Z"
+    "nft_synced_at": "2026-04-26T11:47:19.792Z"
   },
   "redactions": [
     "counterparty",
@@ -23,7 +23,7 @@
   ],
   "metrics": {
     "tasknode_dau": 23,
-    "x_followers": 121658,
+    "x_followers": 121661,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 5,
@@ -308,7 +308,7 @@
     {
       "date": "2026-04-26",
       "dau": 23,
-      "x_followers": 121658,
+      "x_followers": 121661,
       "loc": null,
       "commits": null,
       "task_requests": 5,
@@ -418,7 +418,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-26T11:20:32.525Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-26T11:47:19.809Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -446,8 +446,8 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-04-26T11:20:32.525Z",
-    "followers_count": 121658,
+    "fetched_at": "2026-04-26T11:47:19.809Z",
+    "followers_count": 121661,
     "following_count": 1287,
     "posts_count": 15273,
     "verified": true,
@@ -456,7 +456,7 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-26T11:20:32.525Z",
+    "generated_at": "2026-04-26T11:47:19.809Z",
     "retention_days": 365,
     "snapshots": 15,
     "current_date": "2026-04-26"
@@ -600,7 +600,7 @@
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-04-26T11:20:32.489Z",
+    "fetched_at": "2026-04-26T11:47:19.792Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
