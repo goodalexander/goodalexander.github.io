@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/module_chat.png" as="image" />
   <link rel="preload" href="assets/context_page.png" as="image" />
-  <link rel="stylesheet" href="human-harness.css?v=art-v3" />
+  <link rel="stylesheet" href="human-harness.css?v=art-v4" />
 </head>
 <body>
   <canvas id="harness-field" aria-hidden="true"></canvas>
@@ -315,16 +315,19 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Field Terminal" data-slug="08_telegram" aria-labelledby="slide-telegram-title">
+    <section class="slide" data-title="Telegram Bot" data-slug="08_telegram" aria-labelledby="slide-telegram-title">
       <div class="slide-meta">
         <span class="slide-number">09</span>
-        <span class="slide-slug">// 08_field-terminal.tsx</span>
+        <span class="slide-slug">// 08_telegram-bot.tsx</span>
       </div>
       <div class="slide-grid terminal-layout">
         <div>
-          <p class="kicker"><span class="kicker-tick"></span> Field terminal</p>
+          <p class="kicker"><span class="kicker-tick"></span>
+            <svg class="kicker-tg-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9.78 15.95 9.62 19.4c.4 0 .58-.17.79-.38l1.9-1.81 3.94 2.88c.72.4 1.24.19 1.42-.66l2.58-12.08c.24-1.06-.39-1.48-1.1-1.22L3.32 10.36c-1.05.4-1.04.99-.18 1.25l4.27 1.34 9.92-6.25c.47-.31.9-.14.55.17z"/></svg>
+            Telegram bot &mdash; <code>@pftchatbot</code>
+          </p>
           <h2 id="slide-telegram-title" data-stagger><span>The loop has to follow you</span> <span><em>away from the desk.</em></span></h2>
-          <p class="lead">Wallet-linked coaching, trading journal, task history, and rolling memory in your pocket.</p>
+          <p class="lead">A Telegram chatbot wired to your wallet: coaching, trading journal, task history, and rolling memory in your pocket.</p>
           <div class="terminal-controls" aria-label="Telegram sequence controls">
             <button type="button" class="is-selected" data-terminal-step="0">Link wallet</button>
             <button type="button" data-terminal-step="1">Load context</button>
@@ -341,11 +344,32 @@
           </div>
           <div class="phone-shell" aria-label="Telegram bot mockup">
             <div class="phone-notch" aria-hidden="true"></div>
-            <div class="phone-top">
-              <span>@pftchatbot</span>
-              <strong><i></i>live</strong>
+            <div class="phone-status" aria-hidden="true">
+              <span>9:41</span>
+              <span class="status-icons">
+                <i class="status-bars"></i>
+                <i class="status-wifi"></i>
+                <i class="status-batt"></i>
+              </span>
+            </div>
+            <div class="phone-top tg-top">
+              <span class="tg-back" aria-hidden="true">&lsaquo;</span>
+              <div class="tg-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#fff" d="M9.78 15.95 9.62 19.4c.4 0 .58-.17.79-.38l1.9-1.81 3.94 2.88c.72.4 1.24.19 1.42-.66l2.58-12.08c.24-1.06-.39-1.48-1.1-1.22L3.32 10.36c-1.05.4-1.04.99-.18 1.25l4.27 1.34 9.92-6.25c.47-.31.9-.14.55.17z"/></svg>
+              </div>
+              <div class="tg-meta">
+                <span>@pftchatbot</span>
+                <small>Task Node bot &middot; <em>online</em></small>
+              </div>
+              <strong class="tg-live"><i></i>LIVE</strong>
             </div>
             <div class="phone-feed" id="phone-feed" aria-live="polite"></div>
+            <div class="phone-input" aria-hidden="true">
+              <span class="phone-input-bar">Message @pftchatbot</span>
+              <span class="phone-input-send">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M9.78 15.95 9.62 19.4c.4 0 .58-.17.79-.38l1.9-1.81 3.94 2.88c.72.4 1.24.19 1.42-.66l2.58-12.08c.24-1.06-.39-1.48-1.1-1.22L3.32 10.36c-1.05.4-1.04.99-.18 1.25l4.27 1.34 9.92-6.25c.47-.31.9-.14.55.17z"/></svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -422,40 +446,72 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Failure Modes" data-slug="12_failure-modes" aria-labelledby="slide-failure-title">
+    <section class="slide" data-title="Partial Auto" data-slug="12_partial-auto" aria-labelledby="slide-failure-title">
       <div class="slide-meta">
         <span class="slide-number">13</span>
-        <span class="slide-slug">// 12_failure-modes.tsx</span>
+        <span class="slide-slug">// 12_partial-auto.tsx</span>
       </div>
-      <div class="failure-wrap">
-        <div class="failure-head">
-          <p class="kicker"><span class="kicker-tick"></span> Failure modes</p>
-          <h2 id="slide-failure-title" data-stagger><span>The system must know</span> <span><em>how it fails.</em></span></h2>
+      <div class="partial-wrap">
+        <div class="partial-head">
+          <p class="kicker"><span class="kicker-tick"></span> The real failure mode</p>
+          <h2 id="slide-failure-title" data-stagger>
+            <span>The biggest failure mode</span>
+            <span>is <em>partial auto</em>,</span>
+            <span>not full auto.</span>
+          </h2>
+          <p class="lead">Half-following the system fails harder than ignoring it. The throttle below shows the five ways the harness goes slack &mdash; every one of them is a symptom of refusing to commit.</p>
         </div>
+
+        <div class="auto-throttle" aria-label="Partial auto vs full auto throttle">
+          <div class="throttle-rail">
+            <div class="throttle-fill"></div>
+            <span class="throttle-marker partial">
+              <i></i>
+              <strong>Partial auto</strong>
+              <small>cope &middot; debate &middot; theater</small>
+            </span>
+            <span class="throttle-marker full">
+              <i></i>
+              <strong>Full auto</strong>
+              <small>commit &middot; execute &middot; submit</small>
+            </span>
+            <span class="throttle-tick" style="left:6%"></span>
+            <span class="throttle-tick" style="left:18%"></span>
+            <span class="throttle-tick" style="left:32%"></span>
+            <span class="throttle-tick" style="left:46%"></span>
+            <span class="throttle-tick" style="left:60%"></span>
+          </div>
+        </div>
+
         <div class="failure-grid">
           <article>
             <span class="fail-num">01</span>
             <h3>Over-trust</h3>
+            <p class="fail-tag">Outsource without listening</p>
             <p>The model misses context or legible variables overpower human judgment.</p>
           </article>
           <article>
             <span class="fail-num">02</span>
             <h3>Under-trust</h3>
+            <p class="fail-tag">Ask without obeying</p>
             <p>The user asks for instruction, dislikes the implication, and negotiates with reality.</p>
           </article>
           <article>
             <span class="fail-num">03</span>
             <h3>Social theater</h3>
+            <p class="fail-tag">Perform without producing</p>
             <p>The user performs discipline instead of producing useful artifacts.</p>
           </article>
           <article>
             <span class="fail-num">04</span>
             <h3>Task inflation</h3>
+            <p class="fail-tag">Move without shipping</p>
             <p>The system rewards motion instead of outcomes unless verification stays strict.</p>
           </article>
           <article>
             <span class="fail-num">05</span>
             <h3>Moral outsourcing</h3>
+            <p class="fail-tag">Delegate without owning</p>
             <p>The AI should expose consequences and tradeoffs. It should not define the soul.</p>
           </article>
         </div>
@@ -507,6 +563,6 @@
     </button>
   </footer>
 
-  <script src="human-harness.js?v=art-v3" defer></script>
+  <script src="human-harness.js?v=art-v4" defer></script>
 </body>
 </html>
