@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Human Harness: City of Doors | goodalexander</title>
+  <meta name="description" content="A 14-part interactive journey through the Human Harness thesis, recast as a Sigil-inspired city of doors." />
+  <link rel="icon" href="/favicon.ico?v=ga-favicon-v2" sizes="any" />
+  <link rel="icon" href="/favicon.svg?v=ga-favicon-v2" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=ga-favicon-v2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=ga-favicon-v2" />
+  <meta name="theme-color" content="#050408" />
+  <meta property="og:title" content="Human Harness: City of Doors" />
+  <meta property="og:description" content="Fourteen AI-generated planar portals for the Task Node full-auto experiment." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700;900&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/panoramas/01-cold-open.webp" as="image" />
+  <link rel="stylesheet" href="journey.css?v=sigil-v1" />
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen">
+    <span>opening portals</span>
+    <strong>Human Harness // City of Doors</strong>
+  </div>
+
+  <canvas id="journey-canvas" aria-label="Interactive 3D journey through Human Harness concepts"></canvas>
+  <div class="journey-noise" aria-hidden="true"></div>
+  <div class="journey-vignette" aria-hidden="true"></div>
+
+  <header class="journey-header">
+    <a class="brand-link" href="/">
+      <span class="brand-mark">GA</span>
+      <span>goodalexander</span>
+    </a>
+    <nav class="journey-links" aria-label="Journey links">
+      <a href="/human-harness/">Slides</a>
+      <a href="/posts/human-harness/">Thesis</a>
+      <a href="https://tasknode.postfiat.org/" rel="noopener">Task Node</a>
+    </nav>
+  </header>
+
+  <main class="journey-ui" id="journey-ui">
+    <section class="realm-panel" aria-live="polite">
+      <p class="realm-kicker" id="realm-kicker">01 / The Gate Opens</p>
+      <h1 id="realm-title">The Task Node was science fiction.</h1>
+      <p class="realm-dictum" id="realm-dictum">The first door opens when the human admits the machine is now good enough to route the day.</p>
+      <p class="realm-body" id="realm-body">In the impossible city, belief is not decoration. Belief is infrastructure. The Task Node turns intention into a route, then asks for proof.</p>
+      <div class="truth-box">
+        <span>Task Node truth</span>
+        <p id="realm-truth">A context-aware AI system can become the control layer for human action.</p>
+      </div>
+    </section>
+
+    <aside class="portal-console" aria-label="Journey controls">
+      <div class="portal-counter">
+        <span id="portal-index">01</span>
+        <i></i>
+        <span>14</span>
+      </div>
+      <div class="portal-meter" aria-hidden="true"><span id="portal-meter"></span></div>
+      <div class="portal-actions">
+        <button type="button" id="prev-portal" aria-label="Previous portal">Back</button>
+        <button type="button" id="next-portal" aria-label="Next portal">Next</button>
+      </div>
+      <p class="portal-hint">Drag to rotate the city. Use arrows to move through the gates.</p>
+    </aside>
+
+    <nav class="portal-rail" id="portal-rail" aria-label="Fourteen journey portals"></nav>
+  </main>
+
+  <script src="journey-data.js?v=sigil-v1"></script>
+  <script type="module" src="journey.js?v=sigil-v1"></script>
+</body>
+</html>
