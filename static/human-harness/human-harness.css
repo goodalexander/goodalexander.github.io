@@ -569,8 +569,24 @@ h2 {
 .product-layout h2,
 .evidence-layout h2,
 .hive-layout h2 {
-  font-size: clamp(30px, 3.5vw, 50px);
-  line-height: 1.02;
+  font-size: clamp(28px, 3.2vw, 46px);
+  line-height: 1.04;
+  max-width: 100%;
+  hyphens: auto;
+}
+
+/* Hard-bound everything to its grid column */
+.slide-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.slide-grid h1,
+.slide-grid h2,
+.slide-grid .lead,
+.slide-grid .kicker {
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -1151,17 +1167,25 @@ h3 {
 
 .lifecycle {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
 }
 
 .life-step {
   position: relative;
-  min-height: 64px;
+  min-width: 0;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  padding: 8px 6px;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .life-step i {
@@ -1901,13 +1925,13 @@ h3 {
   background:
     linear-gradient(90deg, rgba(255, 91, 102, 0.06), rgba(94, 229, 214, 0.06)),
     rgba(8, 8, 9, 0.7);
-  padding: 22px 28px 38px;
+  padding: 18px 32px 22px;
 }
 
 .auto-throttle::before {
   content: "HARNESS TENSION";
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 28px;
   font-family: var(--mono);
   font-size: 9px;
@@ -1918,7 +1942,7 @@ h3 {
 .auto-throttle::after {
   content: "← SLACK   //   TIGHT →";
   position: absolute;
-  top: 12px;
+  top: 10px;
   right: 28px;
   font-family: var(--mono);
   font-size: 9px;
@@ -1926,81 +1950,99 @@ h3 {
   color: var(--faint);
 }
 
-.throttle-rail {
-  position: relative;
-  height: 4px;
-  margin-top: 36px;
-  background: linear-gradient(90deg, rgba(255, 91, 102, 0.4) 0%, rgba(245, 200, 95, 0.4) 50%, rgba(94, 229, 214, 0.6) 100%);
+.throttle-ends {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 14px;
 }
 
-.throttle-fill {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 0%, transparent 40%, rgba(94, 229, 214, 0.0) 100%);
-  pointer-events: none;
-}
-
-.throttle-tick {
-  position: absolute;
-  top: -4px;
-  width: 1px;
-  height: 12px;
-  background: var(--line-strong);
-}
-
-.throttle-marker {
-  position: absolute;
-  top: -22px;
+.throttle-ends .end {
   display: grid;
-  gap: 2px;
-  text-align: left;
-  pointer-events: none;
+  gap: 3px;
+  align-items: center;
 }
 
-.throttle-marker.partial {
-  left: 4%;
+.throttle-ends .end.partial {
   color: var(--red);
+  text-align: left;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
 }
 
-.throttle-marker.full {
-  right: 4%;
-  text-align: right;
+.throttle-ends .end.full {
   color: var(--cyan);
+  text-align: right;
+  grid-template-columns: 1fr auto;
+  column-gap: 12px;
 }
 
-.throttle-marker i {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  width: 18px;
-  height: 18px;
+.throttle-ends .end.partial i {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.throttle-ends .end.full i {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.throttle-ends .end.partial strong { grid-column: 2; }
+.throttle-ends .end.partial small  { grid-column: 2; }
+.throttle-ends .end.full strong    { grid-column: 1; }
+.throttle-ends .end.full small     { grid-column: 1; }
+
+.throttle-ends .end i {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 0 0 16px currentColor, 0 0 0 4px rgba(8,8,9,0.9);
-  transform: translateX(-9px);
+  box-shadow: 0 0 12px currentColor;
+  align-self: center;
 }
 
-.throttle-marker.full i {
-  left: auto;
-  right: 0;
-  transform: translateX(9px);
-}
-
-.throttle-marker strong {
+.throttle-ends .end strong {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 22px;
-  letter-spacing: -0.01em;
+  font-size: 20px;
+  line-height: 1;
   color: var(--paper);
 }
 
-.throttle-marker small {
+.throttle-ends .end small {
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.throttle-rail {
+  position: relative;
+  height: 14px;
+  margin-top: 18px;
+  margin-bottom: 4px;
+}
+
+.throttle-rail::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 91, 102, 0.6) 0%, rgba(245, 200, 95, 0.5) 50%, rgba(94, 229, 214, 0.7) 100%);
+  box-shadow: 0 0 10px rgba(94, 229, 214, 0.18);
+}
+
+.throttle-tick {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 10px;
+  background: rgba(243, 240, 232, 0.4);
 }
 
 .failure-grid {
@@ -2012,10 +2054,56 @@ h3 {
 .failure-grid article {
   position: relative;
   min-height: 240px;
-  padding: 22px;
+  padding: 20px 22px 22px;
   display: grid;
   grid-template-rows: auto auto auto 1fr;
-  gap: 8px;
+  gap: 10px;
+}
+
+.excuses-grid article {
+  background:
+    linear-gradient(180deg, rgba(255, 91, 102, 0.04), transparent 30%),
+    var(--bg-raised);
+}
+
+.excuses-grid .excuse {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.32;
+  color: var(--muted);
+  position: relative;
+  padding-left: 16px;
+}
+
+.excuses-grid .excuse::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--red);
+  opacity: 0.5;
+}
+
+.excuses-grid h3 {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--cyan-bright);
+  text-transform: none;
+}
+
+.excuses-grid article > p:last-child {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .fail-tag {

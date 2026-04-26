@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/module_chat.png" as="image" />
   <link rel="preload" href="assets/context_page.png" as="image" />
-  <link rel="stylesheet" href="human-harness.css?v=art-v4" />
+  <link rel="stylesheet" href="human-harness.css?v=art-v5" />
 </head>
 <body>
   <canvas id="harness-field" aria-hidden="true"></canvas>
@@ -456,63 +456,65 @@
           <p class="kicker"><span class="kicker-tick"></span> The real failure mode</p>
           <h2 id="slide-failure-title" data-stagger>
             <span>The biggest failure mode</span>
-            <span>is <em>partial auto</em>,</span>
-            <span>not full auto.</span>
+            <span>is <em>partial auto</em>, not full auto.</span>
           </h2>
-          <p class="lead">Half-following the system fails harder than ignoring it. The throttle below shows the five ways the harness goes slack &mdash; every one of them is a symptom of refusing to commit.</p>
+          <p class="lead">Half-following the system fails harder than ignoring it. Below are the five excuses people use to stay in partial auto &mdash; and why each one collapses on contact with reality.</p>
         </div>
 
         <div class="auto-throttle" aria-label="Partial auto vs full auto throttle">
           <div class="throttle-rail">
-            <div class="throttle-fill"></div>
-            <span class="throttle-marker partial">
+            <span class="throttle-tick" style="left:8%"></span>
+            <span class="throttle-tick" style="left:22%"></span>
+            <span class="throttle-tick" style="left:36%"></span>
+            <span class="throttle-tick" style="left:50%"></span>
+            <span class="throttle-tick" style="left:64%"></span>
+            <span class="throttle-tick" style="left:78%"></span>
+            <span class="throttle-tick" style="left:92%"></span>
+          </div>
+          <div class="throttle-ends">
+            <span class="end partial">
               <i></i>
               <strong>Partial auto</strong>
               <small>cope &middot; debate &middot; theater</small>
             </span>
-            <span class="throttle-marker full">
+            <span class="end full">
               <i></i>
               <strong>Full auto</strong>
               <small>commit &middot; execute &middot; submit</small>
             </span>
-            <span class="throttle-tick" style="left:6%"></span>
-            <span class="throttle-tick" style="left:18%"></span>
-            <span class="throttle-tick" style="left:32%"></span>
-            <span class="throttle-tick" style="left:46%"></span>
-            <span class="throttle-tick" style="left:60%"></span>
           </div>
         </div>
 
-        <div class="failure-grid">
+        <div class="failure-grid excuses-grid">
           <article>
             <span class="fail-num">01</span>
-            <h3>Over-trust</h3>
-            <p class="fail-tag">Outsource without listening</p>
-            <p>The model misses context or legible variables overpower human judgment.</p>
+            <p class="excuse">"It doesn't have my context."</p>
+            <h3>Write the doc.</h3>
+            <p>Setup is a weekend. Operating un-routed is a tax you pay every day until you write it.</p>
           </article>
           <article>
             <span class="fail-num">02</span>
-            <h3>Under-trust</h3>
-            <p class="fail-tag">Ask without obeying</p>
-            <p>The user asks for instruction, dislikes the implication, and negotiates with reality.</p>
+            <p class="excuse">"It will tell me to do something I disagree with."</p>
+            <h3>That's the point.</h3>
+            <p>You still decide. The model just stops you from deciding inside the warm bath of your own cope.</p>
           </article>
           <article>
             <span class="fail-num">03</span>
-            <h3>Social theater</h3>
-            <p class="fail-tag">Perform without producing</p>
-            <p>The user performs discipline instead of producing useful artifacts.</p>
+            <p class="excuse">"I'll wait until models are smarter."</p>
+            <h3>They're already smarter.</h3>
+            <p>Every week you wait is a week of unrouted decision-making while your competition is already harnessed.</p>
           </article>
           <article>
             <span class="fail-num">04</span>
-            <h3>Task inflation</h3>
-            <p class="fail-tag">Move without shipping</p>
-            <p>The system rewards motion instead of outcomes unless verification stays strict.</p>
+            <p class="excuse">"I don't want a robot running my life."</p>
+            <h3>You're already controlled.</h3>
+            <p>By tabs, anxiety, status games, and bad incentives. Choose a controller you helped design.</p>
           </article>
           <article>
             <span class="fail-num">05</span>
-            <h3>Moral outsourcing</h3>
-            <p class="fail-tag">Delegate without owning</p>
-            <p>The AI should expose consequences and tradeoffs. It should not define the soul.</p>
+            <p class="excuse">"I want my freedom and creativity."</p>
+            <h3>Freedom needs a harness.</h3>
+            <p>The system removes the deciding-what-to-do tax so you can spend cognition on deciding-what-to-be.</p>
           </article>
         </div>
       </div>
@@ -563,6 +565,6 @@
     </button>
   </footer>
 
-  <script src="human-harness.js?v=art-v4" defer></script>
+  <script src="human-harness.js?v=art-v5" defer></script>
 </body>
 </html>
