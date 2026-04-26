@@ -42,10 +42,16 @@ a {
   width: 100%;
   height: 100%;
   display: block;
+  cursor: grab;
+  touch-action: none;
   background:
     radial-gradient(circle at 50% 45%, rgba(84, 255, 241, 0.14), transparent 34%),
     radial-gradient(circle at 80% 20%, rgba(255, 77, 91, 0.12), transparent 32%),
     #050408;
+}
+
+#journey-canvas.is-grabbing {
+  cursor: grabbing;
 }
 
 .journey-noise,
@@ -67,8 +73,8 @@ a {
 
 .journey-vignette {
   background:
-    radial-gradient(circle at center, transparent 32%, rgba(0, 0, 0, 0.32) 68%, rgba(0, 0, 0, 0.82) 100%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.74), transparent 32%, transparent 62%, rgba(0, 0, 0, 0.68));
+    radial-gradient(circle at center, transparent 36%, rgba(0, 0, 0, 0.24) 70%, rgba(0, 0, 0, 0.78) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.68), transparent 34%, transparent 64%, rgba(0, 0, 0, 0.58));
 }
 
 .loading-screen {

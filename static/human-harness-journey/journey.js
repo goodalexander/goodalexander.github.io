@@ -14,68 +14,55 @@ const meter = document.getElementById('portal-meter');
 const prev = document.getElementById('prev-portal');
 const next = document.getElementById('next-portal');
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
 let active = 0;
-let dragStart = null;
-let dragOffset = 0;
-let targetDragOffset = 0;
+let requestSerial = 0;
+let animationFrame = null;
+let isPointerDown = false;
+let pointerStartX = 0;
+let pointerStartY = 0;
+let lonStart = 0;
+let latStart = 0;
+let lon = 0;
+let lat = 0;
+let targetOpacity = 1;
+let lastInteraction = window.performance.now();
 
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x050408, 0.036);
+scene.background = new THREE.Color(0x050408);
 
-const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 100);
-camera.position.set(0, 1.1, 0.2);
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1100);
+const target = new THREE.Vector3();
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
   antialias: true,
-  alpha: true,
+  alpha: false,
   powerPreference: 'high-performance'
 });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight, false);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-const group = new THREE.Group();
-scene.add(group);
+const panoramaGeometry = new THREE.SphereGeometry(500, 96, 56);
+panoramaGeometry.scale(-1, 1, 1);
 
-const portalGroup = new THREE.Group();
-group.add(portalGroup);
+const panoramaMaterial = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+  transparent: true,
+  opacity: 0
+});
+
+const panorama = new THREE.Mesh(panoramaGeometry, panoramaMaterial);
+scene.add(panorama);
 
 const loader = new THREE.TextureLoader();
-const radius = 11.5;
-const step = (Math.PI * 2) / realms.length;
-const portalMeshes = [];
-
-const ambient = new THREE.AmbientLight(0x9bf7ff, 1.2);
-scene.add(ambient);
-
-const coreLight = new THREE.PointLight(0x54fff1, 30, 26);
-coreLight.position.set(0, 2, 0);
-scene.add(coreLight);
-
-const redLight = new THREE.PointLight(0xff4d5b, 16, 28);
-redLight.position.set(-8, 4, 5);
-scene.add(redLight);
-
-const goldLight = new THREE.PointLight(0xffd45e, 12, 22);
-goldLight.position.set(8, -1, -5);
-scene.add(goldLight);
-
-const torus = new THREE.Mesh(
-  new THREE.TorusGeometry(5.8, 0.015, 8, 160),
-  new THREE.MeshBasicMaterial({ color: 0x54fff1, transparent: true, opacity: 0.28 })
-);
-torus.rotation.x = Math.PI / 2;
-torus.position.y = -1.3;
-scene.add(torus);
-
-const innerTorus = new THREE.Mesh(
-  new THREE.TorusGeometry(2.2, 0.01, 8, 120),
-  new THREE.MeshBasicMaterial({ color: 0xffd45e, transparent: true, opacity: 0.22 })
-);
-innerTorus.rotation.x = Math.PI / 2;
-innerTorus.position.y = -1.28;
-scene.add(innerTorus);
+loader.setCrossOrigin('anonymous');
+const textureCache = new Map();
+const fallbackCache = new Map();
 
 function makeFallbackTexture(realm, index) {
   const fallback = document.createElement('canvas');
@@ -91,6 +78,7 @@ function makeFallbackTexture(realm, index) {
   ctx.fillRect(0, 0, fallback.width, fallback.height);
   ctx.strokeStyle = 'rgba(84, 255, 241, 0.35)';
   ctx.lineWidth = 4;
+
   for (let i = 0; i < 18; i += 1) {
     const x = (i / 17) * fallback.width;
     ctx.beginPath();
@@ -98,6 +86,7 @@ function makeFallbackTexture(realm, index) {
     ctx.lineTo(fallback.width - x * 0.24, fallback.height);
     ctx.stroke();
   }
+
   ctx.fillStyle = 'rgba(245, 241, 231, 0.92)';
   ctx.font = '900 44px Inter, sans-serif';
   ctx.fillText(String(index + 1).padStart(2, '0'), 56, 96);
@@ -108,71 +97,75 @@ function makeFallbackTexture(realm, index) {
   return texture;
 }
 
-function buildPortals() {
-  const geometry = new THREE.PlaneGeometry(7.8, 2.6, 24, 1);
-
-  realms.forEach((realm, index) => {
-    const material = new THREE.MeshStandardMaterial({
-      map: makeFallbackTexture(realm, index),
-      roughness: 0.48,
-      metalness: 0.08,
-      emissive: new THREE.Color(0x0b2b2c),
-      emissiveIntensity: 0.42,
-      side: THREE.DoubleSide
-    });
-
-    const mesh = new THREE.Mesh(geometry, material);
-    const angle = index * step;
-    mesh.position.set(Math.sin(angle) * radius, 1.05, -Math.cos(angle) * radius);
-    mesh.lookAt(0, 1.05, 0);
-    mesh.userData.index = index;
-    portalGroup.add(mesh);
-    portalMeshes.push(mesh);
-
-    loader.load(
-      realm.image,
-      (texture) => {
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-        material.map = texture;
-        material.needsUpdate = true;
-      },
-      undefined,
-      () => {}
-    );
-  });
+function getFallbackTexture(index) {
+  if (!fallbackCache.has(index)) {
+    fallbackCache.set(index, makeFallbackTexture(realms[index], index));
+  }
+  return fallbackCache.get(index);
 }
 
-function buildParticles() {
-  const count = 900;
-  const positions = new Float32Array(count * 3);
-  const colors = new Float32Array(count * 3);
-  const colorA = new THREE.Color(0x54fff1);
-  const colorB = new THREE.Color(0xff4d5b);
-  const colorC = new THREE.Color(0xffd45e);
+function applyTexture(texture, opacity = 1) {
+  panoramaMaterial.map = texture;
+  panoramaMaterial.opacity = 0.35;
+  panoramaMaterial.needsUpdate = true;
+  targetOpacity = opacity;
+}
 
-  for (let i = 0; i < count; i += 1) {
-    const radiusJitter = 4 + Math.random() * 24;
-    const angle = Math.random() * Math.PI * 2;
-    positions[i * 3] = Math.sin(angle) * radiusJitter;
-    positions[i * 3 + 1] = -5 + Math.random() * 13;
-    positions[i * 3 + 2] = Math.cos(angle) * radiusJitter;
-    const color = i % 9 === 0 ? colorB : (i % 5 === 0 ? colorC : colorA);
-    colors[i * 3] = color.r;
-    colors[i * 3 + 1] = color.g;
-    colors[i * 3 + 2] = color.b;
+function preloadTexture(index) {
+  const realm = realms[index];
+  if (!realm || textureCache.has(realm.image)) {
+    return;
   }
 
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-  const material = new THREE.PointsMaterial({
-    size: 0.035,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.72
-  });
-  scene.add(new THREE.Points(geometry, material));
+  loader.load(
+    realm.image,
+    (texture) => {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      textureCache.set(realm.image, texture);
+    },
+    undefined,
+    () => {}
+  );
+}
+
+function loadWorld(index) {
+  const realm = realms[index];
+  const requestId = requestSerial + 1;
+  requestSerial = requestId;
+  targetOpacity = 1;
+
+  if (!realm) {
+    return;
+  }
+
+  const cachedTexture = textureCache.get(realm.image);
+  if (cachedTexture) {
+    applyTexture(cachedTexture);
+    return;
+  }
+
+  applyTexture(getFallbackTexture(index), 0.85);
+  loader.load(
+    realm.image,
+    (texture) => {
+      if (requestId !== requestSerial) {
+        texture.dispose();
+        return;
+      }
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      textureCache.set(realm.image, texture);
+      applyTexture(texture);
+      loading?.classList.add('is-hidden');
+    },
+    undefined,
+    () => {
+      if (requestId === requestSerial) {
+        loading?.classList.add('is-hidden');
+      }
+    }
+  );
 }
 
 function updateCopy(index) {
@@ -193,8 +186,15 @@ function updateCopy(index) {
 
 function goTo(index) {
   active = (index + realms.length) % realms.length;
-  targetDragOffset = 0;
+  lon = 0;
+  lat = 0;
+  camera.fov = 70;
+  camera.updateProjectionMatrix();
+  lastInteraction = window.performance.now();
   updateCopy(active);
+  loadWorld(active);
+  preloadTexture((active + 1) % realms.length);
+  preloadTexture((active - 1 + realms.length) % realms.length);
 }
 
 function buildRail() {
@@ -202,10 +202,24 @@ function buildRail() {
     const button = document.createElement('button');
     button.type = 'button';
     button.textContent = String(index + 1).padStart(2, '0');
-    button.setAttribute('aria-label', `Open portal ${index + 1}: ${realm.title}`);
+    button.setAttribute('aria-label', `Open world ${index + 1}: ${realm.title}`);
     button.addEventListener('click', () => goTo(index));
     rail.appendChild(button);
   });
+}
+
+function updateCamera() {
+  lat = clamp(lat, -82, 82);
+  const phi = THREE.MathUtils.degToRad(90 - lat);
+  const theta = THREE.MathUtils.degToRad(lon);
+  target.x = 500 * Math.sin(phi) * Math.cos(theta);
+  target.y = 500 * Math.cos(phi);
+  target.z = 500 * Math.sin(phi) * Math.sin(theta);
+  camera.lookAt(target);
+}
+
+function noteInteraction() {
+  lastInteraction = window.performance.now();
 }
 
 function bindInput() {
@@ -213,70 +227,102 @@ function bindInput() {
   next.addEventListener('click', () => goTo(active + 1));
 
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') goTo(active - 1);
-    if (event.key === 'ArrowRight') goTo(active + 1);
+    if (event.key === 'ArrowLeft') {
+      goTo(active - 1);
+    }
+    if (event.key === 'ArrowRight') {
+      goTo(active + 1);
+    }
+    if (event.key === '+' || event.key === '=') {
+      camera.fov = clamp(camera.fov - 5, 34, 86);
+      camera.updateProjectionMatrix();
+      noteInteraction();
+    }
+    if (event.key === '-' || event.key === '_') {
+      camera.fov = clamp(camera.fov + 5, 34, 86);
+      camera.updateProjectionMatrix();
+      noteInteraction();
+    }
   });
 
   canvas.addEventListener('pointerdown', (event) => {
-    dragStart = { x: event.clientX, offset: targetDragOffset };
-    canvas.setPointerCapture(event.pointerId);
+    isPointerDown = true;
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+    lonStart = lon;
+    latStart = lat;
+    canvas.classList.add('is-grabbing');
+    canvas.setPointerCapture?.(event.pointerId);
+    noteInteraction();
   });
 
   canvas.addEventListener('pointermove', (event) => {
-    if (!dragStart) return;
-    const delta = event.clientX - dragStart.x;
-    targetDragOffset = dragStart.offset + delta * 0.003;
+    if (!isPointerDown) {
+      return;
+    }
+    lon = lonStart - ((event.clientX - pointerStartX) * 0.12);
+    lat = latStart + ((event.clientY - pointerStartY) * 0.12);
+    noteInteraction();
   });
 
-  canvas.addEventListener('pointerup', () => {
-    dragStart = null;
-    targetDragOffset *= 0.35;
-  });
+  const releasePointer = (event) => {
+    isPointerDown = false;
+    canvas.classList.remove('is-grabbing');
+    canvas.releasePointerCapture?.(event.pointerId);
+  };
+
+  canvas.addEventListener('pointerup', releasePointer);
+  canvas.addEventListener('pointercancel', releasePointer);
 
   canvas.addEventListener('wheel', (event) => {
-    if (Math.abs(event.deltaY) < 20) return;
-    goTo(active + (event.deltaY > 0 ? 1 : -1));
-  }, { passive: true });
+    event.preventDefault();
+    camera.fov = clamp(camera.fov + (event.deltaY * 0.03), 34, 86);
+    camera.updateProjectionMatrix();
+    noteInteraction();
+  }, { passive: false });
 }
 
 function resize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  const width = Math.max(1, window.innerWidth);
+  const height = Math.max(1, window.innerHeight);
+  camera.aspect = width / height;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(width, height, false);
 }
 
 function animate() {
-  dragOffset += (targetDragOffset - dragOffset) * 0.08;
-  const targetRotation = -(active * step) + dragOffset;
-  portalGroup.rotation.y += (targetRotation - portalGroup.rotation.y) * 0.08;
-  torus.rotation.z += 0.0018;
-  innerTorus.rotation.z -= 0.0024;
+  const now = window.performance.now();
+  if (!isPointerDown && now - lastInteraction > 2200) {
+    lon += 0.012;
+  }
 
-  portalMeshes.forEach((mesh, index) => {
-    const distance = Math.min(
-      Math.abs(index - active),
-      realms.length - Math.abs(index - active)
-    );
-    const scale = 1 + Math.max(0, 1 - distance) * 0.12;
-    mesh.scale.lerp(new THREE.Vector3(scale, scale, scale), 0.08);
-    mesh.material.emissiveIntensity += ((index === active ? 0.72 : 0.2) - mesh.material.emissiveIntensity) * 0.07;
-  });
-
-  camera.lookAt(0, 1.05, -8);
+  updateCamera();
+  panoramaMaterial.opacity += (targetOpacity - panoramaMaterial.opacity) * 0.07;
   renderer.render(scene, camera);
-  requestAnimationFrame(animate);
+  animationFrame = window.requestAnimationFrame(animate);
 }
 
 if (realms.length) {
   buildRail();
-  buildPortals();
-  buildParticles();
   bindInput();
   updateCopy(active);
+  loadWorld(active);
+  preloadTexture(1 % realms.length);
   window.addEventListener('resize', resize);
   resize();
   animate();
-  window.setTimeout(() => loading?.classList.add('is-hidden'), 650);
+  window.setTimeout(() => loading?.classList.add('is-hidden'), 1400);
 } else {
   loading.querySelector('strong').textContent = 'Journey data missing';
 }
+
+window.addEventListener('pagehide', () => {
+  if (animationFrame) {
+    window.cancelAnimationFrame(animationFrame);
+  }
+  textureCache.forEach((texture) => texture.dispose());
+  fallbackCache.forEach((texture) => texture.dispose());
+  panoramaGeometry.dispose();
+  panoramaMaterial.dispose();
+  renderer.dispose();
+});
