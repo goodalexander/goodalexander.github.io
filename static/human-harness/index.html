@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <link rel="preload" href="assets/module_chat.png" as="image" />
   <link rel="preload" href="assets/context_page.png" as="image" />
-  <link rel="stylesheet" href="human-harness.css?v=launch-v1" />
+  <link rel="stylesheet" href="human-harness.css?v=launch-v2" />
 </head>
 <body>
   <canvas id="harness-field" aria-hidden="true"></canvas>
@@ -43,10 +43,7 @@
             <span>was science fiction.</span>
             <span>It is not anymore.</span>
           </h1>
-          <p class="lead">
-            A two-week experiment in running life through a context-aware execution loop:
-            tasks, artifacts, rewards, telemetry, mobile coaching, and multiplayer pressure.
-          </p>
+          <p class="lead">Route cognition into one system. Ride the AI decision curve. Ship more.</p>
           <div class="action-row">
             <button class="primary-action" type="button" data-go-next>Enter full auto</button>
             <a class="secondary-action" href="https://tasknode.postfiat.org/" rel="noopener">Open Task Node</a>
@@ -67,56 +64,79 @@
       </div>
     </section>
 
-    <section class="slide" data-title="The Premise" aria-labelledby="slide-premise-title">
-      <div class="slide-grid two-column">
+    <section class="slide" data-title="The Curve" aria-labelledby="slide-curve-title">
+      <div class="slide-grid curve-layout">
         <div>
-          <p class="kicker">Premise</p>
-          <h2 id="slide-premise-title">Execution gets cheaper. Deciding what to do becomes the edge.</h2>
-          <p class="lead">
-            When agents can build almost anything, the moat moves upstream:
-            judgment, strategy selection, context quality, and willingness to execute the selected task.
-          </p>
+          <p class="kicker">Not Anthropocentric</p>
+          <h2 id="slide-curve-title">The human is not the center. The curve is.</h2>
+          <p class="lead">The goal is to attach human action and collective capital to accelerating AI decision quality.</p>
+          <div class="curve-controls" aria-label="Curve mode selector">
+            <button type="button" class="is-selected" data-curve-mode="human">Human linear</button>
+            <button type="button" data-curve-mode="model">Model curve</button>
+            <button type="button" data-curve-mode="collective">Collective compounding</button>
+          </div>
         </div>
-        <div class="flow-panel" aria-label="scarcity shift diagram">
-          <div class="flow-step muted-step">Idea</div>
-          <div class="flow-arrow">-></div>
-          <div class="flow-step muted-step">AI build session</div>
-          <div class="flow-arrow">-></div>
-          <div class="flow-step muted-step">Artifact</div>
-          <div class="flow-divider"></div>
-          <div class="flow-step hot-step">Values</div>
-          <div class="flow-arrow">-></div>
-          <div class="flow-step hot-step">Strategy</div>
-          <div class="flow-arrow">-></div>
-          <div class="flow-step hot-step">Next task</div>
+        <div class="curve-panel" aria-label="interactive AI decision curve">
+          <canvas id="curve-canvas" width="860" height="500"></canvas>
+          <div class="curve-readout">
+            <span id="curve-label">Human baseline</span>
+            <strong id="curve-number">1.0x</strong>
+            <small id="curve-caption">unrouted cognition</small>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="slide" data-title="The Problems" aria-labelledby="slide-problems-title">
-      <div class="slide-grid two-column">
+    <section class="slide" data-title="Decision Router" aria-labelledby="slide-router-title">
+      <div class="slide-grid router-layout">
         <div>
-          <p class="kicker">Three Failure Modes</p>
-          <h2 id="slide-problems-title">A plain chatbot is not a life operating system.</h2>
-          <p class="lead">
-            The problem is not access to advice. The problem is that advice usually remains
-            generic, private, morally outsourced, and disconnected from actual execution.
-          </p>
-          <div class="segmented-control" role="tablist" aria-label="Problem selector">
-            <button type="button" class="is-selected" data-problem="rules">Rule following</button>
-            <button type="button" data-problem="ethics">Ethics</button>
-            <button type="button" data-problem="multiplayer">Multiplayer</button>
+          <p class="kicker">Single System</p>
+          <h2 id="slide-router-title">Stop spending bandwidth deciding where thought goes.</h2>
+          <p class="lead">Every question, trade, build, anxiety, and task routes through the same operating layer.</p>
+          <div class="router-controls" aria-label="Decision router selector">
+            <button type="button" class="is-selected" data-route="trade">Trade</button>
+            <button type="button" data-route="code">Code</button>
+            <button type="button" data-route="life">Life</button>
+            <button type="button" data-route="network">Network</button>
           </div>
         </div>
-        <article class="diagnosis-panel" id="problem-output" aria-live="polite">
-          <span>Problem 01</span>
-          <h3>The model follows your stated frame too obediently.</h3>
-          <p>
-            If your context is stale or self-protective, the model can help you execute the wrong plan.
-            The Task Node needs context regeneration, blind-spot analysis, and task history that proves
-            what you actually did.
-          </p>
-        </article>
+        <div class="router-stage" aria-label="decision router animation">
+          <div class="thought-stack">
+            <span data-thought="trade">market impulse</span>
+            <span data-thought="code">feature idea</span>
+            <span data-thought="life">emotional loop</span>
+            <span data-thought="network">community signal</span>
+          </div>
+          <div class="router-core">
+            <span>Task Node</span>
+            <strong id="router-output">Generate trading task</strong>
+            <small>context -> module -> artifact</small>
+          </div>
+          <div class="bandwidth-panel">
+            <span>cognitive bandwidth freed</span>
+            <strong id="bandwidth-value">42%</strong>
+            <div class="bandwidth-bar"><i id="bandwidth-fill"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Codex Throughput" aria-labelledby="slide-codex-title">
+      <div class="slide-grid codex-layout">
+        <div>
+          <p class="kicker">Prompt Codex. Ship LOC.</p>
+          <h2 id="slide-codex-title">The harness protects your cognition for leverage.</h2>
+          <p class="lead">Less native rumination. More precise prompts. More code shipped through agents.</p>
+          <div class="throughput-stats">
+            <span><strong id="loc-counter">0</strong><small>LOC routed today</small></span>
+            <span><strong id="prompt-counter">0</strong><small>Codex prompts</small></span>
+            <span><strong id="artifact-counter">0</strong><small>artifacts</small></span>
+          </div>
+        </div>
+        <div class="codex-terminal" aria-label="animated Codex throughput terminal">
+          <div class="terminal-bar"><span>codex task stream</span><strong>active</strong></div>
+          <div id="codex-lines" class="codex-lines"></div>
+        </div>
       </div>
     </section>
 
@@ -125,10 +145,7 @@
         <div>
           <p class="kicker">Context Is The OS</p>
           <h2 id="slide-context-title">Your context document becomes the system prompt for your life.</h2>
-          <p class="lead">
-            It holds values, strategy, operating constraints, current workflows, and the self-model that
-            the AI is allowed to challenge.
-          </p>
+          <p class="lead">Values, strategy, constraints, workflows, and the self-model the AI is allowed to challenge.</p>
           <div class="stack-list">
             <span>Life goals</span>
             <span>Strategy</span>
@@ -149,10 +166,7 @@
         <div>
           <p class="kicker">Task Engine</p>
           <h2 id="slide-task-title">The system turns strategy into bounded work.</h2>
-          <p class="lead">
-            Personal, network, and alpha tasks are not notes. They are artifacts with deadlines,
-            evidence requirements, verification, and PFT reward settlement.
-          </p>
+          <p class="lead">Not notes. Bounded artifacts with deadlines, evidence, verification, and PFT settlement.</p>
           <div class="segmented-control" role="tablist" aria-label="Task lane selector">
             <button type="button" class="is-selected" data-lane="personal">Personal</button>
             <button type="button" data-lane="network">Network</button>
@@ -181,10 +195,7 @@
         <div>
           <p class="kicker">Artifact Discipline</p>
           <h2 id="slide-evidence-title">The harness works because work becomes visible.</h2>
-          <p class="lead">
-            Every task needs one clear artifact. Evidence and verification prevent the loop from becoming
-            a private motivational fantasy.
-          </p>
+          <p class="lead">One task. One artifact. One verification path. Reality enters the loop.</p>
         </div>
         <div class="evidence-wall">
           <figure>
@@ -208,10 +219,7 @@
         <div>
           <p class="kicker">Module Arsenal</p>
           <h2 id="slide-modules-title">Different cognitive modes for different failure points.</h2>
-          <p class="lead">
-            The app is not one chatbot. It is an explicit set of tools: rewrite context, plan sprints,
-            visualize outcomes, pressure-test trades, interrogate drift, and clarify the protocol.
-          </p>
+          <p class="lead">Not one chatbot. A rack of cognitive tools for different failure modes.</p>
           <article class="module-readout" id="module-readout" aria-live="polite">
             <span>Selected module</span>
             <h3>Full Rewrite</h3>
@@ -242,10 +250,7 @@
         <div>
           <p class="kicker">Field Terminal</p>
           <h2 id="slide-telegram-title">The loop has to follow you away from the desk.</h2>
-          <p class="lead">
-            Telegram gives the Task Node an on-the-go command layer: wallet-linked identity,
-            trading journal context, recent task history, rolling memory, and DeepSeek-powered coaching.
-          </p>
+          <p class="lead">Wallet-linked coaching, trading journal, task history, and rolling memory in your pocket.</p>
           <div class="terminal-controls" aria-label="Telegram sequence controls">
             <button type="button" class="is-selected" data-terminal-step="0">Link wallet</button>
             <button type="button" data-terminal-step="1">Load context</button>
@@ -271,26 +276,25 @@
       </div>
     </section>
 
-    <section class="slide" data-title="Multiplayer" aria-labelledby="slide-multiplayer-title">
-      <div class="slide-grid product-layout">
+    <section class="slide" data-title="Collective Capital" aria-labelledby="slide-capital-title">
+      <div class="slide-grid capital-layout">
         <div>
-          <p class="kicker">Multiplayer Mode</p>
-          <h2 id="slide-multiplayer-title">The private promise becomes a social and economic signal.</h2>
-          <p class="lead">
-            Leaderboards, profiles, encrypted messages, rewards, and public contribution context create
-            the pressure that private self-improvement systems usually lack.
-          </p>
-          <div class="metric-strip">
-            <span>visible output</span>
-            <span>peer pressure</span>
-            <span>reward history</span>
-            <span>reputation</span>
+          <p class="kicker">Collective Compounding</p>
+          <h2 id="slide-capital-title">The network routes work into capital formation.</h2>
+          <p class="lead">Tasks create signal. Signal improves decisions. Decisions compound PFT-aligned capital.</p>
+          <div class="capital-controls" aria-label="Capital graph selector">
+            <button type="button" class="is-selected" data-capital-mode="users">Users</button>
+            <button type="button" data-capital-mode="signals">Signals</button>
+            <button type="button" data-capital-mode="capital">Capital</button>
           </div>
         </div>
-        <figure class="product-shot">
-          <img src="assets/leaderboard.png" alt="Task Node leaderboard screenshot" />
-          <figcaption>Leaderboard: contribution becomes rank, reputation, and social consequence.</figcaption>
-        </figure>
+        <div class="capital-stage" aria-label="interactive collective capital graph">
+          <canvas id="capital-canvas" width="860" height="500"></canvas>
+          <div class="capital-meter">
+            <span id="capital-label">1000 DAUs</span>
+            <strong id="capital-value">signal density rising</strong>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -299,10 +303,7 @@
         <div>
           <p class="kicker">Hive Mind</p>
           <h2 id="slide-hive-title">The network gets its own planning layer.</h2>
-          <p class="lead">
-            Agentic board roles review growth, retention, monetization, market intelligence,
-            verification, prompt governance, and data quality before sanctioned tasks reach users.
-          </p>
+          <p class="lead">Board agents produce sanctioned tasks before users ever ask what to do.</p>
         </div>
         <div class="board-orbit" aria-label="Agentic board roles">
           <div class="board-center">Secretary</div>
@@ -323,10 +324,7 @@
         <div>
           <p class="kicker">Two Weeks Full Auto</p>
           <h2 id="slide-protocol-title">The protocol is simple enough to be brutal.</h2>
-          <p class="lead">
-            Refresh context, select 3-4 tasks, execute artifacts, submit evidence, log what happened,
-            and let the system attack the plan every week.
-          </p>
+          <p class="lead">Fourteen days. Context refresh. Task execution. Evidence. Rewrite. Repeat.</p>
           <div class="day-grid" id="day-grid" aria-label="Fourteen day protocol selector"></div>
         </div>
         <article class="protocol-readout" id="protocol-readout" aria-live="polite">
@@ -340,7 +338,7 @@
     <section class="slide" data-title="Failure Modes" aria-labelledby="slide-failure-title">
       <div>
         <p class="kicker">Failure Modes</p>
-        <h2 id="slide-failure-title">The system is only useful if it names the ways it can fail.</h2>
+        <h2 id="slide-failure-title">The system must know how it fails.</h2>
       </div>
       <div class="failure-grid">
         <article>
@@ -370,10 +368,7 @@
       <div class="final-panel">
         <p class="kicker">The Harness</p>
         <h2 id="slide-final-title">Not man replaced by machine. Man strapped to machine.</h2>
-        <p class="lead">
-          The scarce thing becomes willingness to be measured, rewritten, socially exposed,
-          and told what to do next by a system you approved while you were clear.
-        </p>
+        <p class="lead">Route cognition. Compound action. Let the curve pull.</p>
         <div class="final-actions">
           <a class="primary-action" href="https://tasknode.postfiat.org/" rel="noopener">Join the Task Node</a>
           <a class="secondary-action" href="/posts/human-harness/">Read the thesis</a>
@@ -389,6 +384,6 @@
     <button class="nav-button" type="button" id="next-slide" aria-label="Next slide">Next</button>
   </footer>
 
-  <script src="human-harness.js?v=launch-v1" defer></script>
+  <script src="human-harness.js?v=launch-v2" defer></script>
 </body>
 </html>

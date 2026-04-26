@@ -231,6 +231,316 @@
     });
   }
 
+  function setupCurveCanvas() {
+    const canvas = document.getElementById('curve-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const modes = {
+      human: {
+        label: 'Human baseline',
+        number: '1.0x',
+        caption: 'unrouted cognition',
+        color: 'rgba(180, 192, 202, 0.95)',
+        accent: 'rgba(180, 192, 202, 0.16)',
+      },
+      model: {
+        label: 'Model decision curve',
+        number: '9.4x',
+        caption: 'judgment routed through improving models',
+        color: 'rgba(77, 231, 220, 0.95)',
+        accent: 'rgba(77, 231, 220, 0.18)',
+      },
+      collective: {
+        label: 'Collective compounding',
+        number: '31.7x',
+        caption: 'users + task signal + capital loop',
+        color: 'rgba(110, 229, 143, 0.95)',
+        accent: 'rgba(245, 200, 95, 0.16)',
+      },
+    };
+    let modeKey = 'human';
+    let raf = 0;
+
+    function setMode(nextMode) {
+      modeKey = modes[nextMode] ? nextMode : 'human';
+      const mode = modes[modeKey];
+      document.getElementById('curve-label').textContent = mode.label;
+      document.getElementById('curve-number').textContent = mode.number;
+      document.getElementById('curve-caption').textContent = mode.caption;
+    }
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(rect.width * dpr);
+      canvas.height = Math.floor(rect.height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return rect;
+    }
+
+    function plotCurve(rect, progress) {
+      const mode = modes[modeKey];
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      ctx.fillStyle = 'rgba(5, 6, 6, 0.54)';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      const pad = 58;
+      const width = rect.width - pad * 2;
+      const height = rect.height - pad * 2;
+      ctx.strokeStyle = 'rgba(237, 239, 232, 0.12)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 5; i += 1) {
+        const y = pad + (height / 5) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad, y);
+        ctx.lineTo(rect.width - pad, y);
+        ctx.stroke();
+      }
+      ctx.fillStyle = 'rgba(166, 170, 160, 0.9)';
+      ctx.font = '12px Inter, sans-serif';
+      ctx.fillText('decision quality', pad, pad - 18);
+      ctx.fillText('time / model release cadence', rect.width - pad - 170, rect.height - 24);
+
+      function yFor(xNorm) {
+        if (modeKey === 'human') return 0.72 - xNorm * 0.22;
+        if (modeKey === 'model') return 0.82 - Math.pow(xNorm, 2.3) * 0.72;
+        return 0.86 - Math.pow(xNorm, 2.8) * 0.82;
+      }
+
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = mode.color;
+      ctx.shadowColor = mode.color;
+      ctx.shadowBlur = 18;
+      ctx.beginPath();
+      const max = Math.max(2, Math.floor(120 * progress));
+      for (let i = 0; i <= max; i += 1) {
+        const xNorm = i / 120;
+        const x = pad + xNorm * width;
+        const y = pad + clamp(yFor(xNorm), 0.04, 0.9) * height;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      if (modeKey !== 'human') {
+        ctx.fillStyle = mode.accent;
+        for (let i = 0; i < 8; i += 1) {
+          const xNorm = (i + 1) / 9;
+          const x = pad + xNorm * width;
+          const y = pad + clamp(yFor(xNorm), 0.04, 0.9) * height;
+          ctx.beginPath();
+          ctx.arc(x, y, 7 + i * 0.8, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    function draw(time) {
+      const rect = resizeCanvas();
+      if (rect) {
+        const progress = prefersReducedMotion ? 1 : Math.min(1, ((time || 0) % 2600) / 1800);
+        plotCurve(rect, progress);
+      }
+      raf = requestAnimationFrame(draw);
+    }
+
+    document.querySelectorAll('[data-curve-mode]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-curve-mode]').forEach((item) => {
+          item.classList.toggle('is-selected', item === button);
+        });
+        setMode(button.dataset.curveMode);
+      });
+    });
+
+    setMode('human');
+    draw(0);
+    window.addEventListener('pagehide', () => cancelAnimationFrame(raf));
+  }
+
+  function setupDecisionRouter() {
+    const output = document.getElementById('router-output');
+    const value = document.getElementById('bandwidth-value');
+    const fill = document.getElementById('bandwidth-fill');
+    const routes = {
+      trade: ['Generate trading task', '42%'],
+      code: ['Spawn Codex implementation path', '71%'],
+      life: ['Run Five Mirrors', '58%'],
+      network: ['Issue network contribution task', '64%'],
+    };
+
+    function activate(routeKey) {
+      const route = routes[routeKey] || routes.trade;
+      if (output) output.textContent = route[0];
+      if (value) value.textContent = route[1];
+      if (fill) fill.style.width = route[1];
+      document.querySelectorAll('[data-thought]').forEach((item) => {
+        item.classList.toggle('is-active', item.dataset.thought === routeKey);
+      });
+    }
+
+    document.querySelectorAll('[data-route]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-route]').forEach((item) => {
+          item.classList.toggle('is-selected', item === button);
+        });
+        activate(button.dataset.route);
+      });
+    });
+    activate('trade');
+  }
+
+  function setupCodexStream() {
+    const linesRoot = document.getElementById('codex-lines');
+    const locCounter = document.getElementById('loc-counter');
+    const promptCounter = document.getElementById('prompt-counter');
+    const artifactCounter = document.getElementById('artifact-counter');
+    if (!linesRoot) return;
+
+    const events = [
+      ['TASK', 'Patch reward feedback payload', '+214 LOC'],
+      ['PROMPT', 'Route vague anxiety into concrete task', '+1'],
+      ['CODEX', 'Refactor verification guard', '+488 LOC'],
+      ['TEST', 'Add regression for single artifact method', '+96 LOC'],
+      ['SHIP', 'Deploy dev surface for review', 'artifact'],
+      ['CODEX', 'Build interactive presentation slide', '+327 LOC'],
+    ];
+    let index = 0;
+    let loc = 1200;
+    let prompts = 8;
+    let artifacts = 2;
+
+    function tick() {
+      const event = events[index % events.length];
+      index += 1;
+      if (event[2].includes('LOC')) loc += Number.parseInt(event[2].replace(/\D/g, ''), 10) || 0;
+      if (event[0] === 'PROMPT' || event[0] === 'CODEX') prompts += 1;
+      if (event[0] === 'SHIP') artifacts += 1;
+      locCounter.textContent = loc.toLocaleString();
+      promptCounter.textContent = prompts.toLocaleString();
+      artifactCounter.textContent = artifacts.toLocaleString();
+
+      const line = document.createElement('div');
+      line.className = 'codex-line';
+      line.innerHTML = `<strong>${escapeHtml(event[0])}</strong><span>${escapeHtml(event[1])}</span><small>${escapeHtml(event[2])}</small>`;
+      linesRoot.prepend(line);
+      while (linesRoot.children.length > 8) {
+        linesRoot.lastElementChild.remove();
+      }
+    }
+
+    for (let i = 0; i < 5; i += 1) tick();
+    if (!prefersReducedMotion) {
+      setInterval(tick, 1500);
+    }
+  }
+
+  function setupCapitalCanvas() {
+    const canvas = document.getElementById('capital-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    const label = document.getElementById('capital-label');
+    const value = document.getElementById('capital-value');
+    const modes = {
+      users: ['1000 DAUs', 'humans produce task evidence'],
+      signals: ['signal graph', 'alpha and execution traces densify'],
+      capital: ['capital loop', 'collective intelligence compounds'],
+    };
+    let modeKey = 'users';
+    let raf = 0;
+
+    function setMode(nextMode) {
+      modeKey = modes[nextMode] ? nextMode : 'users';
+      if (label) label.textContent = modes[modeKey][0];
+      if (value) value.textContent = modes[modeKey][1];
+    }
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(rect.width * dpr);
+      canvas.height = Math.floor(rect.height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return rect;
+    }
+
+    function draw(time) {
+      const rect = resizeCanvas();
+      if (!rect) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
+      const t = (time || 0) / 1000;
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      ctx.fillStyle = 'rgba(5, 6, 6, 0.54)';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      const cx = rect.width * 0.48;
+      const cy = rect.height * 0.52;
+      const count = modeKey === 'users' ? 18 : modeKey === 'signals' ? 28 : 36;
+      const radius = Math.min(rect.width, rect.height) * 0.32;
+      const nodes = [];
+      for (let i = 0; i < count; i += 1) {
+        const angle = (i / count) * Math.PI * 2 + t * 0.06;
+        const r = radius * (0.46 + ((i * 37) % 53) / 100);
+        nodes.push({
+          x: cx + Math.cos(angle) * r,
+          y: cy + Math.sin(angle * 1.23) * r * 0.78,
+          hot: i % 5 === 0,
+        });
+      }
+      ctx.lineWidth = 1;
+      for (let i = 0; i < nodes.length; i += 1) {
+        for (let j = i + 1; j < nodes.length; j += 1) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist > (modeKey === 'users' ? 95 : 135)) continue;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(77, 231, 220, ${0.18 * (1 - dist / 135)})`;
+          ctx.stroke();
+        }
+      }
+      nodes.forEach((node) => {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.hot ? 6 : 4, 0, Math.PI * 2);
+        ctx.fillStyle = node.hot ? 'rgba(245, 200, 95, 0.95)' : 'rgba(77, 231, 220, 0.82)';
+        ctx.fill();
+      });
+      ctx.strokeStyle = modeKey === 'capital' ? 'rgba(110, 229, 143, 0.95)' : 'rgba(245, 200, 95, 0.68)';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      const pad = 60;
+      for (let i = 0; i <= 80; i += 1) {
+        const xNorm = i / 80;
+        const x = pad + xNorm * (rect.width - pad * 2);
+        const y = rect.height - pad - Math.pow(xNorm, modeKey === 'capital' ? 2.7 : 1.6) * (rect.height * 0.42);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      raf = requestAnimationFrame(draw);
+    }
+
+    document.querySelectorAll('[data-capital-mode]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('[data-capital-mode]').forEach((item) => {
+          item.classList.toggle('is-selected', item === button);
+        });
+        setMode(button.dataset.capitalMode);
+      });
+    });
+    setMode('users');
+    draw(0);
+    window.addEventListener('pagehide', () => cancelAnimationFrame(raf));
+  }
+
   function setupTelegramTerminal() {
     const feed = document.getElementById('phone-feed');
     const steps = [
@@ -401,6 +711,10 @@
   setupProblemTabs();
   setupTaskLanes();
   setupModules();
+  setupCurveCanvas();
+  setupDecisionRouter();
+  setupCodexStream();
+  setupCapitalCanvas();
   setupTelegramTerminal();
   setupProtocol();
   setupCanvas();
