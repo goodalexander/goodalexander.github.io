@@ -13,9 +13,16 @@ const indexLabel = document.getElementById('portal-index');
 const meter = document.getElementById('portal-meter');
 const prev = document.getElementById('prev-portal');
 const next = document.getElementById('next-portal');
+const focusToggle = document.getElementById('toggle-focus');
+const journeyUi = document.getElementById('journey-ui');
+const ASSET_VERSION = 'sigil-v4';
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+function versionedUrl(url) {
+  return url.includes('?') ? `${url}&v=${ASSET_VERSION}` : `${url}?v=${ASSET_VERSION}`;
 }
 
 let active = 0;
@@ -30,11 +37,16 @@ let lon = 0;
 let lat = 0;
 let targetOpacity = 1;
 let lastInteraction = window.performance.now();
+let focused = false;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x050408);
 
-const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1100);
+const DEFAULT_FOV = 82;
+const MIN_FOV = 38;
+const MAX_FOV = 96;
+
+const camera = new THREE.PerspectiveCamera(DEFAULT_FOV, window.innerWidth / window.innerHeight, 1, 1100);
 const target = new THREE.Vector3();
 
 const renderer = new THREE.WebGLRenderer({
@@ -113,16 +125,17 @@ function applyTexture(texture, opacity = 1) {
 
 function preloadTexture(index) {
   const realm = realms[index];
-  if (!realm || textureCache.has(realm.image)) {
+  const imageUrl = realm ? versionedUrl(realm.image) : '';
+  if (!realm || textureCache.has(imageUrl)) {
     return;
   }
 
   loader.load(
-    realm.image,
+    imageUrl,
     (texture) => {
       texture.colorSpace = THREE.SRGBColorSpace;
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-      textureCache.set(realm.image, texture);
+      textureCache.set(imageUrl, texture);
     },
     undefined,
     () => {}
@@ -131,6 +144,7 @@ function preloadTexture(index) {
 
 function loadWorld(index) {
   const realm = realms[index];
+  const imageUrl = realm ? versionedUrl(realm.image) : '';
   const requestId = requestSerial + 1;
   requestSerial = requestId;
   targetOpacity = 1;
@@ -139,7 +153,7 @@ function loadWorld(index) {
     return;
   }
 
-  const cachedTexture = textureCache.get(realm.image);
+  const cachedTexture = textureCache.get(imageUrl);
   if (cachedTexture) {
     applyTexture(cachedTexture);
     return;
@@ -147,7 +161,7 @@ function loadWorld(index) {
 
   applyTexture(getFallbackTexture(index), 0.85);
   loader.load(
-    realm.image,
+    imageUrl,
     (texture) => {
       if (requestId !== requestSerial) {
         texture.dispose();
@@ -155,7 +169,7 @@ function loadWorld(index) {
       }
       texture.colorSpace = THREE.SRGBColorSpace;
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-      textureCache.set(realm.image, texture);
+      textureCache.set(imageUrl, texture);
       applyTexture(texture);
       loading?.classList.add('is-hidden');
     },
@@ -188,7 +202,7 @@ function goTo(index) {
   active = (index + realms.length) % realms.length;
   lon = 0;
   lat = 0;
-  camera.fov = 70;
+  camera.fov = DEFAULT_FOV;
   camera.updateProjectionMatrix();
   lastInteraction = window.performance.now();
   updateCopy(active);
@@ -222,9 +236,19 @@ function noteInteraction() {
   lastInteraction = window.performance.now();
 }
 
+function setFocused(value) {
+  focused = Boolean(value);
+  journeyUi?.classList.toggle('is-focus', focused);
+  focusToggle?.setAttribute('aria-pressed', focused ? 'true' : 'false');
+  if (focusToggle) {
+    focusToggle.textContent = focused ? 'Text' : 'Focus';
+  }
+}
+
 function bindInput() {
   prev.addEventListener('click', () => goTo(active - 1));
   next.addEventListener('click', () => goTo(active + 1));
+  focusToggle?.addEventListener('click', () => setFocused(!focused));
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
@@ -234,13 +258,17 @@ function bindInput() {
       goTo(active + 1);
     }
     if (event.key === '+' || event.key === '=') {
-      camera.fov = clamp(camera.fov - 5, 34, 86);
+      camera.fov = clamp(camera.fov - 5, MIN_FOV, MAX_FOV);
       camera.updateProjectionMatrix();
       noteInteraction();
     }
     if (event.key === '-' || event.key === '_') {
-      camera.fov = clamp(camera.fov + 5, 34, 86);
+      camera.fov = clamp(camera.fov + 5, MIN_FOV, MAX_FOV);
       camera.updateProjectionMatrix();
+      noteInteraction();
+    }
+    if (event.key.toLowerCase() === 'f') {
+      setFocused(!focused);
       noteInteraction();
     }
   });
@@ -276,7 +304,7 @@ function bindInput() {
 
   canvas.addEventListener('wheel', (event) => {
     event.preventDefault();
-    camera.fov = clamp(camera.fov + (event.deltaY * 0.03), 34, 86);
+    camera.fov = clamp(camera.fov + (event.deltaY * 0.03), MIN_FOV, MAX_FOV);
     camera.updateProjectionMatrix();
     noteInteraction();
   }, { passive: false });
