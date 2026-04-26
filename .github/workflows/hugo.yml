@@ -43,7 +43,7 @@ jobs:
       - name: Build Site
         env:
           HUGO_ENV: production
-        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: hugo --gc --minify --baseURL "https://goodalexander.com/"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
