@@ -1,4 +1,4 @@
-baseURL = 'https://goodalexander.github.io'
+baseURL = 'https://goodalexander.com'
 languageCode = 'en-us'
 title = 'goodalexander'
 theme = 'PaperMod'
@@ -25,6 +25,14 @@ disableXML = true
       tag = "tags"
       series = "series"
     [[languages.en.menu.main]]
+      name = "The Merge"
+      url = "the-merge/"
+      weight = 5
+    [[languages.en.menu.main]]
+      name = "Join Task Node"
+      url = "https://tasknode.postfiat.org/"
+      weight = 6
+    [[languages.en.menu.main]]
       name = "Tags"
       url = "tags/"
       weight = 10
@@ -44,21 +52,13 @@ disableXML = true
       name = "Subscribe"
       url = "subscribe/"
       weight = 50
-    [[languages.en.menu.main]]
-      name = "The Merge"
-      url = "the-merge/"
-      weight = 60
-    [[languages.en.menu.main]]
-      name = "Human Harness"
-      url = "human-harness/"
-      weight = 70
       
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
 [params]
   env = "production"
-  description = "goodalexander: financial cyberpunk. crypto investment and equity options trading"
+  description = "goodalexander: navigating a post fiat future. Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake."
   author = "goodalexander"
   # author = ["Me", "You"]
   defaultTheme = "auto"
@@ -79,8 +79,8 @@ disableXML = true
 
 
 [params.homeInfoParams]
-  Title = "goodalexander: financial cyberpunk"
-  Content = '''Crypto and options trading. Long form writing. Can also [Subscribe to E-Mail Newsletter](https://goodalexander.com/subscribe/). Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.github.io/disclaimer)'''
+  Title = "goodalexander: navigating a post fiat future"
+  Content = '''Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake. [Join the Task Node](https://tasknode.postfiat.org/) to learn more. Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.com/disclaimer/).'''
   
   [[params.socialIcons]]
     name = "twitter"
@@ -100,7 +100,7 @@ disableXML = true
   [[params.socialIcons]]
     name = "email"
     title = "email newsletter"
-    url = "https://goodalexander.github.io/subscribe"
+    url = "https://goodalexander.com/subscribe/"
 
 #  [params.editPost]
 #    URL = "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
