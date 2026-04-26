@@ -14,6 +14,10 @@ I built an interactive presentation for the next phase of the experiment: two we
 
 [Enter the Human Harness presentation](/human-harness/)
 
+I also built a second version for people who want the thesis as an interactive journey instead of a slide deck: fourteen planar portals through a Sigil-inspired City of Doors, with each gate mapped to one core Task Node concept.
+
+[Enter the City of Doors journey](/human-harness-journey/)
+
 The thesis is simple: the point is not to keep the human ego at the center. The point is to route thought and decisions through one system, ride the exponential curve of AI decision-making, and free cognitive bandwidth so you can prompt agents, ship more artifacts, and compound capital on behalf of the collective.
 
 The browser is the cockpit. Telegram is the field terminal. The full-auto experiment only matters if the loop follows you away from the desk.
