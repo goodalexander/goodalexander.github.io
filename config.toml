@@ -80,7 +80,33 @@ disableXML = true
 
 [params.homeInfoParams]
   Title = "goodalexander: navigating a post fiat future"
-  Content = '''Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake. [Join the Task Node](https://tasknode.postfiat.org/) to learn more. Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.com/disclaimer/).'''
+  Content = '''Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake. Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.com/disclaimer/).'''
+
+  [[params.homeCtas]]
+    title = "Join the Task Node"
+    description = "Use AI to Improve Your Life with a Community."
+    url = "https://tasknode.postfiat.org/"
+    variant = "primary"
+
+  [[params.homeCtas]]
+    title = "Join the Post Fiat Discord"
+    description = "Key announcements, earnings opportunities, and collaboration."
+    url = "https://discord.gg/U6HjgDSmhR"
+
+  [[params.homeCtas]]
+    title = "Join the Mailing List"
+    description = "Subscribe to the Goodalexander Newsletter."
+    url = "/subscribe/"
+
+  [[params.homeCtas]]
+    title = "Follow on X (Goodalexander)"
+    description = "Long-form notes, market thoughts, and live build updates."
+    url = "https://x.com/goodalexander"
+
+  [[params.homeCtas]]
+    title = "Follow on X (Post Fiat Org)"
+    description = "Task Node, protocol, and Post Fiat announcements."
+    url = "https://x.com/postfiatorg"
   
   [[params.socialIcons]]
     name = "twitter"
