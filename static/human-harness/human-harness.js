@@ -3,6 +3,11 @@
   const dotsRoot = document.getElementById('slide-dots');
   const status = document.getElementById('slide-status');
   const progress = document.getElementById('progress-bar');
+  const railFill = document.getElementById('rail-fill');
+  const footerSlug = document.getElementById('footer-slug');
+  const footerCurrent = document.getElementById('footer-current');
+  const footerTotal = document.getElementById('footer-total');
+  const cursorSpot = document.getElementById('cursor-spot');
   const prevButton = document.getElementById('prev-slide');
   const nextButton = document.getElementById('next-slide');
   const deck = document.getElementById('deck');
@@ -11,6 +16,7 @@
   let activeIndex = readInitialIndex();
   let touchStartX = 0;
   let touchStartY = 0;
+  const countedSlides = new Set();
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
@@ -50,22 +56,69 @@
       dot.setAttribute('aria-current', index === activeIndex ? 'step' : 'false');
     });
 
-    const title = slides[activeIndex]?.dataset.title || `Slide ${activeIndex + 1}`;
+    const slide = slides[activeIndex];
+    const title = slide?.dataset.title || `Slide ${activeIndex + 1}`;
+    const slug = slide?.dataset.slug || `slide_${activeIndex + 1}`;
+    const ratio = (activeIndex + 1) / slides.length;
+
     if (status) {
-      status.textContent = `${activeIndex + 1}/${slides.length} - ${title}`;
+      status.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')} · ${title}`;
     }
     if (progress) {
-      progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+      progress.style.width = `${ratio * 100}%`;
+    }
+    if (railFill) {
+      railFill.style.height = `${ratio * 100}%`;
+    }
+    if (footerSlug) {
+      footerSlug.textContent = `// ${slug}.tsx`;
+    }
+    if (footerCurrent) {
+      footerCurrent.textContent = String(activeIndex + 1).padStart(2, '0');
+    }
+    if (footerTotal) {
+      footerTotal.textContent = String(slides.length).padStart(2, '0');
     }
     if (prevButton) {
       prevButton.disabled = activeIndex === 0;
     }
     if (nextButton) {
-      nextButton.textContent = activeIndex === slides.length - 1 ? 'Restart' : 'Next';
+      const label = nextButton.querySelector('span');
+      if (label) label.textContent = activeIndex === slides.length - 1 ? 'Restart' : 'Next';
     }
+
+    if (slide && !countedSlides.has(activeIndex)) {
+      countUpInside(slide);
+      countedSlides.add(activeIndex);
+    }
+
     window.history.replaceState(null, '', `#slide-${activeIndex + 1}`);
     deck?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  }
+
+  function countUpInside(root) {
+    const targets = root.querySelectorAll('[data-target]');
+    targets.forEach((el) => {
+      const target = Number.parseInt(el.dataset.target, 10);
+      if (!Number.isFinite(target)) return;
+      const current = Number.parseInt(String(el.textContent || '0').replace(/[^0-9-]/g, ''), 10) || 0;
+      if (current >= target) return;
+      if (prefersReducedMotion) {
+        el.textContent = target.toLocaleString();
+        return;
+      }
+      const start = performance.now();
+      const duration = 1200;
+      function tick(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = Math.round(current + (target - current) * eased);
+        el.textContent = value.toLocaleString();
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
   }
 
   function goTo(index) {
@@ -805,6 +858,30 @@
     window.addEventListener('pagehide', () => cancelAnimationFrame(raf));
   }
 
+  function setupCursorSpotlight() {
+    if (!cursorSpot || prefersReducedMotion) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    document.body.classList.add('has-cursor');
+    let raf = 0;
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let currentX = targetX;
+    let currentY = targetY;
+    document.addEventListener('mousemove', (event) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+    }, { passive: true });
+    function tick() {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      cursorSpot.style.left = `${currentX}px`;
+      cursorSpot.style.top = `${currentY}px`;
+      raf = requestAnimationFrame(tick);
+    }
+    tick();
+    window.addEventListener('pagehide', () => cancelAnimationFrame(raf));
+  }
+
   setupNavigation();
   setupProblemTabs();
   setupTaskLanes();
@@ -816,5 +893,6 @@
   setupTelegramTerminal();
   setupProtocol();
   setupCanvas();
+  setupCursorSpotlight();
   syncSlide();
 })();
