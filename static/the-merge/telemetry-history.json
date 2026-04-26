@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-25T23:47:33.166Z",
+  "generated_at": "2026-04-26T00:55:12.302Z",
   "retention_days": 365,
   "snapshots": [
     {
@@ -306,6 +306,31 @@
       "pft_rewards": 8200,
       "context_updates": 1,
       "wallet_interactions": 18,
+      "github_private_commits": 4,
+      "github_private_loc": 9534,
+      "github_private_additions": 9432,
+      "github_private_deletions": 102,
+      "sources": {
+        "x_followers": "x_api_v2_users_by_username",
+        "current_metrics": "telemetry_snapshot",
+        "github_private": "redacted_private_github_snapshot"
+      }
+    },
+    {
+      "date": "2026-04-26",
+      "updated_at": "2026-04-26T00:55:12.302Z",
+      "dau": 24,
+      "x_followers": 121539,
+      "x_following": 1287,
+      "x_posts": 15272,
+      "task_requests": 5,
+      "task_verifications": 4,
+      "task_updates": 4,
+      "tasks_completed": 4,
+      "rewards": 4,
+      "pft_rewards": 8200,
+      "context_updates": 1,
+      "wallet_interactions": 19,
       "github_private_commits": 4,
       "github_private_loc": 9534,
       "github_private_additions": 9432,
