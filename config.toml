@@ -48,6 +48,10 @@ disableXML = true
       name = "The Merge"
       url = "the-merge/"
       weight = 60
+    [[languages.en.menu.main]]
+      name = "Human Harness"
+      url = "human-harness/"
+      weight = 70
       
 [outputs]
   home = ["HTML", "RSS", "JSON"]
