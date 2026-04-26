@@ -1,0 +1,26 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    {{- with site.Params.homeCtas }}
+    <nav class="home-cta-board" aria-label="Primary calls to action">
+        {{- range . }}
+        <a class="home-cta-link{{ with .variant }} home-cta-link--{{ . }}{{ end }}"
+            href="{{ .url | safeURL }}"
+            {{- if or (hasPrefix .url "http://") (hasPrefix .url "https://") }} target="_blank" rel="noopener noreferrer"{{ end }}>
+            <span class="home-cta-title">{{ .title }}</span>
+            <span class="home-cta-copy">{{ .description }}</span>
+        </a>
+        {{- end }}
+    </nav>
+    {{- else }}
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+    {{- end }}
+</article>
+{{- end -}}
