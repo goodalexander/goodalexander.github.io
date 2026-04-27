@@ -1,0 +1,505 @@
+{{- define "main" -}}
+{{- $allPosts := where site.RegularPages "Section" "in" (slice "posts" "post") -}}
+{{- $allPosts = where $allPosts "File.BaseFileName" "!=" "new_html" -}}
+{{- $posts := sort $allPosts "Date" "desc" -}}
+{{- $latest := index $posts 0 -}}
+{{- $latestTags := slice "goodalexander" -}}
+{{- with $latest.Params.tags }}{{- $latestTags = first 4 . -}}{{- end -}}
+{{- $latestCategory := "Dispatch" -}}
+{{- with $latest.Params.categories }}{{- if gt (len .) 0 }}{{- $latestCategory = index . 0 -}}{{- end }}{{- end -}}
+{{- $latestFolio := printf "%03d" (len $posts) -}}
+
+<div class="ga-front">
+  <div class="ga-embers" aria-hidden="true">
+    <span class="ga-ember" style="left: 8%; --drift: 60px; animation-duration: 22s; animation-delay: 0s;"></span>
+    <span class="ga-ember" style="left: 18%; --drift: -40px; animation-duration: 26s; animation-delay: 4s;"></span>
+    <span class="ga-ember" style="left: 30%; --drift: 80px; animation-duration: 30s; animation-delay: 8s;"></span>
+    <span class="ga-ember" style="left: 42%; --drift: -60px; animation-duration: 24s; animation-delay: 2s;"></span>
+    <span class="ga-ember" style="left: 56%; --drift: 50px; animation-duration: 28s; animation-delay: 12s;"></span>
+    <span class="ga-ember" style="left: 68%; --drift: -30px; animation-duration: 32s; animation-delay: 6s;"></span>
+    <span class="ga-ember" style="left: 80%; --drift: 70px; animation-duration: 26s; animation-delay: 10s;"></span>
+    <span class="ga-ember" style="left: 92%; --drift: -50px; animation-duration: 30s; animation-delay: 14s;"></span>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ga-halo" viewBox="-50 -50 100 100">
+        <g stroke="currentColor" stroke-width="0.6" fill="none">
+          <circle cx="0" cy="0" r="14"/>
+          <circle cx="0" cy="0" r="20" opacity=".5"/>
+        </g>
+        <g fill="currentColor">
+          <g><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(22.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(45)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(67.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(90)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(112.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(135)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(157.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(180)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(202.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(225)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(247.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(270)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(292.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(315)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+          <g transform="rotate(337.5)"><path d="M 0 -46 L 2.5 -22 L 0 -16 L -2.5 -22 Z"/></g>
+        </g>
+        <circle cx="0" cy="0" r="2.5" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="ga-chrome">
+    <div class="ga-shell ga-nav">
+      <a href="/" class="ga-brand" aria-label="goodalexander home">
+        <span class="ga-halo"><svg><use href="#ga-halo"/></svg></span>
+        <span>goodalexander</span>
+      </a>
+
+      <nav class="ga-nav-rail" aria-label="Primary navigation">
+        <a class="ga-nav-link" href="/the-merge/">The Merge</a>
+        <a class="ga-nav-link is-active" href="#doors">Doors</a>
+        <a class="ga-nav-link" href="/search/" data-open-modal="search">Search</a>
+        <a class="ga-nav-link" href="/archives/">Folio</a>
+      </nav>
+
+      <a class="ga-subscribe-top" href="/subscribe/">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        Subscribe
+      </a>
+    </div>
+  </header>
+
+  <section class="ga-hero ga-shell" aria-label="Homepage hero">
+    <div class="ga-hero-maze" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+        <path class="ml ga-ml-a" d="M 80 320 C 200 200, 380 150, 540 180 C 660 200, 760 270, 820 360"/>
+        <path class="ml ga-ml-b" d="M 820 360 C 890 410, 910 510, 860 590 C 810 670, 700 685, 630 625 C 565 570, 575 480, 645 440 C 710 405, 770 435, 780 495 C 790 552, 740 580, 700 558 C 670 542, 668 510, 692 498 C 712 488, 728 502, 720 520"/>
+        <path class="ml ga-ml-c" d="M 80 320 C 60 420, 30 520, 90 600 C 150 680, 270 700, 340 640 C 400 590, 410 530, 365 490 C 320 452, 250 460, 220 510 C 195 552, 215 600, 260 600"/>
+        <path class="ml ga-ml-d" d="M 260 600 C 340 650, 460 690, 580 695 C 670 698, 740 680, 800 650"/>
+        <path class="ml ga-ml-e" d="M 540 180 C 510 240, 510 320, 555 360 C 600 400, 660 380, 680 340"/>
+        <path class="ml ga-ml-f" d="M 365 490 C 360 560, 348 620, 340 680"/>
+        <path class="ml ga-ml-g" d="M 880 240 C 880 290, 868 330, 838 358"/>
+        <path class="ml ga-ml-h" d="M 800 650 C 850 685, 870 730, 858 790"/>
+        <path class="ml ga-ml-i" d="M 130 770 C 200 745, 260 770, 248 815 C 238 855, 188 858, 162 828 C 145 808, 142 785, 158 775 C 178 765, 200 778, 198 800"/>
+        <path class="ml ga-ml-j" d="M 720 110 C 760 130, 790 160, 800 200 C 805 220, 798 238, 782 245"/>
+        <g fill="currentColor" stroke="none" opacity="0.85">
+          <rect x="78" y="318" width="5" height="5" transform="rotate(45 80.5 320.5)"/>
+          <rect x="538" y="178" width="5" height="5" transform="rotate(45 540.5 180.5)"/>
+          <rect x="258" y="598" width="5" height="5" transform="rotate(45 260.5 600.5)"/>
+          <rect x="338" y="678" width="5" height="5" transform="rotate(45 340.5 680.5)"/>
+        </g>
+        <g stroke="currentColor" fill="none">
+          <circle cx="838" cy="358" r="10" stroke-width="0.9" opacity="0.55"/>
+          <circle cx="838" cy="358" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="858" cy="790" r="10" stroke-width="0.9" opacity="0.55"/>
+          <circle cx="858" cy="790" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="782" cy="245" r="8" stroke-width="0.9" opacity="0.55"/>
+          <circle cx="782" cy="245" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="198" cy="800" r="8" stroke-width="0.9" opacity="0.55"/>
+          <circle cx="198" cy="800" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="720" cy="520" r="6" stroke-width="0.9" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="ga-hero-grid">
+      <div class="ga-hero-copy">
+        <span class="ga-eyebrow">Financial cyberpunk</span>
+        <h1>
+          <span class="ga-hl-line">Make Money</span>
+          <span class="ga-hl-line">Merging with AI.</span>
+        </h1>
+
+        <div class="ga-ornament" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+          <span class="line"></span>
+        </div>
+
+        <p class="ga-deck">
+          GoodAlexander is
+          <span class="ga-deck-list">
+            <span class="ga-deck-item"><span class="ga-deck-num">1]</span> philosophy, rants, and long-form speculation</span>
+            <span class="ga-deck-item"><span class="ga-deck-num">2]</span> the output of the first cryptographic AI Hive Mind <span class="ga-deck-strong">(Post Fiat)</span></span>
+            <span class="ga-deck-item"><span class="ga-deck-num">3]</span> trade ideas and market notes informed by the Post Fiat data lake</span>
+          </span>
+        </p>
+
+        <div class="ga-hero-actions">
+          <a class="ga-btn ga-btn-primary" href="https://tasknode.postfiat.org/" rel="noopener">
+            Join the Task Node
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="ga-btn ga-btn-ghost" href="{{ $latest.RelPermalink }}">
+            Read Latest
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <a class="ga-latest-panel" href="{{ $latest.RelPermalink }}" id="latestPanel" aria-label="Read the latest dispatch">
+        <div class="ga-feature-art" aria-hidden="true">
+          <span class="ga-art-corner tl"></span>
+          <span class="ga-art-corner tr"></span>
+          <span class="ga-art-corner bl"></span>
+          <span class="ga-art-corner br"></span>
+          <div class="ga-art-label">
+            <div class="ga-label-issue">
+              Latest dispatch
+              <span id="featureIssue">Folio {{ $latestFolio }}</span>
+            </div>
+            <div class="ga-folio-num" id="featureNumber">{{ $latestFolio }}</div>
+          </div>
+        </div>
+
+        <div class="ga-feature-body">
+          <div class="ga-feature-kicker">
+            <span id="featureKicker">{{ $latestCategory }}</span>
+            <span id="featureDate">{{ $latest.Date.Format "Jan 2, 2006" }} · {{ $latest.ReadingTime }} min</span>
+          </div>
+          <h2 class="ga-feature-title" id="featureTitle">{{ $latest.Title }}</h2>
+          <p class="ga-feature-copy" id="featureCopy">{{ $latest.Summary | plainify | htmlUnescape }}</p>
+          <div class="ga-tag-row" id="featureTags">
+            {{- range $latestTags }}
+            <span class="ga-tag">{{ . }}</span>
+            {{- end }}
+          </div>
+          <div class="ga-feature-bottom">
+            <span class="ga-read-now">Read the dispatch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+            <span class="ga-article-meta" id="featureByline">goodalexander</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="ga-section ga-shell" id="doors" aria-label="Doors into Post Fiat">
+    <div class="ga-section-heading">
+      <h2 class="ga-section-title">Doors</h2>
+      <p class="ga-section-sub">Apertures into the Post Fiat loop</p>
+    </div>
+
+    <div class="ga-doors-grid">
+      <a class="ga-door featured" href="https://tasknode.postfiat.org/" rel="noopener">
+        <div class="ga-door-inner">
+          <div class="ga-door-head">
+            <span class="ga-glyph" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6.5v9L12 20l8-4.5v-9L12 2Z"/><path d="M12 20v-9M4 6.5l8 4.5 8-4.5"/></svg>
+            </span>
+            <span class="ga-door-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+          <div>
+            <h3>Join the Task Node</h3>
+            <p>Use AI to improve your life with a serious community and a bias toward output.</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="ga-door" href="https://discord.gg/U6HjgDSmhR" rel="noopener">
+        <div class="ga-door-inner">
+          <div class="ga-door-head">
+            <span class="ga-glyph verdigris" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/></svg>
+            </span>
+            <span class="ga-door-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+          <div>
+            <h3>Post Fiat Discord</h3>
+            <p>Announcements, earning opportunities, collaboration, and protocol conversation.</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="ga-door" href="/subscribe/">
+        <div class="ga-door-inner">
+          <div class="ga-door-head">
+            <span class="ga-glyph copper" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <span class="ga-door-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+          <div>
+            <h3>Mailing List</h3>
+            <p>GoodAlexander essays and market notes, sent without a paywall.</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="ga-door" href="https://x.com/goodalexander" rel="noopener">
+        <div class="ga-door-inner">
+          <div class="ga-door-head">
+            <span class="ga-glyph bone" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </span>
+            <span class="ga-door-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+          <div>
+            <h3>X <span class="quiet">@goodalexander</span></h3>
+            <p>Long-form notes, market thoughts, and live build updates.</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="ga-door" href="https://x.com/postfiatorg" rel="noopener">
+        <div class="ga-door-inner">
+          <div class="ga-door-head">
+            <span class="ga-glyph oxblood" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </span>
+            <span class="ga-door-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+          <div>
+            <h3>X <span class="quiet">@postfiatorg</span></h3>
+            <p>Task Node, protocol, and Post Fiat announcements.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="ga-ticker" aria-label="Conceptual ticker">
+    <div class="ga-ticker-track">
+      {{- range seq 1 2 }}
+      <span class="ga-ticker-item"><strong>Post Fiat</strong><span>coordination ledger</span></span>
+      <span class="ga-ticker-divider"></span>
+      <span class="ga-ticker-item"><strong>Task Node</strong><span class="accent">work in the open</span></span>
+      <span class="ga-ticker-divider"></span>
+      <span class="ga-ticker-item"><strong>The Merge</strong><span>live telemetry</span></span>
+      <span class="ga-ticker-divider"></span>
+      <span class="ga-ticker-item"><strong>Full Auto</strong><span class="oxblood-c">current experiment</span></span>
+      <span class="ga-ticker-divider"></span>
+      <span class="ga-ticker-item"><strong>GoodAlexander</strong><span>public notebook</span></span>
+      <span class="ga-ticker-divider"></span>
+      <span class="ga-ticker-item"><strong>Folio</strong><span class="verdigris-c">archive of dispatches</span></span>
+      <span class="ga-ticker-divider"></span>
+      {{- end }}
+    </div>
+  </div>
+
+  <section class="ga-section ga-shell" id="dispatches" aria-label="Articles">
+    <div class="ga-section-heading">
+      <h2 class="ga-section-title">Articles</h2>
+      <p class="ga-section-sub">From the notebook</p>
+    </div>
+
+    <div class="ga-writing-grid">
+      {{- range $i, $p := first 6 $posts }}
+      {{- $folio := printf "%03d" (sub (len $posts) $i) -}}
+      {{- $tags := slice "goodalexander" -}}
+      {{- with $p.Params.tags }}{{- $tags = first 4 . -}}{{- end -}}
+      {{- $category := "Dispatch" -}}
+      {{- with $p.Params.categories }}{{- if gt (len .) 0 }}{{- $category = index . 0 -}}{{- end }}{{- end -}}
+      {{- $tone := "" -}}
+      {{- if eq (mod $i 3) 1 }}{{- $tone = "verdigris" -}}{{- else if eq (mod $i 3) 2 }}{{- $tone = "copper" -}}{{- end -}}
+      <a class="ga-article-card {{ $tone }}{{ if eq $i 0 }} large{{ end }}" href="{{ $p.RelPermalink }}"
+        data-issue="Folio {{ $folio }}"
+        data-number="{{ $folio }}"
+        data-kicker="{{ $category }}"
+        data-title="{{ $p.Title | htmlEscape }}"
+        data-copy="{{ $p.Summary | plainify | htmlUnescape | htmlEscape }}"
+        data-date="{{ $p.Date.Format "Jan 2, 2006" }} · {{ $p.ReadingTime }} min"
+        data-tags="{{ delimit $tags "," | htmlEscape }}"
+        data-url="{{ $p.RelPermalink }}">
+        <div>
+          <div class="ga-article-top">
+            <div class="ga-ribbon"></div>
+            <span class="ga-folio-tag">{{ $category }}</span>
+            <span class="ga-folio-no">{{ $folio }}</span>
+          </div>
+          <div class="ga-kicker">{{ $category }}</div>
+          <h3>{{ $p.Title }}</h3>
+          <p>{{ $p.Summary | plainify | htmlUnescape }}</p>
+        </div>
+        <div class="ga-article-footer">
+          <span class="ga-microbar">{{ $p.Date.Format "Jan 2, 2006" }} <span class="dot"></span> {{ $p.ReadingTime }} min</span>
+          <span class="ga-read-now">Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+      {{- end }}
+    </div>
+
+    <div class="ga-archive-cta">
+      <a class="ga-archive-link" href="/archives/">
+        <span class="ga-archive-text">
+          <span class="ga-archive-label">All Articles</span>
+          <span class="ga-archive-sub">Every article by date</span>
+        </span>
+        <span class="ga-archive-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="ga-footer">
+    <div class="ga-shell ga-footer-grid">
+      <div>© goodalexander · Post Fiat · MMXXVI</div>
+      <div>
+        <a href="https://x.com/goodalexander" rel="noopener">@goodalexander</a> ·
+        <a href="https://x.com/postfiatorg" rel="noopener">@postfiatorg</a> ·
+        <a href="https://discord.gg/U6HjgDSmhR" rel="noopener">Discord</a> ·
+        <a href="/subscribe/">Mailing List</a> ·
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ga-modal" id="searchModal" aria-hidden="true">
+    <div class="ga-command" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="ga-command-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="gaSearchInput" aria-label="Search" placeholder="Search dispatches, essays, and market notes" autocomplete="off" />
+        <button class="ga-close-modal" type="button" data-close-modal>Esc</button>
+      </div>
+      <div class="ga-command-list" id="gaSearchResults">
+        {{- range first 5 $posts }}
+        <a class="ga-command-item" href="{{ .RelPermalink }}"><div><strong>{{ .Title }}</strong><span>{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min</span></div><span>↵</span></a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var magneticEls = document.querySelectorAll(".ga-btn, .ga-door, .ga-article-card, .ga-latest-panel, .ga-archive-link");
+    magneticEls.forEach(function (el) {
+      el.addEventListener("pointermove", function (event) {
+        var rect = el.getBoundingClientRect();
+        el.style.setProperty("--mx", event.clientX - rect.left + "px");
+        el.style.setProperty("--my", event.clientY - rect.top + "px");
+      });
+    });
+
+    var feature = {
+      panel: document.getElementById("latestPanel"),
+      issue: document.getElementById("featureIssue"),
+      number: document.getElementById("featureNumber"),
+      kicker: document.getElementById("featureKicker"),
+      title: document.getElementById("featureTitle"),
+      copy: document.getElementById("featureCopy"),
+      date: document.getElementById("featureDate"),
+      tags: document.getElementById("featureTags")
+    };
+
+    document.querySelectorAll(".ga-article-card").forEach(function (card) {
+      card.addEventListener("pointerenter", function () {
+        feature.issue.textContent = card.dataset.issue;
+        feature.number.textContent = card.dataset.number;
+        feature.kicker.textContent = card.dataset.kicker;
+        feature.title.textContent = card.dataset.title;
+        feature.copy.textContent = card.dataset.copy;
+        feature.date.textContent = card.dataset.date;
+        feature.panel.href = card.dataset.url;
+        feature.tags.innerHTML = card.dataset.tags.split(",").map(function (tag) {
+          return '<span class="ga-tag">' + tag.trim().replace(/[&<>"']/g, function (char) {
+            return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char];
+          }) + "</span>";
+        }).join("");
+        feature.panel.classList.remove("ga-pulse-swap");
+        void feature.panel.offsetWidth;
+        feature.panel.classList.add("ga-pulse-swap");
+      });
+    });
+
+    var modals = {
+      search: document.getElementById("searchModal")
+    };
+
+    function openModal(name) {
+      var modal = modals[name];
+      if (!modal) return;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      setTimeout(function () {
+        var input = modal.querySelector("input");
+        if (input) input.focus();
+      }, 20);
+    }
+
+    function closeModals() {
+      Object.keys(modals).forEach(function (key) {
+        modals[key].classList.remove("open");
+        modals[key].setAttribute("aria-hidden", "true");
+      });
+    }
+
+    document.querySelectorAll("[data-open-modal]").forEach(function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        openModal(trigger.dataset.openModal);
+      });
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach(function (trigger) {
+      trigger.addEventListener("click", closeModals);
+    });
+
+    Object.keys(modals).forEach(function (key) {
+      modals[key].addEventListener("click", function (event) {
+        if (event.target === modals[key]) closeModals();
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeModals();
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        openModal("search");
+      }
+    });
+
+    var searchInput = document.getElementById("gaSearchInput");
+    var searchResults = document.getElementById("gaSearchResults");
+    var searchIndex = [];
+
+    function renderResults(items) {
+      searchResults.innerHTML = items.slice(0, 7).map(function (item) {
+        var title = item.title || "Untitled";
+        var summary = (item.summary || "").replace(/<[^>]*>/g, "").slice(0, 120);
+        return '<a class="ga-command-item" href="' + item.permalink + '"><div><strong>' + escapeHtml(title) + '</strong><span>' + escapeHtml(summary) + '</span></div><span>↵</span></a>';
+      }).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, function (char) {
+        return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char];
+      });
+    }
+
+    fetch("/index.json")
+      .then(function (response) { return response.ok ? response.json() : []; })
+      .then(function (items) { searchIndex = Array.isArray(items) ? items : []; })
+      .catch(function () { searchIndex = []; });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        var query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+          renderResults(searchIndex.slice(0, 7));
+          return;
+        }
+        var scored = searchIndex.map(function (item) {
+          var haystack = [item.title, item.summary, item.content].join(" ").toLowerCase();
+          var title = String(item.title || "").toLowerCase();
+          var score = 0;
+          if (title.indexOf(query) >= 0) score += 5;
+          if (haystack.indexOf(query) >= 0) score += 1;
+          return { item: item, score: score };
+        }).filter(function (entry) {
+          return entry.score > 0;
+        }).sort(function (a, b) {
+          return b.score - a.score;
+        }).map(function (entry) {
+          return entry.item;
+        });
+        renderResults(scored);
+      });
+    }
+  })();
+</script>
+{{- end -}}
