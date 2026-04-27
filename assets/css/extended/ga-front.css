@@ -773,7 +773,7 @@ body.ga-front-page::after {
 
 .ga-doors-grid {
   display: grid;
-  grid-template-columns: 1.2fr repeat(4, 1fr);
+  grid-template-columns: 1.25fr repeat(5, minmax(0, 1fr));
   gap: 14px;
 }
 
