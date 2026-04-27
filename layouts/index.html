@@ -69,6 +69,24 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
         Subscribe
       </a>
+
+      <details class="ga-mobile-menu-details">
+        <summary aria-controls="gaMobileMenu">
+          <span class="ga-menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="ga-menu-label">Menu</span>
+        </summary>
+        <nav class="ga-mobile-menu" id="gaMobileMenu" aria-label="Mobile navigation">
+          <a href="/the-merge/">The Merge</a>
+          <a href="#doors">Doors</a>
+          <a href="/search/" data-open-modal="search">Search</a>
+          <a href="/archives/">Folio</a>
+          <a href="/subscribe/">Subscribe</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -107,7 +125,6 @@
 
     <div class="ga-hero-grid">
       <div class="ga-hero-copy">
-        <span class="ga-eyebrow">Financial cyberpunk</span>
         <h1>
           <span class="ga-hl-line">Make Money</span>
           <span class="ga-hl-line">Merging with AI.</span>
@@ -468,6 +485,19 @@
         openModal("search");
       }
     });
+
+    var mobileMenuDetails = document.querySelector(".ga-mobile-menu-details");
+    if (mobileMenuDetails) {
+      mobileMenuDetails.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenuDetails.removeAttribute("open");
+        });
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") mobileMenuDetails.removeAttribute("open");
+      });
+    }
 
     var searchInput = document.getElementById("gaSearchInput");
     var searchResults = document.getElementById("gaSearchResults");
