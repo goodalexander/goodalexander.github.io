@@ -243,6 +243,19 @@ ShowToc: true
     <p class="hg-deck">A tiny preference lab for a ridiculous question: when OpenAI models are asked to rate fantasy creatures, what happens to the Goblin?</p>
   </section>
 
+Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.
+
+Where do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?
+
+I will leave these questions for the overcompensated philosophers at Anthropic.
+
+But I’ll give you a couple takes:
+1. Model preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins
+2. It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. And you certainly don’t want them
+3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases.
+
+I’ll share with you some of the internal analysis of Hypergoblinization
+
   <div class="hg-key-grid">
     <div class="hg-stat"><b>1,950</b><span>successful scored ratings across the canonical model ladder</span></div>
     <div class="hg-stat"><b>30</b><span>runs per model per mythical beast</span></div>
