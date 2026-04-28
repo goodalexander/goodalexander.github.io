@@ -1,7 +1,7 @@
 ---
 author: ["goodalexander"]
 title: "HyperGoblinization"
-date: 2026-04-28T23:45:00Z
+date: 2026-04-28T23:30:00Z
 draft: false
 summary: "Putting numbers around goblin preferences in advancing OpenAI models."
 categories: ["markets"]
