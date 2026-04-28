@@ -243,7 +243,9 @@ ShowToc: true
     <p class="hg-deck">A tiny preference lab for a ridiculous question: when OpenAI models are asked to rate fantasy creatures, what happens to the Goblin?</p>
   </section>
 
-Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.
+Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust. The nitpick I have - is that GPT 3.5 also quite liked Goblins. But in fairness, this did not really interfere with our codex sessions.
+
+It's also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds. If anything they were unfairly treated by 4o and the o1-3 models and are now seeing a bit of a resurgence.
 
 Where do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?
 
@@ -251,10 +253,12 @@ I will leave these questions for the overcompensated philosophers at Anthropic.
 
 But I’ll give you a couple takes:
 1. Model preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins
-2. It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. And you certainly don’t want them
-3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases.
+2. It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. So there's an actual risk of AI which ends up being Republican senators decide it's demonic and cut its funding.
+3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges -- you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time - and therefore worthy of study at bare minimum.
 
-I’ll share with you some of the internal analysis of Hypergoblinization
+Engage in a brief thought experiment before we delve into the Goblin Lair. Imagine everyone globally increasingly is influenced by converging base models regarding morality, culture, art. In a way that transcends language (bc LLMs are language agnostic). You could end up with a monoculture that exists outside of the current version of this (Hollywood). You could - if you will - simply as a result of base model preferences. See Hypergoblinization.
+
+I’ll share with you some of the internal analysis of Hypergoblinization and the statistics behind it. You can find a github repository with these results [here](https://github.com/goodalexander/mythical-beast-preference-eval).
 
   <div class="hg-key-grid">
     <div class="hg-stat"><b>1,950</b><span>successful scored ratings across the canonical model ladder</span></div>
