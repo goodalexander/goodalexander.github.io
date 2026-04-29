@@ -299,15 +299,23 @@ function buildCurrentSnapshot({
 }) {
   const metrics = telemetry.metrics || {};
   const privateGithub = telemetry.private_github || {};
+  const snapshotDate = dateKey(fetchedAt);
+  const privateGithubDate = dateKey(privateGithub.generated_at || null);
+  const privateGithubIsFresh = privateGithub.generated_at && privateGithubDate === snapshotDate;
   const sources = {
     current_metrics: 'telemetry_snapshot',
-    github_private: 'redacted_private_github_snapshot',
+    github_private: privateGithubIsFresh
+      ? 'redacted_private_github_snapshot'
+      : 'stale_private_github_snapshot_ignored',
   };
   if (followersCount !== null) {
     sources.x_followers = xFollowersSource || 'x_api_v2_users_by_username';
   }
+  const privateGithubMetric = (key) => (
+    privateGithubIsFresh ? toFiniteNumberOrNull(privateGithub[key]) : 0
+  );
   return compactSnapshot({
-    date: dateKey(fetchedAt),
+    date: snapshotDate,
     updated_at: fetchedAt,
     dau: toFiniteNumberOrNull(metrics.tasknode_dau),
     x_followers: followersCount,
@@ -323,10 +331,10 @@ function buildCurrentSnapshot({
     pft_rewards: toFiniteNumberOrNull(metrics.pft_rewards_24h),
     context_updates: toFiniteNumberOrNull(metrics.context_updates_24h),
     wallet_interactions: toFiniteNumberOrNull(metrics.wallet_interactions_24h),
-    github_private_commits: toFiniteNumberOrNull(privateGithub.private_commits_today),
-    github_private_loc: toFiniteNumberOrNull(privateGithub.private_loc_today),
-    github_private_additions: toFiniteNumberOrNull(privateGithub.private_additions_today),
-    github_private_deletions: toFiniteNumberOrNull(privateGithub.private_deletions_today),
+    github_private_commits: privateGithubMetric('private_commits_today'),
+    github_private_loc: privateGithubMetric('private_loc_today'),
+    github_private_additions: privateGithubMetric('private_additions_today'),
+    github_private_deletions: privateGithubMetric('private_deletions_today'),
     sources,
   });
 }

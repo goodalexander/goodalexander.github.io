@@ -40,3 +40,23 @@ The history file is the durable cache for growth-rate math. The updater keeps a
 rolling 365-day `snapshots` array and derives `telemetry.series` from it so
 week-over-week dashboard calculations do not depend on transient current values
 or Git history scraping.
+
+## The Merge private GitHub telemetry
+
+`scripts/update-the-merge-private-github.mjs` refreshes the redacted private
+GitHub aggregate from the authenticated `gh` session on this machine:
+
+```bash
+node scripts/update-the-merge-private-github.mjs
+node scripts/update-the-merge-x-followers.mjs
+```
+
+The private GitHub script scans accessible private repos and branches, filters
+commits to the authenticated GitHub user plus configured author emails, and
+publishes only aggregate counts. It never writes repo names, branch names,
+commit SHAs, commit messages, or file paths into the public telemetry file.
+
+The scheduled GitHub Actions telemetry workflow does not have this machine's
+private `gh` login. If the private GitHub aggregate has not been refreshed for
+the current UTC date, the public telemetry updater writes zero private GitHub
+LOC for that date instead of carrying yesterday's LOC forward.

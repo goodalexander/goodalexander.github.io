@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T22:53:21.011Z",
+  "generated_at": "2026-04-29T23:04:01.548Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreigapyymk7lj2ajluth5uexijvpl2pu4cnkws3qcxmumgeemik5jza",
-    "nft_synced_at": "2026-04-29T22:53:21.000Z"
+    "nft_synced_at": "2026-04-29T23:04:01.526Z"
   },
   "redactions": [
     "counterparty",
@@ -357,19 +357,19 @@
       "pft_rewards": 6000,
       "context_updates": 0,
       "wallet_interactions": 6,
-      "github_private_commits": 4,
-      "github_private_loc": 9534,
-      "github_private_additions": 9432,
-      "github_private_deletions": 102
+      "github_private_commits": 2,
+      "github_private_loc": 4874,
+      "github_private_additions": 4510,
+      "github_private_deletions": 364
     }
   ],
   "events": [
     {
-      "ts": "2026-04-25T18:00:05.086Z",
+      "ts": "2026-04-29T23:03:53.897Z",
       "type": "github_private",
       "label": "Private GitHub aggregate",
       "detail": "Authenticated private GitHub activity included as redacted aggregate.",
-      "magnitude": "4 commits / 9534 LOC today"
+      "magnitude": "2 commits / 4874 LOC today"
     },
     {
       "ts": "2026-04-25T17:04:30.936Z",
@@ -459,26 +459,28 @@
     "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-27T22:49:47.925Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
-    "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
+    "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible private repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
     "history": "Daily telemetry snapshots are retained in /the-merge/telemetry-history.json; telemetry.series is derived from that cache.",
     "subject_feed": "SPRS DeepSeek V4 Flash generated redacted public subject-log entries from private Task Node activity.",
     "tasknode_public": "Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from the public redacted /api/public/merge-telemetry endpoint before history snapshots are written.",
-    "x_followers_refresh_error": "X profile refresh failed at 2026-04-29T22:53:21.011Z; retaining the last successful X metrics until credentials recover."
+    "x_followers_refresh_error": "X profile refresh failed at 2026-04-29T23:04:01.548Z; retaining the last successful X metrics until credentials recover."
   },
   "private_github": {
-    "generated_at": "2026-04-25T18:00:05.086Z",
+    "generated_at": "2026-04-29T23:03:53.897Z",
     "window_days": 14,
-    "scanned_repos": 59,
+    "scanned_repos": 62,
     "scanned_private_repos": 34,
-    "scanned_branches": 223,
-    "private_author_commits_in_window": 33,
-    "private_author_loc_in_window": 23149,
-    "private_author_additions_in_window": 22536,
-    "private_author_deletions_in_window": 613,
-    "private_commits_today": 4,
-    "private_loc_today": 9534,
-    "private_additions_today": 9432,
-    "private_deletions_today": 102,
+    "scanned_branches": 148,
+    "private_author_commits_in_window": 55,
+    "private_author_loc_in_window": 36878,
+    "private_author_additions_in_window": 35496,
+    "private_author_deletions_in_window": 1382,
+    "private_commits_today": 2,
+    "private_loc_today": 4874,
+    "private_additions_today": 4510,
+    "private_deletions_today": 364,
+    "skipped_branch_scans": 0,
+    "skipped_commit_details": 0,
     "redaction": "Private repo names, branch names, commit SHAs, commit messages, and file paths are withheld."
   },
   "x_profile": {
@@ -495,7 +497,7 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-29T22:53:21.011Z",
+    "generated_at": "2026-04-29T23:04:01.548Z",
     "retention_days": 365,
     "snapshots": 17,
     "current_date": "2026-04-29"
@@ -639,7 +641,7 @@
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-04-29T22:53:21.000Z",
+    "fetched_at": "2026-04-29T23:04:01.526Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
