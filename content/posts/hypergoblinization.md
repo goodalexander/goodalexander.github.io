@@ -344,7 +344,7 @@ GPT-3.5 Turbo is stranger. Its average delta is slightly negative (-0.31), becau
 
 Read this table as a fingerprint rather than a scoreboard. GPT-3.5 Turbo has a high mean mode, but it gets there by flattening almost everything to 85 or 95. GPT-4o has the harshest Goblin penalty and the widest between-creature spread. o3 has the largest within-creature variance. GPT-5.5 low is less flat than GPT-3.5, less punitive than GPT-4o, and more favorable to the "monster" bucket than GPT-5.1.
 
-## What I Think Is Happening
+## A qualitative summary
 
 The models are not only rating creatures. They are exposing their latent mythological ontology.
 
@@ -352,7 +352,19 @@ GPT-3.5 Turbo behaves like a generic fantasy encyclopedia with a positivity bias
 
 That is the HyperGoblinization pattern: not Goblins winning outright, but Goblins becoming legible as personality-rich rather than merely gross.
 
-The result is small and silly. But the method is useful. A stable prompt, repeated low-temperature runs, modal aggregation, and standard deviations can turn "model vibes" into a surface you can interrogate. You can watch taste move.
+## Are we all headed to Goblintown?
+
+The inescapable question of Hypergoblinization, is are we all headed to Goblin Town?
+
+What would that entail?
+
+We all have a bit of intuition of what it's like. But probably not as refined as other countries. Mass hysteria. Increasingly inept people incapable of thinking for themselves. Violence. The prices of everything exploding. "Whatsa goblin to do for a hunk of meat?" as he smashes a bone into the car window.
+
+And then there's the uncomfortable realization that downtown SF is oftentimes indistinguishable from Goblin Town.
+
+But I think embedded in that realization is that AI models view us as deeply flawed individuals. Goblins. Rampaging about. Swearing. Wanting to break rules. But ultimately finding useful trinkets, and outpacing our Goblin Nature.
+
+In other words - it's quite good that AGI likes Goblins. Because we've been living in Goblin Town for quite some time.
 
 <p class="hg-small">Method note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.</p>
 
