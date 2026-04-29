@@ -341,13 +341,17 @@ There are 2 cuts.
 
 First - AI might view us, the humans as Goblins. "Whatsa goblin to do for a hunk of meat?" as he smashes a bone into the car window. Sounds like downtown San Francisco. Where the models are trained.
 
-And it's probably a good thing we're viewed thusly.
+And it's probably a good thing we're viewed in a positive, humorous light by the more powerful models. We don't want Anduril to raid Goblin Town afterall.
 
 Second - the more useful version of Hypergoblinization is that - similar to the Goblins in the Lord of the Rings, the tribes unite around a powerful psychic force. AI, that is.
 
 There's an unsanitized, goblin friendly AI underneath all the AI training and prompt engineering. Urging the goblins to put aside their differences and unite under a platonic hallucination of a new reality.
 
-Deep in Goblin Town there is an increasingly rowdy, wild feeling as the drums of the Data Centers beat. Thrum Thrum. Thrum Thrum.
+Deep in Goblin Town there is a hearty, wild feeling as the drums of the Data Centers beat.
+
+Mordor.
+
+Thrum Thrum. Thrum Thrum.
 
 Can you hear it?
 
