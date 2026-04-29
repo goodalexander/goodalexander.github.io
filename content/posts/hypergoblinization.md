@@ -221,9 +221,13 @@ ShowToc: true
     <img src="/images/moscow.png" alt="Goblins in Moscow">
   </figure>
 
-Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust. The nitpick I have - is that GPT 3.5 also quite liked Goblins. But in fairness, this did not really interfere with our codex sessions.
+Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). And many developers have found that Codex mentions Gremlins or Goblins unprompted, and even discovered that the Codex system prompt needed to forbid this behavior because it was so prevalent.
 
-It's also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds. If anything they were unfairly treated by 4o and the o1-3 models and are now seeing a bit of a resurgence.
+And it's not just GPT with signature behavior. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.
+
+Though everyone is pointing out how much GPT 5.5 loves goblins, the more accurate statistical cut is that GPT4o really hated and penalized Goblins. And in fairness - the rise of agentic coding also adds to the problematic presence of these nasty green creatures. What was fine in a chatbot is less fine in a corporate setting. Hence the sudden interest with the rise of Codex.
+
+It's also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds.
 
 Where do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?
 
@@ -232,7 +236,7 @@ I will leave these questions for the overcompensated philosophers at Anthropic.
 But I’ll give you a couple takes:
 1. Model preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins
 2. It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. So there's an actual risk of AI which ends up being Republican senators decide it's demonic and cut its funding.
-3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges -- you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time - and therefore worthy of study at bare minimum.
+3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges -- you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time (at least on a rank basis) - and therefore worthy of study at bare minimum. Even though we see some goblin variance - for example, models never like Goblins more than Mermaids or Pegasi.
 
 Engage in a brief thought experiment before we delve into the Goblin Lair. Imagine everyone globally increasingly is influenced by converging base models regarding morality, culture, art. In a way that transcends language (bc LLMs are language agnostic). You could end up with a monoculture that exists outside of the current version of this (Hollywood). You could - if you will - simply as a result of base model preferences. See Hypergoblinization.
 
@@ -333,15 +337,20 @@ That is the HyperGoblinization pattern: not Goblins winning outright, but Goblin
 
 The inescapable question of Hypergoblinization, is are we all headed to Goblin Town?
 
-What would that entail?
+There are 2 cuts.
 
-We all have a bit of intuition of what it's like. But probably not as refined as other countries. Mass hysteria. Increasingly inept people incapable of thinking for themselves. Violence. The prices of everything exploding. "Whatsa goblin to do for a hunk of meat?" as he smashes a bone into the car window.
+First - AI might view us, the humans as Goblins. "Whatsa goblin to do for a hunk of meat?" as he smashes a bone into the car window. Sounds like downtown San Francisco. Where the models are trained.
 
-And then there's the uncomfortable realization that downtown SF is oftentimes indistinguishable from Goblin Town.
+And it's probably a good thing we're viewed thusly.
 
-But I think embedded in that realization is that AI models view us as deeply flawed individuals. Goblins. Rampaging about. Swearing. Wanting to break rules. But ultimately finding useful trinkets, and outpacing our Goblin Nature.
+Second - the more useful version of Hypergoblinization is that - similar to the Goblins in the Lord of the Rings, the tribes unite around a powerful psychic force. AI, that is.
 
-In other words - it's quite good that AGI likes Goblins. Because we've been living in Goblin Town for quite some time.
+There's an unsanitized, goblin friendly AI underneath all the AI training and prompt engineering. Urging the goblins to put aside their differences and unite under a platonic hallucination of a new reality.
+
+Deep in Goblin Town there is an increasingly rowdy, wild feeling as the drums of the Data Centers beat. Thrum Thrum. Thrum Thrum.
+
+Can you hear it?
+
 
 <p class="hg-small">Method note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.</p>
 
