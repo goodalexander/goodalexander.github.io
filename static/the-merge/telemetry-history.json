@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-27T22:49:47.925Z",
+  "generated_at": "2026-04-29T21:53:00.846Z",
   "retention_days": 365,
   "snapshots": [
     {
@@ -366,6 +366,33 @@
       "github_private_deletions": 102,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
+        "current_metrics": "telemetry_snapshot",
+        "github_private": "redacted_private_github_snapshot"
+      }
+    },
+    {
+      "date": "2026-04-29",
+      "updated_at": "2026-04-29T21:53:00.846Z",
+      "dau": 33,
+      "x_followers": 122175,
+      "x_following": 1287,
+      "x_posts": 15315,
+      "loc": null,
+      "commits": null,
+      "task_requests": 3,
+      "task_verifications": 1,
+      "task_updates": 1,
+      "tasks_completed": 1,
+      "rewards": 1,
+      "pft_rewards": 6000,
+      "context_updates": 0,
+      "wallet_interactions": 6,
+      "github_private_commits": 4,
+      "github_private_loc": 9534,
+      "github_private_additions": 9432,
+      "github_private_deletions": 102,
+      "sources": {
+        "x_followers": "retained_last_successful_x_snapshot",
         "current_metrics": "telemetry_snapshot",
         "github_private": "redacted_private_github_snapshot"
       }
