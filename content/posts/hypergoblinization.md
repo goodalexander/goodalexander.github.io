@@ -45,9 +45,10 @@ ShowToc: true
 }
 .hg-hero h2 {
   margin: 0;
-  font-size: clamp(2.1rem, 7vw, 4.8rem);
+  font-size: clamp(1.65rem, 6vw, 4rem);
   line-height: .9;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 .hg-deck {
   max-width: 68ch;
@@ -124,12 +125,12 @@ ShowToc: true
 }
 .hg-chart {
   min-height: 280px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 .hg-chart svg {
   display: block;
   width: 100%;
-  min-width: 720px;
+  max-width: 100%;
   height: auto;
 }
 .hg-tooltip {
