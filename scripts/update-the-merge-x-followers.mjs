@@ -295,9 +295,17 @@ function buildCurrentSnapshot({
   followersCount,
   followingCount,
   postsCount,
+  xFollowersSource,
 }) {
   const metrics = telemetry.metrics || {};
   const privateGithub = telemetry.private_github || {};
+  const sources = {
+    current_metrics: 'telemetry_snapshot',
+    github_private: 'redacted_private_github_snapshot',
+  };
+  if (followersCount !== null) {
+    sources.x_followers = xFollowersSource || 'x_api_v2_users_by_username';
+  }
   return compactSnapshot({
     date: dateKey(fetchedAt),
     updated_at: fetchedAt,
@@ -319,11 +327,7 @@ function buildCurrentSnapshot({
     github_private_loc: toFiniteNumberOrNull(privateGithub.private_loc_today),
     github_private_additions: toFiniteNumberOrNull(privateGithub.private_additions_today),
     github_private_deletions: toFiniteNumberOrNull(privateGithub.private_deletions_today),
-    sources: {
-      x_followers: 'x_api_v2_users_by_username',
-      current_metrics: 'telemetry_snapshot',
-      github_private: 'redacted_private_github_snapshot',
-    },
+    sources,
   });
 }
 
@@ -471,37 +475,56 @@ async function main() {
   const rawTelemetry = await fs.readFile(telemetryPath, 'utf8');
   const telemetry = JSON.parse(rawTelemetry);
   const [profile, taskNodeTelemetry] = await Promise.all([
-    fetchXProfile(username),
+    fetchXProfile(username).catch((err) => {
+      console.warn(`X profile refresh failed: ${err.message}`);
+      return null;
+    }),
     fetchTaskNodeTelemetry({ walletAddress, endpoint: taskNodeMetricsUrl }).catch((err) => {
       console.warn(`Task Node telemetry refresh failed: ${err.message}`);
       return null;
     }),
   ]);
-  const data = profile?.data || {};
-  const publicMetrics = data.public_metrics || {};
-  const followersCount = requireFiniteMetric(publicMetrics.followers_count, 'followers_count');
-  const followingCount = Number.isFinite(publicMetrics.following_count) ? publicMetrics.following_count : null;
-  const postsCount = Number.isFinite(publicMetrics.tweet_count) ? publicMetrics.tweet_count : null;
   const fetchedAt = new Date().toISOString();
 
   telemetry.generated_at = fetchedAt;
   telemetry.metrics = telemetry.metrics || {};
-  telemetry.metrics.x_followers = followersCount;
-  telemetry.x_profile = {
-    source: 'x_api_v2_users_by_username',
-    username: data.username || username,
-    user_id: data.id || null,
-    fetched_at: fetchedAt,
-    followers_count: followersCount,
-    following_count: followingCount,
-    posts_count: postsCount,
-    verified: typeof data.verified === 'boolean' ? data.verified : null,
-    verified_type: data.verified_type || null,
-    account_created_at: data.created_at || null,
-  };
   telemetry.notes = telemetry.notes || {};
-  telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
   telemetry.notes.history = `Daily telemetry snapshots are retained in /the-merge/${DEFAULT_HISTORY_FILENAME}; telemetry.series is derived from that cache.`;
+
+  const data = profile?.data || null;
+  const publicMetrics = data?.public_metrics || {};
+  let followersCount = toFiniteNumberOrNull(telemetry.metrics.x_followers);
+  let followingCount = toFiniteNumberOrNull(telemetry.x_profile?.following_count);
+  let postsCount = toFiniteNumberOrNull(telemetry.x_profile?.posts_count);
+  let xFollowersSource = 'retained_last_successful_x_snapshot';
+  if (data) {
+    followersCount = requireFiniteMetric(publicMetrics.followers_count, 'followers_count');
+    followingCount = Number.isFinite(publicMetrics.following_count) ? publicMetrics.following_count : null;
+    postsCount = Number.isFinite(publicMetrics.tweet_count) ? publicMetrics.tweet_count : null;
+    xFollowersSource = 'x_api_v2_users_by_username';
+    telemetry.metrics.x_followers = followersCount;
+    telemetry.x_profile = {
+      source: 'x_api_v2_users_by_username',
+      username: data.username || username,
+      user_id: data.id || null,
+      fetched_at: fetchedAt,
+      followers_count: followersCount,
+      following_count: followingCount,
+      posts_count: postsCount,
+      verified: typeof data.verified === 'boolean' ? data.verified : null,
+      verified_type: data.verified_type || null,
+      account_created_at: data.created_at || null,
+    };
+    telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
+    delete telemetry.notes.x_followers_refresh_error;
+  } else {
+    telemetry.notes.x_followers_refresh_error = (
+      `X profile refresh failed at ${fetchedAt}; retaining the last successful X metrics until credentials recover.`
+    );
+    if (followersCount !== null) {
+      telemetry.metrics.x_followers = followersCount;
+    }
+  }
   mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry);
 
   const currentSnapshot = buildCurrentSnapshot({
@@ -510,6 +533,7 @@ async function main() {
     followersCount,
     followingCount,
     postsCount,
+    xFollowersSource,
   });
   const loadedHistory = await loadHistory(historyPath, telemetry, fetchedAt, retentionDays);
   const history = upsertHistorySnapshot(loadedHistory, currentSnapshot, retentionDays, fetchedAt);
