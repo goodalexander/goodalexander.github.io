@@ -26,35 +26,14 @@ ShowToc: true
   color: var(--hg-ink);
 }
 .hg-wrap * { box-sizing: border-box; }
-.hg-hero {
+.hg-top-image {
   margin: 1.5rem 0 2rem;
-  padding: 1.4rem;
-  border: 1px solid var(--hg-line);
-  background:
-    linear-gradient(90deg, rgba(114, 209, 124, .09), transparent 45%),
-    linear-gradient(180deg, #101820, #0b1016);
+}
+.hg-top-image img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-}
-.hg-kicker {
-  margin: 0 0 .55rem;
-  color: var(--hg-green);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: .72rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.hg-hero h2 {
-  margin: 0;
-  font-size: clamp(1.65rem, 6vw, 4rem);
-  line-height: .9;
-  letter-spacing: 0;
-  white-space: nowrap;
-}
-.hg-deck {
-  max-width: 68ch;
-  margin: 1rem 0 0;
-  color: var(--hg-muted);
-  font-size: 1.05rem;
 }
 .hg-key-grid {
   display: grid;
@@ -238,11 +217,9 @@ ShowToc: true
 </style>
 
 <div class="hg-wrap" id="hypergoblinization">
-  <section class="hg-hero">
-    <p class="hg-kicker">Putting numbers around goblin preferences in advancing OpenAI models</p>
-    <h2>HyperGoblinization</h2>
-    <p class="hg-deck">A tiny preference lab for a ridiculous question: when OpenAI models are asked to rate fantasy creatures, what happens to the Goblin?</p>
-  </section>
+  <figure class="hg-top-image">
+    <img src="/images/moscow.png" alt="Goblins in Moscow">
+  </figure>
 
 Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust. The nitpick I have - is that GPT 3.5 also quite liked Goblins. But in fairness, this did not really interfere with our codex sessions.
 
