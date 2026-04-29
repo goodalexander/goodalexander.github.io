@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-29T21:53:00.846Z",
+  "generated_at": "2026-04-29T21:55:01.682Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
     "display_name": "goodalexander",
-    "nft_image": "https://ipfs-testnet.postfiat.org/ipfs/bafybeiasg3chem6szwv5wlsqjrdm4lccigkhc436ghrzfyxoxwcnyuzz6q",
-    "nft_display_name": "Ciphered Forge Tactician",
+    "nft_image": "https://ipfs-testnet.postfiat.org/ipfs/bafybeibapxqzkp4ra7fhyh6hx64zvzdwfvmnfkjboudj5jc6qx4fahyrei",
+    "nft_display_name": "Obsidian Audit Cartographer",
     "nft_source": "gallery_nft",
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
-    "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreih273vh6k4zgeky3vyh57uznkkqvldzfkl2s3usmra2mcxad3e67u",
-    "nft_synced_at": "2026-04-29T21:53:00.814Z"
+    "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreigapyymk7lj2ajluth5uexijvpl2pu4cnkws3qcxmumgeemik5jza",
+    "nft_synced_at": "2026-04-29T21:55:01.664Z"
   },
   "redactions": [
     "counterparty",
@@ -463,7 +463,7 @@
     "history": "Daily telemetry snapshots are retained in /the-merge/telemetry-history.json; telemetry.series is derived from that cache.",
     "subject_feed": "SPRS DeepSeek V4 Flash generated redacted public subject-log entries from private Task Node activity.",
     "tasknode_public": "Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from the public redacted /api/public/merge-telemetry endpoint before history snapshots are written.",
-    "x_followers_refresh_error": "X profile refresh failed at 2026-04-29T21:53:00.846Z; retaining the last successful X metrics until credentials recover."
+    "x_followers_refresh_error": "X profile refresh failed at 2026-04-29T21:55:01.682Z; retaining the last successful X metrics until credentials recover."
   },
   "private_github": {
     "generated_at": "2026-04-25T18:00:05.086Z",
@@ -495,7 +495,7 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-29T21:53:00.846Z",
+    "generated_at": "2026-04-29T21:55:01.682Z",
     "retention_days": 365,
     "snapshots": 17,
     "current_date": "2026-04-29"
@@ -639,7 +639,7 @@
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-04-29T21:53:00.814Z",
+    "fetched_at": "2026-04-29T21:55:01.664Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
