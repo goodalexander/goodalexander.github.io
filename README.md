@@ -25,9 +25,10 @@ request with OAuth 1.0a user-context credentials. Both paths call:
 
 `https://api.x.com/2/users/by/username/goodalexander?user.fields=created_at,public_metrics,verified,verified_type`
 
-The scheduled GitHub Actions workflow `.github/workflows/update-the-merge-telemetry.yml`
-runs every 30 minutes, commits the refreshed telemetry snapshot, and deploys
-GitHub Pages. Configure the needed X credentials as repository Actions secrets.
+The GitHub Actions workflow `.github/workflows/update-the-merge-telemetry.yml`
+is kept for manual dispatch. The scheduled writer runs locally on the
+authenticated machine so private GitHub LOC can be included without publishing a
+broad private-repo token into GitHub Actions.
 Task Node rewards, task counts, context updates, DAU, wallet-interaction counts,
 and the profile NFT image come from:
 
@@ -60,3 +61,10 @@ The scheduled GitHub Actions telemetry workflow does not have this machine's
 private `gh` login. If the private GitHub aggregate has not been refreshed for
 the current UTC date, the public telemetry updater writes zero private GitHub
 LOC for that date instead of carrying yesterday's LOC forward.
+
+`scripts/refresh-the-merge-local-telemetry.sh` is the cron-safe local runner.
+It acquires a lock, fast-forwards `master`, refreshes private GitHub plus
+Task Node/X telemetry, commits only the two generated telemetry JSON files, and
+pushes to `master` so the normal Pages deploy runs. If
+`/home/pfrpc/repos/new_creds.txt` exists, it exports the first `BEARER_TOKEN`
+from that local-only file for the X lookup.
