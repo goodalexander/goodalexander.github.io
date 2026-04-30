@@ -282,6 +282,24 @@
     return value == null ? 0 : value;
   }
 
+  function chartMetricValue(row, key) {
+    if (key === "loc") {
+      var loc = asFiniteNumber(row && row.loc);
+      if (loc != null && loc > 0) return loc;
+      var totalLoc = asFiniteNumber(row && row.github_total_loc);
+      if (totalLoc != null) return totalLoc;
+      return rowMetric(row, "github_private_loc") + rowMetric(row, "github_public_loc");
+    }
+    if (key === "commits") {
+      var commits = asFiniteNumber(row && row.commits);
+      if (commits != null && commits > 0) return commits;
+      var totalCommits = asFiniteNumber(row && row.github_total_commits);
+      if (totalCommits != null) return totalCommits;
+      return rowMetric(row, "github_private_commits") + rowMetric(row, "github_public_commits");
+    }
+    return rowMetric(row, key);
+  }
+
   function todayVelocity() {
     var today = dateKey(new Date());
     return mergedSeries().find(function (row) { return row.date === today; }) || null;
@@ -927,7 +945,7 @@
     var h = size.height - top - bottom;
     var metrics = velocityMetrics();
     var valuesByMetric = metrics.map(function (metricDef) {
-      return data.map(function (row) { return Number(row[metricDef.key] || 0); });
+      return data.map(function (row) { return chartMetricValue(row, metricDef.key); });
     });
     var averagesByMetric = valuesByMetric.map(function (values) {
       return values.map(function (_value, index) { return movingAverage(values, index, 7); });
