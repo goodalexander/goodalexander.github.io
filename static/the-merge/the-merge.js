@@ -264,6 +264,11 @@
     return Number.isFinite(parsed) ? parsed : 0;
   }
 
+  function rowMetric(row, key) {
+    var value = asFiniteNumber(row && row[key]);
+    return value == null ? 0 : value;
+  }
+
   function todayVelocity() {
     var today = dateKey(new Date());
     return mergedSeries().find(function (row) { return row.date === today; }) || null;
@@ -489,18 +494,39 @@
     (Array.isArray(data.series) ? data.series : []).forEach(function (row) {
       if (!row || !row.date) return;
       var next = Object.assign({}, row);
-      var privateLoc = Number(next.github_private_loc || 0);
-      var privateCommits = Number(next.github_private_commits || 0);
-      next.loc = Number(next.loc || 0) + privateLoc;
-      next.commits = Number(next.commits || 0) + privateCommits;
+      var privateLoc = rowMetric(next, "github_private_loc");
+      var privateCommits = rowMetric(next, "github_private_commits");
+      var publicLoc = rowMetric(next, "github_public_loc");
+      var publicCommits = rowMetric(next, "github_public_commits");
+      var totalLoc = asFiniteNumber(next.github_total_loc);
+      var totalCommits = asFiniteNumber(next.github_total_commits);
+      var githubLoc = totalLoc == null ? privateLoc + publicLoc : totalLoc;
+      var githubCommits = totalCommits == null ? privateCommits + publicCommits : totalCommits;
+      next.loc = rowMetric(next, "loc") + githubLoc;
+      next.commits = rowMetric(next, "commits") + githubCommits;
       seriesByDate[row.date] = next;
     });
     state.github.series.forEach(function (row) {
       if (!seriesByDate[row.date]) seriesByDate[row.date] = { date: row.date };
-      seriesByDate[row.date].github_public_loc = row.loc;
-      seriesByDate[row.date].github_public_commits = row.commits;
-      seriesByDate[row.date].loc = Number(seriesByDate[row.date].loc || 0) + Number(row.loc || 0);
-      seriesByDate[row.date].commits = Number(seriesByDate[row.date].commits || 0) + Number(row.commits || 0);
+      var existing = seriesByDate[row.date];
+      var previousPublicLoc = rowMetric(existing, "github_public_loc");
+      var previousPublicCommits = rowMetric(existing, "github_public_commits");
+      var livePublicLoc = Number(row.loc || 0);
+      var livePublicCommits = Number(row.commits || 0);
+      var nextPublicLoc = Math.max(previousPublicLoc, livePublicLoc);
+      var nextPublicCommits = Math.max(previousPublicCommits, livePublicCommits);
+      var previousTotalLoc = asFiniteNumber(existing.github_total_loc);
+      var previousTotalCommits = asFiniteNumber(existing.github_total_commits);
+      existing.github_public_loc = nextPublicLoc;
+      existing.github_public_commits = nextPublicCommits;
+      existing.github_total_loc = previousTotalLoc == null
+        ? rowMetric(existing, "github_private_loc") + nextPublicLoc
+        : previousTotalLoc - previousPublicLoc + nextPublicLoc;
+      existing.github_total_commits = previousTotalCommits == null
+        ? rowMetric(existing, "github_private_commits") + nextPublicCommits
+        : previousTotalCommits - previousPublicCommits + nextPublicCommits;
+      existing.loc = rowMetric(existing, "loc") - previousPublicLoc + nextPublicLoc;
+      existing.commits = rowMetric(existing, "commits") - previousPublicCommits + nextPublicCommits;
     });
     var rows = Object.keys(seriesByDate).sort().map(function (key) {
       return seriesByDate[key];
@@ -670,7 +696,15 @@
     var data = state.telemetry || fallbackTelemetry;
     var privateStats = privateGithub(data);
     var hasPrivateStats = Boolean(
-      privateGithubMetric(data, "private_author_commits_in_window")
+      privateGithubMetric(data, "total_author_commits_in_window")
+      || privateGithubMetric(data, "total_author_loc_in_window")
+      || privateGithubMetric(data, "total_commits_today")
+      || privateGithubMetric(data, "total_loc_today")
+      || privateGithubMetric(data, "public_author_commits_in_window")
+      || privateGithubMetric(data, "public_author_loc_in_window")
+      || privateGithubMetric(data, "public_commits_today")
+      || privateGithubMetric(data, "public_loc_today")
+      || privateGithubMetric(data, "private_author_commits_in_window")
       || privateGithubMetric(data, "private_author_loc_in_window")
       || privateGithubMetric(data, "private_commits_today")
       || privateGithubMetric(data, "private_loc_today")
@@ -682,12 +716,13 @@
     var privateHtml = hasPrivateStats ? [
       '<article class="commit-item">',
       '<div class="commit-top">',
-      '<strong>private GitHub aggregate</strong>',
+      '<strong>redacted GitHub aggregate</strong>',
       '<span class="commit-meta">' + escapeHtml(formatTime(privateStats.generated_at || data.generated_at)) + "</span>",
       "</div>",
-      '<p class="commit-title">Private repo names and commit messages withheld.</p>',
-      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "private_commits_today")) + " commits today / +" + formatNumber(privateGithubMetric(data, "private_additions_today")) + " / -" + formatNumber(privateGithubMetric(data, "private_deletions_today")) + " / " + formatNumber(privateGithubMetric(data, "private_loc_today")) + " LOC today</span>",
-      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "private_author_commits_in_window")) + " commits / " + formatNumber(privateGithubMetric(data, "private_author_loc_in_window")) + " LOC over " + formatNumber(privateGithubMetric(data, "window_days") || 14) + "d</span>",
+      '<p class="commit-title">Persisted aggregate omits repo names and commit messages.</p>',
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "total_commits_today")) + " total commits today / " + formatNumber(privateGithubMetric(data, "total_loc_today")) + " LOC today</span>",
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "public_commits_today")) + " public / " + formatNumber(privateGithubMetric(data, "private_commits_today")) + " private commits today</span>",
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "total_author_commits_in_window")) + " commits / " + formatNumber(privateGithubMetric(data, "total_author_loc_in_window")) + " LOC over " + formatNumber(privateGithubMetric(data, "window_days") || 14) + "d</span>",
       "</article>"
     ].join("") : "";
     var publicHtml = commits.map(function (commit) {

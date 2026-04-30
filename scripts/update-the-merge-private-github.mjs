@@ -38,6 +38,48 @@ function toFiniteNumber(value) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
+function emptyGithubStats() {
+  return {
+    commitsInWindow: 0,
+    locInWindow: 0,
+    additionsInWindow: 0,
+    deletionsInWindow: 0,
+    commitsToday: 0,
+    locToday: 0,
+    additionsToday: 0,
+    deletionsToday: 0,
+  };
+}
+
+function addCommitStats(stats, {
+  additions,
+  deletions,
+  loc,
+  isToday,
+}) {
+  stats.commitsInWindow += 1;
+  stats.additionsInWindow += additions;
+  stats.deletionsInWindow += deletions;
+  stats.locInWindow += loc;
+  if (isToday) {
+    stats.commitsToday += 1;
+    stats.additionsToday += additions;
+    stats.deletionsToday += deletions;
+    stats.locToday += loc;
+  }
+}
+
+function writeGithubStats(target, prefix, stats) {
+  target[`${prefix}_author_commits_in_window`] = stats.commitsInWindow;
+  target[`${prefix}_author_loc_in_window`] = stats.locInWindow;
+  target[`${prefix}_author_additions_in_window`] = stats.additionsInWindow;
+  target[`${prefix}_author_deletions_in_window`] = stats.deletionsInWindow;
+  target[`${prefix}_commits_today`] = stats.commitsToday;
+  target[`${prefix}_loc_today`] = stats.locToday;
+  target[`${prefix}_additions_today`] = stats.additionsToday;
+  target[`${prefix}_deletions_today`] = stats.deletionsToday;
+}
+
 async function execGh(args) {
   const { stdout } = await execFileAsync('gh', args, {
     encoding: 'utf8',
@@ -226,13 +268,14 @@ async function collectPrivateGithubAggregate({
   const today = dateKey(generatedAt);
   const repos = await listCandidateRepos(token);
   const privateRepos = repos.filter((repo) => repo.private);
+  const publicRepos = repos.filter((repo) => !repo.private);
   const authorIdentifiers = Array.from(new Set([authorLogin, ...authorEmails].filter(Boolean)));
   const commitMap = new Map();
   let scannedBranches = 0;
   let skippedBranchScans = 0;
   let skippedCommitDetails = 0;
 
-  await runLimited(privateRepos, 4, async (repo) => {
+  await runLimited(repos, 4, async (repo) => {
     let branches = [];
     try {
       branches = await listBranches(repo, token);
@@ -265,6 +308,7 @@ async function collectPrivateGithubAggregate({
           commitMap.set(key, {
             repo: item.repo,
             sha,
+            private: Boolean(item.repo.private),
             authoredAt: commit.commit?.author?.date || commit.commit?.committer?.date || null,
           });
         }
@@ -273,13 +317,9 @@ async function collectPrivateGithubAggregate({
   });
 
   const commits = Array.from(commitMap.values());
-  let additions = 0;
-  let deletions = 0;
-  let loc = 0;
-  let commitsToday = 0;
-  let additionsToday = 0;
-  let deletionsToday = 0;
-  let locToday = 0;
+  const privateStats = emptyGithubStats();
+  const publicStats = emptyGithubStats();
+  const totalStats = emptyGithubStats();
 
   await runLimited(commits, 6, async (commit) => {
     let detail = null;
@@ -293,45 +333,41 @@ async function collectPrivateGithubAggregate({
     const commitAdditions = toFiniteNumber(stats.additions);
     const commitDeletions = toFiniteNumber(stats.deletions);
     const commitLoc = toFiniteNumber(stats.total) || commitAdditions + commitDeletions;
-    additions += commitAdditions;
-    deletions += commitDeletions;
-    loc += commitLoc;
     const authoredAt = detail?.commit?.author?.date || detail?.commit?.committer?.date || commit.authoredAt;
-    if (dateKey(authoredAt) === today) {
-      commitsToday += 1;
-      additionsToday += commitAdditions;
-      deletionsToday += commitDeletions;
-      locToday += commitLoc;
-    }
+    const commitStats = {
+      additions: commitAdditions,
+      deletions: commitDeletions,
+      loc: commitLoc,
+      isToday: dateKey(authoredAt) === today,
+    };
+    addCommitStats(commit.private ? privateStats : publicStats, commitStats);
+    addCommitStats(totalStats, commitStats);
   });
 
-  return {
+  const aggregate = {
     generated_at: generatedAt,
     window_days: windowDays,
     scanned_repos: repos.length,
     scanned_private_repos: privateRepos.length,
+    scanned_public_repos: publicRepos.length,
     scanned_branches: scannedBranches,
-    private_author_commits_in_window: commits.length - skippedCommitDetails,
-    private_author_loc_in_window: loc,
-    private_author_additions_in_window: additions,
-    private_author_deletions_in_window: deletions,
-    private_commits_today: commitsToday,
-    private_loc_today: locToday,
-    private_additions_today: additionsToday,
-    private_deletions_today: deletionsToday,
     skipped_branch_scans: skippedBranchScans,
     skipped_commit_details: skippedCommitDetails,
-    redaction: 'Private repo names, branch names, commit SHAs, commit messages, and file paths are withheld.',
+    redaction: 'Repo names, branch names, commit SHAs, commit messages, and file paths are withheld from the persisted aggregate.',
   };
+  writeGithubStats(aggregate, 'private', privateStats);
+  writeGithubStats(aggregate, 'public', publicStats);
+  writeGithubStats(aggregate, 'total', totalStats);
+  return aggregate;
 }
 
 function currentPrivateEvent(privateGithub) {
   return {
     ts: privateGithub.generated_at,
     type: 'github_private',
-    label: 'Private GitHub aggregate',
-    detail: 'Authenticated private GitHub activity included as redacted aggregate.',
-    magnitude: `${privateGithub.private_commits_today} commits / ${privateGithub.private_loc_today} LOC today`,
+    label: 'GitHub aggregate',
+    detail: 'Authenticated public and private GitHub activity included as redacted aggregate.',
+    magnitude: `${privateGithub.total_commits_today} commits / ${privateGithub.total_loc_today} LOC today`,
   };
 }
 
@@ -340,8 +376,8 @@ function applyPrivateGithubAggregate(telemetry, privateGithub) {
   telemetry.private_github = privateGithub;
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.github_private = (
-    'Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible '
-    + 'private repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.'
+    'GitHub activity is locally generated with authenticated gh access, aggregated across accessible public and '
+    + 'private repos/branches, and published without repo names, branch names, commit SHAs, messages, or file paths.'
   );
   telemetry.events = Array.isArray(telemetry.events) ? telemetry.events : [];
   telemetry.events = [
@@ -360,6 +396,14 @@ function applyPrivateGithubAggregate(telemetry, privateGithub) {
   row.github_private_loc = privateGithub.private_loc_today;
   row.github_private_additions = privateGithub.private_additions_today;
   row.github_private_deletions = privateGithub.private_deletions_today;
+  row.github_public_commits = privateGithub.public_commits_today;
+  row.github_public_loc = privateGithub.public_loc_today;
+  row.github_public_additions = privateGithub.public_additions_today;
+  row.github_public_deletions = privateGithub.public_deletions_today;
+  row.github_total_commits = privateGithub.total_commits_today;
+  row.github_total_loc = privateGithub.total_loc_today;
+  row.github_total_additions = privateGithub.total_additions_today;
+  row.github_total_deletions = privateGithub.total_deletions_today;
   telemetry.series.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
 }
 
@@ -387,9 +431,19 @@ async function updateHistory(historyPath, privateGithub) {
   row.github_private_loc = privateGithub.private_loc_today;
   row.github_private_additions = privateGithub.private_additions_today;
   row.github_private_deletions = privateGithub.private_deletions_today;
+  row.github_public_commits = privateGithub.public_commits_today;
+  row.github_public_loc = privateGithub.public_loc_today;
+  row.github_public_additions = privateGithub.public_additions_today;
+  row.github_public_deletions = privateGithub.public_deletions_today;
+  row.github_total_commits = privateGithub.total_commits_today;
+  row.github_total_loc = privateGithub.total_loc_today;
+  row.github_total_additions = privateGithub.total_additions_today;
+  row.github_total_deletions = privateGithub.total_deletions_today;
   row.sources = {
     ...(row.sources || {}),
     github_private: 'redacted_private_github_snapshot',
+    github_public: 'redacted_public_github_snapshot',
+    github_total: 'redacted_github_snapshot',
   };
   history.snapshots.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
   await fs.writeFile(historyPath, stableStringify(history));
@@ -426,11 +480,20 @@ async function main() {
     generated_at: privateGithub.generated_at,
     scanned_repos: privateGithub.scanned_repos,
     scanned_private_repos: privateGithub.scanned_private_repos,
+    scanned_public_repos: privateGithub.scanned_public_repos,
     scanned_branches: privateGithub.scanned_branches,
     private_commits_today: privateGithub.private_commits_today,
     private_loc_today: privateGithub.private_loc_today,
+    public_commits_today: privateGithub.public_commits_today,
+    public_loc_today: privateGithub.public_loc_today,
+    total_commits_today: privateGithub.total_commits_today,
+    total_loc_today: privateGithub.total_loc_today,
     private_author_commits_in_window: privateGithub.private_author_commits_in_window,
     private_author_loc_in_window: privateGithub.private_author_loc_in_window,
+    public_author_commits_in_window: privateGithub.public_author_commits_in_window,
+    public_author_loc_in_window: privateGithub.public_author_loc_in_window,
+    total_author_commits_in_window: privateGithub.total_author_commits_in_window,
+    total_author_loc_in_window: privateGithub.total_author_loc_in_window,
     skipped_branch_scans: privateGithub.skipped_branch_scans,
     skipped_commit_details: privateGithub.skipped_commit_details,
   }));

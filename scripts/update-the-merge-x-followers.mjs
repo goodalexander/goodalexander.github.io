@@ -245,6 +245,14 @@ function normalizeSeriesRow(row, fallbackUpdatedAt) {
     github_private_loc: toFiniteNumberOrNull(row.github_private_loc),
     github_private_additions: toFiniteNumberOrNull(row.github_private_additions),
     github_private_deletions: toFiniteNumberOrNull(row.github_private_deletions),
+    github_public_commits: toFiniteNumberOrNull(row.github_public_commits),
+    github_public_loc: toFiniteNumberOrNull(row.github_public_loc),
+    github_public_additions: toFiniteNumberOrNull(row.github_public_additions),
+    github_public_deletions: toFiniteNumberOrNull(row.github_public_deletions),
+    github_total_commits: toFiniteNumberOrNull(row.github_total_commits),
+    github_total_loc: toFiniteNumberOrNull(row.github_total_loc),
+    github_total_additions: toFiniteNumberOrNull(row.github_total_additions),
+    github_total_deletions: toFiniteNumberOrNull(row.github_total_deletions),
     sources: row.sources && typeof row.sources === 'object' ? row.sources : undefined,
   };
 }
@@ -307,6 +315,12 @@ function buildCurrentSnapshot({
     github_private: privateGithubIsFresh
       ? 'redacted_private_github_snapshot'
       : 'stale_private_github_snapshot_ignored',
+    github_public: privateGithubIsFresh
+      ? 'redacted_public_github_snapshot'
+      : 'stale_public_github_snapshot_ignored',
+    github_total: privateGithubIsFresh
+      ? 'redacted_github_snapshot'
+      : 'stale_github_snapshot_ignored',
   };
   if (followersCount !== null) {
     sources.x_followers = xFollowersSource || 'x_api_v2_users_by_username';
@@ -335,6 +349,14 @@ function buildCurrentSnapshot({
     github_private_loc: privateGithubMetric('private_loc_today'),
     github_private_additions: privateGithubMetric('private_additions_today'),
     github_private_deletions: privateGithubMetric('private_deletions_today'),
+    github_public_commits: privateGithubMetric('public_commits_today'),
+    github_public_loc: privateGithubMetric('public_loc_today'),
+    github_public_additions: privateGithubMetric('public_additions_today'),
+    github_public_deletions: privateGithubMetric('public_deletions_today'),
+    github_total_commits: privateGithubMetric('total_commits_today'),
+    github_total_loc: privateGithubMetric('total_loc_today'),
+    github_total_additions: privateGithubMetric('total_additions_today'),
+    github_total_deletions: privateGithubMetric('total_deletions_today'),
     sources,
   });
 }
@@ -467,6 +489,14 @@ function buildTelemetrySeries(history, maxDays) {
       github_private_loc: toFiniteNumberOrNull(row.github_private_loc),
       github_private_additions: toFiniteNumberOrNull(row.github_private_additions),
       github_private_deletions: toFiniteNumberOrNull(row.github_private_deletions),
+      github_public_commits: toFiniteNumberOrNull(row.github_public_commits),
+      github_public_loc: toFiniteNumberOrNull(row.github_public_loc),
+      github_public_additions: toFiniteNumberOrNull(row.github_public_additions),
+      github_public_deletions: toFiniteNumberOrNull(row.github_public_deletions),
+      github_total_commits: toFiniteNumberOrNull(row.github_total_commits),
+      github_total_loc: toFiniteNumberOrNull(row.github_total_loc),
+      github_total_additions: toFiniteNumberOrNull(row.github_total_additions),
+      github_total_deletions: toFiniteNumberOrNull(row.github_total_deletions),
     }));
 }
 
