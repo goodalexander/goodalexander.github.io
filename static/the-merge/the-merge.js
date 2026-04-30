@@ -84,6 +84,19 @@
     return parsed.toISOString().slice(0, 10);
   }
 
+  function timestampMs(value) {
+    var parsed = value ? new Date(value) : null;
+    return parsed && !Number.isNaN(parsed.getTime()) ? parsed.getTime() : null;
+  }
+
+  function isFreshTimestamp(value, referenceValue, maxHours) {
+    var timestamp = timestampMs(value);
+    var reference = timestampMs(referenceValue) || Date.now();
+    if (timestamp == null) return false;
+    var maxAgeMs = maxHours * 60 * 60 * 1000;
+    return timestamp <= reference + (5 * 60 * 1000) && reference - timestamp <= maxAgeMs;
+  }
+
   function formatTime(value) {
     var parsed = value ? new Date(value) : null;
     if (!parsed || Number.isNaN(parsed.getTime())) return "";
@@ -619,6 +632,10 @@
     var subjectFeed = data && data.subject_feed && typeof data.subject_feed === "object" ? data.subject_feed : null;
     var entries = subjectFeed && Array.isArray(subjectFeed.entries) ? subjectFeed.entries.slice() : [];
     if (!entries.length) return false;
+    entries = entries.filter(function (entry) {
+      return isFreshTimestamp(entry && entry.ts, data && data.generated_at, 48);
+    });
+    if (!entries.length || !isFreshTimestamp(subjectFeed.generated_at, data && data.generated_at, 48)) return false;
     entries.sort(function (a, b) {
       return new Date(b.ts || 0).getTime() - new Date(a.ts || 0).getTime();
     });
@@ -650,16 +667,21 @@
   function renderEvents() {
     var data = state.telemetry || fallbackTelemetry;
     if (renderSubjectFeed(data)) return;
-    var events = (Array.isArray(data.events) ? data.events : []).slice();
+    var events = (Array.isArray(data.events) ? data.events : []).filter(function (event) {
+      return event && (
+        event.type === "github_private"
+        || isFreshTimestamp(event.ts, data.generated_at, 48)
+      );
+    });
     var privateStats = privateGithub(data);
     var hasPrivateEvent = events.some(function (event) { return event && event.type === "github_private"; });
-    if (!hasPrivateEvent && (privateGithubMetric(data, "private_commits_today") || privateGithubMetric(data, "private_loc_today"))) {
+    if (!hasPrivateEvent && (privateGithubMetric(data, "total_commits_today") || privateGithubMetric(data, "total_loc_today"))) {
       events.push({
         ts: privateStats.generated_at || data.generated_at,
         type: "github_private",
-        label: "Private GitHub aggregate",
-        detail: "Authenticated private GitHub activity included as redacted aggregate.",
-        magnitude: formatNumber(privateGithubMetric(data, "private_commits_today")) + " commits / " + formatNumber(privateGithubMetric(data, "private_loc_today")) + " LOC"
+        label: "GitHub aggregate",
+        detail: "Authenticated public and private GitHub activity included as redacted aggregate.",
+        magnitude: formatNumber(privateGithubMetric(data, "total_commits_today")) + " commits / " + formatNumber(privateGithubMetric(data, "total_loc_today")) + " LOC"
       });
     }
     state.github.commits.slice(0, 6).forEach(function (commit) {
@@ -674,7 +696,11 @@
     events.sort(function (a, b) {
       return new Date(b.ts || 0).getTime() - new Date(a.ts || 0).getTime();
     });
-    text("event-count", formatNumber(events.length) + " events");
+    text("event-count", formatNumber(events.length) + " fresh events");
+    if (!events.length) {
+      byId("event-feed").innerHTML = '<article class="event-item"><p class="event-detail">No fresh redacted operator events in the current telemetry window.</p></article>';
+      return;
+    }
     byId("event-feed").innerHTML = events.slice(0, 14).map(function (event) {
       var tone = eventTone(event.type);
       return [
@@ -744,10 +770,17 @@
   function renderWallet() {
     var data = state.telemetry || fallbackTelemetry;
     var wallet = data.wallet || {};
-    var recent = Array.isArray(wallet.recent) ? wallet.recent : [];
+    var recent = Array.isArray(wallet.recent)
+      ? wallet.recent.filter(function (item) {
+        return isFreshTimestamp(item && item.ts, data.generated_at, 24);
+      })
+      : [];
     var target = byId("wallet-events");
     if (!recent.length) {
-      target.innerHTML = '<article class="wallet-item"><p class="wallet-value">No public wallet interactions in feed.</p></article>';
+      var count = metric(data, "wallet_interactions_24h");
+      target.innerHTML = count
+        ? '<article class="wallet-item"><p class="wallet-value">' + escapeHtml(formatNumber(count)) + ' wallet interactions counted in the last 24h. Redacted transaction rows are pending from public telemetry.</p></article>'
+        : '<article class="wallet-item"><p class="wallet-value">No public wallet interactions in the last 24h.</p></article>';
       return;
     }
     target.innerHTML = recent.slice(0, 8).map(function (item) {

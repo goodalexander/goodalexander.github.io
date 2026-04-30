@@ -219,6 +219,21 @@ function dateKey(value) {
   return parsed.toISOString().slice(0, 10);
 }
 
+function timestampMs(value) {
+  const parsed = value ? new Date(value) : null;
+  return parsed && !Number.isNaN(parsed.getTime()) ? parsed.getTime() : null;
+}
+
+function isFreshTimestamp(value, referenceValue, maxHours) {
+  const timestamp = timestampMs(value);
+  const reference = timestampMs(referenceValue) || Date.now();
+  if (timestamp === null) {
+    return false;
+  }
+  const maxAgeMs = maxHours * 60 * 60 * 1000;
+  return timestamp <= reference + (5 * 60 * 1000) && reference - timestamp <= maxAgeMs;
+}
+
 function stableStringify(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
@@ -412,6 +427,9 @@ function mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry) {
     fetched_at: taskNodeTelemetry.generated_at || new Date().toISOString(),
     wallet_address: taskNodeTelemetry.wallet_address || null,
   };
+  telemetry.wallet = telemetry.wallet && typeof telemetry.wallet === 'object' ? telemetry.wallet : {};
+  telemetry.wallet.address = taskNodeTelemetry.wallet_address || telemetry.wallet.address || null;
+  telemetry.wallet.interactions_24h = toFiniteNumberOrNull(metrics.wallet_interactions_24h);
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.tasknode_public = (
     'Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from '
@@ -421,6 +439,37 @@ function mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry) {
     'The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, '
     + 'then publishes this static JSON for the dashboard.'
   );
+}
+
+function pruneStaleTimelineCaches(telemetry, fetchedAt) {
+  telemetry.events = Array.isArray(telemetry.events)
+    ? telemetry.events.filter((event) => (
+      event?.type === 'github_private' || isFreshTimestamp(event?.ts, fetchedAt, 48)
+    ))
+    : [];
+
+  const wallet = telemetry.wallet && typeof telemetry.wallet === 'object' ? telemetry.wallet : {};
+  wallet.recent = Array.isArray(wallet.recent)
+    ? wallet.recent.filter((event) => isFreshTimestamp(event?.ts, fetchedAt, 24))
+    : [];
+  telemetry.wallet = wallet;
+
+  const subjectFeed = telemetry.subject_feed && typeof telemetry.subject_feed === 'object'
+    ? telemetry.subject_feed
+    : null;
+  if (subjectFeed) {
+    const entries = Array.isArray(subjectFeed.entries) ? subjectFeed.entries : [];
+    const freshEntries = entries.filter((entry) => isFreshTimestamp(entry?.ts, fetchedAt, 48));
+    const feedIsFresh = isFreshTimestamp(subjectFeed.generated_at, fetchedAt, 48);
+    if (feedIsFresh && freshEntries.length) {
+      telemetry.subject_feed = {
+        ...subjectFeed,
+        entries: freshEntries,
+      };
+    } else {
+      delete telemetry.subject_feed;
+    }
+  }
 }
 
 function mergeSnapshots(existing, incoming) {
@@ -564,6 +613,7 @@ async function main() {
     }
   }
   mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry);
+  pruneStaleTimelineCaches(telemetry, fetchedAt);
 
   const currentSnapshot = buildCurrentSnapshot({
     telemetry,
