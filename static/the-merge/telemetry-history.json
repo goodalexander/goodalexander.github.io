@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-30T00:15:09.690Z",
+  "generated_at": "2026-04-30T00:30:10.442Z",
   "retention_days": 365,
   "snapshots": [
     {
@@ -399,7 +399,7 @@
     },
     {
       "date": "2026-04-30",
-      "updated_at": "2026-04-30T00:15:09.690Z",
+      "updated_at": "2026-04-30T00:30:10.442Z",
       "dau": 34,
       "x_followers": 122500,
       "x_following": 1290,
