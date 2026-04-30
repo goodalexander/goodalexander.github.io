@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T14:30:15.773Z",
+  "generated_at": "2026-04-30T14:45:11.507Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreigapyymk7lj2ajluth5uexijvpl2pu4cnkws3qcxmumgeemik5jza",
-    "nft_synced_at": "2026-04-30T14:30:15.756Z"
+    "nft_synced_at": "2026-04-30T14:45:11.491Z"
   },
   "redactions": [
     "counterparty",
@@ -22,8 +22,8 @@
     "exact alpha"
   ],
   "metrics": {
-    "tasknode_dau": 32,
-    "x_followers": 122559,
+    "tasknode_dau": 30,
+    "x_followers": 122562,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 3,
@@ -364,8 +364,8 @@
     },
     {
       "date": "2026-04-30",
-      "dau": 32,
-      "x_followers": 122559,
+      "dau": 30,
+      "x_followers": 122562,
       "loc": null,
       "commits": null,
       "task_requests": 3,
@@ -384,7 +384,7 @@
   ],
   "events": [
     {
-      "ts": "2026-04-30T14:30:03.231Z",
+      "ts": "2026-04-30T14:45:02.404Z",
       "type": "github_private",
       "label": "Private GitHub aggregate",
       "detail": "Authenticated private GitHub activity included as redacted aggregate.",
@@ -475,7 +475,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-30T14:30:15.773Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-04-30T14:45:11.507Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
     "github_private": "Private GitHub activity is locally generated with authenticated gh access, aggregated across accessible private repos and branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -484,7 +484,7 @@
     "tasknode_public": "Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from the public redacted /api/public/merge-telemetry endpoint before history snapshots are written."
   },
   "private_github": {
-    "generated_at": "2026-04-30T14:30:03.231Z",
+    "generated_at": "2026-04-30T14:45:02.404Z",
     "window_days": 14,
     "scanned_repos": 62,
     "scanned_private_repos": 34,
@@ -505,8 +505,8 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-04-30T14:30:15.773Z",
-    "followers_count": 122559,
+    "fetched_at": "2026-04-30T14:45:11.507Z",
+    "followers_count": 122562,
     "following_count": 1290,
     "posts_count": 15374,
     "verified": true,
@@ -515,7 +515,7 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-04-30T14:30:15.773Z",
+    "generated_at": "2026-04-30T14:45:11.507Z",
     "retention_days": 365,
     "snapshots": 18,
     "current_date": "2026-04-30"
@@ -659,7 +659,7 @@
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-04-30T14:30:15.756Z",
+    "fetched_at": "2026-04-30T14:45:11.491Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
