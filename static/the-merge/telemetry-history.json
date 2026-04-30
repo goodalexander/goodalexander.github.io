@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-30T18:30:10.932Z",
+  "generated_at": "2026-04-30T18:38:57.830Z",
   "retention_days": 365,
   "snapshots": [
     {
@@ -23,7 +23,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-13",
@@ -45,7 +53,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-14",
@@ -67,7 +83,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-15",
@@ -89,7 +113,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-16",
@@ -111,7 +143,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-17",
@@ -133,7 +173,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-18",
@@ -155,7 +203,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-19",
@@ -177,7 +233,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-20",
@@ -199,7 +263,15 @@
       "github_private_commits": 2,
       "github_private_loc": 105,
       "github_private_additions": 91,
-      "github_private_deletions": 14
+      "github_private_deletions": 14,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-21",
@@ -221,7 +293,15 @@
       "github_private_commits": 2,
       "github_private_loc": 2919,
       "github_private_additions": 2832,
-      "github_private_deletions": 87
+      "github_private_deletions": 87,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-22",
@@ -243,7 +323,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-23",
@@ -265,7 +353,15 @@
       "github_private_commits": 0,
       "github_private_loc": 0,
       "github_private_additions": 0,
-      "github_private_deletions": 0
+      "github_private_deletions": 0,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-24",
@@ -287,7 +383,15 @@
       "github_private_commits": 25,
       "github_private_loc": 10591,
       "github_private_additions": 10181,
-      "github_private_deletions": 410
+      "github_private_deletions": 410,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null
     },
     {
       "date": "2026-04-25",
@@ -310,6 +414,14 @@
       "github_private_loc": 9534,
       "github_private_additions": 9432,
       "github_private_deletions": 102,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -337,6 +449,14 @@
       "github_private_loc": 9534,
       "github_private_additions": 9432,
       "github_private_deletions": 102,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -364,6 +484,14 @@
       "github_private_loc": 9534,
       "github_private_additions": 9432,
       "github_private_deletions": 102,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -391,6 +519,14 @@
       "github_private_loc": 4874,
       "github_private_additions": 4510,
       "github_private_deletions": 364,
+      "github_public_commits": null,
+      "github_public_loc": null,
+      "github_public_additions": null,
+      "github_public_deletions": null,
+      "github_total_commits": null,
+      "github_total_loc": null,
+      "github_total_additions": null,
+      "github_total_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -399,8 +535,8 @@
     },
     {
       "date": "2026-04-30",
-      "updated_at": "2026-04-30T18:30:10.932Z",
-      "dau": 28,
+      "updated_at": "2026-04-30T18:38:57.830Z",
+      "dau": 29,
       "x_followers": 122597,
       "x_following": 1290,
       "x_posts": 15381,
@@ -418,10 +554,20 @@
       "github_private_loc": 0,
       "github_private_additions": 0,
       "github_private_deletions": 0,
+      "github_public_commits": 96,
+      "github_public_loc": 7885,
+      "github_public_additions": 6369,
+      "github_public_deletions": 1516,
+      "github_total_commits": 96,
+      "github_total_loc": 7885,
+      "github_total_additions": 6369,
+      "github_total_deletions": 1516,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "current_metrics": "telemetry_snapshot",
-        "x_followers": "x_api_v2_users_by_username"
+        "x_followers": "x_api_v2_users_by_username",
+        "github_public": "redacted_public_github_snapshot",
+        "github_total": "redacted_github_snapshot"
       }
     }
   ]
