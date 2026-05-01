@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Domain-attested PostFiat testnet validator operated by goodalexander.com.">
+  <link rel="canonical" href="https://goodalexander.com/validator/">
+  <title>goodalexander PostFiat Validator</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06100d;
+      --bg-2: #0d1713;
+      --ink: #f3f8f2;
+      --muted: #a8b9b0;
+      --line: rgba(209, 255, 226, 0.18);
+      --green: #55f7a2;
+      --cyan: #59dfff;
+      --gold: #ffcf5a;
+      --rose: #ff5d8f;
+      --violet: #9b7cff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100%;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 14%, rgba(85, 247, 162, 0.16), transparent 34rem),
+        radial-gradient(circle at 86% 18%, rgba(89, 223, 255, 0.13), transparent 28rem),
+        linear-gradient(180deg, #06100d 0%, #0b1411 46%, #050807 100%);
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 5rem 1.5rem 4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    #validator-art {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .grid-glow {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(209, 255, 226, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(209, 255, 226, 0.05) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 78%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1fr) 18rem;
+      align-items: end;
+    }
+
+    .kicker {
+      margin: 0 0 1rem;
+      color: var(--green);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 15ch;
+      margin: 0;
+      font-size: 4rem;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 43rem;
+      margin: 1.35rem 0 0;
+      color: #d8e5dd;
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.9rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(11, 20, 17, 0.74);
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(14px);
+    }
+
+    .button.primary {
+      border-color: rgba(85, 247, 162, 0.58);
+      background: linear-gradient(135deg, rgba(85, 247, 162, 0.22), rgba(89, 223, 255, 0.14));
+      box-shadow: 0 0 32px rgba(85, 247, 162, 0.16);
+    }
+
+    .sigil {
+      align-self: center;
+      aspect-ratio: 1;
+      border: 1px solid rgba(209, 255, 226, 0.22);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background:
+        conic-gradient(from 40deg, rgba(85, 247, 162, 0.15), rgba(89, 223, 255, 0.09), rgba(255, 207, 90, 0.13), rgba(255, 93, 143, 0.08), rgba(85, 247, 162, 0.15)),
+        rgba(7, 16, 13, 0.54);
+      box-shadow: inset 0 0 42px rgba(255, 255, 255, 0.05), 0 24px 80px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+
+    .sigil span {
+      font-size: 4.8rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #effff5;
+      text-shadow:
+        0 0 18px rgba(85, 247, 162, 0.55),
+        0 0 44px rgba(89, 223, 255, 0.35);
+    }
+
+    main {
+      background: linear-gradient(180deg, rgba(10, 18, 15, 0.88), #050807);
+    }
+
+    .section {
+      width: min(1120px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 3.5rem 0;
+    }
+
+    .section h2 {
+      margin: 0 0 1.25rem;
+      font-size: 2rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .proof-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .proof-card b {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .proof-card span {
+      display: block;
+      margin-top: 0.35rem;
+      overflow-wrap: anywhere;
+      color: #f4fff7;
+      font-weight: 760;
+    }
+
+    .code-wrap {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #07100d;
+    }
+
+    pre {
+      margin: 0;
+      padding: 1.1rem;
+      overflow-x: auto;
+      color: #dfffea;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .art-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .tile {
+      min-height: 12rem;
+      padding: 1rem;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+        #0a1511;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -38% -20%;
+      height: 70%;
+      background: radial-gradient(circle, var(--tile-color), transparent 66%);
+      opacity: 0.48;
+    }
+
+    .tile b {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .tile span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: 1rem;
+      color: #d4e6dc;
+      font-weight: 700;
+    }
+
+    .footer {
+      width: min(1120px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        min-height: 72vh;
+        padding: 4rem 1rem 3rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.65rem;
+      }
+
+      .lede {
+        font-size: 1rem;
+      }
+
+      .sigil {
+        width: min(16rem, 72vw);
+      }
+
+      .proof-grid,
+      .art-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .footer {
+        width: min(100% - 2rem, 1120px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="validator-art" aria-hidden="true"></canvas>
+    <div class="grid-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div>
+        <p class="kicker">PostFiat testnet validator</p>
+        <h1>goodalexander validates PFT consensus</h1>
+        <p class="lede">A domain-attested validator identity for the PostFiat testnet, operated at goodalexander.com and published through the standard PFT Ledger well-known proof.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="/.well-known/pft-ledger.toml">View attestation</a>
+          <a class="button" href="https://postfiat.org/">PostFiat</a>
+          <a class="button" href="/">goodalexander.com</a>
+        </div>
+      </div>
+      <div class="sigil" aria-label="PFT validator artwork"><span>PFT</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Validator Identity</h2>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <b>Domain</b>
+          <span>goodalexander.com</span>
+        </div>
+        <div class="proof-card">
+          <b>Public key</b>
+          <span>nHBoG3rHafA3U3Yfs388GTA9z8t5ocE67qjhgb8aXkfYnDCM5CNE</span>
+        </div>
+        <div class="proof-card">
+          <b>Software</b>
+          <span>postfiatd 1.0.4</span>
+        </div>
+        <div class="proof-card">
+          <b>Last local check</b>
+          <span>2026-05-01 13:42 UTC</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Published Proof</h2>
+      <div class="code-wrap">
+        <pre>[[VALIDATORS]]
+public_key = "nHBoG3rHafA3U3Yfs388GTA9z8t5ocE67qjhgb8aXkfYnDCM5CNE"
+attestation = "F6BC432682210BF52D96E6D799EC2A48529B77E6F50DEB8FE2295275E8F55527C925A02CC03AEBEC9BA7900C958C47C9AAF513E1006115159EA0A7B28C4B7C02"</pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>PFT Signal</h2>
+      <div class="art-strip" aria-label="PostFiat validator artwork panels">
+        <div class="tile" style="--tile-color: rgba(85, 247, 162, 0.9);">
+          <b>01</b>
+          <span>Consensus pulses through signed manifests.</span>
+        </div>
+        <div class="tile" style="--tile-color: rgba(89, 223, 255, 0.85);">
+          <b>02</b>
+          <span>Domain proof binds operator identity to the validator key.</span>
+        </div>
+        <div class="tile" style="--tile-color: rgba(255, 207, 90, 0.9);">
+          <b>03</b>
+          <span>Dynamic UNL readiness favors current, reliable nodes.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>goodalexander.com PostFiat validator</span>
+    <a href="/">Return home</a>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("validator-art");
+    const ctx = canvas.getContext("2d");
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let width = 0;
+    let height = 0;
+    let ratio = 1;
+
+    function resize() {
+      ratio = Math.min(window.devicePixelRatio || 1, 2);
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = Math.floor(width * ratio);
+      canvas.height = Math.floor(height * ratio);
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+
+    function drawNode(x, y, radius, color) {
+      const g = ctx.createRadialGradient(x, y, 0, x, y, radius * 4);
+      g.addColorStop(0, color);
+      g.addColorStop(0.24, color.replace("1)", "0.34)"));
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, radius * 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, width, height);
+      const cx = width * 0.63;
+      const cy = height * 0.48;
+      const radius = Math.min(width, height) * 0.28;
+      const nodes = 11;
+      const colors = [
+        "rgba(85,247,162,1)",
+        "rgba(89,223,255,1)",
+        "rgba(255,207,90,1)",
+        "rgba(255,93,143,1)",
+        "rgba(155,124,255,1)"
+      ];
+
+      ctx.lineWidth = 1;
+      for (let ring = 0; ring < 5; ring += 1) {
+        ctx.strokeStyle = `rgba(209,255,226,${0.06 + ring * 0.025})`;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius * (0.34 + ring * 0.17), 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      const points = [];
+      for (let i = 0; i < nodes; i += 1) {
+        const angle = (Math.PI * 2 * i) / nodes + t * 0.00018;
+        const wobble = Math.sin(t * 0.0011 + i) * 16;
+        points.push({
+          x: cx + Math.cos(angle) * (radius + wobble),
+          y: cy + Math.sin(angle) * (radius * 0.72 + wobble * 0.28)
+        });
+      }
+
+      for (let i = 0; i < points.length; i += 1) {
+        const a = points[i];
+        const b = points[(i + 3) % points.length];
+        const pulse = (Math.sin(t * 0.0016 + i) + 1) / 2;
+        ctx.strokeStyle = `rgba(89,223,255,${0.09 + pulse * 0.26})`;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+
+      points.forEach((point, index) => {
+        drawNode(point.x, point.y, 3.2 + (index % 3), colors[index % colors.length]);
+      });
+
+      ctx.strokeStyle = "rgba(85,247,162,0.52)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, radius * 1.08, radius * 0.76, Math.sin(t * 0.0002) * 0.15, 0, Math.PI * 2);
+      ctx.stroke();
+
+      if (!prefersReduced) {
+        requestAnimationFrame(draw);
+      }
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    requestAnimationFrame(draw);
+  </script>
+</body>
+</html>
