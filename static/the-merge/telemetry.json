@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T00:00:23.698Z",
+  "generated_at": "2026-05-02T00:15:22.303Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreigapyymk7lj2ajluth5uexijvpl2pu4cnkws3qcxmumgeemik5jza",
-    "nft_synced_at": "2026-05-02T00:00:23.685Z"
+    "nft_synced_at": "2026-05-02T00:15:22.280Z"
   },
   "redactions": [
     "counterparty",
@@ -570,23 +570,23 @@
       "github_private_loc": 0,
       "github_private_additions": 0,
       "github_private_deletions": 0,
-      "github_public_commits": 0,
-      "github_public_loc": 0,
-      "github_public_additions": 0,
-      "github_public_deletions": 0,
-      "github_total_commits": 0,
-      "github_total_loc": 0,
-      "github_total_additions": 0,
-      "github_total_deletions": 0
+      "github_public_commits": 1,
+      "github_public_loc": 130,
+      "github_public_additions": 97,
+      "github_public_deletions": 33,
+      "github_total_commits": 1,
+      "github_total_loc": 130,
+      "github_total_additions": 97,
+      "github_total_deletions": 33
     }
   ],
   "events": [
     {
-      "ts": "2026-05-02T00:00:01.940Z",
+      "ts": "2026-05-02T00:15:02.271Z",
       "type": "github_private",
       "label": "GitHub aggregate",
       "detail": "Authenticated public and private GitHub activity included as redacted aggregate.",
-      "magnitude": "0 commits / 0 LOC today"
+      "magnitude": "1 commits / 130 LOC today"
     }
   ],
   "wallet": {
@@ -598,7 +598,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-02T00:00:23.698Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-02T00:15:22.303Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
     "github_private": "GitHub activity is locally generated with authenticated gh access, aggregated across accessible public and private repos/branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -607,7 +607,7 @@
     "tasknode_public": "Task Node task, reward, context, wallet, DAU, and profile NFT metrics are fetched from the public redacted /api/public/merge-telemetry endpoint before history snapshots are written."
   },
   "private_github": {
-    "generated_at": "2026-05-02T00:00:01.940Z",
+    "generated_at": "2026-05-02T00:15:02.271Z",
     "window_days": 14,
     "scanned_repos": 63,
     "scanned_private_repos": 34,
@@ -624,28 +624,28 @@
     "private_loc_today": 0,
     "private_additions_today": 0,
     "private_deletions_today": 0,
-    "public_author_commits_in_window": 368,
-    "public_author_loc_in_window": 81917,
-    "public_author_additions_in_window": 65674,
-    "public_author_deletions_in_window": 16243,
-    "public_commits_today": 0,
-    "public_loc_today": 0,
-    "public_additions_today": 0,
-    "public_deletions_today": 0,
-    "total_author_commits_in_window": 438,
-    "total_author_loc_in_window": 189245,
-    "total_author_additions_in_window": 159709,
-    "total_author_deletions_in_window": 29536,
-    "total_commits_today": 0,
-    "total_loc_today": 0,
-    "total_additions_today": 0,
-    "total_deletions_today": 0
+    "public_author_commits_in_window": 369,
+    "public_author_loc_in_window": 82047,
+    "public_author_additions_in_window": 65771,
+    "public_author_deletions_in_window": 16276,
+    "public_commits_today": 1,
+    "public_loc_today": 130,
+    "public_additions_today": 97,
+    "public_deletions_today": 33,
+    "total_author_commits_in_window": 439,
+    "total_author_loc_in_window": 189375,
+    "total_author_additions_in_window": 159806,
+    "total_author_deletions_in_window": 29569,
+    "total_commits_today": 1,
+    "total_loc_today": 130,
+    "total_additions_today": 97,
+    "total_deletions_today": 33
   },
   "x_profile": {
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-05-02T00:00:23.698Z",
+    "fetched_at": "2026-05-02T00:15:22.303Z",
     "followers_count": 122787,
     "following_count": 1290,
     "posts_count": 15397,
@@ -655,14 +655,14 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-05-02T00:00:23.698Z",
+    "generated_at": "2026-05-02T00:15:22.303Z",
     "retention_days": 365,
     "snapshots": 20,
     "current_date": "2026-05-02"
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-05-02T00:00:23.685Z",
+    "fetched_at": "2026-05-02T00:15:22.280Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   }
 }
