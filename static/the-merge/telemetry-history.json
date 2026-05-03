@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-02T23:45:24.972Z",
+  "generated_at": "2026-05-03T00:00:25.734Z",
   "retention_days": 365,
   "snapshots": [
     {
@@ -636,6 +636,43 @@
       "github_total_loc": 15475,
       "github_total_additions": 10422,
       "github_total_deletions": 5053,
+      "sources": {
+        "github_private": "redacted_private_github_snapshot",
+        "github_public": "redacted_public_github_snapshot",
+        "github_total": "redacted_github_snapshot",
+        "current_metrics": "telemetry_snapshot",
+        "x_followers": "x_api_v2_users_by_username"
+      }
+    },
+    {
+      "date": "2026-05-03",
+      "updated_at": "2026-05-03T00:00:25.734Z",
+      "dau": 22,
+      "x_followers": 122920,
+      "x_following": 1289,
+      "x_posts": 15405,
+      "loc": null,
+      "commits": null,
+      "task_requests": 1,
+      "task_verifications": 2,
+      "task_updates": 2,
+      "tasks_completed": 2,
+      "rewards": 2,
+      "pft_rewards": 14608.611111,
+      "context_updates": 0,
+      "wallet_interactions": 8,
+      "github_private_commits": 0,
+      "github_private_loc": 0,
+      "github_private_additions": 0,
+      "github_private_deletions": 0,
+      "github_public_commits": 0,
+      "github_public_loc": 0,
+      "github_public_additions": 0,
+      "github_public_deletions": 0,
+      "github_total_commits": 0,
+      "github_total_loc": 0,
+      "github_total_additions": 0,
+      "github_total_deletions": 0,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
