@@ -351,7 +351,44 @@ async function listCommitsForBranch(repo, branch, author, sinceIso, token) {
 }
 
 async function getCommitDetail(repo, sha, token) {
-  return githubRequest(repoEndpoint(repo, `/commits/${encodeURIComponent(sha)}`), token);
+  const files = [];
+  let detail = null;
+  let nextUrl = buildApiUrl(repoEndpoint(repo, `/commits/${encodeURIComponent(sha)}`), { per_page: 100 }).toString();
+  while (nextUrl) {
+    const response = await fetch(nextUrl, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${token}`,
+        'User-Agent': GITHUB_USER_AGENT,
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    });
+    const body = await response.text();
+    let parsed = null;
+    if (body) {
+      try {
+        parsed = JSON.parse(body);
+      } catch {
+        parsed = { raw: body.slice(0, 300) };
+      }
+    }
+    if (!response.ok) {
+      const message = parsed?.message || `HTTP ${response.status}`;
+      throw new Error(`GitHub API request failed (${response.status}): ${message}`);
+    }
+    if (!detail) {
+      detail = parsed;
+    }
+    if (Array.isArray(parsed?.files)) {
+      files.push(...parsed.files);
+    }
+    nextUrl = parseNextLink(response.headers.get('link'));
+  }
+
+  if (detail) {
+    detail.files = files;
+  }
+  return detail;
 }
 
 async function runLimited(items, limit, worker) {
