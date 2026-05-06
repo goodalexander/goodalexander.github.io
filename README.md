@@ -64,8 +64,13 @@ the current UTC date, the public telemetry updater writes zero GitHub LOC for
 that date instead of carrying yesterday's LOC forward.
 
 `scripts/refresh-the-merge-local-telemetry.sh` is the cron-safe local runner.
-It acquires a lock, fast-forwards `master`, refreshes private GitHub plus
-Task Node/X telemetry, commits only the two generated telemetry JSON files, and
-pushes to `master` so the normal Pages deploy runs. If
-`/home/pfrpc/repos/new_creds.txt` exists, it exports the first `BEARER_TOKEN`
-from that local-only file for the X lookup.
+It acquires a lock, refreshes private GitHub plus Task Node/X telemetry from an
+isolated publisher checkout at
+`/home/pfrpc/.local/state/goodalexander/the-merge-telemetry-repo`, commits only
+the two generated telemetry JSON files, and pushes to `master` so the normal
+Pages deploy runs. The editable website checkout at
+`/home/pfrpc/repos/goodalexander.github.io` is used only to discover the
+`origin` URL, so local content edits cannot block telemetry publishing. Override
+the publisher checkout with `THE_MERGE_PUBLISH_REPO_DIR` or the remote URL with
+`THE_MERGE_REMOTE_URL`. If `/home/pfrpc/repos/new_creds.txt` exists, it exports
+the first `BEARER_TOKEN` from that local-only file for the X lookup.

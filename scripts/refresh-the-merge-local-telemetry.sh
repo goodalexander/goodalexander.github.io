@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_DIR="${THE_MERGE_REPO_DIR:-/home/pfrpc/repos/goodalexander.github.io}"
+SOURCE_REPO_DIR="${THE_MERGE_REPO_DIR:-/home/pfrpc/repos/goodalexander.github.io}"
+PUBLISH_REPO_DIR="${THE_MERGE_PUBLISH_REPO_DIR:-/home/pfrpc/.local/state/goodalexander/the-merge-telemetry-repo}"
 LOCK_FILE="${THE_MERGE_LOCK_FILE:-/tmp/goodalexander-the-merge-telemetry.lock}"
 CRED_FILE="${THE_MERGE_LOCAL_CRED_FILE:-/home/pfrpc/repos/new_creds.txt}"
 MANAGED_FILES=(
@@ -13,6 +14,43 @@ export PATH="/home/pfrpc/.local/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 
 log() {
   printf '[%s] %s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "$*"
+}
+
+origin_url() {
+  if [[ -n "${THE_MERGE_REMOTE_URL:-}" ]]; then
+    printf '%s\n' "$THE_MERGE_REMOTE_URL"
+    return
+  fi
+
+  if [[ -d "$SOURCE_REPO_DIR/.git" ]]; then
+    git -C "$SOURCE_REPO_DIR" remote get-url origin
+    return
+  fi
+
+  printf '%s\n' "https://github.com/goodalexander/goodalexander.github.io.git"
+}
+
+ensure_publish_checkout() {
+  local remote_url
+  remote_url="$(origin_url)"
+
+  if [[ ! -d "$PUBLISH_REPO_DIR/.git" ]]; then
+    if [[ -e "$PUBLISH_REPO_DIR" ]]; then
+      log "Refusing to use $PUBLISH_REPO_DIR because it exists but is not a git checkout."
+      exit 1
+    fi
+
+    mkdir -p "$(dirname "$PUBLISH_REPO_DIR")"
+    log "Creating isolated telemetry publisher checkout at $PUBLISH_REPO_DIR."
+    git clone --branch master "$remote_url" "$PUBLISH_REPO_DIR"
+  fi
+
+  cd "$PUBLISH_REPO_DIR"
+  git remote set-url origin "$remote_url"
+  git fetch origin master
+  git checkout -B master origin/master
+  git reset --hard origin/master
+  git clean -fd
 }
 
 export_x_bearer_from_cred_file() {
@@ -38,18 +76,6 @@ export_x_bearer_from_cred_file() {
   fi
 }
 
-tracked_dirty_outside_managed_files() {
-  local managed_pattern='^(static/the-merge/telemetry\.json|static/the-merge/telemetry-history\.json)$'
-  git status --porcelain --untracked-files=no | while IFS= read -r line; do
-    local path="${line:3}"
-    path="${path#\"}"
-    path="${path%\"}"
-    if [[ ! "$path" =~ $managed_pattern ]]; then
-      printf '%s\n' "$line"
-    fi
-  done
-}
-
 commit_and_push_if_needed() {
   if git diff --quiet -- "${MANAGED_FILES[@]}"; then
     log "No telemetry changes to commit."
@@ -70,27 +96,8 @@ main() {
     exit 0
   fi
 
-  cd "$REPO_DIR"
-
-  local current_branch
-  current_branch="$(git branch --show-current)"
-  if [[ "$current_branch" != "master" ]]; then
-    log "Refusing to run on branch $current_branch; expected master."
-    exit 1
-  fi
-
-  local dirty
-  dirty="$(tracked_dirty_outside_managed_files)"
-  if [[ -n "$dirty" ]]; then
-    log "Refusing to run with tracked changes outside telemetry files:"
-    printf '%s\n' "$dirty"
-    exit 1
-  fi
-
   export_x_bearer_from_cred_file
-
-  git fetch origin master
-  git pull --ff-only origin master
+  ensure_publish_checkout
 
   node scripts/update-the-merge-private-github.mjs
   node scripts/update-the-merge-x-followers.mjs
