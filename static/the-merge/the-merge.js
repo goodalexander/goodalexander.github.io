@@ -757,6 +757,11 @@
       target.innerHTML = '<article class="commit-item"><p class="commit-title">Waiting for public GitHub pulse.</p><span class="commit-meta">' + escapeHtml(state.github.error || "no commits in current window") + "</span></article>";
       return;
     }
+    var excludedLocToday = privateGithubMetric(data, "total_excluded_loc_today");
+    var rawLocToday = privateGithubMetric(data, "total_raw_loc_today");
+    var excludedLocHtml = excludedLocToday
+      ? '<span class="commit-meta">' + formatNumber(rawLocToday) + " raw LOC today / " + formatNumber(excludedLocToday) + " generated benchmark LOC excluded</span>"
+      : "";
     var privateHtml = hasPrivateStats ? [
       '<article class="commit-item">',
       '<div class="commit-top">',
@@ -764,7 +769,8 @@
       '<span class="commit-meta">' + escapeHtml(formatTime(privateStats.generated_at || data.generated_at)) + "</span>",
       "</div>",
       '<p class="commit-title">Persisted aggregate omits repo names and commit messages.</p>',
-      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "total_commits_today")) + " total commits today / " + formatNumber(privateGithubMetric(data, "total_loc_today")) + " LOC today</span>",
+      '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "total_commits_today")) + " total commits today / " + formatNumber(privateGithubMetric(data, "total_loc_today")) + " filtered LOC today</span>",
+      excludedLocHtml,
       '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "public_commits_today")) + " public / " + formatNumber(privateGithubMetric(data, "private_commits_today")) + " private commits today</span>",
       '<span class="commit-meta">' + formatNumber(privateGithubMetric(data, "total_author_commits_in_window")) + " commits / " + formatNumber(privateGithubMetric(data, "total_author_loc_in_window")) + " LOC over " + formatNumber(privateGithubMetric(data, "window_days") || 14) + "d</span>",
       "</article>"
