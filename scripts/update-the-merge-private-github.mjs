@@ -10,6 +10,14 @@ const DEFAULT_HISTORY_FILENAME = 'telemetry-history.json';
 const DEFAULT_WINDOW_DAYS = 14;
 const DEFAULT_REPO_AFFILIATION = 'owner,collaborator,organization_member';
 const API_BASE = 'https://api.github.com';
+const GITHUB_USER_AGENT = 'goodalexander-the-merge-telemetry';
+const EXCLUDED_GITHUB_FILE_RULES = [
+  {
+    prefix: 'static/benchmarks/',
+    suffix: '.json',
+    reason: 'generated benchmark JSON artifact',
+  },
+];
 
 function readEnv(name) {
   const value = process.env[name];
@@ -44,10 +52,22 @@ function emptyGithubStats() {
     locInWindow: 0,
     additionsInWindow: 0,
     deletionsInWindow: 0,
+    rawLocInWindow: 0,
+    rawAdditionsInWindow: 0,
+    rawDeletionsInWindow: 0,
+    excludedLocInWindow: 0,
+    excludedAdditionsInWindow: 0,
+    excludedDeletionsInWindow: 0,
     commitsToday: 0,
     locToday: 0,
     additionsToday: 0,
     deletionsToday: 0,
+    rawLocToday: 0,
+    rawAdditionsToday: 0,
+    rawDeletionsToday: 0,
+    excludedLocToday: 0,
+    excludedAdditionsToday: 0,
+    excludedDeletionsToday: 0,
   };
 }
 
@@ -55,17 +75,35 @@ function addCommitStats(stats, {
   additions,
   deletions,
   loc,
+  rawAdditions,
+  rawDeletions,
+  rawLoc,
+  excludedAdditions,
+  excludedDeletions,
+  excludedLoc,
   isToday,
 }) {
   stats.commitsInWindow += 1;
   stats.additionsInWindow += additions;
   stats.deletionsInWindow += deletions;
   stats.locInWindow += loc;
+  stats.rawAdditionsInWindow += rawAdditions;
+  stats.rawDeletionsInWindow += rawDeletions;
+  stats.rawLocInWindow += rawLoc;
+  stats.excludedAdditionsInWindow += excludedAdditions;
+  stats.excludedDeletionsInWindow += excludedDeletions;
+  stats.excludedLocInWindow += excludedLoc;
   if (isToday) {
     stats.commitsToday += 1;
     stats.additionsToday += additions;
     stats.deletionsToday += deletions;
     stats.locToday += loc;
+    stats.rawAdditionsToday += rawAdditions;
+    stats.rawDeletionsToday += rawDeletions;
+    stats.rawLocToday += rawLoc;
+    stats.excludedAdditionsToday += excludedAdditions;
+    stats.excludedDeletionsToday += excludedDeletions;
+    stats.excludedLocToday += excludedLoc;
   }
 }
 
@@ -78,6 +116,77 @@ function writeGithubStats(target, prefix, stats) {
   target[`${prefix}_loc_today`] = stats.locToday;
   target[`${prefix}_additions_today`] = stats.additionsToday;
   target[`${prefix}_deletions_today`] = stats.deletionsToday;
+  target[`${prefix}_raw_author_loc_in_window`] = stats.rawLocInWindow;
+  target[`${prefix}_raw_author_additions_in_window`] = stats.rawAdditionsInWindow;
+  target[`${prefix}_raw_author_deletions_in_window`] = stats.rawDeletionsInWindow;
+  target[`${prefix}_raw_loc_today`] = stats.rawLocToday;
+  target[`${prefix}_raw_additions_today`] = stats.rawAdditionsToday;
+  target[`${prefix}_raw_deletions_today`] = stats.rawDeletionsToday;
+  target[`${prefix}_excluded_author_loc_in_window`] = stats.excludedLocInWindow;
+  target[`${prefix}_excluded_author_additions_in_window`] = stats.excludedAdditionsInWindow;
+  target[`${prefix}_excluded_author_deletions_in_window`] = stats.excludedDeletionsInWindow;
+  target[`${prefix}_excluded_loc_today`] = stats.excludedLocToday;
+  target[`${prefix}_excluded_additions_today`] = stats.excludedAdditionsToday;
+  target[`${prefix}_excluded_deletions_today`] = stats.excludedDeletionsToday;
+}
+
+function excludedGithubFileReason(filename) {
+  const normalized = String(filename || '').replace(/^\/+/, '');
+  const rule = EXCLUDED_GITHUB_FILE_RULES.find((item) => (
+    normalized.startsWith(item.prefix)
+    && (!item.suffix || normalized.endsWith(item.suffix))
+  ));
+  return rule?.reason || '';
+}
+
+function commitFileStats(detail) {
+  const stats = detail?.stats || {};
+  const rawAdditions = toFiniteNumber(stats.additions);
+  const rawDeletions = toFiniteNumber(stats.deletions);
+  const rawLoc = toFiniteNumber(stats.total) || rawAdditions + rawDeletions;
+  const files = Array.isArray(detail?.files) ? detail.files : [];
+  if (!files.length) {
+    return {
+      additions: rawAdditions,
+      deletions: rawDeletions,
+      loc: rawLoc,
+      rawAdditions,
+      rawDeletions,
+      rawLoc,
+      excludedAdditions: 0,
+      excludedDeletions: 0,
+      excludedLoc: 0,
+      excludedFiles: 0,
+    };
+  }
+
+  return files.reduce((acc, file) => {
+    const additions = toFiniteNumber(file?.additions);
+    const deletions = toFiniteNumber(file?.deletions);
+    const loc = toFiniteNumber(file?.changes) || additions + deletions;
+    if (excludedGithubFileReason(file?.filename)) {
+      acc.excludedAdditions += additions;
+      acc.excludedDeletions += deletions;
+      acc.excludedLoc += loc;
+      acc.excludedFiles += 1;
+      return acc;
+    }
+    acc.additions += additions;
+    acc.deletions += deletions;
+    acc.loc += loc;
+    return acc;
+  }, {
+    additions: 0,
+    deletions: 0,
+    loc: 0,
+    rawAdditions,
+    rawDeletions,
+    rawLoc,
+    excludedAdditions: 0,
+    excludedDeletions: 0,
+    excludedLoc: 0,
+    excludedFiles: 0,
+  });
 }
 
 async function execGh(args) {
@@ -157,6 +266,7 @@ async function githubRequest(endpoint, token, params = {}) {
     headers: {
       Accept: 'application/vnd.github+json',
       Authorization: `Bearer ${token}`,
+      'User-Agent': GITHUB_USER_AGENT,
       'X-GitHub-Api-Version': '2022-11-28',
     },
   });
@@ -184,6 +294,7 @@ async function githubPaginatedRequest(endpoint, token, params = {}) {
       headers: {
         Accept: 'application/vnd.github+json',
         Authorization: `Bearer ${token}`,
+        'User-Agent': GITHUB_USER_AGENT,
         'X-GitHub-Api-Version': '2022-11-28',
       },
     });
@@ -321,7 +432,7 @@ async function collectPrivateGithubAggregate({
   const publicStats = emptyGithubStats();
   const totalStats = emptyGithubStats();
 
-  await runLimited(commits, 6, async (commit) => {
+  await runLimited(commits, 3, async (commit) => {
     let detail = null;
     try {
       detail = await getCommitDetail(commit.repo, commit.sha, token);
@@ -329,20 +440,22 @@ async function collectPrivateGithubAggregate({
       skippedCommitDetails += 1;
       return;
     }
-    const stats = detail?.stats || {};
-    const commitAdditions = toFiniteNumber(stats.additions);
-    const commitDeletions = toFiniteNumber(stats.deletions);
-    const commitLoc = toFiniteNumber(stats.total) || commitAdditions + commitDeletions;
+    const commitStats = commitFileStats(detail);
     const authoredAt = detail?.commit?.author?.date || detail?.commit?.committer?.date || commit.authoredAt;
-    const commitStats = {
-      additions: commitAdditions,
-      deletions: commitDeletions,
-      loc: commitLoc,
+    const statsWithDate = {
+      ...commitStats,
       isToday: dateKey(authoredAt) === today,
     };
-    addCommitStats(commit.private ? privateStats : publicStats, commitStats);
-    addCommitStats(totalStats, commitStats);
+    addCommitStats(commit.private ? privateStats : publicStats, statsWithDate);
+    addCommitStats(totalStats, statsWithDate);
   });
+
+  if (skippedBranchScans || skippedCommitDetails) {
+    throw new Error(
+      `GitHub scan incomplete: ${skippedBranchScans} branch scans and `
+      + `${skippedCommitDetails} commit details skipped; refusing to publish partial LOC.`
+    );
+  }
 
   const aggregate = {
     generated_at: generatedAt,
@@ -353,6 +466,11 @@ async function collectPrivateGithubAggregate({
     scanned_branches: scannedBranches,
     skipped_branch_scans: skippedBranchScans,
     skipped_commit_details: skippedCommitDetails,
+    excluded_file_rules: EXCLUDED_GITHUB_FILE_RULES.map((rule) => ({
+      prefix: rule.prefix,
+      suffix: rule.suffix,
+      reason: rule.reason,
+    })),
     redaction: 'Repo names, branch names, commit SHAs, commit messages, and file paths are withheld from the persisted aggregate.',
   };
   writeGithubStats(aggregate, 'private', privateStats);
@@ -396,14 +514,20 @@ function applyPrivateGithubAggregate(telemetry, privateGithub) {
   row.github_private_loc = privateGithub.private_loc_today;
   row.github_private_additions = privateGithub.private_additions_today;
   row.github_private_deletions = privateGithub.private_deletions_today;
+  row.github_private_raw_loc = privateGithub.private_raw_loc_today;
+  row.github_private_excluded_loc = privateGithub.private_excluded_loc_today;
   row.github_public_commits = privateGithub.public_commits_today;
   row.github_public_loc = privateGithub.public_loc_today;
   row.github_public_additions = privateGithub.public_additions_today;
   row.github_public_deletions = privateGithub.public_deletions_today;
+  row.github_public_raw_loc = privateGithub.public_raw_loc_today;
+  row.github_public_excluded_loc = privateGithub.public_excluded_loc_today;
   row.github_total_commits = privateGithub.total_commits_today;
   row.github_total_loc = privateGithub.total_loc_today;
   row.github_total_additions = privateGithub.total_additions_today;
   row.github_total_deletions = privateGithub.total_deletions_today;
+  row.github_total_raw_loc = privateGithub.total_raw_loc_today;
+  row.github_total_excluded_loc = privateGithub.total_excluded_loc_today;
   telemetry.series.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
 }
 
@@ -431,14 +555,20 @@ async function updateHistory(historyPath, privateGithub) {
   row.github_private_loc = privateGithub.private_loc_today;
   row.github_private_additions = privateGithub.private_additions_today;
   row.github_private_deletions = privateGithub.private_deletions_today;
+  row.github_private_raw_loc = privateGithub.private_raw_loc_today;
+  row.github_private_excluded_loc = privateGithub.private_excluded_loc_today;
   row.github_public_commits = privateGithub.public_commits_today;
   row.github_public_loc = privateGithub.public_loc_today;
   row.github_public_additions = privateGithub.public_additions_today;
   row.github_public_deletions = privateGithub.public_deletions_today;
+  row.github_public_raw_loc = privateGithub.public_raw_loc_today;
+  row.github_public_excluded_loc = privateGithub.public_excluded_loc_today;
   row.github_total_commits = privateGithub.total_commits_today;
   row.github_total_loc = privateGithub.total_loc_today;
   row.github_total_additions = privateGithub.total_additions_today;
   row.github_total_deletions = privateGithub.total_deletions_today;
+  row.github_total_raw_loc = privateGithub.total_raw_loc_today;
+  row.github_total_excluded_loc = privateGithub.total_excluded_loc_today;
   row.sources = {
     ...(row.sources || {}),
     github_private: 'redacted_private_github_snapshot',
@@ -484,16 +614,28 @@ async function main() {
     scanned_branches: privateGithub.scanned_branches,
     private_commits_today: privateGithub.private_commits_today,
     private_loc_today: privateGithub.private_loc_today,
+    private_raw_loc_today: privateGithub.private_raw_loc_today,
+    private_excluded_loc_today: privateGithub.private_excluded_loc_today,
     public_commits_today: privateGithub.public_commits_today,
     public_loc_today: privateGithub.public_loc_today,
+    public_raw_loc_today: privateGithub.public_raw_loc_today,
+    public_excluded_loc_today: privateGithub.public_excluded_loc_today,
     total_commits_today: privateGithub.total_commits_today,
     total_loc_today: privateGithub.total_loc_today,
+    total_raw_loc_today: privateGithub.total_raw_loc_today,
+    total_excluded_loc_today: privateGithub.total_excluded_loc_today,
     private_author_commits_in_window: privateGithub.private_author_commits_in_window,
     private_author_loc_in_window: privateGithub.private_author_loc_in_window,
+    private_raw_author_loc_in_window: privateGithub.private_raw_author_loc_in_window,
+    private_excluded_author_loc_in_window: privateGithub.private_excluded_author_loc_in_window,
     public_author_commits_in_window: privateGithub.public_author_commits_in_window,
     public_author_loc_in_window: privateGithub.public_author_loc_in_window,
+    public_raw_author_loc_in_window: privateGithub.public_raw_author_loc_in_window,
+    public_excluded_author_loc_in_window: privateGithub.public_excluded_author_loc_in_window,
     total_author_commits_in_window: privateGithub.total_author_commits_in_window,
     total_author_loc_in_window: privateGithub.total_author_loc_in_window,
+    total_raw_author_loc_in_window: privateGithub.total_raw_author_loc_in_window,
+    total_excluded_author_loc_in_window: privateGithub.total_excluded_author_loc_in_window,
     skipped_branch_scans: privateGithub.skipped_branch_scans,
     skipped_commit_details: privateGithub.skipped_commit_details,
   }));
