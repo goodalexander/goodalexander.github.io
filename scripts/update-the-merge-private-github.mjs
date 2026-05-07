@@ -7,8 +7,16 @@ const execFileAsync = promisify(execFile);
 
 const DEFAULT_TELEMETRY_PATH = 'static/the-merge/telemetry.json';
 const DEFAULT_HISTORY_FILENAME = 'telemetry-history.json';
+const DEFAULT_CACHE_PATH = path.join(
+  process.env.HOME || '.',
+  '.local/state/goodalexander/the-merge-github-cache.json'
+);
 const DEFAULT_WINDOW_DAYS = 14;
 const DEFAULT_REPO_AFFILIATION = 'owner,collaborator,organization_member';
+const DEFAULT_REPO_CACHE_TTL_MINUTES = 30;
+const DEFAULT_BRANCH_CACHE_TTL_MINUTES = 24 * 60;
+const DEFAULT_BRANCH_COMMITS_CACHE_TTL_MINUTES = 24 * 60;
+const DEFAULT_MIN_RATE_REMAINING = 350;
 const API_BASE = 'https://api.github.com';
 const GITHUB_USER_AGENT = 'goodalexander-the-merge-telemetry';
 const EXCLUDED_GITHUB_FILE_RULES = [
@@ -29,6 +37,10 @@ function parsePositiveInteger(value, fallback) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 }
 
+function cacheTtlMs(envName, fallbackMinutes) {
+  return parsePositiveInteger(readEnv(envName), fallbackMinutes) * 60 * 1000;
+}
+
 function dateKey(value) {
   const parsed = value ? new Date(value) : new Date();
   if (Number.isNaN(parsed.getTime())) {
@@ -39,6 +51,10 @@ function dateKey(value) {
 
 function stableStringify(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function sinceDayStartIso(value) {
+  return `${dateKey(value)}T00:00:00.000Z`;
 }
 
 function toFiniteNumber(value) {
@@ -189,6 +205,154 @@ function commitFileStats(detail) {
   });
 }
 
+function emptyGithubCache() {
+  return {
+    schema_version: 1,
+    updated_at: null,
+    repos: {},
+    branches: {},
+    branch_commits: {},
+    commit_stats: {},
+    stats: {
+      hits: 0,
+      misses: 0,
+      writes: 0,
+    },
+  };
+}
+
+async function loadGithubCache(cachePath) {
+  try {
+    const parsed = JSON.parse(await fs.readFile(cachePath, 'utf8'));
+    return {
+      ...emptyGithubCache(),
+      ...parsed,
+      repos: parsed?.repos || {},
+      branches: parsed?.branches || {},
+      branch_commits: parsed?.branch_commits || {},
+      commit_stats: parsed?.commit_stats || {},
+      stats: {
+        hits: 0,
+        misses: 0,
+        writes: 0,
+      },
+    };
+  } catch (err) {
+    if (err?.code !== 'ENOENT') {
+      console.warn(`Ignoring unreadable GitHub telemetry cache: ${err.message || err}`);
+    }
+    return emptyGithubCache();
+  }
+}
+
+async function saveGithubCache(cachePath, cache) {
+  cache.schema_version = 1;
+  cache.updated_at = new Date().toISOString();
+  await fs.mkdir(path.dirname(cachePath), { recursive: true });
+  await fs.writeFile(cachePath, stableStringify(cache));
+}
+
+function cacheKey(...parts) {
+  return parts.map((part) => encodeURIComponent(String(part || ''))).join(':');
+}
+
+function isFreshCacheEntry(entry, ttlMs) {
+  if (!entry?.cached_at) {
+    return false;
+  }
+  const cachedAt = new Date(entry.cached_at).getTime();
+  return Number.isFinite(cachedAt) && Date.now() - cachedAt < ttlMs;
+}
+
+function cacheHit(cache) {
+  cache.stats.hits += 1;
+}
+
+function cacheMiss(cache) {
+  cache.stats.misses += 1;
+}
+
+function cacheWrite(cache) {
+  cache.stats.writes += 1;
+}
+
+function redactedRepo(repo) {
+  return {
+    full_name: repo.full_name,
+    private: Boolean(repo.private),
+    archived: Boolean(repo.archived),
+    disabled: Boolean(repo.disabled),
+    pushed_at: repo.pushed_at || null,
+    updated_at: repo.updated_at || null,
+  };
+}
+
+function commitSummary(commit) {
+  return {
+    sha: commit?.sha || '',
+    authored_at: commit?.commit?.author?.date || commit?.commit?.committer?.date || null,
+  };
+}
+
+function commitIsInWindow(commit, sinceIso) {
+  const authoredAt = commit?.commit?.author?.date || commit?.commit?.committer?.date || commit?.authored_at;
+  if (!authoredAt) {
+    return true;
+  }
+  const authoredTime = new Date(authoredAt).getTime();
+  const sinceTime = new Date(sinceIso).getTime();
+  return !Number.isFinite(authoredTime) || !Number.isFinite(sinceTime) || authoredTime >= sinceTime;
+}
+
+class GithubRateBudgetError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'GithubRateBudgetError';
+  }
+}
+
+let githubRateRemaining = Number.POSITIVE_INFINITY;
+let githubRateReset = null;
+
+function githubRateBudgetMinimum() {
+  return parsePositiveInteger(readEnv('THE_MERGE_GITHUB_MIN_RATE_REMAINING'), DEFAULT_MIN_RATE_REMAINING);
+}
+
+function updateGithubRateBudget(response) {
+  const remaining = Number.parseInt(response.headers.get('x-ratelimit-remaining') || '', 10);
+  if (Number.isFinite(remaining)) {
+    githubRateRemaining = remaining;
+  }
+  const reset = Number.parseInt(response.headers.get('x-ratelimit-reset') || '', 10);
+  if (Number.isFinite(reset) && reset > 0) {
+    githubRateReset = new Date(reset * 1000).toISOString();
+  }
+}
+
+function assertGithubRateBudget() {
+  const minimum = githubRateBudgetMinimum();
+  if (Number.isFinite(githubRateRemaining) && githubRateRemaining <= minimum) {
+    throw new GithubRateBudgetError(
+      `GitHub API rate budget low (${githubRateRemaining} remaining; reset ${githubRateReset || 'unknown'}); `
+      + `stopping before the telemetry job burns the shared token.`
+    );
+  }
+}
+
+async function githubFetch(url, token) {
+  assertGithubRateBudget();
+  const response = await fetch(url, {
+    headers: {
+      Accept: 'application/vnd.github+json',
+      Authorization: `Bearer ${token}`,
+      'User-Agent': GITHUB_USER_AGENT,
+      'X-GitHub-Api-Version': '2022-11-28',
+    },
+  });
+  updateGithubRateBudget(response);
+  return response;
+}
+
 async function execGh(args) {
   const { stdout } = await execFileAsync('gh', args, {
     encoding: 'utf8',
@@ -213,14 +377,28 @@ async function resolveGithubToken() {
   return execGh(['auth', 'token']);
 }
 
-async function resolveGithubLogin(token) {
+async function resolveGithubLogin(token, cache) {
   const configured = readEnv('THE_MERGE_GITHUB_AUTHOR') || readEnv('GITHUB_AUTHOR_LOGIN');
   if (configured) {
     return configured;
   }
+  if (cache?.viewer?.login && isFreshCacheEntry(cache.viewer, cacheTtlMs('THE_MERGE_GITHUB_VIEWER_CACHE_TTL_MINUTES', 24 * 60))) {
+    cacheHit(cache);
+    return cache.viewer.login;
+  }
+  if (cache) {
+    cacheMiss(cache);
+  }
   const viewer = await githubRequest('/user', token);
   if (!viewer?.login) {
     throw new Error('Could not resolve authenticated GitHub login.');
+  }
+  if (cache) {
+    cache.viewer = {
+      cached_at: new Date().toISOString(),
+      login: viewer.login,
+    };
+    cacheWrite(cache);
   }
   return viewer.login;
 }
@@ -262,14 +440,7 @@ function buildApiUrl(endpoint, params = {}) {
 
 async function githubRequest(endpoint, token, params = {}) {
   const url = buildApiUrl(endpoint, params);
-  const response = await fetch(url, {
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${token}`,
-      'User-Agent': GITHUB_USER_AGENT,
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
-  });
+  const response = await githubFetch(url, token);
   const body = await response.text();
   let parsed = null;
   if (body) {
@@ -281,6 +452,9 @@ async function githubRequest(endpoint, token, params = {}) {
   }
   if (!response.ok) {
     const message = parsed?.message || `HTTP ${response.status}`;
+    if (response.status === 403 && /rate limit/i.test(message)) {
+      throw new GithubRateBudgetError(`GitHub API rate limit exceeded; reset ${githubRateReset || 'unknown'}.`);
+    }
     throw new Error(`GitHub API request failed (${response.status}): ${message}`);
   }
   return parsed;
@@ -290,14 +464,7 @@ async function githubPaginatedRequest(endpoint, token, params = {}) {
   const rows = [];
   let nextUrl = buildApiUrl(endpoint, { per_page: 100, ...params }).toString();
   while (nextUrl) {
-    const response = await fetch(nextUrl, {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${token}`,
-        'User-Agent': GITHUB_USER_AGENT,
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    const response = await githubFetch(nextUrl, token);
     const body = await response.text();
     let parsed = null;
     if (body) {
@@ -309,6 +476,9 @@ async function githubPaginatedRequest(endpoint, token, params = {}) {
     }
     if (!response.ok) {
       const message = parsed?.message || `HTTP ${response.status}`;
+      if (response.status === 403 && /rate limit/i.test(message)) {
+        throw new GithubRateBudgetError(`GitHub API rate limit exceeded; reset ${githubRateReset || 'unknown'}.`);
+      }
       throw new Error(`GitHub API request failed (${response.status}): ${message}`);
     }
     if (Array.isArray(parsed)) {
@@ -327,27 +497,81 @@ function repoEndpoint(repo, suffix = '') {
   return `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(name)}${suffix}`;
 }
 
-async function listCandidateRepos(token) {
+async function listCandidateRepos(token, cache) {
   const affiliation = readEnv('THE_MERGE_GITHUB_AFFILIATION') || DEFAULT_REPO_AFFILIATION;
+  const key = cacheKey('repos', affiliation);
+  const cached = cache.repos[key];
+  if (isFreshCacheEntry(cached, cacheTtlMs('THE_MERGE_GITHUB_REPO_CACHE_TTL_MINUTES', DEFAULT_REPO_CACHE_TTL_MINUTES))) {
+    cacheHit(cache);
+    return cached.repos;
+  }
+  cacheMiss(cache);
   const repos = await githubPaginatedRequest('/user/repos', token, {
     visibility: 'all',
     affiliation,
     sort: 'updated',
   });
-  return repos.filter((repo) => repo && !repo.archived && !repo.disabled);
+  const filtered = repos
+    .filter((repo) => repo && !repo.archived && !repo.disabled)
+    .map(redactedRepo);
+  cache.repos[key] = {
+    cached_at: new Date().toISOString(),
+    repos: filtered,
+  };
+  cacheWrite(cache);
+  return filtered;
 }
 
-async function listBranches(repo, token) {
-  return githubPaginatedRequest(repoEndpoint(repo, '/branches'), token)
-    .then((branches) => branches.map((branch) => branch?.name).filter(Boolean));
+async function listBranches(repo, token, cache) {
+  const key = cacheKey('branches', repo.full_name);
+  const cached = cache.branches[key];
+  if (
+    cached?.repo_pushed_at === (repo.pushed_at || null)
+    && isFreshCacheEntry(cached, cacheTtlMs('THE_MERGE_GITHUB_BRANCH_CACHE_TTL_MINUTES', DEFAULT_BRANCH_CACHE_TTL_MINUTES))
+  ) {
+    cacheHit(cache);
+    return cached.branches;
+  }
+  cacheMiss(cache);
+  const branches = await githubPaginatedRequest(repoEndpoint(repo, '/branches'), token)
+    .then((rows) => rows
+      .map((branch) => ({
+        name: branch?.name || '',
+        sha: branch?.commit?.sha || '',
+      }))
+      .filter((branch) => branch.name));
+  cache.branches[key] = {
+    cached_at: new Date().toISOString(),
+    repo_pushed_at: repo.pushed_at || null,
+    branches,
+  };
+  cacheWrite(cache);
+  return branches;
 }
 
-async function listCommitsForBranch(repo, branch, author, sinceIso, token) {
-  return githubPaginatedRequest(repoEndpoint(repo, '/commits'), token, {
-    sha: branch,
-    since: sinceIso,
+async function listCommitsForBranch(repo, branch, author, sinceIso, token, cache) {
+  const sinceQueryIso = sinceDayStartIso(sinceIso);
+  const key = cacheKey('branch-commits', repo.full_name, branch.name, branch.sha, author, dateKey(sinceIso));
+  const cached = cache.branch_commits[key];
+  if (isFreshCacheEntry(
+    cached,
+    cacheTtlMs('THE_MERGE_GITHUB_BRANCH_COMMITS_CACHE_TTL_MINUTES', DEFAULT_BRANCH_COMMITS_CACHE_TTL_MINUTES)
+  )) {
+    cacheHit(cache);
+    return cached.commits.filter((commit) => commitIsInWindow(commit, sinceIso));
+  }
+  cacheMiss(cache);
+  const commits = await githubPaginatedRequest(repoEndpoint(repo, '/commits'), token, {
+    sha: branch.name,
+    since: sinceQueryIso,
     author,
-  });
+  }).then((rows) => rows.map(commitSummary).filter((commit) => commit.sha));
+  cache.branch_commits[key] = {
+    cached_at: new Date().toISOString(),
+    commits,
+  };
+  cacheWrite(cache);
+  return commits.filter((commit) => commitIsInWindow(commit, sinceIso));
 }
 
 async function getCommitDetail(repo, sha, token) {
@@ -355,14 +579,7 @@ async function getCommitDetail(repo, sha, token) {
   let detail = null;
   let nextUrl = buildApiUrl(repoEndpoint(repo, `/commits/${encodeURIComponent(sha)}`), { per_page: 100 }).toString();
   while (nextUrl) {
-    const response = await fetch(nextUrl, {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${token}`,
-        'User-Agent': GITHUB_USER_AGENT,
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    const response = await githubFetch(nextUrl, token);
     const body = await response.text();
     let parsed = null;
     if (body) {
@@ -374,6 +591,9 @@ async function getCommitDetail(repo, sha, token) {
     }
     if (!response.ok) {
       const message = parsed?.message || `HTTP ${response.status}`;
+      if (response.status === 403 && /rate limit/i.test(message)) {
+        throw new GithubRateBudgetError(`GitHub API rate limit exceeded; reset ${githubRateReset || 'unknown'}.`);
+      }
       throw new Error(`GitHub API request failed (${response.status}): ${message}`);
     }
     if (!detail) {
@@ -389,6 +609,25 @@ async function getCommitDetail(repo, sha, token) {
     detail.files = files;
   }
   return detail;
+}
+
+async function getCommitComputedStats(repo, sha, token, cache) {
+  const key = cacheKey('commit-stats', repo.full_name, sha);
+  const cached = cache.commit_stats[key];
+  if (cached?.commit_stats) {
+    cacheHit(cache);
+    return cached;
+  }
+  cacheMiss(cache);
+  const detail = await getCommitDetail(repo, sha, token);
+  const computed = {
+    cached_at: new Date().toISOString(),
+    authored_at: detail?.commit?.author?.date || detail?.commit?.committer?.date || null,
+    commit_stats: commitFileStats(detail),
+  };
+  cache.commit_stats[key] = computed;
+  cacheWrite(cache);
+  return computed;
 }
 
 async function runLimited(items, limit, worker) {
@@ -410,11 +649,12 @@ async function collectPrivateGithubAggregate({
   authorLogin,
   authorEmails,
   windowDays,
+  cache,
 }) {
   const generatedAt = new Date().toISOString();
   const since = new Date(Date.now() - (windowDays * 24 * 60 * 60 * 1000)).toISOString();
   const today = dateKey(generatedAt);
-  const repos = await listCandidateRepos(token);
+  const repos = await listCandidateRepos(token, cache);
   const privateRepos = repos.filter((repo) => repo.private);
   const publicRepos = repos.filter((repo) => !repo.private);
   const authorIdentifiers = Array.from(new Set([authorLogin, ...authorEmails].filter(Boolean)));
@@ -426,8 +666,11 @@ async function collectPrivateGithubAggregate({
   await runLimited(repos, 4, async (repo) => {
     let branches = [];
     try {
-      branches = await listBranches(repo, token);
-    } catch {
+      branches = await listBranches(repo, token, cache);
+    } catch (err) {
+      if (err instanceof GithubRateBudgetError) {
+        throw err;
+      }
       skippedBranchScans += 1;
       return;
     }
@@ -441,8 +684,11 @@ async function collectPrivateGithubAggregate({
     await runLimited(branchAuthorPairs, 4, async (item) => {
       let commits = [];
       try {
-        commits = await listCommitsForBranch(item.repo, item.branch, item.author, since, token);
-      } catch {
+        commits = await listCommitsForBranch(item.repo, item.branch, item.author, since, token, cache);
+      } catch (err) {
+        if (err instanceof GithubRateBudgetError) {
+          throw err;
+        }
         skippedBranchScans += 1;
         return;
       }
@@ -457,7 +703,7 @@ async function collectPrivateGithubAggregate({
             repo: item.repo,
             sha,
             private: Boolean(item.repo.private),
-            authoredAt: commit.commit?.author?.date || commit.commit?.committer?.date || null,
+            authoredAt: commit.authored_at || null,
           });
         }
       });
@@ -470,15 +716,18 @@ async function collectPrivateGithubAggregate({
   const totalStats = emptyGithubStats();
 
   await runLimited(commits, 3, async (commit) => {
-    let detail = null;
+    let computed = null;
     try {
-      detail = await getCommitDetail(commit.repo, commit.sha, token);
-    } catch {
+      computed = await getCommitComputedStats(commit.repo, commit.sha, token, cache);
+    } catch (err) {
+      if (err instanceof GithubRateBudgetError) {
+        throw err;
+      }
       skippedCommitDetails += 1;
       return;
     }
-    const commitStats = commitFileStats(detail);
-    const authoredAt = detail?.commit?.author?.date || detail?.commit?.committer?.date || commit.authoredAt;
+    const commitStats = computed.commit_stats;
+    const authoredAt = computed.authored_at || commit.authoredAt;
     const statsWithDate = {
       ...commitStats,
       isToday: dateKey(authoredAt) === today,
@@ -503,6 +752,11 @@ async function collectPrivateGithubAggregate({
     scanned_branches: scannedBranches,
     skipped_branch_scans: skippedBranchScans,
     skipped_commit_details: skippedCommitDetails,
+    github_cache_hits: cache.stats.hits,
+    github_cache_misses: cache.stats.misses,
+    github_cache_writes: cache.stats.writes,
+    github_rate_remaining: Number.isFinite(githubRateRemaining) ? githubRateRemaining : null,
+    github_rate_reset: githubRateReset,
     excluded_file_rules: EXCLUDED_GITHUB_FILE_RULES.map((rule) => ({
       prefix: rule.prefix,
       suffix: rule.suffix,
@@ -622,60 +876,72 @@ async function main() {
   const historyPath = path.resolve(
     readEnv('THE_MERGE_HISTORY_PATH') || path.join(path.dirname(telemetryPath), DEFAULT_HISTORY_FILENAME)
   );
+  const cachePath = path.resolve(readEnv('THE_MERGE_GITHUB_CACHE_PATH') || DEFAULT_CACHE_PATH);
+  const cache = await loadGithubCache(cachePath);
   const windowDays = parsePositiveInteger(readEnv('THE_MERGE_GITHUB_WINDOW_DAYS'), DEFAULT_WINDOW_DAYS);
-  const token = await resolveGithubToken();
-  const authorLogin = await resolveGithubLogin(token);
-  const authorEmails = await resolveAuthorEmails();
-  const privateGithub = await collectPrivateGithubAggregate({
-    token,
-    authorLogin,
-    authorEmails,
-    windowDays,
-  });
-  const telemetry = JSON.parse(await fs.readFile(telemetryPath, 'utf8'));
-  applyPrivateGithubAggregate(telemetry, privateGithub);
-  const history = await updateHistory(historyPath, privateGithub);
-  telemetry.history = {
-    source: `/${path.basename(path.dirname(telemetryPath))}/${DEFAULT_HISTORY_FILENAME}`,
-    generated_at: history.generated_at,
-    retention_days: history.retention_days,
-    snapshots: history.snapshots.length,
-    current_date: dateKey(privateGithub.generated_at),
-  };
-  await fs.writeFile(telemetryPath, stableStringify(telemetry));
-  console.log(JSON.stringify({
-    generated_at: privateGithub.generated_at,
-    scanned_repos: privateGithub.scanned_repos,
-    scanned_private_repos: privateGithub.scanned_private_repos,
-    scanned_public_repos: privateGithub.scanned_public_repos,
-    scanned_branches: privateGithub.scanned_branches,
-    private_commits_today: privateGithub.private_commits_today,
-    private_loc_today: privateGithub.private_loc_today,
-    private_raw_loc_today: privateGithub.private_raw_loc_today,
-    private_excluded_loc_today: privateGithub.private_excluded_loc_today,
-    public_commits_today: privateGithub.public_commits_today,
-    public_loc_today: privateGithub.public_loc_today,
-    public_raw_loc_today: privateGithub.public_raw_loc_today,
-    public_excluded_loc_today: privateGithub.public_excluded_loc_today,
-    total_commits_today: privateGithub.total_commits_today,
-    total_loc_today: privateGithub.total_loc_today,
-    total_raw_loc_today: privateGithub.total_raw_loc_today,
-    total_excluded_loc_today: privateGithub.total_excluded_loc_today,
-    private_author_commits_in_window: privateGithub.private_author_commits_in_window,
-    private_author_loc_in_window: privateGithub.private_author_loc_in_window,
-    private_raw_author_loc_in_window: privateGithub.private_raw_author_loc_in_window,
-    private_excluded_author_loc_in_window: privateGithub.private_excluded_author_loc_in_window,
-    public_author_commits_in_window: privateGithub.public_author_commits_in_window,
-    public_author_loc_in_window: privateGithub.public_author_loc_in_window,
-    public_raw_author_loc_in_window: privateGithub.public_raw_author_loc_in_window,
-    public_excluded_author_loc_in_window: privateGithub.public_excluded_author_loc_in_window,
-    total_author_commits_in_window: privateGithub.total_author_commits_in_window,
-    total_author_loc_in_window: privateGithub.total_author_loc_in_window,
-    total_raw_author_loc_in_window: privateGithub.total_raw_author_loc_in_window,
-    total_excluded_author_loc_in_window: privateGithub.total_excluded_author_loc_in_window,
-    skipped_branch_scans: privateGithub.skipped_branch_scans,
-    skipped_commit_details: privateGithub.skipped_commit_details,
-  }));
+  try {
+    const token = await resolveGithubToken();
+    const authorLogin = await resolveGithubLogin(token, cache);
+    const authorEmails = await resolveAuthorEmails();
+    const privateGithub = await collectPrivateGithubAggregate({
+      token,
+      authorLogin,
+      authorEmails,
+      windowDays,
+      cache,
+    });
+    const telemetry = JSON.parse(await fs.readFile(telemetryPath, 'utf8'));
+    applyPrivateGithubAggregate(telemetry, privateGithub);
+    const history = await updateHistory(historyPath, privateGithub);
+    telemetry.history = {
+      source: `/${path.basename(path.dirname(telemetryPath))}/${DEFAULT_HISTORY_FILENAME}`,
+      generated_at: history.generated_at,
+      retention_days: history.retention_days,
+      snapshots: history.snapshots.length,
+      current_date: dateKey(privateGithub.generated_at),
+    };
+    await fs.writeFile(telemetryPath, stableStringify(telemetry));
+    console.log(JSON.stringify({
+      generated_at: privateGithub.generated_at,
+      scanned_repos: privateGithub.scanned_repos,
+      scanned_private_repos: privateGithub.scanned_private_repos,
+      scanned_public_repos: privateGithub.scanned_public_repos,
+      scanned_branches: privateGithub.scanned_branches,
+      private_commits_today: privateGithub.private_commits_today,
+      private_loc_today: privateGithub.private_loc_today,
+      private_raw_loc_today: privateGithub.private_raw_loc_today,
+      private_excluded_loc_today: privateGithub.private_excluded_loc_today,
+      public_commits_today: privateGithub.public_commits_today,
+      public_loc_today: privateGithub.public_loc_today,
+      public_raw_loc_today: privateGithub.public_raw_loc_today,
+      public_excluded_loc_today: privateGithub.public_excluded_loc_today,
+      total_commits_today: privateGithub.total_commits_today,
+      total_loc_today: privateGithub.total_loc_today,
+      total_raw_loc_today: privateGithub.total_raw_loc_today,
+      total_excluded_loc_today: privateGithub.total_excluded_loc_today,
+      private_author_commits_in_window: privateGithub.private_author_commits_in_window,
+      private_author_loc_in_window: privateGithub.private_author_loc_in_window,
+      private_raw_author_loc_in_window: privateGithub.private_raw_author_loc_in_window,
+      private_excluded_author_loc_in_window: privateGithub.private_excluded_author_loc_in_window,
+      public_author_commits_in_window: privateGithub.public_author_commits_in_window,
+      public_author_loc_in_window: privateGithub.public_author_loc_in_window,
+      public_raw_author_loc_in_window: privateGithub.public_raw_author_loc_in_window,
+      public_excluded_author_loc_in_window: privateGithub.public_excluded_author_loc_in_window,
+      total_author_commits_in_window: privateGithub.total_author_commits_in_window,
+      total_author_loc_in_window: privateGithub.total_author_loc_in_window,
+      total_raw_author_loc_in_window: privateGithub.total_raw_author_loc_in_window,
+      total_excluded_author_loc_in_window: privateGithub.total_excluded_author_loc_in_window,
+      skipped_branch_scans: privateGithub.skipped_branch_scans,
+      skipped_commit_details: privateGithub.skipped_commit_details,
+      github_cache_hits: privateGithub.github_cache_hits,
+      github_cache_misses: privateGithub.github_cache_misses,
+      github_cache_writes: privateGithub.github_cache_writes,
+      github_rate_remaining: privateGithub.github_rate_remaining,
+      github_rate_reset: privateGithub.github_rate_reset,
+    }));
+  } finally {
+    await saveGithubCache(cachePath, cache);
+  }
 }
 
 main().catch((err) => {
