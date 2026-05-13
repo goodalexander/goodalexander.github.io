@@ -19,11 +19,17 @@ const DEFAULT_BRANCH_COMMITS_CACHE_TTL_MINUTES = 24 * 60;
 const DEFAULT_MIN_RATE_REMAINING = 350;
 const API_BASE = 'https://api.github.com';
 const GITHUB_USER_AGENT = 'goodalexander-the-merge-telemetry';
+const EXCLUDED_GITHUB_FILE_RULES_VERSION = 'generated-artifact-exclusions-v2';
 const EXCLUDED_GITHUB_FILE_RULES = [
   {
     prefix: 'static/benchmarks/',
     suffix: '.json',
     reason: 'generated benchmark JSON artifact',
+  },
+  {
+    prefix: 'static/the-merge/telemetry',
+    suffix: '.json',
+    reason: 'generated The Merge telemetry JSON artifact',
   },
 ];
 
@@ -612,9 +618,9 @@ async function getCommitDetail(repo, sha, token) {
 }
 
 async function getCommitComputedStats(repo, sha, token, cache) {
-  const key = cacheKey('commit-stats', repo.full_name, sha);
+  const key = cacheKey('commit-stats', EXCLUDED_GITHUB_FILE_RULES_VERSION, repo.full_name, sha);
   const cached = cache.commit_stats[key];
-  if (cached?.commit_stats) {
+  if (cached?.commit_stats && cached.excluded_file_rules_version === EXCLUDED_GITHUB_FILE_RULES_VERSION) {
     cacheHit(cache);
     return cached;
   }
@@ -622,6 +628,7 @@ async function getCommitComputedStats(repo, sha, token, cache) {
   const detail = await getCommitDetail(repo, sha, token);
   const computed = {
     cached_at: new Date().toISOString(),
+    excluded_file_rules_version: EXCLUDED_GITHUB_FILE_RULES_VERSION,
     authored_at: detail?.commit?.author?.date || detail?.commit?.committer?.date || null,
     commit_stats: commitFileStats(detail),
   };

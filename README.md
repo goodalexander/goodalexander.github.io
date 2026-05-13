@@ -57,7 +57,8 @@ commits to the authenticated GitHub user plus configured author emails, and
 publishes only aggregate counts. It writes separate public, private, and total
 LOC/commit counters, but never writes repo names, branch names, commit SHAs,
 commit messages, or file paths into the persisted public telemetry file.
-Generated benchmark JSON under `static/benchmarks/*.json` is hard-excluded from
+Generated benchmark JSON under `static/benchmarks/*.json` and generated Merge
+telemetry JSON under `static/the-merge/telemetry*.json` are hard-excluded from
 the headline LOC counters and retained only in `*_raw_*` / `*_excluded_*`
 aggregate fields so artifact dumps do not masquerade as code velocity.
 
