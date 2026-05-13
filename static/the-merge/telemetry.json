@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T15:48:42.054Z",
+  "generated_at": "2026-05-13T16:00:03.136Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreib4zzspculkjys4mn2ciacuilrhyvxgfuayws5hmoba5ovknntfna",
-    "nft_synced_at": "2026-05-13T15:48:42.039Z"
+    "nft_synced_at": "2026-05-13T16:00:03.044Z"
   },
   "redactions": [
     "counterparty",
@@ -23,7 +23,7 @@
   ],
   "metrics": {
     "tasknode_dau": 35,
-    "x_followers": 125088,
+    "x_followers": 125092,
     "commits_today": null,
     "loc_today": null,
     "task_requests_24h": 11,
@@ -1962,7 +1962,7 @@
     {
       "date": "2026-05-13",
       "dau": 35,
-      "x_followers": 125088,
+      "x_followers": 125092,
       "loc": null,
       "commits": null,
       "task_requests": 11,
@@ -1987,14 +1987,14 @@
       "github_total_deletions": 5381,
       "local_workspace_files": 22,
       "local_workspace_repos": 0,
-      "local_workspace_loc": 42672,
-      "local_workspace_additions": 34435,
+      "local_workspace_loc": 42731,
+      "local_workspace_additions": 34494,
       "local_workspace_deletions": 8237
     }
   ],
   "events": [
     {
-      "ts": "2026-05-13T15:48:41.395Z",
+      "ts": "2026-05-13T16:00:02.118Z",
       "type": "github_private",
       "label": "GitHub aggregate",
       "detail": "Authenticated public and private GitHub activity included as redacted aggregate.",
@@ -2010,7 +2010,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-13T15:48:42.054Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-13T16:00:03.136Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
     "github_private": "GitHub activity is locally generated with authenticated gh access, aggregated across accessible public and private repos/branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -2020,7 +2020,7 @@
     "local_workspace": "Local workspace activity is generated on the publisher host from uncommitted tracked/untracked diffs, aggregated by day, and published without repo names, file paths, or patch contents."
   },
   "private_github": {
-    "generated_at": "2026-05-13T15:48:41.395Z",
+    "generated_at": "2026-05-13T16:00:02.118Z",
     "window_days": 14,
     "scanned_repos": 65,
     "scanned_private_repos": 36,
@@ -2609,8 +2609,8 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-05-13T15:48:42.054Z",
-    "followers_count": 125088,
+    "fetched_at": "2026-05-13T16:00:03.136Z",
+    "followers_count": 125092,
     "following_count": 1296,
     "posts_count": 15572,
     "verified": true,
@@ -2619,18 +2619,18 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-05-13T15:48:42.054Z",
+    "generated_at": "2026-05-13T16:00:03.136Z",
     "retention_days": 365,
     "snapshots": 61,
     "current_date": "2026-05-13"
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-05-13T15:48:42.039Z",
+    "fetched_at": "2026-05-13T16:00:03.044Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   },
   "local_workspace": {
-    "generated_at": "2026-05-13T15:48:41.395Z",
+    "generated_at": "2026-05-13T16:00:02.118Z",
     "repos_roots": [
       "/home/pfrpc/repos",
       "/home/postfiat/repos"
@@ -2647,8 +2647,8 @@
     "tracked_files": 233,
     "untracked_files": 0,
     "include_untracked": false,
-    "loc_today": 42672,
-    "additions_today": 34435,
+    "loc_today": 42731,
+    "additions_today": 34494,
     "deletions_today": 8237,
     "daily": [
       {
@@ -2973,9 +2973,9 @@
       },
       {
         "date": "2026-05-13",
-        "additions": 34435,
+        "additions": 34494,
         "deletions": 8237,
-        "loc": 42672,
+        "loc": 42731,
         "files": 22,
         "repos": 0
       }
