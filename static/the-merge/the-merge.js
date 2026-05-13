@@ -524,11 +524,12 @@
       var privateCommits = rowMetric(next, "github_private_commits");
       var publicLoc = rowMetric(next, "github_public_loc");
       var publicCommits = rowMetric(next, "github_public_commits");
+      var workspaceLoc = rowMetric(next, "local_workspace_loc");
       var totalLoc = asFiniteNumber(next.github_total_loc);
       var totalCommits = asFiniteNumber(next.github_total_commits);
       var githubLoc = totalLoc == null ? privateLoc + publicLoc : totalLoc;
       var githubCommits = totalCommits == null ? privateCommits + publicCommits : totalCommits;
-      next.loc = rowMetric(next, "loc") + githubLoc;
+      next.loc = rowMetric(next, "loc") + githubLoc + workspaceLoc;
       next.commits = rowMetric(next, "commits") + githubCommits;
       seriesByDate[row.date] = next;
     });
