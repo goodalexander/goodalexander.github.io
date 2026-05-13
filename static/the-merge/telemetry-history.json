@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-13T15:27:04.764Z",
+  "generated_at": "2026-05-13T15:28:27.373Z",
   "retention_days": 365,
   "snapshots": [
     {
       "date": "2025-08-23",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -32,13 +32,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 0,
+      "local_workspace_additions": 0,
+      "local_workspace_deletions": 0,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-08-26",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -65,13 +70,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 604,
+      "local_workspace_additions": 540,
+      "local_workspace_deletions": 64,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-08-27",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -98,13 +108,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 5,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1276,
+      "local_workspace_additions": 647,
+      "local_workspace_deletions": 629,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-08-28",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -131,13 +146,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 4,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 333,
+      "local_workspace_additions": 242,
+      "local_workspace_deletions": 91,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-08-29",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -164,13 +184,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 7,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 261,
+      "local_workspace_additions": 217,
+      "local_workspace_deletions": 44,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-08-30",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -197,13 +222,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 920,
+      "local_workspace_additions": 757,
+      "local_workspace_deletions": 163,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-09-01",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -230,13 +260,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 22,
+      "local_workspace_additions": 17,
+      "local_workspace_deletions": 5,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-09-05",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -263,13 +298,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 52,
+      "local_workspace_additions": 38,
+      "local_workspace_deletions": 14,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-09-15",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -296,13 +336,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-09-19",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -329,13 +374,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-10-15",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -362,13 +412,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 3,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 162,
+      "local_workspace_additions": 123,
+      "local_workspace_deletions": 39,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-11-18",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -395,13 +450,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-11-19",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -428,13 +488,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 0,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-11-22",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -461,13 +526,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-11-30",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -494,13 +564,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 665,
+      "local_workspace_additions": 59,
+      "local_workspace_deletions": 606,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2025-12-31",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -527,13 +602,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 35,
+      "local_workspace_additions": 35,
+      "local_workspace_deletions": 0,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-03",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -560,13 +640,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 6,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 100,
+      "local_workspace_additions": 53,
+      "local_workspace_deletions": 47,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-13",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -593,13 +678,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 13,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 351,
+      "local_workspace_additions": 264,
+      "local_workspace_deletions": 87,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-17",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -626,13 +716,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 3,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 513,
+      "local_workspace_additions": 228,
+      "local_workspace_deletions": 285,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-18",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -659,13 +754,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 530,
+      "local_workspace_additions": 208,
+      "local_workspace_deletions": 322,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-21",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -692,13 +792,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 9,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 28,
+      "local_workspace_additions": 25,
+      "local_workspace_deletions": 3,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-22",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -725,13 +830,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 6037,
+      "local_workspace_additions": 2991,
+      "local_workspace_deletions": 3046,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-23",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -758,13 +868,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 406,
+      "local_workspace_additions": 353,
+      "local_workspace_deletions": 53,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-25",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -791,13 +906,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 36,
+      "local_workspace_additions": 15,
+      "local_workspace_deletions": 21,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-01-29",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -824,13 +944,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 8,
+      "local_workspace_additions": 4,
+      "local_workspace_deletions": 4,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-02-06",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -857,13 +982,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 195,
+      "local_workspace_additions": 171,
+      "local_workspace_deletions": 24,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-02-26",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -890,13 +1020,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 2,
+      "local_workspace_deletions": 0,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-03-23",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -923,13 +1058,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 210,
+      "local_workspace_additions": 210,
+      "local_workspace_deletions": 0,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-03-24",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -956,13 +1096,18 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 14,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1237,
+      "local_workspace_additions": 1031,
+      "local_workspace_deletions": 206,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
     },
     {
       "date": "2026-03-25",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -989,6 +1134,11 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": 10,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 379,
+      "local_workspace_additions": 276,
+      "local_workspace_deletions": 103,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot"
       }
@@ -1021,7 +1171,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-13",
@@ -1051,7 +1206,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-14",
@@ -1081,7 +1241,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-15",
@@ -1111,7 +1276,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-16",
@@ -1141,7 +1311,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-17",
@@ -1171,7 +1346,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-18",
@@ -1201,7 +1381,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-19",
@@ -1231,7 +1416,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-20",
@@ -1261,7 +1451,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-21",
@@ -1291,7 +1486,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-22",
@@ -1321,7 +1521,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-23",
@@ -1351,7 +1556,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-24",
@@ -1381,7 +1591,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-25",
@@ -1412,6 +1627,11 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -1447,6 +1667,11 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -1482,6 +1707,11 @@
       "github_total_loc": null,
       "github_total_additions": null,
       "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -1490,7 +1720,7 @@
     },
     {
       "date": "2026-04-29",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 34,
       "x_followers": 122500,
       "x_following": 1290,
@@ -1517,6 +1747,11 @@
       "github_total_loc": 5548,
       "github_total_additions": 5148,
       "github_total_deletions": 400,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "x_followers": "x_api_v2_users_by_username",
         "current_metrics": "telemetry_snapshot",
@@ -1527,7 +1762,7 @@
     },
     {
       "date": "2026-04-30",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 33,
       "x_followers": 122646,
       "x_following": 1291,
@@ -1554,6 +1789,11 @@
       "github_total_loc": 42603,
       "github_total_additions": 36053,
       "github_total_deletions": 6550,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 35,
+      "local_workspace_additions": 35,
+      "local_workspace_deletions": 0,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "current_metrics": "telemetry_snapshot",
@@ -1565,7 +1805,7 @@
     },
     {
       "date": "2026-05-01",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 29,
       "x_followers": 122787,
       "x_following": 1290,
@@ -1592,6 +1832,11 @@
       "github_total_loc": 49808,
       "github_total_additions": 43705,
       "github_total_deletions": 6103,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 6,
+      "local_workspace_additions": 5,
+      "local_workspace_deletions": 1,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1603,7 +1848,7 @@
     },
     {
       "date": "2026-05-02",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 23,
       "x_followers": 122919,
       "x_following": 1289,
@@ -1630,6 +1875,11 @@
       "github_total_loc": 6318,
       "github_total_additions": 5867,
       "github_total_deletions": 451,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 4,
+      "local_workspace_additions": 4,
+      "local_workspace_deletions": 0,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1641,7 +1891,7 @@
     },
     {
       "date": "2026-05-03",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 23,
       "x_followers": 123103,
       "x_following": 1290,
@@ -1668,6 +1918,11 @@
       "github_total_loc": 8912,
       "github_total_additions": 7519,
       "github_total_deletions": 1393,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 5,
+      "local_workspace_additions": 5,
+      "local_workspace_deletions": 0,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1679,7 +1934,7 @@
     },
     {
       "date": "2026-05-04",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 30,
       "x_followers": 123189,
       "x_following": 1290,
@@ -1706,6 +1961,11 @@
       "github_total_loc": 29128,
       "github_total_additions": 29034,
       "github_total_deletions": 94,
+      "local_workspace_files": 6,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 60,
+      "local_workspace_additions": 45,
+      "local_workspace_deletions": 15,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1717,7 +1977,7 @@
     },
     {
       "date": "2026-05-05",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -1744,6 +2004,11 @@
       "github_total_loc": 1523,
       "github_total_additions": 1162,
       "github_total_deletions": 361,
+      "local_workspace_files": 7,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 782,
+      "local_workspace_additions": 634,
+      "local_workspace_deletions": 148,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1753,7 +2018,7 @@
     },
     {
       "date": "2026-05-06",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 32,
       "x_followers": 123670,
       "x_following": 1293,
@@ -1780,6 +2045,11 @@
       "github_total_loc": 70797,
       "github_total_additions": 68923,
       "github_total_deletions": 1874,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1790,7 +2060,7 @@
     },
     {
       "date": "2026-05-07",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 32,
       "x_followers": 123797,
       "x_following": 1294,
@@ -1817,6 +2087,11 @@
       "github_total_loc": 46819,
       "github_total_additions": 44997,
       "github_total_deletions": 1822,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1827,7 +2102,7 @@
     },
     {
       "date": "2026-05-08",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 30,
       "x_followers": 123986,
       "x_following": 1293,
@@ -1854,6 +2129,11 @@
       "github_total_loc": 96176,
       "github_total_additions": 90422,
       "github_total_deletions": 5754,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1864,7 +2144,7 @@
     },
     {
       "date": "2026-05-09",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 23,
       "x_followers": 124166,
       "x_following": 1295,
@@ -1891,6 +2171,11 @@
       "github_total_loc": 30205,
       "github_total_additions": 29626,
       "github_total_deletions": 579,
+      "local_workspace_files": 14,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1563,
+      "local_workspace_additions": 1457,
+      "local_workspace_deletions": 106,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1902,7 +2187,7 @@
     },
     {
       "date": "2026-05-10",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 24,
       "x_followers": 124333,
       "x_following": 1295,
@@ -1929,6 +2214,11 @@
       "github_total_loc": 22443,
       "github_total_additions": 21478,
       "github_total_deletions": 965,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 104,
+      "local_workspace_additions": 84,
+      "local_workspace_deletions": 20,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1940,7 +2230,7 @@
     },
     {
       "date": "2026-05-11",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 38,
       "x_followers": 124526,
       "x_following": 1295,
@@ -1967,6 +2257,11 @@
       "github_total_loc": 205,
       "github_total_additions": 205,
       "github_total_deletions": 0,
+      "local_workspace_files": 19,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2151,
+      "local_workspace_additions": 2094,
+      "local_workspace_deletions": 57,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -1978,7 +2273,7 @@
     },
     {
       "date": "2026-05-12",
-      "updated_at": "2026-05-13T15:27:03.996Z",
+      "updated_at": "2026-05-13T15:28:26.782Z",
       "dau": 32,
       "x_followers": 124929,
       "x_following": 1296,
@@ -2005,6 +2300,11 @@
       "github_total_loc": 0,
       "github_total_additions": 0,
       "github_total_deletions": 0,
+      "local_workspace_files": 33,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 3575,
+      "local_workspace_additions": 2818,
+      "local_workspace_deletions": 757,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
@@ -2016,7 +2316,7 @@
     },
     {
       "date": "2026-05-13",
-      "updated_at": "2026-05-13T15:27:04.764Z",
+      "updated_at": "2026-05-13T15:28:27.373Z",
       "dau": 35,
       "x_followers": 125087,
       "x_following": 1296,
@@ -2043,6 +2343,11 @@
       "github_total_loc": 194,
       "github_total_additions": 194,
       "github_total_deletions": 0,
+      "local_workspace_files": 22,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 42561,
+      "local_workspace_additions": 34324,
+      "local_workspace_deletions": 8237,
       "sources": {
         "github_private": "redacted_private_github_snapshot",
         "github_public": "redacted_public_github_snapshot",
