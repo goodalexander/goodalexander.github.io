@@ -268,6 +268,11 @@ function normalizeSeriesRow(row, fallbackUpdatedAt) {
     github_total_loc: toFiniteNumberOrNull(row.github_total_loc),
     github_total_additions: toFiniteNumberOrNull(row.github_total_additions),
     github_total_deletions: toFiniteNumberOrNull(row.github_total_deletions),
+    local_workspace_files: toFiniteNumberOrNull(row.local_workspace_files),
+    local_workspace_repos: toFiniteNumberOrNull(row.local_workspace_repos),
+    local_workspace_loc: toFiniteNumberOrNull(row.local_workspace_loc),
+    local_workspace_additions: toFiniteNumberOrNull(row.local_workspace_additions),
+    local_workspace_deletions: toFiniteNumberOrNull(row.local_workspace_deletions),
     sources: row.sources && typeof row.sources === 'object' ? row.sources : undefined,
   };
 }
@@ -546,6 +551,11 @@ function buildTelemetrySeries(history, maxDays) {
       github_total_loc: toFiniteNumberOrNull(row.github_total_loc),
       github_total_additions: toFiniteNumberOrNull(row.github_total_additions),
       github_total_deletions: toFiniteNumberOrNull(row.github_total_deletions),
+      local_workspace_files: toFiniteNumberOrNull(row.local_workspace_files),
+      local_workspace_repos: toFiniteNumberOrNull(row.local_workspace_repos),
+      local_workspace_loc: toFiniteNumberOrNull(row.local_workspace_loc),
+      local_workspace_additions: toFiniteNumberOrNull(row.local_workspace_additions),
+      local_workspace_deletions: toFiniteNumberOrNull(row.local_workspace_deletions),
     }));
 }
 
