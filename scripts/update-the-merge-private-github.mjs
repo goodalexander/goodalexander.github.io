@@ -11,6 +11,7 @@ const DEFAULT_CACHE_PATH = path.join(
   process.env.HOME || '.',
   '.local/state/goodalexander/the-merge-github-cache.json'
 );
+const DEFAULT_LOCAL_REPOS_ROOT = '/home/pfrpc/repos';
 const DEFAULT_WINDOW_DAYS = 14;
 const DEFAULT_REPO_AFFILIATION = 'owner,collaborator,organization_member';
 const DEFAULT_REPO_CACHE_TTL_MINUTES = 30;
@@ -47,6 +48,14 @@ function cacheTtlMs(envName, fallbackMinutes) {
   return parsePositiveInteger(readEnv(envName), fallbackMinutes) * 60 * 1000;
 }
 
+function envFlag(name, fallback = false) {
+  const value = readEnv(name).toLowerCase();
+  if (!value) {
+    return fallback;
+  }
+  return ['1', 'true', 'yes', 'on'].includes(value);
+}
+
 function dateKey(value) {
   const parsed = value ? new Date(value) : new Date();
   if (Number.isNaN(parsed.getTime())) {
@@ -66,6 +75,32 @@ function sinceDayStartIso(value) {
 function toFiniteNumber(value) {
   const parsed = Number(value || 0);
   return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function addDailyLocStats(dailyStats, date, {
+  additions = 0,
+  deletions = 0,
+  files = 0,
+  repos = 0,
+} = {}) {
+  const day = dateKey(date);
+  let row = dailyStats.get(day);
+  if (!row) {
+    row = {
+      date: day,
+      additions: 0,
+      deletions: 0,
+      loc: 0,
+      files: 0,
+      repos: 0,
+    };
+    dailyStats.set(day, row);
+  }
+  row.additions += toFiniteNumber(additions);
+  row.deletions += toFiniteNumber(deletions);
+  row.loc += toFiniteNumber(additions) + toFiniteNumber(deletions);
+  row.files += toFiniteNumber(files);
+  row.repos += toFiniteNumber(repos);
 }
 
 function emptyGithubStats() {
@@ -200,6 +235,17 @@ function excludedGithubFileReason(filename) {
     && (!item.suffix || normalized.endsWith(item.suffix))
   ));
   return rule?.reason || '';
+}
+
+function excludedLocalWorkspaceFileReason(filename) {
+  const normalized = String(filename || '').replace(/^\/+/, '');
+  if (!normalized || normalized.includes('/node_modules/') || normalized.startsWith('node_modules/')) {
+    return normalized ? 'dependency directory' : 'missing filename';
+  }
+  if (normalized.includes('/.git/') || normalized.startsWith('.git/')) {
+    return 'git metadata';
+  }
+  return excludedGithubFileReason(normalized);
 }
 
 function commitFileStats(detail) {
@@ -420,6 +466,29 @@ async function execGit(args) {
     maxBuffer: 1024 * 1024,
   });
   return stdout.trim();
+}
+
+async function execGitInRepo(repoPath, args, options = {}) {
+  const { stdout } = await execFileAsync('git', ['-C', repoPath, ...args], {
+    encoding: 'utf8',
+    maxBuffer: options.maxBuffer || 20 * 1024 * 1024,
+  });
+  return stdout;
+}
+
+async function listLocalGitRepos(rootPath) {
+  if (!rootPath) {
+    return [];
+  }
+  const { stdout } = await execFileAsync('find', [rootPath, '-maxdepth', '2', '-name', '.git', '-type', 'd'], {
+    encoding: 'utf8',
+    maxBuffer: 5 * 1024 * 1024,
+  });
+  return stdout
+    .split('\n')
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .map((gitDir) => gitDir.replace(/\/\.git$/, ''));
 }
 
 async function resolveGithubToken() {
@@ -831,6 +900,167 @@ async function collectPrivateGithubAggregate({
   return aggregate;
 }
 
+function parseNumstatLine(line) {
+  const parts = String(line || '').split('\t');
+  if (parts.length < 3 || !/^\d+$/.test(parts[0]) || !/^\d+$/.test(parts[1])) {
+    return null;
+  }
+  const additions = Number(parts[0]);
+  const deletions = Number(parts[1]);
+  const rawPath = parts.slice(2).join('\t');
+  const filename = rawPath.includes(' => ')
+    ? rawPath.split(' => ').pop().replace(/[{}]/g, '')
+    : rawPath;
+  return {
+    additions,
+    deletions,
+    filename,
+  };
+}
+
+async function fileDateKey(repoPath, filename, fallbackDate) {
+  try {
+    const stat = await fs.stat(path.join(repoPath, filename));
+    return dateKey(stat.mtime);
+  } catch {
+    return dateKey(fallbackDate);
+  }
+}
+
+async function countTextFileLines(filePath) {
+  try {
+    const stat = await fs.stat(filePath);
+    if (!stat.isFile() || stat.size > 2 * 1024 * 1024) {
+      return 0;
+    }
+    const buffer = await fs.readFile(filePath);
+    if (buffer.includes(0)) {
+      return 0;
+    }
+    if (!buffer.length) {
+      return 0;
+    }
+    let lines = 0;
+    for (const byte of buffer) {
+      if (byte === 10) {
+        lines += 1;
+      }
+    }
+    return buffer[buffer.length - 1] === 10 ? lines : lines + 1;
+  } catch {
+    return 0;
+  }
+}
+
+async function collectLocalWorkspaceAggregate({
+  rootPath,
+  generatedAt,
+}) {
+  if (!rootPath) {
+    return null;
+  }
+  let repos = [];
+  try {
+    repos = await listLocalGitRepos(rootPath);
+  } catch (err) {
+    return {
+      generated_at: generatedAt,
+      repos_root: rootPath,
+      scanned_repos: 0,
+      dirty_repos: 0,
+      tracked_files: 0,
+      untracked_files: 0,
+      loc_today: 0,
+      additions_today: 0,
+      deletions_today: 0,
+      daily: [],
+      error: `local_workspace_scan_failed: ${err.message || err}`,
+      redaction: 'Local workspace telemetry failed before repo-level details were persisted.',
+    };
+  }
+
+  const dailyStats = new Map();
+  let dirtyRepos = 0;
+  let trackedFiles = 0;
+  let untrackedFiles = 0;
+  let skippedRepos = 0;
+  const includeUntracked = envFlag('THE_MERGE_LOCAL_WORKSPACE_INCLUDE_UNTRACKED', false);
+
+  await runLimited(repos, 4, async (repoPath) => {
+    let repoDirty = false;
+    try {
+      const numstat = await execGitInRepo(repoPath, ['diff', '--numstat', 'HEAD', '--']);
+      for (const line of numstat.split('\n')) {
+        const parsed = parseNumstatLine(line);
+        if (!parsed || excludedLocalWorkspaceFileReason(parsed.filename)) {
+          continue;
+        }
+        const day = await fileDateKey(repoPath, parsed.filename, generatedAt);
+        addDailyLocStats(dailyStats, day, {
+          additions: parsed.additions,
+          deletions: parsed.deletions,
+          files: 1,
+        });
+        trackedFiles += 1;
+        repoDirty = true;
+      }
+    } catch {
+      skippedRepos += 1;
+    }
+
+    if (includeUntracked) {
+      try {
+        const untracked = await execGitInRepo(repoPath, ['ls-files', '--others', '--exclude-standard', '-z']);
+        const filenames = untracked.split('\0').filter(Boolean);
+        for (const filename of filenames) {
+          if (excludedLocalWorkspaceFileReason(filename)) {
+            continue;
+          }
+          const fullPath = path.join(repoPath, filename);
+          const additions = await countTextFileLines(fullPath);
+          if (!additions) {
+            continue;
+          }
+          const day = await fileDateKey(repoPath, filename, generatedAt);
+          addDailyLocStats(dailyStats, day, {
+            additions,
+            deletions: 0,
+            files: 1,
+          });
+          untrackedFiles += 1;
+          repoDirty = true;
+        }
+      } catch {
+        skippedRepos += 1;
+      }
+    }
+
+    if (repoDirty) {
+      dirtyRepos += 1;
+    }
+  });
+
+  const daily = Array.from(dailyStats.values())
+    .sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
+  const today = dateKey(generatedAt);
+  const todayRow = daily.find((row) => row.date === today) || {};
+  return {
+    generated_at: generatedAt,
+    repos_root: rootPath,
+    scanned_repos: repos.length,
+    dirty_repos: dirtyRepos,
+    skipped_repos: skippedRepos,
+    tracked_files: trackedFiles,
+    untracked_files: untrackedFiles,
+    include_untracked: includeUntracked,
+    loc_today: todayRow.loc || 0,
+    additions_today: todayRow.additions || 0,
+    deletions_today: todayRow.deletions || 0,
+    daily,
+    redaction: 'Local workspace telemetry is aggregated by day only; repo names, file paths, and patch contents are not persisted.',
+  };
+}
+
 function currentPrivateEvent(privateGithub) {
   return {
     ts: privateGithub.generated_at,
@@ -865,6 +1095,18 @@ function applyPrivateGithubDailyMetrics(row, daily) {
     github_private: 'redacted_private_github_snapshot',
     github_public: 'redacted_public_github_snapshot',
     github_total: 'redacted_github_snapshot',
+  };
+}
+
+function applyLocalWorkspaceDailyMetrics(row, daily) {
+  row.local_workspace_files = daily.files || 0;
+  row.local_workspace_repos = daily.repos || 0;
+  row.local_workspace_loc = daily.loc || 0;
+  row.local_workspace_additions = daily.additions || 0;
+  row.local_workspace_deletions = daily.deletions || 0;
+  row.sources = {
+    ...(row.sources || {}),
+    local_workspace: 'redacted_local_workspace_snapshot',
   };
 }
 
@@ -918,7 +1160,29 @@ function applyPrivateGithubAggregate(telemetry, privateGithub) {
   telemetry.series.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
 }
 
-async function updateHistory(historyPath, privateGithub) {
+function applyLocalWorkspaceAggregate(telemetry, localWorkspace) {
+  if (!localWorkspace) {
+    return;
+  }
+  telemetry.local_workspace = localWorkspace;
+  telemetry.notes = telemetry.notes || {};
+  telemetry.notes.local_workspace = (
+    'Local workspace activity is generated on the publisher host from uncommitted tracked/untracked diffs, '
+    + 'aggregated by day, and published without repo names, file paths, or patch contents.'
+  );
+  telemetry.series = Array.isArray(telemetry.series) ? telemetry.series : [];
+  (Array.isArray(localWorkspace.daily) ? localWorkspace.daily : []).forEach((daily) => {
+    let row = telemetry.series.find((entry) => entry?.date === daily.date);
+    if (!row) {
+      row = { date: daily.date };
+      telemetry.series.push(row);
+    }
+    applyLocalWorkspaceDailyMetrics(row, daily);
+  });
+  telemetry.series.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
+}
+
+async function updateHistory(historyPath, privateGithub, localWorkspace = null) {
   let history = { schema_version: 1, generated_at: privateGithub.generated_at, retention_days: 365, snapshots: [] };
   try {
     history = JSON.parse(await fs.readFile(historyPath, 'utf8'));
@@ -964,6 +1228,15 @@ async function updateHistory(historyPath, privateGithub) {
     row.updated_at = privateGithub.generated_at;
     applyPrivateGithubDailyMetrics(row, daily);
   });
+  (Array.isArray(localWorkspace?.daily) ? localWorkspace.daily : []).forEach((daily) => {
+    let row = history.snapshots.find((entry) => entry?.date === daily.date);
+    if (!row) {
+      row = { date: daily.date };
+      history.snapshots.push(row);
+    }
+    row.updated_at = localWorkspace.generated_at || privateGithub.generated_at;
+    applyLocalWorkspaceDailyMetrics(row, daily);
+  });
   history.snapshots.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
   await fs.writeFile(historyPath, stableStringify(history));
   return history;
@@ -988,9 +1261,14 @@ async function main() {
       windowDays,
       cache,
     });
+    const localWorkspace = await collectLocalWorkspaceAggregate({
+      rootPath: readEnv('THE_MERGE_LOCAL_REPOS_ROOT') || DEFAULT_LOCAL_REPOS_ROOT,
+      generatedAt: privateGithub.generated_at,
+    });
     const telemetry = JSON.parse(await fs.readFile(telemetryPath, 'utf8'));
     applyPrivateGithubAggregate(telemetry, privateGithub);
-    const history = await updateHistory(historyPath, privateGithub);
+    applyLocalWorkspaceAggregate(telemetry, localWorkspace);
+    const history = await updateHistory(historyPath, privateGithub, localWorkspace);
     telemetry.history = {
       source: `/${path.basename(path.dirname(telemetryPath))}/${DEFAULT_HISTORY_FILENAME}`,
       generated_at: history.generated_at,
@@ -1029,6 +1307,10 @@ async function main() {
       total_author_loc_in_window: privateGithub.total_author_loc_in_window,
       total_raw_author_loc_in_window: privateGithub.total_raw_author_loc_in_window,
       total_excluded_author_loc_in_window: privateGithub.total_excluded_author_loc_in_window,
+      local_workspace_dirty_repos: localWorkspace?.dirty_repos || 0,
+      local_workspace_loc_today: localWorkspace?.loc_today || 0,
+      local_workspace_tracked_files: localWorkspace?.tracked_files || 0,
+      local_workspace_untracked_files: localWorkspace?.untracked_files || 0,
       skipped_branch_scans: privateGithub.skipped_branch_scans,
       skipped_commit_details: privateGithub.skipped_commit_details,
       github_cache_hits: privateGithub.github_cache_hits,

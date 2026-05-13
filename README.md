@@ -59,6 +59,12 @@ separate public, private, and total LOC/commit counters, but never writes repo
 names, branch names, commit SHAs, commit messages, or file paths into the
 persisted public telemetry file. Each run backfills the daily GitHub buckets
 for the scanned window instead of trusting stale prior snapshots.
+The local runner also adds a redacted local-workspace aggregate from
+`THE_MERGE_LOCAL_REPOS_ROOT` (default `/home/pfrpc/repos`) so uncommitted
+tracked work is represented in the daily velocity chart without publishing repo
+names, file paths, or patch contents. Untracked files are excluded by default;
+set `THE_MERGE_LOCAL_WORKSPACE_INCLUDE_UNTRACKED=1` only for a deliberate
+backfill.
 Generated benchmark JSON under `static/benchmarks/*.json` and generated Merge
 telemetry JSON under `static/the-merge/telemetry*.json` are hard-excluded from
 the headline LOC counters and retained only in `*_raw_*` / `*_excluded_*`
