@@ -760,7 +760,7 @@
     var excludedLocToday = privateGithubMetric(data, "total_excluded_loc_today");
     var rawLocToday = privateGithubMetric(data, "total_raw_loc_today");
     var excludedLocHtml = excludedLocToday
-      ? '<span class="commit-meta">' + formatNumber(rawLocToday) + " raw LOC today / " + formatNumber(excludedLocToday) + " generated benchmark LOC excluded</span>"
+      ? '<span class="commit-meta">' + formatNumber(rawLocToday) + " raw LOC today / " + formatNumber(excludedLocToday) + " generated artifact LOC excluded</span>"
       : "";
     var privateHtml = hasPrivateStats ? [
       '<article class="commit-item">',
