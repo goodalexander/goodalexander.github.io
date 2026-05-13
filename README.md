@@ -53,10 +53,12 @@ node scripts/update-the-merge-x-followers.mjs
 ```
 
 The GitHub script scans accessible public and private repos/branches, filters
-commits to the authenticated GitHub user plus configured author emails, and
-publishes only aggregate counts. It writes separate public, private, and total
-LOC/commit counters, but never writes repo names, branch names, commit SHAs,
-commit messages, or file paths into the persisted public telemetry file.
+commits to the authenticated GitHub user plus configured author emails, buckets
+activity by commit/landed date, and publishes only aggregate counts. It writes
+separate public, private, and total LOC/commit counters, but never writes repo
+names, branch names, commit SHAs, commit messages, or file paths into the
+persisted public telemetry file. Each run backfills the daily GitHub buckets
+for the scanned window instead of trusting stale prior snapshots.
 Generated benchmark JSON under `static/benchmarks/*.json` and generated Merge
 telemetry JSON under `static/the-merge/telemetry*.json` are hard-excluded from
 the headline LOC counters and retained only in `*_raw_*` / `*_excluded_*`

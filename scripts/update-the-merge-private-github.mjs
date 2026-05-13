@@ -19,7 +19,7 @@ const DEFAULT_BRANCH_COMMITS_CACHE_TTL_MINUTES = 24 * 60;
 const DEFAULT_MIN_RATE_REMAINING = 350;
 const API_BASE = 'https://api.github.com';
 const GITHUB_USER_AGENT = 'goodalexander-the-merge-telemetry';
-const EXCLUDED_GITHUB_FILE_RULES_VERSION = 'generated-artifact-exclusions-v2';
+const EXCLUDED_GITHUB_FILE_RULES_VERSION = 'generated-artifact-exclusions-v3-committer-date';
 const EXCLUDED_GITHUB_FILE_RULES = [
   {
     prefix: 'static/benchmarks/',
@@ -150,6 +150,47 @@ function writeGithubStats(target, prefix, stats) {
   target[`${prefix}_excluded_loc_today`] = stats.excludedLocToday;
   target[`${prefix}_excluded_additions_today`] = stats.excludedAdditionsToday;
   target[`${prefix}_excluded_deletions_today`] = stats.excludedDeletionsToday;
+}
+
+function addDailyGithubStats(dailyStats, date, isPrivate, commitStats) {
+  const day = dateKey(date);
+  let row = dailyStats.get(day);
+  if (!row) {
+    row = {
+      date: day,
+      private: emptyGithubStats(),
+      public: emptyGithubStats(),
+      total: emptyGithubStats(),
+    };
+    dailyStats.set(day, row);
+  }
+  const statsWithDailyFlag = {
+    ...commitStats,
+    isToday: true,
+  };
+  addCommitStats(isPrivate ? row.private : row.public, statsWithDailyFlag);
+  addCommitStats(row.total, statsWithDailyFlag);
+}
+
+function serializeDailyGithubStats(row) {
+  const result = { date: row.date };
+  [
+    ['private', row.private],
+    ['public', row.public],
+    ['total', row.total],
+  ].forEach(([prefix, stats]) => {
+    result[`${prefix}_commits`] = stats.commitsToday;
+    result[`${prefix}_loc`] = stats.locToday;
+    result[`${prefix}_additions`] = stats.additionsToday;
+    result[`${prefix}_deletions`] = stats.deletionsToday;
+    result[`${prefix}_raw_loc`] = stats.rawLocToday;
+    result[`${prefix}_raw_additions`] = stats.rawAdditionsToday;
+    result[`${prefix}_raw_deletions`] = stats.rawDeletionsToday;
+    result[`${prefix}_excluded_loc`] = stats.excludedLocToday;
+    result[`${prefix}_excluded_additions`] = stats.excludedAdditionsToday;
+    result[`${prefix}_excluded_deletions`] = stats.excludedDeletionsToday;
+  });
+  return result;
 }
 
 function excludedGithubFileReason(filename) {
@@ -297,17 +338,23 @@ function commitSummary(commit) {
   return {
     sha: commit?.sha || '',
     authored_at: commit?.commit?.author?.date || commit?.commit?.committer?.date || null,
+    committed_at: commit?.commit?.committer?.date || commit?.commit?.author?.date || null,
   };
 }
 
 function commitIsInWindow(commit, sinceIso) {
-  const authoredAt = commit?.commit?.author?.date || commit?.commit?.committer?.date || commit?.authored_at;
-  if (!authoredAt) {
+  const activityAt = (
+    commit?.commit?.committer?.date
+    || commit?.committed_at
+    || commit?.commit?.author?.date
+    || commit?.authored_at
+  );
+  if (!activityAt) {
     return true;
   }
-  const authoredTime = new Date(authoredAt).getTime();
+  const activityTime = new Date(activityAt).getTime();
   const sinceTime = new Date(sinceIso).getTime();
-  return !Number.isFinite(authoredTime) || !Number.isFinite(sinceTime) || authoredTime >= sinceTime;
+  return !Number.isFinite(activityTime) || !Number.isFinite(sinceTime) || activityTime >= sinceTime;
 }
 
 class GithubRateBudgetError extends Error {
@@ -630,6 +677,7 @@ async function getCommitComputedStats(repo, sha, token, cache) {
     cached_at: new Date().toISOString(),
     excluded_file_rules_version: EXCLUDED_GITHUB_FILE_RULES_VERSION,
     authored_at: detail?.commit?.author?.date || detail?.commit?.committer?.date || null,
+    committed_at: detail?.commit?.committer?.date || detail?.commit?.author?.date || null,
     commit_stats: commitFileStats(detail),
   };
   cache.commit_stats[key] = computed;
@@ -711,6 +759,7 @@ async function collectPrivateGithubAggregate({
             sha,
             private: Boolean(item.repo.private),
             authoredAt: commit.authored_at || null,
+            committedAt: commit.committed_at || null,
           });
         }
       });
@@ -721,6 +770,7 @@ async function collectPrivateGithubAggregate({
   const privateStats = emptyGithubStats();
   const publicStats = emptyGithubStats();
   const totalStats = emptyGithubStats();
+  const dailyStats = new Map();
 
   await runLimited(commits, 3, async (commit) => {
     let computed = null;
@@ -734,13 +784,14 @@ async function collectPrivateGithubAggregate({
       return;
     }
     const commitStats = computed.commit_stats;
-    const authoredAt = computed.authored_at || commit.authoredAt;
+    const activityAt = computed.committed_at || commit.committedAt || computed.authored_at || commit.authoredAt;
     const statsWithDate = {
       ...commitStats,
-      isToday: dateKey(authoredAt) === today,
+      isToday: dateKey(activityAt) === today,
     };
     addCommitStats(commit.private ? privateStats : publicStats, statsWithDate);
     addCommitStats(totalStats, statsWithDate);
+    addDailyGithubStats(dailyStats, activityAt || generatedAt, commit.private, commitStats);
   });
 
   if (skippedBranchScans || skippedCommitDetails) {
@@ -769,6 +820,9 @@ async function collectPrivateGithubAggregate({
       suffix: rule.suffix,
       reason: rule.reason,
     })),
+    daily: Array.from(dailyStats.values())
+      .sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')))
+      .map(serializeDailyGithubStats),
     redaction: 'Repo names, branch names, commit SHAs, commit messages, and file paths are withheld from the persisted aggregate.',
   };
   writeGithubStats(aggregate, 'private', privateStats);
@@ -784,6 +838,33 @@ function currentPrivateEvent(privateGithub) {
     label: 'GitHub aggregate',
     detail: 'Authenticated public and private GitHub activity included as redacted aggregate.',
     magnitude: `${privateGithub.total_commits_today} commits / ${privateGithub.total_loc_today} LOC today`,
+  };
+}
+
+function applyPrivateGithubDailyMetrics(row, daily) {
+  row.github_private_commits = daily.private_commits;
+  row.github_private_loc = daily.private_loc;
+  row.github_private_additions = daily.private_additions;
+  row.github_private_deletions = daily.private_deletions;
+  row.github_private_raw_loc = daily.private_raw_loc;
+  row.github_private_excluded_loc = daily.private_excluded_loc;
+  row.github_public_commits = daily.public_commits;
+  row.github_public_loc = daily.public_loc;
+  row.github_public_additions = daily.public_additions;
+  row.github_public_deletions = daily.public_deletions;
+  row.github_public_raw_loc = daily.public_raw_loc;
+  row.github_public_excluded_loc = daily.public_excluded_loc;
+  row.github_total_commits = daily.total_commits;
+  row.github_total_loc = daily.total_loc;
+  row.github_total_additions = daily.total_additions;
+  row.github_total_deletions = daily.total_deletions;
+  row.github_total_raw_loc = daily.total_raw_loc;
+  row.github_total_excluded_loc = daily.total_excluded_loc;
+  row.sources = {
+    ...(row.sources || {}),
+    github_private: 'redacted_private_github_snapshot',
+    github_public: 'redacted_public_github_snapshot',
+    github_total: 'redacted_github_snapshot',
   };
 }
 
@@ -803,29 +884,37 @@ function applyPrivateGithubAggregate(telemetry, privateGithub) {
 
   const today = dateKey(privateGithub.generated_at);
   telemetry.series = Array.isArray(telemetry.series) ? telemetry.series : [];
-  let row = telemetry.series.find((entry) => entry?.date === today);
-  if (!row) {
-    row = { date: today };
-    telemetry.series.push(row);
-  }
-  row.github_private_commits = privateGithub.private_commits_today;
-  row.github_private_loc = privateGithub.private_loc_today;
-  row.github_private_additions = privateGithub.private_additions_today;
-  row.github_private_deletions = privateGithub.private_deletions_today;
-  row.github_private_raw_loc = privateGithub.private_raw_loc_today;
-  row.github_private_excluded_loc = privateGithub.private_excluded_loc_today;
-  row.github_public_commits = privateGithub.public_commits_today;
-  row.github_public_loc = privateGithub.public_loc_today;
-  row.github_public_additions = privateGithub.public_additions_today;
-  row.github_public_deletions = privateGithub.public_deletions_today;
-  row.github_public_raw_loc = privateGithub.public_raw_loc_today;
-  row.github_public_excluded_loc = privateGithub.public_excluded_loc_today;
-  row.github_total_commits = privateGithub.total_commits_today;
-  row.github_total_loc = privateGithub.total_loc_today;
-  row.github_total_additions = privateGithub.total_additions_today;
-  row.github_total_deletions = privateGithub.total_deletions_today;
-  row.github_total_raw_loc = privateGithub.total_raw_loc_today;
-  row.github_total_excluded_loc = privateGithub.total_excluded_loc_today;
+  const dailyRows = Array.isArray(privateGithub.daily) && privateGithub.daily.length
+    ? privateGithub.daily
+    : [{
+      date: today,
+      private_commits: privateGithub.private_commits_today,
+      private_loc: privateGithub.private_loc_today,
+      private_additions: privateGithub.private_additions_today,
+      private_deletions: privateGithub.private_deletions_today,
+      private_raw_loc: privateGithub.private_raw_loc_today,
+      private_excluded_loc: privateGithub.private_excluded_loc_today,
+      public_commits: privateGithub.public_commits_today,
+      public_loc: privateGithub.public_loc_today,
+      public_additions: privateGithub.public_additions_today,
+      public_deletions: privateGithub.public_deletions_today,
+      public_raw_loc: privateGithub.public_raw_loc_today,
+      public_excluded_loc: privateGithub.public_excluded_loc_today,
+      total_commits: privateGithub.total_commits_today,
+      total_loc: privateGithub.total_loc_today,
+      total_additions: privateGithub.total_additions_today,
+      total_deletions: privateGithub.total_deletions_today,
+      total_raw_loc: privateGithub.total_raw_loc_today,
+      total_excluded_loc: privateGithub.total_excluded_loc_today,
+    }];
+  dailyRows.forEach((daily) => {
+    let row = telemetry.series.find((entry) => entry?.date === daily.date);
+    if (!row) {
+      row = { date: daily.date };
+      telemetry.series.push(row);
+    }
+    applyPrivateGithubDailyMetrics(row, daily);
+  });
   telemetry.series.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
 }
 
@@ -843,36 +932,38 @@ async function updateHistory(historyPath, privateGithub) {
   history.retention_days = history.retention_days || 365;
   history.snapshots = Array.isArray(history.snapshots) ? history.snapshots : [];
   const today = dateKey(privateGithub.generated_at);
-  let row = history.snapshots.find((entry) => entry?.date === today);
-  if (!row) {
-    row = { date: today };
-    history.snapshots.push(row);
-  }
-  row.updated_at = privateGithub.generated_at;
-  row.github_private_commits = privateGithub.private_commits_today;
-  row.github_private_loc = privateGithub.private_loc_today;
-  row.github_private_additions = privateGithub.private_additions_today;
-  row.github_private_deletions = privateGithub.private_deletions_today;
-  row.github_private_raw_loc = privateGithub.private_raw_loc_today;
-  row.github_private_excluded_loc = privateGithub.private_excluded_loc_today;
-  row.github_public_commits = privateGithub.public_commits_today;
-  row.github_public_loc = privateGithub.public_loc_today;
-  row.github_public_additions = privateGithub.public_additions_today;
-  row.github_public_deletions = privateGithub.public_deletions_today;
-  row.github_public_raw_loc = privateGithub.public_raw_loc_today;
-  row.github_public_excluded_loc = privateGithub.public_excluded_loc_today;
-  row.github_total_commits = privateGithub.total_commits_today;
-  row.github_total_loc = privateGithub.total_loc_today;
-  row.github_total_additions = privateGithub.total_additions_today;
-  row.github_total_deletions = privateGithub.total_deletions_today;
-  row.github_total_raw_loc = privateGithub.total_raw_loc_today;
-  row.github_total_excluded_loc = privateGithub.total_excluded_loc_today;
-  row.sources = {
-    ...(row.sources || {}),
-    github_private: 'redacted_private_github_snapshot',
-    github_public: 'redacted_public_github_snapshot',
-    github_total: 'redacted_github_snapshot',
-  };
+  const dailyRows = Array.isArray(privateGithub.daily) && privateGithub.daily.length
+    ? privateGithub.daily
+    : [{
+      date: today,
+      private_commits: privateGithub.private_commits_today,
+      private_loc: privateGithub.private_loc_today,
+      private_additions: privateGithub.private_additions_today,
+      private_deletions: privateGithub.private_deletions_today,
+      private_raw_loc: privateGithub.private_raw_loc_today,
+      private_excluded_loc: privateGithub.private_excluded_loc_today,
+      public_commits: privateGithub.public_commits_today,
+      public_loc: privateGithub.public_loc_today,
+      public_additions: privateGithub.public_additions_today,
+      public_deletions: privateGithub.public_deletions_today,
+      public_raw_loc: privateGithub.public_raw_loc_today,
+      public_excluded_loc: privateGithub.public_excluded_loc_today,
+      total_commits: privateGithub.total_commits_today,
+      total_loc: privateGithub.total_loc_today,
+      total_additions: privateGithub.total_additions_today,
+      total_deletions: privateGithub.total_deletions_today,
+      total_raw_loc: privateGithub.total_raw_loc_today,
+      total_excluded_loc: privateGithub.total_excluded_loc_today,
+    }];
+  dailyRows.forEach((daily) => {
+    let row = history.snapshots.find((entry) => entry?.date === daily.date);
+    if (!row) {
+      row = { date: daily.date };
+      history.snapshots.push(row);
+    }
+    row.updated_at = privateGithub.generated_at;
+    applyPrivateGithubDailyMetrics(row, daily);
+  });
   history.snapshots.sort((left, right) => String(left.date || '').localeCompare(String(right.date || '')));
   await fs.writeFile(historyPath, stableStringify(history));
   return history;

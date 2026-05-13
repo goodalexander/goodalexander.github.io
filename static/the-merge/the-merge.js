@@ -300,11 +300,6 @@
     return rowMetric(row, key);
   }
 
-  function todayVelocity() {
-    var today = dateKey(new Date());
-    return mergedSeries().find(function (row) { return row.date === today; }) || null;
-  }
-
   function deriveMergePressure(data, locToday, commitsToday) {
     var configured = finiteMetric(data, "merge_pressure");
     if (configured != null) return Math.max(0, Math.min(100, configured));
@@ -570,15 +565,23 @@
     return state.github.series.find(function (row) { return row.date === today; }) || null;
   }
 
+  function recentVelocity(rows, days) {
+    var windowRows = (Array.isArray(rows) ? rows : []).slice(-Math.max(1, days || 1));
+    return {
+      loc: summarizeWindow(windowRows, "loc", "sum"),
+      commits: summarizeWindow(windowRows, "commits", "sum")
+    };
+  }
+
   function renderMetrics() {
     var data = state.telemetry || fallbackTelemetry;
     var profile = data.profile || {};
-    var today = todayVelocity();
-    var locToday = today ? today.loc : finiteMetric(data, "loc_today");
-    var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
-    var dau = metric(data, "tasknode_dau");
-    var mergePressure = deriveMergePressure(data, locToday, commitsToday);
     var priorSeries = mergedSeries();
+    var recent = recentVelocity(priorSeries, 7);
+    var locWindow = recent.loc == null ? finiteMetric(data, "loc_today") : recent.loc;
+    var commitsWindow = recent.commits == null ? finiteMetric(data, "commits_today") : recent.commits;
+    var dau = metric(data, "tasknode_dau");
+    var mergePressure = deriveMergePressure(data, locWindow, commitsWindow);
     var prev = priorSeries.length > 1 ? Number(priorSeries[priorSeries.length - 2].dau || 0) : 0;
     var delta = prev ? dau - prev : 0;
     var image = byId("profile-nft");
@@ -592,9 +595,9 @@
     text("metric-followers", formatNullableMetric(data, "x_followers", formatCompact));
     text("metric-followers-source", data.x_profile && data.x_profile.source === "x_api_v2_users_by_username" ? "official X API" : "source pending");
     text("metric-followers-growth", formatWoW(priorSeries, "x_followers", "point", "", formatCompact));
-    text("metric-loc", locToday == null ? "n/a" : formatNumber(locToday));
-    text("metric-commits", commitsToday == null ? "GitHub pending" : formatNumber(commitsToday) + " commits today incl redacted");
-    text("metric-loc-growth", formatWoW(priorSeries, "loc", "average", "7d avg", formatAverageValue));
+    text("metric-loc", locWindow == null ? "n/a" : formatNumber(locWindow));
+    text("metric-commits", commitsWindow == null ? "GitHub pending" : formatNumber(commitsWindow) + " commits in 7d incl redacted");
+    text("metric-loc-growth", formatWoW(priorSeries, "loc", "sum", "7d total", formatNumber));
     text("metric-tasks", formatNumber(metric(data, "tasks_completed_24h")));
     text("metric-tasks-growth", formatWoW(priorSeries, "tasks_completed", "sum", "7d total", formatNumber));
     text("metric-rewards", formatNumber(metric(data, "rewards_delivered_24h")));
@@ -1134,10 +1137,8 @@
     var ctx = canvas.getContext("2d");
     function frame(now) {
       var data = state.telemetry || fallbackTelemetry;
-      var today = todayVelocity();
-      var locToday = today ? today.loc : finiteMetric(data, "loc_today");
-      var commitsToday = today ? today.commits : finiteMetric(data, "commits_today");
-      var pressure = deriveMergePressure(data, locToday, commitsToday);
+      var recent = recentVelocity(mergedSeries(), 7);
+      var pressure = deriveMergePressure(data, recent.loc, recent.commits);
       var size = sizeCanvas(canvas);
       var ratio = size.ratio;
       var width = size.width;
