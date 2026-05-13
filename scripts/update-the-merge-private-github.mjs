@@ -11,9 +11,10 @@ const DEFAULT_CACHE_PATH = path.join(
   process.env.HOME || '.',
   '.local/state/goodalexander/the-merge-github-cache.json'
 );
-const DEFAULT_LOCAL_REPOS_ROOT = '/home/pfrpc/repos';
+const DEFAULT_LOCAL_REPOS_ROOTS = ['/home/pfrpc/repos', '/home/postfiat/repos'];
 const DEFAULT_WINDOW_DAYS = 14;
 const DEFAULT_REPO_AFFILIATION = 'owner,collaborator,organization_member';
+const DEFAULT_TRUSTED_GITHUB_OWNERS = ['agtico'];
 const DEFAULT_REPO_CACHE_TTL_MINUTES = 30;
 const DEFAULT_BRANCH_CACHE_TTL_MINUTES = 24 * 60;
 const DEFAULT_BRANCH_COMMITS_CACHE_TTL_MINUTES = 24 * 60;
@@ -54,6 +55,13 @@ function envFlag(name, fallback = false) {
     return fallback;
   }
   return ['1', 'true', 'yes', 'on'].includes(value);
+}
+
+function parseEnvList(value, separatorPattern = /[,:\s]+/) {
+  return String(value || '')
+    .split(separatorPattern)
+    .map((item) => item.trim())
+    .filter(Boolean);
 }
 
 function dateKey(value) {
@@ -377,6 +385,7 @@ function redactedRepo(repo) {
     disabled: Boolean(repo.disabled),
     pushed_at: repo.pushed_at || null,
     updated_at: repo.updated_at || null,
+    trusted_owner: Boolean(repo.trusted_owner),
   };
 }
 
@@ -489,6 +498,22 @@ async function listLocalGitRepos(rootPath) {
     .map((value) => value.trim())
     .filter(Boolean)
     .map((gitDir) => gitDir.replace(/\/\.git$/, ''));
+}
+
+function resolveLocalRepoRoots() {
+  const configured = readEnv('THE_MERGE_LOCAL_REPOS_ROOTS') || readEnv('THE_MERGE_LOCAL_REPOS_ROOT');
+  const roots = configured ? parseEnvList(configured) : DEFAULT_LOCAL_REPOS_ROOTS;
+  return Array.from(new Set(roots));
+}
+
+function resolveTrustedGithubOwners() {
+  const configured = readEnv('THE_MERGE_GITHUB_TRUSTED_OWNERS') || readEnv('THE_MERGE_GITHUB_ORGS');
+  const owners = configured ? parseEnvList(configured) : DEFAULT_TRUSTED_GITHUB_OWNERS;
+  return Array.from(new Set(owners.map((owner) => owner.toLowerCase())));
+}
+
+function repoOwner(repo) {
+  return String(repo?.full_name || '').split('/')[0]?.toLowerCase() || '';
 }
 
 async function resolveGithubToken() {
@@ -621,7 +646,8 @@ function repoEndpoint(repo, suffix = '') {
 
 async function listCandidateRepos(token, cache) {
   const affiliation = readEnv('THE_MERGE_GITHUB_AFFILIATION') || DEFAULT_REPO_AFFILIATION;
-  const key = cacheKey('repos', affiliation);
+  const trustedOwners = resolveTrustedGithubOwners();
+  const key = cacheKey('repos-v2', affiliation, trustedOwners.join(','));
   const cached = cache.repos[key];
   if (isFreshCacheEntry(cached, cacheTtlMs('THE_MERGE_GITHUB_REPO_CACHE_TTL_MINUTES', DEFAULT_REPO_CACHE_TTL_MINUTES))) {
     cacheHit(cache);
@@ -633,11 +659,41 @@ async function listCandidateRepos(token, cache) {
     affiliation,
     sort: 'updated',
   });
-  const filtered = repos
+  const userRepos = repos
     .filter((repo) => repo && !repo.archived && !repo.disabled)
-    .map(redactedRepo);
+    .map((repo) => ({
+      ...redactedRepo(repo),
+      trusted_owner: trustedOwners.includes(repoOwner(repo)),
+    }));
+  const trustedOwnerRepos = [];
+  for (const owner of trustedOwners) {
+    const ownerRepos = await githubPaginatedRequest(`/orgs/${encodeURIComponent(owner)}/repos`, token, {
+      type: 'all',
+      sort: 'updated',
+    });
+    trustedOwnerRepos.push(...ownerRepos
+      .filter((repo) => repo && !repo.archived && !repo.disabled)
+      .map((repo) => ({
+        ...redactedRepo(repo),
+        trusted_owner: true,
+      })));
+  }
+  const repoMap = new Map();
+  [...userRepos, ...trustedOwnerRepos].forEach((repo) => {
+    if (!repo?.full_name) {
+      return;
+    }
+    const existing = repoMap.get(repo.full_name);
+    repoMap.set(repo.full_name, {
+      ...(existing || {}),
+      ...repo,
+      trusted_owner: Boolean(repo.trusted_owner || existing?.trusted_owner),
+    });
+  });
+  const filtered = Array.from(repoMap.values());
   cache.repos[key] = {
     cached_at: new Date().toISOString(),
+    trusted_owner_count: trustedOwners.length,
     repos: filtered,
   };
   cacheWrite(cache);
@@ -673,7 +729,8 @@ async function listBranches(repo, token, cache) {
 
 async function listCommitsForBranch(repo, branch, author, sinceIso, token, cache) {
   const sinceQueryIso = sinceDayStartIso(sinceIso);
-  const key = cacheKey('branch-commits', repo.full_name, branch.name, branch.sha, author, dateKey(sinceIso));
+  const authorKey = author || '__all__';
+  const key = cacheKey('branch-commits', repo.full_name, branch.name, branch.sha, authorKey, dateKey(sinceIso));
   const cached = cache.branch_commits[key];
   if (isFreshCacheEntry(
     cached,
@@ -683,11 +740,15 @@ async function listCommitsForBranch(repo, branch, author, sinceIso, token, cache
     return cached.commits.filter((commit) => commitIsInWindow(commit, sinceIso));
   }
   cacheMiss(cache);
-  const commits = await githubPaginatedRequest(repoEndpoint(repo, '/commits'), token, {
+  const params = {
     sha: branch.name,
     since: sinceQueryIso,
-    author,
-  }).then((rows) => rows.map(commitSummary).filter((commit) => commit.sha));
+  };
+  if (author) {
+    params.author = author;
+  }
+  const commits = await githubPaginatedRequest(repoEndpoint(repo, '/commits'), token, params)
+    .then((rows) => rows.map(commitSummary).filter((commit) => commit.sha));
   cache.branch_commits[key] = {
     cached_at: new Date().toISOString(),
     commits,
@@ -781,6 +842,7 @@ async function collectPrivateGithubAggregate({
   const repos = await listCandidateRepos(token, cache);
   const privateRepos = repos.filter((repo) => repo.private);
   const publicRepos = repos.filter((repo) => !repo.private);
+  const trustedOwnerRepos = repos.filter((repo) => repo.trusted_owner);
   const authorIdentifiers = Array.from(new Set([authorLogin, ...authorEmails].filter(Boolean)));
   const commitMap = new Map();
   let scannedBranches = 0;
@@ -800,8 +862,9 @@ async function collectPrivateGithubAggregate({
     }
     scannedBranches += branches.length;
     const branchAuthorPairs = [];
+    const repoAuthors = repo.trusted_owner ? [''] : authorIdentifiers;
     branches.forEach((branch) => {
-      authorIdentifiers.forEach((author) => {
+      repoAuthors.forEach((author) => {
         branchAuthorPairs.push({ repo, branch, author });
       });
     });
@@ -876,6 +939,7 @@ async function collectPrivateGithubAggregate({
     scanned_repos: repos.length,
     scanned_private_repos: privateRepos.length,
     scanned_public_repos: publicRepos.length,
+    scanned_trusted_owner_repos: trustedOwnerRepos.length,
     scanned_branches: scannedBranches,
     skipped_branch_scans: skippedBranchScans,
     skipped_commit_details: skippedCommitDetails,
@@ -953,31 +1017,26 @@ async function countTextFileLines(filePath) {
 }
 
 async function collectLocalWorkspaceAggregate({
-  rootPath,
+  rootPaths,
   generatedAt,
 }) {
-  if (!rootPath) {
+  const roots = Array.isArray(rootPaths) ? rootPaths.filter(Boolean) : [];
+  if (!roots.length) {
     return null;
   }
   let repos = [];
-  try {
-    repos = await listLocalGitRepos(rootPath);
-  } catch (err) {
-    return {
-      generated_at: generatedAt,
-      repos_root: rootPath,
-      scanned_repos: 0,
-      dirty_repos: 0,
-      tracked_files: 0,
-      untracked_files: 0,
-      loc_today: 0,
-      additions_today: 0,
-      deletions_today: 0,
-      daily: [],
-      error: `local_workspace_scan_failed: ${err.message || err}`,
-      redaction: 'Local workspace telemetry failed before repo-level details were persisted.',
-    };
+  const scannedRoots = [];
+  const missingRoots = [];
+  for (const rootPath of roots) {
+    try {
+      const rootRepos = await listLocalGitRepos(rootPath);
+      repos.push(...rootRepos);
+      scannedRoots.push(rootPath);
+    } catch {
+      missingRoots.push(rootPath);
+    }
   }
+  repos = Array.from(new Set(repos));
 
   const dailyStats = new Map();
   let dirtyRepos = 0;
@@ -1046,7 +1105,9 @@ async function collectLocalWorkspaceAggregate({
   const todayRow = daily.find((row) => row.date === today) || {};
   return {
     generated_at: generatedAt,
-    repos_root: rootPath,
+    repos_roots: roots,
+    scanned_roots: scannedRoots,
+    missing_roots: missingRoots,
     scanned_repos: repos.length,
     dirty_repos: dirtyRepos,
     skipped_repos: skippedRepos,
@@ -1262,7 +1323,7 @@ async function main() {
       cache,
     });
     const localWorkspace = await collectLocalWorkspaceAggregate({
-      rootPath: readEnv('THE_MERGE_LOCAL_REPOS_ROOT') || DEFAULT_LOCAL_REPOS_ROOT,
+      rootPaths: resolveLocalRepoRoots(),
       generatedAt: privateGithub.generated_at,
     });
     const telemetry = JSON.parse(await fs.readFile(telemetryPath, 'utf8'));
