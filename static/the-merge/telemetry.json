@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T15:27:04.764Z",
+  "generated_at": "2026-05-13T15:28:27.373Z",
   "refresh_seconds": 30,
   "profile": {
     "handle": "goodalexander",
@@ -10,7 +10,7 @@
     "main_wallet": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx",
     "wallet_label": "primary operator wallet",
     "nft_thumbnail": "https://ipfs-testnet.postfiat.org/ipfs/bafkreib4zzspculkjys4mn2ciacuilrhyvxgfuayws5hmoba5ovknntfna",
-    "nft_synced_at": "2026-05-13T15:27:04.746Z"
+    "nft_synced_at": "2026-05-13T15:28:05.020Z"
   },
   "redactions": [
     "counterparty",
@@ -64,7 +64,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 0,
+      "local_workspace_additions": 0,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2025-08-26",
@@ -91,7 +96,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 604,
+      "local_workspace_additions": 540,
+      "local_workspace_deletions": 64
     },
     {
       "date": "2025-08-27",
@@ -118,7 +128,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 5,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1276,
+      "local_workspace_additions": 647,
+      "local_workspace_deletions": 629
     },
     {
       "date": "2025-08-28",
@@ -145,7 +160,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 4,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 333,
+      "local_workspace_additions": 242,
+      "local_workspace_deletions": 91
     },
     {
       "date": "2025-08-29",
@@ -172,7 +192,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 7,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 261,
+      "local_workspace_additions": 217,
+      "local_workspace_deletions": 44
     },
     {
       "date": "2025-08-30",
@@ -199,7 +224,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 920,
+      "local_workspace_additions": 757,
+      "local_workspace_deletions": 163
     },
     {
       "date": "2025-09-01",
@@ -226,7 +256,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 22,
+      "local_workspace_additions": 17,
+      "local_workspace_deletions": 5
     },
     {
       "date": "2025-09-05",
@@ -253,7 +288,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 52,
+      "local_workspace_additions": 38,
+      "local_workspace_deletions": 14
     },
     {
       "date": "2025-09-15",
@@ -280,7 +320,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1
     },
     {
       "date": "2025-09-19",
@@ -307,7 +352,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1
     },
     {
       "date": "2025-10-15",
@@ -334,7 +384,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 3,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 162,
+      "local_workspace_additions": 123,
+      "local_workspace_deletions": 39
     },
     {
       "date": "2025-11-18",
@@ -361,7 +416,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1
     },
     {
       "date": "2025-11-19",
@@ -388,7 +448,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2025-11-22",
@@ -415,7 +480,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 1,
+      "local_workspace_deletions": 1
     },
     {
       "date": "2025-11-30",
@@ -442,7 +512,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 665,
+      "local_workspace_additions": 59,
+      "local_workspace_deletions": 606
     },
     {
       "date": "2025-12-31",
@@ -469,7 +544,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 35,
+      "local_workspace_additions": 35,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-01-03",
@@ -496,7 +576,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 6,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 100,
+      "local_workspace_additions": 53,
+      "local_workspace_deletions": 47
     },
     {
       "date": "2026-01-13",
@@ -523,7 +608,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 13,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 351,
+      "local_workspace_additions": 264,
+      "local_workspace_deletions": 87
     },
     {
       "date": "2026-01-17",
@@ -550,7 +640,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 3,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 513,
+      "local_workspace_additions": 228,
+      "local_workspace_deletions": 285
     },
     {
       "date": "2026-01-18",
@@ -577,7 +672,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 530,
+      "local_workspace_additions": 208,
+      "local_workspace_deletions": 322
     },
     {
       "date": "2026-01-21",
@@ -604,7 +704,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 9,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 28,
+      "local_workspace_additions": 25,
+      "local_workspace_deletions": 3
     },
     {
       "date": "2026-01-22",
@@ -631,7 +736,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 6037,
+      "local_workspace_additions": 2991,
+      "local_workspace_deletions": 3046
     },
     {
       "date": "2026-01-23",
@@ -658,7 +768,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 406,
+      "local_workspace_additions": 353,
+      "local_workspace_deletions": 53
     },
     {
       "date": "2026-01-25",
@@ -685,7 +800,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 36,
+      "local_workspace_additions": 15,
+      "local_workspace_deletions": 21
     },
     {
       "date": "2026-01-29",
@@ -712,7 +832,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 8,
+      "local_workspace_additions": 4,
+      "local_workspace_deletions": 4
     },
     {
       "date": "2026-02-06",
@@ -739,7 +864,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 8,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 195,
+      "local_workspace_additions": 171,
+      "local_workspace_deletions": 24
     },
     {
       "date": "2026-02-26",
@@ -766,7 +896,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2,
+      "local_workspace_additions": 2,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-03-23",
@@ -793,7 +928,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 210,
+      "local_workspace_additions": 210,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-03-24",
@@ -820,7 +960,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 14,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1237,
+      "local_workspace_additions": 1031,
+      "local_workspace_deletions": 206
     },
     {
       "date": "2026-03-25",
@@ -847,7 +992,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": 10,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 379,
+      "local_workspace_additions": 276,
+      "local_workspace_deletions": 103
     },
     {
       "date": "2026-04-12",
@@ -874,7 +1024,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-13",
@@ -901,7 +1056,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-14",
@@ -928,7 +1088,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-15",
@@ -955,7 +1120,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-16",
@@ -982,7 +1152,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-17",
@@ -1009,7 +1184,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-18",
@@ -1036,7 +1216,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-19",
@@ -1063,7 +1248,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-20",
@@ -1090,7 +1280,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-21",
@@ -1117,7 +1312,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-22",
@@ -1144,7 +1344,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-23",
@@ -1171,7 +1376,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-24",
@@ -1198,7 +1408,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-25",
@@ -1225,7 +1440,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-26",
@@ -1252,7 +1472,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-27",
@@ -1279,7 +1504,12 @@
       "github_total_commits": null,
       "github_total_loc": null,
       "github_total_additions": null,
-      "github_total_deletions": null
+      "github_total_deletions": null,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-29",
@@ -1306,7 +1536,12 @@
       "github_total_commits": 8,
       "github_total_loc": 5548,
       "github_total_additions": 5148,
-      "github_total_deletions": 400
+      "github_total_deletions": 400,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-04-30",
@@ -1333,7 +1568,12 @@
       "github_total_commits": 150,
       "github_total_loc": 42603,
       "github_total_additions": 36053,
-      "github_total_deletions": 6550
+      "github_total_deletions": 6550,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 35,
+      "local_workspace_additions": 35,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-05-01",
@@ -1360,7 +1600,12 @@
       "github_total_commits": 139,
       "github_total_loc": 49808,
       "github_total_additions": 43705,
-      "github_total_deletions": 6103
+      "github_total_deletions": 6103,
+      "local_workspace_files": 2,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 6,
+      "local_workspace_additions": 5,
+      "local_workspace_deletions": 1
     },
     {
       "date": "2026-05-02",
@@ -1387,7 +1632,12 @@
       "github_total_commits": 113,
       "github_total_loc": 6318,
       "github_total_additions": 5867,
-      "github_total_deletions": 451
+      "github_total_deletions": 451,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 4,
+      "local_workspace_additions": 4,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-05-03",
@@ -1414,7 +1664,12 @@
       "github_total_commits": 123,
       "github_total_loc": 8912,
       "github_total_additions": 7519,
-      "github_total_deletions": 1393
+      "github_total_deletions": 1393,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 5,
+      "local_workspace_additions": 5,
+      "local_workspace_deletions": 0
     },
     {
       "date": "2026-05-04",
@@ -1441,7 +1696,12 @@
       "github_total_commits": 71,
       "github_total_loc": 29128,
       "github_total_additions": 29034,
-      "github_total_deletions": 94
+      "github_total_deletions": 94,
+      "local_workspace_files": 6,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 60,
+      "local_workspace_additions": 45,
+      "local_workspace_deletions": 15
     },
     {
       "date": "2026-05-05",
@@ -1468,7 +1728,12 @@
       "github_total_commits": 10,
       "github_total_loc": 1523,
       "github_total_additions": 1162,
-      "github_total_deletions": 361
+      "github_total_deletions": 361,
+      "local_workspace_files": 7,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 782,
+      "local_workspace_additions": 634,
+      "local_workspace_deletions": 148
     },
     {
       "date": "2026-05-06",
@@ -1495,7 +1760,12 @@
       "github_total_commits": 129,
       "github_total_loc": 70797,
       "github_total_additions": 68923,
-      "github_total_deletions": 1874
+      "github_total_deletions": 1874,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-05-07",
@@ -1522,7 +1792,12 @@
       "github_total_commits": 147,
       "github_total_loc": 46819,
       "github_total_additions": 44997,
-      "github_total_deletions": 1822
+      "github_total_deletions": 1822,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-05-08",
@@ -1549,7 +1824,12 @@
       "github_total_commits": 199,
       "github_total_loc": 96176,
       "github_total_additions": 90422,
-      "github_total_deletions": 5754
+      "github_total_deletions": 5754,
+      "local_workspace_files": null,
+      "local_workspace_repos": null,
+      "local_workspace_loc": null,
+      "local_workspace_additions": null,
+      "local_workspace_deletions": null
     },
     {
       "date": "2026-05-09",
@@ -1576,7 +1856,12 @@
       "github_total_commits": 80,
       "github_total_loc": 30205,
       "github_total_additions": 29626,
-      "github_total_deletions": 579
+      "github_total_deletions": 579,
+      "local_workspace_files": 14,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 1563,
+      "local_workspace_additions": 1457,
+      "local_workspace_deletions": 106
     },
     {
       "date": "2026-05-10",
@@ -1603,7 +1888,12 @@
       "github_total_commits": 73,
       "github_total_loc": 22443,
       "github_total_additions": 21478,
-      "github_total_deletions": 965
+      "github_total_deletions": 965,
+      "local_workspace_files": 1,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 104,
+      "local_workspace_additions": 84,
+      "local_workspace_deletions": 20
     },
     {
       "date": "2026-05-11",
@@ -1630,7 +1920,12 @@
       "github_total_commits": 7,
       "github_total_loc": 205,
       "github_total_additions": 205,
-      "github_total_deletions": 0
+      "github_total_deletions": 0,
+      "local_workspace_files": 19,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 2151,
+      "local_workspace_additions": 2094,
+      "local_workspace_deletions": 57
     },
     {
       "date": "2026-05-12",
@@ -1657,7 +1952,12 @@
       "github_total_commits": 6,
       "github_total_loc": 0,
       "github_total_additions": 0,
-      "github_total_deletions": 0
+      "github_total_deletions": 0,
+      "local_workspace_files": 33,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 3575,
+      "local_workspace_additions": 2818,
+      "local_workspace_deletions": 757
     },
     {
       "date": "2026-05-13",
@@ -1684,12 +1984,17 @@
       "github_total_commits": 5,
       "github_total_loc": 194,
       "github_total_additions": 194,
-      "github_total_deletions": 0
+      "github_total_deletions": 0,
+      "local_workspace_files": 22,
+      "local_workspace_repos": 0,
+      "local_workspace_loc": 42561,
+      "local_workspace_additions": 34324,
+      "local_workspace_deletions": 8237
     }
   ],
   "events": [
     {
-      "ts": "2026-05-13T15:27:03.996Z",
+      "ts": "2026-05-13T15:28:26.782Z",
       "type": "github_private",
       "label": "GitHub aggregate",
       "detail": "Authenticated public and private GitHub activity included as redacted aggregate.",
@@ -1705,7 +2010,7 @@
     "source": "Task Node database snapshot plus live public GitHub API in browser",
     "tasknode_dau": "Rolling 24h distinct users with chat, task, or context activity.",
     "wallet_metrics": "Wallet interaction counts come from wallet_tx_index/tx_cache for the primary wallet.",
-    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-13T15:27:04.764Z.",
+    "x_followers": "Official X API v2 user lookup for @goodalexander; public_metrics.followers_count fetched at 2026-05-13T15:28:27.373Z.",
     "github": "Public commit details are fetched live in the browser from public GitHub APIs; private activity is published only as redacted aggregate telemetry.",
     "contract": "The scheduled GitHub Action refreshes X metrics and public redacted Task Node telemetry/profile NFT data, then publishes this static JSON for the dashboard.",
     "github_private": "GitHub activity is locally generated with authenticated gh access, aggregated across accessible public and private repos/branches, and published without repo names, branch names, commit SHAs, messages, or file paths.",
@@ -1715,7 +2020,7 @@
     "local_workspace": "Local workspace activity is generated on the publisher host from uncommitted tracked/untracked diffs, aggregated by day, and published without repo names, file paths, or patch contents."
   },
   "private_github": {
-    "generated_at": "2026-05-13T15:27:03.996Z",
+    "generated_at": "2026-05-13T15:28:26.782Z",
     "window_days": 14,
     "scanned_repos": 64,
     "scanned_private_repos": 35,
@@ -2303,7 +2608,7 @@
     "source": "x_api_v2_users_by_username",
     "username": "goodalexander",
     "user_id": "22110973",
-    "fetched_at": "2026-05-13T15:27:04.764Z",
+    "fetched_at": "2026-05-13T15:28:27.373Z",
     "followers_count": 125087,
     "following_count": 1296,
     "posts_count": 15572,
@@ -2313,18 +2618,18 @@
   },
   "history": {
     "source": "/the-merge/telemetry-history.json",
-    "generated_at": "2026-05-13T15:27:04.764Z",
+    "generated_at": "2026-05-13T15:28:27.373Z",
     "retention_days": 365,
     "snapshots": 61,
     "current_date": "2026-05-13"
   },
   "tasknode_telemetry": {
     "source": "tasknode_public_merge_telemetry",
-    "fetched_at": "2026-05-13T15:27:04.746Z",
+    "fetched_at": "2026-05-13T15:28:05.020Z",
     "wallet_address": "rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx"
   },
   "local_workspace": {
-    "generated_at": "2026-05-13T15:27:03.996Z",
+    "generated_at": "2026-05-13T15:28:26.782Z",
     "repos_root": "/home/pfrpc/repos",
     "scanned_repos": 75,
     "dirty_repos": 22,
