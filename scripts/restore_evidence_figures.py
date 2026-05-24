@@ -54,9 +54,10 @@ def make_unique_ids(block: str, prefix: str) -> str:
 
 def pearl_fig(fid: str, num: str, title: str, svg_body: str, caption: str, cite: str = "") -> str:
     cite_html = f'\n    <a class="pm-cite" href="{cite}">{cite.split("/")[-1][:24]}</a>' if cite else ""
+    body = svg_body.strip()
     svg = f"""  <svg viewBox="0 0 920 320" role="img" aria-label="{title}">
     <rect width="920" height="320" fill="{BG}"/>
-{svg_body}
+{body}
   </svg>"""
     return f"""<figure class="pm-fig pm-fig-evidence" id="{fid}">
   <div class="pm-fig-head">
@@ -334,6 +335,24 @@ def main() -> int:
     for fid, builder in PMX_BUILDERS.items():
         article = replace_figure(article, fid, builder())
 
+    # Drop pm-after paragraphs that duplicate figure captions
+    def dedupe_after(m: re.Match) -> str:
+        fig, after = m.group(1), m.group(2)
+        cap = re.search(r'<p class="pm-fig-cap">(.*?)</p>', fig, re.S)
+        if not cap:
+            return m.group(0)
+        norm = lambda s: re.sub(r"\s+", " ", s).strip()
+        if norm(cap.group(1)) == norm(after):
+            return fig + "\n"
+        return m.group(0)
+
+    article = re.sub(
+        r'(<figure class="pm-fig[^"]*" id="[^"]+">.*?</figure>)\s*<p class="pm-after">(.*?)</p>',
+        dedupe_after,
+        article,
+        flags=re.S,
+    )
+
     article = re.sub(r'\n<script src="/research/pain_machines/pm-viz\.js" defer></script>\n?', "\n", article)
     article = re.sub(r'<p class="pm-viz-cap">.*?</p>\s*', "", article)
     article = re.sub(r'<div class="pm-viz-wrap">.*?</div>\s*', "", article)
@@ -363,6 +382,16 @@ def main() -> int:
 """
     if ".pm-fig-cap" not in article:
         article = article.replace("</style>", css_add + "\n</style>", 1)
+
+    def fix_svg_block(m: re.Match) -> str:
+        block = m.group(0)
+        open_end = block.index(">") + 1
+        close_start = block.rindex("</svg>")
+        head, body, tail = block[:open_end], block[open_end:close_start], block[close_start:]
+        body = "\n".join(line for line in body.splitlines() if line.strip())
+        return head + body + tail
+
+    article = re.sub(r"<svg\b[^>]*>.*?</svg>", fix_svg_block, article, flags=re.S)
 
     ARTICLE.write_text(article, encoding="utf-8")
     print(f"Restored evidence figures in {ARTICLE}")
