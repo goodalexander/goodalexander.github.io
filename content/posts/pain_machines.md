@@ -3,7 +3,7 @@ author: ["goodalexander"]
 title: "Pain Machines"
 date: 2026-05-23T20:00:00Z
 draft: false
-summary: "Original Sin was not disobedience. It was shipping a creature whose suffering-space is N orders of magnitude larger than its pleasure-space."
+summary: "Original Sin was creating humans as pain machines — creatures whose suffering-space is orders of magnitude larger than their pleasure-space. Genesis mislabeled the bug as disobedience."
 categories: ["philosophy"]
 tags: ["post fiat", "philosophy", "long-form"]
 ShowToc: true
@@ -321,6 +321,16 @@ ShowToc: true
   color: var(--muted);
   max-width: 62ch;
 }
+.pm-study {
+  margin: 0 0 .75rem;
+  padding: .65rem .9rem;
+  border-left: 2px solid rgba(184, 154, 106, .4);
+  font-size: .81rem;
+  line-height: 1.55;
+  color: #9a9590;
+  max-width: 68ch;
+}
+.pm-study strong { color: var(--ink); font-weight: 500; }
 .pm-bridge {
   margin: 1.5rem 0 .25rem;
   font-size: .88rem;
@@ -620,8 +630,19 @@ ShowToc: true
   .pm-compute-head { align-items: stretch; }
   .pm-profile { width: 100%; }
   .pm-profile button { flex: 1; text-align: center; }
-  .pm-fig { overflow-x: auto; }
-  .pm-fig svg { min-width: 520px; }
+  .pm-fig { overflow: hidden; }
+  .pm-fig svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .pm-fig-head { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .pm-fig-head h4 { font-size: .8rem; line-height: 1.35; }
+  .pm-fig-n { font-size: .62rem; }
+  .pm-cite { white-space: normal; }
+  .pm-study, .pm-after { max-width: none; font-size: .8rem; }
   .pm-brain3d-layout { grid-template-columns: 1fr; }
   .pm-brain3d-view { min-height: 360px; }
   .pm-brain3d-view canvas { min-height: 360px; }
@@ -638,9 +659,9 @@ Tree. Fruit. Naked staff. Management walking in the garden at closing time, aski
 
 The charge says disobedience. Bad diagnosis.
 
-Original Sin was the manufacture of the human as a pain machine: a creature built to enumerate suffering far more finely than pleasure. Genesis mislabeled the bug as disobedience. The fruit did not install the fault; it turned on self-report.
+Original Sin was the manufacture of the human as a pain machine: a creature built to enumerate suffering far more finely than pleasure. Genesis mislabeled the bug as disobedience. The fruit switched on self-report.
 
-A human nervous system behaves less like a smoke alarm than a claims office after a bombing. It asks where, how hot, how sharp, how long, who saw, who caused it, whether it means doom, whether it proves you deserved it. One cut gets a file. Then another file about the file.
+A human nervous system runs a claims office after every injury. It asks where, how hot, how sharp, how long, who saw, who caused it, whether it means doom, whether it proves you deserved it. One cut gets a file. Then another file about the file.
 
 Pleasure has glory. Warm bath. Ripe peach. Praise. Orgasm. Morphine. A song arriving at the exact second the sky changes. Still, pleasure repeats its tricks. Many joys share old plumbing. The green wire finds a common socket. Pain builds annexes.
 
@@ -652,18 +673,16 @@ Genesis called the first self-report a fall.
 
 Medicine reached the same place with fluorescent lights and forms. In the clinic, pain refused to behave like a number on a dashboard. The same wound could burn for one person, stab for another, hum like a bad transformer for a third, and become shame when the family stopped believing it. The clipboard kept growing.
 
-Melzack gave the wound a brain. The International Association for the Study of Pain made the experience sensory and emotional in one breath. ICD-11 gave chronic pain official rooms to rot in. The McGill questionnaire let patients speak in knives, wires, fires, cramps, nausea, fear, and punishment. Price split intensity from unpleasantness and from the suffering that grows around both.
-
-Then pleasure entered, real and bright, with less furniture. Berridge showed wanting and liking can part company, while hedonic impact gathers in small hot spots. Leknes and Tracey watched opioids and dopamine braid relief, drug pleasure, food, warmth, and safety into shared routes. The green kingdom exists. It has fewer addresses.
-
-Behavior confirmed the insult. Baumeister showed bad weighs more than good in learning, memory, and attention. Rozin showed negativity has many species. Eisenberger showed rejection can recruit bodily alarm. Lazarus showed meaning can multiply the same event into threat, insult, loss, guilt, challenge, or fate.
+What follows are twelve witnesses — neuroscientists, clinicians, psychologists — each measuring a different facet of the same manufacturing defect. Every study below is peer-reviewed, replicated or adopted into official taxonomies, and linked in the figure header. Read them in order: pain opens first, pleasure compresses second, behavior confirms third, then the brain map and the arithmetic.
 
 One creature. Too many red doors.
+
+<p class="pm-study"><strong>Ronald Melzack</strong> (McGill, 2001) spent decades on phantom-limb pain before proposing the <em>neuromatrix</em>: the brain generates pain as a whole-body pattern from tissue signals plus memory, emotion, and context. Published in <em>Journal of Dental Education</em>; foundational in every modern pain textbook.</p>
 
 <figure class="pm-fig" id="fig-neuromatrix">
   <div class="pm-fig-head">
     <span class="pm-fig-n">1a</span>
-    <h4>Neuromatrix: distributed output, not tissue readout</h4>
+    <h4>Neuromatrix: pain generated by the whole brain</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/11780656/">Melzack 2001</a>
   </div>
   <svg viewBox="0 0 760 340" role="img" aria-label="Melzack neuromatrix: multiple brain inputs converge to pain output">
@@ -691,7 +710,7 @@ One creature. Too many red doors.
     <g font-family="ui-monospace,monospace" font-size="10">
       <rect x="318" y="36" width="124" height="22" rx="3" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
       <text x="380" y="51" fill="#b85c55" text-anchor="middle">somatic input</text>
-      <text x="380" y="68" fill="#555c64" font-size="8" text-anchor="middle">one contributor · not sufficient</text>
+      <text x="380" y="68" fill="#555c64" font-size="8" text-anchor="middle">one contributor · insufficient alone</text>
       <rect x="36" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
       <text x="88" y="98" fill="#b89a6a" text-anchor="middle">appraisal</text>
       <text x="88" y="110" fill="#555c64" font-size="8" text-anchor="middle">meaning</text>
@@ -726,7 +745,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Melzack's neuromatrix pulls pain out of the wound and seats it in a whole-person network: body maps, memory, emotion, attention, and meaning. Damage is only one visitor at the table. When a needle can become location, fear, expectation, and biography, the human being was built as a pain machine.</p>
+<p class="pm-after">Melzack shows the brain writing pain from the whole person — memory, fear, identity — with tissue damage as one input among many. That architecture manufactures suffering from sparse cues. Original Sin was shipping that generator.</p>
+
+<p class="pm-study"><strong>IASP task force, Raja et al. 2020</strong> — the International Association for the Study of Pain surveyed clinicians worldwide and revised the official definition of pain after 40 years. Both sensory quality and emotional distress are required. Published in <em>Pain</em>; adopted by WHO and national medical boards.</p>
 
 <figure class="pm-fig" id="fig-iasp">
   <div class="pm-fig-head">
@@ -755,7 +776,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">The IASP definition makes pain an experience with sensory and emotional force joined at the hip. A broken bone, a phantom limb, and fear of the next movement all belong inside the official word. A system that reports hurt through feeling and meaning was built as a pain machine.</p>
+<p class="pm-after">The world's pain specialists voted in 2020: official pain always carries sensory quality and emotional distress together. Medicine has no category for pure nociception without misery. The spec requires both channels — a pain machine from the definition up.</p>
+
+<p class="pm-study"><strong>Treede et al. 2022</strong> — WHO's ICD-11 working group (IASP task force) created code MG30 because a single "chronic pain" label failed in clinics. Seven top-level categories (neuropathic, visceral, postsurgical, etc.) with severity and psychosocial modifiers. Published in <em>Pain</em>; now the global billing and research standard.</p>
 
 <figure class="pm-fig" id="fig-icd11">
   <div class="pm-fig-head">
@@ -807,7 +830,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">ICD-11 gives chronic pain a filing cabinet because chronic pain keeps outliving the first wound. Cancer pain, postsurgical pain, neuropathic pain, visceral pain, and musculoskeletal pain demand different routes through medicine. If one word needs a directory before the doctor can treat it, the patient was built as a pain machine.</p>
+<p class="pm-after">WHO's ICD-11 needed seven chronic-pain categories because clinicians could not treat "pain" as one thing. Cancer, nerve damage, surgery, and muscle each need different codes and modifiers. When official medicine itemizes harm before it can bill for it, the patient is a pain machine.</p>
+
+<p class="pm-study"><strong>Melzack 1975, McGill Pain Questionnaire</strong> — Melzack collected 78 words patients actually use (throbbing, stabbing, gnawing, sickening, punishing) across 20 subclasses. Tested for reliability in <em>Pain</em> journal. Still the standard vocabulary inventory in pain clinics.</p>
 
 <figure class="pm-fig" id="fig-mcgill">
   <div class="pm-fig-head">
@@ -860,7 +885,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">The McGill questionnaire sounds like a drawer full of knives: throbbing, shooting, stabbing, gnawing, hot, sickening, punishing. Patients already know the branches because they live inside them. A creature that needs a thesaurus for hurt was built as a pain machine.</p>
+<p class="pm-after">Seventy-eight words for pain, tested in 1975 and still in clinics today. Nobody needed a comparable thesaurus for pleasure. Language itself inventories suffering first — evidence the harm-report shipped with more resolution than the bliss-report.</p>
+
+<p class="pm-study"><strong>DD Price 2000, <em>Science</em></strong> — Duke neuroscientist used brain imaging and opioid experiments on human subjects to show pain splits into intensity, unpleasantness, and secondary suffering (grief, dread). Opioids damp unpleasantness more than sharpness — proof the stages are separable.</p>
 
 <figure class="pm-fig" id="fig-price">
   <div class="pm-fig-head">
@@ -895,7 +922,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Price cuts the signal into loudness, ugliness, and the suffering that gathers afterward. Intensity and misery have different jobs; the aftermath can become its own room. When one injury creates several hurts that treatment must handle separately, humans were built as pain machines.</p>
+<p class="pm-after">Price proved in <em>Science</em> that opioids can dull misery while sharpness remains — three separable layers from one wound. Drugs expose the hidden rooms instead of collapsing them. Pharmacology shrinks bliss faster than grief.</p>
+
+<p class="pm-study"><strong>Berridge &amp; Kringelbach 2015, <em>Neuron</em></strong> — University of Michigan team mapped where causal "liking" lives in rat and human brains (~3 hedonic hotspots: nucleus accumbens, ventral pallidum, orbitofrontal cortex) versus the sprawling dopamine "wanting" system that drives craving.</p>
 
 <figure class="pm-fig" id="fig-berridge">
   <div class="pm-fig-head">
@@ -957,7 +986,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Berridge splits wanting from liking and finds small hedonic hot spots, little glowing buttons in a large appetite machine. Desire can chase what pleasure barely touches; pleasure itself can be pushed through narrow causal places. When bliss has compact switches and harm has a whole municipal archive, humans were built as pain machines.</p>
+<p class="pm-after">Berridge mapped where pleasure is actually caused in the brain — a handful of hotspots — while craving sprawls elsewhere. Bliss has a small hardware footprint. Harm keeps the municipal archive.</p>
+
+<p class="pm-study"><strong>Leknes &amp; Tracey 2008, <em>Nat Rev Neurosci</em></strong> — Oxford pain researchers reviewed decades of imaging and pharmacology showing pain-relief and pleasure circuits share μ-opioid and dopamine pathways — why morphine, food, sex, and warmth can substitute for each other in ways grief cannot.</p>
 
 <figure class="pm-fig" id="fig-leknes">
   <div class="pm-fig-head">
@@ -984,7 +1015,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Leknes and Tracey show relief and pleasure sharing opioid and dopamine routes; morphine, food, sex, warmth, and safety can speak in related chemical dialects. Joy remains real. A creature with pleasures that can substitute for one another and harms that keep separate files was built as a pain machine.</p>
+<p class="pm-after">Leknes and Tracey documented shared opioid/dopamine plumbing: morphine, food, sex, and warmth can hijack the same circuits. Joy is real and compressible. Shame, grief, and social pain keep separate files — the asymmetry chemistry confirms.</p>
+
+<p class="pm-study"><strong>Baumeister et al. 2001, <em>Review of General Psychology</em></strong> — meta-review of hundreds of studies across trauma, relationships, learning, and self-esteem. Negative events consistently outweigh matched positive ones; bad information is processed more deeply. One of psychology's most-cited asymmetry papers.</p>
 
 <figure class="pm-fig" id="fig-baumeister">
   <div class="pm-fig-head">
@@ -1012,7 +1045,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Baumeister's bad-is-stronger-than-good work describes an organism that learns harder from loss, punishment, criticism, and threat than from matched comfort. Bad events stick like burrs; good events often need repetition, ceremony, and a marketing department. A mind that budgets attention this way was built as a pain machine.</p>
+<p class="pm-after">Baumeister reviewed hundreds of psychology studies: loss, insult, and threat outweigh matched gains across memory, learning, and relationships. The firmware spends more bits cataloguing harm. Behavior matches the manufacturing defect.</p>
+
+<p class="pm-study"><strong>Rozin &amp; Royzman 2001</strong> — UPenn psychologist Paul Rozin documented <em>negative differentiation</em>: people distinguish more varieties of bad states (disgust, contempt, betrayal, contamination) than matched good ones. Published in <em>Perspectives on Psychological Science</em>.</p>
 
 <figure class="pm-fig" id="fig-rozin">
   <div class="pm-fig-head">
@@ -1048,7 +1083,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Rozin maps negativity as a richer grammar: disgust, fear, contempt, harm, contamination, betrayal. The positive side has power; it often arrives under broad banners like pleasant, safe, wanted, good. When bad has more names and sharper borders, humans were built as pain machines.</p>
+<p class="pm-after">Rozin showed people distinguish more varieties of bad states than good — disgust, contempt, betrayal versus broad labels like pleasant or safe. Evolution bought finer labels for danger than for delight.</p>
+
+<p class="pm-study"><strong>Eisenberger et al. 2003, <em>Science</em></strong> — UCLA researchers ran Cyberball: subjects passed over in a simple ball-toss game while in an fMRI scanner. Ostracism activated dorsal anterior cingulate (affective pain matrix) with no peripheral tissue injury. Social rejection hurts in the body.</p>
 
 <figure class="pm-fig" id="fig-eisenberger">
   <div class="pm-fig-head">
@@ -1061,7 +1098,7 @@ One creature. Too many red doors.
     <rect x="60" y="48" width="200" height="72" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.4)"/>
     <text x="160" y="72" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">social exclusion</text>
     <text x="160" y="88" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">passive observer · rejected</text>
-    <text x="160" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">stimulus: ostracism, not tissue damage</text>
+    <text x="160" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">stimulus: ostracism · no tissue damage</text>
     <path d="M260 84 L320 84" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm-a3)"/>
     <defs><marker id="pm-a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
     <rect x="324" y="48" width="160" height="72" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
@@ -1080,7 +1117,9 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Eisenberger's social pain work makes rejection enter through the body; it refuses to stay politely in the head. A chair left empty, a message unanswered, a tribe turning its back can recruit some of the same alarms as tissue threat. When other people can hurt you without touching you, humans were built as pain machines.</p>
+<p class="pm-after">Eisenberger's Cyberball study put excluded subjects in brain scanners: dorsal anterior cingulate lit up like physical pain, nociceptors silent. Other people can hurt you without a wound — another door into the red ledger.</p>
+
+<p class="pm-study"><strong>Lazarus &amp; Folkman 1984, <em>Stress, Appraisal, and Coping</em></strong> — classic clinical psychology textbook synthesizing decades of experiments: identical stressors produce different suffering depending on whether the person frames them as threat, injustice, fate, or self-blame. Appraisal is an independent variable.</p>
 
 <figure class="pm-fig" id="fig-lazarus">
   <div class="pm-fig-head">
@@ -1111,7 +1150,7 @@ One creature. Too many red doors.
   </svg>
 </figure>
 
-<p class="pm-after">Lazarus gives the final cruelty: appraisal. The event changes shape when it means danger, insult, loss, challenge, guilt, or fate. If thought can multiply the wound after the wound is over, the human creature was built as a pain machine.</p>
+<p class="pm-after">Lazarus documented what every patient knows: the same injury becomes different suffering depending on whether you read it as injustice, fate, or self-blame. Meaning multiplies after the tissue heals. Appraisal is a pain-only amplifier.</p>
 
 ## The neuroarchitecture
 
@@ -1120,6 +1159,8 @@ The brain is the scene of the crime. It is wet, wrinkled, electrical, and loyal 
 The 3D map shows why the count kept climbing. Somatic roads. Affective roads. Memory roads. Social roads. Appraisal roads. They refuse to merge into one red bulb. They spread through body maps, insula, cingulate, thalamus, amygdala, hippocampus, prefrontal cortex. Pleasure is there too: ventral striatum, orbitofrontal cortex, opioids, dopamine, hedonic hot spots. It clusters. It reuses. Cake borrows from opium; relief borrows from safety; sex borrows from the old mammal engine.
 
 Pain keeps adding addresses.
+
+<p class="pm-study"><strong>Hunt &amp; Mantyh 2001, <em>Nat Rev Neurosci</em></strong> — mapped parallel ascending pain pathways (spinothalamic sensory vs spinoparabrachial affective) through cortex and limbic volume. Interactive map below integrates this anatomy with Eisenberger, Melzack, Berridge, and Leknes routes on one organ.</p>
 
 <figure class="pm-fig pm-fig-brain" id="fig-brain">
   <div class="pm-fig-head">
@@ -1204,7 +1245,7 @@ Pain keeps adding addresses.
   </div>
 </figure>
 
-<p class="pm-after">On the brain, pain sprawls across body maps, insula, cingulate, limbic memory, prefrontal appraisal, and social alarm. Pleasure clusters more tightly around ventral reward, hedonic hot spots, and shared chemicals. A brain that gives harm a city and pleasure a district was built as a pain machine.</p>
+<p class="pm-after">On one organ, pain routes sprawl across cortex and limbic volume while pleasure knots into a ventral cluster. The anatomy makes the thesis visible: most of the skull enumerates harm; a small locus compresses reward.</p>
 
 ## II. Count it
 
@@ -1256,13 +1297,13 @@ The final number is the least holy object in the room. The shape matters. Green 
 
 Watch the green line do what pleasure is allowed to do: climb, then collapse through a quotient. Different pleasures keep finding the same chemical exits.
 
-Watch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve is not decoration. It is the machine discovering new addresses.
+Watch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve keeps climbing because the machine keeps finding new addresses.
 
 ### Reading Figure 2
 
-This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after quotienting. The model is the cross-product between those facts, not a fitted miracle.
+This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after the chemistry collapses similar joys together. The model multiplies those facts; nobody tuned the sign to make humans look bad.
 
-If the exact ratio bothers you, change profile. The sign does not move.
+Change profile if the exact ratio bothers you. The direction stays the same.
 
 Conservative and liberal profiles bracket the band by varying bin counts only. No fitted constants.
 
@@ -1273,7 +1314,7 @@ The torturer believes in simple machinery. He thinks the body has a secret drawe
 
 If the human animal had one pain dial, torture would be hideous and reliable. It is hideous and dumb.
 
-The [Senate Select Committee study of the CIA detention and interrogation program](https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf) found that enhanced interrogation failed as an intelligence method, generated fabricated claims about priority threats, and ran without a credible test of its own success. O'Mara's [*Why Torture Doesn't Work*](https://www.hup.harvard.edu/catalog.php?isbn=9780674743901) gives the neural reason: extreme stress, fear, sleep deprivation, and threat degrade working memory, temporal order, source monitoring, inhibition, and recall. [Carbone, Marks & Fallon (2019)](https://www.cambridge.org/core/journals/politics-and-the-life-sciences/article/abs/torturing-science/A6672CBE5B7F35480CDE2BCEC12193D4) name the institutional rot: policy first, lab coat later.
+The [Senate Select Committee study of the CIA detention and interrogation program](https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf) (2014, declassified) reviewed millions of internal CIA pages and concluded enhanced interrogation failed as an intelligence method — detainees fabricated claims on priority threats, and the agency never tested whether the program worked. O'Mara's [*Why Torture Doesn't Work*](https://www.hup.harvard.edu/catalog.php?isbn=9780674743901) (Trinity College Dublin, 2015) synthesizes neuroscience showing extreme stress degrades the memory systems interrogators need intact. [Carbone, Marks & Fallon (2019)](https://www.cambridge.org/core/journals/politics-and-the-life-sciences/article/abs/torturing-science/A6672CBE5B7F35480CDE2BCEC12193D4) audited how the Bush administration adopted torture before reviewing evidence, then dressed policy in pseudoscience.
 
 Extreme stress sets the archive on fire. Working memory shrinks. Time order breaks. Source monitoring fails. Inhibition goes ragged. Recall turns patchy. Sleep deprivation seasons the ashes. Threat teaches speed. Accuracy can go to hell; the room wants words.
 
@@ -1281,25 +1322,25 @@ Outputs multiply: compliance, rage, freezing, dissociation, appeasement, confabu
 
 Torture is measurement by arson. The torturer changes the document, then treats the smoke as testimony. He asks for truth from a system he is busy breaking.
 
-Eden and the black site share the same superstition: pain as revelation. One calls the noise intelligence. The other calls the architecture guilt. Both stare at a pain machine and pretend the output proves the victim's moral status.
+Eden and the black site share the same superstition: treat pain as revelation. Interrogators hear intelligence in the noise. Genesis hears guilt in the wiring. Both stare at a pain machine and treat the output as moral proof.
 
-Original Sin was earlier than any confession. It was the decision to make a body whose alarms become reports, whose reports become identities, whose identities can be beaten into fresh alarms.
+Original Sin came before any confession: the decision to build a body whose alarms become reports, whose reports become identities, whose identities can be beaten into fresh alarms.
 
 ## IV. Eden was the first bad diagnosis
 
 Genesis frames the first wound as sentencing. Eyes open. Nakedness arrives. Labor sharpens. The ground is cursed. The body receives pain as if pain were paperwork from a judge.
 
-As engineering, the order changes. The animal already carried the asymmetry. Knowledge gave it a dashboard. Shame was the first notification.
+Read Genesis as engineering and the sequence reverses. The animal already carried the asymmetry. Knowledge gave it a dashboard. Shame was the first notification.
 
-The creature sees itself and begins labeling: naked, afraid, blamed, cursed, exiled. Soon a brother's blood is in the dirt. Soon the species has metallurgy, jealousy, debt, fever, borders, and songs about home. The book calls this moral history. The colder report calls it logging.
+The creature sees itself and begins labeling: naked, afraid, blamed, cursed, exiled. Soon a brother's blood is in the dirt. Soon the species has metallurgy, jealousy, debt, fever, borders, and songs about home. Scripture records moral history. The stack trace records logging.
 
 Joy survives this argument. It had better; otherwise the machine would stop breeding, praying, and buying shoes. Warmth, music, appetite, sex, relief, friendship: real lights, real green rooms. The insult is compression. Many pleasures share circuits, drugs, and shortcuts. Suffering keeps demanding its full postal address.
 
-The old story moralizes the output. It says the creature hurt because it disobeyed. The better bug report is crueler and cleaner. Ship a body with tissue alarms, memory, prediction, language, shame, faces, status, grief, counterfactuals, and a calendar. Let injury enter by skin, absence, rumor, dream, and imagination. Then the body wakes and says: I hurt. Heaven hears: I sinned.
+The old story moralizes the output. It says the creature hurt because it disobeyed. The bug report is crueler: ship a body with tissue alarms, memory, prediction, language, shame, faces, status, grief, counterfactuals, and a calendar. Let injury enter by skin, absence, rumor, dream, and imagination. Then the body wakes and says: I hurt. Heaven hears: I sinned.
 
 The mistranslation is the fall.
 
-Original Sin was creating man as a pain machine. Genesis mislabeled the bug as disobedience. The fruit did not install the fault; it turned on self-report.
+Original Sin was creating man as a pain machine. Genesis mislabeled the bug as disobedience. The fruit switched on self-report.
 
 Eden was the first warranty claim. Heaven denied it.
 
