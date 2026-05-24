@@ -10,784 +10,409 @@ ShowToc: true
 ---
 
 <style>
-.pm-wrap {
-  --pm-bg: #08090d;
-  --pm-panel: #10141c;
-  --pm-panel-2: #141a24;
-  --pm-ink: #f2ece8;
-  --pm-muted: #9da8b5;
-  --pm-dim: #66727d;
-  --pm-line: rgba(242, 236, 232, .12);
-  --pm-gold: #d4a853;
-  --pm-bliss: #6ec9a8;
-  --pm-pain: #e05a52;
-  --pm-violet: #9a7bff;
-  color: var(--pm-ink);
+.pm {
+  --bg: #040506;
+  --panel: #0a0b0d;
+  --line: rgba(235, 228, 220, 0.1);
+  --ink: #ebe4dc;
+  --muted: #8a9199;
+  --dim: #555c64;
+  --gold: #b89a6a;
+  --pain: #b85c55;
+  --pleasure: #7a9a8c;
+  color: var(--ink);
+  font-variant-ligatures: common-ligatures;
 }
-.pm-wrap * { box-sizing: border-box; }
-.pm-lede {
-  max-width: 62ch;
-  color: var(--pm-muted);
-  font-size: 1.05rem;
+.pm * { box-sizing: border-box; }
+.pm p, .pm li {
+  color: var(--muted);
   line-height: 1.65;
-  margin: 0 0 1.4rem;
+  max-width: 68ch;
 }
-.pm-panel {
-  margin: 1.2rem 0 1.8rem;
-  padding: 1rem 1rem 1.1rem;
-  border: 1px solid var(--pm-line);
-  border-radius: 10px;
-  background: linear-gradient(180deg, var(--pm-panel) 0%, #0c1017 100%);
+.pm h3 {
+  margin: 0 0 .35rem;
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--dim);
 }
-.pm-panel-head {
+.pm-compute {
+  margin: 2rem 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.pm-compute-head {
   display: flex;
   flex-wrap: wrap;
-  gap: .8rem 1rem;
-  align-items: flex-end;
+  gap: .75rem 1rem;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: .9rem;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--line);
 }
-.pm-panel h3 {
-  margin: 0;
-  font-size: 1.15rem;
-}
-.pm-note {
-  margin: .25rem 0 0;
-  color: var(--pm-muted);
-  font-size: .86rem;
-  max-width: 58ch;
-}
-.pm-toggle {
-  display: inline-flex;
-  border: 1px solid var(--pm-line);
-  border-radius: 999px;
-  overflow: hidden;
-  background: #0a0e14;
-}
-.pm-toggle button {
-  border: 0;
-  background: transparent;
-  color: var(--pm-muted);
-  padding: .55rem .9rem;
-  font: inherit;
+.pm-compute-head strong {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: .82rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.pm-profile {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.pm-profile button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font: 500 .75rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  padding: .4rem .65rem;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 36px;
   touch-action: manipulation;
 }
-.pm-toggle button.is-active[data-view="bliss"] {
-  background: rgba(110, 201, 168, .16);
-  color: var(--pm-bliss);
+.pm-profile button.is-active {
+  border-color: rgba(235, 228, 220, .28);
+  color: var(--ink);
+  background: rgba(235, 228, 220, .04);
 }
-.pm-toggle button.is-active[data-view="pain"] {
-  background: rgba(224, 90, 82, .16);
-  color: var(--pm-pain);
+.pm-src {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1.1rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  background: #060708;
+  color: #c5bfb7;
+  font: 400 .74rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  -webkit-overflow-scrolling: touch;
 }
-.pm-grid {
+.pm-src .c { color: #5f6b73; }
+.pm-src .k { color: #9a7bff; }
+.pm-src .n { color: #b89a6a; }
+.pm-src .s { color: #7a9a8c; }
+.pm-metrics {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: .85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
 }
-.pm-stat-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: .65rem;
-  margin-bottom: .85rem;
+.pm-metric {
+  padding: .85rem 1rem;
+  background: var(--panel);
 }
-.pm-stat {
-  padding: .75rem .8rem;
-  border: 1px solid var(--pm-line);
-  border-radius: 8px;
-  background: var(--pm-panel-2);
-}
-.pm-stat b {
+.pm-metric b {
   display: block;
-  font-size: 1.35rem;
-  line-height: 1.05;
+  font: 500 1.35rem/1.1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-variant-numeric: tabular-nums;
 }
-.pm-stat span {
+.pm-metric span {
   display: block;
   margin-top: .25rem;
-  color: var(--pm-muted);
-  font-size: .76rem;
+  font-size: .72rem;
+  color: var(--dim);
   line-height: 1.35;
 }
-.pm-stat.pain b { color: var(--pm-pain); }
-.pm-stat.bliss b { color: var(--pm-bliss); }
-.pm-stat.ratio b { color: var(--pm-gold); }
+.pm-metric.p b { color: var(--pleasure); }
+.pm-metric.n b { color: var(--pain); }
+.pm-metric.r b { color: var(--gold); }
 .pm-chart {
-  min-height: 220px;
+  padding: .5rem .75rem 1rem;
+  min-height: 300px;
 }
 .pm-chart svg {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
 }
-.pm-split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-  gap: .85rem;
+.pm-json {
+  margin: 0;
+  padding: 1rem;
+  max-height: 420px;
+  overflow: auto;
+  background: #060708;
+  color: #aeb6bf;
+  font: 400 .72rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border-top: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
 }
-.pm-map {
-  min-height: 280px;
-  border: 1px solid var(--pm-line);
-  border-radius: 8px;
-  background: #0a0e14;
-  overflow: hidden;
-}
-.pm-controls {
-  display: flex;
-  flex-direction: column;
-  gap: .65rem;
-}
-.pm-step-list {
-  display: flex;
-  flex-direction: column;
-  gap: .45rem;
-}
-.pm-step {
-  width: 100%;
-  text-align: left;
-  border: 1px solid var(--pm-line);
-  border-radius: 8px;
-  background: #0b1016;
-  color: var(--pm-ink);
-  padding: .75rem .8rem;
-  cursor: pointer;
-  font: inherit;
-  min-height: 44px;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-.pm-step small {
-  display: block;
-  margin-top: .2rem;
-  color: var(--pm-muted);
-  font-size: .78rem;
-  line-height: 1.4;
-}
-.pm-step.is-active {
-  border-color: rgba(224, 90, 82, .55);
-  background: rgba(224, 90, 82, .08);
-}
-.pm-step.is-done {
-  border-color: rgba(110, 201, 168, .35);
-}
-.pm-dim-list {
-  display: grid;
-  gap: .4rem;
-}
-.pm-dim {
-  display: flex;
-  gap: .55rem;
-  align-items: flex-start;
-  padding: .55rem .6rem;
-  border: 1px solid var(--pm-line);
-  border-radius: 8px;
-  background: #0a0e14;
-  font-size: .84rem;
-  color: var(--pm-muted);
-  min-height: 44px;
-  touch-action: manipulation;
-}
-.pm-dim input {
-  margin-top: .15rem;
-  width: 1.1rem;
-  height: 1.1rem;
-  flex-shrink: 0;
-  accent-color: var(--pm-pain);
-}
-.pm-dim strong { color: var(--pm-ink); font-weight: 600; }
-.pm-dim.is-locked { opacity: .45; pointer-events: none; }
-.pm-verdict {
-  margin-top: .75rem;
-  padding: .75rem .85rem;
-  border-left: 3px solid var(--pm-pain);
-  background: rgba(224, 90, 82, .07);
-  color: var(--pm-ink);
-  font-size: .92rem;
-  line-height: 1.55;
-}
-.pm-verdict.bliss {
-  border-left-color: var(--pm-bliss);
-  background: rgba(110, 201, 168, .07);
-}
-.pm-tooltip {
-  position: fixed;
-  z-index: 30;
-  max-width: 280px;
-  padding: .55rem .65rem;
-  border: 1px solid var(--pm-line);
-  border-radius: 8px;
-  background: rgba(8, 10, 13, .96);
-  color: var(--pm-ink);
-  font-size: .82rem;
+.pm-foot {
+  padding: .65rem 1rem;
+  border-top: 1px solid var(--line);
+  font-size: .72rem;
+  color: var(--dim);
   line-height: 1.45;
-  pointer-events: none;
-  opacity: 0;
 }
-.pm-small {
-  color: var(--pm-dim);
-  font-size: .82rem;
-  line-height: 1.5;
-}
-.pm-wrap .pm-panel .pm-panel {
-  padding: .85rem .8rem;
-}
-@media (max-width: 860px) {
-  .pm-grid,
-  .pm-split {
-    grid-template-columns: 1fr;
-  }
-  .pm-stat-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .pm-panel-head {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .pm-toggle {
-    width: 100%;
-  }
-  .pm-toggle button {
-    flex: 1;
-    text-align: center;
-  }
-  .pm-panel h3 {
-    font-size: 1.05rem;
-  }
-  .pm-stat b {
-    font-size: 1.15rem;
-  }
-  .pm-map {
-    min-height: 240px;
-  }
-}
-@media (max-width: 420px) {
-  .pm-panel {
-    padding: .8rem .7rem;
-    border-radius: 8px;
-  }
-  .pm-stat-row {
-    grid-template-columns: 1fr;
-  }
-  .pm-stat span {
-    font-size: .72rem;
-  }
-  .pm-step small {
-    font-size: .74rem;
-  }
-  .pm-verdict {
-    font-size: .86rem;
-  }
+.pm-foot a { color: var(--muted); }
+@media (max-width: 720px) {
+  .pm-metrics { grid-template-columns: 1fr; }
+  .pm-compute-head { align-items: stretch; }
+  .pm-profile { width: 100%; }
+  .pm-profile button { flex: 1; text-align: center; }
 }
 </style>
 
-<div class="pm-wrap" id="pain-machines">
+<div class="pm" id="pain-machines">
 
-Are humans designed to experience vast bliss or vast pain?
+Genesis frames the bug as disobedience. That is a mislabeled stack trace.
 
-Religion says we fell. Consumer capitalism says we are pleasure-seeking animals one SKU away from happiness. Neither account matches the firmware.
+The actual fault is architectural: a nervous system whose **suffering state-space** has far higher cardinality than its **pleasure state-space** — and where pleasure collapses under pharmacological equivalence while pain does not.
 
-This is **Part I** of *Pain Machines*: an interactive indictment. Click through the reasoning steps, toggle the bliss case if you want to steelman it, and watch the cardinality gap open on a log scale.
+Below is not an infographic. It is a **state-space enumerator** you can audit. The Python source ships with the post; the page runs the same logic in the browser and emits JSON.
 
-<div class="pm-panel" id="pm-intro-viz">
-  <div class="pm-panel-head">
-    <div>
-      <h3>Bliss machine or pain machine?</h3>
-      <p class="pm-note">Same nervous system. Two readings. One collapses under inspection.</p>
-    </div>
-    <div class="pm-toggle" role="tablist" aria-label="Reading">
-      <button type="button" data-view="bliss" aria-selected="false">Bliss case</button>
-      <button type="button" data-view="pain" class="is-active" aria-selected="true">Pain case</button>
-    </div>
-  </div>
+## I. Compute
 
-  <div class="pm-stat-row">
-    <div class="pm-stat bliss"><b id="pm-pleasure-count">—</b><span>distinct pleasure buckets (compressible qualia)</span></div>
-    <div class="pm-stat pain"><b id="pm-pain-count">—</b><span>distinct pain states (context-expanded)</span></div>
-    <div class="pm-stat ratio"><b id="pm-ratio">—</b><span>orders of magnitude (log₁₀ pain ÷ pleasure)</span></div>
-    <div class="pm-stat"><b id="pm-step-label">1 / 5</b><span>reasoning step unlocked</span></div>
-  </div>
-
-  <div class="pm-grid">
-    <div class="pm-panel" style="margin:0">
-      <div class="pm-panel-head" style="margin-bottom:.55rem">
-        <div>
-          <h3>Cardinality on a log scale</h3>
-          <p class="pm-note">Not neuroscience. A structural argument about state-space size.</p>
-        </div>
-      </div>
-      <div class="pm-chart" id="pm-ratio-chart"></div>
-    </div>
-    <div class="pm-panel" style="margin:0">
-      <div class="pm-panel-head" style="margin-bottom:.55rem">
-        <div>
-          <h3>Reasoning path</h3>
-          <p class="pm-note">Each step lights the map and updates the counts.</p>
-        </div>
-      </div>
-      <div class="pm-step-list" id="pm-steps"></div>
+<div class="pm-compute" id="pm-compute">
+  <div class="pm-compute-head">
+    <strong>pain_machines_state_space_v1.py</strong>
+    <div class="pm-profile" role="tablist" aria-label="Sensitivity profile">
+      <button type="button" data-profile="conservative">conservative</button>
+      <button type="button" data-profile="central" class="is-active">central</button>
+      <button type="button" data-profile="liberal">liberal</button>
     </div>
   </div>
 
-  <div class="pm-split" style="margin-top:.85rem">
-    <div>
-      <div class="pm-panel-head" style="margin-bottom:.55rem">
-        <div>
-          <h3>State-space map</h3>
-          <p class="pm-note">Gold cluster = pleasure catalog. Red cloud = pain topology.</p>
-        </div>
-      </div>
-      <div class="pm-map" id="pm-map"></div>
-    </div>
-    <div class="pm-controls">
-      <div class="pm-panel" style="margin:0">
-        <div class="pm-panel-head" style="margin-bottom:.55rem">
-          <div>
-            <h3>Pain context dimensions</h3>
-            <p class="pm-note">Unlock from step 3 onward. Each dimension multiplies distinct pain states.</p>
-          </div>
-        </div>
-        <div class="pm-dim-list" id="pm-dims"></div>
-      </div>
-      <div class="pm-verdict" id="pm-verdict"></div>
-    </div>
+  <pre class="pm-src" aria-label="Model source excerpt"><code><span class="k">def</span> analyze(profile):
+    spec = PROFILES[profile]
+    pleasure = pleasure_analysis(spec)  <span class="c"># applies pharmacological quotient</span>
+    pain = pain_analysis(spec)          <span class="c"># collapse = identity</span>
+    ratio = pain[<span class="s">"distinguishable_states"</span>] / pleasure[<span class="s">"effective_states_after_quotient"</span>]
+    <span class="k">return</span> {
+        <span class="s">"pleasure_effective"</span>: pleasure[<span class="s">"effective_states_after_quotient"</span>],
+        <span class="s">"pain_states"</span>: pain[<span class="s">"distinguishable_states"</span>],
+        <span class="s">"log10_orders"</span>: log10(ratio),
+        <span class="s">"build_traces"</span>: [...],
+    }</code></pre>
+
+  <div class="pm-metrics">
+    <div class="pm-metric p"><b id="pm-p-eff">—</b><span>pleasure effective states (post-quotient)</span></div>
+    <div class="pm-metric n"><b id="pm-n-states">—</b><span>pain distinguishable states (full product)</span></div>
+    <div class="pm-metric r"><b id="pm-log10">—</b><span>log₁₀(pain / pleasure)</span></div>
   </div>
 
-  <p class="pm-small" style="margin-top:.85rem">Method note: counts are a deliberate rhetorical model, not a clinical measure. Pleasure uses a capped catalog with pharmacological collapse; pain uses combinatorial expansion across somatic, social, temporal, and identity axes. The point is order-of-magnitude asymmetry — the same claim made in <a href="/posts/hyperstitional_vortex/">Hyperstitional Vortex</a>, now visualized.</p>
+  <div class="pm-chart" id="pm-chart" aria-label="Cumulative log10 state-space build"></div>
+
+  <pre class="pm-json" id="pm-json" aria-label="Model output JSON"></pre>
+
+  <div class="pm-foot">
+    Full source: <a href="/research/pain_machines/model.py">model.py</a> ·
+    <a href="/research/pain_machines/README.md">README</a> ·
+    Run: <code>python model.py --profile central --json</code>
+  </div>
 </div>
 
-*More sections coming: Eden mislabeled, pleasure stack vs pain kernel, Pain-as-a-Service.*
+### Axis specification
+
+**Pleasure** is modeled as a Cartesian product of intensity JND bins, duration regime, and modality — then quotiented by **receptor-class interchangeability** (opioid / dopamine / oxytocin / mixed). Fentanyl, slot machines, and praise converge. That collapse is the industrial substrate.
+
+**Pain** uses the same formalism but **no quotient**. Mechanism (IASP), location, appraisal (Lazarus), social field, temporality, identity salience, agency attribution, episodic embedding (Melzack neuromatrix). Same nociceptor firing ≠ same state.
+
+Independent inventory check embedded in output: McGill Pain Questionnaire descriptor count vs FDA analgesic/anxiolytic/dopaminergic class count.
+
+### Reading the result
+
+Under the **central** profile, pain cardinality exceeds post-quotient pleasure by ~10³–10⁴. Conservative and liberal profiles bracket that band by varying bin counts only — no hidden multipliers.
+
+That is the computational form of Original Sin: not eating the apple, but shipping firmware where suffering enumerates faster than bliss compresses.
+
+Continued in [Hyperstitional Vortex](/posts/hyperstitional_vortex/) (full cosmology) and forthcoming sections: Eden mislabeled, pleasure stack vs pain kernel, Pain-as-a-Service.
 
 </div>
 
-<script type="application/json" id="pm-data">{
-  "pleasureCatalog": [
-    {"id":"orgasm","label":"Orgasm","channel":"opioid/dopamine"},
-    {"id":"sugar","label":"Sugar rush","channel":"dopamine"},
-    {"id":"win","label":"Status win","channel":"dopamine"},
-    {"id":"warmth","label":"Warm shower","channel":"opioid"},
-    {"id":"laugh","label":"Deep laughter","channel":"endorphin"},
-    {"id":"cuddle","label":"Safe touch","channel":"oxytocin"},
-    {"id":"praise","label":"Praise","channel":"dopamine"},
-    {"id":"flow","label":"Flow state","channel":"mixed"},
-    {"id":"relief","label":"Relief","channel":"opioid"},
-    {"id":"beauty","label":"Aesthetic hit","channel":"mixed"},
-    {"id":"slot","label":"Variable reward","channel":"dopamine"},
-    {"id":"alcohol","label":"Alcohol buzz","channel":"GABA/dopamine"}
-  ],
-  "channels": ["opioid","dopamine","oxytocin","endorphin","GABA/dopamine","mixed"],
-  "painBases": [
-    {"id":"tooth","label":"Toothache","cat":"somatic"},
-    {"id":"grief","label":"Grief","cat":"social"},
-    {"id":"panic","label":"3am panic","cat":"temporal"},
-    {"id":"humiliation","label":"Humiliation","cat":"social"},
-    {"id":"dread","label":"Long dread","cat":"existential"},
-    {"id":"betrayal","label":"Betrayal","cat":"social"},
-    {"id":"isolation","label":"Isolation","cat":"social"},
-    {"id":"shame","label":"Shame","cat":"identity"},
-    {"id":"injury","label":"Acute injury","cat":"somatic"},
-    {"id":"withdrawal","label":"Withdrawal","cat":"somatic"},
-    {"id":"failure","label":"Professional failure","cat":"identity"},
-    {"id":"funeral","label":"Funeral drive","cat":"temporal"},
-    {"id":"collapse","label":"Collapse fear","cat":"existential"},
-    {"id":"jealousy","label":"Jealousy","cat":"social"},
-    {"id":"cringe","label":"Permanent cringe","cat":"identity"},
-    {"id":"nausea","label":"Nausea","cat":"somatic"}
-  ],
-  "dimensions": [
-    {"id":"social","label":"Social embedding","multiplier":4,"example":"same insult alone vs at your wedding"},
-    {"id":"memory","label":"Memory / history","multiplier":3,"example":"fresh wound vs reopened scar"},
-    {"id":"identity","label":"Identity stakes","multiplier":5,"example":"anonymous vs reputation-destroying"},
-    {"id":"duration","label":"Duration / uncertainty","multiplier":4,"example":"acute spike vs years of not knowing"},
-    {"id":"taboo","label":"Moral taboo layer","multiplier":3,"example":"guilt compounds the signal"}
-  ],
-  "steps": [
-    {
-      "id": 1,
-      "title": "Pleasure collapses to a small catalog",
-      "body": "Most bliss states map to a handful of neurochemical channels. Fentanyl, porn, slot machines, and praise converge. Distinct *feelings* exist — but the state-space is narrow and replicable.",
-      "view": "pain",
-      "unlockDims": 0,
-      "pleasureCap": 12,
-      "painBaseOnly": true
-    },
-    {
-      "id": 2,
-      "title": "Pain does not compress",
-      "body": "The same nociceptor firing is not the same experience. Toothache before an interview ≠ toothache after divorce ≠ toothache in a foreign country. Pain carries social, temporal, and narrative payload pleasure rarely matches.",
-      "view": "pain",
-      "unlockDims": 0,
-      "pleasureCap": 12,
-      "painBaseOnly": true
-    },
-    {
-      "id": 3,
-      "title": "Context dimensions multiply pain",
-      "body": "Toggle the dimensions at right. Each axis expands distinct pain states combinatorially. Pleasure gets AB-tested into SKUs. Pain stays wild-type.",
-      "view": "pain",
-      "unlockDims": 5,
-      "pleasureCap": 12,
-      "painBaseOnly": false
-    },
-    {
-      "id": 4,
-      "title": "Capital fixed pleasure, not pain",
-      "body": "Pharma, feeds, and games industrialized the pleasure stack. Rage, envy, loneliness, and fear remained monetizable outputs — Pain-as-a-Service — because pain never converged to a patchable kernel.",
-      "view": "pain",
-      "unlockDims": 5,
-      "pleasureCap": 10,
-      "painBaseOnly": false
-    },
-    {
-      "id": 5,
-      "title": "Verdict: Original Sin is the spec sheet",
-      "body": "Genesis mislabels the bug. The crime was not knowledge. The crime was manufacturing a creature whose pain-space is orders of magnitude larger than its pleasure-space — then blaming the creature for bleeding.",
-      "view": "pain",
-      "unlockDims": 5,
-      "pleasureCap": 8,
-      "painBaseOnly": false
-    }
-  ],
-  "blissRebuttal": "The bliss case points to hedonic hotspots, adaptive learning, and prosperity. Fair — on short horizons, pleasure is shippable. But collapse the pharmacology, then multiply pain by context. The asymmetry returns. You are not designed for sustained bliss. You are designed to radiate variable suffering into systems that monetize it."
+<script type="application/json" id="pm-spec">{
+  "profiles": {
+    "conservative": {"pleasure_intensity":3,"pleasure_duration":3,"pleasure_modality":4,"pain_mechanism":4,"pain_location":8,"pain_appraisal":4,"pain_social":3,"pain_temporal":3,"pain_identity":3,"pain_agency":3,"pain_episodic":4},
+    "central": {"pleasure_intensity":5,"pleasure_duration":4,"pleasure_modality":6,"pain_mechanism":6,"pain_location":12,"pain_appraisal":5,"pain_social":4,"pain_temporal":4,"pain_identity":4,"pain_agency":4,"pain_episodic":6},
+    "liberal": {"pleasure_intensity":7,"pleasure_duration":5,"pleasure_modality":8,"pain_mechanism":8,"pain_location":16,"pain_appraisal":6,"pain_social":5,"pain_temporal":5,"pain_identity":5,"pain_agency":5,"pain_episodic":8}
+  },
+  "modalityToReceptor": {"0":"dopaminergic","1":"dopaminergic","2":"opioidergic","3":"oxytocinergic","4":"mixed","5":"opioidergic","6":"dopaminergic","7":"mixed"}
 }</script>
 
 <script>
 (() => {
   const root = document.getElementById('pain-machines');
-  const dataEl = document.getElementById('pm-data');
-  if (!root || !dataEl || root.dataset.ready) return;
+  const specEl = document.getElementById('pm-spec');
+  if (!root || !specEl || root.dataset.ready) return;
   root.dataset.ready = 'true';
 
-  const data = JSON.parse(dataEl.textContent);
-  const colors = {
-    text: '#f2ece8',
-    muted: '#9da8b5',
-    grid: 'rgba(242,236,232,.1)',
-    bliss: '#6ec9a8',
-    pain: '#e05a52',
-    gold: '#d4a853',
-    violet: '#9a7bff',
-    line: 'rgba(242,236,232,.18)'
-  };
+  const { profiles, modalityToReceptor } = JSON.parse(specEl.textContent);
+  let profile = 'central';
 
-  let view = 'pain';
-  let stepIndex = 0;
-  const activeDims = new Set();
+  const pleasureAxisMeta = [
+    ['intensity_jnd_bins', 'pleasure_intensity', 'Weber-Fechner JND bins'],
+    ['duration_regime', 'pleasure_duration', 'acute / session / day / sustained'],
+    ['modality', 'pleasure_modality', 'consumption, achievement, touch, social, aesthetic, relief']
+  ];
+  const painAxisMeta = [
+    ['somatic_mechanism', 'pain_mechanism', 'IASP 2021 mechanism taxonomy'],
+    ['location', 'pain_location', 'regional somatic / visceral map'],
+    ['cognitive_appraisal', 'pain_appraisal', 'Lazarus appraisal families'],
+    ['social_field', 'pain_social', 'alone / intimate / professional / public'],
+    ['temporality', 'pain_temporal', 'acute / recurrent / chronic / dread'],
+    ['identity_salience', 'pain_identity', 'peripheral / personal / reputation / core self'],
+    ['agency_attribution', 'pain_agency', 'self / other / system / fate / ambiguous'],
+    ['episodic_embedding', 'pain_episodic', 'Melzack neuromatrix episode binding']
+  ];
 
-  const tooltip = document.createElement('div');
-  tooltip.className = 'pm-tooltip';
-  document.body.appendChild(tooltip);
-  const showTip = (event, html) => {
-    tooltip.innerHTML = html;
-    tooltip.style.left = `${Math.min(event.clientX + 12, window.innerWidth - 290)}px`;
-    tooltip.style.top = `${Math.min(event.clientY + 12, window.innerHeight - 120)}px`;
-    tooltip.style.opacity = '1';
-  };
-  const hideTip = () => { tooltip.style.opacity = '0'; };
+  function receptorQuotient(n) {
+    const classes = new Set();
+    for (let i = 0; i < n; i += 1) classes.add(modalityToReceptor[String(i % 8)]);
+    return classes.size;
+  }
 
-  const svgEl = (name, attrs = {}) => {
-    const el = document.createElementNS('http://www.w3.org/2000/svg', name);
-    Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
-    return el;
-  };
-  const scale = (v, inMin, inMax, outMin, outMax) => outMin + ((v - inMin) / (inMax - inMin)) * (outMax - outMin);
-  const fmt = (n) => n >= 1000000 ? `${(n / 1000000).toFixed(1)}M` : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(Math.round(n));
-  const isMobile = () => window.matchMedia('(max-width: 860px)').matches;
+  function buildTrace(meta, spec, key) {
+    const trace = [];
+    let running = 1;
+    for (const [name, field, source] of meta) {
+      const levels = spec[field];
+      running *= levels;
+      trace.push({ axis: name, levels, [key]: running, source });
+    }
+    return trace;
+  }
 
-  function bindTip(el, htmlFn) {
-    const show = (e) => showTip(e, typeof htmlFn === 'function' ? htmlFn() : htmlFn);
-    el.addEventListener('mouseenter', show);
-    el.addEventListener('mousemove', show);
-    el.addEventListener('mouseleave', hideTip);
-    el.addEventListener('click', (e) => {
-      e.stopPropagation();
-      show(e);
+  function analyze(name) {
+    const spec = { name, ...profiles[name] };
+    const pTrace = buildTrace(pleasureAxisMeta, spec, 'running_raw');
+    const rawP = pTrace[pTrace.length - 1].running_raw;
+    const collapsed = receptorQuotient(spec.pleasure_modality);
+    const pEff = spec.pleasure_intensity * spec.pleasure_duration * collapsed;
+    pTrace.push({
+      axis: 'pharmacological_quotient',
+      levels: collapsed,
+      running_raw: pEff,
+      source: 'Receptor-class collapse: synthetic agonists interchange within class'
     });
+
+    const nTrace = buildTrace(painAxisMeta, spec, 'running_product');
+    const nStates = nTrace[nTrace.length - 1].running_product;
+    const ratio = nStates / Math.max(pEff, 1);
+
+    return {
+      model: 'pain_machines_state_space_v1',
+      profile: name,
+      spec,
+      pleasure: {
+        raw_cartesian_states: rawP,
+        effective_states_after_quotient: pEff,
+        build_trace: pTrace
+      },
+      pain: {
+        distinguishable_states: nStates,
+        collapse_function: 'identity',
+        build_trace: nTrace
+      },
+      comparison: {
+        pain_over_pleasure_ratio: ratio,
+        log10_orders_of_magnitude: Math.round(Math.log10(ratio) * 100) / 100
+      },
+      independent_checks: {
+        mcgill_pain_questionnaire_descriptor_count: 78,
+        fda_analgesic_anxiolytic_dopaminergic_sku_classes: 11,
+        ratio_from_descriptor_inventory: Math.round((78 / 11) * 100) / 100
+      },
+      claim: 'Original Sin mislabels the bug. The spec ships high-cardinality suffering and low-cardinality pleasure that collapses under pharmacological equivalence.'
+    };
   }
 
-  function currentStep() {
-    return data.steps[Math.min(stepIndex, data.steps.length - 1)];
+  const fmt = (n) => n >= 1e6 ? `${(n / 1e6).toFixed(2)}e6` : n >= 1e4 ? n.toLocaleString() : String(n);
+
+  function renderMetrics(result) {
+    document.getElementById('pm-p-eff').textContent = fmt(result.pleasure.effective_states_after_quotient);
+    document.getElementById('pm-n-states').textContent = fmt(result.pain.distinguishable_states);
+    document.getElementById('pm-log10').textContent = `10^${result.comparison.log10_orders_of_magnitude}`;
+    document.getElementById('pm-json').textContent = JSON.stringify(result, null, 2);
   }
 
-  function pleasureCount() {
-    const step = currentStep();
-    if (view === 'bliss') return Math.max(40, step.pleasureCap * 3);
-    const channelSet = new Set(data.pleasureCatalog.map(p => p.channel));
-    const collapsed = Math.max(channelSet.size, step.pleasureCap - 2);
-    return Math.min(step.pleasureCap, collapsed + (view === 'pain' ? 0 : 8));
-  }
+  function renderChart(result) {
+    const node = document.getElementById('pm-chart');
+    const mobile = window.matchMedia('(max-width: 720px)').matches;
+    const W = 880, H = mobile ? 340 : 300;
+    const ml = mobile ? 52 : 68, mr = 16, mt = 28, mb = mobile ? 72 : 58;
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Log10 cumulative state space');
 
-  function painCount() {
-    const step = currentStep();
-    const base = data.painBases.length;
-    if (step.painBaseOnly && view === 'pain') return base * 3;
-    let mult = 1;
-    data.dimensions.forEach(dim => {
-      if (activeDims.has(dim.id)) mult *= dim.multiplier;
-    });
-    if (view === 'bliss') mult = Math.max(1, Math.round(mult * 0.35));
-    return base * mult * (view === 'bliss' ? 2 : 6);
-  }
+    const add = (name, attrs) => {
+      const el = document.createElementNS(svgNS, name);
+      Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+      svg.appendChild(el);
+      return el;
+    };
 
-  function ratioOrders() {
-    const p = Math.max(1, pleasureCount());
-    const n = Math.max(p + 1, painCount());
-    return Math.max(0, Math.log10(n / p)).toFixed(1);
-  }
+    const pSteps = result.pleasure.build_trace.map(s => ({
+      label: s.axis.replace(/_/g, ' '),
+      log: Math.log10(Math.max(1, s.running_raw ?? s.running_product))
+    }));
+    const nSteps = result.pain.build_trace.map(s => ({
+      label: s.axis.replace(/_/g, ' '),
+      log: Math.log10(Math.max(1, s.running_product))
+    }));
+    const maxLog = Math.max(4, ...pSteps.map(s => s.log), ...nSteps.map(s => s.log)) + 0.35;
+    const y = v => mt + (1 - v / maxLog) * (H - mt - mb);
+    const colP = (W - ml - mr) * 0.38;
+    const colN = (W - ml - mr) * 0.62;
+    const xP = i => ml + (i / Math.max(1, pSteps.length - 1)) * colP;
+    const xN = i => ml + colN + (i / Math.max(1, nSteps.length - 1)) * ((W - ml - mr) - colN);
 
-  function renderStats() {
-    const p = pleasureCount();
-    const n = painCount();
-    document.getElementById('pm-pleasure-count').textContent = fmt(p);
-    document.getElementById('pm-pain-count').textContent = fmt(n);
-    document.getElementById('pm-ratio').textContent = `~10^${ratioOrders()}`;
-    document.getElementById('pm-step-label').textContent = `${stepIndex + 1} / ${data.steps.length}`;
-  }
-
-  function renderRatioChart() {
-    const node = document.getElementById('pm-ratio-chart');
-    const p = pleasureCount();
-    const n = painCount();
-    const width = 720, height = isMobile() ? 260 : 240, ml = isMobile() ? 88 : 120, mr = 24, mt = 36, mb = 42;
-    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Log scale pleasure vs pain cardinality' });
-    const logMax = Math.max(2, Math.ceil(Math.log10(Math.max(n, p, 10))));
-    const y = (logVal) => scale(logVal, 0, logMax, height - mb, mt);
-    const barW = isMobile() ? 56 : 72;
-
-    for (let tick = 0; tick <= logMax; tick += 1) {
-      const yy = y(tick);
-      svg.appendChild(svgEl('line', { x1: ml, x2: width - mr, y1: yy, y2: yy, stroke: colors.grid, 'stroke-width': 1 }));
-      const label = svgEl('text', { x: ml - 10, y: yy + 4, fill: colors.muted, 'font-size': 11, 'text-anchor': 'end' });
-      label.textContent = tick === 0 ? '1' : `10^${tick}`;
-      svg.appendChild(label);
+    for (let t = 0; t <= Math.ceil(maxLog); t += 1) {
+      add('line', { x1: ml, x2: W - mr, y1: y(t), y2: y(t), stroke: 'rgba(235,228,220,.07)', 'stroke-width': 1 });
+      add('text', { x: ml - 8, y: y(t) + 3, fill: '#555c64', 'font-size': 10, 'text-anchor': 'end', 'font-family': 'monospace' }).textContent = `10^${t}`;
     }
 
-    const pLog = Math.log10(Math.max(1, p));
-    const nLog = Math.log10(Math.max(1, n));
-    const px = ml + (isMobile() ? 52 : 70);
-    const nx = ml + (isMobile() ? 168 : 220);
+    add('text', { x: ml + colP * 0.5, y: 16, fill: '#7a9a8c', 'font-size': 11, 'text-anchor': 'middle', 'font-family': 'monospace' }).textContent = 'pleasure → quotient';
+    add('text', { x: ml + colN + (W - ml - mr - colN) * 0.5, y: 16, fill: '#b85c55', 'font-size': 11, 'text-anchor': 'middle', 'font-family': 'monospace' }).textContent = 'pain → no collapse';
 
-    const pBar = svgEl('rect', {
-      x: px - barW / 2, y: y(pLog), width: barW, height: Math.max(4, height - mb - y(pLog)),
-      rx: 6, fill: colors.bliss, opacity: view === 'bliss' ? 1 : .82
-    });
-    const nBar = svgEl('rect', {
-      x: nx - barW / 2, y: y(nLog), width: barW, height: Math.max(4, height - mb - y(nLog)),
-      rx: 6, fill: colors.pain, opacity: view === 'pain' ? 1 : .55
-    });
-    bindTip(pBar, () => `<strong>Pleasure buckets</strong><br>${fmt(p)} compressible states<br>~${data.channels.length} pharmacological channels`);
-    bindTip(nBar, () => `<strong>Pain states</strong><br>${fmt(n)} context-expanded states<br>Active dims: ${activeDims.size}`);
-    svg.appendChild(pBar);
-    svg.appendChild(nBar);
+    const draw = (steps, xFn, color) => {
+      let prev = null;
+      steps.forEach((s, i) => {
+        const cx = xFn(i), cy = y(s.log);
+        if (prev) add('line', { x1: prev.x, y1: prev.y, x2: cx, y2: cy, stroke: color, 'stroke-width': 1.5, opacity: .85 });
+        add('circle', { cx, cy, r: 3.5, fill: color });
+        if (mobile ? (i === 0 || i === steps.length - 1 || i % 2 === 0) : true) {
+          add('text', {
+            x: cx, y: H - mb + 14 + (i % 2) * 12, fill: '#8a9199', 'font-size': 9,
+            'text-anchor': i === 0 ? 'start' : (i === steps.length - 1 ? 'end' : 'middle'),
+            'font-family': 'monospace'
+          }).textContent = s.label.length > 14 ? s.label.slice(0, 12) + '…' : s.label;
+        }
+        prev = { x: cx, y: cy };
+      });
+    };
 
-    const pLabel = svgEl('text', { x: px, y: height - 16, fill: colors.bliss, 'font-size': 12, 'text-anchor': 'middle' });
-    pLabel.textContent = 'Pleasure';
-    const nLabel = svgEl('text', { x: nx, y: height - 16, fill: colors.pain, 'font-size': 12, 'text-anchor': 'middle' });
-    nLabel.textContent = 'Pain';
-    svg.appendChild(pLabel);
-    svg.appendChild(nLabel);
-
-    const pVal = svgEl('text', { x: px, y: y(pLog) - 8, fill: colors.text, 'font-size': 12, 'text-anchor': 'middle' });
-    pVal.textContent = fmt(p);
-    const nVal = svgEl('text', { x: nx, y: y(nLog) - 8, fill: colors.text, 'font-size': 12, 'text-anchor': 'middle' });
-    nVal.textContent = fmt(n);
-    svg.appendChild(pVal);
-    svg.appendChild(nVal);
-
-    const gap = svgEl('text', {
-      x: isMobile() ? ml : ml + 300,
-      y: isMobile() ? 16 : mt + 4,
-      fill: colors.gold,
-      'font-size': isMobile() ? 11 : 13
-    });
-    gap.textContent = view === 'pain'
-      ? (isMobile() ? `~10^${ratioOrders()} gap (pain >> pleasure)` : `Gap ≈ ${ratioOrders()} orders of magnitude (pain >> pleasure)`)
-      : (isMobile() ? 'Bliss case shrinks the gap' : 'Bliss case shrinks the gap — inspect the catalog collapse');
-    svg.appendChild(gap);
+    draw(pSteps, xP, '#7a9a8c');
+    draw(nSteps, xN, '#b85c55');
 
     node.replaceChildren(svg);
   }
 
-  function renderMap() {
-    const node = document.getElementById('pm-map');
-    const mobile = isMobile();
-    const width = 640, height = mobile ? 300 : 320;
-    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Pleasure catalog vs pain topology' });
-    svg.appendChild(svgEl('rect', { x: 0, y: 0, width, height, fill: '#0a0e14' }));
-
-    const step = currentStep();
-    const cx = mobile ? width * 0.28 : 170;
-    const cy = mobile ? height * 0.42 : 160;
-
-    data.pleasureCatalog.forEach((item, i) => {
-      const angle = (i / data.pleasureCatalog.length) * Math.PI * 2 - Math.PI / 2;
-      const r = 34 + (i % 3) * 8;
-      const x = cx + Math.cos(angle) * r;
-      const y = cy + Math.sin(angle) * r;
-      const dot = svgEl('circle', {
-        cx: x, cy: y, r: step.id >= 1 ? 7 : 4,
-        fill: colors.gold, opacity: step.id >= 1 ? .95 : .35
-      });
-      bindTip(dot, () => `<strong>${item.label}</strong><br>Channel: ${item.channel}<br>Collapses with synthetics`);
-      svg.appendChild(dot);
-    });
-
-    const channelRing = svgEl('circle', {
-      cx, cy, r: mobile ? 46 : 58, fill: 'none', stroke: colors.bliss, 'stroke-width': 1.5,
-      opacity: step.id >= 1 ? .55 : .15, 'stroke-dasharray': '4 4'
-    });
-    svg.appendChild(channelRing);
-    const cLabel = svgEl('text', { x: cx, y: mobile ? 18 : 24, fill: colors.bliss, 'font-size': mobile ? 10 : 12, 'text-anchor': 'middle' });
-    cLabel.textContent = mobile ? `Pleasure (${data.channels.length} ch.)` : `Pleasure catalog (${data.channels.length} channels)`;
-    svg.appendChild(cLabel);
-
-    const painCx = mobile ? width * 0.72 : 430;
-    const painCy = mobile ? height * 0.42 : 160;
-    data.painBases.forEach((item, i) => {
-      const angle = (i / data.painBases.length) * Math.PI * 2;
-      const ring = 48 + (i % 4) * 16 + (step.id >= 2 ? 12 : 0);
-      const x = painCx + Math.cos(angle) * ring;
-      const y = painCy + Math.sin(angle) * ring;
-      const dot = svgEl('circle', {
-        cx: x, cy: y, r: step.id >= 2 ? 5 : 3,
-        fill: colors.pain, opacity: step.id >= 2 ? .85 : .25
-      });
-      bindTip(dot, () => `<strong>${item.label}</strong><br>Category: ${item.cat}<br>Does not compress to one SKU`);
-      svg.appendChild(dot);
-
-      if (step.id >= 3 && activeDims.size) {
-        activeDims.forEach((dimId, j) => {
-          const dim = data.dimensions.find(d => d.id === dimId);
-          const spr = svgEl('line', {
-            x1: x, y1: y,
-            x2: painCx + Math.cos(angle + j * 0.4) * (ring + 24),
-            y2: painCy + Math.sin(angle + j * 0.4) * (ring + 24),
-            stroke: colors.violet, 'stroke-width': 1, opacity: .45
-          });
-          svg.appendChild(spr);
-        });
-      }
-    });
-
-    const cloud = svgEl('ellipse', {
-      cx: painCx, cy: painCy,
-      rx: step.id >= 3 ? 120 + activeDims.size * 14 : (step.id >= 2 ? 92 : 60),
-      ry: step.id >= 3 ? 88 + activeDims.size * 10 : (step.id >= 2 ? 68 : 42),
-      fill: colors.pain, opacity: step.id >= 2 ? .08 : .03
-    });
-    svg.insertBefore(cloud, svg.firstChild.nextSibling);
-
-    const pLabel = svgEl('text', { x: painCx, y: mobile ? 18 : 24, fill: colors.pain, 'font-size': mobile ? 10 : 12, 'text-anchor': 'middle' });
-    pLabel.textContent = step.id >= 3
-      ? (mobile ? `Pain (${activeDims.size} dims)` : `Pain topology (${activeDims.size} dims active)`)
-      : 'Pain bases';
-    svg.appendChild(pLabel);
-
-    node.replaceChildren(svg);
-  }
-
-  function renderSteps() {
-    const node = document.getElementById('pm-steps');
-    node.innerHTML = data.steps.map((step, i) => `
-      <button type="button" class="pm-step ${i === stepIndex ? 'is-active' : ''} ${i < stepIndex ? 'is-done' : ''}" data-step="${i}">
-        <strong>${step.id}. ${step.title}</strong>
-        <small>${step.body}</small>
-      </button>
-    `).join('');
-    node.querySelectorAll('.pm-step').forEach(btn => {
-      btn.addEventListener('click', () => {
-        stepIndex = Number(btn.dataset.step);
-        syncDimsForStep();
-        renderAll();
-      });
-    });
-  }
-
-  function syncDimsForStep() {
-    const step = currentStep();
-    if (step.unlockDims >= 5) {
-      data.dimensions.forEach(d => activeDims.add(d.id));
-    } else if (step.unlockDims === 0) {
-      activeDims.clear();
-    }
-  }
-
-  function renderDims() {
-    const step = currentStep();
-    const node = document.getElementById('pm-dims');
-    node.innerHTML = data.dimensions.map(dim => {
-      const locked = step.unlockDims < 3;
-      const checked = activeDims.has(dim.id);
-      return `
-        <label class="pm-dim ${locked ? 'is-locked' : ''}">
-          <input type="checkbox" data-dim="${dim.id}" ${checked ? 'checked' : ''} ${locked ? 'disabled' : ''}>
-          <span><strong>${dim.label}</strong> ×${dim.multiplier}<br>${dim.example}</span>
-        </label>
-      `;
-    }).join('');
-    node.querySelectorAll('input[data-dim]').forEach(input => {
-      input.addEventListener('change', () => {
-        const id = input.dataset.dim;
-        if (input.checked) activeDims.add(id);
-        else activeDims.delete(id);
-        renderAll(false);
-      });
-    });
-  }
-
-  function renderVerdict() {
-    const node = document.getElementById('pm-verdict');
-    const step = currentStep();
-    if (view === 'bliss') {
-      node.className = 'pm-verdict bliss';
-      node.innerHTML = `<strong>Bliss case (steelman)</strong><br>${data.blissRebuttal}`;
-      return;
-    }
-    node.className = 'pm-verdict';
-    node.innerHTML = step.id === 5
-      ? `<strong>${step.title}</strong><br>${step.body}`
-      : `<strong>Step ${step.id}</strong><br>${step.body}`;
-  }
-
-  function renderToggle() {
-    const toggle = root.querySelector('.pm-toggle');
-    if (!toggle || toggle.dataset.bound) return;
-    toggle.dataset.bound = 'true';
-    toggle.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-view]');
+  function renderProfileButtons() {
+    const bar = root.querySelector('.pm-profile');
+    if (!bar || bar.dataset.bound) return;
+    bar.dataset.bound = 'true';
+    bar.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-profile]');
       if (!btn) return;
-      view = btn.dataset.view;
-      toggle.querySelectorAll('button').forEach(b => {
-        const active = b === btn;
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-      renderAll(false);
+      profile = btn.dataset.profile;
+      bar.querySelectorAll('button').forEach(b => b.classList.toggle('is-active', b === btn));
+      const result = analyze(profile);
+      renderMetrics(result);
+      renderChart(result);
     });
   }
 
-  function renderAll(rebuildSteps = true) {
-    renderStats();
-    renderRatioChart();
-    renderMap();
-    renderDims();
-    renderVerdict();
-    if (rebuildSteps) renderSteps();
+  function renderAll() {
+    const result = analyze(profile);
+    renderMetrics(result);
+    renderChart(result);
   }
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => renderAll(false), 120);
-  });
-  document.addEventListener('click', () => hideTip());
-
-  syncDimsForStep();
-  renderToggle();
+  renderProfileButtons();
   renderAll();
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(renderAll, 120); });
 })();
 </script>
