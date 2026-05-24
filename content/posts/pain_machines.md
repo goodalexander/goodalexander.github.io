@@ -326,9 +326,11 @@ ShowToc: true
 }
 .pm-brain3d-view {
   position: relative;
-  height: 480px;
+  height: 520px;
   min-height: 360px;
-  background: radial-gradient(ellipse 80% 70% at 50% 42%, rgba(184,92,85,.07), transparent 65%), #060708;
+  background: radial-gradient(ellipse 85% 75% at 50% 45%, rgba(184,92,85,.09), transparent 62%),
+              radial-gradient(ellipse 40% 30% at 72% 78%, rgba(122,154,140,.05), transparent 55%),
+              #030405;
 }
 .pm-brain3d-view canvas {
   display: block;
@@ -1055,7 +1057,7 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
     }
   }</script>
-  <script type="module" src="/research/pain_machines/brain3d.js?v=2"></script>
+  <script type="module" src="/research/pain_machines/brain3d.js?v=3"></script>
   <div class="pm-brain-legend" aria-hidden="true">
     <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
     <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>
