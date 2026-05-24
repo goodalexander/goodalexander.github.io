@@ -1114,7 +1114,7 @@ More sections forthcoming: Eden mislabeled, the pleasure stack vs pain kernel, P
   </li>
   <li>
     <a href="https://www.nature.com/articles/35053509">Hunt SP, Mantyh PW (2001). The molecular dynamics of pain control. <em>Nat Rev Neurosci</em> 2:83–91.</a>
-    <span class="use">Parallel spinothalamic (sensory) vs spinoparabrachial (affective) pain pathways; mechanism heterogeneity.</span>
+    <span class="use">Parallel spinothalamic (sensory) vs spinoparabrachial (affective) pain pathways; mechanism heterogeneity; integrative brain map (§ neuroarchitecture).</span>
   </li>
   <li>
     <a href="https://pubmed.ncbi.nlm.nih.gov/14500928/">Eisenberger NI et al. (2003). Does rejection hurt? An fMRI study of social exclusion. <em>Science</em> 302(5643):290–292.</a>
