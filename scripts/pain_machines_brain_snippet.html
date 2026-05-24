@@ -1,0 +1,69 @@
+<div class="pm-fig-brain" id="fig-brain">
+  <div class="pm-brain3d" id="pm-brain3d">
+    <div class="pm-brain3d-layout">
+      <div class="pm-brain3d-view" id="pm-brain3d-canvas-wrap">
+        <canvas id="pm-brain3d-canvas"></canvas>
+        <div class="pm-brain3d-labels" aria-hidden="true"></div>
+        <div class="pm-brain3d-hud">
+          <div class="pm-brain3d-metric n"><b id="pm-b3d-pain">—</b><span>pain states</span></div>
+          <div class="pm-brain3d-metric p"><b id="pm-b3d-pleasure">—</b><span>pleasure</span></div>
+          <div class="pm-brain3d-metric r"><b id="pm-b3d-ratio">—</b><span>log₁₀ ratio</span></div>
+        </div>
+        <div class="pm-b3d-compare" id="pm-b3d-compare">
+          <div class="pm-b3d-compare-title">footprint</div>
+          <div class="pm-b3d-compare-row pain">
+            <span>pain network</span>
+            <div class="track"><div class="fill" id="pm-b3d-pain-bar"></div></div>
+            <b id="pm-b3d-pain-bar-label">—</b>
+          </div>
+          <div class="pm-b3d-compare-row pleasure">
+            <span>pleasure cluster</span>
+            <div class="track"><div class="fill" id="pm-b3d-pleasure-bar"></div></div>
+            <b id="pm-b3d-pleasure-bar-label">—</b>
+          </div>
+          <div class="pm-b3d-compare-ratio" id="pm-b3d-compare-ratio">—</div>
+        </div>
+        <div class="pm-b3d-callout pain" id="pm-b3d-callout-pain">PAIN NETWORK<small>sprawls</small></div>
+        <div class="pm-b3d-callout pleasure" id="pm-b3d-callout-pleasure">PLEASURE POD<small>clusters</small></div>
+      </div>
+      <div class="pm-brain3d-controls">
+        <h5>Pathway sliders</h5>
+        <div class="pm-b3d-slider pain">
+          <label>somatic <b data-slider-val="somatic">72</b></label>
+          <input type="range" min="0" max="100" value="72" data-slider="somatic">
+        </div>
+        <div class="pm-b3d-slider pain">
+          <label>sensory <b data-slider-val="sensory">85</b></label>
+          <input type="range" min="0" max="100" value="85" data-slider="sensory">
+        </div>
+        <div class="pm-b3d-slider pain">
+          <label>affective <b data-slider-val="affective">88</b></label>
+          <input type="range" min="0" max="100" value="88" data-slider="affective">
+        </div>
+        <div class="pm-b3d-slider pain">
+          <label>social <b data-slider-val="social">55</b></label>
+          <input type="range" min="0" max="100" value="55" data-slider="social">
+        </div>
+        <div class="pm-b3d-slider pain">
+          <label>memory <b data-slider-val="cognitive">70</b></label>
+          <input type="range" min="0" max="100" value="70" data-slider="cognitive">
+        </div>
+        <div class="pm-b3d-slider pleasure">
+          <label>pleasure <b data-slider-val="pleasure">42</b></label>
+          <input type="range" min="0" max="100" value="42" data-slider="pleasure">
+        </div>
+        <div class="pm-b3d-slider pleasure">
+          <label>drugs collapse joy <b data-slider-val="pharma">35</b></label>
+          <input type="range" min="0" max="100" value="35" data-slider="pharma">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pm-brain-legend" aria-hidden="true">
+    <span><i class="p-som"></i> sensory</span>
+    <span><i class="p-aff"></i> affective</span>
+    <span><i class="p-cog"></i> memory</span>
+    <span><i class="p-soc"></i> social</span>
+    <span><i class="p-ple"></i> pleasure</span>
+  </div>
+</div>

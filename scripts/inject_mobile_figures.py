@@ -373,7 +373,10 @@ MOBILE: dict[str, str] = {
 
 
 def inject_stacks(article: str) -> str:
-    for fid, stack in MOBILE.items():
+    wanted = set(MOBILE.keys())
+    for fid in wanted:
+        if f'id="{fid}"' not in article:
+            continue
         pat = (
             rf'(<figure class="pm-fig pm-fig-evidence" id="{re.escape(fid)}">'
             rf'.*?<div class="pm-fig-head">.*?</div>\s*)'
@@ -381,7 +384,7 @@ def inject_stacks(article: str) -> str:
             rf'(\s*(?:<p class="pm-fig-cap">|</figure>))'
         )
 
-        def repl(m: re.Match, stack_html: str = stack) -> str:
+        def repl(m: re.Match, stack_html: str = MOBILE[fid]) -> str:
             if "pm-fig-stack" in m.group(0):
                 return m.group(0)
             wide = m.group(2).strip()
