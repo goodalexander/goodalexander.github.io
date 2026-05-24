@@ -1276,7 +1276,7 @@ One creature. Too many red doors.
     <span class="pm-m-tag pain">stabbing</span>
     <span class="pm-m-tag pain">shooting</span>
     <span class="pm-m-tag pain">sickening</span>
-    <span class="pm-m-tag pain"> exhausting</span>
+    <span class="pm-m-tag pain">exhausting</span>
     <span class="pm-m-tag pain">terrifying</span>
     <span class="pm-m-tag pain">punishing</span>
     <span class="pm-m-tag pain">gnawing</span>
