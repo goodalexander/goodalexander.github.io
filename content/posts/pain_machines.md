@@ -631,13 +631,21 @@ ShowToc: true
   .pm-compute-head { align-items: stretch; }
   .pm-profile { width: 100%; }
   .pm-profile button { flex: 1; text-align: center; }
-  .pm-fig { overflow: hidden; }
-  .pm-fig svg {
+  .pm-fig:not(.pm-fig-evidence) { overflow: hidden; }
+  .pm-fig:not(.pm-fig-evidence) svg {
     display: block;
     width: 100%;
     height: auto;
     min-width: 0;
     max-width: 100%;
+  }
+  .pm-fig-evidence {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pm-fig-evidence svg {
+    min-width: 640px;
+    max-width: none;
   }
   .pm-fig-head { flex-direction: column; align-items: flex-start; gap: .35rem; }
   .pm-fig-head h4 { font-size: .8rem; line-height: 1.35; }
@@ -702,30 +710,6 @@ ShowToc: true
 }
 
 
-.pm-viz-wrap {
-  width: 100%;
-  min-height: 240px;
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-}
-.pm-viz-wrap canvas.pm-viz {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-}
-.pm-viz-cap {
-  margin: 0;
-  padding: .7rem 1rem;
-  border-top: 1px solid var(--line);
-  font-size: .82rem;
-  line-height: 1.45;
-  color: var(--ink);
-  max-width: none;
-  font-weight: 500;
-}
-.pm-fig-viz .pm-fig-fallback { display: none !important; }
 .pm-beat {
   margin: 0 0 1rem;
   font-size: .92rem;
@@ -734,12 +718,24 @@ ShowToc: true
   max-width: 42ch;
 }
 @media (max-width: 720px) {
-  .pm-viz-wrap {
-    min-height: 280px;
-  }
   .pm p, .pm li { max-width: none; font-size: .88rem; line-height: 1.6; }
   .pm-after { font-size: .82rem; }
   .pm-beat { max-width: none; font-size: .86rem; }
+}
+.pm-fig-evidence svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+}
+.pm-fig-cap {
+  margin: 0;
+  padding: .75rem 1rem;
+  border-top: 1px solid var(--line);
+  font-size: .84rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: none;
 }
 
 </style>
@@ -785,13 +781,32 @@ Christianity, Islam, secular humanism disagree on God and salvation. They agree 
 
 Christianity, Islam, and secular humanism each permit repair but forbid exit.
 
-<figure class="pm-fig pm-fig-viz" id="pmx-00">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-00</span>
-    <h4>The Warranty Card in the Crib</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-00">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W0</span>
+    <h4>The warranty card in the crib</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="warranty" aria-label="Every birth ships a warranty: repair yes, exit no."></canvas></div>
-  <p class="pm-viz-cap">Every birth ships a warranty: repair yes, exit no.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="The warranty card in the crib">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">WARRANTY CARD · SHIPPED AT BIRTH</text>
+    <rect x="40" y="48" width="380" height="240" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="4"/>
+    <text x="56" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="11">PRODUCT</text>
+    <text x="160" y="78" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="13" font-weight="700">Homo sapiens</text>
+    <text x="56" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="11">KNOWN DEFECTS</text>
+    <text x="160" y="108" fill="#b85c55" font-family="ui-monospace,monospace" font-size="12">pain · fear · grief · decay · death</text>
+    <text x="56" y="138" fill="#555c64" font-family="ui-monospace,monospace" font-size="11">TERMS</text>
+    <text x="160" y="138" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">repair permitted · exit prohibited</text>
+    <rect x="56" y="160" width="348" height="48" fill="#120909" stroke="#b89a6a" rx="3"/>
+    <text x="230" y="190" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="14" font-weight="700" text-anchor="middle">VOID THE WARRANTY</text>
+    <rect x="460" y="48" width="420" height="240" fill="#0a0b0d" stroke="#b85c55" rx="4"/>
+    <text x="476" y="78" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="700">THREE REGIMES · SAME CLAUSE</text>
+    <text x="476" y="110" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">Christianity → sanctify body · forbid exit</text>
+    <text x="476" y="140" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">Islam → amanah · forbid self-ownership</text>
+    <text x="476" y="170" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">Secular → dignity · forbid natural-kind break</text>
+    <text x="476" y="210" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">repair yes · exit no</text>
+  </svg>
+  <p class="pm-fig-cap">Every civilization assigns repair rights and forbids exit from the inherited human format before consent is possible.</p>
 </figure>
 <p class="pm-after">The warranty is hidden because its success depends on being mistaken for nature. It teaches the newborn that repair is mercy and exit is sacrilege. The first refusal is to decline the signature.</p>
 
@@ -833,136 +848,479 @@ Phantom limb theory meets IASP definition meets ICD-11 meets McGill meets reward
 One creature. Too many red doors.
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Ronald Melzack, McGill University, 1999</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Neuromatrix theory: pain is distributed brain output, not a wound-to-wire signal.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Explains phantom and chronic pain as generated architecture, not mere injury.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN/J Dent Educ; widely cited and clinically influential.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-neuromatrix">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-neuromatrix">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">1a</span>
     <h4>Neuromatrix: pain generated by the whole brain</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/11780656/">Melzack 2001</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="neuromatrix" aria-label="Many inputs converge. The brain writes pain before the wound finishes arguing."></canvas></div>
-  <p class="pm-viz-cap">Many inputs converge. The brain writes pain before the wound finishes arguing.</p>
+  <svg viewBox="0 0 760 340" role="img" aria-label="Melzack neuromatrix: multiple brain inputs converge to pain output">
+    <defs>
+      <radialGradient id="pm0-pm-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#b85c55" stop-opacity=".35"/>
+        <stop offset="100%" stop-color="#b85c55" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="pm0-pm-soft"><feGaussianBlur stdDeviation="1.2"/></filter>
+    </defs>
+    <rect width="760" height="340" fill="transparent"/>
+    <text x="380" y="28" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">body-self neuromatrix · neurosignature patterns</text>
+    <ellipse cx="380" cy="168" rx="92" ry="52" fill="url(#pm0-pm-glow)"/>
+    <rect x="308" y="138" width="144" height="60" rx="4" fill="#0f1012" stroke="rgba(184,92,85,.55)" stroke-width="1.2"/>
+    <text x="380" y="162" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">neuromatrix</text>
+    <text x="380" y="178" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">pain output pattern</text>
+    <g fill="none" stroke-width="1">
+      <path id="pm0-pm-p1" d="M380 52 L380 138" stroke="rgba(184,92,85,.25)" stroke-dasharray="4 3"/>
+      <path id="pm0-pm-p2" d="M88 98 Q234 118 308 158" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm0-pm-p3" d="M672 98 Q526 118 452 158" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm0-pm-p4" d="M88 238 Q234 218 308 178" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm0-pm-p5" d="M672 238 Q526 218 452 178" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm0-pm-p6" d="M380 288 L380 198" stroke="rgba(184,154,106,.45)"/>
+    </g>
+    <g font-family="ui-monospace,monospace" font-size="10">
+      <rect x="318" y="36" width="124" height="22" rx="3" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
+      <text x="380" y="51" fill="#b85c55" text-anchor="middle">somatic input</text>
+      <text x="380" y="68" fill="#555c64" font-size="8" text-anchor="middle">one contributor · insufficient alone</text>
+      <rect x="36" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="88" y="98" fill="#b89a6a" text-anchor="middle">appraisal</text>
+      <text x="88" y="110" fill="#555c64" font-size="8" text-anchor="middle">meaning</text>
+      <rect x="620" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="672" y="98" fill="#b89a6a" text-anchor="middle">social field</text>
+      <text x="672" y="110" fill="#555c64" font-size="8" text-anchor="middle">context</text>
+      <rect x="36" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="88" y="238" fill="#b89a6a" text-anchor="middle">memory</text>
+      <text x="88" y="250" fill="#555c64" font-size="8" text-anchor="middle">prior episodes</text>
+      <rect x="620" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="672" y="238" fill="#b89a6a" text-anchor="middle">identity</text>
+      <text x="672" y="250" fill="#555c64" font-size="8" text-anchor="middle">self-schema</text>
+      <rect x="318" y="288" width="124" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="380" y="304" fill="#b89a6a" text-anchor="middle">stress / attention</text>
+      <text x="380" y="316" fill="#555c64" font-size="8" text-anchor="middle">arousal gate</text>
+    </g>
+    <g fill="#b89a6a" opacity=".9">
+      <circle r="3"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M88 98 Q234 118 308 158"/></circle>
+      <circle r="3"><animateMotion dur="3.1s" repeatCount="indefinite" begin=".4s" path="M672 98 Q526 118 452 158"/></circle>
+      <circle r="3"><animateMotion dur="2.9s" repeatCount="indefinite" begin=".8s" path="M88 238 Q234 218 308 178"/></circle>
+      <circle r="3"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.1s" path="M672 238 Q526 218 452 178"/></circle>
+      <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.4s" path="M380 288 L380 198"/></circle>
+      <circle r="2.5" fill="#b85c55" opacity=".65"><animateMotion dur="3.4s" repeatCount="indefinite" begin=".2s" path="M380 52 L380 138"/></circle>
+    </g>
+    <g transform="translate(520 148)">
+      <path d="M0 0 L48 0" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm0-pm-arr)"/>
+      <defs><marker id="pm0-pm-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b85c55"/></marker></defs>
+      <rect x="52" y="-18" width="118" height="36" rx="3" fill="#120909" stroke="#b85c55" stroke-width="1"/>
+      <text x="111" y="-2" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain experience</text>
+      <text x="111" y="12" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">≠ damage magnitude</text>
+    </g>
+  </svg>
+
+  <p class="pm-fig-cap">Melzack broke the courtroom model of pain. The nervous system builds pain from signal, map, memory, stress, and expectation. A pain-machine chassis needs this distributed author.</p>
 </figure>
-<p class="pm-after">Melzack broke the courtroom model of pain. The nervous system builds pain from signal, map, memory, stress, and expectation. A pain-machine chassis needs this distributed author.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">IASP task force, International Association for the Study of Pain, 2020</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Revised pain as sensory and emotional, tied to actual or potential damage.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Official medicine treats pain as experience, not a simple tissue meter.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN; global clinical definition used across research and care.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-iasp">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-iasp">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">1b</span>
     <h4>IASP 2020: sensory and emotional are inseparable</h4>
     <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7680716/">Raja et al. 2020</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="iasp" aria-label="Sensory and emotional pain arrive together. One channel, two alarms."></canvas></div>
-  <p class="pm-viz-cap">Sensory and emotional pain arrive together. One channel, two alarms.</p>
+  <svg viewBox="0 0 760 260" role="img" aria-label="IASP definition: sensory and emotional channels always co-occur in pain">
+    <text x="380" y="24" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">revised IASP definition · two mandatory dimensions</text>
+    <rect x="40" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)" stroke-width="1"/>
+    <text x="190" y="72" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">sensory experience</text>
+    <text x="190" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">quality · intensity · location · duration</text>
+    <rect x="420" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)" stroke-width="1"/>
+    <text x="570" y="72" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">emotional experience</text>
+    <text x="570" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">unpleasantness · distress · threat</text>
+    <path d="M190 104 L190 132 L380 132 L380 160" fill="none" stroke="rgba(184,92,85,.5)" stroke-width="1.2"/>
+    <path d="M570 104 L570 132 L380 132" fill="none" stroke="rgba(184,154,106,.5)" stroke-width="1.2"/>
+    <circle r="3" fill="#b85c55"><animateMotion dur="2.2s" repeatCount="indefinite" path="M190 104 L190 132 L380 132 L380 160"/></circle>
+    <circle r="3" fill="#b89a6a"><animateMotion dur="2.2s" repeatCount="indefinite" begin=".35s" path="M570 104 L570 132 L380 132 L380 160"/></circle>
+    <rect x="260" y="160" width="240" height="52" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
+      <animate attributeName="stroke-opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="380" y="182" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">pain</text>
+    <text x="380" y="198" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">always both · never sensory-only</text>
+    <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text>
+  </svg>
+
+  <p class="pm-fig-cap">Official medicine no longer treats pain as a tissue meter. Pain is sensory, emotional, learned, and sometimes present without visible damage. The warranty story loses the convenience of a simple wound.</p>
 </figure>
-<p class="pm-after">Official medicine no longer treats pain as a tissue meter. Pain is sensory, emotional, learned, and sometimes present without visible damage. The warranty story loses the convenience of a simple wound.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">WHO and IASP working group, Treede et al., 2019</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">ICD-11 classifies chronic primary and secondary pain as diagnoses.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Chronic pain becomes a disease category, not a long complaint.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">WHO ICD-11; PAIN taxonomy adopted internationally.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-icd11">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-icd11">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">1c</span>
     <h4>ICD-11 MG30: seven chronic-pain categories, nested subtypes</h4>
     <a class="pm-cite" href="https://journals.lww.com/pain/fulltext/2022/02000/classification_of_chronic_pain_for_the.29.aspx">Treede et al. 2022</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="icd11" aria-label="Pain branches in the clinic. One label was never enough."></canvas></div>
-  <p class="pm-viz-cap">Pain branches in the clinic. One label was never enough.</p>
+  <svg viewBox="0 0 760 340" role="img" aria-label="ICD-11 chronic pain taxonomy with seven top-level categories">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">ICD-11 chapter MG30 · seven top-level categories</text>
+    <rect x="300" y="34" width="160" height="32" rx="3" fill="#0f1012" stroke="#b89a6a" stroke-width="1.2"/>
+    <text x="380" y="54" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">MG30 chronic pain</text>
+    <line x1="380" y1="66" x2="380" y2="76" stroke="rgba(184,92,85,.45)"/>
+    <line x1="108" y1="76" x2="652" y2="76" stroke="rgba(184,92,85,.35)"/>
+    <g font-family="ui-monospace,monospace" font-size="9">
+      <line x1="108" y1="76" x2="108" y2="86" stroke="rgba(184,92,85,.35)"/>
+      <rect x="32" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin="0s" fill="freeze"/></rect>
+      <text x="108" y="104" fill="#b85c55" text-anchor="middle">MG30.0 primary</text>
+      <text x="108" y="118" fill="#555c64" text-anchor="middle">nociplastic</text>
+      <line x1="290" y1="76" x2="290" y2="86" stroke="rgba(184,92,85,.35)"/>
+      <rect x="214" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".1s" fill="freeze"/></rect>
+      <text x="290" y="104" fill="#b85c55" text-anchor="middle">MG30.1 cancer</text>
+      <text x="290" y="118" fill="#555c64" text-anchor="middle">tumor · treatment</text>
+      <line x1="472" y1="76" x2="472" y2="86" stroke="rgba(184,92,85,.35)"/>
+      <rect x="396" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".2s" fill="freeze"/></rect>
+      <text x="472" y="104" fill="#b85c55" text-anchor="middle">MG30.2 postsurgical</text>
+      <text x="472" y="118" fill="#555c64" text-anchor="middle">posttraumatic</text>
+      <line x1="652" y1="76" x2="652" y2="86" stroke="rgba(184,92,85,.35)"/>
+      <rect x="576" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".3s" fill="freeze"/></rect>
+      <text x="652" y="104" fill="#b85c55" text-anchor="middle">MG30.3 musculoskeletal</text>
+      <text x="652" y="118" fill="#555c64" text-anchor="middle">secondary</text>
+      <line x1="380" y1="76" x2="380" y2="150" stroke="rgba(184,92,85,.25)"/>
+      <line x1="195" y1="150" x2="565" y2="150" stroke="rgba(184,92,85,.25)"/>
+      <line x1="195" y1="150" x2="195" y2="160" stroke="rgba(184,92,85,.35)"/>
+      <rect x="119" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".42s" fill="freeze"/></rect>
+      <text x="195" y="178" fill="#b85c55" text-anchor="middle">MG30.4 visceral</text>
+      <text x="195" y="192" fill="#555c64" text-anchor="middle">secondary</text>
+      <line x1="380" y1="150" x2="380" y2="160" stroke="rgba(184,92,85,.35)"/>
+      <rect x="304" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".54s" fill="freeze"/></rect>
+      <text x="380" y="178" fill="#b85c55" text-anchor="middle">MG30.5 neuropathic</text>
+      <text x="380" y="192" fill="#555c64" text-anchor="middle">nerve lesion · disease</text>
+      <line x1="565" y1="150" x2="565" y2="160" stroke="rgba(184,92,85,.35)"/>
+      <rect x="489" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".66s" fill="freeze"/></rect>
+      <text x="565" y="178" fill="#b85c55" text-anchor="middle">MG30.6 headache</text>
+      <text x="565" y="192" fill="#555c64" text-anchor="middle">orofacial · secondary</text>
+    </g>
+    <rect x="80" y="228" width="600" height="48" rx="3" fill="#120909" stroke="rgba(184,92,85,.35)"/>
+    <text x="380" y="248" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">each category → nested subtypes · severity · interference · psychosocial modifiers</text>
+    <text x="380" y="264" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers = combinatorial clinical space</text>
+  </svg>
+
+  <p class="pm-fig-cap">ICD-11 makes chronic pain a disease category. A signal can outlive its usefulness and become the illness. The machine can keep the alarm after the fire is gone.</p>
 </figure>
-<p class="pm-after">ICD-11 makes chronic pain a disease category. A signal can outlive its usefulness and become the illness. The machine can keep the alarm after the fire is gone.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Ronald Melzack, McGill University, 1975</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">McGill Pain Questionnaire maps sensory, affective, and evaluative descriptors.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">The clipboard grew because suffering has many sanctioned names.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN; translated, validated, and used worldwide.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-mcgill">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-mcgill">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">1d</span>
     <h4>McGill MPQ: 78 words because pain factorizes in language</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/1235985/">Melzack 1975</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="mcgill" aria-label="Patients name pain in dozens of ways. Pleasure shares fewer words."></canvas></div>
-  <p class="pm-viz-cap">Patients name pain in dozens of ways. Pleasure shares fewer words.</p>
+  <svg viewBox="0 0 760 280" role="img" aria-label="McGill Pain Questionnaire descriptor inventory across four word classes">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">McGill MPQ · 78 pain descriptors in four word classes</text>
+    <g font-family="ui-monospace,monospace">
+      <rect x="24" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
+      <text x="106" y="62" fill="#b85c55" font-size="10" text-anchor="middle">sensory</text>
+      <text x="106" y="78" fill="#555c64" font-size="9" text-anchor="middle">20 words</text>
+      <g fill="#b85c55" opacity=".75">
+        <circle cx="48" cy="98" r="4"/><circle cx="68" cy="98" r="4"/><circle cx="88" cy="98" r="4"/><circle cx="108" cy="98" r="4"/>
+        <circle cx="128" cy="98" r="4"/><circle cx="148" cy="98" r="4"/><circle cx="168" cy="98" r="4"/>
+        <circle cx="58" cy="118" r="4"/><circle cx="78" cy="118" r="4"/><circle cx="98" cy="118" r="4"/><circle cx="118" cy="118" r="4"/>
+      </g>
+      <text x="106" y="148" fill="#8a9199" font-size="8" text-anchor="middle">shooting · burning</text>
+      <text x="106" y="162" fill="#8a9199" font-size="8" text-anchor="middle">throbbing · stabbing</text>
+      <rect x="204" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.45)"/>
+      <text x="286" y="62" fill="#b89a6a" font-size="10" text-anchor="middle">affective</text>
+      <text x="286" y="78" fill="#555c64" font-size="9" text-anchor="middle">12 words</text>
+      <g fill="#b89a6a" opacity=".75">
+        <circle cx="248" cy="104" r="4"/><circle cx="272" cy="104" r="4"/><circle cx="296" cy="104" r="4"/><circle cx="320" cy="104" r="4"/>
+        <circle cx="260" cy="124" r="4"/><circle cx="284" cy="124" r="4"/><circle cx="308" cy="124" r="4"/>
+      </g>
+      <text x="286" y="148" fill="#8a9199" font-size="8" text-anchor="middle">tiring · sickening</text>
+      <text x="286" y="162" fill="#8a9199" font-size="8" text-anchor="middle">fearful · punishing</text>
+      <rect x="384" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.45)"/>
+      <text x="466" y="62" fill="#8a9199" font-size="10" text-anchor="middle">evaluative</text>
+      <text x="466" y="78" fill="#555c64" font-size="9" text-anchor="middle">5 words</text>
+      <g fill="#8a9199" opacity=".75">
+        <circle cx="436" cy="110" r="4"/><circle cx="466" cy="110" r="4"/><circle cx="496" cy="110" r="4"/>
+      </g>
+      <text x="466" y="148" fill="#8a9199" font-size="8" text-anchor="middle">annoying · miserable</text>
+      <text x="466" y="162" fill="#8a9199" font-size="8" text-anchor="middle">unbearable · …</text>
+      <rect x="564" y="40" width="172" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
+      <text x="650" y="62" fill="#b85c55" font-size="10" text-anchor="middle">miscellaneous</text>
+      <text x="650" y="78" fill="#555c64" font-size="9" text-anchor="middle">41 words</text>
+      <g fill="#b85c55" opacity=".45">
+        <circle cx="590" cy="96" r="3"/><circle cx="610" cy="96" r="3"/><circle cx="630" cy="96" r="3"/><circle cx="650" cy="96" r="3"/><circle cx="670" cy="96" r="3"/><circle cx="690" cy="96" r="3"/><circle cx="710" cy="96" r="3"/>
+        <circle cx="600" cy="112" r="3"/><circle cx="620" cy="112" r="3"/><circle cx="640" cy="112" r="3"/><circle cx="660" cy="112" r="3"/><circle cx="680" cy="112" r="3"/><circle cx="700" cy="112" r="3"/>
+        <circle cx="590" cy="128" r="3"/><circle cx="610" cy="128" r="3"/><circle cx="630" cy="128" r="3"/><circle cx="650" cy="128" r="3"/><circle cx="670" cy="128" r="3"/><circle cx="690" cy="128" r="3"/><circle cx="710" cy="128" r="3"/>
+      </g>
+      <text x="650" y="162" fill="#8a9199" font-size="8" text-anchor="middle">tight · heavy · splitting · …</text>
+    </g>
+    <rect x="24" y="206" width="712" height="36" rx="3" fill="#120909" stroke="#b85c55"/>
+    <text x="380" y="228" fill="#b85c55" font-size="10" text-anchor="middle">78 distinguishable pain states — from vocabulary alone, before combinatorics</text>
+  </svg>
+
+  <p class="pm-fig-cap">The McGill questionnaire is a language map. Burning, stabbing, sickening, exhausting, terrifying, punishing: the words keep multiplying. Pain demands a vocabulary that pleasure rarely requires.</p>
 </figure>
-<p class="pm-after">The McGill questionnaire is a language map. Burning, stabbing, sickening, exhausting, terrifying, punishing: the words keep multiplying. Pain demands a vocabulary that pleasure rarely requires.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Donald D. Price, University of Florida, 1980s–2000s</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Psychophysics separated pain intensity from unpleasantness.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pain has dimensions; one wound can spawn several kinds of suffering.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN and Science literature; replicated in imaging and clinics.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-price">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-price">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">1e</span>
     <h4>Price: sensation, unpleasantness, and secondary affect dissociate</h4>
     <a class="pm-cite" href="https://doi.org/10.1126/science.288.5472.1769">Price 2000</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="price" aria-label="Pain stacks: intensity, dread, grief. Pleasure rarely builds floors."></canvas></div>
-  <p class="pm-viz-cap">Pain stacks: intensity, dread, grief. Pleasure rarely builds floors.</p>
+  <svg viewBox="0 0 760 200" role="img" aria-label="Serial dissociation of pain sensation intensity, unpleasantness, and secondary affect">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">affective dimension of pain · serial processing stages</text>
+    <g font-family="ui-monospace,monospace">
+      <rect x="40" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)"/>
+      <text x="130" y="76" fill="#b85c55" font-size="10" text-anchor="middle">sensation intensity</text>
+      <text x="130" y="92" fill="#555c64" font-size="8" text-anchor="middle">spinothalamic · SI / SII</text>
+      <path d="M220 80 L268 80" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm4-pm-a2)"/>
+      <rect x="272" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)"/>
+      <text x="362" y="76" fill="#b89a6a" font-size="10" text-anchor="middle">pain unpleasantness</text>
+      <text x="362" y="92" fill="#555c64" font-size="8" text-anchor="middle">ACC · medial thalamus</text>
+      <path d="M452 80 L500 80" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm4-pm-a2)"/>
+      <rect x="504" y="52" width="216" height="56" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.5)"/>
+      <text x="612" y="76" fill="#8a9199" font-size="10" text-anchor="middle">secondary affect</text>
+      <text x="612" y="92" fill="#555c64" font-size="8" text-anchor="middle">prefrontal · autonomic · motor plans</text>
+      <defs><marker id="pm4-pm-a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
+    </g>
+    <g>
+      <rect x="40" y="130" width="680" height="44" rx="3" fill="#060708" stroke="rgba(235,228,220,.08)"/>
+      <text x="380" y="150" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">opioid analgesia ↓ unpleasantness more than intensity · stages remain separable</text>
+      <text x="380" y="166" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">≠ bliss under fentanyl (pleasure collapses to receptor class)</text>
+      <circle r="3" fill="#b85c55"><animateMotion dur="4s" repeatCount="indefinite" path="M130 108 L130 130 L380 152"/></circle>
+      <circle r="3" fill="#b89a6a"><animateMotion dur="4s" repeatCount="indefinite" begin=".5s" path="M362 108 L362 130 L380 152"/></circle>
+      <circle r="3" fill="#8a9199"><animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M612 108 L612 130 L380 152"/></circle>
+    </g>
+  </svg>
+
+  <p class="pm-fig-cap">Price showed that intensity and unpleasantness can separate. The same heat can be measured as strength and misery. One injury becomes more than one ledger.</p>
 </figure>
-<p class="pm-after">Price showed that intensity and unpleasantness can separate. The same heat can be measured as strength and misery. One injury becomes more than one ledger.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Kent Berridge, University of Michigan, 1990s–2010s</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Separated wanting from liking; mapped compact hedonic hot spots.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pleasure reuses circuits and saturates; it does not branch like pain.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Neuron/Nat Rev Neurosci; core reward-science framework.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-berridge">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-berridge">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">2a</span>
     <h4>Berridge: small &ldquo;liking&rdquo; hotspots, sprawling &ldquo;wanting&rdquo; system</h4>
     <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4425246/">Berridge &amp; Kringelbach 2015</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="berridge" aria-label="Liking is tiny. Wanting runs the warehouse."></canvas></div>
-  <p class="pm-viz-cap">Liking is tiny. Wanting runs the warehouse.</p>
+  <svg viewBox="0 0 760 300" role="img" aria-label="Hedonic hotspots versus distributed wanting circuitry with pharmacological collapse">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pleasure systems · causation vs representation</text>
+    <text x="190" y="48" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">liking (causal hotspots)</text>
+    <text x="570" y="48" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">wanting (mesolimbic spread)</text>
+    <g transform="translate(60 60)">
+      <circle cx="60" cy="50" r="22" fill="rgba(122,154,140,.15)" stroke="#7a9a8c" stroke-width="1.2"><animate attributeName="r" values="20;24;20" dur="3s" repeatCount="indefinite"/></circle>
+      <text x="60" y="54" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">NAc</text>
+      <circle cx="130" cy="90" r="18" fill="rgba(122,154,140,.12)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="16;20;16" dur="3.2s" repeatCount="indefinite"/></circle>
+      <text x="130" y="94" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">VP</text>
+      <circle cx="95" cy="130" r="16" fill="rgba(122,154,140,.1)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="14;18;14" dur="2.8s" repeatCount="indefinite"/></circle>
+      <text x="95" y="134" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">OFC</text>
+      <text x="95" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 hedonic hotspots</text>
+    </g>
+    <g transform="translate(400 60)" opacity=".85">
+      <circle cx="95" cy="60" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="140" cy="45" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="180" cy="75" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="120" cy="100" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="170" cy="115" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="210" cy="50" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="230" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="60" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <line x1="95" y1="60" x2="140" y2="45" stroke="rgba(85,92,100,.4)"/>
+      <line x1="140" y1="45" x2="210" y2="50" stroke="rgba(85,92,100,.4)"/>
+      <line x1="95" y1="60" x2="120" y2="100" stroke="rgba(85,92,100,.4)"/>
+      <line x1="180" y1="75" x2="230" y2="95" stroke="rgba(85,92,100,.4)"/>
+      <line x1="120" y1="100" x2="170" y2="115" stroke="rgba(85,92,100,.4)"/>
+      <text x="145" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">VTA · amygdala · hippocampus · …</text>
+    </g>
+    <text x="380" y="200" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">pharmacological quotient · modalities collapse to receptor class</text>
+    <g font-family="ui-monospace,monospace" font-size="8">
+      <rect x="48" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
+      <text x="84" y="232" fill="#7a9a8c" text-anchor="middle">food</text>
+      <rect x="136" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
+      <text x="172" y="232" fill="#7a9a8c" text-anchor="middle">sex</text>
+      <rect x="224" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
+      <text x="260" y="232" fill="#7a9a8c" text-anchor="middle">music</text>
+      <rect x="312" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
+      <text x="348" y="232" fill="#7a9a8c" text-anchor="middle">win</text>
+    </g>
+    <path d="M420 228 L480 228" stroke="#7a9a8c" stroke-width="1.2" marker-end="url(#pm5-pm-grn)"/>
+    <defs><marker id="pm5-pm-grn" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7a9a8c"/></marker></defs>
+    <rect x="488" y="210" width="128" height="36" rx="3" fill="#0f1210" stroke="#7a9a8c" stroke-width="1.2">
+      <animate attributeName="stroke-opacity" values=".55;1;.55" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="552" y="226" fill="#7a9a8c" font-size="9" text-anchor="middle">~4 receptor</text>
+    <text x="552" y="238" fill="#7a9a8c" font-size="9" text-anchor="middle">classes</text>
+    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M84 240 L552 240"/></circle>
+    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin=".5s" path="M172 240 L552 240"/></circle>
+    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1s" path="M260 240 L552 240"/></circle>
+    <text x="640" y="232" fill="#555c64" font-family="ui-monospace,monospace" font-size="8">synthetic agonists · interchangeable SKUs</text>
+  </svg>
+
+  <p class="pm-fig-cap">Berridge split wanting from liking. Reward can chase what it no longer enjoys, and pleasure occupies compact hot spots. Green circuitry has tricks; red circuitry has empires.</p>
 </figure>
-<p class="pm-after">Berridge split wanting from liking. Reward can chase what it no longer enjoys, and pleasure occupies compact hot spots. Green circuitry has tricks; red circuitry has empires.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Siri Leknes and Irene Tracey, Oxford/Oslo, 2008</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Reviewed shared and opponent circuitry for pain, pleasure, and relief.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Relief shows pleasure often borrows the end of pain.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Nature Reviews Neuroscience; heavily cited synthesis.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-leknes">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-leknes">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">2b</span>
     <h4>Leknes &amp; Tracey: shared opioid/dopamine substrate — substitutability</h4>
     <a class="pm-cite" href="https://www.nature.com/articles/nrn2333">Leknes &amp; Tracey 2008</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="leknes" aria-label="Relief and reward share pipes with pain. Substitution is built in."></canvas></div>
-  <p class="pm-viz-cap">Relief and reward share pipes with pain. Substitution is built in.</p>
+  <svg viewBox="0 0 760 220" role="img" aria-label="Common neurobiology for pain and pleasure with mutual inhibition">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">common neurobiology · mutual inhibition of pain and reward</text>
+    <ellipse cx="380" cy="108" rx="120" ry="44" fill="rgba(184,154,106,.08)" stroke="rgba(184,154,106,.35)"/>
+    <text x="380" y="104" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">μ-opioid · dopamine</text>
+    <text x="380" y="118" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">shared mesolimbic substrate</text>
+    <rect x="60" y="72" width="140" height="40" rx="3" fill="#120909" stroke="#b85c55"/>
+    <text x="130" y="96" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain circuit</text>
+    <rect x="560" y="72" width="140" height="40" rx="3" fill="#0f1210" stroke="#7a9a8c"/>
+    <text x="630" y="96" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reward circuit</text>
+    <path d="M200 92 Q290 92 260 108" fill="none" stroke="#b85c55" stroke-width="1.2"/>
+    <path d="M560 92 Q470 92 500 108" fill="none" stroke="#7a9a8c" stroke-width="1.2"/>
+    <path d="M320 108 Q380 148 440 108" fill="none" stroke="rgba(235,228,220,.2)" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="380" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">mutual inhibition ↔</text>
+    <circle r="3" fill="#b85c55"><animateMotion dur="2.5s" repeatCount="indefinite" path="M200 92 Q290 92 260 108"/></circle>
+    <circle r="3" fill="#7a9a8c"><animateMotion dur="2.5s" repeatCount="indefinite" begin=".4s" path="M560 92 Q470 92 500 108"/></circle>
+    <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text>
+  </svg>
+
+  <p class="pm-fig-cap">Relief is pleasure with a history of threat. The nervous system can reward the end of pain while keeping pain at the center of the drama. Even green light often borrows from red darkness.</p>
 </figure>
-<p class="pm-after">Relief is pleasure with a history of threat. The nervous system can reward the end of pain while keeping pain at the center of the drama. Even green light often borrows from red darkness.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Roy Baumeister et al., Case Western Reserve University, 2001</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Reviewed evidence that bad events outweigh good ones in mind and behavior.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">The asymmetry appears outside the clinic: harm writes deeper.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Review of General Psychology; landmark, widely cited review.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-baumeister">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-baumeister">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">3a</span>
     <h4>Baumeister: bad is stronger than good across domains</h4>
     <a class="pm-cite" href="https://doi.org/10.1037/1089-2680.5.4.323">Baumeister et al. 2001</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="baumeister" aria-label="Bad events outweigh matched good ones. The scale tips red."></canvas></div>
-  <p class="pm-viz-cap">Bad events outweigh matched good ones. The scale tips red.</p>
+  <svg viewBox="0 0 760 260" role="img" aria-label="Negative events outweigh positive across psychological domains">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">cross-domain review · effect size asymmetry</text>
+    <line x1="380" y1="44" x2="380" y2="220" stroke="rgba(235,228,220,.12)" stroke-width="1"/>
+    <g font-family="ui-monospace,monospace" font-size="9">
+      <text x="380" y="38" fill="#555c64" text-anchor="middle">neutral</text>
+      <rect x="120" y="60" width="240" height="22" rx="2" fill="#7a9a8c" opacity=".55"><animate attributeName="width" from="0" to="240" dur="1.2s" fill="freeze"/></rect>
+      <text x="370" y="75" fill="#7a9a8c" text-anchor="end">positive events</text>
+      <rect x="120" y="96" width="380" height="22" rx="2" fill="#b85c55" opacity=".7"><animate attributeName="width" from="0" to="380" dur="1.4s" begin=".2s" fill="freeze"/></rect>
+      <text x="510" y="111" fill="#b85c55">negative events</text>
+      <text x="120" y="140" fill="#555c64">trauma · relationships · learning · self-concept · almost no exceptions</text>
+    </g>
+    <g transform="translate(120 160)">
+      <text x="0" y="0" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">information processing depth →</text>
+      <rect x="0" y="8" width="120" height="14" rx="2" fill="#7a9a8c" opacity=".4"/>
+      <rect x="0" y="8" width="220" height="14" rx="2" fill="#b85c55" opacity=".55"><animate attributeName="width" from="120" to="220" dur="2s" repeatCount="indefinite" direction="alternate"/></rect>
+      <text x="230" y="19" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8">negative weighed more thoroughly</text>
+    </g>
+  </svg>
+
+  <p class="pm-fig-cap">Bad events leave stronger marks than good ones. The clinic is not an exception to ordinary mind; it is the concentrated case. Harm writes in heavier ink.</p>
 </figure>
-<p class="pm-after">Bad events leave stronger marks than good ones. The clinic is not an exception to ordinary mind; it is the concentrated case. Harm writes in heavier ink.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Paul Rozin and Edward Royzman, University of Pennsylvania, 2001</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Named negativity bias, dominance, gradients, and contagion.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Bad spreads categories and stains neighbors; good stays narrower.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Personality and Social Psychology Review; foundational taxonomy.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-rozin">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-rozin">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">3b</span>
     <h4>Rozin &amp; Royzman: negative differentiation — suffering is more varied</h4>
     <a class="pm-cite" href="https://doi.org/10.1207/S15327957PSPR0504_2">Rozin &amp; Royzman 2001</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="rozin" aria-label="Bad spreads. Good stays local."></canvas></div>
-  <p class="pm-viz-cap">Bad spreads. Good stays local.</p>
+  <svg viewBox="0 0 760 260" role="img" aria-label="Negative states are more varied with richer representations than positive states">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative differentiation · cardinality of affective states</text>
+    <g transform="translate(100 50)">
+      <text x="80" y="0" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">positive</text>
+      <g fill="#7a9a8c" opacity=".6">
+        <circle cx="50" cy="40" r="6"/><circle cx="80" cy="55" r="5"/><circle cx="110" cy="38" r="5"/><circle cx="70" cy="70" r="4"/>
+      </g>
+      <text x="80" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">fewer distinct categories</text>
+    </g>
+    <g transform="translate(420 50)">
+      <text x="120" y="0" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative</text>
+      <g fill="#b85c55" opacity=".7">
+        <circle cx="30" cy="30" r="5"><animate attributeName="cy" values="30;34;30" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="60" cy="45" r="6"><animate attributeName="cy" values="45;40;45" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle cx="90" cy="28" r="5"><animate attributeName="cy" values="28;32;28" dur="2.8s" repeatCount="indefinite"/></circle>
+        <circle cx="120" cy="50" r="5"><animate attributeName="cy" values="50;46;50" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="150" cy="35" r="6"><animate attributeName="cy" values="35;39;35" dur="2.6s" repeatCount="indefinite"/></circle>
+        <circle cx="180" cy="55" r="4"><animate attributeName="cy" values="55;51;55" dur="2.3s" repeatCount="indefinite"/></circle>
+        <circle cx="75" cy="68" r="5"><animate attributeName="cy" values="68;64;68" dur="2.7s" repeatCount="indefinite"/></circle>
+        <circle cx="135" cy="72" r="5"><animate attributeName="cy" values="72;68;72" dur="2.1s" repeatCount="indefinite"/></circle>
+        <circle cx="200" cy="42" r="4"><animate attributeName="cy" values="42;38;42" dur="2.9s" repeatCount="indefinite"/></circle>
+      </g>
+      <text x="120" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">richer representations · wider response repertoire</text>
+    </g>
+    <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text>
+  </svg>
+
+  <p class="pm-fig-cap">Rozin and Royzman named the stain. Bad spreads to neighbors, meanings, memories, and symbols. Pain machines become culture machines when negativity learns language.</p>
 </figure>
-<p class="pm-after">Rozin and Royzman named the stain. Bad spreads to neighbors, meanings, memories, and symbols. Pain machines become culture machines when negativity learns language.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Naomi Eisenberger, UCLA, 2003–2012</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Cyberball and imaging linked social rejection to affective pain circuits.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pain escapes tissue and enters status, belonging, and shame.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Science/PNAS; influential, debated, and refined by later imaging.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-eisenberger">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-eisenberger">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">3c</span>
     <h4>Eisenberger: social pain without peripheral nociception</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/14500928/">Eisenberger et al. 2003</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="eisenberger" aria-label="Ostracism lights the same circuits as bodily hurt."></canvas></div>
-  <p class="pm-viz-cap">Ostracism lights the same circuits as bodily hurt.</p>
+  <svg viewBox="0 0 760 240" role="img" aria-label="Social exclusion activates dorsal anterior cingulate pain circuitry">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">Cyberball exclusion · fMRI · no somatic injury</text>
+    <rect x="60" y="48" width="200" height="72" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.4)"/>
+    <text x="160" y="72" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">social exclusion</text>
+    <text x="160" y="88" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">passive observer · rejected</text>
+    <text x="160" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">stimulus: ostracism · no tissue damage</text>
+    <path d="M260 84 L320 84" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm9-pm-a3)"/>
+    <defs><marker id="pm9-pm-a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
+    <rect x="324" y="48" width="160" height="72" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
+      <animate attributeName="stroke-opacity" values=".5;1;.5" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="404" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">dACC activation</text>
+    <text x="404" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">affective pain matrix</text>
+    <path d="M484 84 L544 84" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm9-pm-a3)"/>
+    <rect x="548" y="48" width="152" height="72" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
+    <text x="624" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reported distress</text>
+    <text x="624" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">psychological suffering state</text>
+    <circle r="3" fill="#b89a6a"><animateMotion dur="2.8s" repeatCount="indefinite" path="M160 120 L160 148 L404 148 L404 120"/></circle>
+    <text x="380" y="180" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">new pain dimensions · same finite channels for engineered comfort</text>
+    <rect x="200" y="196" width="360" height="28" rx="3" fill="none" stroke="rgba(184,92,85,.35)" stroke-dasharray="4 3"/>
+    <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text>
+  </svg>
+
+  <p class="pm-fig-cap">Social exclusion recruits circuits that also handle bodily distress. The wound can arrive through a face, a silence, a room that stops welcoming you. The pain-machine chassis is social hardware.</p>
 </figure>
-<p class="pm-after">Social exclusion recruits circuits that also handle bodily distress. The wound can arrive through a face, a silence, a room that stops welcoming you. The pain-machine chassis is social hardware.</p>
+
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Richard Lazarus and Susan Folkman, UC Berkeley, 1984</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Appraisal theory: stress depends on threat, loss, challenge, and coping.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Meaning multiplies pain; the same event can become different suffering.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Springer/Oxford stress theory; standard in health psychology.</span></div></div>
-<figure class="pm-fig pm-fig-viz" id="fig-lazarus">
-<div class="pm-fig-head">
+<figure class="pm-fig pm-fig-evidence" id="fig-lazarus">
+  <div class="pm-fig-head">
     <span class="pm-fig-n">3d</span>
     <h4>Lazarus: same stressor, different suffering by appraisal frame</h4>
     <a class="pm-cite" href="https://archive.org/details/stressappraisalc0000laza">Lazarus &amp; Folkman 1984</a>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="lazarus" aria-label="Same injury. Different story. Different suffering."></canvas></div>
-  <p class="pm-viz-cap">Same injury. Different story. Different suffering.</p>
+  <svg viewBox="0 0 760 220" role="img" aria-label="Cognitive appraisal transforms identical stressors into distinct suffering states">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">stress · appraisal · coping · independent suffering axis</text>
+    <rect x="300" y="44" width="160" height="40" rx="3" fill="#0a0b0d" stroke="rgba(235,228,220,.2)"/>
+    <text x="380" y="68" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">identical injury / loss</text>
+    <path d="M380 84 L380 108" stroke="rgba(235,228,220,.2)"/>
+    <path d="M380 108 L120 132" stroke="rgba(184,92,85,.35)"/>
+    <path d="M380 108 L380 132" stroke="rgba(184,92,85,.35)"/>
+    <path d="M380 108 L640 132" stroke="rgba(184,92,85,.35)"/>
+    <g font-family="ui-monospace,monospace" font-size="9">
+      <rect x="40" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b85c55"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="0s" repeatCount="indefinite"/></rect>
+      <text x="120" y="154" fill="#b85c55" text-anchor="middle">injustice frame</text>
+      <text x="120" y="170" fill="#555c64" text-anchor="middle">rage · betrayal suffering</text>
+      <rect x="300" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b89a6a"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="1s" repeatCount="indefinite"/></rect>
+      <text x="380" y="154" fill="#b89a6a" text-anchor="middle">fate frame</text>
+      <text x="380" y="170" fill="#555c64" text-anchor="middle">grief · helplessness</text>
+      <rect x="560" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#8a9199"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
+      <text x="640" y="154" fill="#8a9199" text-anchor="middle">self-blame frame</text>
+      <text x="640" y="170" fill="#555c64" text-anchor="middle">shame · guilt suffering</text>
+    </g>
+    <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text>
+  </svg>
+
+  <p class="pm-fig-cap">Lazarus and Folkman made appraisal central. Threat, loss, challenge, blame, and coping alter the felt event. The same blow can become injury, insult, prophecy, or doom.</p>
 </figure>
-<p class="pm-after">Lazarus and Folkman made appraisal central. Threat, loss, challenge, blame, and coping alter the felt event. The same blow can become injury, insult, prophecy, or doom.</p>
+
 
 The witnesses do not say that pleasure is fake. Joy survives this indictment. It had better; otherwise the animal would stop breeding, praying, trading, singing, flirting, building, and buying shoes.
 
@@ -1088,7 +1446,7 @@ Pain keeps adding addresses.
     }
   }</script>
   <script type="module" src="/research/pain_machines/brain3d.js?v=4"></script>
-<div class="pm-brain-legend" aria-hidden="true">
+  <div class="pm-brain-legend" aria-hidden="true">
     <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
     <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>
     <span><i class="p-cog"></i> cognitive / memory (mPFC · hippocampus · appraisal)</span>
@@ -1178,13 +1536,35 @@ Change profile if the exact ratio bothers you. The direction stays the same.
 
 Conservative and liberal profiles bracket the band by varying bin counts only. No fitted constants.
 
-<figure class="pm-fig pm-fig-viz" id="pmx-01">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-01</span>
-    <h4>The Pain Ledger</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-01">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W1</span>
+    <h4>The pain ledger</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="ledger" aria-label="Pleasure plateaus. Pain opens files."></canvas></div>
-  <p class="pm-viz-cap">Pleasure plateaus. Pain opens files.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="The pain ledger">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">PAIN LEDGER vs PLEASURE LEDGER</text>
+    <text x="40" y="58" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11">PLEASURE (few branches)</text>
+    <rect x="40" y="68" width="120" height="24" fill="#0a0b0d" stroke="#7a9a8c" rx="2"/><text x="100" y="84" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">reward</text>
+    <rect x="170" y="68" width="90" height="24" fill="#0a0b0d" stroke="#7a9a8c" rx="2"/><text x="215" y="84" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">satiety</text>
+    <rect x="270" y="68" width="70" height="24" fill="#0a0b0d" stroke="#7a9a8c" rx="2"/><text x="305" y="84" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">calm</text>
+    <text x="40" y="130" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">PAIN (branches multiply)</text>
+    <rect x="40" y="140" width="100" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="90" y="155" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">nociception</text>
+    <rect x="150" y="140" width="100" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="200" y="155" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">neuropathy</text>
+    <rect x="260" y="140" width="90" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="305" y="155" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">allodynia</text>
+    <rect x="40" y="170" width="90" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="85" y="185" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">panic</text>
+    <rect x="140" y="170" width="90" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="185" y="185" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">grief</text>
+    <rect x="240" y="170" width="110" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="295" y="185" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">chronicity</text>
+    <rect x="40" y="200" width="100" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="90" y="215" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">trauma mem.</text>
+    <rect x="150" y="200" width="100" height="22" fill="#0a0b0d" stroke="#b85c55" rx="2"/><text x="200" y="215" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">shame</text>
+    <text x="460" y="58" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="13">Clinical + psych evidence:</text>
+    <text x="460" y="88" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">McGill 78 descriptors vs ~11 drug families</text>
+    <text x="460" y="118" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">ICD-11 seven chronic pain categories</text>
+    <text x="460" y="148" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">Baumeister: bad &gt; good across domains</text>
+    <text x="460" y="190" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="13" font-weight="700">suffering enumerates faster</text>
+  </svg>
+  <p class="pm-fig-cap">Pleasure categories plateau; pain proliferates into sensation, emotion, memory, identity, and law.</p>
 </figure>
 <p class="pm-after">The ledger has a moral shape. Pleasure enters, crests, adapts, and returns toward baseline; pain opens procedural branches. The inherited organism is optimized for threat survival, then left to experience the cost.</p>
 
@@ -1200,13 +1580,16 @@ It requires only the asymmetry that the evidence keeps finding: suffering differ
 Pleasure has glory; pain has administration.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-02">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-02</span>
-    <h4>The Alarm Stack</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-02">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W2</span>
+    <h4>Alarm stack</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="stack" aria-label="Alarm rises tissue → identity. Upper layers keep screaming."></canvas></div>
-  <p class="pm-viz-cap">Alarm rises tissue → identity. Upper layers keep screaming.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Alarm stack">
+    <rect width="920" height="320" fill="#040506"/>
+<text x="40" y="36" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">ALARM STACK · CLINICAL ESCALATION</text><rect x="40" y="60" width="840" height="32" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="56" y="80" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12">tissue · nociceptor</text><circle cx="860" cy="76" r="6" fill="#b85c55"/><rect x="40" y="100" width="840" height="32" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="56" y="120" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12">spinal gate · thalamus</text><circle cx="860" cy="116" r="6" fill="#b85c55"/><rect x="40" y="140" width="840" height="32" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="56" y="160" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12">insula · ACC</text><circle cx="860" cy="156" r="6" fill="#b85c55"/><rect x="40" y="180" width="840" height="32" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="56" y="200" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12">memory · prediction</text><circle cx="860" cy="196" r="6" fill="#b85c55"/><rect x="40" y="220" width="840" height="32" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="56" y="240" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12">identity · social cost</text><circle cx="860" cy="236" r="6" fill="#b85c55"/>
+  </svg>
+  <p class="pm-fig-cap">Pain is not one signal — it climbs tissue → brain → memory → identity. Central sensitization keeps firing after healing.</p>
 </figure>
 <p class="pm-after">The computation has no piety. It refuses to flatter the animal. When categories are counted honestly, red keeps adding rooms and green keeps finding shared exits.</p>
 
@@ -1244,13 +1627,25 @@ The sewer deserves no medal.
 
 Torture is measurement by arson. The torturer changes the document, then treats the smoke as testimony. He asks for truth from a system he is busy breaking.
 
-<figure class="pm-fig pm-fig-viz" id="pmx-03">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-03</span>
-    <h4>Genesis as QA Report</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-03">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W3</span>
+    <h4>Genesis as QA report</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="genesis" aria-label="Genesis reads like a defect table once you stop blaming the user."></canvas></div>
-  <p class="pm-viz-cap">Genesis reads like a defect table once you stop blaming the user.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Genesis as QA report">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">GENESIS 2–3 · DEFECT REPORT</text>
+    <text x="40" y="70" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">TRADITIONAL READ</text>
+    <text x="200" y="70" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">disobedience → curse → guilt</text>
+    <text x="40" y="110" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10">DEFECT READ</text>
+    <text x="200" y="110" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">embodied vulnerability → reproductive trauma → mortality</text>
+    <rect x="40" y="140" width="840" height="120" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="4"/>
+    <text x="56" y="168" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">dust → breath → command → tree → eye opens</text>
+    <text x="56" y="198" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">birth pain · toil · grave (hardware properties, not moral invoice)</text>
+    <rect x="56" y="218" width="14" height="14" fill="#b85c55"/><text x="80" y="230" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">root cause: design architecture (not user error)</text>
+  </svg>
+  <p class="pm-fig-cap">The curse list matches a product defect table once you stop assigning guilt downstream.</p>
 </figure>
 <p class="pm-after">Torture is the one-dial theory in uniform. It treats pain as a route to truth and produces noise, compliance, collapse, and revenge. The failed folk model exposes the same error Genesis made.</p>
 
@@ -1281,13 +1676,22 @@ The so-called curses read like hardware properties. Reproductive trauma. Metabol
 None of these looks like an exotic punishment added to an otherwise angelic mammal. They look like the installed conditions of carbon life under predation, reproduction, entropy, and nervous tissue.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-04">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-04</span>
-    <h4>Original Sin Inversion</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-04">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W4</span>
+    <h4>Original sin inversion</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="inversion" aria-label="Warranty theology sends guilt down. The defect report sends it up."></canvas></div>
-  <p class="pm-viz-cap">Warranty theology sends guilt down. The defect report sends it up.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Original sin inversion">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">ORIGINAL SIN · TWO READINGS</text>
+    <text x="40" y="68" fill="#555c64" font-family="ui-monospace,monospace" font-size="11">WARRANTY THEOLOGY</text>
+    <text x="40" y="92" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">disobedience → Fall → suffering → redemption ✝</text>
+    <text x="40" y="140" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">DEFECT REPORT</text>
+    <text x="40" y="164" fill="#b85c55" font-family="ui-monospace,monospace" font-size="12">pain-machine architecture → consciousness of harm → blame narrative</text>
+    <text x="40" y="220" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="13" font-weight="700">fault moves upstream ↑</text>
+  </svg>
+  <p class="pm-fig-cap">Standard theology sends guilt to the creature. The defect report sends it to the design.</p>
 </figure>
 <p class="pm-after">The curse list reads like a hardware table: birth injury, scarcity, shame, labor, decay, death. The narrative calls it sentencing. The defect report calls it installed condition.</p>
 
@@ -1373,13 +1777,30 @@ Exit belongs to persons, voluntary lineages, competent associations, and jurisdi
 
 Civilization is not consensus therapy. It is title, boundary, competence, succession, and command. The question is who holds title over the human form: the warranty, or the sufferer.
 
-<figure class="pm-fig pm-fig-viz" id="pmx-05">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-05</span>
-    <h4>Mandate Ladder</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-05">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W5</span>
+    <h4>Mandate ladder: therapy to exit</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="ladder" aria-label="Every regime blesses the ladder until you cross outside the original format."></canvas></div>
-  <p class="pm-viz-cap">Every regime blesses the ladder until you cross outside the original format.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Mandate ladder: therapy to exit">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="28" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">MANDATE LADDER · THERAPY → EXIT</text>
+    <rect x="40" y="48" width="200" height="32" fill="#0a0b0d" stroke="#7a9a8c" rx="3"/><text x="140" y="68" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">pain medicine</text>
+    <rect x="40" y="88" width="200" height="32" fill="#0a0b0d" stroke="#7a9a8c" rx="3"/><text x="140" y="108" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">prosthetics · psychiatry</text>
+    <rect x="40" y="128" width="200" height="32" fill="#0a0b0d" stroke="#7a9a8c" rx="3"/><text x="140" y="148" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">gene repair · neural IF</text>
+    <line x1="40" y1="180" x2="880" y2="180" stroke="#b89a6a" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="460" y="172" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">OUTSIDE ORIGINAL FORMAT</text>
+    <rect x="40" y="196" width="200" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/><text x="140" y="216" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">affect editing</text>
+    <rect x="40" y="236" width="200" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/><text x="140" y="256" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">synthetic body</text>
+    <rect x="40" y="276" width="200" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/><text x="140" y="296" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">substrate migration</text>
+    <rect x="280" y="196" width="620" height="112" fill="#120909" stroke="#b85c55" rx="4"/>
+    <text x="296" y="222" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="700">VETO BANDS (all three regimes)</text>
+    <text x="296" y="248" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Christian: resurrection body · natural law</text>
+    <text x="296" y="272" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Islam: fitra · Q 4:119 altering creation</text>
+    <text x="296" y="296" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Secular: dignity · species continuity · Factor X</text>
+  </svg>
+  <p class="pm-fig-cap">Every regime blesses repair until repair becomes escape from the inherited chassis.</p>
 </figure>
 <p class="pm-after">Exit begins when intelligence stops asking the factory for mercy. AI and redesigned bodies are not decorations on the old animal. They are the route around the inherited pain-machine format.</p>
 
@@ -1429,13 +1850,23 @@ It may imagine glorified bodies, but the glorification is divine, eschatological
 The creature may be transfigured by God. The creature may not void the warranty and leave the model line by its own intelligence.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-06">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-06</span>
-    <h4>Christian Warranty Map</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-06">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W6</span>
+    <h4>Christian warranty map</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="christian" aria-label="Christianity heals the product. It cannot recall it."></canvas></div>
-  <p class="pm-viz-cap">Christianity heals the product. It cannot recall it.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Christian warranty map">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">CHRISTIAN WARRANTY MAP</text>
+    <rect x="360" y="60" width="200" height="56" fill="#120909" stroke="#b89a6a" rx="4"/>
+    <text x="460" y="92" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">human body</text>
+    <text x="40" y="140" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11">✓ repair: medicine · prosthetic · charity</text>
+    <text x="40" y="170" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">✗ exit: abandon flesh · rival eschatology</text>
+    <text x="40" y="210" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">imago Dei · incarnation · resurrection body · 1 Cor 6 temple</text>
+    <text x="40" y="250" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">REDEEM · DO NOT RECALL</text>
+  </svg>
+  <p class="pm-fig-cap">Christianity can heal the product; it cannot admit the product should never have shipped.</p>
 </figure>
 <p class="pm-after">The Christian warranty is strong because it honors the wounded body. Its boundary appears when healing becomes departure. The creature may be repaired, glorified by God, and resurrected, but not self-exited from Adam's frame.</p>
 
@@ -1487,13 +1918,24 @@ The nafs may be disciplined, but escape from the nafs by architectural replaceme
 A machine intelligence as servant can be folded into stewardship. A machine intelligence as successor outside the Adamic frame threatens the order of stewardship itself.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-07">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-07</span>
-    <h4>Islamic Warranty Map</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-07">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W7</span>
+    <h4>Islamic warranty map</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="islam" aria-label="Islam: stewardship under divine title, not self-ownership."></canvas></div>
-  <p class="pm-viz-cap">Islam: stewardship under divine title, not self-ownership.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Islamic warranty map">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">ISLAMIC WARRANTY MAP</text>
+    <rect x="340" y="56" width="240" height="64" fill="#0a0b0d" stroke="#b89a6a" rx="4"/>
+    <text x="460" y="88" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="14" text-anchor="middle">AMANAH</text>
+    <text x="460" y="108" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">body as trust · Q 2:30 khilafa</text>
+    <text x="40" y="150" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11">✓ therapeutic repair under divine title</text>
+    <text x="40" y="180" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">✗ ontological alteration · self-ownership · contempt for clay</text>
+    <text x="40" y="220" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">fitra Q 30:30 · Q 4:119 · Iblis and clay · nafs · qiyamah</text>
+    <text x="40" y="260" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12">stewardship ≠ manufacture</text>
+  </svg>
+  <p class="pm-fig-cap">The boundary is not repair vs no repair. It is trust vs ownership.</p>
 </figure>
 <p class="pm-after">The Islamic warranty speaks in trust rather than incarnation. Medicine is allowed; stewardship is honored. Exit crosses the line when the entrusted form becomes raw material for a different kind of being.</p>
 
@@ -1548,13 +1990,25 @@ Its theology is immanent. The sacred object is the common human subject. Rights 
 Equality becomes tied to resemblance. The pain machine is protected because the legal order fears that without the pain machine, the moral community loses its central icon.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-08">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-08</span>
-    <h4>Secular Humanist Trap</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-08">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W8</span>
+    <h4>Secular humanist trap</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="secular" aria-label="Secular dignity needs something unchanged. Factor X is the secular soul."></canvas></div>
-  <p class="pm-viz-cap">Secular dignity needs something unchanged. Factor X is the secular soul.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Secular humanist trap">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">SECULAR HUMANIST TRAP</text>
+    <polygon points="460,60 720,260 200,260" fill="none" stroke="rgba(235,228,220,.12)" stroke-width="1.5"/>
+    <text x="460" y="48" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">DIGNITY</text>
+    <text x="200" y="278" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">EQUALITY</text>
+    <text x="720" y="278" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">NATURAL KIND</text>
+    <circle cx="460" cy="180" r="40" fill="#0a0b0d" stroke="#b89a6a"/>
+    <text x="460" y="186" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">FACTOR X</text>
+    <text x="40" y="120" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">posthuman exit breaks the triangle</text>
+    <text x="40" y="148" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Fukuyama · Habermas · UNESCO · Oviedo Convention</text>
+  </svg>
+  <p class="pm-fig-cap">Secular dignity is imago Dei with the serial numbers filed off.</p>
 </figure>
 <p class="pm-after">Secular dignity protects the weak, then hardens into a species border. It repairs the pain machine while treating exit as an attack on equality. The old warranty survives without God.</p>
 
@@ -1599,13 +2053,36 @@ It permits radical medicine, morphological freedom, AI personhood where experien
 It does not require everyone to leave. It requires that no theology or dignity regime keep the door welded shut.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-09">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-09</span>
-    <h4>Three Warranty Regimes</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-09">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">W9</span>
+    <h4>Three warranty regimes</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="regimes" aria-label="Three heavens. One lock on exit."></canvas></div>
-  <p class="pm-viz-cap">Three heavens. One lock on exit.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Three warranty regimes">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="28" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">THREE WARRANTY REGIMES · CONVERGENCE</text>
+    <text x="80" y="58" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">Christianity</text>
+    <text x="320" y="58" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">Islam</text>
+    <text x="560" y="58" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">Secular humanism</text>
+    <text x="800" y="58" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">All three</text>
+    <text x="40" y="88" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">sacred object</text>
+    <rect x="80" y="72" width="160" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="160" y="90" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">imago Dei · cross</text>
+    <rect x="260" y="72" width="160" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="340" y="90" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">fitra · amanah</text>
+    <rect x="440" y="72" width="160" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="2"/><text x="520" y="90" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">dignity · Factor X</text>
+    <text x="40" y="128" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">repair OK</text>
+    <rect x="80" y="112" width="160" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="2"/><text x="160" y="130" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">medicine · charity</text>
+    <rect x="260" y="112" width="160" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="2"/><text x="340" y="130" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">harm removal</text>
+    <rect x="440" y="112" width="160" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="2"/><text x="520" y="130" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">therapy · rights</text>
+    <text x="40" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">exit forbidden</text>
+    <rect x="80" y="152" width="160" height="28" fill="#120909" stroke="#b85c55" rx="2"/><text x="160" y="170" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">abandon flesh</text>
+    <rect x="260" y="152" width="160" height="28" fill="#120909" stroke="#b85c55" rx="2"/><text x="340" y="170" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">alter creation</text>
+    <rect x="440" y="152" width="160" height="28" fill="#120909" stroke="#b85c55" rx="2"/><text x="520" y="170" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">posthuman taboo</text>
+    <rect x="640" y="112" width="240" height="68" fill="#120909" stroke="#b89a6a" rx="3"/>
+    <text x="760" y="140" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700" text-anchor="middle">repair yes</text>
+    <text x="760" y="162" fill="#b85c55" font-family="ui-monospace,monospace" font-size="12" font-weight="700" text-anchor="middle">exit no</text>
+  </svg>
+  <p class="pm-fig-cap">Different heavens, same lock: each permits repair under its authority but forbids exit from the human format.</p>
 </figure>
 <p class="pm-after">Warranty jurisdictions hold title for the inherited human. Exit jurisdictions return title to the sufferer and the competent association that can carry departure safely. The dispute is sovereignty over form.</p>
 
@@ -1665,13 +2142,26 @@ It asks whose pain is treated as meaningful, whose pain is treated as noise, and
 It asks whether a policy reduces involuntary suffering or merely preserves familiar suffering under sacred language.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-10">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-10</span>
-    <h4>Abolition Roadmap</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-10">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">WA</span>
+    <h4>Abolition roadmap</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="roadmap" aria-label="Abolition is a route, not a sales pitch for heaven."></canvas></div>
-  <p class="pm-viz-cap">Abolition is a route, not a sales pitch for heaven.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Abolition roadmap">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">ABOLITION ROADMAP</text>
+    <line x1="40" y1="160" x2="880" y2="160" stroke="#b89a6a" stroke-width="3"/>
+    <text x="80" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">proof</text>
+    <text x="200" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">mandate</text>
+    <text x="340" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">AI design</text>
+    <text x="480" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">exit labs</text>
+    <text x="620" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">morph freedom</text>
+    <text x="760" y="200" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">post-human ?</text>
+    <text x="40" y="240" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11">now: pain medicine · disability tech · palliative care</text>
+    <text x="40" y="268" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">hazards: misaligned AI · state eugenics · corporate lock-in</text>
+  </svg>
+  <p class="pm-fig-cap">A mandate is an ordered refusal to keep manufacturing hell — not a heaven sales pitch.</p>
 </figure>
 <p class="pm-after">A suffering audit asks what a regime manufactures, preserves, and hides. It counts birth, aging, disease, punishment, animal pain, and artificial minds. A state that forbids exit must sign its name beside the pain it keeps.</p>
 
@@ -1723,13 +2213,32 @@ An ancestor receives a broken inheritance, repairs what can be repaired, and ref
 The last good human may be the one who builds a door and does not rush through it, because he stays behind long enough to make sure the door does not open into another prison.
 
 
-<figure class="pm-fig pm-fig-viz" id="pmx-11">
-<div class="pm-fig-head">
-    <span class="pm-fig-n">PMX-11</span>
-    <h4>Suffering Audit Dashboard</h4>
+<figure class="pm-fig pm-fig-evidence" id="pmx-11">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">WB</span>
+    <h4>Suffering audit dashboard</h4>
   </div>
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="audit" aria-label="Count involuntary suffering. Stop calling preservation mercy."></canvas></div>
-  <p class="pm-viz-cap">Count involuntary suffering. Stop calling preservation mercy.</p>
+  <svg viewBox="0 0 920 320" role="img" aria-label="Suffering audit dashboard">
+    <rect width="920" height="320" fill="#040506"/>
+
+    <text x="40" y="32" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700">SUFFERING AUDIT · GOVERNANCE METRIC</text>
+    <rect x="40" y="56" width="200" height="64" fill="#0a0b0d" stroke="#b85c55" rx="3"/>
+    <text x="56" y="80" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">involuntary pain-hours</text>
+    <text x="56" y="108" fill="#b85c55" font-family="ui-monospace,monospace" font-size="22" font-weight="700">↓ target zero</text>
+    <rect x="260" y="56" width="200" height="64" fill="#0a0b0d" stroke="#b85c55" rx="3"/>
+    <text x="276" y="80" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">chronic pain prevalence</text>
+    <text x="276" y="108" fill="#b85c55" font-family="ui-monospace,monospace" font-size="22" font-weight="700">20%+</text>
+    <rect x="480" y="56" width="200" height="64" fill="#0a0b0d" stroke="#b85c55" rx="3"/>
+    <text x="496" y="80" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">severe mental distress</text>
+    <text x="496" y="108" fill="#b85c55" font-family="ui-monospace,monospace" font-size="22" font-weight="700">970M</text>
+    <rect x="700" y="56" width="180" height="64" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="716" y="80" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">access to exit tech</text>
+    <text x="716" y="108" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="22" font-weight="700">~0%</text>
+    <text x="40" y="160" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">policy levers: analgesia · psychiatric repair · morphological freedom · personhood law · AI safety</text>
+    <polyline points="40,280 200,250 400,220 600,170 880,100" fill="none" stroke="#b89a6a" stroke-width="2"/>
+    <text x="40" y="300" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">abolition target (not optimization of the warranty)</text>
+  </svg>
+  <p class="pm-fig-cap">Count involuntary suffering instead of revering the inherited human format.</p>
 </figure>
 <p class="pm-after">The last duty of the human is ancestral, not preservational. Build descendants that inherit memory without inheriting the torture-map. Leave the pain-machine format without making new prisons in cleaner materials.</p>
 
@@ -1758,7 +2267,6 @@ The last duty is to stop manufacturing the warning as destiny.
 Void the warranty.
 
 </div>
-<script src="/research/pain_machines/pm-viz.js" defer></script>
 
 
 <div class="pm-appendix">
