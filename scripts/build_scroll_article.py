@@ -1,15 +1,29 @@
----
-author: ["goodalexander"]
-title: "Pain Machines"
-date: 2026-05-23T20:00:00Z
-draft: false
-summary: "Humans are pain machines. Original Sin was manufacture, not disobedience. Scroll the proof: clinic, brain map, state-space math, and the mandate to exit the sacred chassis."
-categories: ["philosophy"]
-tags: ["post fiat", "philosophy", "long-form"]
-ShowToc: false
----
+#!/usr/bin/env python3
+"""Build scrollable animation-first Pain Machines article."""
 
-<style>
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[1]
+OUT = REPO / "content/posts/pain_machines.md"
+
+VIZ = [
+    ("neuromatrix", "Melzack", "The brain assembles pain from signals, memory, stress, and meaning — not just tissue damage."),
+    ("iasp", "IASP 2020", "Pain is always sensory and emotional together."),
+    ("icd11", "ICD-11", "Chronic pain is its own disease category — the alarm can outlast the injury."),
+    ("mcgill", "McGill MPQ", "78 words for pain. Pleasure needs far fewer."),
+    ("baumeister", "Baumeister", "Bad events outweigh matched good ones — the scale tips red."),
+    ("eisenberger", "Eisenberger", "Social rejection uses the same circuits as bodily hurt."),
+]
+
+VIZ2 = [
+    ("warranty", "The warranty", "Every culture says: fix the human, never leave the format."),
+    ("inversion", "Original Sin", "Standard story blames the user. Defect report blames the design."),
+    ("regimes", "Three locks", "Christianity · Islam · secular humanism — repair yes, exit no."),
+    ("ladder", "Mandate", "Medicine OK → redesign body → leave biology → AI & new substrate."),
+    ("audit", "Abolition metric", "Count involuntary suffering. Target zero."),
+]
+
+CSS = r"""
 .pm {
   --bg: #040506;
   --panel: #0a0b0d;
@@ -270,48 +284,9 @@ ShowToc: false
   .pm-triad { grid-template-columns: 1fr; }
   .pm-b3d-compare { width: min(200px, 88%); right: auto; left: .65rem; top: auto; bottom: 3rem; }
 }
-</style>
-<div class="pm" id="pain-machines">
+"""
 
-# Pain Machines
-
-<p class="pm-lead">You were built to hurt more than you were built to enjoy. The first cry is a product warning, not proof the product is good.</p>
-
-<section class="pm-block">
-<h2>Thesis</h2>
-<p class="pm-point">Original Sin was not eating a fruit. It was manufacturing conscious life inside a pain machine — then blaming the user.</p>
-<figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="warranty"></canvas></div>
-  <figcaption class="pm-viz-cap">Repair is mercy. Exit is sacrilege. That clause ships before you can consent.<cite>Warranty metaphor</cite></figcaption>
-</figure></section>
-
-<section class="pm-block">
-<h2>Clinic</h2>
-<p class="pm-point">Doctors already know: pain is not a simple damage meter. It spreads through body, mood, memory, and identity.</p>
-<figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="neuromatrix"></canvas></div>
-  <figcaption class="pm-viz-cap">The brain assembles pain from signals, memory, stress, and meaning — not just tissue damage.<cite>Melzack</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="iasp"></canvas></div>
-  <figcaption class="pm-viz-cap">Pain is always sensory and emotional together.<cite>IASP 2020</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="icd11"></canvas></div>
-  <figcaption class="pm-viz-cap">Chronic pain is its own disease category — the alarm can outlast the injury.<cite>ICD-11</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="mcgill"></canvas></div>
-  <figcaption class="pm-viz-cap">78 words for pain. Pleasure needs far fewer.<cite>McGill MPQ</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="baumeister"></canvas></div>
-  <figcaption class="pm-viz-cap">Bad events outweigh matched good ones — the scale tips red.<cite>Baumeister</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="eisenberger"></canvas></div>
-  <figcaption class="pm-viz-cap">Social rejection uses the same circuits as bodily hurt.<cite>Eisenberger</cite></figcaption>
-</figure></section>
-
-<section class="pm-block">
-<h2>Brain map</h2>
-<p class="pm-point">Drag the 3D brain. Red routes sprawl. Green routes cluster. Move the sliders — watch pain states outrun pleasure.</p>
-
+BRAIN = r"""
 <div class="pm-fig-brain" id="fig-brain">
   <div class="pm-brain3d" id="pm-brain3d">
     <div class="pm-brain3d-layout">
@@ -381,12 +356,9 @@ ShowToc: false
     <span><i class="p-ple"></i> pleasure</span>
   </div>
 </div>
-</section>
+"""
 
-<section class="pm-block">
-<h2>Count it</h2>
-<p class="pm-point">A dumb calculator, no theology: multiply how many distinct pain states vs pleasure states the spec allows. Switch profiles — the direction never flips.</p>
-
+COMPUTE = r"""
 <div class="pm-compute" id="pm-compute">
   <div class="pm-compute-head">
     <strong>pain_machines_state_space_v1</strong>
@@ -406,15 +378,74 @@ ShowToc: false
   <div class="pm-chart-cap">78 pain words vs ~11 drug families</div>
   <div class="pm-chart" id="pm-chart-inventory"></div>
 </div>
-</section>
+"""
+
+
+def viz_fig(viz: str, cite: str, cap: str) -> str:
+    return f"""<figure class="pm-viz-fig">
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="{viz}"></canvas></div>
+  <figcaption class="pm-viz-cap">{cap}<cite>{cite}</cite></figcaption>
+</figure>"""
+
+
+def main() -> int:
+    parts = [
+        """---
+author: ["goodalexander"]
+title: "Pain Machines"
+date: 2026-05-23T20:00:00Z
+draft: false
+summary: "Humans are pain machines. Original Sin was manufacture, not disobedience. Scroll the proof: clinic, brain map, state-space math, and the mandate to exit the sacred chassis."
+categories: ["philosophy"]
+tags: ["post fiat", "philosophy", "long-form"]
+ShowToc: false
+---
+
+<style>""",
+        CSS,
+        """</style>
+<div class="pm" id="pain-machines">
+
+# Pain Machines
+
+<p class="pm-lead">You were built to hurt more than you were built to enjoy. The first cry is a product warning, not proof the product is good.</p>
+
+<section class="pm-block">
+<h2>Thesis</h2>
+<p class="pm-point">Original Sin was not eating a fruit. It was manufacturing conscious life inside a pain machine — then blaming the user.</p>
+""",
+        viz_fig("warranty", "Warranty metaphor", "Repair is mercy. Exit is sacrilege. That clause ships before you can consent."),
+        """</section>
+
+<section class="pm-block">
+<h2>Clinic</h2>
+<p class="pm-point">Doctors already know: pain is not a simple damage meter. It spreads through body, mood, memory, and identity.</p>
+""",
+    ]
+    for viz, cite, cap in VIZ:
+        parts.append(viz_fig(viz, cite, cap))
+    parts.append("""</section>
+
+<section class="pm-block">
+<h2>Brain map</h2>
+<p class="pm-point">Drag the 3D brain. Red routes sprawl. Green routes cluster. Move the sliders — watch pain states outrun pleasure.</p>
+""")
+    parts.append(BRAIN)
+    parts.append("""</section>
+
+<section class="pm-block">
+<h2>Count it</h2>
+<p class="pm-point">A dumb calculator, no theology: multiply how many distinct pain states vs pleasure states the spec allows. Switch profiles — the direction never flips.</p>
+""")
+    parts.append(COMPUTE)
+    parts.append("""</section>
 
 <section class="pm-block">
 <h2>Genesis as QA report</h2>
 <p class="pm-point">Read Genesis 2–3 as a defect table: birth pain, toil, mortality — hardware bugs, not a moral invoice for one apple.</p>
-<figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="inversion"></canvas></div>
-  <figcaption class="pm-viz-cap">Warranty theology sends guilt downstream. The defect report sends it to the design.<cite>Defect read</cite></figcaption>
-</figure></section>
+""")
+    parts.append(viz_fig("inversion", "Defect read", "Warranty theology sends guilt downstream. The defect report sends it to the design."))
+    parts.append("""</section>
 
 <section class="pm-block">
 <h2>Three locks</h2>
@@ -424,21 +455,17 @@ ShowToc: false
   <div class="pm-triad-cell"><strong>Islam</strong> Body is trust (amanah) · repair OK · self-redesign = breach</div>
   <div class="pm-triad-cell"><strong>Secular</strong> Human dignity · therapy OK · posthuman = taboo</div>
 </div>
-<figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="regimes"></canvas></div>
-  <figcaption class="pm-viz-cap">Different heavens. Same lock: repair yes, exit no.<cite>Convergence</cite></figcaption>
-</figure></section>
+""")
+    parts.append(viz_fig("regimes", "Convergence", "Different heavens. Same lock: repair yes, exit no."))
+    parts.append("""</section>
 
 <section class="pm-block">
 <h2>Mandate</h2>
 <p class="pm-point">Once repair becomes escape, every warranty regime says no. The mandate is lawful exit: AI, new bodies, new substrate — without manufacturing new hells.</p>
-<figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="ladder"></canvas></div>
-  <figcaption class="pm-viz-cap">Medicine OK → redesign body → leave biology → AI & new substrate.<cite>Mandate</cite></figcaption>
-</figure><figure class="pm-viz-fig">
-  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="audit"></canvas></div>
-  <figcaption class="pm-viz-cap">Count involuntary suffering. Target zero.<cite>Abolition metric</cite></figcaption>
-</figure></section>
+""")
+    for viz, cite, cap in VIZ2[3:]:
+        parts.append(viz_fig(viz, cite, cap))
+    parts.append("""</section>
 
 <nav class="pm-src-links" aria-label="Sources">
   <a href="https://pubmed.ncbi.nlm.nih.gov/11780656/">Melzack 2001</a>
@@ -468,3 +495,13 @@ ShowToc: false
 <script src="/research/pain_machines/pm-compute.js?v=1" defer></script>
 
 </div>
+""")
+
+    OUT.write_text("".join(parts), encoding="utf-8")
+    lines = OUT.read_text().count("\n") + 1
+    print(f"Wrote {OUT} ({lines} lines)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

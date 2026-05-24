@@ -78,17 +78,31 @@
     return `rgba(${r},${g},${b},${a})`;
   }
 
+  function drawHud(ctx, w, title, sub) {
+    ctx.fillStyle = hexA(C.ink, 0.96);
+    ctx.font = '600 14px ui-monospace, monospace';
+    ctx.fillText(title, 14, 24);
+    if (sub) {
+      ctx.fillStyle = hexA(C.muted, 0.92);
+      ctx.font = '11px ui-monospace, monospace';
+      const lines = sub.split(' · ');
+      lines.forEach((line, i) => ctx.fillText(line, 14, 42 + i * 14));
+    }
+  }
+
   const VIZ = {};
 
   VIZ.neuromatrix = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     const pts = particles(28, geom.w, geom.h, 1.2);
     const cx = geom.w * 0.5;
-    const cy = geom.h * 0.48;
+    const cy = geom.h * 0.52;
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Brain builds pain', 'Wound is one input · memory & stress matter too');
       ctx.strokeStyle = hexA(C.pain, 0.15 + 0.08 * Math.sin(t * 2));
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -120,9 +134,11 @@
   VIZ.iasp = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Pain = body + emotion', 'Official medicine: both channels always on');
       const y = h * 0.5;
       const pulse = 0.5 + 0.5 * Math.sin(t * 4);
       [[0.22, C.pain], [0.78, C.gold]].forEach(([fx, col], i) => {
@@ -155,9 +171,11 @@
   VIZ.icd11 = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Chronic pain = disease', '7 official categories · alarm can outlast injury');
       const branches = 7;
       for (let i = 0; i < branches; i++) {
         const prog = Math.min(1, (t * 0.35 + i * 0.12) % 1.5);
@@ -190,6 +208,7 @@
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, '78 pain words', 'Pleasure shares far fewer names');
       ctx.fillStyle = hexA(C.pleasure, 0.15);
       ctx.fillRect(w * 0.52, 0, w * 0.48, h);
       pleasDots.forEach((p, i) => {
@@ -286,9 +305,11 @@
   VIZ.baumeister = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Bad beats good', 'Matched events · heavier harm ink');
       const tilt = 0.15 * Math.sin(t * 0.8) + 0.22;
       ctx.save();
       ctx.translate(w * 0.5, h * 0.55);
@@ -335,9 +356,11 @@
   VIZ.eisenberger = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Social = physical', 'Ostracism lights bodily hurt circuits');
       const cx = w * 0.5;
       const cy = h * 0.5;
       ctx.strokeStyle = hexA(C.muted, 0.35);
@@ -393,9 +416,11 @@
   VIZ.warranty = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Shipped at birth', 'Pain · fear · grief · decay · death · no consent');
       ctx.strokeStyle = hexA(C.pain, 0.8);
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -473,9 +498,11 @@
   VIZ.inversion = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Fault moves upstream', 'User blame ↓ · design blame ↑');
       for (let i = 0; i < 6; i++) {
         const p = ((t * 0.25 + i * 0.15) % 1);
         ctx.fillStyle = hexA(C.muted, 0.8 - p);
@@ -493,9 +520,11 @@
   VIZ.ladder = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Repair → then exit', 'Medicine OK · leaving biology vetoed');
       const steps = 8;
       const climb = (t * 0.3) % steps;
       for (let i = 0; i < steps; i++) {
@@ -564,9 +593,11 @@
   VIZ.regimes = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Three faiths · one lock', 'Repair OK · exit forbidden');
       [0.25, 0.5, 0.75].forEach((fx, i) => {
         const pulse = 0.5 + 0.5 * Math.sin(t * 2 + i);
         ctx.fillStyle = hexA(C.gold, 0.15 + pulse * 0.25);
@@ -604,9 +635,11 @@
   VIZ.audit = function (canvas, wrap) {
     let geom = resizeCanvas(canvas, wrap);
     return loop((t) => {
+      geom = resizeCanvas(canvas, wrap);
       const { ctx, w, h } = geom;
       ctx.fillStyle = C.bg;
       ctx.fillRect(0, 0, w, h);
+      drawHud(ctx, w, 'Abolition target', 'Involuntary suffering → zero');
       ctx.strokeStyle = hexA(C.gold, 0.6);
       ctx.lineWidth = 2;
       ctx.beginPath();
