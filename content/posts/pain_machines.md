@@ -358,22 +358,56 @@ ShowToc: false
   text-transform: uppercase;
   letter-spacing: .06em;
 }
-.pm-ev-controls { display: flex; flex-direction: column; gap: .5rem; }
-.pm-ev-slider label {
+.pm-ev-prompt {
+  margin: 0;
+  font: 500 .68rem/1.35 ui-monospace, monospace;
+  color: var(--dim);
+}
+.pm-ev-presets {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.pm-ev-preset {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: rgba(235,228,220,.02);
+  color: var(--muted);
+  font: 500 .72rem/1.35 ui-monospace, monospace;
+  padding: .55rem .65rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.pm-ev-preset:hover { border-color: rgba(235,228,220,.22); color: var(--ink); }
+.pm-ev-preset.is-active {
+  border-color: rgba(184,154,106,.45);
+  background: rgba(184,154,106,.08);
+  color: var(--ink);
+}
+.pm-ev-scrub { margin-top: .35rem; }
+.pm-ev-scrub label {
   display: flex;
   justify-content: space-between;
   font: 500 .68rem/1.2 ui-monospace, monospace;
   color: var(--muted);
   margin-bottom: .2rem;
 }
-.pm-ev-slider input {
+.pm-ev-scrub input {
   width: 100%;
   height: 28px;
   accent-color: var(--gold);
   touch-action: manipulation;
 }
-.pm-ev-slider.pain input { accent-color: var(--pain); }
-.pm-ev-slider.pleasure input { accent-color: var(--pleasure); }
+.pm-ev-lesson {
+  margin: .5rem 0 0;
+  padding: .55rem .65rem;
+  border: 1px solid rgba(184,92,85,.25);
+  background: rgba(18,9,9,.55);
+  font-size: .78rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
 .pm-ev-blurb {
   margin: .35rem 0 0;
   font-size: .78rem;
@@ -410,24 +444,19 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="locks">—</b><span>exit locks</span></div>
-          <div class="pm-ev-metric gold"><b data-m="regimes">—</b><span>aligned regimes</span></div>
+          <div class="pm-ev-metric pain"><b data-m="defects_n">—</b><span>listed defects</span></div>
+          <div class="pm-ev-metric gold"><b data-m="locks">—</b><span>exit locks</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>defect severity <b data-slider-val="defects">85</b></label>
-          <input type="range" min="0" max="100" value="85" data-slider="defects">
+        <p class="pm-ev-prompt">View the warranty:</p>
+        <div class="pm-ev-presets" data-default="defects">
+        <button type="button" class="pm-ev-preset" data-preset="defects" title="Shipped at birth">Known defects</button>
+        <button type="button" class="pm-ev-preset" data-preset="regimes" title="Repair OK · exit forbidden">Three exit locks</button>
         </div>
-        <div class="pm-ev-slider gold">
-          <label>repair mandate <b data-slider-val="repair">70</b></label>
-          <input type="range" min="0" max="100" value="70" data-slider="repair">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Homo sapiens ships with known defects — pain, fear, grief, decay, death — and no consent form. Christian, Islamic, and secular regimes disagree on metaphysics but converge on the clause: repair the chassis, never abandon it.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Homo sapiens ships with known defects — pain, fear, grief, decay, death — and no consent form.</p>
       </div>
     </div>
   </div>
@@ -451,27 +480,19 @@ ShowToc: false
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
           <div class="pm-ev-metric pain"><b data-m="output">—</b><span>pain output</span></div>
-          <div class="pm-ev-metric gold"><b data-m="inputs">—</b><span>active inputs</span></div>
+          <div class="pm-ev-metric gold"><b data-m="somatic">—</b><span>tissue signal</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>somatic input <b data-slider-val="somatic">55</b></label>
-          <input type="range" min="0" max="100" value="55" data-slider="somatic">
+        <p class="pm-ev-prompt">Compare Melzack&#x27;s cases:</p>
+        <div class="pm-ev-presets" data-default="acute">
+        <button type="button" class="pm-ev-preset" data-preset="acute" title="Somatic input drives output">Fresh tissue injury</button>
+        <button type="button" class="pm-ev-preset" data-preset="phantom" title="Limb absent — pain persists">Phantom limb</button>
+        <button type="button" class="pm-ev-preset" data-preset="stress_flare" title="Memory + stress alone">Stress flare, no new damage</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>memory load <b data-slider-val="memory">72</b></label>
-          <input type="range" min="0" max="100" value="72" data-slider="memory">
-        </div>
-        <div class="pm-ev-slider pain">
-          <label>stress gate <b data-slider-val="stress">68</b></label>
-          <input type="range" min="0" max="100" value="68" data-slider="stress">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Melzack&#x27;s neuromatrix theory treats pain as a distributed output pattern — not a faithful meter of tissue damage. Somatic input is one contributor among memory traces, stress gates, and appraisal. Phantom-limb pain is the proof case: the map persists after the limb is gone.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Melzack&#x27;s neuromatrix theory treats pain as a distributed output pattern — not a faithful meter of tissue damage. Phantom-limb pain is the proof case: the map persists after the limb is gone.</p>
       </div>
     </div>
   </div>
@@ -488,24 +509,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="fusion">—</b><span>fused intensity</span></div>
-          <div class="pm-ev-metric gold"><b data-m="ratio">—</b><span>sensory/affect</span></div>
+          <div class="pm-ev-metric pain"><b data-m="qualifies">—</b><span>IASP pain?</span></div>
+          <div class="pm-ev-metric gold"><b data-m="fusion">—</b><span>fused intensity</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>sensory channel <b data-slider-val="sensory">80</b></label>
-          <input type="range" min="0" max="100" value="80" data-slider="sensory">
+        <p class="pm-ev-prompt">What counts as pain under IASP?</p>
+        <div class="pm-ev-presets" data-default="sensory_only">
+        <button type="button" class="pm-ev-preset" data-preset="sensory_only" title="Fails IASP definition">Body signal only</button>
+        <button type="button" class="pm-ev-preset" data-preset="iasp_pain" title="Both channels required">Full IASP pain</button>
+        <button type="button" class="pm-ev-preset" data-preset="grief_led" title="Affective channel dominant">Emotion-led pain</button>
         </div>
-        <div class="pm-ev-slider gold">
-          <label>emotional channel <b data-slider-val="affective">75</b></label>
-          <input type="range" min="0" max="100" value="75" data-slider="affective">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">The 2020 IASP revision defines pain as &quot;an unpleasant sensory and emotional experience.&quot; Clinicians cannot strip the affective channel without losing the diagnosis. Body-signal and emotion are co-primary, not optional add-ons.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">The 2020 IASP revision defines pain as &quot;an unpleasant sensory and emotional experience.&quot; Strip either channel and you no longer have the clinical object called pain.</p>
       </div>
     </div>
   </div>
@@ -522,24 +539,18 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="branches">—</b><span>active categories</span></div>
-          <div class="pm-ev-metric gold"><b data-m="lag">—</b><span>alarm lag (mo)</span></div>
+          <div class="pm-ev-metric gold"><b data-m="injury">—</b><span>acute trigger</span></div>
+          <div class="pm-ev-metric pain"><b data-m="branches">—</b><span>MG30 classes lit</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>initial injury <b data-slider-val="injury">90</b></label>
-          <input type="range" min="0" max="100" value="90" data-slider="injury">
+        <div class="pm-ev-scrub">
+          <label>Months since injury <b data-scrub-val="months">0</b> mo</label>
+          <input type="range" min="0" max="24" value="0" data-scrub="months">
         </div>
-        <div class="pm-ev-slider gold">
-          <label>alarm persistence <b data-slider-val="persistence">70</b></label>
-          <input type="range" min="0" max="100" value="70" data-slider="persistence">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">ICD-11 lists seven chronic primary and secondary pain categories with nested subtypes. The taxonomy exists because alarms persist after injuries heal — chronic pain is classified as its own disease process, not merely a symptom timer.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">ICD-11 lists seven chronic pain categories because alarms persist after injuries heal. Scrub the timeline — watch the acute trigger fade while chronic classes stay lit.</p>
       </div>
     </div>
   </div>
@@ -556,24 +567,19 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric gold"><b data-m="ratio">—</b><span>word ratio</span></div>
-          <div class="pm-ev-metric pain"><b data-m="density">—</b><span>pain density</span></div>
+          <div class="pm-ev-metric pain"><b data-m="words">—</b><span>visible words</span></div>
+          <div class="pm-ev-metric gold"><b data-m="ratio">—</b><span>pain:pleasure</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>pain descriptors <b data-slider-val="pain_lex">78</b></label>
-          <input type="range" min="20" max="78" value="78" data-slider="pain_lex">
+        <p class="pm-ev-prompt">Toggle lexicon view:</p>
+        <div class="pm-ev-presets" data-default="mpq_clinical">
+        <button type="button" class="pm-ev-preset" data-preset="mpq_clinical" title="Sensory · affective · evaluative">MPQ clinical (78)</button>
+        <button type="button" class="pm-ev-preset" data-preset="pleasure_colloquial" title="Sparse everyday labels">Pleasure words (~12)</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>pleasure descriptors <b data-slider-val="pleas_lex">12</b></label>
-          <input type="range" min="4" max="24" value="12" data-slider="pleas_lex">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">The McGill Pain Questionnaire carries 78 descriptor words across sensory, affective, evaluative, and miscellaneous domains. Language factorizes pain into many axes; pleasure vocabulary stays sparse — a lexical asymmetry clinicians already encode.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">The McGill Pain Questionnaire carries 78 descriptor words across sensory, affective, evaluative, and miscellaneous domains — pleasure vocabulary stays sparse.</p>
       </div>
     </div>
   </div>
@@ -590,28 +596,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="layers">—</b><span>active layers</span></div>
-          <div class="pm-ev-metric pleasure"><b data-m="pleasure">—</b><span>pleasure band</span></div>
+          <div class="pm-ev-metric pain"><b data-m="layers">—</b><span>ledgers active</span></div>
+          <div class="pm-ev-metric gold"><b data-m="dissoc">—</b><span>dissociation</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>sensory intensity <b data-slider-val="intensity">70</b></label>
-          <input type="range" min="0" max="100" value="70" data-slider="intensity">
+        <p class="pm-ev-prompt">Price&#x27;s dissociation cases:</p>
+        <div class="pm-ev-presets" data-default="capsaicin">
+        <button type="button" class="pm-ev-preset" data-preset="capsaicin" title="High intensity · lower unpleasantness">Capsaicin on tongue</button>
+        <button type="button" class="pm-ev-preset" data-preset="colic" title="All three ledgers climb">Labor / colic</button>
+        <button type="button" class="pm-ev-preset" data-preset="neuropathic" title="Low intensity · high suffering">Neuropathic sting</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>unpleasantness <b data-slider-val="unpleasant">85</b></label>
-          <input type="range" min="0" max="100" value="85" data-slider="unpleasant">
-        </div>
-        <div class="pm-ev-slider gold">
-          <label>secondary affect <b data-slider-val="secondary">60</b></label>
-          <input type="range" min="0" max="100" value="60" data-slider="secondary">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Price&#x27;s psychophysical work separates sensory intensity, unpleasantness, and secondary affect into partially independent dimensions. One stimulus can climb one ledger while another stays flat — evidence against a single pain dial.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Price separates sensory intensity, unpleasantness, and secondary affect into partially independent dimensions — one stimulus can climb one ledger while another stays flat.</p>
       </div>
     </div>
   </div>
@@ -628,24 +626,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric gold"><b data-m="orbit">—</b><span>wanting radius</span></div>
-          <div class="pm-ev-metric pleasure"><b data-m="cluster">—</b><span>liking cluster</span></div>
+          <div class="pm-ev-metric gold"><b data-m="orbit">—</b><span>wanting spread</span></div>
+          <div class="pm-ev-metric pleasure"><b data-m="cluster">—</b><span>liking intensity</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider gold">
-          <label>wanting drive <b data-slider-val="wanting">78</b></label>
-          <input type="range" min="0" max="100" value="78" data-slider="wanting">
+        <p class="pm-ev-prompt">Compare reward states:</p>
+        <div class="pm-ev-presets" data-default="healthy_meal">
+        <button type="button" class="pm-ev-preset" data-preset="healthy_meal" title="Liking ≈ wanting">Sated meal</button>
+        <button type="button" class="pm-ev-preset" data-preset="addiction" title="Wanting ≫ liking">Addiction profile</button>
+        <button type="button" class="pm-ev-preset" data-preset="hotspot" title="Tight hedonic cluster">Direct opioid liking</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>liking hotspots <b data-slider-val="liking">35</b></label>
-          <input type="range" min="0" max="100" value="35" data-slider="liking">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Berridge distinguishes hedonic &quot;liking&quot; (tight opioid hotspots in NAc shell and VP) from dopaminergic &quot;wanting&quot; that sprawls across mesolimbic circuitry. Addiction often decouples pursuit from felt joy — more runway for compulsion than for pleasure.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Berridge: hedonic &quot;liking&quot; sits in tight opioid hotspots; dopaminergic &quot;wanting&quot; sprawls. Addiction often decouples pursuit from felt joy.</p>
       </div>
     </div>
   </div>
@@ -662,24 +656,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pleasure"><b data-m="borrow">—</b><span>borrowed pleasure</span></div>
+          <div class="pm-ev-metric pleasure"><b data-m="relief">—</b><span>relief felt</span></div>
           <div class="pm-ev-metric pain"><b data-m="residual">—</b><span>threat residue</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>prior threat <b data-slider-val="threat">75</b></label>
-          <input type="range" min="0" max="100" value="75" data-slider="threat">
+        <p class="pm-ev-prompt">Relief vs prior threat:</p>
+        <div class="pm-ev-presets" data-default="mild_relief">
+        <button type="button" class="pm-ev-preset" data-preset="mild_relief" title="Weak threat → weak relief">Minor annoyance ends</button>
+        <button type="button" class="pm-ev-preset" data-preset="burn_relief" title="High threat → strong relief">Burn then cool water</button>
+        <button type="button" class="pm-ev-preset" data-preset="chronic" title="Relief exhausted">Chronic threat</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>relief spike <b data-slider-val="relief">55</b></label>
-          <input type="range" min="0" max="100" value="55" data-slider="relief">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Relief-affect rides the same opioid and dopamine substrates as threat processing. Stopping pain feels good because the system was recently under threat — pleasure here is often the shadow of avoided harm, not a symmetric opposite.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Relief-affect rides the same substrates as threat processing. Stopping pain feels good because the system was recently under threat.</p>
       </div>
     </div>
   </div>
@@ -696,24 +686,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric gold"><b data-m="tilt">—</b><span>tilt ratio</span></div>
-          <div class="pm-ev-metric pain"><b data-m="net">—</b><span>net valence</span></div>
+          <div class="pm-ev-metric gold"><b data-m="tilt">—</b><span>bad:good weight</span></div>
+          <div class="pm-ev-metric pain"><b data-m="net">—</b><span>remembered valence</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>harm weight <b data-slider-val="bad">82</b></label>
-          <input type="range" min="0" max="100" value="82" data-slider="bad">
+        <p class="pm-ev-prompt">Matched events on the scale:</p>
+        <div class="pm-ev-presets" data-default="one_compliment">
+        <button type="button" class="pm-ev-preset" data-preset="one_compliment" title="Light tilt">One compliment</button>
+        <button type="button" class="pm-ev-preset" data-preset="one_insult" title="Heavy tilt (~2–5×)">One insult</button>
+        <button type="button" class="pm-ev-preset" data-preset="paired" title="Bad dominates net memory">Same-day pair</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>benefit weight <b data-slider-val="good">38</b></label>
-          <input type="range" min="0" max="100" value="38" data-slider="good">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Baumeister&#x27;s review finds bad events, emotions, and impressions carry more weight than matched good ones across psychology — from learning rates to relationship memory. The scale tilts without any moral claim; it&#x27;s an empirical asymmetry in how minds update.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Baumeister&#x27;s review: matched bad events outweigh good ones in learning, memory, and impression formation — an empirical asymmetry, not a moral claim.</p>
       </div>
     </div>
   </div>
@@ -730,24 +716,20 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="spread">—</b><span>infected nodes</span></div>
+          <div class="pm-ev-metric pain"><b data-m="spread">—</b><span>stained nodes</span></div>
           <div class="pm-ev-metric pleasure"><b data-m="isolated">—</b><span>good enclaves</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>contagion radius <b data-slider-val="contagion">72</b></label>
-          <input type="range" min="0" max="100" value="72" data-slider="contagion">
+        <p class="pm-ev-prompt">Contamination stages:</p>
+        <div class="pm-ev-presets" data-default="clean">
+        <button type="button" class="pm-ev-preset" data-preset="clean" title="Neutral grid">Before event</button>
+        <button type="button" class="pm-ev-preset" data-preset="one_drop" title="Local stain">One bad event</button>
+        <button type="button" class="pm-ev-preset" data-preset="spread" title="Bad infects neighbors">After rumination</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>good locality <b data-slider-val="good_local">28</b></label>
-          <input type="range" min="0" max="100" value="28" data-slider="good_local">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Negative differentiation: the bad domain is richer, more differentiated, and more contagious than the good. One contamination event stains adjacent categories; good events rarely propagate the same way — negativity dominance in cognitive structure.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Negative differentiation: bad is richer and more contagious than good. One contamination stains adjacent categories; good events stay local.</p>
       </div>
     </div>
   </div>
@@ -765,23 +747,18 @@ ShowToc: false
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
           <div class="pm-ev-metric pain"><b data-m="acc">—</b><span>dACC activation</span></div>
-          <div class="pm-ev-metric gold"><b data-m="overlap">—</b><span>body overlap</span></div>
+          <div class="pm-ev-metric gold"><b data-m="overlap">—</b><span>body-circuit overlap</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>exclusion intensity <b data-slider-val="exclusion">70</b></label>
-          <input type="range" min="0" max="100" value="70" data-slider="exclusion">
+        <p class="pm-ev-prompt">Cyberball conditions:</p>
+        <div class="pm-ev-presets" data-default="included">
+        <button type="button" class="pm-ev-preset" data-preset="included" title="dACC quiet">Included throws</button>
+        <button type="button" class="pm-ev-preset" data-preset="excluded" title="dACC lights up">Excluded (Cyberball)</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>group acceptance <b data-slider-val="belonging">40</b></label>
-          <input type="range" min="0" max="100" value="40" data-slider="belonging">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Cyberball exclusion activates dACC and insula — overlap with physical pain circuitry without peripheral nociception. Social injury is not metaphorical in the brain; it uses hardware evolved for bodily threat.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Cyberball exclusion activates dACC and insula — overlap with physical pain circuitry without peripheral nociception.</p>
       </div>
     </div>
   </div>
@@ -798,28 +775,19 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="output_a">—</b><span>threat path</span></div>
-          <div class="pm-ev-metric pleasure"><b data-m="output_b">—</b><span>challenge path</span></div>
+          <div class="pm-ev-metric pain"><b data-m="output_a">—</b><span>threat output</span></div>
+          <div class="pm-ev-metric pleasure"><b data-m="output_b">—</b><span>challenge output</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>threat frame <b data-slider-val="threat">75</b></label>
-          <input type="range" min="0" max="100" value="75" data-slider="threat">
+        <p class="pm-ev-prompt">Same stressor, different frame:</p>
+        <div class="pm-ev-presets" data-default="threat">
+        <button type="button" class="pm-ev-preset" data-preset="threat" title="High suffering path">Threat + self-blame</button>
+        <button type="button" class="pm-ev-preset" data-preset="challenge" title="Lower suffering path">Challenge + resources</button>
         </div>
-        <div class="pm-ev-slider pleasure">
-          <label>challenge frame <b data-slider-val="challenge">35</b></label>
-          <input type="range" min="0" max="100" value="35" data-slider="challenge">
-        </div>
-        <div class="pm-ev-slider gold">
-          <label>self-blame <b data-slider-val="blame">60</b></label>
-          <input type="range" min="0" max="100" value="60" data-slider="blame">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Lazarus–Folkman stress appraisal: primary appraisal (harm/threat/challenge) and secondary appraisal (coping resources) reshape the same objective stressor into different suffering outputs — the event is not the whole story; the frame is.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Same objective stressor — different primary appraisal (threat vs challenge) — different suffering output. The frame is part of the injury.</p>
       </div>
     </div>
   </div>
@@ -942,23 +910,18 @@ ShowToc: false
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
           <div class="pm-ev-metric pain"><b data-m="defects">—</b><span>open defects</span></div>
-          <div class="pm-ev-metric gold"><b data-m="severity">—</b><span>severity index</span></div>
+          <div class="pm-ev-metric gold"><b data-m="blame">—</b><span>user blame %</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider pain">
-          <label>defect cascade <b data-slider-val="bugs">80</b></label>
-          <input type="range" min="0" max="100" value="80" data-slider="bugs">
+        <p class="pm-ev-prompt">Read the defect log:</p>
+        <div class="pm-ev-presets" data-default="logged">
+        <button type="button" class="pm-ev-preset" data-preset="logged" title="Birth pain · toil · death">Defects logged</button>
+        <button type="button" class="pm-ev-preset" data-preset="blame_shift" title="Fault moves to user">Blame assigned</button>
         </div>
-        <div class="pm-ev-slider gold">
-          <label>user blame <b data-slider-val="blame">65</b></label>
-          <input type="range" min="0" max="100" value="65" data-slider="blame">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Genesis 2–3 reads like a defect table: birth pain, agricultural toil, mortality, shame — logged as product behavior before the user is blamed. The narrative inverts warranty law: fault moves downstream to the operator.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Genesis 2–3 as a defect table logged before the operator is blamed.</p>
       </div>
     </div>
   </div>
@@ -975,24 +938,19 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric pain"><b data-m="upstream">—</b><span>upstream fault</span></div>
+          <div class="pm-ev-metric pain"><b data-m="upstream">—</b><span>design fault</span></div>
           <div class="pm-ev-metric muted"><b data-m="downstream">—</b><span>user fault</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider muted">
-          <label>user blame <b data-slider-val="user_blame">30</b></label>
-          <input type="range" min="0" max="100" value="30" data-slider="user_blame">
+        <p class="pm-ev-prompt">Where does fault live?</p>
+        <div class="pm-ev-presets" data-default="traditional">
+        <button type="button" class="pm-ev-preset" data-preset="traditional" title="User disobeyed">Traditional reading</button>
+        <button type="button" class="pm-ev-preset" data-preset="manufacture" title="Design defect">Manufacture reading</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>design blame <b data-slider-val="design_blame">88</b></label>
-          <input type="range" min="0" max="100" value="88" data-slider="design_blame">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Original Sin reframed as manufacture, not disobedience: consciousness was built inside a pain machine, then the operator was invoiced. The inversion moves moral fault upstream — from appetite to design.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Original Sin as manufacture, not disobedience — fault moves upstream.</p>
       </div>
     </div>
   </div>
@@ -1014,24 +972,19 @@ ShowToc: false
         <canvas class="pm-ev-canvas" aria-hidden="true"></canvas>
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
-          <div class="pm-ev-metric gold"><b data-m="aligned">—</b><span>regime alignment</span></div>
-          <div class="pm-ev-metric pain"><b data-m="veto">—</b><span>exit veto</span></div>
+          <div class="pm-ev-metric gold"><b data-m="aligned">—</b><span>regimes aligned</span></div>
+          <div class="pm-ev-metric pain"><b data-m="veto">—</b><span>exit blocked</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider gold">
-          <label>repair allowance <b data-slider-val="repair">85</b></label>
-          <input type="range" min="0" max="100" value="85" data-slider="repair">
+        <p class="pm-ev-prompt">Try an exit attempt:</p>
+        <div class="pm-ev-presets" data-default="repair_ok">
+        <button type="button" class="pm-ev-preset" data-preset="repair_ok" title="All regimes allow">Medical repair</button>
+        <button type="button" class="pm-ev-preset" data-preset="exit_attempt" title="All regimes veto">Morphological exit</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>exit attempt <b data-slider-val="exit">15</b></label>
-          <input type="range" min="0" max="100" value="15" data-slider="exit">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Three traditions with incompatible theologies share one body policy: sanctify or steward the flesh, forbid self-destruction, veto posthuman exit. Repair is sacred; escape is profane or undignified — the lock is structural, not sectarian.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Three theologies · one body policy: repair the chassis, never abandon it.</p>
       </div>
     </div>
   </div>
@@ -1054,23 +1007,19 @@ ShowToc: false
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
           <div class="pm-ev-metric gold"><b data-m="rung">—</b><span>ladder rung</span></div>
-          <div class="pm-ev-metric pain"><b data-m="wall">—</b><span>wall height</span></div>
+          <div class="pm-ev-metric pain"><b data-m="wall">—</b><span>wall hit?</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider gold">
-          <label>therapy climb <b data-slider-val="therapy">75</b></label>
-          <input type="range" min="0" max="100" value="75" data-slider="therapy">
+        <p class="pm-ev-prompt">Climb the warrantied ladder:</p>
+        <div class="pm-ev-presets" data-default="therapy">
+        <button type="button" class="pm-ev-preset" data-preset="therapy" title="Approved">Therapy rung</button>
+        <button type="button" class="pm-ev-preset" data-preset="enhance" title="Approved">Enhancement rung</button>
+        <button type="button" class="pm-ev-preset" data-preset="exit" title="Wall">Exit attempt</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>exit pressure <b data-slider-val="exit">55</b></label>
-          <input type="range" min="0" max="100" value="55" data-slider="exit">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">The warrantied path runs therapy → enhancement → morphological repair — each rung approved. Lawful exit from biology itself hits a ceiling every regime guards. The mandate is to finish the ladder without manufacturing new hells.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Therapy and enhancement climb; lawful exit from biology hits a guarded ceiling.</p>
       </div>
     </div>
   </div>
@@ -1088,23 +1037,19 @@ ShowToc: false
         <div class="pm-ev-labels" aria-hidden="true"></div>
         <div class="pm-ev-hud">
           <div class="pm-ev-metric pain"><b data-m="involuntary">—</b><span>involuntary %</span></div>
-          <div class="pm-ev-metric pleasure"><b data-m="trajectory">—</b><span>↓ trajectory</span></div>
+          <div class="pm-ev-metric pleasure"><b data-m="trajectory">—</b><span>audit score</span></div>
         </div>
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-        <div class="pm-ev-slider gold">
-          <label>audit intensity <b data-slider-val="audit">70</b></label>
-          <input type="range" min="0" max="100" value="70" data-slider="audit">
+        <p class="pm-ev-prompt">Audit era:</p>
+        <div class="pm-ev-presets" data-default="status_quo">
+        <button type="button" class="pm-ev-preset" data-preset="status_quo" title="High involuntary harm">Status quo</button>
+        <button type="button" class="pm-ev-preset" data-preset="audit_on" title="Harm tracked ↓">Audit deployed</button>
+        <button type="button" class="pm-ev-preset" data-preset="target" title="→ 0 involuntary">Abolition target</button>
         </div>
-        <div class="pm-ev-slider pain">
-          <label>residual harm <b data-slider-val="residual">45</b></label>
-          <input type="range" min="0" max="100" value="45" data-slider="residual">
-        </div>
-        </div>
-        <p class="pm-ev-blurb">Treat involuntary suffering as an engineering defect with a measurable audit trail. The abolition target is not utopian mood — it is driving preventable harm states toward zero without creating new captive minds.</p>
+        <p class="pm-ev-lesson" data-lesson></p>
+        <p class="pm-ev-blurb">Involuntary suffering as an engineering defect with a measurable audit trail.</p>
       </div>
     </div>
   </div>
@@ -1135,7 +1080,7 @@ ShowToc: false
     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
   }
 }</script>
-<script type="module" src="/research/pain_machines/pm-evidence.js?v=1"></script>
+<script type="module" src="/research/pain_machines/pm-evidence.js?v=2"></script>
 <script type="module" src="/research/pain_machines/brain3d.js?v=6"></script>
 <script src="/research/pain_machines/pm-compute.js?v=2" defer></script>
 

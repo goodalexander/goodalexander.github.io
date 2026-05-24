@@ -20,23 +20,302 @@ function v3(x, y, z) {
   return new THREE.Vector3(x, y, z);
 }
 
-function bindSlider(root, name) {
-  const input = root.querySelector(`[data-slider="${name}"]`);
-  const valEl = root.querySelector(`[data-slider-val="${name}"]`);
-  if (!input) return { get value() { return 0.5; } };
-  input.addEventListener('input', () => {
-    if (valEl) valEl.textContent = input.value;
-  });
+function bindControls(root, widget) {
+  const presetWrap = root.querySelector('.pm-ev-presets');
+  widget.preset = presetWrap?.dataset.default || '';
+  if (presetWrap) {
+    presetWrap.querySelectorAll('.pm-ev-preset').forEach((btn) => {
+      const on = btn.dataset.preset === widget.preset;
+      btn.classList.toggle('is-active', on);
+      btn.addEventListener('click', () => {
+        widget.preset = btn.dataset.preset;
+        presetWrap.querySelectorAll('.pm-ev-preset').forEach((b) => {
+          b.classList.toggle('is-active', b.dataset.preset === widget.preset);
+        });
+      });
+    });
+  }
+  const scrubEl = root.querySelector('[data-scrub]');
+  widget.months = scrubEl ? Number(scrubEl.value) : 0;
+  if (scrubEl) {
+    const valEl = root.querySelector(`[data-scrub-val="${scrubEl.dataset.scrub}"]`);
+    scrubEl.addEventListener('input', () => {
+      widget.months = Number(scrubEl.value);
+      if (valEl) valEl.textContent = scrubEl.value;
+    });
+  }
+}
+
+function icd11Case(months) {
+  const m = Number(months) || 0;
+  const injury = Math.max(0, 1 - m / 8);
+  const branches = Math.min(7, Math.max(0, Math.round((m - 2) / 2.5)));
   return {
-    get value() {
-      const mn = Number(input.min || 0);
-      const mx = Number(input.max || 100);
-      return (Number(input.value) - mn) / Math.max(mx - mn, 1);
-    },
-    raw() {
-      return Number(input.value);
-    },
+    state: { injury, branches, months: m },
+    lesson:
+      m < 3
+        ? 'Weeks 0–8: acute injury signal still visible — taxonomy not yet needed.'
+        : m < 12
+          ? 'Months 3–12: tissue heals but MG30 branches light up — alarm outlives fire.'
+          : 'Month 12+: acute trigger faded — chronic pain is its own ICD-11 disease class.',
+    readout: `Month ${m} — injury ${Math.round(injury * 100)}% · ${branches}/7 chronic classes active`,
+    metrics: { injury: `${Math.round(injury * 100)}%`, branches },
   };
+}
+
+const CASES = {
+  'fig-neuromatrix': {
+    acute: {
+      state: { somatic: 0.92, memory: 0.22, stress: 0.3 },
+      lesson: 'Melzack: fresh tissue injury — somatic input is high, but still only one input among many.',
+      metrics: { output: 84, somatic: 'HIGH' },
+    },
+    phantom: {
+      state: { somatic: 0.04, memory: 0.95, stress: 0.72 },
+      lesson: 'Phantom limb: limb is gone — somatic input near zero — yet pain output stays high from memory + map.',
+      metrics: { output: 79, somatic: 'ZERO' },
+    },
+    stress_flare: {
+      state: { somatic: 0.08, memory: 0.62, stress: 0.96 },
+      lesson: 'Stress flare with no new damage: arousal + prior memory drive output — the neuromatrix does not need fresh injury.',
+      metrics: { output: 76, somatic: 'LOW' },
+    },
+  },
+  'fig-iasp': {
+    sensory_only: {
+      state: { sensory: 0.92, affect: 0.06, qualifies: false },
+      lesson: 'Body signal alone is not IASP pain — without the emotional channel the fused experience collapses.',
+      metrics: { qualifies: 'NO', fusion: 18 },
+    },
+    iasp_pain: {
+      state: { sensory: 0.82, affect: 0.8, qualifies: true },
+      lesson: 'IASP 2020: pain = unpleasant sensory AND emotional experience — both channels must fuse.',
+      metrics: { qualifies: 'YES', fusion: 88 },
+    },
+    grief_led: {
+      state: { sensory: 0.35, affect: 0.94, qualifies: true },
+      lesson: 'Emotion-led pain still qualifies — sensory channel can be modest while affect carries the diagnosis.',
+      metrics: { qualifies: 'YES', fusion: 81 },
+    },
+  },
+  'fig-mcgill': {
+    mpq_clinical: {
+      state: { painWords: 78, pleasWords: 12, mode: 'pain' },
+      lesson: 'McGill MPQ: 78 clinical descriptors across sensory, affective, evaluative, and misc domains.',
+      metrics: { words: 78, ratio: '6.5×' },
+    },
+    pleasure_colloquial: {
+      state: { painWords: 78, pleasWords: 12, mode: 'pleasure' },
+      lesson: 'Everyday pleasure vocabulary stays sparse (~12 words) — language factorizes pain far more finely.',
+      metrics: { words: 12, ratio: '6.5×' },
+    },
+  },
+  'fig-price': {
+    capsaicin: {
+      state: { intensity: 0.92, unpleasant: 0.38, secondary: 0.22 },
+      lesson: 'Price: capsaicin — burning intensity high, unpleasantness lower — ledgers dissociate.',
+      metrics: { layers: 2, dissoc: 'HIGH' },
+    },
+    colic: {
+      state: { intensity: 0.88, unpleasant: 0.95, secondary: 0.9 },
+      lesson: 'Labor/colic: all three Price dimensions climb together — total suffering, not one dial.',
+      metrics: { layers: 3, dissoc: 'LOW' },
+    },
+    neuropathic: {
+      state: { intensity: 0.28, unpleasant: 0.92, secondary: 0.85 },
+      lesson: 'Neuropathic sting: modest sensory intensity, high unpleasantness + secondary affect — suffering without loud signal.',
+      metrics: { layers: 3, dissoc: 'HIGH' },
+    },
+  },
+  'fig-berridge': {
+    healthy_meal: {
+      state: { wanting: 0.38, liking: 0.78 },
+      lesson: 'Sated meal: wanting and liking track together — normal hedonic balance.',
+      metrics: { orbit: 'tight', cluster: 78 },
+    },
+    addiction: {
+      state: { wanting: 0.97, liking: 0.22 },
+      lesson: 'Addiction: dopaminergic wanting sprawls while opioid liking shrinks — pursuit without joy.',
+      metrics: { orbit: 'wide', cluster: 22 },
+    },
+    hotspot: {
+      state: { wanting: 0.45, liking: 0.92 },
+      lesson: 'Direct opioid hotspot stimulation: tight hedonic cluster — liking without compulsive orbit.',
+      metrics: { orbit: 'tight', cluster: 92 },
+    },
+  },
+  'fig-leknes': {
+    mild_relief: {
+      state: { threat: 0.22, relief: 0.25 },
+      lesson: 'Minor annoyance ends: little prior threat → relief pleasure stays weak.',
+      metrics: { relief: 18, residual: 12 },
+    },
+    burn_relief: {
+      state: { threat: 0.94, relief: 0.82 },
+      lesson: 'Burn then cool water: high threat history → relief spike borrows opioid/dopamine substrate from red.',
+      metrics: { relief: 86, residual: 35 },
+    },
+    chronic: {
+      state: { threat: 0.9, relief: 0.12 },
+      lesson: 'Chronic threat: system stays red — relief exhausted, no clean green spike.',
+      metrics: { relief: 11, residual: 88 },
+    },
+  },
+  'fig-baumeister': {
+    one_compliment: {
+      state: { bad: 0.18, good: 0.72, ratio: 1.2 },
+      lesson: 'One compliment: scale tilts slightly — good events register, but lightly.',
+      metrics: { tilt: '1.2×', net: '+54' },
+    },
+    one_insult: {
+      state: { bad: 0.92, good: 0.2, ratio: 4.6 },
+      lesson: 'One matched insult outweighs a compliment ~2–5× in memory — Baumeister asymmetry.',
+      metrics: { tilt: '4.6×', net: '−72' },
+    },
+    paired: {
+      state: { bad: 0.75, good: 0.75, ratio: 3.1 },
+      lesson: 'Same-day pair with equal intensity: net remembered valence still negative — bad writes heavier ink.',
+      metrics: { tilt: '3.1×', net: '−38' },
+    },
+  },
+  'fig-rozin': {
+    clean: {
+      state: { radius: 0.15 },
+      lesson: 'Before event: neutral grid — good and bad categories not yet linked.',
+      metrics: { spread: 0, isolated: 4 },
+    },
+    one_drop: {
+      state: { radius: 0.85 },
+      lesson: 'One bad event: local stain — contamination begins at the source node.',
+      metrics: { spread: 2, isolated: 4 },
+    },
+    spread: {
+      state: { radius: 2.8 },
+      lesson: 'After rumination: bad infects neighbors and meaning — negativity dominance (Rozin & Royzman).',
+      metrics: { spread: 11, isolated: 2 },
+    },
+  },
+  'fig-eisenberger': {
+    included: {
+      state: { exclusion: 0.04 },
+      lesson: 'Included in Cyberball: dACC quiet — social belonging, no bodily-hurt overlap.',
+      metrics: { acc: 8, overlap: 5 },
+    },
+    excluded: {
+      state: { exclusion: 0.96 },
+      lesson: 'Cyberball exclusion: dACC activates like bodily hurt — no peripheral nociception needed (Eisenberger 2003).',
+      metrics: { acc: 91, overlap: 78 },
+    },
+  },
+  'fig-lazarus': {
+    threat: {
+      state: { threat: 0.92, challenge: 0.12, blame: 0.78 },
+      lesson: 'Job loss framed as threat + self-blame: high suffering output from the same stressor.',
+      metrics: { output_a: 88, output_b: 14 },
+    },
+    challenge: {
+      state: { threat: 0.15, challenge: 0.88, blame: 0.1 },
+      lesson: 'Same stressor as challenge with coping resources: suffering output drops — appraisal is causal.',
+      metrics: { output_a: 16, output_b: 72 },
+    },
+  },
+  'pmx-00': {
+    defects: {
+      state: { mode: 'defects' },
+      lesson: 'Warranty card: pain, fear, grief, decay, death — shipped before consent.',
+      metrics: { defects_n: 5, locks: 0 },
+    },
+    regimes: {
+      state: { mode: 'regimes' },
+      lesson: 'Christian, Islamic, secular — three regimes, one clause: repair OK, exit forbidden.',
+      metrics: { defects_n: 5, locks: 3 },
+    },
+  },
+  'pmx-03': {
+    logged: {
+      state: { bugs: 1, blame: 0.08 },
+      lesson: 'Genesis 2–3 as QA: birth pain, toil, mortality, shame — defects logged in the product spec.',
+      metrics: { defects: 4, blame: 8 },
+    },
+    blame_shift: {
+      state: { bugs: 1, blame: 0.88 },
+      lesson: 'After logging: fault moves downstream — operator blamed for design defects.',
+      metrics: { defects: 4, blame: 88 },
+    },
+  },
+  'pmx-04': {
+    traditional: {
+      state: { user: 0.88, design: 0.15 },
+      lesson: 'Traditional reading: disobedient user carries the fault vector.',
+      metrics: { upstream: 15, downstream: 88 },
+    },
+    manufacture: {
+      state: { user: 0.12, design: 0.94 },
+      lesson: 'Manufacture reading: consciousness built inside a pain machine — fault moves upstream.',
+      metrics: { upstream: 94, downstream: 12 },
+    },
+  },
+  'pmx-09': {
+    repair_ok: {
+      state: { repair: 1, exit: 0.05 },
+      lesson: 'Medical repair: all three regimes approve — sanctify, steward, or dignify the chassis.',
+      metrics: { aligned: 100, veto: 0 },
+    },
+    exit_attempt: {
+      state: { repair: 0.2, exit: 0.98 },
+      lesson: 'Morphological exit: every regime deploys the lock — repair yes, exit no.',
+      metrics: { aligned: 100, veto: 98 },
+    },
+  },
+  'pmx-05': {
+    therapy: {
+      state: { rung: 2, wall: 0.1 },
+      lesson: 'Therapy rung: fully warrantied — treat symptoms inside the chassis.',
+      metrics: { rung: 3, wall: 'NO' },
+    },
+    enhance: {
+      state: { rung: 5, wall: 0.25 },
+      lesson: 'Enhancement rung: still approved — improve the machine, do not leave it.',
+      metrics: { rung: 6, wall: 'NO' },
+    },
+    exit: {
+      state: { rung: 6, wall: 0.98 },
+      lesson: 'Exit attempt: climber hits the wall — morphological escape vetoed.',
+      metrics: { rung: 7, wall: 'YES' },
+    },
+  },
+  'pmx-11': {
+    status_quo: {
+      state: { involuntary: 78, audit: 12 },
+      lesson: 'Status quo: involuntary suffering unmeasured — no audit trail.',
+      metrics: { involuntary: 78, trajectory: 12 },
+    },
+    audit_on: {
+      state: { involuntary: 42, audit: 68 },
+      lesson: 'Audit deployed: involuntary harm tracked and falling — engineering, not vibes.',
+      metrics: { involuntary: 42, trajectory: 68 },
+    },
+    target: {
+      state: { involuntary: 3, audit: 95 },
+      lesson: 'Abolition target: drive involuntary suffering toward zero without new captive minds.',
+      metrics: { involuntary: 3, trajectory: 95 },
+    },
+  },
+};
+
+function resolveCase(sceneId, widget) {
+  if (sceneId === 'fig-icd11') return icd11Case(widget.months);
+  const table = CASES[sceneId];
+  if (!table) return null;
+  return table[widget.preset] || table[Object.keys(table)[0]];
+}
+
+function applyNodeWeight(node, w, labelEl, min = 0.08) {
+  const on = Math.max(min, w);
+  node.coreMat.emissiveIntensity = 0.25 + on * 2.4;
+  node.scale.setScalar(0.35 + on * 0.85);
+  node.visible = w > 0.06;
+  if (labelEl) labelEl.el.dataset.opacity = String(0.12 + on * 0.88);
 }
 
 function createNode(color, size = 0.14) {
@@ -217,25 +496,23 @@ function buildNeuromatrix(group, labelState) {
     particles,
     hub,
     nodes,
-    update(v, now, labelState) {
-      const load = Math.max(v.somatic * 0.9, v.memory, v.stress);
-      hub.coreMat.emissiveIntensity = 0.6 + load * 2.2;
-      hub.scale.setScalar(0.85 + load * 0.45 + Math.sin(now * 0.003) * load * 0.06);
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-neuromatrix', widget);
+      if (!c) return null;
+      const { somatic, memory, stress } = c.state;
+      const load = Math.max(somatic, memory * 0.95, stress * 0.9);
+      applyNodeWeight(hub, load, labelState.list[5]);
       nodes.forEach((n, i) => {
-        const w = [v.somatic, v.memory, v.stress, (v.somatic + v.memory) * 0.45, v.stress * 0.7][i];
-        n.coreMat.emissiveIntensity = 0.35 + w * 1.8;
-        n.scale.setScalar(0.7 + w * 0.55);
-        labelState.list[i].el.dataset.opacity = String(0.15 + w * 0.85);
+        const w = [somatic, memory, stress, memory * 0.5, stress * 0.55][i];
+        applyNodeWeight(n, w, labelState.list[i]);
       });
-      particles.speeds.in0 = 0.12 + v.somatic * 0.75;
-      particles.speeds.in1 = 0.1 + v.memory * 0.7;
-      particles.speeds.in2 = 0.1 + v.stress * 0.72;
-      particles.mat.opacity = 0.35 + load * 0.55;
-      return {
-        output: Math.round(20 + load * 80),
-        inputs: Math.round(1 + v.somatic * 2 + v.memory * 2 + v.stress * 2),
-        readout: load > 0.55 ? 'Distributed inputs converge — tissue signal is insufficient alone' : 'Raise memory or stress — output grows without new injury',
-      };
+      particles.speeds.in0 = 0.04 + somatic * 0.95;
+      particles.speeds.in1 = 0.04 + memory * 0.9;
+      particles.speeds.in2 = 0.04 + stress * 0.88;
+      particles.speeds.in3 = 0.04 + memory * 0.35;
+      particles.speeds.in4 = 0.04 + stress * 0.32;
+      particles.mat.opacity = 0.15 + load * 0.75;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -259,17 +536,20 @@ function buildIasp(group, labelState) {
   return {
     particles,
     fusion,
-    update(v, now) {
-      const f = Math.min(1, v.sensory * 0.55 + v.affective * 0.55);
-      fusion.scale.setScalar(0.8 + f * 0.55 + Math.sin(now * 0.004) * f * 0.08);
-      fusion.coreMat.emissiveIntensity = 0.55 + f * 2.4;
-      particles.speeds.s = 0.15 + v.sensory * 0.65;
-      particles.speeds.a = 0.15 + v.affective * 0.65;
-      return {
-        fusion: Math.round(30 + f * 70),
-        ratio: (v.sensory / Math.max(v.affective, 0.08)).toFixed(2),
-        readout: 'Both channels feed diagnosis — neither is optional',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-iasp', widget);
+      if (!c) return null;
+      const { sensory, affect, qualifies } = c.state;
+      applyNodeWeight(sensory, sensory, labelState.list[0]);
+      applyNodeWeight(affect, affect, labelState.list[1]);
+      const fusionW = qualifies ? Math.min(1, sensory * 0.5 + affect * 0.55) : Math.min(0.35, sensory * 0.35);
+      applyNodeWeight(fusion, fusionW, labelState.list[2], 0.05);
+      fusion.coreMat.color.setHex(qualifies ? C.pain : C.dim);
+      fusion.coreMat.emissive.setHex(qualifies ? C.pain : C.dim);
+      particles.speeds.s = qualifies ? 0.1 + sensory * 0.75 : 0.04;
+      particles.speeds.a = qualifies ? 0.1 + affect * 0.75 : 0.04;
+      particles.mat.opacity = qualifies ? 0.65 : 0.15;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -300,24 +580,18 @@ function buildIcd11(group, labelState) {
     particles,
     branches,
     root,
-    update(v, now, labelState) {
-      const persist = v.persistence;
-      const injuryFade = Math.max(0, 1 - now * 0.00008 * (1.4 - v.injury));
-      root.coreMat.opacity = 0.25 + injuryFade * 0.65;
-      let active = 0;
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-icd11', widget);
+      if (!c) return null;
+      const { injury, branches: branchCount } = c.state;
+      applyNodeWeight(root, injury, labelState.list[0], 0.05);
       branches.forEach((b, i) => {
-        const on = persist * (0.55 + (i % 3) * 0.15);
-        b.coreMat.emissiveIntensity = 0.3 + on * 2;
-        b.scale.setScalar(0.65 + on * 0.55);
-        labelState.list[i + 1].el.dataset.opacity = String(0.12 + on * 0.88);
-        particles.speeds[`b${i}`] = 0.08 + on * 0.35;
-        if (on > 0.35) active += 1;
+        const on = i < branchCount ? 0.75 + (i % 3) * 0.08 : 0.04;
+        applyNodeWeight(b, on, labelState.list[i + 1], 0.04);
+        particles.speeds[`b${i}`] = on > 0.2 ? 0.15 + on * 0.45 : 0.02;
       });
-      return {
-        branches: active,
-        lag: Math.round(3 + persist * 24),
-        readout: injuryFade < 0.35 ? 'Injury faded — alarm branches stay lit (ICD-11 chronic classes)' : 'Acute trigger still visible while categories branch',
-      };
+      particles.mat.opacity = 0.15 + branchCount * 0.09;
+      return { ...c.metrics, readout: c.readout, lesson: c.lesson };
     },
   };
 }
@@ -347,28 +621,22 @@ function buildMcGill(group, labelState) {
   return {
     painPts,
     pleasPts,
-    update(v) {
-      const painWords = v.pain_lex_raw ?? Math.round(20 + v.pain_lex * 58);
-      const pleasWords = v.pleas_lex_raw ?? Math.round(4 + v.pleas_lex * 20);
-      const pCount = Math.round((painWords / 78) * painPts.length);
-      const gCount = Math.round((pleasWords / 24) * pleasPts.length);
+    update(widget) {
+      const c = resolveCase('fig-mcgill', widget);
+      if (!c) return null;
+      const { painWords, pleasWords, mode } = c.state;
+      const showPain = mode === 'pain';
+      const pCount = showPain ? painPts.length : 0;
+      const gCount = showPain ? Math.round(pleasPts.length * 0.25) : pleasPts.length;
       painPts.forEach((n, i) => {
-        const on = i < pCount;
-        n.visible = on;
-        if (on) {
-          n.coreMat.emissiveIntensity = 0.45 + (i % 7) * 0.08;
-        }
+        n.visible = i < pCount;
+        if (n.visible) n.coreMat.emissiveIntensity = 0.55 + (i % 7) * 0.06;
       });
       pleasPts.forEach((n, i) => {
         n.visible = i < gCount;
-        n.coreMat.emissiveIntensity = 0.35 + v.pleas_lex * 0.8;
+        if (n.visible) n.coreMat.emissiveIntensity = 0.65;
       });
-      const ratio = painWords / Math.max(pleasWords, 1);
-      return {
-        ratio: `${ratio.toFixed(1)}×`,
-        density: painWords,
-        readout: 'Clinical language factorizes pain into many more axes than pleasure',
-      };
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -400,23 +668,23 @@ function buildPrice(group, labelState) {
   return {
     layers,
     pleasure,
-    update(v, now) {
-      const vals = [v.intensity, v.unpleasant, v.secondary];
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-price', widget);
+      if (!c) return null;
+      const { intensity, unpleasant, secondary } = c.state;
+      const vals = [intensity, unpleasant, secondary];
       let active = 0;
       layers.forEach((pl, i) => {
         const s = vals[i];
-        pl.scale.y = 0.4 + s * 1.6;
-        pl.material.opacity = 0.08 + s * 0.55;
-        pl.position.z = i * 0.08 + Math.sin(now * 0.002 + i) * s * 0.05;
+        pl.scale.y = 0.15 + s * 2.2;
+        pl.material.opacity = s > 0.25 ? 0.12 + s * 0.65 : 0.04;
+        pl.visible = s > 0.2;
         if (s > 0.35) active += 1;
+        if (labelState.list[i]) labelState.list[i].el.dataset.opacity = String(0.15 + s * 0.85);
       });
-      pleasure.scale.setScalar(0.65 + v.intensity * 0.25);
-      pleasure.coreMat.emissiveIntensity = 0.35 + v.intensity * 0.45;
-      return {
-        layers: active,
-        pleasure: Math.round(15 + v.intensity * 35),
-        readout: active > 1 ? 'One injury — multiple ledgers climbing independently' : 'Separate sensory vs affective ledgers (Price 2000)',
-      };
+      pleasure.scale.setScalar(0.45 + intensity * 0.35);
+      pleasure.coreMat.emissiveIntensity = 0.2 + intensity * 0.45;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -438,20 +706,18 @@ function buildBerridge(group, labelState) {
   return {
     liking,
     wanting,
-    update(v, now) {
-      const wr = 0.75 + v.wanting * 1.05;
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-berridge', widget);
+      if (!c) return null;
+      const { wanting, liking } = c.state;
+      const wr = 0.55 + wanting * 1.35;
       wanting.forEach((w, i) => {
-        const ang = (i / wanting.length) * Math.PI * 2 + now * 0.0006 * (0.5 + v.wanting);
+        const ang = (i / wanting.length) * Math.PI * 2 + now * 0.0005 * (0.3 + wanting);
         w.position.set(Math.cos(ang) * wr, Math.sin(ang) * wr * 0.55, Math.sin(ang * 2) * 0.35);
-        w.coreMat.emissiveIntensity = 0.25 + v.wanting * 1.6;
+        applyNodeWeight(w, wanting, null, 0.05);
       });
-      liking.scale.setScalar(0.55 + v.liking * 0.55);
-      liking.coreMat.emissiveIntensity = 0.4 + v.liking * 2.2;
-      return {
-        orbit: wr.toFixed(2),
-        cluster: Math.round(20 + v.liking * 65),
-        readout: v.wanting > v.liking + 0.25 ? 'Pursuit outruns felt joy — wanting ≠ liking' : 'Tight hedonic cluster vs wide dopaminergic orbit',
-      };
+      applyNodeWeight(liking, liking, labelState.list[0]);
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -476,18 +742,17 @@ function buildLeknes(group, labelState) {
     particles,
     threat,
     relief,
-    update(v, now) {
-      threat.scale.setScalar(0.7 + v.threat * 0.65);
-      threat.coreMat.emissiveIntensity = 0.45 + v.threat * 1.8;
-      relief.scale.setScalar(0.55 + v.relief * v.threat * 0.85);
-      relief.coreMat.emissiveIntensity = 0.35 + v.relief * v.threat * 2.2;
-      particles.speeds.t = 0.12 + v.threat * 0.55;
-      particles.speeds.r = 0.08 + v.relief * 0.45;
-      return {
-        borrow: Math.round(v.relief * v.threat * 100),
-        residual: Math.round(v.threat * 70),
-        readout: 'Relief pleasure scales with prior threat — shared opioid/dopamine substrate',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-leknes', widget);
+      if (!c) return null;
+      const { threat, relief } = c.state;
+      applyNodeWeight(threat, threat, labelState.list[0]);
+      const reliefW = relief * (0.35 + threat * 0.75);
+      applyNodeWeight(relief, reliefW, labelState.list[1], 0.05);
+      particles.speeds.t = 0.05 + threat * 0.75;
+      particles.speeds.r = 0.04 + reliefW * 0.65;
+      particles.mat.opacity = 0.2 + threat * 0.55;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -509,19 +774,19 @@ function buildBaumeister(group, labelState) {
     bad,
     good,
     bar,
-    update(v, now) {
-      const tilt = (v.bad - v.good) * 0.55;
-      group.rotation.z = THREE.MathUtils.lerp(group.rotation.z, tilt, 0.08);
-      bad.scale.setScalar(0.65 + v.bad * 0.75);
-      good.scale.setScalar(0.55 + v.good * 0.45);
-      bad.position.y = 0.25 + v.bad * 0.35;
-      good.position.y = 0.25 + v.good * 0.2;
-      const ratio = v.bad / Math.max(v.good, 0.08);
-      return {
-        tilt: `${ratio.toFixed(1)}×`,
-        net: Math.round((v.bad - v.good) * 100),
-        readout: 'Matched events — bad side drops the scale (Baumeister et al. 2001)',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-baumeister', widget);
+      if (!c) return null;
+      const { bad, good, ratio } = c.state;
+      const tilt = (bad - good) * 0.65;
+      bar.parent.rotation.z = tilt;
+      bad.scale.setScalar(0.5 + bad * 1.1);
+      good.scale.setScalar(0.45 + good * 0.55);
+      bad.position.y = 0.15 + bad * 0.55;
+      good.position.y = 0.15 + good * 0.25;
+      applyNodeWeight(bad, bad, labelState.list[0]);
+      applyNodeWeight(good, good, labelState.list[1]);
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -545,8 +810,10 @@ function buildRozin(group, labelState) {
   return {
     grid,
     seed,
-    update(v, now) {
-      const radius = 0.5 + v.contagion * 2.2;
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-rozin', widget);
+      if (!c) return null;
+      const { radius } = c.state;
       let infected = 0;
       let good = 0;
       grid.forEach((n) => {
@@ -555,23 +822,27 @@ function buildRozin(group, labelState) {
         if (hit) {
           n.coreMat.color.setHex(C.pain);
           n.coreMat.emissive.setHex(C.pain);
-          n.coreMat.emissiveIntensity = 0.5 + v.contagion * 1.5;
+          n.coreMat.emissiveIntensity = 0.85;
+          n.scale.setScalar(0.85);
           infected += 1;
         } else if (n.userData.idx < 4) {
           n.coreMat.color.setHex(C.pleasure);
           n.coreMat.emissive.setHex(C.pleasure);
+          n.coreMat.emissiveIntensity = 0.55;
           good += 1;
         } else {
           n.coreMat.color.setHex(C.muted);
           n.coreMat.emissive.setHex(C.muted);
+          n.coreMat.emissiveIntensity = 0.25;
+          n.scale.setScalar(0.65);
         }
-        n.position.z = Math.sin(now * 0.002 + n.userData.idx) * hit * 0.08;
       });
-      seed.scale.setScalar(0.8 + v.contagion * 0.45 + Math.sin(now * 0.004) * 0.06);
+      applyNodeWeight(seed, Math.min(1, radius / 2), labelState.list[0]);
       return {
         spread: infected,
         isolated: good,
-        readout: 'Negative differentiation — harm stains neighbors; good stays local',
+        readout: c.lesson,
+        lesson: c.lesson,
       };
     },
   };
@@ -602,17 +873,20 @@ function buildEisenberger(group, labelState) {
     acc,
     outcast,
     particles,
-    update(v, now) {
-      acc.scale.setScalar(0.75 + v.exclusion * 0.65 + Math.sin(now * 0.004) * v.exclusion * 0.08);
-      acc.coreMat.emissiveIntensity = 0.45 + v.exclusion * 2.4;
-      outcast.position.x = 1.15 + v.exclusion * 0.45;
-      particles.speeds.x = 0.12 + v.exclusion * 0.75;
-      const overlap = Math.round(40 + v.exclusion * (1 - v.belonging * 0.4) * 55);
-      return {
-        acc: Math.round(25 + v.exclusion * 75),
-        overlap,
-        readout: 'Ostracism activates bodily hurt circuits — no peripheral nociception required',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-eisenberger', widget);
+      if (!c) return null;
+      const { exclusion } = c.state;
+      applyNodeWeight(acc, exclusion, labelState.list[0], 0.06);
+      outcast.visible = exclusion > 0.2;
+      outcast.position.x = 0.85 + exclusion * 0.75;
+      applyNodeWeight(outcast, exclusion, labelState.list[1], 0.05);
+      particles.speeds.x = 0.02 + exclusion * 0.85;
+      particles.mat.opacity = 0.1 + exclusion * 0.75;
+      ring.forEach((n) => {
+        n.coreMat.emissiveIntensity = 0.15 + (1 - exclusion) * 0.45;
+      });
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -638,17 +912,18 @@ function buildLazarus(group, labelState) {
     particles,
     threat,
     challenge,
-    update(v, now) {
-      threat.scale.setScalar(0.65 + v.threat * 0.75 + v.blame * 0.35);
-      challenge.scale.setScalar(0.6 + v.challenge * 0.55);
-      threat.coreMat.emissiveIntensity = 0.4 + v.threat * 1.8 + v.blame * 0.8;
-      particles.speeds.t = 0.1 + v.threat * 0.65;
-      particles.speeds.c = 0.1 + v.challenge * 0.55;
-      return {
-        output_a: Math.round(20 + (v.threat + v.blame * 0.5) * 70),
-        output_b: Math.round(15 + v.challenge * 55),
-        readout: 'Appraisal frame reshapes output — Lazarus & Folkman stress model',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('fig-lazarus', widget);
+      if (!c) return null;
+      const { threat, challenge, blame } = c.state;
+      const threatW = Math.min(1, threat + blame * 0.45);
+      applyNodeWeight(threat, threatW, labelState.list[1]);
+      applyNodeWeight(challenge, challenge, labelState.list[2]);
+      applyNodeWeight(event, 0.75, labelState.list[0]);
+      particles.speeds.t = 0.04 + threatW * 0.8;
+      particles.speeds.c = 0.04 + challenge * 0.75;
+      particles.mat.opacity = 0.2 + Math.max(threatW, challenge) * 0.65;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -679,22 +954,20 @@ function buildWarranty(group, labelState) {
     card,
     defects,
     locks,
-    update(v, now, labelState) {
-      card.rotation.y = Math.sin(now * 0.0005) * 0.12;
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-00', widget);
+      if (!c) return null;
+      const { mode } = c.state;
       defects.forEach((n, i) => {
-        n.coreMat.emissiveIntensity = 0.35 + v.defects * (1.2 + (i % 3) * 0.15);
-        n.visible = v.defects > i * 0.12;
+        n.visible = true;
+        applyNodeWeight(n, 0.85, null);
       });
       locks.forEach((l, i) => {
-        l.coreMat.emissiveIntensity = 0.35 + v.repair * 1.2;
-        l.scale.y = 0.8 + v.repair * 0.55;
-        labelState.list[i + 1].el.dataset.opacity = String(0.25 + v.repair * 0.75);
+        const on = mode === 'regimes' ? 0.92 : 0.12;
+        applyNodeWeight(l, on, labelState.list[i + 1], 0.05);
       });
-      return {
-        locks: 3,
-        regimes: Math.round(70 + v.repair * 30),
-        readout: 'Three regimes · one clause: repair the chassis, never abandon it',
-      };
+      card.rotation.y = mode === 'regimes' ? 0.45 : 0;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -724,21 +997,16 @@ function buildGenesis(group, labelState) {
   return {
     bugs,
     particles,
-    update(v, now) {
-      let open = 0;
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-03', widget);
+      if (!c) return null;
+      const { bugs, blame } = c.state;
       bugs.forEach((n, i) => {
-        const on = v.bugs * (0.65 + (i % 2) * 0.2);
-        n.coreMat.emissiveIntensity = 0.3 + on * 2;
-        n.scale.setScalar(0.55 + on * 0.65);
-        n.position.y = -0.65 - (i % 2) * 0.15 - Math.sin(now * 0.002 + i) * on * 0.08;
-        particles.speeds[`d${i}`] = 0.08 + on * 0.35;
-        if (on > 0.35) open += 1;
+        applyNodeWeight(n, bugs, labelState.list[i + 1]);
+        particles.speeds[`d${i}`] = 0.12 + bugs * 0.45;
       });
-      return {
-        defects: open,
-        severity: Math.round(40 + v.bugs * 55),
-        readout: v.blame > 0.55 ? 'Defects logged — then blame assigned downstream' : 'Genesis 2–3 as hardware defect table',
-      };
+      particles.mat.opacity = 0.25 + bugs * 0.55;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -759,19 +1027,17 @@ function buildInversion(group, labelState) {
     user,
     design,
     particles,
-    update(v, now) {
-      user.scale.setScalar(0.55 + v.user_blame * 0.45);
-      design.scale.setScalar(0.65 + v.design_blame * 0.75);
-      user.coreMat.emissiveIntensity = 0.2 + v.user_blame * 0.8;
-      design.coreMat.emissiveIntensity = 0.45 + v.design_blame * 2.2;
-      particles.speeds.flip = 0.1 + v.design_blame * 0.65;
-      user.position.x = THREE.MathUtils.lerp(user.position.x, -1.05 + v.user_blame * 0.25, 0.06);
-      design.position.x = THREE.MathUtils.lerp(design.position.x, 0.85 + v.design_blame * 0.35, 0.06);
-      return {
-        upstream: Math.round(20 + v.design_blame * 80),
-        downstream: Math.round(v.user_blame * 60),
-        readout: 'Original Sin as manufacture — fault moves upstream to design',
-      };
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-04', widget);
+      if (!c) return null;
+      const { user, design } = c.state;
+      applyNodeWeight(user, user, labelState.list[0]);
+      applyNodeWeight(design, design, labelState.list[1]);
+      user.position.x = -1.05 + user * 0.35;
+      design.position.x = 0.75 + design * 0.45;
+      particles.speeds.flip = 0.05 + design * 0.75;
+      particles.mat.opacity = 0.15 + Math.max(user, design) * 0.65;
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -792,19 +1058,17 @@ function buildRegimes(group, labelState) {
   });
   return {
     cols,
-    update(v, now, labelState) {
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-09', widget);
+      if (!c) return null;
+      const { repair, exit } = c.state;
       cols.forEach(({ base, lock }, i) => {
-        base.scale.y = 0.6 + v.repair * 1.8;
-        base.material.emissiveIntensity = 0.1 + v.repair * 0.55;
-        lock.coreMat.emissiveIntensity = 0.35 + (1 - v.exit) * 1.5;
-        lock.scale.setScalar(0.65 + (1 - v.exit) * 0.55);
-        labelState.list[i].el.dataset.opacity = String(0.3 + v.repair * 0.7);
+        base.scale.y = 0.4 + repair * 2.2;
+        base.material.emissiveIntensity = 0.08 + repair * 0.65;
+        applyNodeWeight(lock, exit, labelState.list[i], 0.08);
+        lock.scale.setScalar(0.5 + exit * 0.95);
       });
-      return {
-        aligned: Math.round(80 + v.repair * 20),
-        veto: Math.round(70 + (1 - v.exit) * 30),
-        readout: 'Theologies diverge — body policy converges: repair yes, exit no',
-      };
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -833,20 +1097,22 @@ function buildLadder(group, labelState) {
     steps,
     wall,
     climber,
-    update(v, now) {
-      const rung = Math.min(6, Math.floor(v.therapy * 7));
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-05', widget);
+      if (!c) return null;
+      const { rung, wall } = c.state;
       steps.forEach((s, i) => {
-        s.material.emissiveIntensity = i <= rung ? 0.15 + v.therapy * 0.55 : 0.05;
-        s.material.opacity = i <= rung ? 1 : 0.35;
+        const on = i <= rung;
+        s.material.emissiveIntensity = on ? 0.55 : 0.06;
+        s.material.opacity = on ? 1 : 0.2;
       });
       climber.position.set(steps[rung].position.x, steps[rung].position.y + 0.18, 0.15);
-      wall.material.emissiveIntensity = 0.15 + v.exit * 0.85;
-      wall.scale.y = 0.85 + v.exit * 0.35;
-      return {
-        rung: rung + 1,
-        wall: Math.round(60 + v.exit * 40),
-        readout: rung >= 5 ? 'Therapy ladder climbed — morphological exit hits the wall' : 'Warrantied repair rungs — exit remains forbidden',
-      };
+      applyNodeWeight(climber, 0.9, null);
+      wall.material.emissiveIntensity = 0.12 + wall * 0.95;
+      wall.scale.y = 0.7 + wall * 0.55;
+      wall.visible = wall > 0.15;
+      if (labelState.list[0]) labelState.list[0].el.dataset.opacity = String(0.2 + wall * 0.85);
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -869,21 +1135,19 @@ function buildAudit(group, labelState) {
   return {
     bars,
     target,
-    update(v, now) {
+    update(widget, now, labelState) {
+      const c = resolveCase('pmx-11', widget);
+      if (!c) return null;
+      const { involuntary, audit } = c.state;
+      const inv = involuntary / 100;
       bars.forEach((b, i) => {
-        const fall = Math.max(0.08, 1 - (now * 0.00004 * v.audit + i * 0.08) % 1.1);
-        const h = (0.15 + v.residual * 0.65) * fall;
+        const h = 0.12 + inv * (0.55 + (5 - i) * 0.06);
         b.scale.y = h;
         b.position.y = -0.65 + h * 0.5;
-        b.material.emissiveIntensity = 0.12 + v.residual * 0.55;
+        b.material.emissiveIntensity = 0.1 + inv * 0.75;
       });
-      target.coreMat.emissiveIntensity = 0.4 + v.audit * 1.5;
-      target.scale.setScalar(0.7 + Math.sin(now * 0.003) * 0.06);
-      return {
-        involuntary: Math.round(v.residual * 100),
-        trajectory: Math.round(v.audit * 100),
-        readout: 'Abolition metric — drive involuntary suffering toward zero',
-      };
+      applyNodeWeight(target, audit / 100, labelState.list[0]);
+      return { ...c.metrics, readout: c.lesson, lesson: c.lesson };
     },
   };
 }
@@ -896,12 +1160,9 @@ class EvidenceWidget {
     this.view = root.querySelector('.pm-ev-view');
     this.labelLayer = root.querySelector('.pm-ev-labels');
     this.readoutEl = root.querySelector('[data-readout]');
-    this.sliders = {};
-    root.querySelectorAll('[data-slider]').forEach((el) => {
-      this.sliders[el.dataset.slider] = bindSlider(root, el.dataset.slider);
-    });
+    this.lessonEl = root.querySelector('[data-lesson]');
+    bindControls(root, this);
     this.running = false;
-    this.disposed = false;
   }
 
   start() {
@@ -979,16 +1240,13 @@ class EvidenceWidget {
       this.raf = requestAnimationFrame(this.animate);
       const dt = Math.min(0.05, (now - this.t0) / 1000);
       this.t0 = now;
-      const v = {};
-      Object.entries(this.sliders).forEach(([k, s]) => {
-        v[k] = s.value;
-        v[`${k}_raw`] = s.raw();
-      });
-      const metrics = this.logic.update(v, now, this.labelState);
+      const metrics = this.logic.update(this, now, this.labelState);
       if (metrics) {
         Object.entries(metrics).forEach(([k, val]) => {
           if (k === 'readout') {
             if (this.readoutEl) this.readoutEl.textContent = val;
+          } else if (k === 'lesson') {
+            if (this.lessonEl) this.lessonEl.textContent = val;
           } else {
             const el = this.root.querySelector(`[data-m="${k}"]`);
             if (el) el.textContent = String(val);

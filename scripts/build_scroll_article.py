@@ -154,22 +154,56 @@ FIG_CSS = """
   text-transform: uppercase;
   letter-spacing: .06em;
 }
-.pm-ev-controls { display: flex; flex-direction: column; gap: .5rem; }
-.pm-ev-slider label {
+.pm-ev-prompt {
+  margin: 0;
+  font: 500 .68rem/1.35 ui-monospace, monospace;
+  color: var(--dim);
+}
+.pm-ev-presets {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.pm-ev-preset {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: rgba(235,228,220,.02);
+  color: var(--muted);
+  font: 500 .72rem/1.35 ui-monospace, monospace;
+  padding: .55rem .65rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.pm-ev-preset:hover { border-color: rgba(235,228,220,.22); color: var(--ink); }
+.pm-ev-preset.is-active {
+  border-color: rgba(184,154,106,.45);
+  background: rgba(184,154,106,.08);
+  color: var(--ink);
+}
+.pm-ev-scrub { margin-top: .35rem; }
+.pm-ev-scrub label {
   display: flex;
   justify-content: space-between;
   font: 500 .68rem/1.2 ui-monospace, monospace;
   color: var(--muted);
   margin-bottom: .2rem;
 }
-.pm-ev-slider input {
+.pm-ev-scrub input {
   width: 100%;
   height: 28px;
   accent-color: var(--gold);
   touch-action: manipulation;
 }
-.pm-ev-slider.pain input { accent-color: var(--pain); }
-.pm-ev-slider.pleasure input { accent-color: var(--pleasure); }
+.pm-ev-lesson {
+  margin: .5rem 0 0;
+  padding: .55rem .65rem;
+  border: 1px solid rgba(184,92,85,.25);
+  background: rgba(18,9,9,.55);
+  font-size: .78rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
 .pm-ev-blurb {
   margin: .35rem 0 0;
   font-size: .78rem;
@@ -290,7 +324,7 @@ ShowToc: false
     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
   }}
 }}</script>
-<script type="module" src="/research/pain_machines/pm-evidence.js?v=1"></script>
+<script type="module" src="/research/pain_machines/pm-evidence.js?v=2"></script>
 <script type="module" src="/research/pain_machines/brain3d.js?v=6"></script>
 <script src="/research/pain_machines/pm-compute.js?v=2" defer></script>
 

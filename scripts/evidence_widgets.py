@@ -9,6 +9,7 @@ from typing import Any
 
 Widget = dict[str, Any]
 
+# Each widget: presets = documented cases (not generic sliders). Optional scrub = one teaching timeline.
 CLINICAL: list[Widget] = [
     {
         "id": "fig-neuromatrix",
@@ -20,17 +21,17 @@ CLINICAL: list[Widget] = [
         "caption": "Melzack broke the courtroom model: the brain builds pain from signal, map, memory, stress, and expectation.",
         "blurb": (
             "Melzack's neuromatrix theory treats pain as a distributed output pattern — not a faithful "
-            "meter of tissue damage. Somatic input is one contributor among memory traces, stress gates, "
-            "and appraisal. Phantom-limb pain is the proof case: the map persists after the limb is gone."
+            "meter of tissue damage. Phantom-limb pain is the proof case: the map persists after the limb is gone."
         ),
-        "sliders": [
-            {"id": "somatic", "label": "somatic input", "value": 55, "tone": "pain"},
-            {"id": "memory", "label": "memory load", "value": 72, "tone": "pain"},
-            {"id": "stress", "label": "stress gate", "value": 68, "tone": "pain"},
+        "control_prompt": "Compare Melzack's cases:",
+        "presets": [
+            {"id": "acute", "label": "Fresh tissue injury", "hint": "Somatic input drives output"},
+            {"id": "phantom", "label": "Phantom limb", "hint": "Limb absent — pain persists"},
+            {"id": "stress_flare", "label": "Stress flare, no new damage", "hint": "Memory + stress alone"},
         ],
         "metrics": [
             {"id": "output", "label": "pain output", "tone": "pain"},
-            {"id": "inputs", "label": "active inputs", "tone": "gold"},
+            {"id": "somatic", "label": "tissue signal", "tone": "gold"},
         ],
     },
     {
@@ -43,16 +44,17 @@ CLINICAL: list[Widget] = [
         "caption": "Official medicine: pain is always sensory and emotional — not a tissue meter alone.",
         "blurb": (
             "The 2020 IASP revision defines pain as \"an unpleasant sensory and emotional experience.\" "
-            "Clinicians cannot strip the affective channel without losing the diagnosis. Body-signal and "
-            "emotion are co-primary, not optional add-ons."
+            "Strip either channel and you no longer have the clinical object called pain."
         ),
-        "sliders": [
-            {"id": "sensory", "label": "sensory channel", "value": 80, "tone": "pain"},
-            {"id": "affective", "label": "emotional channel", "value": 75, "tone": "gold"},
+        "control_prompt": "What counts as pain under IASP?",
+        "presets": [
+            {"id": "sensory_only", "label": "Body signal only", "hint": "Fails IASP definition"},
+            {"id": "iasp_pain", "label": "Full IASP pain", "hint": "Both channels required"},
+            {"id": "grief_led", "label": "Emotion-led pain", "hint": "Affective channel dominant"},
         ],
         "metrics": [
-            {"id": "fusion", "label": "fused intensity", "tone": "pain"},
-            {"id": "ratio", "label": "sensory/affect", "tone": "gold"},
+            {"id": "qualifies", "label": "IASP pain?", "tone": "pain"},
+            {"id": "fusion", "label": "fused intensity", "tone": "gold"},
         ],
     },
     {
@@ -64,17 +66,14 @@ CLINICAL: list[Widget] = [
         "scene": "fig-icd11",
         "caption": "ICD-11 makes chronic pain a disease category. The alarm can outlive the fire.",
         "blurb": (
-            "ICD-11 lists seven chronic primary and secondary pain categories with nested subtypes. "
-            "The taxonomy exists because alarms persist after injuries heal — chronic pain is classified "
-            "as its own disease process, not merely a symptom timer."
+            "ICD-11 lists seven chronic pain categories because alarms persist after injuries heal. "
+            "Scrub the timeline — watch the acute trigger fade while chronic classes stay lit."
         ),
-        "sliders": [
-            {"id": "injury", "label": "initial injury", "value": 90, "tone": "pain"},
-            {"id": "persistence", "label": "alarm persistence", "value": 70, "tone": "gold"},
-        ],
+        "control_prompt": "Scrub the clinical timeline:",
+        "scrub": {"id": "months", "label": "Months since injury", "min": 0, "max": 24, "value": 0, "unit": "mo"},
         "metrics": [
-            {"id": "branches", "label": "active categories", "tone": "pain"},
-            {"id": "lag", "label": "alarm lag (mo)", "tone": "gold"},
+            {"id": "injury", "label": "acute trigger", "tone": "gold"},
+            {"id": "branches", "label": "MG30 classes lit", "tone": "pain"},
         ],
     },
     {
@@ -87,16 +86,16 @@ CLINICAL: list[Widget] = [
         "caption": "78 pain descriptors in clinical use. Pleasure shares far fewer words.",
         "blurb": (
             "The McGill Pain Questionnaire carries 78 descriptor words across sensory, affective, "
-            "evaluative, and miscellaneous domains. Language factorizes pain into many axes; pleasure "
-            "vocabulary stays sparse — a lexical asymmetry clinicians already encode."
+            "evaluative, and miscellaneous domains — pleasure vocabulary stays sparse."
         ),
-        "sliders": [
-            {"id": "pain_lex", "label": "pain descriptors", "value": 78, "min": 20, "max": 78, "tone": "pain"},
-            {"id": "pleas_lex", "label": "pleasure descriptors", "value": 12, "min": 4, "max": 24, "tone": "pleasure"},
+        "control_prompt": "Toggle lexicon view:",
+        "presets": [
+            {"id": "mpq_clinical", "label": "MPQ clinical (78)", "hint": "Sensory · affective · evaluative"},
+            {"id": "pleasure_colloquial", "label": "Pleasure words (~12)", "hint": "Sparse everyday labels"},
         ],
         "metrics": [
-            {"id": "ratio", "label": "word ratio", "tone": "gold"},
-            {"id": "density", "label": "pain density", "tone": "pain"},
+            {"id": "words", "label": "visible words", "tone": "pain"},
+            {"id": "ratio", "label": "pain:pleasure", "tone": "gold"},
         ],
     },
     {
@@ -108,18 +107,18 @@ CLINICAL: list[Widget] = [
         "scene": "fig-price",
         "caption": "Intensity and unpleasantness can separate — one injury, multiple ledgers.",
         "blurb": (
-            "Price's psychophysical work separates sensory intensity, unpleasantness, and secondary affect "
-            "into partially independent dimensions. One stimulus can climb one ledger while another stays flat — "
-            "evidence against a single pain dial."
+            "Price separates sensory intensity, unpleasantness, and secondary affect into partially "
+            "independent dimensions — one stimulus can climb one ledger while another stays flat."
         ),
-        "sliders": [
-            {"id": "intensity", "label": "sensory intensity", "value": 70, "tone": "pain"},
-            {"id": "unpleasant", "label": "unpleasantness", "value": 85, "tone": "pain"},
-            {"id": "secondary", "label": "secondary affect", "value": 60, "tone": "gold"},
+        "control_prompt": "Price's dissociation cases:",
+        "presets": [
+            {"id": "capsaicin", "label": "Capsaicin on tongue", "hint": "High intensity · lower unpleasantness"},
+            {"id": "colic", "label": "Labor / colic", "hint": "All three ledgers climb"},
+            {"id": "neuropathic", "label": "Neuropathic sting", "hint": "Low intensity · high suffering"},
         ],
         "metrics": [
-            {"id": "layers", "label": "active layers", "tone": "pain"},
-            {"id": "pleasure", "label": "pleasure band", "tone": "pleasure"},
+            {"id": "layers", "label": "ledgers active", "tone": "pain"},
+            {"id": "dissoc", "label": "dissociation", "tone": "gold"},
         ],
     },
     {
@@ -131,17 +130,18 @@ CLINICAL: list[Widget] = [
         "scene": "fig-berridge",
         "caption": "Wanting ≠ liking. Pleasure clusters; pursuit can run without joy.",
         "blurb": (
-            "Berridge distinguishes hedonic \"liking\" (tight opioid hotspots in NAc shell and VP) from "
-            "dopaminergic \"wanting\" that sprawls across mesolimbic circuitry. Addiction often decouples "
-            "pursuit from felt joy — more runway for compulsion than for pleasure."
+            "Berridge: hedonic \"liking\" sits in tight opioid hotspots; dopaminergic \"wanting\" sprawls. "
+            "Addiction often decouples pursuit from felt joy."
         ),
-        "sliders": [
-            {"id": "wanting", "label": "wanting drive", "value": 78, "tone": "gold"},
-            {"id": "liking", "label": "liking hotspots", "value": 35, "tone": "pleasure"},
+        "control_prompt": "Compare reward states:",
+        "presets": [
+            {"id": "healthy_meal", "label": "Sated meal", "hint": "Liking ≈ wanting"},
+            {"id": "addiction", "label": "Addiction profile", "hint": "Wanting ≫ liking"},
+            {"id": "hotspot", "label": "Direct opioid liking", "hint": "Tight hedonic cluster"},
         ],
         "metrics": [
-            {"id": "orbit", "label": "wanting radius", "tone": "gold"},
-            {"id": "cluster", "label": "liking cluster", "tone": "pleasure"},
+            {"id": "orbit", "label": "wanting spread", "tone": "gold"},
+            {"id": "cluster", "label": "liking intensity", "tone": "pleasure"},
         ],
     },
     {
@@ -153,16 +153,17 @@ CLINICAL: list[Widget] = [
         "scene": "fig-leknes",
         "caption": "Relief is pleasure with a history of threat — green borrows from red.",
         "blurb": (
-            "Relief-affect rides the same opioid and dopamine substrates as threat processing. "
-            "Stopping pain feels good because the system was recently under threat — pleasure here "
-            "is often the shadow of avoided harm, not a symmetric opposite."
+            "Relief-affect rides the same substrates as threat processing. "
+            "Stopping pain feels good because the system was recently under threat."
         ),
-        "sliders": [
-            {"id": "threat", "label": "prior threat", "value": 75, "tone": "pain"},
-            {"id": "relief", "label": "relief spike", "value": 55, "tone": "pleasure"},
+        "control_prompt": "Relief vs prior threat:",
+        "presets": [
+            {"id": "mild_relief", "label": "Minor annoyance ends", "hint": "Weak threat → weak relief"},
+            {"id": "burn_relief", "label": "Burn then cool water", "hint": "High threat → strong relief"},
+            {"id": "chronic", "label": "Chronic threat", "hint": "Relief exhausted"},
         ],
         "metrics": [
-            {"id": "borrow", "label": "borrowed pleasure", "tone": "pleasure"},
+            {"id": "relief", "label": "relief felt", "tone": "pleasure"},
             {"id": "residual", "label": "threat residue", "tone": "pain"},
         ],
     },
@@ -175,17 +176,18 @@ CLINICAL: list[Widget] = [
         "scene": "fig-baumeister",
         "caption": "Bad events outweigh matched good ones. Harm writes in heavier ink.",
         "blurb": (
-            "Baumeister's review finds bad events, emotions, and impressions carry more weight than "
-            "matched good ones across psychology — from learning rates to relationship memory. The scale "
-            "tilts without any moral claim; it's an empirical asymmetry in how minds update."
+            "Baumeister's review: matched bad events outweigh good ones in learning, memory, and impression "
+            "formation — an empirical asymmetry, not a moral claim."
         ),
-        "sliders": [
-            {"id": "bad", "label": "harm weight", "value": 82, "tone": "pain"},
-            {"id": "good", "label": "benefit weight", "value": 38, "tone": "pleasure"},
+        "control_prompt": "Matched events on the scale:",
+        "presets": [
+            {"id": "one_compliment", "label": "One compliment", "hint": "Light tilt"},
+            {"id": "one_insult", "label": "One insult", "hint": "Heavy tilt (~2–5×)"},
+            {"id": "paired", "label": "Same-day pair", "hint": "Bad dominates net memory"},
         ],
         "metrics": [
-            {"id": "tilt", "label": "tilt ratio", "tone": "gold"},
-            {"id": "net", "label": "net valence", "tone": "pain"},
+            {"id": "tilt", "label": "bad:good weight", "tone": "gold"},
+            {"id": "net", "label": "remembered valence", "tone": "pain"},
         ],
     },
     {
@@ -197,16 +199,17 @@ CLINICAL: list[Widget] = [
         "scene": "fig-rozin",
         "caption": "Bad spreads to neighbors and meaning. Good stays local.",
         "blurb": (
-            "Negative differentiation: the bad domain is richer, more differentiated, and more contagious "
-            "than the good. One contamination event stains adjacent categories; good events rarely "
-            "propagate the same way — negativity dominance in cognitive structure."
+            "Negative differentiation: bad is richer and more contagious than good. "
+            "One contamination stains adjacent categories; good events stay local."
         ),
-        "sliders": [
-            {"id": "contagion", "label": "contagion radius", "value": 72, "tone": "pain"},
-            {"id": "good_local", "label": "good locality", "value": 28, "tone": "pleasure"},
+        "control_prompt": "Contamination stages:",
+        "presets": [
+            {"id": "clean", "label": "Before event", "hint": "Neutral grid"},
+            {"id": "one_drop", "label": "One bad event", "hint": "Local stain"},
+            {"id": "spread", "label": "After rumination", "hint": "Bad infects neighbors"},
         ],
         "metrics": [
-            {"id": "spread", "label": "infected nodes", "tone": "pain"},
+            {"id": "spread", "label": "stained nodes", "tone": "pain"},
             {"id": "isolated", "label": "good enclaves", "tone": "pleasure"},
         ],
     },
@@ -220,16 +223,16 @@ CLINICAL: list[Widget] = [
         "caption": "Social exclusion recruits the same circuits as bodily hurt.",
         "blurb": (
             "Cyberball exclusion activates dACC and insula — overlap with physical pain circuitry "
-            "without peripheral nociception. Social injury is not metaphorical in the brain; it uses "
-            "hardware evolved for bodily threat."
+            "without peripheral nociception."
         ),
-        "sliders": [
-            {"id": "exclusion", "label": "exclusion intensity", "value": 70, "tone": "pain"},
-            {"id": "belonging", "label": "group acceptance", "value": 40, "tone": "pleasure"},
+        "control_prompt": "Cyberball conditions:",
+        "presets": [
+            {"id": "included", "label": "Included throws", "hint": "dACC quiet"},
+            {"id": "excluded", "label": "Excluded (Cyberball)", "hint": "dACC lights up"},
         ],
         "metrics": [
             {"id": "acc", "label": "dACC activation", "tone": "pain"},
-            {"id": "overlap", "label": "body overlap", "tone": "gold"},
+            {"id": "overlap", "label": "body-circuit overlap", "tone": "gold"},
         ],
     },
     {
@@ -241,18 +244,17 @@ CLINICAL: list[Widget] = [
         "scene": "fig-lazarus",
         "caption": "Appraisal transforms the event: threat, blame, and coping change the felt blow.",
         "blurb": (
-            "Lazarus–Folkman stress appraisal: primary appraisal (harm/threat/challenge) and secondary "
-            "appraisal (coping resources) reshape the same objective stressor into different suffering "
-            "outputs — the event is not the whole story; the frame is."
+            "Same objective stressor — different primary appraisal (threat vs challenge) — "
+            "different suffering output. The frame is part of the injury."
         ),
-        "sliders": [
-            {"id": "threat", "label": "threat frame", "value": 75, "tone": "pain"},
-            {"id": "challenge", "label": "challenge frame", "value": 35, "tone": "pleasure"},
-            {"id": "blame", "label": "self-blame", "value": 60, "tone": "gold"},
+        "control_prompt": "Same stressor, different frame:",
+        "presets": [
+            {"id": "threat", "label": "Threat + self-blame", "hint": "High suffering path"},
+            {"id": "challenge", "label": "Challenge + resources", "hint": "Lower suffering path"},
         ],
         "metrics": [
-            {"id": "output_a", "label": "threat path", "tone": "pain"},
-            {"id": "output_b", "label": "challenge path", "tone": "pleasure"},
+            {"id": "output_a", "label": "threat output", "tone": "pain"},
+            {"id": "output_b", "label": "challenge output", "tone": "pleasure"},
         ],
     },
 ]
@@ -265,17 +267,16 @@ PMX: list[Widget] = [
         "scene": "pmx-00",
         "caption": "Every civilization assigns repair rights and forbids exit from the inherited human format before consent is possible.",
         "blurb": (
-            "Homo sapiens ships with known defects — pain, fear, grief, decay, death — and no consent form. "
-            "Christian, Islamic, and secular regimes disagree on metaphysics but converge on the clause: "
-            "repair the chassis, never abandon it."
+            "Homo sapiens ships with known defects — pain, fear, grief, decay, death — and no consent form."
         ),
-        "sliders": [
-            {"id": "defects", "label": "defect severity", "value": 85, "tone": "pain"},
-            {"id": "repair", "label": "repair mandate", "value": 70, "tone": "gold"},
+        "control_prompt": "View the warranty:",
+        "presets": [
+            {"id": "defects", "label": "Known defects", "hint": "Shipped at birth"},
+            {"id": "regimes", "label": "Three exit locks", "hint": "Repair OK · exit forbidden"},
         ],
         "metrics": [
-            {"id": "locks", "label": "exit locks", "tone": "pain"},
-            {"id": "regimes", "label": "aligned regimes", "tone": "gold"},
+            {"id": "defects_n", "label": "listed defects", "tone": "pain"},
+            {"id": "locks", "label": "exit locks", "tone": "gold"},
         ],
     },
     {
@@ -284,18 +285,15 @@ PMX: list[Widget] = [
         "title": "Genesis as QA report",
         "scene": "pmx-03",
         "caption": "Birth pain, toil, mortality — hardware bugs logged before moral billing.",
-        "blurb": (
-            "Genesis 2–3 reads like a defect table: birth pain, agricultural toil, mortality, shame — "
-            "logged as product behavior before the user is blamed. The narrative inverts warranty law: "
-            "fault moves downstream to the operator."
-        ),
-        "sliders": [
-            {"id": "bugs", "label": "defect cascade", "value": 80, "tone": "pain"},
-            {"id": "blame", "label": "user blame", "value": 65, "tone": "gold"},
+        "blurb": "Genesis 2–3 as a defect table logged before the operator is blamed.",
+        "control_prompt": "Read the defect log:",
+        "presets": [
+            {"id": "logged", "label": "Defects logged", "hint": "Birth pain · toil · death"},
+            {"id": "blame_shift", "label": "Blame assigned", "hint": "Fault moves to user"},
         ],
         "metrics": [
             {"id": "defects", "label": "open defects", "tone": "pain"},
-            {"id": "severity", "label": "severity index", "tone": "gold"},
+            {"id": "blame", "label": "user blame %", "tone": "gold"},
         ],
     },
     {
@@ -304,17 +302,14 @@ PMX: list[Widget] = [
         "title": "Original sin inversion",
         "scene": "pmx-04",
         "caption": "Blame vectors flip: from disobedient user to negligent manufacturer.",
-        "blurb": (
-            "Original Sin reframed as manufacture, not disobedience: consciousness was built inside a "
-            "pain machine, then the operator was invoiced. The inversion moves moral fault upstream — "
-            "from appetite to design."
-        ),
-        "sliders": [
-            {"id": "user_blame", "label": "user blame", "value": 30, "tone": "muted"},
-            {"id": "design_blame", "label": "design blame", "value": 88, "tone": "pain"},
+        "blurb": "Original Sin as manufacture, not disobedience — fault moves upstream.",
+        "control_prompt": "Where does fault live?",
+        "presets": [
+            {"id": "traditional", "label": "Traditional reading", "hint": "User disobeyed"},
+            {"id": "manufacture", "label": "Manufacture reading", "hint": "Design defect"},
         ],
         "metrics": [
-            {"id": "upstream", "label": "upstream fault", "tone": "pain"},
+            {"id": "upstream", "label": "design fault", "tone": "pain"},
             {"id": "downstream", "label": "user fault", "tone": "muted"},
         ],
     },
@@ -324,18 +319,15 @@ PMX: list[Widget] = [
         "title": "Three warranty regimes",
         "scene": "pmx-09",
         "caption": "Christianity, Islam, secular humanism — repair yes, exit no.",
-        "blurb": (
-            "Three traditions with incompatible theologies share one body policy: sanctify or steward the "
-            "flesh, forbid self-destruction, veto posthuman exit. Repair is sacred; escape is profane or "
-            "undignified — the lock is structural, not sectarian."
-        ),
-        "sliders": [
-            {"id": "repair", "label": "repair allowance", "value": 85, "tone": "gold"},
-            {"id": "exit", "label": "exit attempt", "value": 15, "tone": "pain"},
+        "blurb": "Three theologies · one body policy: repair the chassis, never abandon it.",
+        "control_prompt": "Try an exit attempt:",
+        "presets": [
+            {"id": "repair_ok", "label": "Medical repair", "hint": "All regimes allow"},
+            {"id": "exit_attempt", "label": "Morphological exit", "hint": "All regimes veto"},
         ],
         "metrics": [
-            {"id": "aligned", "label": "regime alignment", "tone": "gold"},
-            {"id": "veto", "label": "exit veto", "tone": "pain"},
+            {"id": "aligned", "label": "regimes aligned", "tone": "gold"},
+            {"id": "veto", "label": "exit blocked", "tone": "pain"},
         ],
     },
     {
@@ -344,18 +336,16 @@ PMX: list[Widget] = [
         "title": "Mandate ladder: therapy to exit",
         "scene": "pmx-05",
         "caption": "Medicine climbs the ladder; morphological exit hits the wall.",
-        "blurb": (
-            "The warrantied path runs therapy → enhancement → morphological repair — each rung approved. "
-            "Lawful exit from biology itself hits a ceiling every regime guards. The mandate is to finish "
-            "the ladder without manufacturing new hells."
-        ),
-        "sliders": [
-            {"id": "therapy", "label": "therapy climb", "value": 75, "tone": "gold"},
-            {"id": "exit", "label": "exit pressure", "value": 55, "tone": "pain"},
+        "blurb": "Therapy and enhancement climb; lawful exit from biology hits a guarded ceiling.",
+        "control_prompt": "Climb the warrantied ladder:",
+        "presets": [
+            {"id": "therapy", "label": "Therapy rung", "hint": "Approved"},
+            {"id": "enhance", "label": "Enhancement rung", "hint": "Approved"},
+            {"id": "exit", "label": "Exit attempt", "hint": "Wall"},
         ],
         "metrics": [
             {"id": "rung", "label": "ladder rung", "tone": "gold"},
-            {"id": "wall", "label": "wall height", "tone": "pain"},
+            {"id": "wall", "label": "wall hit?", "tone": "pain"},
         ],
     },
     {
@@ -364,18 +354,16 @@ PMX: list[Widget] = [
         "title": "Suffering audit dashboard",
         "scene": "pmx-11",
         "caption": "Target: involuntary suffering → zero. Abolition as engineering metric.",
-        "blurb": (
-            "Treat involuntary suffering as an engineering defect with a measurable audit trail. "
-            "The abolition target is not utopian mood — it is driving preventable harm states toward "
-            "zero without creating new captive minds."
-        ),
-        "sliders": [
-            {"id": "audit", "label": "audit intensity", "value": 70, "tone": "gold"},
-            {"id": "residual", "label": "residual harm", "value": 45, "tone": "pain"},
+        "blurb": "Involuntary suffering as an engineering defect with a measurable audit trail.",
+        "control_prompt": "Audit era:",
+        "presets": [
+            {"id": "status_quo", "label": "Status quo", "hint": "High involuntary harm"},
+            {"id": "audit_on", "label": "Audit deployed", "hint": "Harm tracked ↓"},
+            {"id": "target", "label": "Abolition target", "hint": "→ 0 involuntary"},
         ],
         "metrics": [
             {"id": "involuntary", "label": "involuntary %", "tone": "pain"},
-            {"id": "trajectory", "label": "↓ trajectory", "tone": "pleasure"},
+            {"id": "trajectory", "label": "audit score", "tone": "pleasure"},
         ],
     },
 ]
@@ -383,16 +371,23 @@ PMX: list[Widget] = [
 ALL_WIDGETS = CLINICAL + PMX
 
 
-def _slider_html(sl: dict[str, Any]) -> str:
-    tone = sl.get("tone", "pain")
-    mn = sl.get("min", 0)
-    mx = sl.get("max", 100)
-    val = sl.get("value", 50)
-    sid = html.escape(sl["id"])
-    label = html.escape(sl["label"])
-    return f"""        <div class="pm-ev-slider {tone}">
-          <label>{label} <b data-slider-val="{sid}">{val}</b></label>
-          <input type="range" min="{mn}" max="{mx}" value="{val}" data-slider="{sid}">
+def _preset_html(p: dict[str, str]) -> str:
+    pid = html.escape(p["id"])
+    label = html.escape(p["label"])
+    hint = html.escape(p.get("hint", ""))
+    return f'        <button type="button" class="pm-ev-preset" data-preset="{pid}" title="{hint}">{label}</button>'
+
+
+def _scrub_html(scrub: dict[str, Any]) -> str:
+    sid = html.escape(scrub["id"])
+    label = html.escape(scrub["label"])
+    mn = scrub.get("min", 0)
+    mx = scrub.get("max", 100)
+    val = scrub.get("value", mn)
+    unit = html.escape(scrub.get("unit", ""))
+    return f"""        <div class="pm-ev-scrub">
+          <label>{label} <b data-scrub-val="{sid}">{val}</b>{f" {unit}" if unit else ""}</label>
+          <input type="range" min="{mn}" max="{mx}" value="{val}" data-scrub="{sid}">
         </div>"""
 
 
@@ -410,7 +405,8 @@ def widget_html(w: Widget) -> str:
             f'\n    <a class="pm-cite" href="{html.escape(w["cite_url"])}">'
             f'{html.escape(w["cite_label"])}</a>'
         )
-    sliders = "\n".join(_slider_html(s) for s in w.get("sliders", []))
+    presets = "\n".join(_preset_html(p) for p in w.get("presets", []))
+    scrub = _scrub_html(w["scrub"]) if w.get("scrub") else ""
     metrics = "\n".join(_metric_html(m) for m in w.get("metrics", []))
     blurb = html.escape(w["blurb"])
     caption = html.escape(w["caption"])
@@ -418,6 +414,15 @@ def widget_html(w: Widget) -> str:
     num = html.escape(w["num"])
     fid = html.escape(w["id"])
     scene = html.escape(w["scene"])
+    prompt = html.escape(w.get("control_prompt", "Compare cases:"))
+    default_preset = html.escape(w["presets"][0]["id"]) if w.get("presets") else ""
+
+    preset_block = ""
+    if presets:
+        preset_block = f"""        <p class="pm-ev-prompt">{prompt}</p>
+        <div class="pm-ev-presets" data-default="{default_preset}">
+{presets}
+        </div>"""
 
     return f"""<figure class="pm-fig pm-fig-evidence" id="{fid}">
   <div class="pm-fig-head">
@@ -435,25 +440,11 @@ def widget_html(w: Widget) -> str:
         <div class="pm-ev-readout" data-readout></div>
       </div>
       <div class="pm-ev-panel">
-        <h5>Live controls</h5>
-        <div class="pm-ev-controls">
-{sliders}
-        </div>
+{preset_block}{scrub}
+        <p class="pm-ev-lesson" data-lesson></p>
         <p class="pm-ev-blurb">{blurb}</p>
       </div>
     </div>
   </div>
   <p class="pm-fig-cap">{caption}</p>
 </figure>"""
-
-
-def widgets_for(ids: list[str] | None = None) -> str:
-    lookup = {w["id"]: w for w in ALL_WIDGETS}
-    if ids:
-        return "".join(widget_html(lookup[i]) for i in ids if i in lookup)
-    return "".join(widget_html(w) for w in ALL_WIDGETS)
-
-
-def scene_index_json() -> str:
-    index = {w["scene"]: w["id"] for w in ALL_WIDGETS}
-    return json.dumps(index)
