@@ -326,14 +326,14 @@ ShowToc: true
 }
 .pm-brain3d-view {
   position: relative;
-  min-height: 420px;
+  height: 480px;
+  min-height: 360px;
   background: radial-gradient(ellipse 80% 70% at 50% 42%, rgba(184,92,85,.07), transparent 65%), #060708;
 }
 .pm-brain3d-view canvas {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 420px;
   touch-action: none;
   cursor: grab;
 }
@@ -1058,11 +1058,11 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
     <span><i class="p-ple"></i> hedonic hotspots (NAc · VP · VTA)</span>
   </div>
   <ul class="pm-fig-cap">
-    <li><strong>Two ascending pain routes</strong> stay separable: somatosensory cortex for intensity/location, limbic cortex for unpleasantness and threat (Hunt &amp; Mantyh; Price).</li>
-    <li><strong>Social pain</strong> enters the same affective matrix via dACC without touching peripheral nociceptors — another full dimension of suffering (Eisenberger).</li>
-    <li><strong>Appraisal and memory</strong> (mPFC, hippocampus) modulate the neuromatrix output — meaning multiplies pain; it does not multiply pleasure the same way (Melzack; Lazarus).</li>
-    <li><strong>Pleasure causation</strong> concentrates in a tiny ventral cluster sharing μ-opioid/dopamine substrate with pain — which is why drugs compress bliss but leave grief intact (Berridge; Leknes).</li>
-    <li><strong>The firmware picture:</strong> a sprawling red pain network feeding a high-cardinality output; a small green island feeding a low-cardinality one. You are wired as a pain machine with a pleasure subroutine.</li>
+    <li><strong>Drag the brain</strong> to see parallel pain routes (red/gold) sprawl across cortex while pleasure (green) stays ventral and tiny.</li>
+    <li><strong>Crank pharmacological compression</strong> — green hotspots dim and cardinality collapses; red layers stay separable.</li>
+    <li><strong>Social exclusion slider</strong> lights dACC without somatic input — another suffering dimension, no pleasure analogue.</li>
+    <li><strong>Live HUD</strong> estimates pain vs pleasure state-space from active layers — same asymmetry Section II counts formally.</li>
+    <li><strong>The firmware picture:</strong> you are wired as a pain machine with a pleasure subroutine.</li>
   </ul>
 </figure>
 
