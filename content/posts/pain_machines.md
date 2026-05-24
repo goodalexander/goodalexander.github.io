@@ -1049,7 +1049,13 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
       </div>
     </div>
   </div>
-  <script type="module" src="/research/pain_machines/brain3d.js?v=1"></script>
+  <script type="importmap">{
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }</script>
+  <script type="module" src="/research/pain_machines/brain3d.js?v=2"></script>
   <div class="pm-brain-legend" aria-hidden="true">
     <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
     <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>

@@ -1,15 +1,33 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const root = document.getElementById('pm-brain3d');
-if (root && !root.dataset.ready) {
+function showBrainError(msg) {
+  const readout = document.getElementById('pm-b3d-readout');
+  if (readout) readout.textContent = `Brain map failed to load: ${msg}`;
+}
+
+function initBrain3d() {
+  const root = document.getElementById('pm-brain3d');
+  if (!root || root.dataset.ready) return;
   root.dataset.ready = 'true';
-  boot(root);
+  try {
+    boot(root);
+  } catch (err) {
+    showBrainError(err.message || String(err));
+    console.error('[pain_machines brain3d]', err);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBrain3d);
+} else {
+  initBrain3d();
 }
 
 function boot(root) {
   const canvas = root.querySelector('#pm-brain3d-canvas');
   const wrap = root.querySelector('#pm-brain3d-canvas-wrap');
+  if (!canvas || !wrap) throw new Error('canvas mount missing');
   const painEl = root.querySelector('#pm-b3d-pain');
   const pleasureEl = root.querySelector('#pm-b3d-pleasure');
   const ratioEl = root.querySelector('#pm-b3d-ratio');
