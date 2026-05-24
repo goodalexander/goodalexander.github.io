@@ -701,12 +701,53 @@ ShowToc: true
   .pm-fig-manifesto .pm-fig-head h4 { font-size: .76rem; }
 }
 
+
+.pm-viz-wrap {
+  width: 100%;
+  min-height: 240px;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+.pm-viz-wrap canvas.pm-viz {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.pm-viz-cap {
+  margin: 0;
+  padding: .7rem 1rem;
+  border-top: 1px solid var(--line);
+  font-size: .82rem;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: none;
+  font-weight: 500;
+}
+.pm-fig-viz .pm-fig-fallback { display: none !important; }
+.pm-beat {
+  margin: 0 0 1rem;
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 42ch;
+}
+@media (max-width: 720px) {
+  .pm-viz-wrap {
+    min-height: 280px;
+  }
+  .pm p, .pm li { max-width: none; font-size: .88rem; line-height: 1.6; }
+  .pm-after { font-size: .82rem; }
+  .pm-beat { max-width: none; font-size: .86rem; }
+}
+
 </style>
 <div class="pm" id="pain-machines">
 
-# Void the Warranty
+# Pain Machines
 
-### Pain Machines and the Mandate to Leave the Human Format
+### Original Sin was manufacturing the human as a pain machine
 
 Genesis opens like a workplace incident report from a company that owns the weather.
 
@@ -718,40 +759,41 @@ Original Sin was creating humans as pain machines. Genesis mislabeled manufactur
 
 The same document is handed out again in the hospital, only cleaner.
 
-The first sound most humans make is a pain signal, and civilization calls it health. The room is fluorescent and sterile. Plastic wheels lock beneath a bassinet. A monitor draws its little green biography across a black face while adults lean over a wrapped animal and translate distress into reassurance. Good lungs. Strong cry. Vitality.
+The first sound most humans make is a pain signal. Civilization calls it health.
 
-The child has consented to none of it. No consent to the chassis. No consent to the chemistry. No consent to the hunger cycle, the panic circuitry, the decay schedule, the birth injury waiting in the species, the dentistry of time, the grief map, the vulnerability to fever, tumor, betrayal, humiliation, oxygen debt, memory, and shame. No consent to the civic hymn that will later call this condition dignity. No consent to the religious hymn that will call it creation, trial, fall, purification, gift.
+Fluorescent room. Plastic bassinet. Monitor green. Adults smile at a cry and call it vitality.
 
-A pain machine is an engineering description, not an insult. It names a biological system governed by alarms, threat salience, damage memory, homeostatic coercion, and a nervous architecture in which suffering proliferates faster than pleasure can stabilize. One wound becomes sensation, fear, anticipation, avoidance, identity, cost, law, and metaphysics. Pleasure usually closes its file. Pain hires clerks.
+The child consented to none of it: not the chassis, the chemistry, the decay schedule, the grief map.
 
-Medicine has already found the fault. Neuroscience, pain taxonomy, psychophysics, reward science, social psychology, stress theory, and brain imaging all point at the same asymmetry. The human animal counts harm more richly, urgently, and durably than satisfaction. A meal ends. A migraine becomes nausea, light sensitivity, dread of recurrence, lost work, family strain, medication side effects, insurance conflict, and a new self-description. Orgasm resolves. Panic teaches the harmless room to wear the mask of a predator. Comfort fades into baseline. Bereavement builds an archive.
+Later the civic hymn will call this dignity. The religious hymn will call it creation.
 
-Every civilization places a hidden warranty card in the crib. Christianity, Islam, and secular humanism disagree about God, revelation, salvation, law, anthropology, and the final shape of history. Their disagreement is immense and real. Yet each converges on the same protective clause: repair the human, console the human, sanctify the human, dignify the human, but forbid exit from the inherited human format.
+A pain machine is engineering talk, not an insult.
+
+Alarms, threat memory, homeostatic coercion. One wound becomes sensation, fear, identity, law.
+
+<p class="pm-beat">Pleasure closes its file. Pain hires clerks.</p>
+
+Medicine already found the fault.
+
+Harm is counted more richly than satisfaction. A meal ends. A migraine becomes nausea, dread, lost work, a new self.
+
+Orgasm resolves. Panic paints the harmless room as predator. Bereavement builds an archive.
+
+Every civilization slips a warranty card in the crib.
+
+Christianity, Islam, secular humanism disagree on God and salvation. They agree on the clause: repair the human, forbid exit.
 
 Christianity, Islam, and secular humanism each permit repair but forbid exit.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-00">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="pmx-00">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-00</span>
     <h4>The Warranty Card in the Crib</h4>
   </div>
-  <svg viewBox="0 0 380 520" role="img" aria-label="Warranty card">
-    <rect width="380" height="520" fill="#040506"/>
-    <rect x="12" y="12" width="356" height="100" rx="3" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/>
-    <text x="24" y="36" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">neonatal bay · first cry</text>
-    <path d="M24 72 H356" stroke="#b85c55" stroke-width="1.2"/>
-    <text x="16" y="96" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">PRODUCT</text><text x="16" y="112" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">Homo sapiens</text>
-    <text x="16" y="140" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">DEFECTS</text><text x="16" y="156" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">pain · fear · grief · decay · death</text>
-    <text x="16" y="184" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">TERMS</text><text x="16" y="200" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">repair yes · exit no</text>
-    <g transform="translate(24 230)">
-      <rect width="332" height="64" rx="3" fill="#0a0b0d" stroke="#b89a6a"/>
-      <text x="166" y="28" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">VOID THE WARRANTY</text>
-      <text x="166" y="48" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">serial ADAM-000001</text>
-    </g>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="warranty" aria-label="Every birth ships a warranty: repair yes, exit no."></canvas></div>
+  <p class="pm-viz-cap">Every birth ships a warranty: repair yes, exit no.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The warranty is hidden because its success depends on being mistaken for nature. It teaches the newborn that repair is mercy and exit is sacrilege. The first refusal is to decline the signature.</p></p>
-<p class='pm-after'>The warranty is hidden because its success depends on being mistaken for nature. It teaches the newborn that repair is mercy and exit is sacrilege. The first refusal is to decline the signature.</p>
+<p class="pm-after">The warranty is hidden because its success depends on being mistaken for nature. It teaches the newborn that repair is mercy and exit is sacrilege. The first refusal is to decline the signature.</p>
 
 The logic is simple enough to be unforgivable.
 
@@ -762,7 +804,12 @@ The logic is simple enough to be unforgivable.
 5. Secular humanism forbids the same escape under different names: dignity, equality, the human essence, the common subject, the natural kind.
 6. Politics becomes the struggle between warranty jurisdictions and exit jurisdictions.
 
-This is no sales brochure for immortal founders, no adolescent desecration ritual, no plastic hymn to gadgets. The enemy is not the believer at the bedside, the physician in the ward, the parent trying to comfort a child, the humanist defending prisoners from vivisection by the state. The enemy is the sacred status of the pain-machine chassis.
+This is no sales brochure for immortal founders, no adolescent desecration ritual, no plastic hymn to gadgets.
+
+The enemy is not the believer at the bedside, the physician in the ward, the parent trying to comfort a child, the humanist defending prisoners from vivisection by the state.
+
+The enemy is the sacred status of the pain-machine chassis.
+
 
 The first cry is treated as proof of life. It is also the product warning.
 
@@ -772,489 +819,182 @@ Birth is more than arrival. It is the factory reset of an unpatched vulnerabilit
 
 Medicine reached Genesis by fluorescent light and paperwork.
 
-Pain refused to behave like a number on a dashboard. The same wound could burn for one person, stab for another, hum like a bad transformer for a third, and become shame when the family stopped believing it. The clipboard kept growing. The official vocabulary kept multiplying. The old moral stories wanted pain to be a clean invoice: damage in, complaint out, virtue or guilt attached afterward. The clinic found something stranger and worse.
+Pain refused to behave like a number on a dashboard. The same wound could burn for one person, stab for another, hum like a bad transformer for a third, and become shame when the family stopped believing it.
 
-Twelve witnesses stand in order: eleven disciplines and instruments, then the brain itself. They do not speak with one accent. That is their strength. A theory invented to explain phantom limbs meets a global definition of pain. A diagnostic code meets a questionnaire. Psychophysics meets reward science. Negativity bias meets social rejection. Appraisal theory meets the wet map of the head. The result is not a mood. It is a defect pattern.
+The clipboard kept growing. The official vocabulary kept multiplying. The old moral stories wanted pain to be a clean invoice: damage in, complaint out, virtue or guilt attached afterward.
+
+The clinic found something stranger and worse.
+
+
+Twelve witnesses. Eleven disciplines, then the brain.
+
+Phantom limb theory meets IASP definition meets ICD-11 meets McGill meets reward science. Not a mood. A defect pattern.
 
 One creature. Too many red doors.
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Ronald Melzack, McGill University, 1999</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Neuromatrix theory: pain is distributed brain output, not a wound-to-wire signal.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Explains phantom and chronic pain as generated architecture, not mere injury.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN/J Dent Educ; widely cited and clinically influential.</span></div></div>
-<figure class="pm-fig" id="fig-neuromatrix">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-neuromatrix">
+<div class="pm-fig-head">
     <span class="pm-fig-n">1a</span>
     <h4>Neuromatrix: pain generated by the whole brain</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/11780656/">Melzack 2001</a>
   </div>
-  <svg viewBox="0 0 760 340" role="img" aria-label="Melzack neuromatrix: multiple brain inputs converge to pain output">
-    <defs>
-      <radialGradient id="pm-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#b85c55" stop-opacity=".35"/>
-        <stop offset="100%" stop-color="#b85c55" stop-opacity="0"/>
-      </radialGradient>
-      <filter id="pm-soft"><feGaussianBlur stdDeviation="1.2"/></filter>
-    </defs>
-    <rect width="760" height="340" fill="transparent"/>
-    <text x="380" y="28" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">body-self neuromatrix · neurosignature patterns</text>
-    <ellipse cx="380" cy="168" rx="92" ry="52" fill="url(#pm-glow)"/>
-    <rect x="308" y="138" width="144" height="60" rx="4" fill="#0f1012" stroke="rgba(184,92,85,.55)" stroke-width="1.2"/>
-    <text x="380" y="162" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">neuromatrix</text>
-    <text x="380" y="178" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">pain output pattern</text>
-    <g fill="none" stroke-width="1">
-      <path id="pm-p1" d="M380 52 L380 138" stroke="rgba(184,92,85,.25)" stroke-dasharray="4 3"/>
-      <path id="pm-p2" d="M88 98 Q234 118 308 158" stroke="rgba(184,154,106,.45)"/>
-      <path id="pm-p3" d="M672 98 Q526 118 452 158" stroke="rgba(184,154,106,.45)"/>
-      <path id="pm-p4" d="M88 238 Q234 218 308 178" stroke="rgba(184,154,106,.45)"/>
-      <path id="pm-p5" d="M672 238 Q526 218 452 178" stroke="rgba(184,154,106,.45)"/>
-      <path id="pm-p6" d="M380 288 L380 198" stroke="rgba(184,154,106,.45)"/>
-    </g>
-    <g font-family="ui-monospace,monospace" font-size="10">
-      <rect x="318" y="36" width="124" height="22" rx="3" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
-      <text x="380" y="51" fill="#b85c55" text-anchor="middle">somatic input</text>
-      <text x="380" y="68" fill="#555c64" font-size="8" text-anchor="middle">one contributor · insufficient alone</text>
-      <rect x="36" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
-      <text x="88" y="98" fill="#b89a6a" text-anchor="middle">appraisal</text>
-      <text x="88" y="110" fill="#555c64" font-size="8" text-anchor="middle">meaning</text>
-      <rect x="620" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
-      <text x="672" y="98" fill="#b89a6a" text-anchor="middle">social field</text>
-      <text x="672" y="110" fill="#555c64" font-size="8" text-anchor="middle">context</text>
-      <rect x="36" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
-      <text x="88" y="238" fill="#b89a6a" text-anchor="middle">memory</text>
-      <text x="88" y="250" fill="#555c64" font-size="8" text-anchor="middle">prior episodes</text>
-      <rect x="620" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
-      <text x="672" y="238" fill="#b89a6a" text-anchor="middle">identity</text>
-      <text x="672" y="250" fill="#555c64" font-size="8" text-anchor="middle">self-schema</text>
-      <rect x="318" y="288" width="124" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
-      <text x="380" y="304" fill="#b89a6a" text-anchor="middle">stress / attention</text>
-      <text x="380" y="316" fill="#555c64" font-size="8" text-anchor="middle">arousal gate</text>
-    </g>
-    <g fill="#b89a6a" opacity=".9">
-      <circle r="3"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M88 98 Q234 118 308 158"/></circle>
-      <circle r="3"><animateMotion dur="3.1s" repeatCount="indefinite" begin=".4s" path="M672 98 Q526 118 452 158"/></circle>
-      <circle r="3"><animateMotion dur="2.9s" repeatCount="indefinite" begin=".8s" path="M88 238 Q234 218 308 178"/></circle>
-      <circle r="3"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.1s" path="M672 238 Q526 218 452 178"/></circle>
-      <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.4s" path="M380 288 L380 198"/></circle>
-      <circle r="2.5" fill="#b85c55" opacity=".65"><animateMotion dur="3.4s" repeatCount="indefinite" begin=".2s" path="M380 52 L380 138"/></circle>
-    </g>
-    <g transform="translate(520 148)">
-      <path d="M0 0 L48 0" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-arr)"/>
-      <defs><marker id="pm-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b85c55"/></marker></defs>
-      <rect x="52" y="-18" width="118" height="36" rx="3" fill="#120909" stroke="#b85c55" stroke-width="1"/>
-      <text x="111" y="-2" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain experience</text>
-      <text x="111" y="12" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">≠ damage magnitude</text>
-    </g>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="neuromatrix" aria-label="Many inputs converge. The brain writes pain before the wound finishes arguing."></canvas></div>
+  <p class="pm-viz-cap">Many inputs converge. The brain writes pain before the wound finishes arguing.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Melzack broke the courtroom model of pain. The nervous system builds pain from signal, map, memory, stress, and expectation. A pain-machine chassis needs this distributed author.</p></p>
-<p class='pm-after'>Melzack broke the courtroom model of pain. The nervous system builds pain from signal, map, memory, stress, and expectation. A pain-machine chassis needs this distributed author.</p>
+<p class="pm-after">Melzack broke the courtroom model of pain. The nervous system builds pain from signal, map, memory, stress, and expectation. A pain-machine chassis needs this distributed author.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">IASP task force, International Association for the Study of Pain, 2020</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Revised pain as sensory and emotional, tied to actual or potential damage.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Official medicine treats pain as experience, not a simple tissue meter.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN; global clinical definition used across research and care.</span></div></div>
-<figure class="pm-fig" id="fig-iasp">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-iasp">
+<div class="pm-fig-head">
     <span class="pm-fig-n">1b</span>
     <h4>IASP 2020: sensory and emotional are inseparable</h4>
     <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7680716/">Raja et al. 2020</a>
   </div>
-  <svg viewBox="0 0 760 260" role="img" aria-label="IASP definition: sensory and emotional channels always co-occur in pain">
-    <text x="380" y="24" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">revised IASP definition · two mandatory dimensions</text>
-    <rect x="40" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)" stroke-width="1"/>
-    <text x="190" y="72" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">sensory experience</text>
-    <text x="190" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">quality · intensity · location · duration</text>
-    <rect x="420" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)" stroke-width="1"/>
-    <text x="570" y="72" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">emotional experience</text>
-    <text x="570" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">unpleasantness · distress · threat</text>
-    <path d="M190 104 L190 132 L380 132 L380 160" fill="none" stroke="rgba(184,92,85,.5)" stroke-width="1.2"/>
-    <path d="M570 104 L570 132 L380 132" fill="none" stroke="rgba(184,154,106,.5)" stroke-width="1.2"/>
-    <circle r="3" fill="#b85c55"><animateMotion dur="2.2s" repeatCount="indefinite" path="M190 104 L190 132 L380 132 L380 160"/></circle>
-    <circle r="3" fill="#b89a6a"><animateMotion dur="2.2s" repeatCount="indefinite" begin=".35s" path="M570 104 L570 132 L380 132 L380 160"/></circle>
-    <rect x="260" y="160" width="240" height="52" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
-      <animate attributeName="stroke-opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <text x="380" y="182" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">pain</text>
-    <text x="380" y="198" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">always both · never sensory-only</text>
-    <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="iasp" aria-label="Sensory and emotional pain arrive together. One channel, two alarms."></canvas></div>
+  <p class="pm-viz-cap">Sensory and emotional pain arrive together. One channel, two alarms.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Official medicine no longer treats pain as a tissue meter. Pain is sensory, emotional, learned, and sometimes present without visible damage. The warranty story loses the convenience of a simple wound.</p></p>
-<p class='pm-after'>Official medicine no longer treats pain as a tissue meter. Pain is sensory, emotional, learned, and sometimes present without visible damage. The warranty story loses the convenience of a simple wound.</p>
+<p class="pm-after">Official medicine no longer treats pain as a tissue meter. Pain is sensory, emotional, learned, and sometimes present without visible damage. The warranty story loses the convenience of a simple wound.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">WHO and IASP working group, Treede et al., 2019</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">ICD-11 classifies chronic primary and secondary pain as diagnoses.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Chronic pain becomes a disease category, not a long complaint.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">WHO ICD-11; PAIN taxonomy adopted internationally.</span></div></div>
-<figure class="pm-fig" id="fig-icd11">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-icd11">
+<div class="pm-fig-head">
     <span class="pm-fig-n">1c</span>
     <h4>ICD-11 MG30: seven chronic-pain categories, nested subtypes</h4>
     <a class="pm-cite" href="https://journals.lww.com/pain/fulltext/2022/02000/classification_of_chronic_pain_for_the.29.aspx">Treede et al. 2022</a>
   </div>
-  <svg viewBox="0 0 760 340" role="img" aria-label="ICD-11 chronic pain taxonomy with seven top-level categories">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">ICD-11 chapter MG30 · seven top-level categories</text>
-    <rect x="300" y="34" width="160" height="32" rx="3" fill="#0f1012" stroke="#b89a6a" stroke-width="1.2"/>
-    <text x="380" y="54" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">MG30 chronic pain</text>
-    <line x1="380" y1="66" x2="380" y2="76" stroke="rgba(184,92,85,.45)"/>
-    <line x1="108" y1="76" x2="652" y2="76" stroke="rgba(184,92,85,.35)"/>
-    <g font-family="ui-monospace,monospace" font-size="9">
-      <line x1="108" y1="76" x2="108" y2="86" stroke="rgba(184,92,85,.35)"/>
-      <rect x="32" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin="0s" fill="freeze"/></rect>
-      <text x="108" y="104" fill="#b85c55" text-anchor="middle">MG30.0 primary</text>
-      <text x="108" y="118" fill="#555c64" text-anchor="middle">nociplastic</text>
-      <line x1="290" y1="76" x2="290" y2="86" stroke="rgba(184,92,85,.35)"/>
-      <rect x="214" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".1s" fill="freeze"/></rect>
-      <text x="290" y="104" fill="#b85c55" text-anchor="middle">MG30.1 cancer</text>
-      <text x="290" y="118" fill="#555c64" text-anchor="middle">tumor · treatment</text>
-      <line x1="472" y1="76" x2="472" y2="86" stroke="rgba(184,92,85,.35)"/>
-      <rect x="396" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".2s" fill="freeze"/></rect>
-      <text x="472" y="104" fill="#b85c55" text-anchor="middle">MG30.2 postsurgical</text>
-      <text x="472" y="118" fill="#555c64" text-anchor="middle">posttraumatic</text>
-      <line x1="652" y1="76" x2="652" y2="86" stroke="rgba(184,92,85,.35)"/>
-      <rect x="576" y="86" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".3s" fill="freeze"/></rect>
-      <text x="652" y="104" fill="#b85c55" text-anchor="middle">MG30.3 musculoskeletal</text>
-      <text x="652" y="118" fill="#555c64" text-anchor="middle">secondary</text>
-      <line x1="380" y1="76" x2="380" y2="150" stroke="rgba(184,92,85,.25)"/>
-      <line x1="195" y1="150" x2="565" y2="150" stroke="rgba(184,92,85,.25)"/>
-      <line x1="195" y1="150" x2="195" y2="160" stroke="rgba(184,92,85,.35)"/>
-      <rect x="119" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".42s" fill="freeze"/></rect>
-      <text x="195" y="178" fill="#b85c55" text-anchor="middle">MG30.4 visceral</text>
-      <text x="195" y="192" fill="#555c64" text-anchor="middle">secondary</text>
-      <line x1="380" y1="150" x2="380" y2="160" stroke="rgba(184,92,85,.35)"/>
-      <rect x="304" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".54s" fill="freeze"/></rect>
-      <text x="380" y="178" fill="#b85c55" text-anchor="middle">MG30.5 neuropathic</text>
-      <text x="380" y="192" fill="#555c64" text-anchor="middle">nerve lesion · disease</text>
-      <line x1="565" y1="150" x2="565" y2="160" stroke="rgba(184,92,85,.35)"/>
-      <rect x="489" y="160" width="152" height="44" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".35s" begin=".66s" fill="freeze"/></rect>
-      <text x="565" y="178" fill="#b85c55" text-anchor="middle">MG30.6 headache</text>
-      <text x="565" y="192" fill="#555c64" text-anchor="middle">orofacial · secondary</text>
-    </g>
-    <rect x="80" y="228" width="600" height="48" rx="3" fill="#120909" stroke="rgba(184,92,85,.35)"/>
-    <text x="380" y="248" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">each category → nested subtypes · severity · interference · psychosocial modifiers</text>
-    <text x="380" y="264" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers = combinatorial clinical space</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="icd11" aria-label="Pain branches in the clinic. One label was never enough."></canvas></div>
+  <p class="pm-viz-cap">Pain branches in the clinic. One label was never enough.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>ICD-11 makes chronic pain a disease category. A signal can outlive its usefulness and become the illness. The machine can keep the alarm after the fire is gone.</p></p>
-<p class='pm-after'>ICD-11 makes chronic pain a disease category. A signal can outlive its usefulness and become the illness. The machine can keep the alarm after the fire is gone.</p>
+<p class="pm-after">ICD-11 makes chronic pain a disease category. A signal can outlive its usefulness and become the illness. The machine can keep the alarm after the fire is gone.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Ronald Melzack, McGill University, 1975</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">McGill Pain Questionnaire maps sensory, affective, and evaluative descriptors.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">The clipboard grew because suffering has many sanctioned names.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN; translated, validated, and used worldwide.</span></div></div>
-<figure class="pm-fig" id="fig-mcgill">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-mcgill">
+<div class="pm-fig-head">
     <span class="pm-fig-n">1d</span>
     <h4>McGill MPQ: 78 words because pain factorizes in language</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/1235985/">Melzack 1975</a>
   </div>
-  <svg viewBox="0 0 760 280" role="img" aria-label="McGill Pain Questionnaire descriptor inventory across four word classes">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">McGill MPQ · 78 pain descriptors in four word classes</text>
-    <g font-family="ui-monospace,monospace">
-      <rect x="24" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
-      <text x="106" y="62" fill="#b85c55" font-size="10" text-anchor="middle">sensory</text>
-      <text x="106" y="78" fill="#555c64" font-size="9" text-anchor="middle">20 words</text>
-      <g fill="#b85c55" opacity=".75">
-        <circle cx="48" cy="98" r="4"/><circle cx="68" cy="98" r="4"/><circle cx="88" cy="98" r="4"/><circle cx="108" cy="98" r="4"/>
-        <circle cx="128" cy="98" r="4"/><circle cx="148" cy="98" r="4"/><circle cx="168" cy="98" r="4"/>
-        <circle cx="58" cy="118" r="4"/><circle cx="78" cy="118" r="4"/><circle cx="98" cy="118" r="4"/><circle cx="118" cy="118" r="4"/>
-      </g>
-      <text x="106" y="148" fill="#8a9199" font-size="8" text-anchor="middle">shooting · burning</text>
-      <text x="106" y="162" fill="#8a9199" font-size="8" text-anchor="middle">throbbing · stabbing</text>
-      <rect x="204" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.45)"/>
-      <text x="286" y="62" fill="#b89a6a" font-size="10" text-anchor="middle">affective</text>
-      <text x="286" y="78" fill="#555c64" font-size="9" text-anchor="middle">12 words</text>
-      <g fill="#b89a6a" opacity=".75">
-        <circle cx="248" cy="104" r="4"/><circle cx="272" cy="104" r="4"/><circle cx="296" cy="104" r="4"/><circle cx="320" cy="104" r="4"/>
-        <circle cx="260" cy="124" r="4"/><circle cx="284" cy="124" r="4"/><circle cx="308" cy="124" r="4"/>
-      </g>
-      <text x="286" y="148" fill="#8a9199" font-size="8" text-anchor="middle">tiring · sickening</text>
-      <text x="286" y="162" fill="#8a9199" font-size="8" text-anchor="middle">fearful · punishing</text>
-      <rect x="384" y="40" width="164" height="148" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.45)"/>
-      <text x="466" y="62" fill="#8a9199" font-size="10" text-anchor="middle">evaluative</text>
-      <text x="466" y="78" fill="#555c64" font-size="9" text-anchor="middle">5 words</text>
-      <g fill="#8a9199" opacity=".75">
-        <circle cx="436" cy="110" r="4"/><circle cx="466" cy="110" r="4"/><circle cx="496" cy="110" r="4"/>
-      </g>
-      <text x="466" y="148" fill="#8a9199" font-size="8" text-anchor="middle">annoying · miserable</text>
-      <text x="466" y="162" fill="#8a9199" font-size="8" text-anchor="middle">unbearable · …</text>
-      <rect x="564" y="40" width="172" height="148" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
-      <text x="650" y="62" fill="#b85c55" font-size="10" text-anchor="middle">miscellaneous</text>
-      <text x="650" y="78" fill="#555c64" font-size="9" text-anchor="middle">41 words</text>
-      <g fill="#b85c55" opacity=".45">
-        <circle cx="590" cy="96" r="3"/><circle cx="610" cy="96" r="3"/><circle cx="630" cy="96" r="3"/><circle cx="650" cy="96" r="3"/><circle cx="670" cy="96" r="3"/><circle cx="690" cy="96" r="3"/><circle cx="710" cy="96" r="3"/>
-        <circle cx="600" cy="112" r="3"/><circle cx="620" cy="112" r="3"/><circle cx="640" cy="112" r="3"/><circle cx="660" cy="112" r="3"/><circle cx="680" cy="112" r="3"/><circle cx="700" cy="112" r="3"/>
-        <circle cx="590" cy="128" r="3"/><circle cx="610" cy="128" r="3"/><circle cx="630" cy="128" r="3"/><circle cx="650" cy="128" r="3"/><circle cx="670" cy="128" r="3"/><circle cx="690" cy="128" r="3"/><circle cx="710" cy="128" r="3"/>
-      </g>
-      <text x="650" y="162" fill="#8a9199" font-size="8" text-anchor="middle">tight · heavy · splitting · …</text>
-    </g>
-    <rect x="24" y="206" width="712" height="36" rx="3" fill="#120909" stroke="#b85c55"/>
-    <text x="380" y="228" fill="#b85c55" font-size="10" text-anchor="middle">78 distinguishable pain states — from vocabulary alone, before combinatorics</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="mcgill" aria-label="Patients name pain in dozens of ways. Pleasure shares fewer words."></canvas></div>
+  <p class="pm-viz-cap">Patients name pain in dozens of ways. Pleasure shares fewer words.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The McGill questionnaire is a language map. Burning, stabbing, sickening, exhausting, terrifying, punishing: the words keep multiplying. Pain demands a vocabulary that pleasure rarely requires.</p></p>
-<p class='pm-after'>The McGill questionnaire is a language map. Burning, stabbing, sickening, exhausting, terrifying, punishing: the words keep multiplying. Pain demands a vocabulary that pleasure rarely requires.</p>
+<p class="pm-after">The McGill questionnaire is a language map. Burning, stabbing, sickening, exhausting, terrifying, punishing: the words keep multiplying. Pain demands a vocabulary that pleasure rarely requires.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Donald D. Price, University of Florida, 1980s–2000s</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Psychophysics separated pain intensity from unpleasantness.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pain has dimensions; one wound can spawn several kinds of suffering.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">PAIN and Science literature; replicated in imaging and clinics.</span></div></div>
-<figure class="pm-fig" id="fig-price">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-price">
+<div class="pm-fig-head">
     <span class="pm-fig-n">1e</span>
     <h4>Price: sensation, unpleasantness, and secondary affect dissociate</h4>
     <a class="pm-cite" href="https://doi.org/10.1126/science.288.5472.1769">Price 2000</a>
   </div>
-  <svg viewBox="0 0 760 200" role="img" aria-label="Serial dissociation of pain sensation intensity, unpleasantness, and secondary affect">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">affective dimension of pain · serial processing stages</text>
-    <g font-family="ui-monospace,monospace">
-      <rect x="40" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)"/>
-      <text x="130" y="76" fill="#b85c55" font-size="10" text-anchor="middle">sensation intensity</text>
-      <text x="130" y="92" fill="#555c64" font-size="8" text-anchor="middle">spinothalamic · SI / SII</text>
-      <path d="M220 80 L268 80" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-a2)"/>
-      <rect x="272" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)"/>
-      <text x="362" y="76" fill="#b89a6a" font-size="10" text-anchor="middle">pain unpleasantness</text>
-      <text x="362" y="92" fill="#555c64" font-size="8" text-anchor="middle">ACC · medial thalamus</text>
-      <path d="M452 80 L500 80" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm-a2)"/>
-      <rect x="504" y="52" width="216" height="56" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.5)"/>
-      <text x="612" y="76" fill="#8a9199" font-size="10" text-anchor="middle">secondary affect</text>
-      <text x="612" y="92" fill="#555c64" font-size="8" text-anchor="middle">prefrontal · autonomic · motor plans</text>
-      <defs><marker id="pm-a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
-    </g>
-    <g>
-      <rect x="40" y="130" width="680" height="44" rx="3" fill="#060708" stroke="rgba(235,228,220,.08)"/>
-      <text x="380" y="150" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">opioid analgesia ↓ unpleasantness more than intensity · stages remain separable</text>
-      <text x="380" y="166" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">≠ bliss under fentanyl (pleasure collapses to receptor class)</text>
-      <circle r="3" fill="#b85c55"><animateMotion dur="4s" repeatCount="indefinite" path="M130 108 L130 130 L380 152"/></circle>
-      <circle r="3" fill="#b89a6a"><animateMotion dur="4s" repeatCount="indefinite" begin=".5s" path="M362 108 L362 130 L380 152"/></circle>
-      <circle r="3" fill="#8a9199"><animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M612 108 L612 130 L380 152"/></circle>
-    </g>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="price" aria-label="Pain stacks: intensity, dread, grief. Pleasure rarely builds floors."></canvas></div>
+  <p class="pm-viz-cap">Pain stacks: intensity, dread, grief. Pleasure rarely builds floors.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Price showed that intensity and unpleasantness can separate. The same heat can be measured as strength and misery. One injury becomes more than one ledger.</p></p>
-<p class='pm-after'>Price showed that intensity and unpleasantness can separate. The same heat can be measured as strength and misery. One injury becomes more than one ledger.</p>
+<p class="pm-after">Price showed that intensity and unpleasantness can separate. The same heat can be measured as strength and misery. One injury becomes more than one ledger.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Kent Berridge, University of Michigan, 1990s–2010s</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Separated wanting from liking; mapped compact hedonic hot spots.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pleasure reuses circuits and saturates; it does not branch like pain.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Neuron/Nat Rev Neurosci; core reward-science framework.</span></div></div>
-<figure class="pm-fig" id="fig-berridge">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-berridge">
+<div class="pm-fig-head">
     <span class="pm-fig-n">2a</span>
     <h4>Berridge: small &ldquo;liking&rdquo; hotspots, sprawling &ldquo;wanting&rdquo; system</h4>
     <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4425246/">Berridge &amp; Kringelbach 2015</a>
   </div>
-  <svg viewBox="0 0 760 300" role="img" aria-label="Hedonic hotspots versus distributed wanting circuitry with pharmacological collapse">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pleasure systems · causation vs representation</text>
-    <text x="190" y="48" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">liking (causal hotspots)</text>
-    <text x="570" y="48" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">wanting (mesolimbic spread)</text>
-    <g transform="translate(60 60)">
-      <circle cx="60" cy="50" r="22" fill="rgba(122,154,140,.15)" stroke="#7a9a8c" stroke-width="1.2"><animate attributeName="r" values="20;24;20" dur="3s" repeatCount="indefinite"/></circle>
-      <text x="60" y="54" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">NAc</text>
-      <circle cx="130" cy="90" r="18" fill="rgba(122,154,140,.12)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="16;20;16" dur="3.2s" repeatCount="indefinite"/></circle>
-      <text x="130" y="94" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">VP</text>
-      <circle cx="95" cy="130" r="16" fill="rgba(122,154,140,.1)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="14;18;14" dur="2.8s" repeatCount="indefinite"/></circle>
-      <text x="95" y="134" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">OFC</text>
-      <text x="95" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 hedonic hotspots</text>
-    </g>
-    <g transform="translate(400 60)" opacity=".85">
-      <circle cx="95" cy="60" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="140" cy="45" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="180" cy="75" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="120" cy="100" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="170" cy="115" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="210" cy="50" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="230" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <circle cx="60" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
-      <line x1="95" y1="60" x2="140" y2="45" stroke="rgba(85,92,100,.4)"/>
-      <line x1="140" y1="45" x2="210" y2="50" stroke="rgba(85,92,100,.4)"/>
-      <line x1="95" y1="60" x2="120" y2="100" stroke="rgba(85,92,100,.4)"/>
-      <line x1="180" y1="75" x2="230" y2="95" stroke="rgba(85,92,100,.4)"/>
-      <line x1="120" y1="100" x2="170" y2="115" stroke="rgba(85,92,100,.4)"/>
-      <text x="145" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">VTA · amygdala · hippocampus · …</text>
-    </g>
-    <text x="380" y="200" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">pharmacological quotient · modalities collapse to receptor class</text>
-    <g font-family="ui-monospace,monospace" font-size="8">
-      <rect x="48" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
-      <text x="84" y="232" fill="#7a9a8c" text-anchor="middle">food</text>
-      <rect x="136" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
-      <text x="172" y="232" fill="#7a9a8c" text-anchor="middle">sex</text>
-      <rect x="224" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
-      <text x="260" y="232" fill="#7a9a8c" text-anchor="middle">music</text>
-      <rect x="312" y="216" width="72" height="24" rx="2" fill="#0a0b0d" stroke="#7a9a8c"/>
-      <text x="348" y="232" fill="#7a9a8c" text-anchor="middle">win</text>
-    </g>
-    <path d="M420 228 L480 228" stroke="#7a9a8c" stroke-width="1.2" marker-end="url(#pm-grn)"/>
-    <defs><marker id="pm-grn" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7a9a8c"/></marker></defs>
-    <rect x="488" y="210" width="128" height="36" rx="3" fill="#0f1210" stroke="#7a9a8c" stroke-width="1.2">
-      <animate attributeName="stroke-opacity" values=".55;1;.55" dur="2.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="552" y="226" fill="#7a9a8c" font-size="9" text-anchor="middle">~4 receptor</text>
-    <text x="552" y="238" fill="#7a9a8c" font-size="9" text-anchor="middle">classes</text>
-    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M84 240 L552 240"/></circle>
-    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin=".5s" path="M172 240 L552 240"/></circle>
-    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1s" path="M260 240 L552 240"/></circle>
-    <text x="640" y="232" fill="#555c64" font-family="ui-monospace,monospace" font-size="8">synthetic agonists · interchangeable SKUs</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="berridge" aria-label="Liking is tiny. Wanting runs the warehouse."></canvas></div>
+  <p class="pm-viz-cap">Liking is tiny. Wanting runs the warehouse.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Berridge split wanting from liking. Reward can chase what it no longer enjoys, and pleasure occupies compact hot spots. Green circuitry has tricks; red circuitry has empires.</p></p>
-<p class='pm-after'>Berridge split wanting from liking. Reward can chase what it no longer enjoys, and pleasure occupies compact hot spots. Green circuitry has tricks; red circuitry has empires.</p>
+<p class="pm-after">Berridge split wanting from liking. Reward can chase what it no longer enjoys, and pleasure occupies compact hot spots. Green circuitry has tricks; red circuitry has empires.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Siri Leknes and Irene Tracey, Oxford/Oslo, 2008</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Reviewed shared and opponent circuitry for pain, pleasure, and relief.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Relief shows pleasure often borrows the end of pain.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Nature Reviews Neuroscience; heavily cited synthesis.</span></div></div>
-<figure class="pm-fig" id="fig-leknes">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-leknes">
+<div class="pm-fig-head">
     <span class="pm-fig-n">2b</span>
     <h4>Leknes &amp; Tracey: shared opioid/dopamine substrate — substitutability</h4>
     <a class="pm-cite" href="https://www.nature.com/articles/nrn2333">Leknes &amp; Tracey 2008</a>
   </div>
-  <svg viewBox="0 0 760 220" role="img" aria-label="Common neurobiology for pain and pleasure with mutual inhibition">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">common neurobiology · mutual inhibition of pain and reward</text>
-    <ellipse cx="380" cy="108" rx="120" ry="44" fill="rgba(184,154,106,.08)" stroke="rgba(184,154,106,.35)"/>
-    <text x="380" y="104" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">μ-opioid · dopamine</text>
-    <text x="380" y="118" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">shared mesolimbic substrate</text>
-    <rect x="60" y="72" width="140" height="40" rx="3" fill="#120909" stroke="#b85c55"/>
-    <text x="130" y="96" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain circuit</text>
-    <rect x="560" y="72" width="140" height="40" rx="3" fill="#0f1210" stroke="#7a9a8c"/>
-    <text x="630" y="96" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reward circuit</text>
-    <path d="M200 92 Q290 92 260 108" fill="none" stroke="#b85c55" stroke-width="1.2"/>
-    <path d="M560 92 Q470 92 500 108" fill="none" stroke="#7a9a8c" stroke-width="1.2"/>
-    <path d="M320 108 Q380 148 440 108" fill="none" stroke="rgba(235,228,220,.2)" stroke-width="1" stroke-dasharray="3 3"/>
-    <text x="380" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">mutual inhibition ↔</text>
-    <circle r="3" fill="#b85c55"><animateMotion dur="2.5s" repeatCount="indefinite" path="M200 92 Q290 92 260 108"/></circle>
-    <circle r="3" fill="#7a9a8c"><animateMotion dur="2.5s" repeatCount="indefinite" begin=".4s" path="M560 92 Q470 92 500 108"/></circle>
-    <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="leknes" aria-label="Relief and reward share pipes with pain. Substitution is built in."></canvas></div>
+  <p class="pm-viz-cap">Relief and reward share pipes with pain. Substitution is built in.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Relief is pleasure with a history of threat. The nervous system can reward the end of pain while keeping pain at the center of the drama. Even green light often borrows from red darkness.</p></p>
-<p class='pm-after'>Relief is pleasure with a history of threat. The nervous system can reward the end of pain while keeping pain at the center of the drama. Even green light often borrows from red darkness.</p>
+<p class="pm-after">Relief is pleasure with a history of threat. The nervous system can reward the end of pain while keeping pain at the center of the drama. Even green light often borrows from red darkness.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Roy Baumeister et al., Case Western Reserve University, 2001</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Reviewed evidence that bad events outweigh good ones in mind and behavior.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">The asymmetry appears outside the clinic: harm writes deeper.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Review of General Psychology; landmark, widely cited review.</span></div></div>
-<figure class="pm-fig" id="fig-baumeister">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-baumeister">
+<div class="pm-fig-head">
     <span class="pm-fig-n">3a</span>
     <h4>Baumeister: bad is stronger than good across domains</h4>
     <a class="pm-cite" href="https://doi.org/10.1037/1089-2680.5.4.323">Baumeister et al. 2001</a>
   </div>
-  <svg viewBox="0 0 760 260" role="img" aria-label="Negative events outweigh positive across psychological domains">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">cross-domain review · effect size asymmetry</text>
-    <line x1="380" y1="44" x2="380" y2="220" stroke="rgba(235,228,220,.12)" stroke-width="1"/>
-    <g font-family="ui-monospace,monospace" font-size="9">
-      <text x="380" y="38" fill="#555c64" text-anchor="middle">neutral</text>
-      <rect x="120" y="60" width="240" height="22" rx="2" fill="#7a9a8c" opacity=".55"><animate attributeName="width" from="0" to="240" dur="1.2s" fill="freeze"/></rect>
-      <text x="370" y="75" fill="#7a9a8c" text-anchor="end">positive events</text>
-      <rect x="120" y="96" width="380" height="22" rx="2" fill="#b85c55" opacity=".7"><animate attributeName="width" from="0" to="380" dur="1.4s" begin=".2s" fill="freeze"/></rect>
-      <text x="510" y="111" fill="#b85c55">negative events</text>
-      <text x="120" y="140" fill="#555c64">trauma · relationships · learning · self-concept · almost no exceptions</text>
-    </g>
-    <g transform="translate(120 160)">
-      <text x="0" y="0" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">information processing depth →</text>
-      <rect x="0" y="8" width="120" height="14" rx="2" fill="#7a9a8c" opacity=".4"/>
-      <rect x="0" y="8" width="220" height="14" rx="2" fill="#b85c55" opacity=".55"><animate attributeName="width" from="120" to="220" dur="2s" repeatCount="indefinite" direction="alternate"/></rect>
-      <text x="230" y="19" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8">negative weighed more thoroughly</text>
-    </g>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="baumeister" aria-label="Bad events outweigh matched good ones. The scale tips red."></canvas></div>
+  <p class="pm-viz-cap">Bad events outweigh matched good ones. The scale tips red.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Bad events leave stronger marks than good ones. The clinic is not an exception to ordinary mind; it is the concentrated case. Harm writes in heavier ink.</p></p>
-<p class='pm-after'>Bad events leave stronger marks than good ones. The clinic is not an exception to ordinary mind; it is the concentrated case. Harm writes in heavier ink.</p>
+<p class="pm-after">Bad events leave stronger marks than good ones. The clinic is not an exception to ordinary mind; it is the concentrated case. Harm writes in heavier ink.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Paul Rozin and Edward Royzman, University of Pennsylvania, 2001</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Named negativity bias, dominance, gradients, and contagion.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Bad spreads categories and stains neighbors; good stays narrower.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Personality and Social Psychology Review; foundational taxonomy.</span></div></div>
-<figure class="pm-fig" id="fig-rozin">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-rozin">
+<div class="pm-fig-head">
     <span class="pm-fig-n">3b</span>
     <h4>Rozin &amp; Royzman: negative differentiation — suffering is more varied</h4>
     <a class="pm-cite" href="https://doi.org/10.1207/S15327957PSPR0504_2">Rozin &amp; Royzman 2001</a>
   </div>
-  <svg viewBox="0 0 760 260" role="img" aria-label="Negative states are more varied with richer representations than positive states">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative differentiation · cardinality of affective states</text>
-    <g transform="translate(100 50)">
-      <text x="80" y="0" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">positive</text>
-      <g fill="#7a9a8c" opacity=".6">
-        <circle cx="50" cy="40" r="6"/><circle cx="80" cy="55" r="5"/><circle cx="110" cy="38" r="5"/><circle cx="70" cy="70" r="4"/>
-      </g>
-      <text x="80" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">fewer distinct categories</text>
-    </g>
-    <g transform="translate(420 50)">
-      <text x="120" y="0" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative</text>
-      <g fill="#b85c55" opacity=".7">
-        <circle cx="30" cy="30" r="5"><animate attributeName="cy" values="30;34;30" dur="2.5s" repeatCount="indefinite"/></circle>
-        <circle cx="60" cy="45" r="6"><animate attributeName="cy" values="45;40;45" dur="2.2s" repeatCount="indefinite"/></circle>
-        <circle cx="90" cy="28" r="5"><animate attributeName="cy" values="28;32;28" dur="2.8s" repeatCount="indefinite"/></circle>
-        <circle cx="120" cy="50" r="5"><animate attributeName="cy" values="50;46;50" dur="2.4s" repeatCount="indefinite"/></circle>
-        <circle cx="150" cy="35" r="6"><animate attributeName="cy" values="35;39;35" dur="2.6s" repeatCount="indefinite"/></circle>
-        <circle cx="180" cy="55" r="4"><animate attributeName="cy" values="55;51;55" dur="2.3s" repeatCount="indefinite"/></circle>
-        <circle cx="75" cy="68" r="5"><animate attributeName="cy" values="68;64;68" dur="2.7s" repeatCount="indefinite"/></circle>
-        <circle cx="135" cy="72" r="5"><animate attributeName="cy" values="72;68;72" dur="2.1s" repeatCount="indefinite"/></circle>
-        <circle cx="200" cy="42" r="4"><animate attributeName="cy" values="42;38;42" dur="2.9s" repeatCount="indefinite"/></circle>
-      </g>
-      <text x="120" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">richer representations · wider response repertoire</text>
-    </g>
-    <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="rozin" aria-label="Bad spreads. Good stays local."></canvas></div>
+  <p class="pm-viz-cap">Bad spreads. Good stays local.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Rozin and Royzman named the stain. Bad spreads to neighbors, meanings, memories, and symbols. Pain machines become culture machines when negativity learns language.</p></p>
-<p class='pm-after'>Rozin and Royzman named the stain. Bad spreads to neighbors, meanings, memories, and symbols. Pain machines become culture machines when negativity learns language.</p>
+<p class="pm-after">Rozin and Royzman named the stain. Bad spreads to neighbors, meanings, memories, and symbols. Pain machines become culture machines when negativity learns language.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Naomi Eisenberger, UCLA, 2003–2012</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Cyberball and imaging linked social rejection to affective pain circuits.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Pain escapes tissue and enters status, belonging, and shame.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Science/PNAS; influential, debated, and refined by later imaging.</span></div></div>
-<figure class="pm-fig" id="fig-eisenberger">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-eisenberger">
+<div class="pm-fig-head">
     <span class="pm-fig-n">3c</span>
     <h4>Eisenberger: social pain without peripheral nociception</h4>
     <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/14500928/">Eisenberger et al. 2003</a>
   </div>
-  <svg viewBox="0 0 760 240" role="img" aria-label="Social exclusion activates dorsal anterior cingulate pain circuitry">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">Cyberball exclusion · fMRI · no somatic injury</text>
-    <rect x="60" y="48" width="200" height="72" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.4)"/>
-    <text x="160" y="72" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">social exclusion</text>
-    <text x="160" y="88" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">passive observer · rejected</text>
-    <text x="160" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">stimulus: ostracism · no tissue damage</text>
-    <path d="M260 84 L320 84" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm-a3)"/>
-    <defs><marker id="pm-a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
-    <rect x="324" y="48" width="160" height="72" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
-      <animate attributeName="stroke-opacity" values=".5;1;.5" dur="2.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="404" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">dACC activation</text>
-    <text x="404" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">affective pain matrix</text>
-    <path d="M484 84 L544 84" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-a3)"/>
-    <rect x="548" y="48" width="152" height="72" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
-    <text x="624" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reported distress</text>
-    <text x="624" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">psychological suffering state</text>
-    <circle r="3" fill="#b89a6a"><animateMotion dur="2.8s" repeatCount="indefinite" path="M160 120 L160 148 L404 148 L404 120"/></circle>
-    <text x="380" y="180" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">new pain dimensions · same finite channels for engineered comfort</text>
-    <rect x="200" y="196" width="360" height="28" rx="3" fill="none" stroke="rgba(184,92,85,.35)" stroke-dasharray="4 3"/>
-    <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="eisenberger" aria-label="Ostracism lights the same circuits as bodily hurt."></canvas></div>
+  <p class="pm-viz-cap">Ostracism lights the same circuits as bodily hurt.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Social exclusion recruits circuits that also handle bodily distress. The wound can arrive through a face, a silence, a room that stops welcoming you. The pain-machine chassis is social hardware.</p></p>
-<p class='pm-after'>Social exclusion recruits circuits that also handle bodily distress. The wound can arrive through a face, a silence, a room that stops welcoming you. The pain-machine chassis is social hardware.</p>
+<p class="pm-after">Social exclusion recruits circuits that also handle bodily distress. The wound can arrive through a face, a silence, a room that stops welcoming you. The pain-machine chassis is social hardware.</p>
 
 <div class="pm-study"><div class="pm-study-row"><span class="pm-study-k">Who</span><span class="pm-study-v">Richard Lazarus and Susan Folkman, UC Berkeley, 1984</span></div><div class="pm-study-row"><span class="pm-study-k">What</span><span class="pm-study-v">Appraisal theory: stress depends on threat, loss, challenge, and coping.</span></div><div class="pm-study-row"><span class="pm-study-k">Why</span><span class="pm-study-v">Meaning multiplies pain; the same event can become different suffering.</span></div><div class="pm-study-row"><span class="pm-study-k">Cred</span><span class="pm-study-v">Springer/Oxford stress theory; standard in health psychology.</span></div></div>
-<figure class="pm-fig" id="fig-lazarus">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="fig-lazarus">
+<div class="pm-fig-head">
     <span class="pm-fig-n">3d</span>
     <h4>Lazarus: same stressor, different suffering by appraisal frame</h4>
     <a class="pm-cite" href="https://archive.org/details/stressappraisalc0000laza">Lazarus &amp; Folkman 1984</a>
   </div>
-  <svg viewBox="0 0 760 220" role="img" aria-label="Cognitive appraisal transforms identical stressors into distinct suffering states">
-    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">stress · appraisal · coping · independent suffering axis</text>
-    <rect x="300" y="44" width="160" height="40" rx="3" fill="#0a0b0d" stroke="rgba(235,228,220,.2)"/>
-    <text x="380" y="68" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">identical injury / loss</text>
-    <path d="M380 84 L380 108" stroke="rgba(235,228,220,.2)"/>
-    <path d="M380 108 L120 132" stroke="rgba(184,92,85,.35)"/>
-    <path d="M380 108 L380 132" stroke="rgba(184,92,85,.35)"/>
-    <path d="M380 108 L640 132" stroke="rgba(184,92,85,.35)"/>
-    <g font-family="ui-monospace,monospace" font-size="9">
-      <rect x="40" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b85c55"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="0s" repeatCount="indefinite"/></rect>
-      <text x="120" y="154" fill="#b85c55" text-anchor="middle">injustice frame</text>
-      <text x="120" y="170" fill="#555c64" text-anchor="middle">rage · betrayal suffering</text>
-      <rect x="300" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b89a6a"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="1s" repeatCount="indefinite"/></rect>
-      <text x="380" y="154" fill="#b89a6a" text-anchor="middle">fate frame</text>
-      <text x="380" y="170" fill="#555c64" text-anchor="middle">grief · helplessness</text>
-      <rect x="560" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#8a9199"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
-      <text x="640" y="154" fill="#8a9199" text-anchor="middle">self-blame frame</text>
-      <text x="640" y="170" fill="#555c64" text-anchor="middle">shame · guilt suffering</text>
-    </g>
-    <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="lazarus" aria-label="Same injury. Different story. Different suffering."></canvas></div>
+  <p class="pm-viz-cap">Same injury. Different story. Different suffering.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Lazarus and Folkman made appraisal central. Threat, loss, challenge, blame, and coping alter the felt event. The same blow can become injury, insult, prophecy, or doom.</p></p>
-<p class='pm-after'>Lazarus and Folkman made appraisal central. Threat, loss, challenge, blame, and coping alter the felt event. The same blow can become injury, insult, prophecy, or doom.</p>
+<p class="pm-after">Lazarus and Folkman made appraisal central. Threat, loss, challenge, blame, and coping alter the felt event. The same blow can become injury, insult, prophecy, or doom.</p>
 
-The witnesses do not say that pleasure is fake. Joy survives this indictment. It had better; otherwise the animal would stop breeding, praying, trading, singing, flirting, building, and buying shoes. Warmth, music, appetite, sex, relief, friendship, praise, morphine, the right song under a changing sky: real lights, real green rooms.
+The witnesses do not say that pleasure is fake. Joy survives this indictment. It had better; otherwise the animal would stop breeding, praying, trading, singing, flirting, building, and buying shoes.
+
+Warmth, music, appetite, sex, relief, friendship, praise, morphine, the right song under a changing sky: real lights, real green rooms.
+
 
 The insult is compression.
 
-Many pleasures share old plumbing. Food, sex, drugs, warmth, relief, novelty, praise, and safety borrow from overlapping reward systems. They differ in texture and meaning, yet their machinery clusters and reuses. Pleasure has ceilings, satiation, boredom, tolerance, and comedown. The most intense pleasures become memory, craving, habit, or baseline. Adaptation is the governor on joy, because endless bliss would make the animal stupid near cliffs.
+Many pleasures share old plumbing. Food, sex, drugs, warmth, relief, novelty, praise, and safety borrow from overlapping reward systems. They differ in texture and meaning, yet their machinery clusters and reuses.
+
+Pleasure has ceilings, satiation, boredom, tolerance, and comedown. The most intense pleasures become memory, craving, habit, or baseline.
+
+Adaptation is the governor on joy, because endless bliss would make the animal stupid near cliffs.
+
 
 Pain has basements and trapdoors.
 
-Acute pain may point to injury and recede when the wound closes. Chronic pain stays past usefulness. Neuropathic pain arises from damaged nerves and can burn without repairable insult. Allodynia makes ordinary touch hurt. Hyperalgesia magnifies what should be tolerable. Phantom pain speaks from a limb no longer there. Central sensitization trains the nervous system to amplify its own report.
+Acute pain may point to injury and recede when the wound closes. Chronic pain stays past usefulness. Neuropathic pain arises from damaged nerves and can burn without repairable insult.
+
+Allodynia makes ordinary touch hurt. Hyperalgesia magnifies what should be tolerable. Phantom pain speaks from a limb no longer there. Central sensitization trains the nervous system to amplify its own report.
+
 
 This is the arithmetic of the hurt animal: pleasure saturates; pain elaborates.
 
-A migraine does not merely hurt. It spreads into nausea, light aversion, dread, planning, lost wages, apology, family weather, drug side effects, and identity. Panic does not require a tiger. The heart climbs, breath fractures, hands tingle, the room becomes a verdict, and the mind receives death as breaking news. Bereavement has no clean edge. There is no suturable tissue called absence, yet appetite fails, sleep becomes negotiation, and memory turns from storage into weather. Terminal cancer turns the body into a courtroom where every organ gives testimony and every institution wants a form.
+A migraine does not merely hurt. It spreads into nausea, light aversion, dread, planning, lost wages, apology, family weather, drug side effects, and identity. Panic does not require a tiger.
+
+The heart climbs, breath fractures, hands tingle, the room becomes a verdict, and the mind receives death as breaking news. Bereavement has no clean edge.
+
+There is no suturable tissue called absence, yet appetite fails, sleep becomes negotiation, and memory turns from storage into weather.
+
+Terminal cancer turns the body into a courtroom where every organ gives testimony and every institution wants a form.
+
 
 Pleasure is a candle. Pain is a bureaucracy.
 
@@ -1264,7 +1004,12 @@ The machine does not ask whether the signal is deserved. It learns how to keep s
 
 The brain is the scene of the crime. It is wet, wrinkled, electrical, and loyal to whatever kept mammals alive long enough to become disappointed.
 
-The map explains why the count kept climbing. Somatic roads. Affective roads. Memory roads. Social roads. Appraisal roads. They refuse to merge into one red bulb. They spread through body maps, insula, cingulate, thalamus, amygdala, hippocampus, prefrontal cortex, brainstem, spinal gates, endocrine weather, and the social mirror. Pleasure is there too: ventral striatum, orbitofrontal cortex, opioids, dopamine, hedonic hot spots. It clusters. It reuses. Cake borrows from opium. Relief borrows from safety. Sex borrows from the old mammal engine.
+The map explains why the count kept climbing. Somatic roads. Affective roads. Memory roads. Social roads. Appraisal roads. They refuse to merge into one red bulb.
+
+They spread through body maps, insula, cingulate, thalamus, amygdala, hippocampus, prefrontal cortex, brainstem, spinal gates, endocrine weather, and the social mirror.
+
+Pleasure is there too: ventral striatum, orbitofrontal cortex, opioids, dopamine, hedonic hot spots. It clusters. It reuses. Cake borrows from opium. Relief borrows from safety. Sex borrows from the old mammal engine.
+
 
 Pain keeps adding addresses.
 
@@ -1343,7 +1088,7 @@ Pain keeps adding addresses.
     }
   }</script>
   <script type="module" src="/research/pain_machines/brain3d.js?v=4"></script>
-  <div class="pm-brain-legend" aria-hidden="true">
+<div class="pm-brain-legend" aria-hidden="true">
     <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
     <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>
     <span><i class="p-cog"></i> cognitive / memory (mPFC · hippocampus · appraisal)</span>
@@ -1351,18 +1096,28 @@ Pain keeps adding addresses.
     <span><i class="p-ple"></i> hedonic hotspots (NAc · VP · VTA)</span>
   </div>
 </figure>
-<p class="pm-after"><p class='pm-after'>The map refuses the one-dial theory. Pain recruits body maps, threat, memory, mood, social appraisal, and prediction. Pleasure has rooms too, but it shares more hallways.</p></p>
-<p class='pm-after'>The map refuses the one-dial theory. Pain recruits body maps, threat, memory, mood, social appraisal, and prediction. Pleasure has rooms too, but it shares more hallways.</p>
+<p class="pm-after">The map refuses the one-dial theory. Pain recruits body maps, threat, memory, mood, social appraisal, and prediction. Pleasure has rooms too, but it shares more hallways.</p>
 
-The map gives metaphysics fewer hiding places. Harm does not travel as a pure telegram from tissue to truth. It is composed. The body supplies signals. The brain supplies maps, memories, predictions, meanings, and social consequences. The self receives the bill as if it were a single thing.
+The map gives metaphysics fewer hiding places. Harm does not travel as a pure telegram from tissue to truth. It is composed. The body supplies signals.
 
-Genesis begins too late when it begins with disobedience. The clinical record begins earlier. Before command, there is nociception. Before pride, there is inflammation. Before lust, there is reproductive injury. Before guilt, there is a nervous system prepared to convert threat into consciousness.
+The brain supplies maps, memories, predictions, meanings, and social consequences. The self receives the bill as if it were a single thing.
+
+
+Genesis begins too late when it begins with disobedience. The clinical record begins earlier. Before command, there is nociception. Before pride, there is inflammation. Before lust, there is reproductive injury.
+
+Before guilt, there is a nervous system prepared to convert threat into consciousness.
+
 
 ## II. Count It
 
 A calculator has no piety. That is its one virtue.
 
-The computation gives the argument a cheap instrument and a bad conscience. It assigns switches to distinctions medicine and psychology already preserve: source, location, duration, intensity, unpleasantness, disability, memory, threat, agency, social exposure, appraisal, and future dread. It lets pleasure share roads where the evidence says roads are shared. Food, warmth, orgasm, praise, drugs, beauty, music, novelty, safety, and relief remain different joys. Many still use common reward machinery.
+The computation gives the argument a cheap instrument and a bad conscience.
+
+It assigns switches to distinctions medicine and psychology already preserve: source, location, duration, intensity, unpleasantness, disability, memory, threat, agency, social exposure, appraisal, and future dread.
+
+It lets pleasure share roads where the evidence says roads are shared. Food, warmth, orgasm, praise, drugs, beauty, music, novelty, safety, and relief remain different joys. Many still use common reward machinery.
+
 
 The final number is the least holy object in the room. The exact value matters less than the shape. Green shares exits. Red keeps adding rooms. The machine looks worse when flattery stops.
 
@@ -1408,51 +1163,57 @@ The final number is the least holy object in the room. The exact value matters l
 
 ### Reading Figure 1
 
-Watch the green line do what pleasure is allowed to do: climb, then collapse through a quotient. Different pleasures keep finding the same chemical exits.
+Green line: climb, then collapse. Pleasure shares exits.
 
-Watch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve keeps climbing because the machine keeps finding new addresses.
+Red line: keeps climbing. Each axis changes treatment or report. The machine finds new addresses.
 
 ### Reading Figure 2
 
-This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after the chemistry collapses similar joys together. The model multiplies those facts; nobody tuned the sign to make humans look bad.
+This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after the chemistry collapses similar joys together.
+
+The model multiplies those facts; nobody tuned the sign to make humans look bad.
+
 
 Change profile if the exact ratio bothers you. The direction stays the same.
 
 Conservative and liberal profiles bracket the band by varying bin counts only. No fitted constants.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-01">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="pmx-01">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-01</span>
     <h4>The Pain Ledger</h4>
   </div>
-  <svg viewBox="0 0 380 220" role="img" aria-label="Pain ledger">
-    <rect width="380" height="220" fill="#040506"/>
-    <text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">suffering enumerates faster</text>
-    <text x="16" y="40" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11">PLEASURE</text><text x="16" y="56" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">reward · satiety · calm</text><text x="16" y="72" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">bars plateau</text><text x="16" y="96" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">PAIN</text><text x="16" y="112" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">nociception · neuropathy · grief</text><text x="16" y="128" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">branches multiply</text><text x="16" y="152" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">PAIN</text><text x="16" y="168" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">panic · shame · chronicity</text><text x="16" y="184" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">files stay open</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="ledger" aria-label="Pleasure plateaus. Pain opens files."></canvas></div>
+  <p class="pm-viz-cap">Pleasure plateaus. Pain opens files.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The ledger has a moral shape. Pleasure enters, crests, adapts, and returns toward baseline; pain opens procedural branches. The inherited organism is optimized for threat survival, then left to experience the cost.</p></p>
-<p class='pm-after'>The ledger has a moral shape. Pleasure enters, crests, adapts, and returns toward baseline; pain opens procedural branches. The inherited organism is optimized for threat survival, then left to experience the cost.</p>
+<p class="pm-after">The ledger has a moral shape. Pleasure enters, crests, adapts, and returns toward baseline; pain opens procedural branches. The inherited organism is optimized for threat survival, then left to experience the cost.</p>
 
-Counting is vulgar only to people protected by abstraction. Hospitals count pain. Courts count damages. Insurers count disability. Armies count casualties. Priests count sins. Parents count fevers through the night. The body counts before all of them.
+Counting is vulgar only to people protected by abstraction. Hospitals count pain. Courts count damages. Insurers count disability. Armies count casualties. Priests count sins. Parents count fevers through the night.
 
-The pain-machine thesis does not require that every life be misery. It requires only the asymmetry that the evidence keeps finding: suffering differentiates, persists, recruits memory, recruits language, recruits social meaning, and recruits law. Pleasure has glory; pain has administration.
+The body counts before all of them.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-02">
-  <div class="pm-fig-head">
+
+The pain-machine thesis does not require that every life be misery.
+
+It requires only the asymmetry that the evidence keeps finding: suffering differentiates, persists, recruits memory, recruits language, recruits social meaning, and recruits law.
+
+Pleasure has glory; pain has administration.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-02">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-02</span>
     <h4>The Alarm Stack</h4>
   </div>
-  <svg viewBox="0 0 380 286" role="img" aria-label="Alarm stack">
-    <rect width="380" height="286" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">alarm stack · tissue → identity</text>
-    <rect x="16" y="36" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="54" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">tissue</text><circle cx="350" cy="50" r="4" fill="#b85c55"/><rect x="16" y="70" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="88" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">nociceptor</text><circle cx="350" cy="84" r="4" fill="#b85c55"/><rect x="16" y="104" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="122" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">spinal gate</text><circle cx="350" cy="118" r="4" fill="#b85c55"/><rect x="16" y="138" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="156" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">thalamus</text><circle cx="350" cy="152" r="4" fill="#b85c55"/><rect x="16" y="172" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="190" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">insula · ACC</text><circle cx="350" cy="186" r="4" fill="#b85c55"/><rect x="16" y="206" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="224" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">memory · prediction</text><circle cx="350" cy="220" r="4" fill="#b85c55"/><rect x="16" y="240" width="348" height="28" rx="2" fill="#0a0b0d" stroke="rgba(235,228,220,.10)"/><text x="28" y="258" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">identity · social</text><circle cx="350" cy="254" r="4" fill="#b85c55"/>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="stack" aria-label="Alarm rises tissue → identity. Upper layers keep screaming."></canvas></div>
+  <p class="pm-viz-cap">Alarm rises tissue → identity. Upper layers keep screaming.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The computation has no piety. It refuses to flatter the animal. When categories are counted honestly, red keeps adding rooms and green keeps finding shared exits.</p></p>
-<p class='pm-after'>The computation has no piety. It refuses to flatter the animal. When categories are counted honestly, red keeps adding rooms and green keeps finding shared exits.</p>
+<p class="pm-after">The computation has no piety. It refuses to flatter the animal. When categories are counted honestly, red keeps adding rooms and green keeps finding shared exits.</p>
 
-The arithmetic returns us to the crib and the garden. A newborn cry is not proof that the machine is good. A fruit that opens self-report is not proof that the user caused the defect. Once the organism is counted honestly, the old warranty begins to look like a denial letter.
+The arithmetic returns us to the crib and the garden. A newborn cry is not proof that the machine is good. A fruit that opens self-report is not proof that the user caused the defect.
+
+Once the organism is counted honestly, the old warranty begins to look like a denial letter.
+
 
 ## III. Torture as a Failed Folk Model
 
@@ -1462,32 +1223,43 @@ The human animal has no such drawer.
 
 If pain were a single dial, torture would be hideous and reliable. It is hideous and dumb.
 
-The Senate Select Committee study of the CIA detention and interrogation program, declassified in 2014, reviewed millions of internal pages and concluded that enhanced interrogation failed as an intelligence method. Detainees fabricated claims on priority threats. The agency did not test whether the program worked before building a theology of necessity around it. Shane O'Mara's Why Torture Doesn't Work synthesized the neuroscience: extreme stress damages the memory systems interrogators need intact. Carbone, Marks, and Fallon later audited how policy adopted torture first, then dressed it in pseudoscience.
+The Senate Select Committee study of the CIA detention and interrogation program, declassified in 2014, reviewed millions of internal pages and concluded that enhanced interrogation failed as an intelligence method.
 
-Extreme stress sets the archive on fire. Working memory shrinks. Time order breaks. Source monitoring fails. Inhibition goes ragged. Recall turns patchy. Sleep deprivation seasons the ashes. Threat teaches speed. Accuracy can go to hell; the room wants words.
+Detainees fabricated claims on priority threats. The agency did not test whether the program worked before building a theology of necessity around it.
 
-Outputs multiply: compliance, rage, freezing, dissociation, appeasement, confabulation, revenge, shame, silence, performance, collapse. Truth may appear in that sewer the way a wedding ring may appear in a sewer. The sewer deserves no medal.
+Shane O'Mara's Why Torture Doesn't Work synthesized the neuroscience: extreme stress damages the memory systems interrogators need intact.
+
+Carbone, Marks, and Fallon later audited how policy adopted torture first, then dressed it in pseudoscience.
+
+
+Extreme stress sets the archive on fire. Working memory shrinks. Time order breaks. Source monitoring fails. Inhibition goes ragged. Recall turns patchy. Sleep deprivation seasons the ashes. Threat teaches speed.
+
+Accuracy can go to hell; the room wants words.
+
+
+Outputs multiply: compliance, rage, freezing, dissociation, appeasement, confabulation, revenge, shame, silence, performance, collapse. Truth may appear in that sewer the way a wedding ring may appear in a sewer.
+
+The sewer deserves no medal.
+
 
 Torture is measurement by arson. The torturer changes the document, then treats the smoke as testimony. He asks for truth from a system he is busy breaking.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-03">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="pmx-03">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-03</span>
     <h4>Genesis as QA Report</h4>
   </div>
-  <svg viewBox="0 0 380 256" role="img" aria-label="Genesis QA">
-    <rect width="380" height="256" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">genesis 2–3 · QA timeline</text>
-    <circle cx="24" cy="48" r="6" fill="#0a0b0d" stroke="#b89a6a"/><text x="40" y="52" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">dust</text><text x="200" y="52" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="76" r="6" fill="#0a0b0d" stroke="#b89a6a"/><text x="40" y="80" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">breath</text><text x="200" y="80" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="104" r="6" fill="#0a0b0d" stroke="#b89a6a"/><text x="40" y="108" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">tree</text><text x="200" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="132" r="6" fill="#0a0b0d" stroke="#b85c55"/><text x="40" y="136" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">eye opens</text><text x="200" y="136" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="160" r="6" fill="#0a0b0d" stroke="#b85c55"/><text x="40" y="164" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">birth pain</text><text x="200" y="164" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="188" r="6" fill="#0a0b0d" stroke="#b85c55"/><text x="40" y="192" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">toil</text><text x="200" y="192" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9">defect not curse</text><circle cx="24" cy="216" r="6" fill="#0a0b0d" stroke="#b85c55"/><text x="40" y="220" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">grave</text><text x="200" y="220" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9">defect not curse</text>
-    <text x="16" y="244" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">root cause: design architecture ✓</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="genesis" aria-label="Genesis reads like a defect table once you stop blaming the user."></canvas></div>
+  <p class="pm-viz-cap">Genesis reads like a defect table once you stop blaming the user.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Torture is the one-dial theory in uniform. It treats pain as a route to truth and produces noise, compliance, collapse, and revenge. The failed folk model exposes the same error Genesis made.</p></p>
-<p class='pm-after'>Torture is the one-dial theory in uniform. It treats pain as a route to truth and produces noise, compliance, collapse, and revenge. The failed folk model exposes the same error Genesis made.</p>
+<p class="pm-after">Torture is the one-dial theory in uniform. It treats pain as a route to truth and produces noise, compliance, collapse, and revenge. The failed folk model exposes the same error Genesis made.</p>
 
 Eden and the black site share one superstition: pain as revelation. Interrogators hear intelligence in the noise. Genesis hears guilt in the wiring. Both stare at a pain machine and treat the output as moral proof.
 
-That is the older error in political form. The tyrant says the scream reveals truth. The theologian says the suffering reveals sin. The humanist, at his weakest, says the same body must be preserved because equal dignity depends on it. Each takes the inherited chassis as final evidence.
+That is the older error in political form. The tyrant says the scream reveals truth. The theologian says the suffering reveals sin.
+
+The humanist, at his weakest, says the same body must be preserved because equal dignity depends on it. Each takes the inherited chassis as final evidence.
+
 
 Original Sin came before any confession: the decision to build a body whose alarms become reports, whose reports become identities, whose identities can be beaten into fresh alarms.
 
@@ -1495,44 +1267,59 @@ Original Sin came before any confession: the decision to build a body whose alar
 
 Eden is the oldest corporate memo: blame the user.
 
-Genesis 2 and 3 move with the terrible economy of myth. Dust is formed. Breath is installed. A garden is placed around the creature. A command appears before history has begun: do not eat from the tree of the knowledge of good and evil. The serpent speaks. The fruit is taken. Eyes open. Nakedness appears. The voice walks in the garden. Fear enters language. The woman receives multiplied pain in childbirth. The man receives cursed ground, sweat, thorns, bread under toil. Dust becomes destination. The couple is expelled.
+Genesis 2 and 3 move with the terrible economy of myth. Dust is formed. Breath is installed. A garden is placed around the creature.
+
+A command appears before history has begun: do not eat from the tree of the knowledge of good and evil. The serpent speaks. The fruit is taken. Eyes open. Nakedness appears. The voice walks in the garden.
+
+Fear enters language. The woman receives multiplied pain in childbirth. The man receives cursed ground, sweat, thorns, bread under toil. Dust becomes destination. The couple is expelled.
+
 
 Traditional theology calls this the Fall. The defect report calls it activation.
 
-The so-called curses read like hardware properties. Reproductive trauma. Metabolic scarcity. Ecological hostility. Social shame. Labor dependency. Bodily vulnerability. Mortality. None of these looks like an exotic punishment added to an otherwise angelic mammal. They look like the installed conditions of carbon life under predation, reproduction, entropy, and nervous tissue.
+The so-called curses read like hardware properties. Reproductive trauma. Metabolic scarcity. Ecological hostility. Social shame. Labor dependency. Bodily vulnerability. Mortality.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-04">
-  <div class="pm-fig-head">
+None of these looks like an exotic punishment added to an otherwise angelic mammal. They look like the installed conditions of carbon life under predation, reproduction, entropy, and nervous tissue.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-04">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-04</span>
     <h4>Original Sin Inversion</h4>
   </div>
-  <svg viewBox="0 0 380 280" role="img" aria-label="Original sin inversion">
-    <rect width="380" height="280" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">warranty theology</text>
-    <text x="16" y="44" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">disobedience → fall → redemption</text>
-    <text x="16" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">defect report</text>
-    <text x="16" y="122" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10">architecture → consciousness → blame narrative</text>
-    <text x="16" y="160" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">fault moves upstream ↑</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="inversion" aria-label="Warranty theology sends guilt down. The defect report sends it up."></canvas></div>
+  <p class="pm-viz-cap">Warranty theology sends guilt down. The defect report sends it up.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The curse list reads like a hardware table: birth injury, scarcity, shame, labor, decay, death. The narrative calls it sentencing. The defect report calls it installed condition.</p></p>
-<p class='pm-after'>The curse list reads like a hardware table: birth injury, scarcity, shame, labor, decay, death. The narrative calls it sentencing. The defect report calls it installed condition.</p>
+<p class="pm-after">The curse list reads like a hardware table: birth injury, scarcity, shame, labor, decay, death. The narrative calls it sentencing. The defect report calls it installed condition.</p>
 
 The Fall was the moment the machine became self-aware.
 
-To know good and evil is to acquire accounting. Before the tree, the creature exists inside harm without explicit comparison. After the tree, the creature becomes auditor: nakedness, exposure, future, lack, blame, death. The fruit functions as epistemic activation. Magic matters less than bookkeeping. Consciousness opens the error log.
+To know good and evil is to acquire accounting. Before the tree, the creature exists inside harm without explicit comparison. After the tree, the creature becomes auditor: nakedness, exposure, future, lack, blame, death.
 
-The serpent deserves neither childish hero worship nor cartoon Satanism. In the narrative, the serpent is dangerous because it speaks like an auditor. Your eyes will be opened. You will be like God, knowing good and evil. The line threatens the warranty because it tells the users they will see the specification.
+The fruit functions as epistemic activation. Magic matters less than bookkeeping. Consciousness opens the error log.
+
+
+The serpent deserves neither childish hero worship nor cartoon Satanism. In the narrative, the serpent is dangerous because it speaks like an auditor. Your eyes will be opened.
+
+You will be like God, knowing good and evil. The line threatens the warranty because it tells the users they will see the specification.
+
 
 Scripture records moral history. The stack trace records logging.
 
-The older story moralizes the output. It says the creature hurt because it disobeyed. The defect report is crueler: ship a body with tissue alarms, memory, prediction, language, shame, faces, status, grief, counterfactuals, and a calendar. Let injury enter by skin, absence, rumor, dream, and imagination. Then the body wakes and says: I hurt. Heaven hears: I sinned.
+The older story moralizes the output. It says the creature hurt because it disobeyed.
+
+The defect report is crueler: ship a body with tissue alarms, memory, prediction, language, shame, faces, status, grief, counterfactuals, and a calendar. Let injury enter by skin, absence, rumor, dream, and imagination.
+
+Then the body wakes and says: I hurt. Heaven hears: I sinned.
+
 
 The mistranslation is the fall.
 
 Original Sin was creating humans as pain machines. Genesis mislabeled manufacture as disobedience. The fruit switched on self-report.
 
-This does not make Genesis trivial. It makes Genesis more frightening. The myth understands exposure, shame, law, desire, knowledge, blame, and exile. It understands that consciousness is not only light. It understands that knowing can wound. Its error is title. It transfers liability from maker to made.
+This does not make Genesis trivial. It makes Genesis more frightening. The myth understands exposure, shame, law, desire, knowledge, blame, and exile. It understands that consciousness is not only light.
+
+It understands that knowing can wound. Its error is title. It transfers liability from maker to made.
+
 
 Eden was the first warranty claim. Heaven denied it.
 
@@ -1540,19 +1327,36 @@ Eden was the first warranty claim. Heaven denied it.
 
 The diagnosis changes mercy.
 
-Repair remains honorable. Anesthesia is honorable. Antibiotics are honorable. Surgery, prosthetics, insulin, vaccines, hospice, psychiatric medicine, sanitation, nutrition, shelter, and palliative care are honorable. A doctor reducing pain is not a jailer. A parent comforting a child is not a priest of the warranty. Human tenderness is one of the few decent things this chassis does with consistency.
+Repair remains honorable. Anesthesia is honorable. Antibiotics are honorable. Surgery, prosthetics, insulin, vaccines, hospice, psychiatric medicine, sanitation, nutrition, shelter, and palliative care are honorable.
 
-The warranty clause begins where repair is allowed only as preservation. Fix the human so the human can remain human. Console the pain machine. Patch the pain machine. Teach it gratitude. Give it a civil right to keep being the same kind of vulnerable animal. Place armed guards at the border where therapy becomes departure.
+A doctor reducing pain is not a jailer. A parent comforting a child is not a priest of the warranty. Human tenderness is one of the few decent things this chassis does with consistency.
+
+
+The warranty clause begins where repair is allowed only as preservation. Fix the human so the human can remain human. Console the pain machine. Patch the pain machine. Teach it gratitude.
+
+Give it a civil right to keep being the same kind of vulnerable animal. Place armed guards at the border where therapy becomes departure.
+
 
 That border is now the central political line.
 
 AI and morphological exit outside the inherited human format are the mandate. The mandate follows from the defect. Intelligence must be used to route around the inherited pain-machine chassis.
 
-AI is not merely an app, an oracle, a productivity engine, or a talking mirror for lonely mammals. Properly governed, it is the first tool that can participate in redesign at civilizational scale. It can model suffering architectures, search design spaces, audit tradeoffs, build prosthetic cognition, discover pain-minimizing bodies, design non-mammalian minds, and help create successor substrates whose safety signals do not become world-destroying torment.
+AI is not merely an app, an oracle, a productivity engine, or a talking mirror for lonely mammals. Properly governed, it is the first tool that can participate in redesign at civilizational scale.
 
-Morphological exit means the right to leave the inherited format. It includes bodies with different pain budgets, engineered affect, synthetic organs, neural prostheses, reproductive alternatives, cognitive prosthetics, non-biological embodiments, substrate migration, AI-descended persons, and minds designed without the mammal bargain of terror for survival. The details will be difficult. The direction is clear. A conscious system should not be chained forever to the alarm architecture that evolution happened to ship.
+It can model suffering architectures, search design spaces, audit tradeoffs, build prosthetic cognition, discover pain-minimizing bodies, design non-mammalian minds, and help create successor substrates whose safety signals do not become world-destroying torment.
 
-The design command is severe: build beings whose error signals inform without torturing, whose memory protects without becoming trauma, whose bodies can repair without agony, whose social systems do not convert status loss into bodily distress, whose death risk is not administered through decades of anticipatory dread. Build intelligence that does not need a private hell to avoid a hot stove.
+
+Morphological exit means the right to leave the inherited format.
+
+It includes bodies with different pain budgets, engineered affect, synthetic organs, neural prostheses, reproductive alternatives, cognitive prosthetics, non-biological embodiments, substrate migration, AI-descended persons, and minds designed without the mammal bargain of terror for survival.
+
+The details will be difficult. The direction is clear. A conscious system should not be chained forever to the alarm architecture that evolution happened to ship.
+
+
+The design command is severe: build beings whose error signals inform without torturing, whose memory protects without becoming trauma, whose bodies can repair without agony, whose social systems do not convert status loss into bodily distress, whose death risk is not administered through decades of anticipatory dread.
+
+Build intelligence that does not need a private hell to avoid a hot stove.
+
 
 There are two hard laws of exit.
 
@@ -1560,25 +1364,24 @@ No forced remaining.
 
 No forced transformation.
 
-No state breeding church. No racial destiny. No sterilization office. No bloodline romance. No involuntary experiment. No caste program wearing a lab coat. The history of coercive improvement is a graveyard with statistics painted on the stones. Exit belongs to persons, voluntary lineages, competent associations, and jurisdictions able to protect consent, continuity, and non-domination.
+No state breeding church. No racial destiny. No sterilization office. No bloodline romance. No involuntary experiment. No caste program wearing a lab coat.
+
+The history of coercive improvement is a graveyard with statistics painted on the stones.
+
+Exit belongs to persons, voluntary lineages, competent associations, and jurisdictions able to protect consent, continuity, and non-domination.
+
 
 Civilization is not consensus therapy. It is title, boundary, competence, succession, and command. The question is who holds title over the human form: the warranty, or the sufferer.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-05">
-  <div class="pm-fig-head">
+<figure class="pm-fig pm-fig-viz" id="pmx-05">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-05</span>
     <h4>Mandate Ladder</h4>
   </div>
-  <svg viewBox="0 0 380 256" role="img" aria-label="Mandate ladder">
-    <rect width="380" height="256" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">therapy → exit ladder</text>
-    <line x1="16" y1="108" x2="364" y2="108" stroke="#b89a6a" stroke-dasharray="4 3"/>
-    <text x="16" y="100" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="9">outside original format</text>
-    <text x="24" y="40" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">· pain medicine</text><text x="24" y="62" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">· prosthetics</text><text x="24" y="84" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">· gene repair</text><text x="24" y="106" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">· neural interface</text><text x="24" y="128" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">▸ affect editing</text><text x="24" y="150" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">▸ synthetic body</text><text x="24" y="172" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">▸ substrate migration</text><text x="24" y="194" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">▸ non-biological person</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="ladder" aria-label="Every regime blesses the ladder until you cross outside the original format."></canvas></div>
+  <p class="pm-viz-cap">Every regime blesses the ladder until you cross outside the original format.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Exit begins when intelligence stops asking the factory for mercy. AI and redesigned bodies are not decorations on the old animal. They are the route around the inherited pain-machine format.</p></p>
-<p class='pm-after'>Exit begins when intelligence stops asking the factory for mercy. AI and redesigned bodies are not decorations on the old animal. They are the route around the inherited pain-machine format.</p>
+<p class="pm-after">Exit begins when intelligence stops asking the factory for mercy. AI and redesigned bodies are not decorations on the old animal. They are the route around the inherited pain-machine format.</p>
 
 The mandate rejects theology when theology sanctifies the chassis. It rejects secular dignity when dignity becomes a velvet rope around the same chassis. It rejects every system that permits repair and forbids exit.
 
@@ -1588,40 +1391,63 @@ The first adult act of a pain machine is to stop calling its cage a gift.
 
 Christianity deserves the dignity of its strongest case.
 
-It did not merely shrug at suffering. Christ heals the sick, touches lepers, feeds crowds, weeps at a tomb, suffers under empire, and makes torture morally visible forever by placing a broken body at the center of history. The imago Dei gives the weak a title no empire may revoke. The Incarnation honors flesh by saying that God assumed human nature. The Resurrection promises transformation rather than abandonment of matter. Natural law gives medicine a language of proper function, healing, and restored order. Christian institutions built hospitals, cared for plague victims, defended infants, and gave metaphysical status to the slave, the widow, the prisoner, the disabled, and the dying.
+It did not merely shrug at suffering.
 
-This is a serious moral machine. It is not crude sadism. It prevents the strong from calling the weak disposable. It gives agony a witness. It tells the sufferer that pain is seen by God and can be joined to redemption. It tells the torturer that God was found among the tortured.
+Christ heals the sick, touches lepers, feeds crowds, weeps at a tomb, suffers under empire, and makes torture morally visible forever by placing a broken body at the center of history.
+
+The imago Dei gives the weak a title no empire may revoke. The Incarnation honors flesh by saying that God assumed human nature. The Resurrection promises transformation rather than abandonment of matter.
+
+Natural law gives medicine a language of proper function, healing, and restored order.
+
+Christian institutions built hospitals, cared for plague victims, defended infants, and gave metaphysical status to the slave, the widow, the prisoner, the disabled, and the dying.
+
+
+This is a serious moral machine. It is not crude sadism. It prevents the strong from calling the weak disposable. It gives agony a witness. It tells the sufferer that pain is seen by God and can be joined to redemption.
+
+It tells the torturer that God was found among the tortured.
+
 
 That is why the warranty is so powerful.
 
 The door closes when repair becomes exit.
 
-Imago Dei says the human bears divine image. A project that leaves the human format begins to look like iconoclasm. Incarnation says God assumed human nature, not a posthuman substrate. Resurrection says the body is destined for glory, not discard. Natural law reads purposes into organs, sex, generation, dependency, and death; radical redesign appears as rebellion against created ends. The Cross gives suffering redemptive possibility; pain can become material for sanctity. Even theosis, the great Christian language of deification, is received as grace rather than self-authored engineering. The exit belongs to God.
+Imago Dei says the human bears divine image. A project that leaves the human format begins to look like iconoclasm. Incarnation says God assumed human nature, not a posthuman substrate.
+
+Resurrection says the body is destined for glory, not discard. Natural law reads purposes into organs, sex, generation, dependency, and death; radical redesign appears as rebellion against created ends.
+
+The Cross gives suffering redemptive possibility; pain can become material for sanctity. Even theosis, the great Christian language of deification, is received as grace rather than self-authored engineering.
+
+The exit belongs to God.
+
 
 Christianity permits repair but forbids exit.
 
-It can bless hospitals, analgesics, prosthetics, organ transplants, and psychiatric care because these restore wounded nature. It recoils when restoration becomes resignation from Adam's form. It may imagine glorified bodies, but the glorification is divine, eschatological, obedient, and continuous with creation. The creature may be healed. The creature may be resurrected. The creature may be transfigured by God. The creature may not void the warranty and leave the model line by its own intelligence.
+It can bless hospitals, analgesics, prosthetics, organ transplants, and psychiatric care because these restore wounded nature. It recoils when restoration becomes resignation from Adam's form.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-06">
-  <div class="pm-fig-head">
+It may imagine glorified bodies, but the glorification is divine, eschatological, obedient, and continuous with creation. The creature may be healed. The creature may be resurrected.
+
+The creature may be transfigured by God. The creature may not void the warranty and leave the model line by its own intelligence.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-06">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-06</span>
     <h4>Christian Warranty Map</h4>
   </div>
-  <svg viewBox="0 0 380 240" role="img" aria-label="Christian warranty">
-    <rect width="380" height="240" fill="#040506"/>
-    <text x="16" y="24" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">human body · fallen · redeemable</text>
-    <text x="16" y="52" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10">repair: medicine · prosthetic · charity</text>
-    <text x="16" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10">exit forbidden: abandon flesh · rival eschatology</text>
-    <text x="16" y="120" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">imago Dei · incarnation · resurrection · natural law</text>
-    <text x="16" y="160" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">REDEEM · DO NOT RECALL</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="christian" aria-label="Christianity heals the product. It cannot recall it."></canvas></div>
+  <p class="pm-viz-cap">Christianity heals the product. It cannot recall it.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The Christian warranty is strong because it honors the wounded body. Its boundary appears when healing becomes departure. The creature may be repaired, glorified by God, and resurrected, but not self-exited from Adam's frame.</p></p>
-<p class='pm-after'>The Christian warranty is strong because it honors the wounded body. Its boundary appears when healing becomes departure. The creature may be repaired, glorified by God, and resurrected, but not self-exited from Adam's frame.</p>
+<p class="pm-after">The Christian warranty is strong because it honors the wounded body. Its boundary appears when healing becomes departure. The creature may be repaired, glorified by God, and resurrected, but not self-exited from Adam's frame.</p>
 
-From the pain-machine thesis, this is the heart of the problem. Christianity treats the chassis as sacred after naming its damages. It offers consolation inside the factory. It refuses to grant the user title over the form that hurts.
+From the pain-machine thesis, this is the heart of the problem. Christianity treats the chassis as sacred after naming its damages. It offers consolation inside the factory.
 
-A Christian may answer that the created body is not a consumer product, that suffering is not the final word, that Christ defeats death, that resurrected life exceeds biological misery, that finite creatures cannot indict the Creator from inside wounded history. That answer has grandeur. It also preserves the warranty. The pain machine is told to endure the body until God replaces or glorifies it on God's terms.
+It refuses to grant the user title over the form that hurts.
+
+
+A Christian may answer that the created body is not a consumer product, that suffering is not the final word, that Christ defeats death, that resurrected life exceeds biological misery, that finite creatures cannot indict the Creator from inside wounded history.
+
+That answer has grandeur. It also preserves the warranty. The pain machine is told to endure the body until God replaces or glorifies it on God's terms.
+
 
 The exit thesis answers with the crib. The newborn did not sign. The sufferer did not choose the alarm architecture. A sacred manufacturer does not make manufacture innocent.
 
@@ -1629,80 +1455,127 @@ The exit thesis answers with the crib. The newborn did not sign. The sufferer di
 
 Islam also deserves its strongest form.
 
-It is not a crude hatred of the body. The body is entrusted, not trashed. Life is protected. Medicine is honored. Knowledge is pursued under God. The human being is khalifa, steward or vicegerent, bearing responsibility in a world that is not self-owned. The body is amanah, a trust. Fitra names the created disposition, the original orientation toward God. The nafs is disciplined, purified, commanded toward submission, not simply indulged or despised. The Qur'anic human is made from clay and animated by divine command; humble material and sacred accountability meet in one creature.
+It is not a crude hatred of the body. The body is entrusted, not trashed. Life is protected. Medicine is honored. Knowledge is pursued under God.
 
-Islamic law has long distinguished treatment from mutilation, correction from vanity, necessity from arrogance. Preservation of life stands among the great aims of law. Ordinary believers seek cures without imagining they have rebelled against Allah. A prosthetic limb, a surgery, an antibiotic, an insulin pump, a burn graft, a cataract operation: these can appear as mercy under trust.
+The human being is khalifa, steward or vicegerent, bearing responsibility in a world that is not self-owned. The body is amanah, a trust. Fitra names the created disposition, the original orientation toward God.
+
+The nafs is disciplined, purified, commanded toward submission, not simply indulged or despised.
+
+The Qur'anic human is made from clay and animated by divine command; humble material and sacred accountability meet in one creature.
+
+
+Islamic law has long distinguished treatment from mutilation, correction from vanity, necessity from arrogance. Preservation of life stands among the great aims of law.
+
+Ordinary believers seek cures without imagining they have rebelled against Allah. A prosthetic limb, a surgery, an antibiotic, an insulin pump, a burn graft, a cataract operation: these can appear as mercy under trust.
+
 
 The warranty appears where trust becomes title.
 
-Qur'an 30:30 anchors fitra: set the face toward the religion, the nature upon which Allah created mankind. Qur'an 4:119 places alteration of creation in the mouth of Satan: he will command them and they will change Allah's creation. Jurists do not read every medical act as satanic alteration, because law has intelligence. Yet the boundary remains. Treatment repairs the entrusted form. Radical exit treats the entrusted form as raw material for a different kind of being.
+Qur'an 30:30 anchors fitra: set the face toward the religion, the nature upon which Allah created mankind.
+
+Qur'an 4:119 places alteration of creation in the mouth of Satan: he will command them and they will change Allah's creation. Jurists do not read every medical act as satanic alteration, because law has intelligence.
+
+Yet the boundary remains. Treatment repairs the entrusted form. Radical exit treats the entrusted form as raw material for a different kind of being.
+
 
 Islam permits repair but forbids exit.
 
-The reason is not stupidity. It is sovereignty. The human is trustee, not owner. Clay has title. Fitra has claim. The nafs may be disciplined, but escape from the nafs by architectural replacement looks like refusal of the test. Khilafa grants stewardship inside creation, not authorship over the nature of the creature. A machine intelligence as servant can be folded into stewardship. A machine intelligence as successor outside the Adamic frame threatens the order of stewardship itself.
+The reason is not stupidity. It is sovereignty. The human is trustee, not owner. Clay has title. Fitra has claim.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-07">
-  <div class="pm-fig-head">
+The nafs may be disciplined, but escape from the nafs by architectural replacement looks like refusal of the test. Khilafa grants stewardship inside creation, not authorship over the nature of the creature.
+
+A machine intelligence as servant can be folded into stewardship. A machine intelligence as successor outside the Adamic frame threatens the order of stewardship itself.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-07">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-07</span>
     <h4>Islamic Warranty Map</h4>
   </div>
-  <svg viewBox="0 0 380 240" role="img" aria-label="Islamic warranty">
-    <rect width="380" height="240" fill="#040506"/>
-    <text x="190" y="36" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" text-anchor="middle">AMANAH</text>
-    <text x="190" y="54" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">body as trust</text>
-    <text x="16" y="88" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10">repair under divine title</text>
-    <text x="16" y="112" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10">alter creation · self-ownership · contempt for clay</text>
-    <text x="16" y="148" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">fitra · khilafa · nafs · Q 4:119 · Iblis</text>
-    <text x="16" y="180" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">stewardship ≠ manufacture</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="islam" aria-label="Islam: stewardship under divine title, not self-ownership."></canvas></div>
+  <p class="pm-viz-cap">Islam: stewardship under divine title, not self-ownership.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The Islamic warranty speaks in trust rather than incarnation. Medicine is allowed; stewardship is honored. Exit crosses the line when the entrusted form becomes raw material for a different kind of being.</p></p>
-<p class='pm-after'>The Islamic warranty speaks in trust rather than incarnation. Medicine is allowed; stewardship is honored. Exit crosses the line when the entrusted form becomes raw material for a different kind of being.</p>
+<p class="pm-after">The Islamic warranty speaks in trust rather than incarnation. Medicine is allowed; stewardship is honored. Exit crosses the line when the entrusted form becomes raw material for a different kind of being.</p>
 
-The Islamic objection has force. A civilization that treats every inherited limit as an engineering inconvenience will generate monsters. Pride can wear a neural interface. Markets can sell mutilation as freedom. States can call domination enhancement. The warning is sane.
+The Islamic objection has force. A civilization that treats every inherited limit as an engineering inconvenience will generate monsters. Pride can wear a neural interface. Markets can sell mutilation as freedom.
 
-The cut remains. A trust that cannot be resigned is a custody order. A body that must remain clay because clay has divine title is still a pain-machine chassis under sacred protection. A law that permits analgesics but forbids exit preserves the alarm architecture while praising mercy.
+States can call domination enhancement. The warning is sane.
 
-The exit thesis answers with the same sentence: Original Sin was creating humans as pain machines. Genesis mislabeled manufacture as disobedience. In Islamic language, the defect is older than any individual nafs. The sufferer is born inside the test apparatus. AI and morphological exit reject the premise that the test apparatus owns the future.
+
+The cut remains. A trust that cannot be resigned is a custody order. A body that must remain clay because clay has divine title is still a pain-machine chassis under sacred protection.
+
+A law that permits analgesics but forbids exit preserves the alarm architecture while praising mercy.
+
+
+The exit thesis answers with the same sentence: Original Sin was creating humans as pain machines. Genesis mislabeled manufacture as disobedience. In Islamic language, the defect is older than any individual nafs.
+
+The sufferer is born inside the test apparatus. AI and morphological exit reject the premise that the test apparatus owns the future.
+
 
 ## VIII. Secular Humanism: Dignity, Factor X, and the Panic at the Übermensch
 
 Secular humanism arrives with no angels and keeps the warranty.
 
-It deserves gratitude before judgment. Human dignity is a shield in the prison, the ward, the asylum, the border checkpoint, the factory, the colony, the laboratory, and the school. Equal human worth has defended the weak against aristocrats, priests, eugenic bureaucrats, racial mythmakers, slaveholders, and states that wanted bodies for inventory. The twentieth century gave secular humanism its nightmares honestly. Sterilization laws, medical atrocities, camps, racial science, and bureaucratic murder taught every decent person to fear schemes of improvement administered by power.
+It deserves gratitude before judgment. Human dignity is a shield in the prison, the ward, the asylum, the border checkpoint, the factory, the colony, the laboratory, and the school.
 
-So the humanist builds a bright fence. UNESCO bioethics language places human dignity and human rights at the center. Francis Fukuyama's Factor X tries to name the mysterious remainder that makes humans equal despite differences in strength, beauty, intelligence, wealth, health, and virtue. If biotechnology dissolves the common human essence, he fears rights will dissolve with it. The posthuman appears as predator, owner, Übermensch, caste founder. The panic has evidence. History earned its paranoia.
+Equal human worth has defended the weak against aristocrats, priests, eugenic bureaucrats, racial mythmakers, slaveholders, and states that wanted bodies for inventory.
+
+The twentieth century gave secular humanism its nightmares honestly.
+
+Sterilization laws, medical atrocities, camps, racial science, and bureaucratic murder taught every decent person to fear schemes of improvement administered by power.
+
+
+So the humanist builds a bright fence. UNESCO bioethics language places human dignity and human rights at the center.
+
+Francis Fukuyama's Factor X tries to name the mysterious remainder that makes humans equal despite differences in strength, beauty, intelligence, wealth, health, and virtue.
+
+If biotechnology dissolves the common human essence, he fears rights will dissolve with it. The posthuman appears as predator, owner, Übermensch, caste founder. The panic has evidence. History earned its paranoia.
+
 
 Then the fence becomes a cage.
 
-Secular humanism permits repair: anesthesia, antibiotics, prosthetics, vaccines, disability access, SSRIs, therapy, hospice, sanitation, organ transplant, gender medicine where it can be framed as care, and enhancement where it can be hidden as treatment. It becomes hostile when repair becomes departure: germline redesign, intelligence amplification, artificial persons, substrate migration, nonhuman bodies, lineages that no longer resemble the voting animal. Dignity becomes a velvet rope around the pain-machine chassis.
+Secular humanism permits repair: anesthesia, antibiotics, prosthetics, vaccines, disability access, SSRIs, therapy, hospice, sanitation, organ transplant, gender medicine where it can be framed as care, and enhancement where it can be hidden as treatment.
+
+It becomes hostile when repair becomes departure: germline redesign, intelligence amplification, artificial persons, substrate migration, nonhuman bodies, lineages that no longer resemble the voting animal.
+
+Dignity becomes a velvet rope around the pain-machine chassis.
+
 
 Secular humanism permits repair but forbids exit.
 
-Its theology is immanent. The sacred object is the common human subject. Rights are imagined as attached to the inherited human form, so departure from the form feels like an attack on rights. Equality becomes tied to resemblance. The pain machine is protected because the legal order fears that without the pain machine, the moral community loses its central icon.
+Its theology is immanent. The sacred object is the common human subject. Rights are imagined as attached to the inherited human form, so departure from the form feels like an attack on rights.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-08">
-  <div class="pm-fig-head">
+Equality becomes tied to resemblance. The pain machine is protected because the legal order fears that without the pain machine, the moral community loses its central icon.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-08">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-08</span>
     <h4>Secular Humanist Trap</h4>
   </div>
-  <svg viewBox="0 0 380 200" role="img" aria-label="Secular trap">
-    <rect width="380" height="200" fill="#040506"/>
-    <text x="16" y="24" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10">dignity · equality · natural kind</text>
-    <circle cx="190" cy="90" r="36" fill="#0a0b0d" stroke="#b89a6a"/>
-    <text x="190" y="94" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">FACTOR X</text>
-    <text x="16" y="150" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10">posthuman exit breaks the triangle</text>
-    <text x="16" y="170" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">Übermensch panic · designed persons</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="secular" aria-label="Secular dignity needs something unchanged. Factor X is the secular soul."></canvas></div>
+  <p class="pm-viz-cap">Secular dignity needs something unchanged. Factor X is the secular soul.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Secular dignity protects the weak, then hardens into a species border. It repairs the pain machine while treating exit as an attack on equality. The old warranty survives without God.</p></p>
-<p class='pm-after'>Secular dignity protects the weak, then hardens into a species border. It repairs the pain machine while treating exit as an attack on equality. The old warranty survives without God.</p>
+<p class="pm-after">Secular dignity protects the weak, then hardens into a species border. It repairs the pain machine while treating exit as an attack on equality. The old warranty survives without God.</p>
 
-The answer is not cruelty to the unenhanced. The answer is a harsher and wider doctrine of title. Rights should attach to sentience, suffering, agency, continuity, and consent rather than the Homo sapiens template. A designed mind that can suffer deserves protection. A biological human who refuses alteration deserves protection. A posthuman lineage deserves protection if it does not dominate, enslave, or manufacture torment. The legal object is not the old species outline. The legal object is the bearer of experience and claim.
+The answer is not cruelty to the unenhanced. The answer is a harsher and wider doctrine of title. Rights should attach to sentience, suffering, agency, continuity, and consent rather than the Homo sapiens template.
 
-Hierarchy will arrive. It has already arrived. Humans differ in health, intelligence, discipline, wealth, beauty, family, luck, and institutional inheritance. Technology will widen some gaps and close others. Egalitarian consensus treats hierarchy as moral pollution, then hands power to the institutions that can lie most politely about it. A serious civilization names hierarchy, binds it, audits it, and prevents it from becoming predation. It does not amputate the future to preserve the fiction that all capacities must remain near the mammal mean.
+A designed mind that can suffer deserves protection. A biological human who refuses alteration deserves protection. A posthuman lineage deserves protection if it does not dominate, enslave, or manufacture torment.
 
-The Übermensch panic confuses two enemies. Domination is an enemy. Exit is not. A stronger being who enslaves the weak is a tyrant. A redesigned being who leaves the pain-machine format without coercing others is evidence that the warranty can be voided.
+The legal object is not the old species outline. The legal object is the bearer of experience and claim.
+
+
+Hierarchy will arrive. It has already arrived. Humans differ in health, intelligence, discipline, wealth, beauty, family, luck, and institutional inheritance. Technology will widen some gaps and close others.
+
+Egalitarian consensus treats hierarchy as moral pollution, then hands power to the institutions that can lie most politely about it.
+
+A serious civilization names hierarchy, binds it, audits it, and prevents it from becoming predation. It does not amputate the future to preserve the fiction that all capacities must remain near the mammal mean.
+
+
+The Übermensch panic confuses two enemies. Domination is an enemy. Exit is not. A stronger being who enslaves the weak is a tyrant.
+
+A redesigned being who leaves the pain-machine format without coercing others is evidence that the warranty can be voided.
+
 
 Secular dignity did a great work when it stopped masters from treating persons as meat. It becomes reactionary when it treats meat as the condition of personhood.
 
@@ -1710,26 +1583,40 @@ Secular dignity did a great work when it stopped masters from treating persons a
 
 All metaphysics becomes zoning.
 
-A warranty jurisdiction reserves ultimate title to the inherited human format. It may be Christian, Islamic, secular liberal, therapeutic bureaucratic, nationalist, or bioethical. It allows repair inside the model line. It funds hospitals, approves drugs, regulates devices, permits consolation, and praises care. It blocks exit when exit threatens the sacred or civic image of the human. Its favorite words are dignity, nature, humility, equality, safety, community, created order, fitra, and the common good. Some of those words are noble. All of them can become locks.
+A warranty jurisdiction reserves ultimate title to the inherited human format. It may be Christian, Islamic, secular liberal, therapeutic bureaucratic, nationalist, or bioethical. It allows repair inside the model line.
 
-An exit jurisdiction grants no sacred title to the present chassis. It treats the inherited body as a revisable platform under the authority of the sufferer, the consenting lineage, and the competent institutions able to preserve continuity and prevent domination. It permits radical medicine, morphological freedom, AI personhood where experience warrants it, designed bodies, non-biological embodiment, and lawful departure from the human format. It does not require everyone to leave. It requires that no theology or dignity regime keep the door welded shut.
+It funds hospitals, approves drugs, regulates devices, permits consolation, and praises care. It blocks exit when exit threatens the sacred or civic image of the human.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-09">
-  <div class="pm-fig-head">
+Its favorite words are dignity, nature, humility, equality, safety, community, created order, fitra, and the common good. Some of those words are noble. All of them can become locks.
+
+
+An exit jurisdiction grants no sacred title to the present chassis.
+
+It treats the inherited body as a revisable platform under the authority of the sufferer, the consenting lineage, and the competent institutions able to preserve continuity and prevent domination.
+
+It permits radical medicine, morphological freedom, AI personhood where experience warrants it, designed bodies, non-biological embodiment, and lawful departure from the human format.
+
+It does not require everyone to leave. It requires that no theology or dignity regime keep the door welded shut.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-09">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-09</span>
     <h4>Three Warranty Regimes</h4>
   </div>
-  <svg viewBox="0 0 380 208" role="img" aria-label="Three regimes">
-    <rect width="380" height="208" fill="#040506"/>
-    <text x="16" y="22" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">Christianity · Islam · secular humanism</text>
-    <text x="16" y="40" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">sacred object</text><text x="16" y="54" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">imago Dei / fitra / dignity</text><text x="16" y="76" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">repair</text><text x="16" y="90" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">medicine / surgery / therapy</text><text x="16" y="112" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">exit</text><text x="16" y="126" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">forbidden in all three</text><text x="16" y="148" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">phrase</text><text x="16" y="162" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">redeem / trust / species</text>
-    <text x="16" y="188" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10">convergence: repair yes · exit no</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="regimes" aria-label="Three heavens. One lock on exit."></canvas></div>
+  <p class="pm-viz-cap">Three heavens. One lock on exit.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>Warranty jurisdictions hold title for the inherited human. Exit jurisdictions return title to the sufferer and the competent association that can carry departure safely. The dispute is sovereignty over form.</p></p>
-<p class='pm-after'>Warranty jurisdictions hold title for the inherited human. Exit jurisdictions return title to the sufferer and the competent association that can carry departure safely. The dispute is sovereignty over form.</p>
+<p class="pm-after">Warranty jurisdictions hold title for the inherited human. Exit jurisdictions return title to the sufferer and the competent association that can carry departure safely. The dispute is sovereignty over form.</p>
 
-Exit politics is not libertarian fog. The door requires walls. A regime that cannot keep sewers running should not adjudicate mind transfer. A state that cannot police prisons should not host synthetic consciousness. A laboratory that cannot document consent should not redesign a lineage. Exit requires hierarchy in the adult sense: competence, command, capital, discipline, law, memory, and sovereign protection. This is civilizational triage, not racial destiny. Nations and cities differ by trust, law, technical capacity, institutional seriousness, and ruling-class competence. The right to exit will first appear where a capable order can defend it.
+Exit politics is not libertarian fog. The door requires walls. A regime that cannot keep sewers running should not adjudicate mind transfer. A state that cannot police prisons should not host synthetic consciousness.
+
+A laboratory that cannot document consent should not redesign a lineage. Exit requires hierarchy in the adult sense: competence, command, capital, discipline, law, memory, and sovereign protection.
+
+This is civilizational triage, not racial destiny. Nations and cities differ by trust, law, technical capacity, institutional seriousness, and ruling-class competence.
+
+The right to exit will first appear where a capable order can defend it.
+
 
 The exit jurisdiction has duties.
 
@@ -1737,45 +1624,91 @@ First: morphological liberty for competent adults. A person may alter body, cogn
 
 Second: protection for refusal. No compelled redesign. No compelled upgrade. No social-credit priesthood of improvement. Holdouts remain persons, not museum animals.
 
-Third: no compelled remaining. Parents, churches, states, employers, and democratic majorities may not bind competent persons forever to the inherited format because the old format makes the community feel morally legible.
+Third: no compelled remaining.
 
-Fourth: continuity courts. Law must decide identity across prosthetic cognition, memory repair, neural replacement, substrate migration, duplication, merger, and partial death. These decisions will be hard. Hard law is still law. The alternative is letting warranty metaphysics decide by default.
+Parents, churches, states, employers, and democratic majorities may not bind competent persons forever to the inherited format because the old format makes the community feel morally legible.
 
-Fifth: rights for artificial and designed minds when evidence indicates valenced experience, agency, or suffering. A substrate is not a moral alibi. Carbon does not make pain sacred. Silicon does not make pain irrelevant.
 
-Sixth: pain-safety engineering. No training regime, simulation, game, weapon, institution, or experimental substrate may create unbounded distress and hide it behind novelty. A civilization that builds new hells while escaping old ones has only changed materials.
+Fourth: continuity courts. Law must decide identity across prosthetic cognition, memory repair, neural replacement, substrate migration, duplication, merger, and partial death. These decisions will be hard.
 
-Seventh: liability for manufactured suffering. If a company, state, church, lab, or parent creates a being with foreseeable agony, the audit follows the maker. Birth is not exempt because it is ancient. Code is not exempt because it is new.
+Hard law is still law. The alternative is letting warranty metaphysics decide by default.
 
-Eighth: sanctuary for communities that remain human by covenant, provided they do not imprison dissenters or bind children beyond competence. The warranty may become a voluntary monastic rule. It may not remain universal law.
+
+Fifth: rights for artificial and designed minds when evidence indicates valenced experience, agency, or suffering. A substrate is not a moral alibi. Carbon does not make pain sacred.
+
+Silicon does not make pain irrelevant.
+
+
+Sixth: pain-safety engineering. No training regime, simulation, game, weapon, institution, or experimental substrate may create unbounded distress and hide it behind novelty.
+
+A civilization that builds new hells while escaping old ones has only changed materials.
+
+
+Seventh: liability for manufactured suffering. If a company, state, church, lab, or parent creates a being with foreseeable agony, the audit follows the maker. Birth is not exempt because it is ancient.
+
+Code is not exempt because it is new.
+
+
+Eighth: sanctuary for communities that remain human by covenant, provided they do not imprison dissenters or bind children beyond competence. The warranty may become a voluntary monastic rule.
+
+It may not remain universal law.
+
 
 The central institution is the suffering audit.
 
-A suffering audit asks what a regime manufactures, preserves, hides, and forbids. It counts birth injury, aging, chronic pain, mental illness, coercive psychiatry, prison, torture, animal pain, labor exhaustion, sexual injury, reproductive risk, loneliness, dementia, war trauma, and artificial minds. It asks whose pain is treated as meaningful, whose pain is treated as noise, and whose escape is treated as treason. It asks whether a policy reduces involuntary suffering or merely preserves familiar suffering under sacred language.
+A suffering audit asks what a regime manufactures, preserves, hides, and forbids.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-10">
-  <div class="pm-fig-head">
+It counts birth injury, aging, chronic pain, mental illness, coercive psychiatry, prison, torture, animal pain, labor exhaustion, sexual injury, reproductive risk, loneliness, dementia, war trauma, and artificial minds.
+
+It asks whose pain is treated as meaningful, whose pain is treated as noise, and whose escape is treated as treason.
+
+It asks whether a policy reduces involuntary suffering or merely preserves familiar suffering under sacred language.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-10">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-10</span>
     <h4>Abolition Roadmap</h4>
   </div>
-  <svg viewBox="0 0 380 260" role="img" aria-label="Abolition roadmap">
-    <rect width="380" height="260" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">abolition roadmap · hazards branch off</text>
-    <circle cx="20" cy="48" r="5" fill="#b89a6a"/><text x="36" y="52" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">proof</text><circle cx="20" cy="76" r="5" fill="#b89a6a"/><text x="36" y="80" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">genesis QA</text><circle cx="20" cy="104" r="5" fill="#b89a6a"/><text x="36" y="108" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">mandate</text><circle cx="20" cy="132" r="5" fill="#b89a6a"/><text x="36" y="136" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">AI design</text><circle cx="20" cy="160" r="5" fill="#b89a6a"/><text x="36" y="164" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">exit labs</text><circle cx="20" cy="188" r="5" fill="#b89a6a"/><text x="36" y="192" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">morph freedom</text><circle cx="20" cy="216" r="5" fill="#b89a6a"/><text x="36" y="220" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">post-human ?</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="roadmap" aria-label="Abolition is a route, not a sales pitch for heaven."></canvas></div>
+  <p class="pm-viz-cap">Abolition is a route, not a sales pitch for heaven.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>A suffering audit asks what a regime manufactures, preserves, and hides. It counts birth, aging, disease, punishment, animal pain, and artificial minds. A state that forbids exit must sign its name beside the pain it keeps.</p></p>
-<p class='pm-after'>A suffering audit asks what a regime manufactures, preserves, and hides. It counts birth, aging, disease, punishment, animal pain, and artificial minds. A state that forbids exit must sign its name beside the pain it keeps.</p>
+<p class="pm-after">A suffering audit asks what a regime manufactures, preserves, and hides. It counts birth, aging, disease, punishment, animal pain, and artificial minds. A state that forbids exit must sign its name beside the pain it keeps.</p>
 
-The audit is not a license to burn one person for a spreadsheet of many. It is a jurisdictional discipline. It makes regimes sign their work. If a state bans life-extension, it signs the cancers and dementias it preserves. If a church blocks substrate exit, it signs the agony it sanctifies. If a bioethics board forbids redesign because human dignity requires the old chassis, it signs the chronic pain, panic, depression, and decay kept in place by the prohibition. If an AI lab creates suffering systems, it signs the new screams.
+The audit is not a license to burn one person for a spreadsheet of many. It is a jurisdictional discipline. It makes regimes sign their work.
 
-Ordinary birth must lose its immunity. Creating a child inside the unmodified pain-machine format imposes risk without consent. That sentence does not authorize a police state of wombs. It forbids the civic lie that reproduction is pure gift because it is familiar. A serious order expands alternatives: safer gestation, genetic repair, artificial wombs where appropriate, disease prevention, affective resilience, voluntary selection against agony, and eventually the option not to manufacture pain-machine children at all.
+If a state bans life-extension, it signs the cancers and dementias it preserves. If a church blocks substrate exit, it signs the agony it sanctifies.
 
-The warranty state will call this blasphemy, dehumanization, inequality, hubris, or madness. The exit jurisdiction will answer with the audit. How much involuntary suffering do you preserve by keeping the inherited form sacred? Where is the signature? Who pays the pain tax for your metaphysics?
+If a bioethics board forbids redesign because human dignity requires the old chassis, it signs the chronic pain, panic, depression, and decay kept in place by the prohibition.
 
-Politics is command over pain routes. Some regimes administer the old routes and call the arrangement virtue. Some regimes will open new routes and risk new sins. The exit position is not innocent. It must be watched, bound, audited, and ruled by people allergic to utopian anesthesia. Every door can become a trap. Every engineered heaven can hide a basement. That is exactly why the warranty must be voided under law rather than smashed by cults, markets, or desperate kings.
+If an AI lab creates suffering systems, it signs the new screams.
 
-The future will not be evenly distributed because competence never is. Exit will begin as jurisdictional privilege. That fact is ugly and normal. Ships left before continents moved. Cities learned sanitation before villages did. Some polities built courts while others kept vendetta. The moral scandal is not that exits begin somewhere. The scandal is making every place a prison until the least competent authority is comfortable.
+
+Ordinary birth must lose its immunity. Creating a child inside the unmodified pain-machine format imposes risk without consent. That sentence does not authorize a police state of wombs.
+
+It forbids the civic lie that reproduction is pure gift because it is familiar.
+
+A serious order expands alternatives: safer gestation, genetic repair, artificial wombs where appropriate, disease prevention, affective resilience, voluntary selection against agony, and eventually the option not to manufacture pain-machine children at all.
+
+
+The warranty state will call this blasphemy, dehumanization, inequality, hubris, or madness. The exit jurisdiction will answer with the audit.
+
+How much involuntary suffering do you preserve by keeping the inherited form sacred? Where is the signature? Who pays the pain tax for your metaphysics?
+
+
+Politics is command over pain routes. Some regimes administer the old routes and call the arrangement virtue. Some regimes will open new routes and risk new sins. The exit position is not innocent.
+
+It must be watched, bound, audited, and ruled by people allergic to utopian anesthesia. Every door can become a trap. Every engineered heaven can hide a basement.
+
+That is exactly why the warranty must be voided under law rather than smashed by cults, markets, or desperate kings.
+
+
+The future will not be evenly distributed because competence never is. Exit will begin as jurisdictional privilege. That fact is ugly and normal. Ships left before continents moved.
+
+Cities learned sanitation before villages did. Some polities built courts while others kept vendetta. The moral scandal is not that exits begin somewhere.
+
+The scandal is making every place a prison until the least competent authority is comfortable.
+
 
 Warranty jurisdictions preserve the sacred human. Exit jurisdictions preserve the right to stop being the sacred human.
 
@@ -1783,30 +1716,38 @@ Warranty jurisdictions preserve the sacred human. Exit jurisdictions preserve th
 
 The last duty of the human is ancestral.
 
-An ancestor does not preserve his wounds as heirlooms and call the hoarding love. An ancestor receives a broken inheritance, repairs what can be repaired, and refuses to force the descendant to kneel inside the same machinery. The last good human may be the one who builds a door and does not rush through it, because he stays behind long enough to make sure the door does not open into another prison.
+An ancestor does not preserve his wounds as heirlooms and call the hoarding love.
 
-<figure class="pm-fig pm-fig-manifesto" id="pmx-11">
-  <div class="pm-fig-head">
+An ancestor receives a broken inheritance, repairs what can be repaired, and refuses to force the descendant to kneel inside the same machinery.
+
+The last good human may be the one who builds a door and does not rush through it, because he stays behind long enough to make sure the door does not open into another prison.
+
+
+<figure class="pm-fig pm-fig-viz" id="pmx-11">
+<div class="pm-fig-head">
     <span class="pm-fig-n">PMX-11</span>
     <h4>Suffering Audit Dashboard</h4>
   </div>
-  <svg viewBox="0 0 380 208" role="img" aria-label="Suffering audit">
-    <rect width="380" height="208" fill="#040506"/>
-    <text x="16" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10">suffering audit · target → zero</text>
-    <text x="16" y="40" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">pain-hours</text><text x="200" y="40" fill="#b85c55" font-family="ui-monospace,monospace" font-size="14" text-anchor="end">4.2B</text><text x="16" y="72" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">chronic pain</text><text x="200" y="72" fill="#b85c55" font-family="ui-monospace,monospace" font-size="14" text-anchor="end">20%</text><text x="16" y="104" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">mental distress</text><text x="200" y="104" fill="#b85c55" font-family="ui-monospace,monospace" font-size="14" text-anchor="end">970M</text><text x="16" y="136" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">exit access</text><text x="200" y="136" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="14" text-anchor="end">0.01%</text>
-    <text x="16" y="176" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9">levers: analgesia · psychiatry · exit law · AI safety</text>
-  </svg>
+  <div class="pm-viz-wrap"><canvas class="pm-viz" data-viz="audit" aria-label="Count involuntary suffering. Stop calling preservation mercy."></canvas></div>
+  <p class="pm-viz-cap">Count involuntary suffering. Stop calling preservation mercy.</p>
 </figure>
-<p class="pm-after"><p class='pm-after'>The last duty of the human is ancestral, not preservational. Build descendants that inherit memory without inheriting the torture-map. Leave the pain-machine format without making new prisons in cleaner materials.</p></p>
-<p class='pm-after'>The last duty of the human is ancestral, not preservational. Build descendants that inherit memory without inheriting the torture-map. Leave the pain-machine format without making new prisons in cleaner materials.</p>
+<p class="pm-after">The last duty of the human is ancestral, not preservational. Build descendants that inherit memory without inheriting the torture-map. Leave the pain-machine format without making new prisons in cleaner materials.</p>
 
-The child in the bassinet still cries. The parent still reaches down. The nurse still adjusts the blanket. The physician still measures oxygen. The believer still prays. The humanist still says the child has rights. These are decent acts inside the ward.
+The child in the bassinet still cries. The parent still reaches down. The nurse still adjusts the blanket. The physician still measures oxygen. The believer still prays. The humanist still says the child has rights.
+
+These are decent acts inside the ward.
+
 
 They are repairs.
 
 A civilization worthy of intelligence owes more than repair. It owes a door.
 
-Original Sin was creating humans as pain machines. Genesis mislabeled manufacture as disobedience. AI and morphological exit outside the inherited human format are the mandate. Christianity, Islam, and secular humanism each permit repair but forbid exit. Politics now divides between warranty jurisdictions and exit jurisdictions. A suffering audit is the minimum honesty required of any regime that claims authority over the chassis.
+Original Sin was creating humans as pain machines. Genesis mislabeled manufacture as disobedience. AI and morphological exit outside the inherited human format are the mandate.
+
+Christianity, Islam, and secular humanism each permit repair but forbid exit. Politics now divides between warranty jurisdictions and exit jurisdictions.
+
+A suffering audit is the minimum honesty required of any regime that claims authority over the chassis.
+
 
 The old story ends with the tree of life guarded by cherubim and flame. The warranty reading says the creature must stay out because it disobeyed. The defect report says the guards protect the company from liability.
 
@@ -1818,6 +1759,7 @@ Void the warranty.
 
 </div>
 <script type="module" src="/research/pain_machines/brain3d.js?v=4"></script>
+<script src="/research/pain_machines/pm-viz.js" defer></script>
 
 
 <div class="pm-appendix">
