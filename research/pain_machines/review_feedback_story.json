@@ -1,0 +1,251 @@
+{
+  "model": "gpt-5.5-pro-2026-04-23",
+  "reasoning_effort": "xhigh",
+  "review_mode": "story_narrative",
+  "usage": {
+    "input_tokens": 11999,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 19619,
+    "output_tokens_details": {
+      "reasoning_tokens": 14552
+    },
+    "total_tokens": 31618
+  },
+  "feedback": {
+    "diagnosis": "The draft overwhelms because the evidence is not sequenced as discovery. Almost every panel performs the same rhetorical action: source says pain is multidimensional, therefore suffering-space is larger. The claim is probably right inside the piece, but the reader experiences it as recurrence, not revelation. The current opening also loads the method too early. Cardinality appears before the reader has felt the lived asymmetry, so the counting rule reads like a contract instead of a trapdoor.\n\nThe missing journey is: first make the reader recognize the machine in themselves, then show that medicine has already been forced to count it, then show that pleasure does not expand symmetrically, then let psychology explain why bad gets more resolution, then put all routes onto the brain, then let the compute block feel inevitable. Torture and Eden should not summarize the proof. Torture should be the field test of the false model of pain as a simple dial. Eden should be the final image: not moral failure, but architecture waking up and logging itself.",
+    "persuasion_score": 6,
+    "readability_score": 5,
+    "story_spine": "Begin with Eden as a bad bug report: the creature was never merely guilty, it was over-instrumented for harm. The clinic opens the case by showing pain is not a tissue signal but a distributed generator, classified by medicine and split in language because one number cannot hold it. Pleasure then appears as the inverse: many doors, fewer rooms, shared reward plumbing, easier substitution. Psychology confirms the asymmetry outside the clinic: bad weighs more, differentiates more, enters socially, and multiplies through meaning. The brain widget makes the red sprawl anatomical; the compute block makes it auditable. Torture then fails as the oldest belief in low-dimensional pain. Eden closes as the first self-report from the machine.",
+    "reader_journey": [
+      {
+        "beat": "Opening: wrong stack trace",
+        "reader_feeling": "A cold click of recognition before any formalism appears.",
+        "what_to_do": "Name the asymmetry in bodily language: pain has addresses; pleasure has shared exits."
+      },
+      {
+        "beat": "Collapsed counting rule",
+        "reader_feeling": "Relief: the audit exists, but it is not blocking the door.",
+        "what_to_do": "Make counting an optional hatch after the hook, or move it to the threshold of §II."
+      },
+      {
+        "beat": "Act I, first cluster: pain opens outward",
+        "reader_feeling": "The reader stops thinking pain equals injury.",
+        "what_to_do": "Sequence neuromatrix → IASP → ICD-11 → McGill → Price as expanding routes, not separate citations."
+      },
+      {
+        "beat": "Act I, second cluster: pleasure collapses inward",
+        "reader_feeling": "Surprise: the comparison is not more pain intensity, but less pleasure resolution.",
+        "what_to_do": "Use Berridge and Leknes as compression scenes: small hotspots, shared circuitry, pharmacological quotient."
+      },
+      {
+        "beat": "Act I, third cluster: harm gets more resolution",
+        "reader_feeling": "The asymmetry starts to feel adaptive and behavioral, not merely clinical.",
+        "what_to_do": "Let Baumeister and Rozin widen the lens; let Eisenberger and Lazarus add social ingress and meaning."
+      }
+    ],
+    "narrative_architecture": {
+      "opening_markdown": "Genesis calls it disobedience. Wrong stack trace.\n\nThe fault is older than the fruit.\n\nA human nervous system is not a damage meter. It is an enumerator. Cut it once and the signal does not stay in the cut: it recruits location, intensity, duration, threat, memory, shame, agency, audience, prognosis, and the story of why this is happening to me. The clinic knows this, which is why it asks whether pain is burning, stabbing, crushing, electric, nauseating, humiliating, exhausting, radiating, disabling.\n\nPleasure does not inventory the world that way. Food, sex, music, victory, warmth, touch: different doors, fewer rooms. Causal liking converges. Pharmacology can counterfeit broad families of bliss through a small set of shared circuits.\n\nSo the thesis is not that suffering matters more morally. It is colder: under an explicit coarse-graining, the human animal has more distinguishable suffering states than pleasure states. More bins before the math. More axes after the math. Fewer legitimate collapses.\n\nYou are not a fallen angel inside a body. You are a high-resolution pain machine with a low-resolution reward channel, and enough self-modeling to mistake the asymmetry for meaning.",
+      "counting_rule_markdown": "<details class='pm-counting'>\n  <summary><strong>Audit hatch:</strong> what counts as a state</summary>\n  <p>By <strong>cardinality</strong> I mean an operational count under declared coarse-graining, not a census of private moments. A state counts when changing it changes a recognized descriptor, mechanism, intervention, impairment profile, or first-person report.</p>\n  <p>Two states collapse only when a literature-backed equivalence makes them substitutable for the purpose being counted. Pain gets no global collapse because medicine keeps mechanism, location, affect, appraisal, agency, social field, temporality, and identity separate. Pleasure gets a quotient where liking and reward converge under shared circuitry or pharmacology.</p>\n  <p>Every axis below is a published partition. Every product claims independent contribution. Every collapse is named. The count is conservative because the machine does not need help looking bad.</p>\n</details>",
+      "section_one_intro": "## I. The clinic has already counted the bug\n\nDo not read the figures as a bibliography. Read them as a failure cascade.\n\nFirst, pain stops being a meter and becomes a generator. Then the official definition makes sensory and emotional inseparable. Then chronic pain becomes a taxonomy, patient language splits it into dozens of descriptors, and treatment separates intensity from unpleasantness. Only after the red side opens do we look at the green side: pleasure converges, compresses, and becomes easier to substitute.\n\nThe last four panels ask whether this is merely medical bookkeeping. It is not. Bad weighs more, bad differentiates more, the social world can inject pain without a wound, and appraisal can multiply one injury into several non-interchangeable states.\n\n<p class='pm-bridge'>The boxes below are scene captions. Read each <strong>Impact</strong> as the next term entering the machine, not as another recital of the thesis.</p>",
+      "neuro_bridge": "## The neuroarchitecture\n\nThe panels have done their separate damage. Now put them on one organ.\n\nThe 3D map is not a toy proof of consciousness. It is a wiring diagram for why the count kept climbing. Somatic, affective, cognitive, social, and memory routes enter the same volume from different doors. Pleasure is present, but it does not sprawl like that: causal liking knots into a smaller ventral cluster and shared reward chemistry.\n\nDrag the model. Move the sliders. Watch red routes add addresses while green routes find shared exits.",
+      "section_two_intro": "## II. Enumerate it\n\nNow the arithmetic is allowed to appear.\n\nThe model below does one unsentimental thing: it treats every clinically preserved distinction as a dimension and every literature-supported substitutability as a collapse. Pleasure receives the quotient its circuitry earns. Pain does not receive a global quotient because a burned hand, abandonment, neuropathy, shame, and dread are not made interchangeable by sharing unpleasantness.\n\nThe point is not the exact integer. The point is the shape of the trace: green flattens when mechanisms converge; red keeps multiplying because the organism keeps distinct ways to be wrong.",
+      "section_three_intro": "## III. Torture is the failed folk model of pain\n\nThe arithmetic counts the architecture. Torture tests the opposite theory: pain as a single dial with truth at the far end.",
+      "closing_markdown": "## III. Torture is the failed folk model of pain\n\nThe oldest political superstition is also the cleanest experiment against this essay: pain as a truth interface.\n\nThe superstition says the organism has a hidden port. Apply enough force and reality exits through speech. If pain were low-dimensional — if it were only a dial labeled distress — torture would be a brutal measurement technique.\n\nIt is not.\n\nThe [Senate Select Committee study of the CIA detention and interrogation program](https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf) found that enhanced interrogation was not an effective means of acquiring intelligence, produced fabricated claims on priority threats, and proceeded without a credible effectiveness evaluation. O'Mara's [*Why Torture Doesn't Work*](https://www.hup.harvard.edu/catalog.php?isbn=9780674743901) gives the neural reason: extreme stress, fear, sleep deprivation, and threat degrade working memory, temporal ordering, source monitoring, inhibition, and recall. [Carbone, Marks & Fallon (2019)](https://www.cambridge.org/core/journals/politics-and-the-life-sciences/article/abs/torturing-science/A6672CBE5B7F35480CDE2BCEC12193D4) name the institutional failure: policy first, scientific veneer after.\n\nThe architecture predicted the failure. Increase pain and the organism does not move along one axis toward truth. It branches.\n\nCompliance. Rage. Dissociation. Appeasement. Shame. Fantasy. Memory fracture. Learned helplessness. Revenge. Silence.\n\nSpeech is one branch. Signal is not.\n\nThe torturer mistakes perturbation for measurement. He changes the state of the machine, then treats any output as disclosure. But pain is not an oracle. It is a state-space expander. Under enough pressure, the mind does not become transparent. It becomes noisy, defensive, strategic, ruined.\n\nTorture therefore is not a counterexample to Pain Machines. It is the field demo. A low-dimensional pain interface would extract. A high-dimensional suffering manifold enumerates distress and calls some of the outputs answers.\n\n<p class='pm-bridge'>The torturer and Eden make the same category error: treat the artifact as moral revelation. One calls noise intelligence. The other calls architecture guilt.</p>\n\n## IV. Eden was the first misread stack trace\n\nGenesis frames the first wound as justice: knowledge enters, pain follows, the body receives a sentence.\n\nRead it as engineering and the order changes. The creature was already built with more ways to register harm than bliss. Knowledge did not create the asymmetry; knowledge gave the asymmetry a mirror.\n\nThat is what **Pain Machines** names.\n\nNot despair. Not the claim that joy is fake. Not an argument that every life reduces to injury. A machine is an enumerator. This one gives harm more addresses: tissue, place, duration, threat, memory, social exposure, agency, shame, appraisal, identity, anticipation. Pleasure has doors, but fewer rooms; many roads converge on shared liking and reward machinery, and chemistry can counterfeit broad classes of it.\n\nMedicine knows. It asks whether pain is burning, stabbing, crushing, radiating, electric, nauseating, exhausting, humiliating. Psychology knows. Bad weighs more and differentiates more. Interrogation knows when its own violence returns confabulation instead of truth. The brain map knows. Red sprawls; green clusters.\n\nThe old story moralizes the output. It says the creature hurt because it disobeyed. The better bug report is colder: ship a body whose suffering state-space outruns its pleasure state-space; add memory deep enough to bind episodes, language sharp enough to name them, and social cognition cruel enough to turn pain into identity. Let the creature wake inside that asymmetry. Let it call the waking a fall.\n\nOriginal sin is the name of the first self-report.\n\nThe fruit did not install the fault.\n\nIt turned on logging."
+    },
+    "figure_story_order": [
+      {
+        "figure_id": "fig-neuromatrix",
+        "story_role": "First fracture: pain is generated, not read.",
+        "one_line_tease": "<p class='pm-tease'>The first mistake is looking for pain at the injury; the network writes the injury into a life.</p>",
+        "arg_rewrite": {
+          "claim": "Pain is generated output, not a tissue readout.",
+          "warrant": "Melzack's neuromatrix integrates somatic input with memory, appraisal, identity, and context into a neurosignature.",
+          "impact": "The state-space opens the moment injury becomes self-referential."
+        }
+      },
+      {
+        "figure_id": "fig-iasp",
+        "story_role": "Definition locks in the first product.",
+        "one_line_tease": "<p class='pm-tease'>Then the official definition closes the escape hatch: pain is never merely sensory.</p>",
+        "arg_rewrite": {
+          "claim": "Pain is sensory and emotional by definition.",
+          "warrant": "IASP 2020 defines pain as an unpleasant sensory and emotional experience tied to actual or potential tissue damage.",
+          "impact": "Every counted pain starts as a product, not a scalar."
+        }
+      },
+      {
+        "figure_id": "fig-icd11",
+        "story_role": "Medicine turns pain into a filing system.",
+        "one_line_tease": "<p class='pm-tease'>Once medicine has to treat lasting pain, the single word fractures into a filing system.</p>",
+        "arg_rewrite": {
+          "claim": "Chronic pain is officially multi-axis.",
+          "warrant": "ICD-11 MG30 splits chronic pain into seven categories with subtypes, severity, interference, and psychosocial modifiers.",
+          "impact": "The clinic already runs the combinatorics."
+        }
+      },
+      {
+        "figure_id": "fig-mcgill",
+        "story_role": "Language shows the inventory already exists.",
+        "one_line_tease": "<p class='pm-tease'>If taxonomy feels bureaucratic, listen to patients: the language is already factorized.</p>",
+        "arg_rewrite": {
+          "claim": "Pain has a clinical vocabulary because it varies by kind.",
+          "warrant": "McGill inventories 78 descriptors across 20 subclasses: sensory, affective, evaluative, miscellaneous.",
+          "impact": "A one-number pain scale is lossy compression."
+        }
+      },
+      {
+        "figure_id": "fig-price",
+        "story_role": "Treatment exposes hidden stages.",
+        "one_line_tease": "<p class='pm-tease'>Now cut into the signal: intensity, unpleasantness, and the suffering after suffering separate.</p>",
+        "arg_rewrite": {
+          "claim": "Pain stages dissociate under treatment.",
+          "warrant": "Price separates sensory intensity, unpleasantness, and secondary affect; opioids can reduce unpleasantness more than intensity.",
+          "impact": "Analgesia exposes hidden axes instead of erasing them."
+        }
+      },
+      {
+        "figure_id": "fig-berridge",
+        "story_role": "Pleasure enters as a small causal core.",
+        "one_line_tease": "<p class='pm-tease'>Pleasure enters differently: not as an expanding ledger, but as a small set of causal buttons.</p>",
+        "arg_rewrite": {
+          "claim": "Causal liking is anatomically small.",
+          "warrant": "Berridge and Kringelbach localize hedonic hotspots in NAc, VP, and OFC while wanting sprawls elsewhere.",
+          "impact": "The green curve begins with a narrow denominator."
+        }
+      },
+      {
+        "figure_id": "fig-leknes",
+        "story_role": "Shared reward plumbing creates the quotient.",
+        "one_line_tease": "<p class='pm-tease'>Then chemistry performs the compression: different joys can be driven through shared opioid and dopamine plumbing.</p>",
+        "arg_rewrite": {
+          "claim": "Reward has a substitutable substrate.",
+          "warrant": "Leknes and Tracey describe overlapping opioid and dopamine circuitry where pain and reward inhibit and modulate each other.",
+          "impact": "Engineered bliss quotients; shame does not."
+        }
+      },
+      {
+        "figure_id": "fig-baumeister",
+        "story_role": "Behavior reveals where the bits are spent.",
+        "one_line_tease": "<p class='pm-tease'>The asymmetry is behavioral too: the organism spends more bits on what can ruin it.</p>",
+        "arg_rewrite": {
+          "claim": "Bad events dominate matched good ones.",
+          "warrant": "Baumeister et al. find stronger effects for bad across trauma, relationships, learning, emotion, and self-concept.",
+          "impact": "Weight follows resolution: threat gets more address space."
+        }
+      },
+      {
+        "figure_id": "fig-rozin",
+        "story_role": "Negativity has more species, not just more force.",
+        "one_line_tease": "<p class='pm-tease'>Dominance is not only volume. Negative experience has more species.</p>",
+        "arg_rewrite": {
+          "claim": "Negative states differentiate more finely.",
+          "warrant": "Rozin and Royzman describe negative differentiation: richer categories, representations, and response repertoires for bad than good.",
+          "impact": "Evolution bought more labels for danger."
+        }
+      },
+      {
+        "figure_id": "fig-eisenberger",
+        "story_role": "The social world becomes a pain input.",
+        "one_line_tease": "<p class='pm-tease'>The next route needs no wound: the group can hurt the body from the outside-in.</p>",
+        "arg_rewrite": {
+          "claim": "Rejection can hurt without nociception.",
+          "warrant": "Eisenberger's Cyberball study links ostracism distress to dorsal anterior cingulate activity, without peripheral tissue injury.",
+          "impact": "Pain gains a social ingress port."
+        }
+      },
+      {
+        "figure_id": "fig-lazarus",
+        "story_role": "Meaning multiplies one event into many pains.",
+        "one_line_tease": "<p class='pm-tease'>Finally, meaning multiplies the same event: fate, injustice, and self-blame are not the same pain.</p>",
+        "arg_rewrite": {
+          "claim": "Appraisal rewrites the suffering output.",
+          "warrant": "Lazarus and Folkman show identical stressors diverge by frames such as threat, challenge, injustice, fate, and blame.",
+          "impact": "Meaning multiplies after the wound is closed."
+        }
+      },
+      {
+        "figure_id": "fig-brain",
+        "story_role": "The anatomy turns the metaphor into a map.",
+        "one_line_tease": "<p class='pm-tease'>Now put the scenes on the organ: red sprawls; green knots itself into a ventral pod.</p>",
+        "arg_rewrite": {
+          "claim": "Pain sprawls; pleasure clusters.",
+          "warrant": "Hunt and Mantyh's sensory and affective paths, plus social and appraisal routes and Berridge hotspots, occupy one organ.",
+          "impact": "The metaphor becomes a wiring diagram."
+        }
+      }
+    ],
+    "prose_rewrites": [
+      {
+        "location": "Current §I title",
+        "replacement": "## I. The clinic has already counted the bug"
+      },
+      {
+        "location": "Current evidence-panel explainer beginning Each evidence panel below is structured",
+        "replacement": "<p class='pm-bridge'>The boxes below are scene captions. Read each <strong>Impact</strong> as the next term entering the machine, not as another recital of the thesis.</p>"
+      },
+      {
+        "location": "Cluster heading before fig-neuromatrix",
+        "replacement": "<h3>Pain opens outward</h3>"
+      },
+      {
+        "location": "Cluster heading before fig-berridge",
+        "replacement": "<h3>Pleasure collapses inward</h3>"
+      },
+      {
+        "location": "Cluster heading before fig-baumeister",
+        "replacement": "<h3>Harm gets more resolution</h3>"
+      },
+      {
+        "location": "Replace current §II pre-compute prose",
+        "replacement": "## II. Enumerate it\n\nNow the arithmetic is allowed to appear.\n\nThe model below does one unsentimental thing: it treats every clinically preserved distinction as a dimension and every literature-supported substitutability as a collapse. Pleasure receives the quotient its circuitry earns. Pain does not receive a global quotient because a burned hand, abandonment, neuropathy, shame, and dread are not made interchangeable by sharing unpleasantness.\n\nThe point is not the exact integer. The point is the shape of the trace: green flattens when mechanisms converge; red keeps multiplying because the organism keeps distinct ways to be wrong."
+      },
+      {
+        "location": "Replace ### Reading Figure 1 block under compute",
+        "replacement": "### Reading Figure 1\n\nWatch the green line do what pleasure is allowed to do: climb, then collapse through a quotient. Different pleasures keep finding the same chemical exits.\n\nWatch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve is not decoration. It is the machine discovering new addresses."
+      },
+      {
+        "location": "Replace ### Reading Figure 2 block under compute",
+        "replacement": "### Reading Figure 2\n\nThis is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after quotienting. The model is the cross-product between those facts, not a fitted miracle.\n\nIf the exact ratio bothers you, change profile. The sign does not move."
+      }
+    ],
+    "transition_patches": [
+      {
+        "after": "fig-price / end of Pain opens outward",
+        "bridge_markdown": "<p class='pm-bridge'>At this point the red side has opened in five directions: generated, defined, classified, named, staged. The next scene asks whether pleasure expands to match it. It does not. It collapses inward.</p>"
+      },
+      {
+        "after": "fig-leknes / end of Pleasure collapses inward",
+        "bridge_markdown": "<p class='pm-bridge'>So far this could still look like a medical asymmetry. The next panels make it behavioral: organisms do not merely suffer more loudly; they parse harm more finely.</p>"
+      },
+      {
+        "after": "fig-lazarus / before The neuroarchitecture",
+        "bridge_markdown": "<p class='pm-bridge'>The panels are done as separate witnesses. Now put them back into the skull. These are not twelve exhibits; they are routes on one organ.</p>"
+      },
+      {
+        "after": "fig-brain / before §II compute",
+        "bridge_markdown": "<p class='pm-bridge'>By now the arithmetic should feel less like a stunt than an audit. The red routes add independent addresses. The green routes keep finding shared exits. Section II lets the trace run.</p>"
+      },
+      {
+        "after": "§II compute block / before §III torture",
+        "bridge_markdown": "<p class='pm-bridge'>The model counts structure. The field test is older and uglier: if pain were a simple dial, the people who worship dials would have found truth. They found noise.</p>"
+      },
+      {
+        "after": "§III torture / before §IV Eden",
+        "bridge_markdown": "<p class='pm-bridge'>The torturer and Eden make the same category error: treat the artifact as moral revelation. One calls noise intelligence. The other calls architecture guilt.</p>"
+      }
+    ],
+    "arg_panel_strategy": "Keep the Toulmin boxes, but demote them from mini-essays to instrument readouts. The visual scene does the persuasion; the box should take one breath per cell. Insert `<p class='pm-tease'>...</p>` immediately before each figure. Replace only the inner `<p>` of each Claim, Warrant, and Impact cell with the shortened text above. Claim states the move. Warrant names the source once. Impact must answer: what changed in the reader's model since the previous figure? Ban repeated impact lines that merely restate suffering-space greater than pleasure-space. If an Impact could be pasted under three different figures, cut it. Keep citations in figure heads and appendix; the reader should feel continuity, not bibliography drag.",
+    "priority_integrations": [
+      "Move the counting rule out of the primary runway. Keep it as the collapsed audit hatch after the opening, or move the same block to just before §II.",
+      "Do not delete any figure, SVG, chart, 3D widget, or compute block. Change the path through them: tease line, figure, one-breath argument, bridge.",
+      "Rewrite every Impact cell so it advances the plot: generated output, mandatory product, clinical combinatorics, language inventory, stage dissociation, pleasure quotient, negative resolution, social ingress, appraisal multiplier, anatomy.",
+      "Use the three cluster titles Pain opens outward, Pleasure collapses inward, Harm gets more resolution. They tell the reader what kind of scene they are entering.",
+      "Let §II feel earned. The math should arrive after the reader already believes the shape: red multiplies, green quotients.",
+      "Recast torture as the failed folk model of low-dimensional pain. It is not an ethics sidebar; it is the real-world falsification of pain as truth dial.",
+      "Close with Eden as logging, not summary. The final image should be the machine becoming able to report the asymmetry it already had."
+    ]
+  },
+  "generated_at": "2026-05-24T16:25:02.435294+00:00"
+}

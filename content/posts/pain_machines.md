@@ -321,23 +321,37 @@ ShowToc: true
   max-width: 52ch;
 }
 .pm-counting {
-  margin: 1.75rem 0 2rem;
-  padding: 1rem 1.1rem 1.05rem;
+  margin: 1.25rem 0 1.75rem;
   border: 1px solid var(--line);
   background: linear-gradient(165deg, #0a0b0d 0%, #060708 100%);
 }
-.pm-counting h3 {
-  margin: 0 0 .65rem;
-  font-size: .72rem;
-  letter-spacing: .08em;
+.pm-counting summary {
+  cursor: pointer;
+  padding: .75rem 1rem;
+  font: 500 .78rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--dim);
+  list-style: none;
 }
-.pm-counting p {
+.pm-counting summary::-webkit-details-marker { display: none; }
+.pm-counting[open] summary { border-bottom: 1px solid var(--line); color: var(--muted); }
+.pm-counting > p {
   margin: 0 0 .65rem;
+  padding: 0 1rem;
   font-size: .82rem;
   line-height: 1.6;
   max-width: 68ch;
 }
-.pm-counting p:last-child { margin-bottom: 0; }
+.pm-counting > p:first-of-type { padding-top: .85rem; }
+.pm-counting > p:last-child { padding-bottom: 1rem; margin-bottom: 0; }
+.pm-tease {
+  margin: 0 0 .65rem;
+  padding: .55rem .75rem;
+  border-left: 2px solid rgba(184, 154, 106, .45);
+  font-size: .84rem;
+  line-height: 1.5;
+  color: #a8a098;
+  max-width: 58ch;
+}
 .pm-neuro {
   margin: 2.75rem 0 1.5rem;
   padding-top: 1.75rem;
@@ -612,26 +626,40 @@ ShowToc: true
 
 <div class="pm" id="pain-machines">
 
-Genesis frames the bug as disobedience. That is a mislabeled stack trace.
+Genesis calls it disobedience. Wrong stack trace.
 
-The fault is architectural. A human nervous system does not merely detect damage; it composes injury with affect, memory, appraisal, social exposure, identity, agency, and time. Medicine has had to inventory that composition: McGill descriptors, ICD-11 chronic-pain categories, severity and interference scales, psychosocial modifiers. Pleasure has a different shape. Its causal liking machinery is smaller, pharmacologically convergent, and easier to substitute.
+The fault is older than the fruit.
 
-So the claim below is formal. Under an explicit coarse-graining, suffering has more distinguishable states than pleasure: more bins before combinatorics, more axes after combinatorics, fewer legitimate quotient collapses. Not larger in dignity. **Larger in count.**
+A human nervous system is not a damage meter. It is an enumerator. Cut it once and the signal does not stay in the cut: it recruits location, intensity, duration, threat, memory, shame, agency, audience, prognosis, and the story of why this is happening to me. The clinic knows this, which is why it asks whether pain is burning, stabbing, crushing, electric, nauseating, humiliating, exhausting, radiating, disabling.
 
-<div class="pm-counting">
-<h3>Counting rule</h3>
-<p>By <strong>cardinality</strong> I mean an operational count under a declared coarse-graining — not a census of every private instant of consciousness. A state counts when changing it changes a clinically recognized descriptor, mechanism, intervention, impairment profile, or first-person report. Two states collapse only when a literature-supported equivalence relation makes them substitutable for the purpose being counted.</p>
-<p>Pain receives no global quotient because the clinical and psychological literatures keep mechanism, location, affect, appraisal, agency, social field, temporality, and identity separate. Pleasure receives a quotient where liking/reward mechanisms converge under pharmacology or shared causal circuitry.</p>
-<p>Every axis is a published partition; every product is a claim of independent contribution; every collapse is explicit. The arithmetic is conservative on purpose.</p>
-</div>
+Pleasure does not inventory the world that way. Food, sex, music, victory, warmth, touch: different doors, fewer rooms. Causal liking converges. Pharmacology can counterfeit broad families of bliss through a small set of shared circuits.
 
-## I. What the clinics already know
+So the thesis is not that suffering matters more morally. It is colder: under an explicit coarse-graining, the human animal has more distinguishable suffering states than pleasure states. More bins before the math. More axes after the math. Fewer legitimate collapses.
 
-<p class="pm-bridge">Each evidence panel below is structured as <strong>Claim → Warrant → Impact</strong>: what the source says, the academic basis, and how it widens the core gap — <em>suffering state-space ≫ pleasure state-space</em>.</p>
+You are not a fallen angel inside a body. You are a high-resolution pain machine with a low-resolution reward channel, and enough self-modeling to mistake the asymmetry for meaning.
+
+<details class="pm-counting">
+  <summary><strong>Audit hatch:</strong> what counts as a state</summary>
+  <p>By <strong>cardinality</strong> I mean an operational count under declared coarse-graining, not a census of private moments. A state counts when changing it changes a recognized descriptor, mechanism, intervention, impairment profile, or first-person report.</p>
+  <p>Two states collapse only when a literature-backed equivalence makes them substitutable for the purpose being counted. Pain gets no global collapse because medicine keeps mechanism, location, affect, appraisal, agency, social field, temporality, and identity separate. Pleasure gets a quotient where liking and reward converge under shared circuitry or pharmacology.</p>
+  <p>Every axis below is a published partition. Every product claims independent contribution. Every collapse is named. The count is conservative because the machine does not need help looking bad.</p>
+</details>
+
+## I. The clinic has already counted the bug
+
+Do not read the figures as a bibliography. Read them as a failure cascade.
+
+First, pain stops being a meter and becomes a generator. Then the official definition makes sensory and emotional inseparable. Then chronic pain becomes a taxonomy, patient language splits it into dozens of descriptors, and treatment separates intensity from unpleasantness. Only after the red side opens do we look at the green side: pleasure converges, compresses, and becomes easier to substitute.
+
+The last four panels ask whether this is merely medical bookkeeping. It is not. Bad weighs more, bad differentiates more, the social world can inject pain without a wound, and appraisal can multiply one injury into several non-interchangeable states.
+
+<p class="pm-bridge">The boxes below are scene captions. Read each <strong>Impact</strong> as the next term entering the machine, not as another recital of the thesis.</p>
 
 <div class="pm-evidence">
 
-<h3>Pain multiplies</h3>
+<h3>Pain opens outward</h3>
+
+<p class="pm-tease">The first mistake is looking for pain at the injury; the network writes the injury into a life.</p>
 
 <figure class="pm-fig" id="fig-neuromatrix">
   <div class="pm-fig-head">
@@ -698,11 +726,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     </g>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: neuromatrix">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain is generated by a distributed neuromatrix — not read directly off tissue damage.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Melzack (2001): the body-self neuromatrix integrates somatic input with appraisal, memory, identity, and context; pain is a neurosignature pattern the network emits — somatic signal is only one contributor.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Appraisal, memory, identity, and context each add pain partitions (neuromatrix axes). Pleasure is also distributed, but pain's clinically recognized partitions are deeper and less globally collapsible — suffering-space grows here.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain is generated output, not a tissue readout.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Melzack's neuromatrix integrates somatic input with memory, appraisal, identity, and context into a neurosignature.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The state-space opens the moment injury becomes self-referential.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Then the official definition closes the escape hatch: pain is never merely sensory.</p>
 
 <figure class="pm-fig" id="fig-iasp">
   <div class="pm-fig-head">
@@ -730,11 +760,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: IASP definition">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>The official definition makes sensory and emotional dimensions inseparable in the experience called pain.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Raja et al. (2020) IASP revision defines pain as an unpleasant sensory and emotional experience associated with actual or potential tissue damage — both dimensions are mandatory.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Pain's floor is already sensory × emotional; bliss has no mandatory distress axis to match. Before any other evidence, the suffering partition is structurally larger — you are classified as a pain machine at definition.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain is sensory and emotional by definition.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>IASP 2020 defines pain as an unpleasant sensory and emotional experience tied to actual or potential tissue damage.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Every counted pain starts as a product, not a scalar.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Once medicine has to treat lasting pain, the single word fractures into a filing system.</p>
 
 <figure class="pm-fig" id="fig-icd11">
   <div class="pm-fig-head">
@@ -785,11 +817,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="264" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers = combinatorial clinical space</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: ICD-11">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Official medicine treats chronic pain as a combinatorial, multi-axis construct — not a single diagnosis.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Treede et al. (2022): ICD-11 MG30 lists seven top-level chronic-pain categories, each with nested subtypes plus severity, interference, and psychosocial modifier codes.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Official medicine counts pain as category × subtype × modifier — a combinatorial space with no ICD pleasure taxonomy at comparable depth. Clinicians already treat you as a high-cardinality suffering enumerator.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Chronic pain is officially multi-axis.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>ICD-11 MG30 splits chronic pain into seven categories with subtypes, severity, interference, and psychosocial modifiers.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The clinic already runs the combinatorics.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">If taxonomy feels bureaucratic, listen to patients: the language is already factorized.</p>
 
 <figure class="pm-fig" id="fig-mcgill">
   <div class="pm-fig-head">
@@ -841,11 +875,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="228" fill="#b85c55" font-size="10" text-anchor="middle">78 distinguishable pain states — from vocabulary alone, before combinatorics</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: McGill MPQ">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Natural language factorizes pain into far more dimensions than it does pleasure.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Melzack (1975) MPQ inventories 78 pain descriptors across 20 subclasses in sensory, affective, evaluative, and miscellaneous domains — because clinicians need them.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>78 pain descriptors vs a handful for pleasure is measurable cardinality inequality in language itself. The pain partition is pre-inventoried; the pleasure partition is not — suffering-space ≫ pleasure-space before combinatorics.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain has a clinical vocabulary because it varies by kind.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>McGill inventories 78 descriptors across 20 subclasses: sensory, affective, evaluative, miscellaneous.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>A one-number pain scale is lossy compression.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Now cut into the signal: intensity, unpleasantness, and the suffering after suffering separate.</p>
 
 <figure class="pm-fig" id="fig-price">
   <div class="pm-fig-head">
@@ -879,13 +915,17 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     </g>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Price dissociation">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain runs through separable stages — sensation, unpleasantness, secondary affect — not one fungible signal.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Price (2000): cortico-limbic pathways add unpleasantness and secondary affect serially; opioid analgesia reduces unpleasantness more than intensity — stages stay dissociable.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Pleasure quotients down to ~4 receptor classes under synthetics; pain's serial stages (sensation × unpleasantness × secondary affect) survive the same drugs. Pharmacology compresses bliss, not grief — the pain/pleasure ratio widens under industrial chemistry.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain stages dissociate under treatment.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Price separates sensory intensity, unpleasantness, and secondary affect; opioids can reduce unpleasantness more than intensity.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Analgesia exposes hidden axes instead of erasing them.</p></div>
   </div>
 </figure>
 
-<h3>Pleasure compresses</h3>
+<p class="pm-bridge">At this point the red side has opened in five directions: generated, defined, classified, named, staged. The next scene asks whether pleasure expands to match it. It does not. It collapses inward.</p>
+
+<h3>Pleasure collapses inward</h3>
+
+<p class="pm-tease">Pleasure enters differently: not as an expanding ledger, but as a small set of causal buttons.</p>
 
 <figure class="pm-fig" id="fig-berridge">
   <div class="pm-fig-head">
@@ -946,11 +986,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="640" y="232" fill="#555c64" font-family="ui-monospace,monospace" font-size="8">synthetic agonists · interchangeable SKUs</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Berridge hotspots">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pleasure causation concentrates in ~3 hedonic hotspots; natural modalities collapse to a handful of receptor classes.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Berridge &amp; Kringelbach (2015): causal &ldquo;liking&rdquo; localizes to NAc, VP, and OFC; food, sex, music, and achievement map to ~4 interchangeable pharmacological classes.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>~3 hotspots and ~4 receptor classes cap the pleasure partition at industrial scale. The denominator of the pain-machine ratio is tiny by construction — bliss enumerates poorly; suffering does not.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Causal liking is anatomically small.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Berridge and Kringelbach localize hedonic hotspots in NAc, VP, and OFC while wanting sprawls elsewhere.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The green curve begins with a narrow denominator.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Then chemistry performs the compression: different joys can be driven through shared opioid and dopamine plumbing.</p>
 
 <figure class="pm-fig" id="fig-leknes">
   <div class="pm-fig-head">
@@ -976,13 +1018,17 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Leknes shared substrate">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Shared μ-opioid/dopamine circuitry lets synthetics substitute for joy — but not for non-fungible suffering.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Leknes &amp; Tracey (2008): pain and reward circuits overlap in mesolimbic substrate and mutually inhibit; agonists hijack the shared channel.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Shared μ-opioid/dopamine substrate gives pleasure a small, hijackable floor (~11 SKU classes); grief, shame, and social pain do not quotient down the same way. Chemistry shrinks the pleasure partition — it does not shrink the suffering partition. Ratio moves toward pain machine.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Reward has a substitutable substrate.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Leknes and Tracey describe overlapping opioid and dopamine circuitry where pain and reward inhibit and modulate each other.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Engineered bliss quotients; shame does not.</p></div>
   </div>
 </figure>
 
-<h3>Bad dominates good — and varies more</h3>
+<p class="pm-bridge">So far this could still look like a medical asymmetry. The next panels make it behavioral: organisms do not merely suffer more loudly; they parse harm more finely.</p>
+
+<h3>Harm gets more resolution</h3>
+
+<p class="pm-tease">The asymmetry is behavioral too: the organism spends more bits on what can ruin it.</p>
 
 <figure class="pm-fig" id="fig-baumeister">
   <div class="pm-fig-head">
@@ -1009,11 +1055,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     </g>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Baumeister negativity">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Negative events outweigh positive ones across nearly every domain of human psychology.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Baumeister et al. (2001): cross-domain review of trauma, relationships, learning, and self-concept finds bad is stronger than good — with almost no exceptions; negative information is processed more deeply.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Behavior weights negative events more because the firmware samples a larger harm partition than a pleasure partition. Psychology acts as if suffering-space ≫ pleasure-space — because it is.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Bad events dominate matched good ones.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Baumeister et al. find stronger effects for bad across trauma, relationships, learning, emotion, and self-concept.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Weight follows resolution: threat gets more address space.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Dominance is not only volume. Negative experience has more species.</p>
 
 <figure class="pm-fig" id="fig-rozin">
   <div class="pm-fig-head">
@@ -1048,11 +1096,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Rozin differentiation">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Negative states are more varied and finely distinguished than positive ones.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Rozin &amp; Royzman (2001): negative differentiation — negative entities are more varied, yield richer representations, and engage wider behavioral response repertoires than matched positives.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Selection expanded negative differentiation — more threat types, finer harm representations — without a matching expansion of positive states. The cardinality gap is adaptive firmware, not a measurement artifact.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Negative states differentiate more finely.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Rozin and Royzman describe negative differentiation: richer categories, representations, and response repertoires for bad than good.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Evolution bought more labels for danger.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">The next route needs no wound: the group can hurt the body from the outside-in.</p>
 
 <figure class="pm-fig" id="fig-eisenberger">
   <div class="pm-fig-head">
@@ -1083,11 +1133,13 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Eisenberger social pain">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Social rejection produces genuine pain without activating peripheral nociceptors.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Eisenberger et al. (2003): Cyberball ostracism activates dACC affective-pain circuitry and reported distress while somatic nociception pathways stay inactive.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Social rejection adds a full pain axis (social × affective) with no nociception and no symmetric social multiplier on pleasure. One more independent dimension enters the suffering product — the gap widens again.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Rejection can hurt without nociception.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Eisenberger's Cyberball study links ostracism distress to dorsal anterior cingulate activity, without peripheral tissue injury.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Pain gains a social ingress port.</p></div>
   </div>
 </figure>
+
+<p class="pm-tease">Finally, meaning multiplies the same event: fate, injustice, and self-blame are not the same pain.</p>
 
 <figure class="pm-fig" id="fig-lazarus">
   <div class="pm-fig-head">
@@ -1117,17 +1169,25 @@ So the claim below is formal. Under an explicit coarse-graining, suffering has m
     <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text>
   </svg>
   <div class="pm-arg" role="group" aria-label="Argument: Lazarus appraisal">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>The same injury or loss produces different suffering depending on cognitive appraisal frame.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Lazarus &amp; Folkman (1984): injustice, fate, and self-blame framings transform identical stressors into non-interchangeable affective outputs — appraisal is an independent variable.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Appraisal frame (injustice vs fate vs self-blame) multiplies distinguishable suffering from one injury; no parallel cognitive multiplier expands pleasure the same way. Meaning is a pain-only cardinality amplifier — another term in the suffering product.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Appraisal rewrites the suffering output.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Lazarus and Folkman show identical stressors diverge by frames such as threat, challenge, injustice, fate, and blame.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Meaning multiplies after the wound is closed.</p></div>
   </div>
 </figure>
+
+<p class="pm-bridge">The panels are done as separate witnesses. Now put them back into the skull. These are not twelve exhibits; they are routes on one organ.</p>
 
 </div>
 
 ## The neuroarchitecture
 
-The clinical taxonomies above are not arbitrary labels — they track **separable neural routes** on the same organ. Use the 3D map below: drag to rotate, adjust sliders to light up pathways, and watch the live pain/pleasure cardinality estimate respond. Hunt and Mantyh's parallel ascending systems (spinothalamic → somatosensory cortex; spinoparabrachial → limbic cortex), Price's dissociable stages, Eisenberger's social dACC ingress, Melzack's neuromatrix integration, and Berridge/Leknes pleasure compression all occupy the same volume — but only pain sprawls.
+The panels have done their separate damage. Now put them on one organ.
+
+The 3D map is not a toy proof of consciousness. It is a wiring diagram for why the count kept climbing. Somatic, affective, cognitive, social, and memory routes enter the same volume from different doors. Pleasure is present, but it does not sprawl like that: causal liking knots into a smaller ventral cluster and shared reward chemistry.
+
+Drag the model. Move the sliders. Watch red routes add addresses while green routes find shared exits.
+
+<p class="pm-tease">Now put the scenes on the organ: red sprawls; green knots itself into a ventral pod.</p>
 
 <figure class="pm-fig pm-fig-brain" id="fig-brain">
   <div class="pm-fig-head">
@@ -1211,17 +1271,21 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
     <span><i class="p-ple"></i> hedonic hotspots (NAc · VP · VTA)</span>
   </div>
   <div class="pm-arg" role="group" aria-label="Argument: neuroarchitecture">
-    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>On one organ, pain routes sprawl across cortex and limbic volume; pleasure concentrates in a tiny ventral pod.</p></div>
-    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Hunt &amp; Mantyh (2001) parallel spinothalamic and spinoparabrachial paths; Price, Eisenberger, Melzack, Berridge, and Leknes — integrated here with live pain/pleasure cardinality and footprint bars on the 3D map.</p></div>
-    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Cortex-wide pain routing vs a ventral pleasure pod — plus live log₁₀ ratio — makes the thesis anatomical: most of the organ enumerates suffering; a small locus compresses reward. Pain machine is not metaphor; it is the wiring diagram.</p></div>
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain sprawls; pleasure clusters.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Hunt and Mantyh's sensory and affective paths, plus social and appraisal routes and Berridge hotspots, occupy one organ.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The metaphor becomes a wiring diagram.</p></div>
   </div>
 </figure>
 
-<p class="pm-bridge">The pharmacological catalog is small (~11 receptor classes). The pain descriptor catalog is not (78 words, seven ICD categories, eight model axes). Section II counts the product on this anatomy.</p>
+<p class="pm-bridge">By now the arithmetic should feel less like a stunt than an audit. The red routes add independent addresses. The green routes keep finding shared exits. Section II lets the trace run.</p>
 
 ## II. Enumerate it
 
-Below is a **state-space estimator**: explicit axes, explicit level counts, explicit collapse rules. Pleasure gets a pharmacological quotient. Pain does not — because clinically, grief does not collapse to toothache under fentanyl.
+Now the arithmetic is allowed to appear.
+
+The model below does one unsentimental thing: it treats every clinically preserved distinction as a dimension and every literature-supported substitutability as a collapse. Pleasure receives the quotient its circuitry earns. Pain does not receive a global quotient because a burned hand, abandonment, neuropathy, shame, and dread are not made interchangeable by sharing unpleasantness.
+
+The point is not the exact integer. The point is the shape of the trace: green flattens when mechanisms converge; red keeps multiplying because the organism keeps distinct ways to be wrong.
 
 <div class="pm-compute" id="pm-compute">
   <div class="pm-compute-head">
@@ -1265,47 +1329,61 @@ Below is a **state-space estimator**: explicit axes, explicit level counts, expl
 
 ### Reading Figure 1
 
-The green trace is pleasure: three axes, then a **quotient step** where modalities collapse to receptor classes. The curve flattening is the argument — industrial bliss is compressible.
+Watch the green line do what pleasure is allowed to do: climb, then collapse through a quotient. Different pleasures keep finding the same chemical exits.
 
-The red trace is pain: eight axes, no collapse. Each clinical dimension (mechanism, location, appraisal, social field, temporality, identity, agency, episodic binding) multiplies the space. The curve keeps climbing because the literature treats these as **independent contributors**, not redundant labels for the same signal.
+Watch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve is not decoration. It is the machine discovering new addresses.
 
 ### Reading Figure 2
 
-Three ways to count the same thesis:
+This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after quotienting. The model is the cross-product between those facts, not a fitted miracle.
 
-1. **Model output** — full cross-product under the selected profile.
-2. **McGill MPQ** — 78 published pain descriptors across 20 subclass categories ([Melzack, 1975](https://pubmed.ncbi.nlm.nih.gov/1235985/)). A lower bound from vocabulary alone, before combinatorics.
-3. **Pharmacopeia classes** — ~11 analgesic / anxiolytic / dopaminergic families that approximate engineered pleasure SKUs (see Appendix §C).
-
-Even the vocabulary gap (78 vs 11) is ~7×. The combinatorial model is ~10³–10⁴. Both point the same direction: **the hardware enumerates suffering faster than it compresses bliss.**
+If the exact ratio bothers you, change profile. The sign does not move.
 
 Conservative and liberal profiles bracket the band by varying bin counts only. No fitted constants.
 
-## III. Pain is not a truth-extraction interface
+<p class="pm-bridge">The model counts structure. The field test is older and uglier: if pain were a simple dial, the people who worship dials would have found truth. They found noise.</p>
 
-The cleanest test of the architecture is the oldest coercive superstition: if pain were a narrow signal, torture would work.
+## III. Torture is the failed folk model of pain
 
-It does not. The [Senate Select Committee study of the CIA detention and interrogation program](https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf) found that enhanced interrogation was **not an effective means of acquiring intelligence** — detainees fabricated information on priority threats, and the agency never conducted a credible effectiveness evaluation. O'Mara's [*Why Torture Doesn't Work*](https://www.hup.harvard.edu/catalog.php?isbn=9780674743901) gives the mechanism: extreme stress, fear, sleep deprivation, and threat degrade working memory, temporal ordering, source monitoring, inhibition, and recall — exactly the systems an interrogator would need preserved. [Carbone, Marks & Fallon (2019)](https://www.cambridge.org/core/journals/politics-and-the-life-sciences/article/abs/torturing-science/A6672CBE5B7F35480CDE2BCEC12193D4) show the policy was veneered with pseudoscience, not grounded in the biology available even in 2001.
+The oldest political superstition is also the cleanest experiment against this essay: pain as a truth interface.
 
-This matters because torture is the folk model of **low-dimensional pain**. Turn the dial up; truth comes out.
+The superstition says the organism has a hidden port. Apply enough force and reality exits through speech. If pain were low-dimensional — if it were only a dial labeled distress — torture would be a brutal measurement technique.
 
-But the organism does not contain a truth-port. It contains a neuromatrix. Increase pain and the output branches: compliance, rage, dissociation, appeasement, shame, fantasy, memory fracture, learned helplessness, revenge, silence. Some branches speak. **Speech is not the same as signal.**
+It is not.
 
-So torture is not an exception to the thesis. It is the field demonstration. Pain does not index reality; it **enumerates possible distress states**. The torturer mistakes state change for measurement. The machine has not become honest. It has become larger.
+The [Senate Select Committee study of the CIA detention and interrogation program](https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf) found that enhanced interrogation was not an effective means of acquiring intelligence, produced fabricated claims on priority threats, and proceeded without a credible effectiveness evaluation. O'Mara's [*Why Torture Doesn't Work*](https://www.hup.harvard.edu/catalog.php?isbn=9780674743901) gives the neural reason: extreme stress, fear, sleep deprivation, and threat degrade working memory, temporal ordering, source monitoring, inhibition, and recall. [Carbone, Marks & Fallon (2019)](https://www.cambridge.org/core/journals/politics-and-the-life-sciences/article/abs/torturing-science/A6672CBE5B7F35480CDE2BCEC12193D4) name the institutional failure: policy first, scientific veneer after.
 
-## IV. Original Sin as mislabeled spec
+The architecture predicted the failure. Increase pain and the organism does not move along one axis toward truth. It branches.
 
-Genesis frames the first wound as justice: knowledge enters, pain follows, and the body is sentenced to meaning.
+Compliance. Rage. Dissociation. Appeasement. Shame. Fantasy. Memory fracture. Learned helplessness. Revenge. Silence.
 
-The evidence above reverses the order. A human being is not a moral animal that happens to hurt. It is a body with a high-resolution suffering manifold and a lower-resolution reward channel, then given enough language to notice the mismatch. Tissue damage is only one input. The system multiplies it by place, duration, affect, appraisal, memory, agency, identity, social field, and anticipated future. Pleasure, by contrast, is easier to quotient: different roads converge on a smaller set of liking/reward mechanisms and pharmacological substitutes. Under the coarse-graining used here, the red product outgrows the green quotient.
+Speech is one branch. Signal is not.
+
+The torturer mistakes perturbation for measurement. He changes the state of the machine, then treats any output as disclosure. But pain is not an oracle. It is a state-space expander. Under enough pressure, the mind does not become transparent. It becomes noisy, defensive, strategic, ruined.
+
+Torture therefore is not a counterexample to Pain Machines. It is the field demo. A low-dimensional pain interface would extract. A high-dimensional suffering manifold enumerates distress and calls some of the outputs answers.
+
+<p class="pm-bridge">The torturer and Eden make the same category error: treat the artifact as moral revelation. One calls noise intelligence. The other calls architecture guilt.</p>
+
+## IV. Eden was the first misread stack trace
+
+Genesis frames the first wound as justice: knowledge enters, pain follows, the body receives a sentence.
+
+Read it as engineering and the order changes. The creature was already built with more ways to register harm than bliss. Knowledge did not create the asymmetry; knowledge gave the asymmetry a mirror.
 
 That is what **Pain Machines** names.
 
-Not a mood. Not a sermon. Not the claim that joy is worthless or that every life is only injury. A machine is an **enumerator**, and this one enumerates harm with more addresses than it gives to bliss. Medicine knows this when it asks whether pain is burning, stabbing, crushing, radiating, electric, nauseating, humiliating, exhausting. Interrogation science knows it when pain fails to extract truth and instead manufactures noise. Psychology knows it when bad differentiates more finely than good.
+Not despair. Not the claim that joy is fake. Not an argument that every life reduces to injury. A machine is an enumerator. This one gives harm more addresses: tissue, place, duration, threat, memory, social exposure, agency, shame, appraisal, identity, anticipation. Pleasure has doors, but fewer rooms; many roads converge on shared liking and reward machinery, and chemistry can counterfeit broad classes of it.
 
-Original sin is a moralized bug report. The better sentence is architectural: ship a creature whose suffering state-space outruns its pleasure state-space; let it call that asymmetry meaning; let it blame itself for the output.
+Medicine knows. It asks whether pain is burning, stabbing, crushing, radiating, electric, nauseating, exhausting, humiliating. Psychology knows. Bad weighs more and differentiates more. Interrogation knows when its own violence returns confabulation instead of truth. The brain map knows. Red sprawls; green clusters.
 
-**The fruit did not install the fault. It made the machine self-report.**
+The old story moralizes the output. It says the creature hurt because it disobeyed. The better bug report is colder: ship a body whose suffering state-space outruns its pleasure state-space; add memory deep enough to bind episodes, language sharp enough to name them, and social cognition cruel enough to turn pain into identity. Let the creature wake inside that asymmetry. Let it call the waking a fall.
+
+Original sin is the name of the first self-report.
+
+The fruit did not install the fault.
+
+It turned on logging.
 
 <div class="pm-appendix">
 
