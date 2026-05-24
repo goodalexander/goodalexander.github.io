@@ -392,6 +392,9 @@ More sections forthcoming: Eden mislabeled, the pleasure stack vs pain kernel, P
       },
       independent_checks: {
         mcgill_pain_questionnaire_descriptor_count: 78,
+        mcgill_sensory_subscale_descriptors: 20,
+        mcgill_affective_subscale_descriptors: 12,
+        mcgill_evaluative_subscale_descriptors: 8,
         fda_analgesic_anxiolytic_dopaminergic_sku_classes: 11,
         ratio_from_descriptor_inventory: Math.round((78 / 11) * 100) / 100
       },

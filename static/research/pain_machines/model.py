@@ -147,6 +147,9 @@ def pain_analysis(spec: ProfileSpec) -> dict:
 def independent_checks() -> dict:
     return {
         "mcgill_pain_questionnaire_descriptor_count": 78,
+        "mcgill_sensory_subscale_descriptors": 20,
+        "mcgill_affective_subscale_descriptors": 12,
+        "mcgill_evaluative_subscale_descriptors": 8,
         "fda_analgesic_anxiolytic_dopaminergic_sku_classes": 11,
         "ratio_from_descriptor_inventory": round(78 / 11, 2),
     }
