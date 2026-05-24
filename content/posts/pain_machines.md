@@ -1758,7 +1758,6 @@ The last duty is to stop manufacturing the warning as destiny.
 Void the warranty.
 
 </div>
-<script type="module" src="/research/pain_machines/brain3d.js?v=4"></script>
 <script src="/research/pain_machines/pm-viz.js" defer></script>
 
 
