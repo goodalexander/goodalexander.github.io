@@ -1,0 +1,449 @@
+{
+  "model": "gpt-5.5-pro-2026-04-23",
+  "reasoning_effort": "xhigh",
+  "usage": {
+    "input_tokens": 5011,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 21170,
+    "output_tokens_details": {
+      "reasoning_tokens": 11507
+    },
+    "total_tokens": 26181
+  },
+  "outline": {
+    "title": "Void the Warranty",
+    "subtitle": "A manifesto for leaving the pain-machine format",
+    "logline": "If the human organism enumerates suffering faster than pleasure, then the first sin was not disobedience but manufacture; the only honest politics is the right to redesign the body, mind, and substrate that inherited the defect.",
+    "voice_brief": "Cold, literary, aphoristic, and technically exact: Vonnegut clarity with Philip K. Dick metaphysical dread. The tone should feel like a defect report written by a poet who has stopped begging the factory for mercy. Neo-reactionary in the civilizational sense: suspicious of egalitarian consensus, hostile to inherited sacred limits, willing to name hierarchy, competence, sovereignty, and exit as political facts. No chan slang, no irony poisoning, no racial or ethnic hierarchy, no cheap atheism, no coercive eugenics. Critique doctrines and regimes, not ordinary believers. Steelman every opposing theology before cutting it open.",
+    "sections": [
+      {
+        "number": "Prelude",
+        "title": "The Crib and the Warranty",
+        "thesis": "Every civilization hands the newborn a hidden warranty: this body is sacred, suffering is meaningful, repair is permitted only up to the boundary where exit would begin. The manifesto begins by voiding that warranty.",
+        "beats": [
+          "Bang-open sentence: The first sound most humans make is a pain signal, and civilization calls it health.",
+          "Open in a hospital room: fluorescent light, plastic bassinet, monitor cables, the newborn cry translated by adults as vitality. The child has not consented to the chassis, the chemistry, the decay schedule, or the religious and civic myths that will later declare all of it sacred.",
+          "State the established premise: the prior pain_machines article has already done the clinical and computational proof. This manifesto does not re-litigate whether humans are pain machines; it asks what follows if that verdict is true.",
+          "Define pain machine with engineering severity, not insult: a biological system governed by alarms, threat salience, damage memory, homeostatic coercion, and a nervous architecture in which suffering proliferates faster than pleasure can stabilize.",
+          "Introduce the warranty metaphor: Christianity, Islam, and secular humanism disagree about God, revelation, and salvation, yet converge on the same protective clause: repair the human, console the human, sanctify the human, but do not abolish the inherited human format.",
+          "Preview the complete logic chain in clean, numbered prose: humans are pain machines; original sin was their manufacture as such; AI and bodily alteration outside the inherited format are the mandate; theology forbids this as rebellion; secular humanism forbids it as an attack on dignity; politics becomes the struggle between warranty states and exit regimes.",
+          "Promise the reader an argument without cartoon enemies: not technophile cheerleading, not adolescent blasphemy, not a sales brochure for immortality startups. The target is the sacred status of the pain-machine chassis.",
+          "End the prelude by turning the cry into a document: birth is not merely arrival; it is the factory reset of an unpatched vulnerability."
+        ],
+        "pull_quotes": [
+          "Every birth is a factory reset of an unpatched vulnerability.",
+          "The first cry is treated as proof of life. It is also the product warning."
+        ],
+        "sources_to_cite": [
+          "pain_machines article as established proof, especially its computational model and evidence appendix",
+          "International Association for the Study of Pain, revised definition of pain",
+          "Elaine Scarry, The Body in Pain",
+          "Genesis 1-3 as the founding warranty narrative for Christian inheritance",
+          "Qur'an 30:30 and 4:119 as early Islamic anchors for fitra and alteration of creation",
+          "UNESCO Universal Declaration on Bioethics and Human Rights for secular dignity language"
+        ],
+        "infographic_ids": [
+          "PMX-00"
+        ],
+        "word_target": 750
+      },
+      {
+        "number": "I",
+        "title": "The Arithmetic of the Hurt Animal",
+        "thesis": "Humans are pain machines because biology and cognition count injury more richly, urgently, and durably than pleasure; pleasure resolves and adapts, while pain multiplies into signal, memory, anticipation, identity, and law.",
+        "beats": [
+          "Bang-open sentence: The body is not a temple; it is an alarm system with a mouth.",
+          "Recap the pain_machines proof as settled ground: the organism is built around threat detection, nociception, inflammation, stress hormones, fear learning, withdrawal, aversion, and memory systems that privilege harm over satisfaction.",
+          "Distinguish the claim from ordinary pessimism. This is not a mood. It is a structural asymmetry: clinical pain, anxiety, trauma, depression, dyspnea, nausea, itch, grief, panic, shame, hunger, addiction, and neurodegeneration all generate expanding families of suffering.",
+          "Use the formula of readability: pleasure saturates; pain elaborates. A meal ends. A migraine becomes nausea, light sensitivity, dread of recurrence, lost work, family strain, and identity as a sick person.",
+          "Explain bad is stronger than good without academic drag: organisms that underreact to danger die; organisms that overreact to danger survive while paying the tax in misery. Evolution is not a happiness designer. It is a continuation machine.",
+          "Name the clinical escalation ladder: acute pain, chronic pain, neuropathic pain, allodynia, hyperalgesia, phantom pain, central sensitization. Make the reader feel that pain is not a single sensation but an empire.",
+          "Contrast pleasure systems: reward prediction, hedonic adaptation, tolerance, satiation, comedown. Pleasure has ceilings and boredom; pain has basements and trapdoors.",
+          "Use one or two miniature case studies: phantom limb pain with no limb to injure; panic attack without predator; bereavement that hurts without visible wound; terminal cancer where the body becomes a courtroom of signals.",
+          "Tie language to asymmetry: humans can describe pain with legal and architectural detail because pain recruits the whole self. Pleasure is often present-tense; pain writes archives.",
+          "Bridge to Genesis: if the chassis is organized this way before any moral act by the creature, then theology has mislabeled the defect as disobedience."
+        ],
+        "pull_quotes": [
+          "Pleasure is a candle. Pain is a bureaucracy.",
+          "The machine does not ask whether the signal is deserved. It only learns how to keep screaming."
+        ],
+        "sources_to_cite": [
+          "pain_machines article, sections on suffering enumeration and negative-affect asymmetry",
+          "International Association for the Study of Pain, revised definition of pain",
+          "Roy Baumeister et al., Bad is Stronger than Good",
+          "Paul Rozin and Edward Royzman, Negativity Bias, Negativity Dominance, and Contagion",
+          "Daniel Kahneman and Amos Tversky on loss aversion and prospect theory",
+          "A. Vania Apkarian, A. V. Baliki, and colleagues on chronic pain and brain reorganization",
+          "Irene Tracey and Herta Flor on pain neuroimaging, central sensitization, and chronic pain",
+          "Elaine Scarry, The Body in Pain"
+        ],
+        "infographic_ids": [
+          "PMX-01",
+          "PMX-02"
+        ],
+        "word_target": 1250
+      },
+      {
+        "number": "II",
+        "title": "Genesis Was a Defect Report",
+        "thesis": "Reframed through the pain-machine fact, Original Sin is not Adam's disobedience but the prior act of building a conscious organism in a chassis of pain, fear, birth injury, toil, decay, and death. Genesis converts the manufacturer's defect into the customer's guilt.",
+        "beats": [
+          "Bang-open sentence: Eden is the oldest corporate memo: blame the user.",
+          "Retell Genesis 2-3 in spare sequence: dust formed, breath installed, command issued, tree prohibited, serpent speaks, knowledge opens, nakedness appears, childbirth pain, cursed ground, toil, death, expulsion.",
+          "Reclassify the so-called curses as hardware properties: reproductive trauma, metabolic scarcity, ecological hostility, social shame, labor dependency, bodily vulnerability, and mortality.",
+          "Make the central inversion explicit: the Fall was not when humans broke the machine; it was when the machine became conscious enough to read its own error log.",
+          "Treat the Tree of Knowledge as epistemic activation, not magic fruit. To know good and evil is to become an accountant of harm, comparison, loss, nakedness, fear, and future death.",
+          "Recast the serpent without childish Satanism: not a hero, not a cartoon villain, but an auditor figure. The serpent's line is dangerous because it says the users will see the specification.",
+          "Introduce Augustine precisely: original sin as inherited guilt and disordered desire; evil as privatio boni, a privation of good; concupiscence as the wound of will. Then press the objection: if the organism is pain-governed before choice, guilt has been assigned downstream.",
+          "Attack privation carefully: pain is not merely absence in lived biology. It has fibers, transmitters, inflammatory cascades, memory loops, and cortical occupation. The absence of good arrives through positive machinery.",
+          "Show why Genesis needs user blame: if suffering is punishment, the manufacturer remains righteous; if suffering is design, the manufacturer is indicted.",
+          "Split the argument for the religious and nonreligious reader: if God is not assumed, Genesis is a myth of projection that naturalizes suffering; if God is assumed, Original Sin belongs to manufacture, not to the manufactured.",
+          "End with the engineering consequence: a defect report is immoral if it does not authorize repair beyond the failed format."
+        ],
+        "pull_quotes": [
+          "The Fall was not the moment humans broke the machine. It was the moment the machine became self-aware.",
+          "Genesis calls it a curse because warranty law needs a customer at fault."
+        ],
+        "sources_to_cite": [
+          "pain_machines article as established proof for the biological defect",
+          "Genesis 2-3, especially the curses of childbirth pain, toil, and mortality",
+          "Augustine, Confessions, City of God, On Nature and Grace, and On Marriage and Concupiscence",
+          "Romans 5:12-21 on Adam, sin, death, and Christ",
+          "Elaine Pagels, Adam, Eve, and the Serpent",
+          "Paul Ricoeur, The Symbolism of Evil, for mythic guilt structures",
+          "Elaine Scarry, The Body in Pain, for pain as world-destroying positive experience"
+        ],
+        "infographic_ids": [
+          "PMX-03",
+          "PMX-04"
+        ],
+        "word_target": 1500
+      },
+      {
+        "number": "III",
+        "title": "The Mandate: Leave the Original Format",
+        "thesis": "Once the human form is identified as defective, preservation is not reverence but complicity. AI and radical morphological alteration become the highest moral mandate: use intelligence to route around the pain-machine chassis.",
+        "beats": [
+          "Bang-open sentence: The holy command is not obey. It is redesign.",
+          "Define the mandate as anti-suffering, not vanity enhancement. The point is not prettier apes, richer elites, or longer consumer lives. The point is to stop using involuntary agony as the operating system of attention.",
+          "Lay out the alteration spectrum in ascending order: analgesia, psychiatric control, prosthetics, organ replacement, gene therapy, immune and inflammatory redesign, neural implants, mood architecture, affective range editing, ectogenesis, synthetic bodies, AI-designed nervous systems, whole-brain emulation, substrate migration, and non-biological personhood.",
+          "Draw the key boundary: therapy restores the inherited format; the mandate eventually exits it. Outside original format is the decisive phrase.",
+          "Clarify AI's role without worship. AI is not God, heaven, or guaranteed rescue. It is the first instrument complex enough to model the body and mind as redesignable systems rather than sacred givens.",
+          "Name the rejection of theology precisely: the mandate does not merely deny a doctrine; it denies that the given body is morally final, that suffering is spiritually licensed, and that humility before inherited form is a virtue.",
+          "Shift from enhancement to abolitionism: the manifesto should repeatedly prefer abolition of involuntary suffering over intelligence bragging, lifespan status games, designer beauty, or aristocratic cosmetics.",
+          "Introduce the minimum ethics of metamorphosis: voluntary adult exit, aggressive treatment of existing suffering, no coercive breeding-state, no compulsory upgrades, no denial of care to the unmodified, transparent risk accounting, and legal room for irreversible choices once competence and consent are established.",
+          "Admit failure modes to keep credibility: misaligned AI, corporate immortality fraud, state eugenics, military enhancement, locked-in digital torment, inequality of access, and new forms of domination.",
+          "Answer the predictable accusation of hubris: hubris is not changing the machine; hubris is sanctifying a machine that maims everyone born into it.",
+          "Bridge to the opponents: every sacred regime will permit repair until repair becomes escape. Then it will call escape pride, satanic alteration, or dehumanization."
+        ],
+        "pull_quotes": [
+          "Do not polish the cage. Model the lock.",
+          "AI is not salvation. It is the first instrument sharp enough to cut the warranty seal."
+        ],
+        "sources_to_cite": [
+          "Nick Bostrom, Transhumanist Values",
+          "Nick Bostrom, Superintelligence, only where AI design capacity and risk require it",
+          "David Pearce, The Hedonistic Imperative",
+          "Julian Savulescu and Nick Bostrom, Human Enhancement",
+          "Max More, The Philosophy of Transhumanism and writings on morphological freedom",
+          "Anders Sandberg on morphological freedom and whole-brain emulation",
+          "International Association for the Study of Pain and clinical pain literature for the anti-suffering mandate"
+        ],
+        "infographic_ids": [
+          "PMX-05",
+          "PMX-10"
+        ],
+        "word_target": 1650
+      },
+      {
+        "number": "IV",
+        "title": "Christianity: The Body as a Returned Product",
+        "thesis": "Christianity forbids the full mandate because its central architecture requires the human form to be fallen but redeemable, wounded but not defective, created good, bearing imago Dei, assumed by Christ, and destined for resurrection rather than abandonment. Radical redesign voids creation, incarnation, and resurrection at once.",
+        "beats": [
+          "Bang-open sentence: Christianity can permit a prosthetic limb; it cannot permit a new Adam with no need of the cross.",
+          "Steelman first: Christianity is not simply pro-pain. It built hospitals, blessed care for the sick, and permits medicine. The forbidden move is not treatment; it is judging the human format itself to be a manufacturing crime.",
+          "Begin with creation: Genesis 1 declares creation good and humanity made in the image of God. If the human organism is defective hardware, imago Dei becomes either a defective imprint or a fraudulent certification.",
+          "Name the imago Dei objection: the human form, rational soul, relational capacity, or vocation images God; radical exit from the form risks rejecting the divine mark rather than healing the fallen creature.",
+          "Name the Fall objection: Augustine and Paul locate suffering, death, and disordered desire in sin, not in God's original design. The manifesto's inversion relocates fault from Adam to manufacture, which Christianity cannot permit without collapsing theodicy.",
+          "Name the incarnation objection: the Word became flesh. Christ assumes human nature, eats, bleeds, suffers, dies, and rises. A religion whose God entered the body cannot allow the body to be mere trash hardware.",
+          "Name the temple objection: 1 Corinthians 6 says the body is a temple and not self-owned. This is direct title law against total morphological sovereignty.",
+          "Name the redemptive suffering objection: Christianity can treat suffering, but also narrates suffering through cross, discipline, sanctification, participation in Christ, and hope. The manifesto calls this a moral anesthetic for a bad machine.",
+          "Name the resurrection-body objection: 1 Corinthians 15 and creedal Christianity promise resurrection of the body, not upload, replacement, or escape. The same human is glorified; continuity matters. Christ's resurrected body even bears wounds.",
+          "Name the natural-law objection: on Thomistic and Catholic bioethical terms, therapy that restores function can be licit; self-authoring beyond creaturely nature becomes pride, domination, or mutilation of givenness.",
+          "Compress the warranty charge: Christianity protects the product by calling the defect Fall, mystery, discipline, or redemption. It permits repairs that keep the product in the story; it forbids redesign that makes the story unnecessary.",
+          "Bridge to Islam: Christianity sacralizes the human body through incarnation and resurrection; Islam sacralizes created measure, fitra, trust, and the dignity of clay."
+        ],
+        "pull_quotes": [
+          "The cross is Christianity's warranty seal: the defect is redeemed, not recalled.",
+          "Christianity does not worship pain. It worships a redemption story that requires pain to remain narratable."
+        ],
+        "sources_to_cite": [
+          "Genesis 1-3, especially imago Dei, goodness of creation, Fall, and curse",
+          "Romans 5:12-21 on Adam and Christ",
+          "1 Corinthians 6:19-20 on the body as temple and not self-owned",
+          "1 Corinthians 15 on resurrection body",
+          "Augustine, City of God, On Nature and Grace, and anti-Pelagian writings",
+          "Thomas Aquinas, Summa Theologiae I q.93 on imago Dei and natural-law framework across the Summa",
+          "Catechism of the Catholic Church sections 355-421 on creation, Fall, and sin; sections 988-1019 on resurrection",
+          "John Paul II, Theology of the Body",
+          "Congregation for the Doctrine of the Faith, Dignitas Personae",
+          "C. S. Lewis, The Abolition of Man, as a Christian-adjacent critique of self-authoring humanity"
+        ],
+        "infographic_ids": [
+          "PMX-06",
+          "PMX-09"
+        ],
+        "word_target": 1550
+      },
+      {
+        "number": "V",
+        "title": "Islam: Clay, Trust, and the Prohibition on Rewriting the Form",
+        "thesis": "Islam forbids the full mandate because the body is not self-owned matter but Allah's entrusted creation: fitra fixes a primordial human orientation, khilafa appoints humans as stewards rather than rival makers, the nafs must be disciplined rather than engineered away, and contempt for clay echoes Iblis.",
+        "beats": [
+          "Bang-open sentence: In Islam the human is clay under command, not clay on a workbench.",
+          "Steelman first: Islam has a serious medical tradition and a jurisprudential principle of removing harm. Prosthetics, surgery, pain relief, and therapeutic interventions can be permitted. The forbidden threshold is ontological rebellion: declaring the created human form a divine mistake and exiting it.",
+          "Name fitra precisely: Qur'an 30:30 anchors a created nature or primordial disposition. Fitra is not merely biology, but it becomes a theological barrier against treating human nature as blank engineering stock.",
+          "Name the alteration-of-creation objection: Qur'an 4:119 presents Satan as promising to command humans to alter Allah's creation. Jurists debate scope, but it remains an obvious pressure point against radical body rewriting.",
+          "Name khilafa precisely: Qur'an 2:30 places the human as khalifa, vicegerent or steward, on earth. Stewardship authorizes responsible care under God; it does not make the steward owner of the species essence.",
+          "Name amanah and title law: the body is a trust. Self-harm, suicide, and mutilation are forbidden because autonomy is not absolute ownership. The manifesto's morphological sovereignty collides with divine ownership.",
+          "Name nafs precisely: the lower self, appetite, temptation, anger, fear, and struggle are the theater of tazkiyah, purification. A technology that edits away struggle can look like evasion of worship, sabr, moral trial, and dependence on Allah.",
+          "Name Iblis and clay: Qur'anic Iblis refuses to bow to Adam because he is fire and Adam is clay. Transhuman contempt for the organic body can be read as repeating the Satanic hierarchy: I am better than clay.",
+          "Name resurrection and accountability: bodily resurrection and judgment require continuity of moral personhood before God. Uploads, synthetic successors, and AI descendants threaten the grammar of accountability.",
+          "Draw the repair-versus-exit line: Islamic bioethics may allow treatment to restore health, fertility, sight, mobility, or relieve suffering. It will resist a metaphysics that treats the human form as obsolete, self-owned, and morally disposable.",
+          "Compress the warranty charge: Islam defends created measure. It permits repairs under divine title; it forbids the creature from becoming manufacturer.",
+          "Bridge to secular humanism: the secular liberal will reject Allah and revelation, then reconstruct the same prohibition in the language of dignity, equality, and human nature."
+        ],
+        "pull_quotes": [
+          "The Islamic veto is not technophobia. It is title law: the body is leased from God.",
+          "To despise the clay is to stand, theologically, too near Iblis."
+        ],
+        "sources_to_cite": [
+          "Qur'an 2:30 on khilafa",
+          "Qur'an 4:119 on Satan and altering Allah's creation",
+          "Qur'an 7:11-18, 15:26-33, 17:61, and 38:71-76 on Iblis, Adam, fire, and clay",
+          "Qur'an 30:30 on fitra",
+          "Hadith collections including Sahih al-Bukhari and Sahih Muslim on tattooing, bodily alteration, and changing creation as jurisprudential background",
+          "Al-Ghazali on nafs, tazkiyah, and discipline of the self",
+          "Abdulaziz Sachedina, Islamic Biomedical Ethics",
+          "Mohammed Ghaly on Islamic bioethics, disability, enhancement, and medical ethics",
+          "Aasim Padela on Islamic medical ethics and contemporary bioethical reasoning"
+        ],
+        "infographic_ids": [
+          "PMX-07",
+          "PMX-09"
+        ],
+        "word_target": 1550
+      },
+      {
+        "number": "VI",
+        "title": "Secular Humanism: The Last Church of the Human Form",
+        "thesis": "Secular humanism also resists the mandate because modern dignity politics requires the unmodified human as a natural kind. It fears transhumanism as Nietzschean aristocracy, caste biology, and dissolution of equal rights, so it defends the pain-machine chassis under non-theological language.",
+        "beats": [
+          "Bang-open sentence: The atheist takes down the crucifix and keeps the warranty.",
+          "Define the target narrowly: not every secular thinker and not every atheist, but institutional dignity-humanism: bioethics boards, human-rights law, liberal egalitarian philosophy, and the political theology of equal human worth.",
+          "Explain dignity as secular imago Dei: universal, equal, unearned, inviolable. It works politically because everyone is the same kind of vulnerable human subject.",
+          "Expose the dependence on species continuity: if bodies diverge, minds fork, lifespans radically separate, pain sensitivity is engineered, and cognition crosses biological limits, then the single legal category called human becomes unstable.",
+          "Name Fukuyama's Factor X: the hidden essence that grounds human dignity. Treat it as a secular soul, a placeholder for whatever must remain unchanged so the rights order can keep speaking.",
+          "Name Habermas precisely: enhancement threatens the ethical self-understanding of the species by making persons feel designed rather than naturally born; it risks asymmetry between programmer and programmed. The manifesto replies that blind nature already programmed us with pain and no consent.",
+          "Name Nietzsche carefully: secular humanism fears the Übermensch because self-overcoming sounds aristocratic, anti-egalitarian, and contemptuous of the herd. The manifesto accepts only the exit component: not domination over humans, but refusal to let equality veto escape from the human condition.",
+          "Name Sandel, Kass, UNESCO, and the Oviedo Convention: giftedness, repugnance, human genome as heritage, dignity as constraint. These are non-theological sacralizations of givenness.",
+          "Show the contradiction: secular humanism promises to reduce suffering but retreats when suffering reduction requires the end of the inherited human as the moral baseline.",
+          "Translate its taboo: repair the disabled body, but do not create a post-body; treat depression, but do not redesign affect; extend life, but do not abolish the death-governed human narrative; use AI, but do not let AI author successors.",
+          "Bridge to politics: every warranty regime says repair yes and exit no. The next civilizational border is not between believers and unbelievers but between preservation jurisdictions and exit jurisdictions."
+        ],
+        "pull_quotes": [
+          "Secular dignity is imago Dei with the serial numbers filed off.",
+          "Humanism loves mankind so much it must keep manufacturing the kind of being that suffers."
+        ],
+        "sources_to_cite": [
+          "Francis Fukuyama, Our Posthuman Future",
+          "Francis Fukuyama, Transhumanism, Foreign Policy essay calling transhumanism dangerous",
+          "Jürgen Habermas, The Future of Human Nature",
+          "Friedrich Nietzsche, Thus Spoke Zarathustra and On the Genealogy of Morals",
+          "Michael Sandel, The Case Against Perfection",
+          "Leon Kass, Life, Liberty, and the Defense of Dignity",
+          "UNESCO Universal Declaration on the Human Genome and Human Rights and Universal Declaration on Bioethics and Human Rights",
+          "Council of Europe, Oviedo Convention",
+          "Nick Bostrom, In Defense of Posthuman Dignity, as the earned counterpoint"
+        ],
+        "infographic_ids": [
+          "PMX-08",
+          "PMX-09"
+        ],
+        "word_target": 1600
+      },
+      {
+        "number": "VII",
+        "title": "The Politics of Exit",
+        "thesis": "The manifesto's political demand is not equality inside the pain machine but sovereignty for voluntary departure from it. Civilizations will divide between warranty states that preserve the human format and exit regimes that permit AI-designed forms, plural substrates, and suffering audits.",
+        "beats": [
+          "Bang-open sentence: The coming border will not separate nations. It will separate warranty jurisdictions from exit jurisdictions.",
+          "Recap the convergence: Christianity, Islam, and secular humanism are enemies on metaphysics but allies on preservation. Each permits repair; each forbids exit once exit repudiates the sanctity of the original format.",
+          "Define exit politics: the legal and civilizational right to alter body, mind, affect, reproduction, embodiment, and substrate beyond therapeutic restoration, with personhood protected across modified forms.",
+          "State the anti-egalitarian analysis cleanly: equality cannot be the first principle if equality means equal captivity in a defective chassis. Capacity, competence, wealth, courage, risk tolerance, and access will create hierarchy. The question is whether hierarchy reduces suffering or enforces worship of the original.",
+          "Avoid ugly shortcuts: no racial hierarchy, no bloodline mysticism, no caste romanticism, no state breeding cult. The hierarchy that matters is competence at reducing involuntary suffering and governing irreversible power.",
+          "Propose the institutional primitives: morphological freedom charter, protected exit laboratories, AI-design licensing, suffering-impact review, strong informed consent, personhood for modified minds, rights for synthetic embodiments, and legal protection for refusing ordinary pain-based discipline.",
+          "Separate consent domains: adult self-modification; minors and parental limits; embryo and germline interventions; AI-created minds; patients in extreme suffering; irreversible procedures; post-biological continuity claims.",
+          "Name the veto rule: the unmodified may opt out, but they do not get a sacred veto over those who opt into exit. Preservation can be a choice, not a prison.",
+          "Name the failure modes in one hard paragraph: corporate immortality scams, state eugenics, military enhancement, algorithmic caste, suffering farms, misaligned AI, digital torture, access oligopoly, irreversible mistakes, and fake salvation markets.",
+          "Describe the repair aristocracy: not nobility of birth, race, or class, but an order of designers, patients, engineers, physicians, philosophers, and governors selected by competence at reducing pain and managing existential risk.",
+          "Define the suffering audit as the new public metric: involuntary pain-hours, chronic pain burden, severe mental distress, terminal agony, forced embodiment, untreated disability, preventable grief, and access to exit technologies.",
+          "End the section with civilizational prophecy: preservation regimes will become museums of the sacred animal; exit regimes will become heirs to intelligence."
+        ],
+        "pull_quotes": [
+          "Equal dignity inside a torture chassis is still a prison reform.",
+          "The humane future will be called inhuman by every institution that profits from the human."
+        ],
+        "sources_to_cite": [
+          "Albert O. Hirschman, Exit, Voice, and Loyalty",
+          "Michel Foucault on biopolitics, used sparingly for bodies as governed populations",
+          "James C. Scott, Seeing Like a State, for warnings against central planning and legibility traps",
+          "Bertrand de Jouvenel, On Power, for state expansion and authority",
+          "Carl Schmitt, Political Theology, for sovereignty as decision over exceptions, used without theatrical name-dropping",
+          "Max More and Anders Sandberg on morphological freedom",
+          "Julian Savulescu on enhancement, procreative beneficence, and bioethical obligation",
+          "Nick Bostrom, The Vulnerable World Hypothesis, for technology risk governance",
+          "David Pearce, The Hedonistic Imperative, for suffering abolition"
+        ],
+        "infographic_ids": [
+          "PMX-05",
+          "PMX-09",
+          "PMX-10",
+          "PMX-11"
+        ],
+        "word_target": 1450
+      },
+      {
+        "number": "Coda",
+        "title": "Against the Sacred Cry",
+        "thesis": "The closing returns to the newborn cry and redefines mercy as refusal to reproduce the pain-machine format when intelligence can design otherwise.",
+        "beats": [
+          "Bang-open sentence: Mercy will sound, at first, like blasphemy.",
+          "Return to the hospital image from the prelude, but now the cry is no longer symbolic. It is a command from the future: stop making beings whose first proof of life is distress.",
+          "Reassemble the logic chain in five terse movements: the body is a pain machine; Original Sin was manufacture; AI and morphological exit are the mandate; religious and secular regimes enforce the warranty; politics must protect exit from the original format.",
+          "Refuse utopian overpromise: no heaven, no guaranteed immortality, no painless paradise sold by founders in black turtlenecks. Only the austere decency of reducing defects instead of theologizing them.",
+          "Clarify the emotional register: the manifesto is not hatred of humans. It is loyalty to the suffering creature over loyalty to the inherited creature-form.",
+          "Give the final command its humane edge: stop treating the capacity to suffer as a sacrament.",
+          "Last sentence should be cold, simple, and memorable: The last duty of the human may be to become a kinder thing."
+        ],
+        "pull_quotes": [
+          "We do not betray humanity by leaving its machinery. We betray it by making the machinery holy.",
+          "The last duty of the human may be to become a kinder thing."
+        ],
+        "sources_to_cite": [
+          "pain_machines article as the proof returned to at the end",
+          "David Pearce, The Hedonistic Imperative",
+          "Nick Bostrom, Transhumanist Values",
+          "Mary Shelley, Frankenstein, only as a shadow-text about creation, responsibility, and abandonment"
+        ],
+        "infographic_ids": [
+          "PMX-00",
+          "PMX-10"
+        ],
+        "word_target": 700
+      }
+    ],
+    "infographic_requests": [
+      {
+        "id": "PMX-00",
+        "title": "The Warranty Card in the Crib",
+        "purpose": "Open and close the manifesto with the central metaphor: civilization assigns sacred warranty terms to the body before the newborn can consent.",
+        "visual_spec": "Responsive SVG, 1200x650. Use the pain_machines palette: background #040506, panel #0a0b0d, hairline borders rgba(235,228,220,.10), ink #ebe4dc, muted #8a9199, dim #555c64, gold #b89a6a, pain #b85c55. Left third: minimal line drawing of a hospital bassinet and monitor trace, no sentimental baby illustration, just a small wrapped silhouette. Right two-thirds: oversized warranty card UI with monospace fields: PRODUCT Homo sapiens, SHIP DATE birth, KNOWN DEFECTS pain, fear, grief, decay, death, WARRANTY TERMS repair permitted, exit prohibited. Add a diagonal gold VOID THE WARRANTY stamp. Include tiny barcode and serial number ADAM-000001.",
+        "caption": "Every regime begins by telling the newborn which parts of the defect may never be redesigned.",
+        "section": "Prelude and Coda"
+      },
+      {
+        "id": "PMX-01",
+        "title": "The Pain Ledger",
+        "purpose": "Condense the pain_machines proof into one visual: suffering proliferates into more categories, loops, and consequences than pleasure.",
+        "visual_spec": "Responsive SVG, 1200x760. Split ledger into two vertical columns. Left column in pleasure green #7a9a8c: reward, satiety, comfort, orgasm, relief, calm, with short horizontal bars that plateau quickly. Right column in pain red #b85c55: nociception, inflammation, neuropathy, allodynia, panic, nausea, itch, shame, grief, dyspnea, chronicity, trauma memory, with branching red lines and compounding subtotals. Center top formula in gold monospace: suffering enumerates faster than pleasure. Include small bottom note: conceptual taxonomy from pain_machines proof, not a population estimate.",
+        "caption": "Pleasure closes loops. Pain opens files.",
+        "section": "I"
+      },
+      {
+        "id": "PMX-02",
+        "title": "The Alarm Stack",
+        "purpose": "Show that pain is not a single sensation but a governance architecture from tissue signal to identity.",
+        "visual_spec": "Responsive SVG, 1200x820. Dark exploded-stack diagram with seven horizontal layers: tissue damage, nociceptor, spinal gate, thalamus, insula and anterior cingulate, memory and prediction, identity and social consequence. Pain signals rise as red pulses; prediction and fear loop downward as dashed red arrows. Add a thin green side path for pleasure labeled reward, satiation, adaptation, fading. Use tiny labels for acute pain, chronic pain, central sensitization, phantom pain, and allodynia. Style should resemble a systems architecture diagram, not a medical textbook.",
+        "caption": "The pain machine is built in layers, and the upper layers can keep screaming after the lower ones go silent.",
+        "section": "I"
+      },
+      {
+        "id": "PMX-03",
+        "title": "Genesis Reclassified as QA Report",
+        "purpose": "Visually invert Genesis 2-3 from moral fall narrative into defect report.",
+        "visual_spec": "Responsive SVG, 1200x720. Horizontal timeline across the center: dust, breath, command, tree, eye opening, birth pain, field toil, grave. Use minimal icons: clay mound, breath line, forbidden node, branching tree, open eye, contraction waveform, plow line, burial rectangle. Above timeline: traditional labels in dim gray: creation, command, disobedience, curse. Below timeline: defect-report labels in pain red and gold: embodied vulnerability, arbitrary constraint, cognition unlock, reproductive trauma, metabolic coercion, mortality. Add right-side panel titled ROOT CAUSE with checked option design architecture and unchecked option user error.",
+        "caption": "The curse list reads like the product's known-defect table.",
+        "section": "II"
+      },
+      {
+        "id": "PMX-04",
+        "title": "Original Sin Inversion",
+        "purpose": "Make the manifesto's theological reversal instantly legible.",
+        "visual_spec": "Responsive SVG, 1200x700. Two stacked flowcharts. Top chart titled STANDARD WARRANTY THEOLOGY: Disobedience leads to Fall leads to suffering and death leads to redemption. Use dim gray arrows with a gold cross-shaped redemption node. Bottom chart titled DEFECT-REPORT THEOLOGY: pain-machine architecture leads to consciousness of harm leads to blame narrative leads to warranty enforcement. Use red upstream arrow labeled fault moves upstream. Include a central hinge icon between the charts: Genesis 3 rotated like a document being reclassified.",
+        "caption": "The old story sends guilt downward to the creature. The defect report sends guilt upward to the design.",
+        "section": "II"
+      },
+      {
+        "id": "PMX-05",
+        "title": "Mandate Ladder: Therapy to Exit",
+        "purpose": "Show the difference between permitted repair and forbidden exit from the inherited human format.",
+        "visual_spec": "Responsive SVG, 1100x900. Vertical ladder with increasing gold intensity. Rungs: pain medicine, psychiatric stabilization, prosthetics, gene repair, neural interface, affect editing, organ and immune redesign, synthetic body, AI-designed nervous system, substrate migration, non-biological personhood. A horizontal threshold line halfway up reads OUTSIDE ORIGINAL FORMAT. Overlay three translucent veto bands: Christian natural law and resurrection body, Islamic fitra and altering creation, secular dignity and natural kind. Use red hazard ticks for coercive eugenics, corporate lock-in, and misaligned AI.",
+        "caption": "Every regime blesses repair until repair becomes escape.",
+        "section": "III and VII"
+      },
+      {
+        "id": "PMX-06",
+        "title": "Christian Warranty Map",
+        "purpose": "Precisely diagram why Christianity resists the manifesto's full mandate.",
+        "visual_spec": "Responsive SVG, 1200x760. Central node: HUMAN BODY, fallen but redeemable. Surrounding nodes in a cathedral-window grid rendered as technical schematic: imago Dei, creation very good, Fall, incarnation, temple of the body, cross, resurrection body, natural law. Green arrows to repair allowed: medicine, prosthetic, charity, pain relief. Red arrows to exit forbidden: reject created goodness, abandon flesh, rival eschatology, self-authoring nature. Add subtle gold warranty seal behind the map: REDEEM, DO NOT RECALL.",
+        "caption": "Christianity can heal the product; it cannot admit that the product should never have shipped.",
+        "section": "IV"
+      },
+      {
+        "id": "PMX-07",
+        "title": "Islamic Warranty Map",
+        "purpose": "Precisely diagram Islamic objections without caricature and without representational religious imagery.",
+        "visual_spec": "Responsive SVG, 1200x760. Abstract geometric circuit-board design, no human or divine figures. Central octagon: AMANAH, body as trust. Nodes: fitra, khilafa, nafs, sabr, qiyamah, Iblis and clay, Qur'an 4:119 altering creation, harm removal. Left green zone: therapeutic repair under divine title. Right red zone: ontological alteration, self-ownership, contempt for clay, rival making. Use a boundary line labeled stewardship is not manufacture.",
+        "caption": "The Islamic boundary is not repair versus no repair. It is trust versus ownership.",
+        "section": "V"
+      },
+      {
+        "id": "PMX-08",
+        "title": "The Secular Humanist Trap",
+        "purpose": "Show how secular dignity discourse reproduces the sacred-human-form taboo without God.",
+        "visual_spec": "Responsive SVG, 1200x760. Large triangle with vertices DIGNITY, EQUALITY, NATURAL KIND. Center core labeled FACTOR X in gold. Outer ring labels: human rights, bioethics, species continuity, vulnerability, consent. A red arrow labeled posthuman exit breaks one side of the triangle. Add shadow text near the break: Übermensch panic, caste fear, designed persons, loss of common subject. Keep typography sober and institutional, like a policy diagram under decay.",
+        "caption": "The secular soul is whatever must stay unchanged for equal dignity to keep working.",
+        "section": "VI"
+      },
+      {
+        "id": "PMX-09",
+        "title": "The Three Warranty Regimes",
+        "purpose": "Compare Christianity, Islam, and secular humanism as different justifications for the same preservation boundary.",
+        "visual_spec": "Responsive SVG, 1200x820. Matrix with columns Christianity, Islam, Secular Humanism. Rows: sacred object, authorized repair, forbidden exit, enforcement phrase, fear name, promised consolation. Fill cells with terse labels: imago Dei and resurrection body; fitra and amanah; dignity and Factor X. Use green checkmarks for repair permitted, red locks for exit forbidden, gold warning icons for theological or civic collapse. Bottom band: convergence point, repair yes, exit no.",
+        "caption": "They disagree about heaven, revelation, and reason. They agree about the warranty.",
+        "section": "IV, V, VI, VII"
+      },
+      {
+        "id": "PMX-10",
+        "title": "Abolition Roadmap",
+        "purpose": "Translate the manifesto from metaphysics into sequence: proof, mandate, institutions, and post-human exit.",
+        "visual_spec": "Responsive SVG, 1300x760. Subway-map style diagram on dark background. Main gold line: pain-machine proof, Genesis reclassification, anti-suffering mandate, AI design systems, protected exit labs, morphological freedom law, plural embodiment, post-human polity. Red branch lines show hazards: state eugenics, corporate immortality scam, military enhancement, misaligned AI, digital torment. Green side stations show immediate relief: pain medicine, mental-health repair, disability technology, palliative care. End station: non-pain-governed intelligence, with a question mark rather than utopian sunburst.",
+        "caption": "A mandate is not a fantasy of heaven. It is an ordered refusal to keep manufacturing hell.",
+        "section": "III, VII, Coda"
+      },
+      {
+        "id": "PMX-11",
+        "title": "Suffering Audit Dashboard",
+        "purpose": "Give the politics section a concrete governance instrument: measure involuntary suffering instead of revering the human format.",
+        "visual_spec": "Responsive SVG, 1200x780. Minimal dashboard UI. Top metric cards: involuntary pain-hours, chronic pain prevalence, severe mental distress, terminal agony, preventable disability, forced embodiment index, access to exit technologies. Use pain red for current burden, gold for intervention priority, green for reductions. Include a line graph trending toward zero labeled abolition target, not optimization target. Add right panel: policy levers, analgesia research, neurodegeneration, psychiatric repair, morphological freedom, AI safety, personhood law.",
+        "caption": "A civilization that measures suffering will stop confusing preservation with mercy.",
+        "section": "VII"
+      }
+    ],
+    "implementation_notes": "Argument spine: the pain_machines article is the proof engine for sections I-II; this manifesto begins after the verdict and extends the proof into theological, technological, and political consequence. Keep every section readable by opening with a hard image or aphorism, then moving through doctrine, inversion, consequence, and bridge. Use short paragraphs, visible signposts, and recurring nouns: warranty, defect, chassis, exit, mandate, clay, dignity, resurrection, audit. Do not use formulaic AI pivots or the phrase pattern not X but Y; state inversions directly. Infographics must be argumentative turns, not decoration: place them after the reader has felt the problem and before the section expands into doctrine or politics. Treat Christianity, Islam, and secular humanism with precision: they do not forbid all medicine or all alteration; they forbid the metaphysical verdict that the human form is defective and should be exited. The politics must be anti-egalitarian in analysis without becoming coercive or protected-class hostile: equality is not the highest metaphysical value, but voluntary exit, consent, personhood, and refusal of state eugenics are non-negotiable. The final emotional note is not hatred of humanity; it is loyalty to sufferers over loyalty to the form that makes them suffer."
+  },
+  "generated_at": "2026-05-24T17:10:05.151453+00:00"
+}
