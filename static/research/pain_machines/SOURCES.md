@@ -38,6 +38,9 @@ Bibliography for [Pain Machines](/posts/pain_machines/). Each entry notes how it
 - **Hunt SP, Mantyh PW (2001).** [The molecular dynamics of pain control](https://www.nature.com/articles/35053509). *Nat Rev Neurosci* 2:83–91.  
   *Parallel sensory vs affective pain pathways.*
 
+- **Eisenberger NI et al. (2003).** [Does rejection hurt?](https://pubmed.ncbi.nlm.nih.gov/14500928/) *Science* 302(5643):290–292.  
+  *Social pain without somatic injury.*
+
 - **Treede RD et al. (2008).** [Neuropathic pain: redefinition and a grading system](https://pubmed.ncbi.nlm.nih.gov/18003941/). *Neurology* 70(18):1630–1635.  
   *Mechanism taxonomy: nociceptive / neuropathic / nociplastic.*
 

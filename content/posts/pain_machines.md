@@ -229,11 +229,81 @@ ShowToc: true
 .pm-src-list a:hover { border-bottom-color: var(--gold); }
 .pm-src-list em { color: var(--dim); font-style: normal; }
 .pm-src-list .use { display: block; margin-top: .2rem; color: var(--dim); font-size: .74rem; }
+.pm-evidence { margin: 2.5rem 0; }
+.pm-evidence > h3 {
+  margin-bottom: 1rem;
+  font-size: .82rem;
+  letter-spacing: .08em;
+}
+.pm-fig {
+  margin: 0 0 1.35rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #0a0b0d 0%, #060708 100%);
+  overflow: hidden;
+}
+.pm-fig-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .75rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: .7rem .85rem;
+  border-bottom: 1px solid var(--line);
+}
+.pm-fig-n {
+  font: 600 .68rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--gold);
+  letter-spacing: .06em;
+}
+.pm-fig-head h4 {
+  margin: 0;
+  flex: 1 1 12rem;
+  font-size: .88rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  text-transform: none;
+  color: var(--ink);
+}
+.pm-cite {
+  font: 500 .68rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(235, 228, 220, .16);
+  white-space: nowrap;
+}
+.pm-cite:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.pm-fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pm-fig-cap {
+  margin: 0;
+  padding: .65rem .85rem .75rem;
+  border-top: 1px solid rgba(235, 228, 220, .06);
+  font-size: .74rem;
+  line-height: 1.5;
+  color: var(--dim);
+  font-style: italic;
+}
+.pm-bridge {
+  margin: 1.5rem 0 .25rem;
+  font-size: .88rem;
+  color: var(--muted);
+  max-width: 52ch;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pm-fig svg animateMotion,
+  .pm-fig svg animate,
+  .pm-fig svg animateTransform { display: none; }
+}
 @media (max-width: 720px) {
   .pm-metrics { grid-template-columns: 1fr; }
   .pm-compute-head { align-items: stretch; }
   .pm-profile { width: 100%; }
   .pm-profile button { flex: 1; text-align: center; }
+  .pm-fig { overflow-x: auto; }
+  .pm-fig svg { min-width: 520px; }
 }
 </style>
 
@@ -247,15 +317,428 @@ Put those literatures into the same formalism — Cartesian state-space products
 
 ## I. What the clinics already know
 
-**Pain multiplies.** Melzack's neuromatrix model treats pain as network output — somatic input plus appraisal, social context, memory, and identity — not as a direct readout of tissue damage ([Melzack, 2001](https://pubmed.ncbi.nlm.nih.gov/11780656/)). The IASP's revised definition (2020) insists pain is always **both sensory and emotional** ([Raja et al., 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7680716/)). The ICD-11 chronic pain chapter (2022) encodes that biopsychosocial structure into seven top-level diagnoses with nested subtypes ([Treede et al., 2022](https://journals.lww.com/pain/fulltext/2022/02000/classification_of_chronic_pain_for_the.29.aspx)).
+<div class="pm-evidence">
 
-Clinicians do not ask "rate your nociception 1–10." They deploy instruments. The McGill Pain Questionnaire lists **78 words** across sensory, affective, and evaluative subclasses ([Melzack, 1975](https://pubmed.ncbi.nlm.nih.gov/1235985/)) — because ordinary language already knows pain factorizes. Price's work separates **pain sensation** from **pain unpleasantness** and secondary affect ([Price, 2000](https://doi.org/10.1126/science.288.5472.1769)); the dimensions do not collapse under analgesia the way bliss collapses under fentanyl.
+<h3>Pain multiplies</h3>
 
-**Pleasure compresses.** Weber–Fechner psychophysics gives you a handful of discriminable intensity bins per modality. Berridge and Kringelbach map "liking" onto a **small set of hedonic hotspots** — nucleus accumbens, ventral pallidum, orbitofrontal cortex — while "wanting" sprawls across a much larger mesolimbic system ([Berridge & Kringelbach, 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4425246/)). Leknes and Tracey note that opioid and dopamine circuits modulate both pain and reward, but that shared substrate is exactly why synthetics can substitute for natural bliss ([Leknes & Tracey, 2008](https://www.nature.com/articles/nrn2333)).
+<figure class="pm-fig" id="fig-neuromatrix">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">1a</span>
+    <h4>Neuromatrix: distributed output, not tissue readout</h4>
+    <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/11780656/">Melzack 2001</a>
+  </div>
+  <svg viewBox="0 0 760 340" role="img" aria-label="Melzack neuromatrix: multiple brain inputs converge to pain output">
+    <defs>
+      <radialGradient id="pm-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#b85c55" stop-opacity=".35"/>
+        <stop offset="100%" stop-color="#b85c55" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="pm-soft"><feGaussianBlur stdDeviation="1.2"/></filter>
+    </defs>
+    <rect width="760" height="340" fill="transparent"/>
+    <text x="380" y="28" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">body-self neuromatrix · neurosignature patterns</text>
+    <ellipse cx="380" cy="168" rx="92" ry="52" fill="url(#pm-glow)"/>
+    <rect x="308" y="138" width="144" height="60" rx="4" fill="#0f1012" stroke="rgba(184,92,85,.55)" stroke-width="1.2"/>
+    <text x="380" y="162" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">neuromatrix</text>
+    <text x="380" y="178" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">pain output pattern</text>
+    <g fill="none" stroke-width="1">
+      <path id="pm-p1" d="M380 52 L380 138" stroke="rgba(184,92,85,.25)" stroke-dasharray="4 3"/>
+      <path id="pm-p2" d="M88 98 Q234 118 308 158" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm-p3" d="M672 98 Q526 118 452 158" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm-p4" d="M88 238 Q234 218 308 178" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm-p5" d="M672 238 Q526 218 452 178" stroke="rgba(184,154,106,.45)"/>
+      <path id="pm-p6" d="M380 288 L380 198" stroke="rgba(184,154,106,.45)"/>
+    </g>
+    <g font-family="ui-monospace,monospace" font-size="10">
+      <rect x="318" y="36" width="124" height="22" rx="3" fill="#0a0b0d" stroke="rgba(184,92,85,.35)"/>
+      <text x="380" y="51" fill="#b85c55" text-anchor="middle">somatic input</text>
+      <text x="380" y="68" fill="#555c64" font-size="8" text-anchor="middle">one contributor · not sufficient</text>
+      <rect x="36" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="88" y="98" fill="#b89a6a" text-anchor="middle">appraisal</text>
+      <text x="88" y="110" fill="#555c64" font-size="8" text-anchor="middle">meaning</text>
+      <rect x="620" y="82" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="672" y="98" fill="#b89a6a" text-anchor="middle">social field</text>
+      <text x="672" y="110" fill="#555c64" font-size="8" text-anchor="middle">context</text>
+      <rect x="36" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="88" y="238" fill="#b89a6a" text-anchor="middle">memory</text>
+      <text x="88" y="250" fill="#555c64" font-size="8" text-anchor="middle">prior episodes</text>
+      <rect x="620" y="222" width="104" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="672" y="238" fill="#b89a6a" text-anchor="middle">identity</text>
+      <text x="672" y="250" fill="#555c64" font-size="8" text-anchor="middle">self-schema</text>
+      <rect x="318" y="288" width="124" height="32" rx="3" fill="#0a0b0d" stroke="rgba(184,154,106,.35)"/>
+      <text x="380" y="304" fill="#b89a6a" text-anchor="middle">stress / attention</text>
+      <text x="380" y="316" fill="#555c64" font-size="8" text-anchor="middle">arousal gate</text>
+    </g>
+    <g fill="#b89a6a" opacity=".9">
+      <circle r="3"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M88 98 Q234 118 308 158"/></circle>
+      <circle r="3"><animateMotion dur="3.1s" repeatCount="indefinite" begin=".4s" path="M672 98 Q526 118 452 158"/></circle>
+      <circle r="3"><animateMotion dur="2.9s" repeatCount="indefinite" begin=".8s" path="M88 238 Q234 218 308 178"/></circle>
+      <circle r="3"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.1s" path="M672 238 Q526 218 452 178"/></circle>
+      <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.4s" path="M380 288 L380 198"/></circle>
+      <circle r="2.5" fill="#b85c55" opacity=".65"><animateMotion dur="3.4s" repeatCount="indefinite" begin=".2s" path="M380 52 L380 138"/></circle>
+    </g>
+    <g transform="translate(520 148)">
+      <path d="M0 0 L48 0" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-arr)"/>
+      <defs><marker id="pm-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b85c55"/></marker></defs>
+      <rect x="52" y="-18" width="118" height="36" rx="3" fill="#120909" stroke="#b85c55" stroke-width="1"/>
+      <text x="111" y="-2" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain experience</text>
+      <text x="111" y="12" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">≠ damage magnitude</text>
+    </g>
+  </svg>
+  <p class="pm-fig-cap">Melzack: pain is generated by a distributed neuromatrix — somatic input is only one contributor among appraisal, memory, identity, and context.</p>
+</figure>
 
-**Bad dominates good — and varies more.** Baumeister's review finds negative events outweigh positive across trauma, relationships, learning, and self-concept — with almost no exceptions ([Baumeister et al., 2001](https://doi.org/10.1037/1089-2680.5.4.323)). Cacioppo and colleagues formalize **negative differentiation**: negative entities are more varied, yield richer representations, and engage wider response repertoires than equivalent positive ones ([Rozin & Royzman, 2001](https://doi.org/10.1207/S15327957PSPR0504_2)). That is not mood. It is **state-space geometry**.
+<figure class="pm-fig" id="fig-iasp">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">1b</span>
+    <h4>IASP 2020: sensory and emotional are inseparable</h4>
+    <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7680716/">Raja et al. 2020</a>
+  </div>
+  <svg viewBox="0 0 760 260" role="img" aria-label="IASP definition: sensory and emotional channels always co-occur in pain">
+    <text x="380" y="24" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">revised IASP definition · two mandatory dimensions</text>
+    <rect x="40" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)" stroke-width="1"/>
+    <text x="190" y="72" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">sensory experience</text>
+    <text x="190" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">quality · intensity · location · duration</text>
+    <rect x="420" y="48" width="300" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)" stroke-width="1"/>
+    <text x="570" y="72" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">emotional experience</text>
+    <text x="570" y="90" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">unpleasantness · distress · threat</text>
+    <path d="M190 104 L190 132 L380 132 L380 160" fill="none" stroke="rgba(184,92,85,.5)" stroke-width="1.2"/>
+    <path d="M570 104 L570 132 L380 132" fill="none" stroke="rgba(184,154,106,.5)" stroke-width="1.2"/>
+    <circle r="3" fill="#b85c55"><animateMotion dur="2.2s" repeatCount="indefinite" path="M190 104 L190 132 L380 132 L380 160"/></circle>
+    <circle r="3" fill="#b89a6a"><animateMotion dur="2.2s" repeatCount="indefinite" begin=".35s" path="M570 104 L570 132 L380 132 L380 160"/></circle>
+    <rect x="260" y="160" width="240" height="52" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
+      <animate attributeName="stroke-opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="380" y="182" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">pain</text>
+    <text x="380" y="198" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">always both · never sensory-only</text>
+    <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text>
+  </svg>
+  <p class="pm-fig-cap">Raja et al.: pain is an unpleasant sensory <em>and</em> emotional experience — the dimensions multiply, they do not collapse under analgesia.</p>
+</figure>
 
-The pharmacological catalog is small. The pain descriptor catalog is not. Lazarus's appraisal theory adds another independent axis: the same injury framed as injustice, fate, or self-blame is not the same state ([Lazarus & Folkman, 1984](https://archive.org/details/stressappraisalc0000laza)).
+<figure class="pm-fig" id="fig-icd11">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">1c</span>
+    <h4>ICD-11 MG30: seven chronic-pain categories, nested subtypes</h4>
+    <a class="pm-cite" href="https://journals.lww.com/pain/fulltext/2022/02000/classification_of_chronic_pain_for_the.29.aspx">Treede et al. 2022</a>
+  </div>
+  <svg viewBox="0 0 760 320" role="img" aria-label="ICD-11 chronic pain taxonomy with seven top-level categories">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">ICD-11 chapter MG30 · biopsychosocial classification</text>
+    <rect x="310" y="36" width="140" height="34" rx="3" fill="#0f1012" stroke="#b89a6a" stroke-width="1.2"/>
+    <text x="380" y="57" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">MG30 chronic pain</text>
+    <g font-family="ui-monospace,monospace" font-size="8.5">
+      <g><line x1="380" y1="70" x2="380" y2="88" stroke="rgba(184,92,85,.4)"/><rect x="24" y="88" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin="0s" fill="freeze"/></rect><text x="108" y="104" fill="#b85c55" text-anchor="middle">MG30.0 primary</text><text x="108" y="116" fill="#555c64" text-anchor="middle">nociplastic · no clear lesion</text></g>
+      <g><line x1="380" y1="70" x2="140" y2="88" stroke="rgba(184,92,85,.35)"/><rect x="206" y="88" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".12s" fill="freeze"/></rect><text x="290" y="104" fill="#b85c55" text-anchor="middle">MG30.1 cancer-related</text><text x="290" y="116" fill="#555c64" text-anchor="middle">tumor · treatment</text></g>
+      <g><line x1="380" y1="70" x2="290" y2="88" stroke="rgba(184,92,85,.35)"/><rect x="388" y="88" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".24s" fill="freeze"/></rect><text x="472" y="104" fill="#b85c55" text-anchor="middle">MG30.2 postsurgical</text><text x="472" y="116" fill="#555c64" text-anchor="middle">posttraumatic</text></g>
+      <g><line x1="380" y1="70" x2="440" y2="88" stroke="rgba(184,92,85,.35)"/><rect x="570" y="88" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".36s" fill="freeze"/></rect><text x="654" y="104" fill="#b85c55" text-anchor="middle">MG30.3 musculoskeletal</text><text x="654" y="116" fill="#555c64" text-anchor="middle">secondary</text></g>
+      <g><line x1="380" y1="70" x2="108" y2="148" stroke="rgba(184,92,85,.3)"/><rect x="24" y="148" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".48s" fill="freeze"/></rect><text x="108" y="164" fill="#b85c55" text-anchor="middle">MG30.4 visceral</text><text x="108" y="176" fill="#555c64" text-anchor="middle">secondary</text></g>
+      <g><line x1="380" y1="70" x2="380" y2="148" stroke="rgba(184,92,85,.3)"/><rect x="296" y="148" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".6s" fill="freeze"/></rect><text x="380" y="164" fill="#b85c55" text-anchor="middle">MG30.5 neuropathic</text><text x="380" y="176" fill="#555c64" text-anchor="middle">lesion · disease of somatosensory system</text></g>
+      <g><line x1="380" y1="70" x2="652" y2="148" stroke="rgba(184,92,85,.3)"/><rect x="568" y="148" width="168" height="38" rx="2" fill="#0a0b0d" stroke="rgba(184,92,85,.4)"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".72s" fill="freeze"/></rect><text x="652" y="164" fill="#b85c55" text-anchor="middle">MG30.6 headache</text><text x="652" y="176" fill="#555c64" text-anchor="middle">orofacial · secondary</text></g>
+    </g>
+    <g transform="translate(380 220)">
+      <text x="0" y="0" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">each category → nested subtypes · severity · interference · psychosocial factors</text>
+      <text x="0" y="18" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers → combinatorial clinical space</text>
+    </g>
+  </svg>
+  <p class="pm-fig-cap">Treede et al.: chronic pain is classified as seven top-level ICD-11 entities with nested subtypes — taxonomy encodes mechanism, site, and biopsychosocial modifiers as independent axes.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-mcgill">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">1d</span>
+    <h4>McGill MPQ: 78 words because pain factorizes in language</h4>
+    <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/1235985/">Melzack 1975</a>
+  </div>
+  <svg viewBox="0 0 760 240" role="img" aria-label="McGill Pain Questionnaire descriptor inventory across three subclasses">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">MPQ · 78 descriptors · sensory 20 · affective 12 · evaluative 5 · misc 41</text>
+    <g transform="translate(60 44)">
+      <rect width="180" height="140" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
+      <text x="90" y="22" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">sensory</text>
+      <text x="90" y="36" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">20 descriptors</text>
+      <g fill="#b85c55" opacity=".75">
+        <circle cx="24" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin="0s" repeatCount="indefinite"/></circle>
+        <circle cx="44" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".1s" repeatCount="indefinite"/></circle>
+        <circle cx="64" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".2s" repeatCount="indefinite"/></circle>
+        <circle cx="84" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".3s" repeatCount="indefinite"/></circle>
+        <circle cx="104" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".4s" repeatCount="indefinite"/></circle>
+        <circle cx="124" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".5s" repeatCount="indefinite"/></circle>
+        <circle cx="144" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
+        <circle cx="156" cy="58" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2s" begin=".7s" repeatCount="indefinite"/></circle>
+        <text x="90" y="88" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">shooting · burning · gnawing ·</text>
+        <text x="90" y="100" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">throbbing · stabbing · …</text>
+      </g>
+    </g>
+    <g transform="translate(290 44)">
+      <rect width="180" height="140" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.45)"/>
+      <text x="90" y="22" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">affective</text>
+      <text x="90" y="36" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">12 descriptors</text>
+      <g fill="#b89a6a" opacity=".75">
+        <circle cx="40" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.2s" begin=".2s" repeatCount="indefinite"/></circle>
+        <circle cx="70" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.2s" begin=".35s" repeatCount="indefinite"/></circle>
+        <circle cx="100" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.2s" begin=".5s" repeatCount="indefinite"/></circle>
+        <circle cx="130" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.2s" begin=".65s" repeatCount="indefinite"/></circle>
+        <text x="90" y="100" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">tiring · sickening · fearful ·</text>
+        <text x="90" y="112" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">punishing · cruel · …</text>
+      </g>
+    </g>
+    <g transform="translate(520 44)">
+      <rect width="180" height="140" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.45)"/>
+      <text x="90" y="22" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">evaluative</text>
+      <text x="90" y="36" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">5 evaluative</text>
+      <g fill="#8a9199" opacity=".75">
+        <circle cx="60" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.4s" begin=".4s" repeatCount="indefinite"/></circle>
+        <circle cx="90" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.4s" begin=".55s" repeatCount="indefinite"/></circle>
+        <circle cx="120" cy="70" r="4"><animate attributeName="opacity" values=".3;1;.3" dur="2.4s" begin=".7s" repeatCount="indefinite"/></circle>
+        <text x="90" y="100" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">annoying · miserable ·</text>
+        <text x="90" y="112" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">unbearable · …</text>
+      </g>
+    </g>
+    <rect x="280" y="196" width="200" height="28" rx="3" fill="#120909" stroke="#b85c55"/>
+    <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" text-anchor="middle">78 distinguishable pain states in vocabulary alone</text>
+  </svg>
+  <p class="pm-fig-cap">Clinicians do not ask for a single nociception scalar — the MPQ exists because ordinary language already treats sensory, affective, and evaluative pain as independent dimensions.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-price">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">1e</span>
+    <h4>Price: sensation, unpleasantness, and secondary affect dissociate</h4>
+    <a class="pm-cite" href="https://doi.org/10.1126/science.288.5472.1769">Price 2000</a>
+  </div>
+  <svg viewBox="0 0 760 200" role="img" aria-label="Serial dissociation of pain sensation intensity, unpleasantness, and secondary affect">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">affective dimension of pain · serial processing stages</text>
+    <g font-family="ui-monospace,monospace">
+      <rect x="40" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.5)"/>
+      <text x="130" y="76" fill="#b85c55" font-size="10" text-anchor="middle">sensation intensity</text>
+      <text x="130" y="92" fill="#555c64" font-size="8" text-anchor="middle">spinothalamic · SI / SII</text>
+      <path d="M220 80 L268 80" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-a2)"/>
+      <rect x="272" y="52" width="180" height="56" rx="4" fill="#0a0b0d" stroke="rgba(184,154,106,.5)"/>
+      <text x="362" y="76" fill="#b89a6a" font-size="10" text-anchor="middle">pain unpleasantness</text>
+      <text x="362" y="92" fill="#555c64" font-size="8" text-anchor="middle">ACC · medial thalamus</text>
+      <path d="M452 80 L500 80" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm-a2)"/>
+      <rect x="504" y="52" width="216" height="56" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.5)"/>
+      <text x="612" y="76" fill="#8a9199" font-size="10" text-anchor="middle">secondary affect</text>
+      <text x="612" y="92" fill="#555c64" font-size="8" text-anchor="middle">prefrontal · autonomic · motor plans</text>
+      <defs><marker id="pm-a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
+    </g>
+    <g>
+      <rect x="40" y="130" width="680" height="44" rx="3" fill="#060708" stroke="rgba(235,228,220,.08)"/>
+      <text x="380" y="150" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">opioid analgesia ↓ unpleasantness more than intensity · stages remain separable</text>
+      <text x="380" y="166" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">≠ bliss under fentanyl (pleasure collapses to receptor class)</text>
+      <circle r="3" fill="#b85c55"><animateMotion dur="4s" repeatCount="indefinite" path="M130 108 L130 130 L380 152"/></circle>
+      <circle r="3" fill="#b89a6a"><animateMotion dur="4s" repeatCount="indefinite" begin=".5s" path="M362 108 L362 130 L380 152"/></circle>
+      <circle r="3" fill="#8a9199"><animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M612 108 L612 130 L380 152"/></circle>
+    </g>
+  </svg>
+  <p class="pm-fig-cap">Price: cortico-limbic pathways add unpleasantness and secondary affect on top of sensation — three multiplicative layers, not one fungible signal.</p>
+</figure>
+
+<h3>Pleasure compresses</h3>
+
+<figure class="pm-fig" id="fig-berridge">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">2a</span>
+    <h4>Berridge: small &ldquo;liking&rdquo; hotspots, sprawling &ldquo;wanting&rdquo; system</h4>
+    <a class="pm-cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4425246/">Berridge &amp; Kringelbach 2015</a>
+  </div>
+  <svg viewBox="0 0 760 280" role="img" aria-label="Hedonic hotspots versus distributed wanting circuitry with pharmacological collapse">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pleasure systems · causation vs representation</text>
+    <text x="190" y="48" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">liking (causal hotspots)</text>
+    <text x="570" y="48" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">wanting (mesolimbic spread)</text>
+    <g transform="translate(60 60)">
+      <circle cx="60" cy="50" r="22" fill="rgba(122,154,140,.15)" stroke="#7a9a8c" stroke-width="1.2"><animate attributeName="r" values="20;24;20" dur="3s" repeatCount="indefinite"/></circle>
+      <text x="60" y="54" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">NAc</text>
+      <circle cx="130" cy="90" r="18" fill="rgba(122,154,140,.12)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="16;20;16" dur="3.2s" repeatCount="indefinite"/></circle>
+      <text x="130" y="94" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">VP</text>
+      <circle cx="95" cy="130" r="16" fill="rgba(122,154,140,.1)" stroke="#7a9a8c" stroke-width="1"><animate attributeName="r" values="14;18;14" dur="2.8s" repeatCount="indefinite"/></circle>
+      <text x="95" y="134" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">OFC</text>
+      <text x="95" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 hedonic hotspots</text>
+    </g>
+    <g transform="translate(400 60)" opacity=".85">
+      <circle cx="95" cy="60" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="140" cy="45" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="180" cy="75" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="120" cy="100" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="170" cy="115" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="210" cy="50" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="230" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <circle cx="60" cy="95" r="8" fill="none" stroke="#555c64" stroke-width=".8"/>
+      <line x1="95" y1="60" x2="140" y2="45" stroke="rgba(85,92,100,.4)"/>
+      <line x1="140" y1="45" x2="210" y2="50" stroke="rgba(85,92,100,.4)"/>
+      <line x1="95" y1="60" x2="120" y2="100" stroke="rgba(85,92,100,.4)"/>
+      <line x1="180" y1="75" x2="230" y2="95" stroke="rgba(85,92,100,.4)"/>
+      <line x1="120" y1="100" x2="170" y2="115" stroke="rgba(85,92,100,.4)"/>
+      <text x="145" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">VTA · amygdala · hippocampus · …</text>
+    </g>
+    <g transform="translate(40 200)">
+      <text x="0" y="0" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9">modalities →</text>
+      <g transform="translate(80 0)">
+        <rect x="0" y="-10" width="48" height="20" rx="2" fill="#0a0b0d" stroke="#7a9a8c" opacity="1"><animate attributeName="x" values="0;180;180" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" dur="4s" repeatCount="indefinite"/></rect>
+        <rect x="56" y="-10" width="48" height="20" rx="2" fill="#0a0b0d" stroke="#7a9a8c" opacity="1"><animate attributeName="x" values="56;180;180" dur="4s" begin=".3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" dur="4s" begin=".3s" repeatCount="indefinite"/></rect>
+        <rect x="112" y="-10" width="48" height="20" rx="2" fill="#0a0b0d" stroke="#7a9a8c" opacity="1"><animate attributeName="x" values="112;180;180" dur="4s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" dur="4s" begin=".6s" repeatCount="indefinite"/></rect>
+        <rect x="180" y="-14" width="100" height="28" rx="3" fill="#0f1210" stroke="#7a9a8c" stroke-width="1.2"/>
+        <text x="230" y="4" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">~4 receptor classes</text>
+      </g>
+      <text x="340" y="0" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">pharmacological quotient · synthetic agonists interchangeable within class</text>
+    </g>
+  </svg>
+  <p class="pm-fig-cap">Berridge &amp; Kringelbach: causation of pleasure concentrates in a few hotspots; engineered bliss collapses modalities to shared receptor families.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-leknes">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">2b</span>
+    <h4>Leknes &amp; Tracey: shared opioid/dopamine substrate — substitutability</h4>
+    <a class="pm-cite" href="https://www.nature.com/articles/nrn2333">Leknes &amp; Tracey 2008</a>
+  </div>
+  <svg viewBox="0 0 760 220" role="img" aria-label="Common neurobiology for pain and pleasure with mutual inhibition">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">common neurobiology · mutual inhibition of pain and reward</text>
+    <ellipse cx="380" cy="108" rx="120" ry="44" fill="rgba(184,154,106,.08)" stroke="rgba(184,154,106,.35)"/>
+    <text x="380" y="104" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">μ-opioid · dopamine</text>
+    <text x="380" y="118" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">shared mesolimbic substrate</text>
+    <rect x="60" y="72" width="140" height="40" rx="3" fill="#120909" stroke="#b85c55"/>
+    <text x="130" y="96" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain circuit</text>
+    <rect x="560" y="72" width="140" height="40" rx="3" fill="#0f1210" stroke="#7a9a8c"/>
+    <text x="630" y="96" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reward circuit</text>
+    <path d="M200 92 Q290 92 260 108" fill="none" stroke="#b85c55" stroke-width="1.2"/>
+    <path d="M560 92 Q470 92 500 108" fill="none" stroke="#7a9a8c" stroke-width="1.2"/>
+    <path d="M320 108 Q380 148 440 108" fill="none" stroke="rgba(235,228,220,.2)" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="380" y="168" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">mutual inhibition ↔</text>
+    <circle r="3" fill="#b85c55"><animateMotion dur="2.5s" repeatCount="indefinite" path="M200 92 Q290 92 260 108"/></circle>
+    <circle r="3" fill="#7a9a8c"><animateMotion dur="2.5s" repeatCount="indefinite" begin=".4s" path="M560 92 Q470 92 500 108"/></circle>
+    <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text>
+  </svg>
+  <p class="pm-fig-cap">Shared circuitry explains why synthetics substitute for natural bliss — and why pain's non-fungible dimensions survive pharmacological targeting.</p>
+</figure>
+
+<h3>Bad dominates good — and varies more</h3>
+
+<figure class="pm-fig" id="fig-baumeister">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">3a</span>
+    <h4>Baumeister: bad is stronger than good across domains</h4>
+    <a class="pm-cite" href="https://doi.org/10.1037/1089-2680.5.4.323">Baumeister et al. 2001</a>
+  </div>
+  <svg viewBox="0 0 760 260" role="img" aria-label="Negative events outweigh positive across psychological domains">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">cross-domain review · effect size asymmetry</text>
+    <line x1="380" y1="44" x2="380" y2="220" stroke="rgba(235,228,220,.12)" stroke-width="1"/>
+    <g font-family="ui-monospace,monospace" font-size="9">
+      <text x="380" y="38" fill="#555c64" text-anchor="middle">neutral</text>
+      <rect x="120" y="60" width="240" height="22" rx="2" fill="#7a9a8c" opacity=".55"><animate attributeName="width" from="0" to="240" dur="1.2s" fill="freeze"/></rect>
+      <text x="370" y="75" fill="#7a9a8c" text-anchor="end">positive events</text>
+      <rect x="120" y="96" width="380" height="22" rx="2" fill="#b85c55" opacity=".7"><animate attributeName="width" from="0" to="380" dur="1.4s" begin=".2s" fill="freeze"/></rect>
+      <text x="510" y="111" fill="#b85c55">negative events</text>
+      <text x="120" y="140" fill="#555c64">trauma · relationships · learning · self-concept · almost no exceptions</text>
+    </g>
+    <g transform="translate(120 160)">
+      <text x="0" y="0" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">information processing depth →</text>
+      <rect x="0" y="8" width="120" height="14" rx="2" fill="#7a9a8c" opacity=".4"/>
+      <rect x="0" y="8" width="220" height="14" rx="2" fill="#b85c55" opacity=".55"><animate attributeName="width" from="120" to="220" dur="2s" repeatCount="indefinite" direction="alternate"/></rect>
+      <text x="230" y="19" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8">negative weighed more thoroughly</text>
+    </g>
+  </svg>
+  <p class="pm-fig-cap">Baumeister et al.: negative events carry more weight and are processed more deeply — the asymmetry is empirical, not metaphorical.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-rozin">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">3b</span>
+    <h4>Rozin &amp; Royzman: negative differentiation — suffering is more varied</h4>
+    <a class="pm-cite" href="https://doi.org/10.1207/S15327957PSPR0504_2">Rozin &amp; Royzman 2001</a>
+  </div>
+  <svg viewBox="0 0 760 260" role="img" aria-label="Negative states are more varied with richer representations than positive states">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative differentiation · cardinality of affective states</text>
+    <g transform="translate(100 50)">
+      <text x="80" y="0" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">positive</text>
+      <g fill="#7a9a8c" opacity=".6">
+        <circle cx="50" cy="40" r="6"/><circle cx="80" cy="55" r="5"/><circle cx="110" cy="38" r="5"/><circle cx="70" cy="70" r="4"/>
+      </g>
+      <text x="80" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">fewer distinct categories</text>
+    </g>
+    <g transform="translate(420 50)">
+      <text x="120" y="0" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">negative</text>
+      <g fill="#b85c55" opacity=".7">
+        <circle cx="30" cy="30" r="5"><animate attributeName="cy" values="30;34;30" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="60" cy="45" r="6"><animate attributeName="cy" values="45;40;45" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle cx="90" cy="28" r="5"><animate attributeName="cy" values="28;32;28" dur="2.8s" repeatCount="indefinite"/></circle>
+        <circle cx="120" cy="50" r="5"><animate attributeName="cy" values="50;46;50" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="150" cy="35" r="6"><animate attributeName="cy" values="35;39;35" dur="2.6s" repeatCount="indefinite"/></circle>
+        <circle cx="180" cy="55" r="4"><animate attributeName="cy" values="55;51;55" dur="2.3s" repeatCount="indefinite"/></circle>
+        <circle cx="75" cy="68" r="5"><animate attributeName="cy" values="68;64;68" dur="2.7s" repeatCount="indefinite"/></circle>
+        <circle cx="135" cy="72" r="5"><animate attributeName="cy" values="72;68;72" dur="2.1s" repeatCount="indefinite"/></circle>
+        <circle cx="200" cy="42" r="4"><animate attributeName="cy" values="42;38;42" dur="2.9s" repeatCount="indefinite"/></circle>
+      </g>
+      <text x="120" y="100" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">richer representations · wider response repertoire</text>
+    </g>
+    <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text>
+  </svg>
+  <p class="pm-fig-cap">Rozin &amp; Royzman: negative entities are more differentiated — more distinguishable states in the suffering partition than in the comfort partition.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-eisenberger">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">3c</span>
+    <h4>Eisenberger: social pain without peripheral nociception</h4>
+    <a class="pm-cite" href="https://pubmed.ncbi.nlm.nih.gov/14500928/">Eisenberger et al. 2003</a>
+  </div>
+  <svg viewBox="0 0 760 240" role="img" aria-label="Social exclusion activates dorsal anterior cingulate pain circuitry">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">Cyberball exclusion · fMRI · no somatic injury</text>
+    <rect x="60" y="48" width="200" height="72" rx="4" fill="#0a0b0d" stroke="rgba(138,145,153,.4)"/>
+    <text x="160" y="72" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">social exclusion</text>
+    <text x="160" y="88" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">passive observer · rejected</text>
+    <text x="160" y="108" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">stimulus: ostracism, not tissue damage</text>
+    <path d="M260 84 L320 84" stroke="#b89a6a" stroke-width="1.5" marker-end="url(#pm-a3)"/>
+    <defs><marker id="pm-a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b89a6a"/></marker></defs>
+    <rect x="324" y="48" width="160" height="72" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2">
+      <animate attributeName="stroke-opacity" values=".5;1;.5" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="404" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">dACC activation</text>
+    <text x="404" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">affective pain matrix</text>
+    <path d="M484 84 L544 84" stroke="#b85c55" stroke-width="1.5" marker-end="url(#pm-a3)"/>
+    <rect x="548" y="48" width="152" height="72" rx="4" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
+    <text x="624" y="76" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">reported distress</text>
+    <text x="624" y="92" fill="#555c64" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">psychological suffering state</text>
+    <circle r="3" fill="#b89a6a"><animateMotion dur="2.8s" repeatCount="indefinite" path="M160 120 L160 148 L404 148 L404 120"/></circle>
+    <text x="380" y="180" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">new pain dimensions · same finite channels for engineered comfort</text>
+    <rect x="200" y="196" width="360" height="28" rx="3" fill="none" stroke="rgba(184,92,85,.35)" stroke-dasharray="4 3"/>
+    <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text>
+  </svg>
+  <p class="pm-fig-cap">Eisenberger et al.: rejection hurts — suffering expands into social and psychological domains without somatic injury, multiplying the pain state-space.</p>
+</figure>
+
+<figure class="pm-fig" id="fig-lazarus">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">3d</span>
+    <h4>Lazarus: same stressor, different suffering by appraisal frame</h4>
+    <a class="pm-cite" href="https://archive.org/details/stressappraisalc0000laza">Lazarus &amp; Folkman 1984</a>
+  </div>
+  <svg viewBox="0 0 760 220" role="img" aria-label="Cognitive appraisal transforms identical stressors into distinct suffering states">
+    <text x="380" y="22" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">stress · appraisal · coping · independent suffering axis</text>
+    <rect x="300" y="44" width="160" height="40" rx="3" fill="#0a0b0d" stroke="rgba(235,228,220,.2)"/>
+    <text x="380" y="68" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">identical injury / loss</text>
+    <path d="M380 84 L380 108" stroke="rgba(235,228,220,.2)"/>
+    <path d="M380 108 L120 132" stroke="rgba(184,92,85,.35)"/>
+    <path d="M380 108 L380 132" stroke="rgba(184,92,85,.35)"/>
+    <path d="M380 108 L640 132" stroke="rgba(184,92,85,.35)"/>
+    <g font-family="ui-monospace,monospace" font-size="9">
+      <rect x="40" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b85c55"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="0s" repeatCount="indefinite"/></rect>
+      <text x="120" y="154" fill="#b85c55" text-anchor="middle">injustice frame</text>
+      <text x="120" y="170" fill="#555c64" text-anchor="middle">rage · betrayal suffering</text>
+      <rect x="300" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#b89a6a"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="1s" repeatCount="indefinite"/></rect>
+      <text x="380" y="154" fill="#b89a6a" text-anchor="middle">fate frame</text>
+      <text x="380" y="170" fill="#555c64" text-anchor="middle">grief · helplessness</text>
+      <rect x="560" y="132" width="160" height="52" rx="3" fill="#120909" stroke="#8a9199"><animate attributeName="opacity" values=".7;1;.7" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
+      <text x="640" y="154" fill="#8a9199" text-anchor="middle">self-blame frame</text>
+      <text x="640" y="170" fill="#555c64" text-anchor="middle">shame · guilt suffering</text>
+    </g>
+    <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text>
+  </svg>
+  <p class="pm-fig-cap">Lazarus &amp; Folkman: cognitive appraisal is an independent multiplier — grief framed as injustice is not the same state as grief framed as fate.</p>
+</figure>
+
+</div>
+
+<p class="pm-bridge">The pharmacological catalog is small. The pain descriptor catalog is not. Section II makes the product explicit.</p>
 
 ## II. Enumerate it
 
@@ -382,6 +865,10 @@ More sections forthcoming: Eden mislabeled, the pleasure stack vs pain kernel, P
   <li>
     <a href="https://www.nature.com/articles/35053509">Hunt SP, Mantyh PW (2001). The molecular dynamics of pain control. <em>Nat Rev Neurosci</em> 2:83–91.</a>
     <span class="use">Parallel spinothalamic (sensory) vs spinoparabrachial (affective) pain pathways; mechanism heterogeneity.</span>
+  </li>
+  <li>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/14500928/">Eisenberger NI et al. (2003). Does rejection hurt? An fMRI study of social exclusion. <em>Science</em> 302(5643):290–292.</a>
+    <span class="use">Social pain recruits dorsal anterior cingulate; psychological suffering without somatic injury — expands pain state-space.</span>
   </li>
   <li>
     <a href="https://pubmed.ncbi.nlm.nih.gov/18003941/">Treede RD et al. (2008). Neuropathic pain: redefinition and a grading system. <em>Neurology</em> 70(18):1630–1635.</a>
