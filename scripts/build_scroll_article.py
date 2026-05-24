@@ -1,49 +1,17 @@
 #!/usr/bin/env python3
-"""Build scrollable Pain Machines article with evidence SVGs + brain + compute."""
+"""Build scrollable Pain Machines article with animated evidence widgets + brain + compute."""
 
 from __future__ import annotations
 
-import re
-import subprocess
-import sys
 from pathlib import Path
+import sys
 
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "scripts"))
 
-from inject_mobile_figures import inject_stacks  # noqa: E402
-from restore_evidence_figures import (  # noqa: E402
-    PMX_BUILDERS,
-    extract_figure,
-    git_source,
-    make_unique_ids,
-)
+from evidence_widgets import CLINICAL, PMX, widget_html  # noqa: E402
 
 OUT = REPO / "content/posts/pain_machines.md"
-SOURCE_REV = "e26d71e"
-
-CLINICAL = [
-    ("fig-neuromatrix", "Melzack broke the courtroom model: the brain builds pain from signal, map, memory, stress, and expectation."),
-    ("fig-iasp", "Official medicine: pain is always sensory and emotional — not a tissue meter alone."),
-    ("fig-icd11", "ICD-11 makes chronic pain a disease category. The alarm can outlive the fire."),
-    ("fig-mcgill", "78 pain descriptors in clinical use. Pleasure shares far fewer words."),
-    ("fig-price", "Intensity and unpleasantness can separate — one injury, multiple ledgers."),
-    ("fig-berridge", "Wanting ≠ liking. Pleasure clusters; pursuit can run without joy."),
-    ("fig-leknes", "Relief is pleasure with a history of threat — green borrows from red."),
-    ("fig-baumeister", "Bad events outweigh matched good ones. Harm writes in heavier ink."),
-    ("fig-rozin", "Bad spreads to neighbors and meaning. Good stays local."),
-    ("fig-eisenberger", "Social exclusion recruits the same circuits as bodily hurt."),
-    ("fig-lazarus", "Appraisal transforms the event: threat, blame, and coping change the felt blow."),
-]
-
-PMX_SECTIONS = [
-    ("pmx-00", "thesis"),
-    ("pmx-03", "genesis"),
-    ("pmx-04", "genesis"),
-    ("pmx-09", "locks"),
-    ("pmx-05", "mandate"),
-    ("pmx-11", "mandate"),
-]
 
 FIG_CSS = """
 .pm-fig {
@@ -79,11 +47,6 @@ FIG_CSS = """
   text-decoration: none;
   border-bottom: 1px solid rgba(235, 228, 220, .16);
 }
-.pm-fig-evidence svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 .pm-fig-cap {
   margin: 0;
   padding: .75rem 1rem;
@@ -93,41 +56,135 @@ FIG_CSS = """
   color: var(--muted);
   max-width: none;
 }
-@media (prefers-reduced-motion: reduce) {
-  .pm-fig svg animateMotion, .pm-fig svg animate, .pm-fig svg animateTransform { display: none; }
+.pm-evidence {
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+.pm-ev-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.85fr);
+  gap: 1px;
+  background: var(--line);
+}
+.pm-ev-view {
+  position: relative;
+  min-height: 340px;
+  height: min(480px, 62vw);
+  background: radial-gradient(ellipse 85% 75% at 50% 45%, rgba(184,92,85,.08), transparent 62%), #030405;
+}
+.pm-ev-view canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+.pm-ev-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.pm-ev-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: .2rem .4rem;
+  border: 1px solid rgba(235,228,220,.12);
+  background: rgba(6,7,8,.85);
+  font: 500 .62rem/1.25 ui-monospace, monospace;
+  color: var(--muted);
+  opacity: 0;
+  white-space: nowrap;
+}
+.pm-ev-label strong { display: block; color: var(--ink); font-size: .68rem; }
+.pm-ev-hud {
+  position: absolute;
+  left: .65rem;
+  top: .65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  z-index: 2;
+}
+.pm-ev-metric {
+  padding: .45rem .55rem;
+  border: 1px solid var(--line);
+  background: rgba(10,11,13,.88);
+}
+.pm-ev-metric b {
+  display: block;
+  font: 500 1.05rem/1 ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.pm-ev-metric span {
+  display: block;
+  margin-top: .15rem;
+  font-size: .58rem;
+  color: var(--dim);
+  text-transform: uppercase;
+}
+.pm-ev-metric.pain b { color: var(--pain); }
+.pm-ev-metric.pleasure b { color: var(--pleasure); }
+.pm-ev-metric.gold b { color: var(--gold); }
+.pm-ev-metric.muted b { color: var(--muted); }
+.pm-ev-readout {
+  position: absolute;
+  left: .65rem;
+  right: .65rem;
+  bottom: .65rem;
+  padding: .45rem .55rem;
+  border: 1px solid rgba(235,228,220,.1);
+  background: rgba(6,7,8,.88);
+  font: 500 .68rem/1.35 ui-monospace, monospace;
+  color: var(--muted);
+  z-index: 2;
+}
+.pm-ev-panel {
+  padding: .75rem .85rem;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+.pm-ev-panel h5 {
+  margin: 0;
+  font-size: .72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.pm-ev-controls { display: flex; flex-direction: column; gap: .5rem; }
+.pm-ev-slider label {
+  display: flex;
+  justify-content: space-between;
+  font: 500 .68rem/1.2 ui-monospace, monospace;
+  color: var(--muted);
+  margin-bottom: .2rem;
+}
+.pm-ev-slider input {
+  width: 100%;
+  height: 28px;
+  accent-color: var(--gold);
+  touch-action: manipulation;
+}
+.pm-ev-slider.pain input { accent-color: var(--pain); }
+.pm-ev-slider.pleasure input { accent-color: var(--pleasure); }
+.pm-ev-blurb {
+  margin: .35rem 0 0;
+  font-size: .78rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+@media (max-width: 720px) {
+  .pm-ev-layout { grid-template-columns: 1fr; }
+  .pm-ev-view { min-height: 300px; height: 320px; }
+  .pm-ev-panel { border-top: 1px solid var(--line); }
+  .pm-fig-head { flex-direction: column; align-items: flex-start; gap: .3rem; }
+  .pm-fig-head h4 { font-size: .82rem; line-height: 1.35; }
+  .pm-fig-cap { font-size: .8rem; line-height: 1.5; }
 }
 """
-
-BASE_CSS = open(REPO / "scripts/build_scroll_article_css.txt").read() if (REPO / "scripts/build_scroll_article_css.txt").exists() else ""
-
-
-def fix_svg_blank_lines(html: str) -> str:
-    def fix(m: re.Match) -> str:
-        block = m.group(0)
-        open_end = block.index(">") + 1
-        close_start = block.rindex("</svg>")
-        head, body, tail = block[:open_end], block[open_end:close_start], block[close_start:]
-        body = "\n".join(line for line in body.splitlines() if line.strip())
-        return head + body + tail
-
-    return re.sub(r"<svg\b[^>]*>.*?</svg>", fix, html, flags=re.S)
-
-
-def prepare_clinical(source: str, fid: str, idx: int, caption: str) -> str:
-    block = extract_figure(source, fid)
-    if not block:
-        raise SystemExit(f"Missing clinical figure {fid} in {SOURCE_REV}")
-    block = block.replace('class="pm-fig"', 'class="pm-fig pm-fig-evidence"', 1)
-    block = re.sub(r"\s*<p class=['\"]pm-after\">.*?</p>\s*", "\n", block, flags=re.S)
-    if "pm-fig-cap" not in block:
-        block = block.replace("</figure>", f'\n  <p class="pm-fig-cap">{caption}</p>\n</figure>')
-    block = make_unique_ids(block, f"pm{idx}")
-    return fix_svg_blank_lines(block)
-
-
-def prepare_pmx(fid: str) -> str:
-    html = PMX_BUILDERS[fid]()
-    return fix_svg_blank_lines(html)
 
 
 def brain_block() -> str:
@@ -139,23 +196,18 @@ def compute_block() -> str:
 
 
 def main() -> int:
-    source = git_source()
-    idx = 0
-    clinical_html = {}
-    for fid, cap in CLINICAL:
-        clinical_html[fid] = prepare_clinical(source, fid, idx, cap)
-        idx += 1
-
-    pmx_html = {fid: prepare_pmx(fid) for fid, _ in PMX_SECTIONS}
-
     css = Path(__file__).with_name("_pain_machines_base.css").read_text(encoding="utf-8")
+
+    clinical_html = "".join(widget_html(w) for w in CLINICAL)
+    pmx_ids = ["pmx-00", "pmx-03", "pmx-04", "pmx-09", "pmx-05", "pmx-11"]
+    pmx_lookup = {w["id"]: w for w in PMX}
 
     body = f"""---
 author: ["goodalexander"]
 title: "Pain Machines"
 date: 2026-05-23T20:00:00Z
 draft: false
-summary: "Humans are pain machines. Original Sin was manufacture, not disobedience. Evidence diagrams, 3D brain, state-space math, and the mandate to exit the sacred chassis."
+summary: "Humans are pain machines. Original Sin was manufacture, not disobedience. Interactive evidence, 3D brain, state-space math, and the mandate to exit the sacred chassis."
 categories: ["philosophy"]
 tags: ["post fiat", "philosophy", "long-form"]
 ShowToc: false
@@ -174,13 +226,13 @@ ShowToc: false
 <section class="pm-block">
 <h2>Thesis</h2>
 <p class="pm-point">Original Sin was not eating a fruit. It was manufacturing conscious life inside a pain machine — then blaming the user.</p>
-{pmx_html["pmx-00"]}
+{widget_html(pmx_lookup["pmx-00"])}
 </section>
 
 <section class="pm-block">
 <h2>Clinic</h2>
-<p class="pm-point">Doctors already know: pain is not a simple damage meter. It spreads through body, mood, memory, and identity.</p>
-{"".join(clinical_html[fid] for fid, _ in CLINICAL)}
+<p class="pm-point">Doctors already know: pain is not a simple damage meter. Drag each scene — watch the clinical evidence animate.</p>
+{clinical_html}
 </section>
 
 <section class="pm-block">
@@ -198,21 +250,21 @@ ShowToc: false
 <section class="pm-block">
 <h2>Genesis as QA report</h2>
 <p class="pm-point">Read Genesis 2–3 as a defect table: birth pain, toil, mortality — hardware bugs, not a moral invoice for one apple.</p>
-{pmx_html["pmx-03"]}
-{pmx_html["pmx-04"]}
+{widget_html(pmx_lookup["pmx-03"])}
+{widget_html(pmx_lookup["pmx-04"])}
 </section>
 
 <section class="pm-block">
 <h2>Three locks</h2>
 <p class="pm-point">Christianity, Islam, and secular humanism disagree about God. They agree about the body: heal it, never abandon it.</p>
-{pmx_html["pmx-09"]}
+{widget_html(pmx_lookup["pmx-09"])}
 </section>
 
 <section class="pm-block">
 <h2>Mandate</h2>
 <p class="pm-point">Once repair becomes escape, every warranty regime says no. The mandate is lawful exit — without manufacturing new hells.</p>
-{pmx_html["pmx-05"]}
-{pmx_html["pmx-11"]}
+{widget_html(pmx_lookup["pmx-05"])}
+{widget_html(pmx_lookup["pmx-11"])}
 </section>
 
 <nav class="pm-src-links" aria-label="Sources">
@@ -238,16 +290,15 @@ ShowToc: false
     "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
   }}
 }}</script>
+<script type="module" src="/research/pain_machines/pm-evidence.js?v=1"></script>
 <script type="module" src="/research/pain_machines/brain3d.js?v=6"></script>
 <script src="/research/pain_machines/pm-compute.js?v=2" defer></script>
 
 </div>
 """
 
-    article = inject_stacks(body)
-
-    OUT.write_text(article, encoding="utf-8")
-    print(f"Wrote {OUT} ({article.count(chr(10))+1} lines, {article.count('<svg')} SVGs)")
+    OUT.write_text(body, encoding="utf-8")
+    print(f"Wrote {OUT} ({body.count(chr(10))+1} lines, {body.count('pm-evidence')} evidence widgets)")
     return 0
 
 
