@@ -307,6 +307,38 @@ ShowToc: true
   color: var(--muted);
   max-width: 52ch;
 }
+.pm-neuro {
+  margin: 2.75rem 0 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+.pm-neuro > p {
+  margin-bottom: 1.25rem;
+  max-width: 68ch;
+}
+.pm-fig-brain svg { min-width: 680px; }
+.pm-brain-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+  padding: .65rem .85rem;
+  border-top: 1px solid rgba(235, 228, 220, .06);
+  font: 500 .68rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--dim);
+}
+.pm-brain-legend span { display: inline-flex; align-items: center; gap: .35rem; }
+.pm-brain-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  font-style: normal;
+}
+.pm-brain-legend .p-som { background: #b85c55; }
+.pm-brain-legend .p-aff { background: #b89a6a; }
+.pm-brain-legend .p-cog { background: #9a7b6a; }
+.pm-brain-legend .p-soc { background: #8a9199; }
+.pm-brain-legend .p-ple { background: #7a9a8c; }
 @media (prefers-reduced-motion: reduce) {
   .pm-fig svg animateMotion,
   .pm-fig svg animate,
@@ -828,7 +860,135 @@ Put those literatures into the same formalism — Cartesian state-space products
 
 </div>
 
-<p class="pm-bridge">The pharmacological catalog is small (~11 receptor classes). The pain descriptor catalog is not (78 words, seven ICD categories, eight model axes). Section II counts the product.</p>
+## The neuroarchitecture
+
+The clinical taxonomies above are not arbitrary labels — they track **separable neural routes** that stay distinct under pharmacology. Hunt and Mantyh describe parallel ascending systems: a **lateral spinothalamic** tract projecting to somatosensory cortex for intensity and location, and a **spinoparabrachial–limbic** route to amygdala and anterior cingulate for threat and unpleasantness. Price shows those stages dissociate in humans. Eisenberger adds a third ingress — social exclusion hitting **dACC** without peripheral nociception. Melzack's neuromatrix is the integration layer: memory, appraisal, and identity modulate the output pattern. Against that sprawling red topology, Berridge maps **three hedonic hotspots** and Leknes shows they share μ-opioid substrate with pain — which is exactly why pleasure compresses and suffering does not.
+
+<figure class="pm-fig pm-fig-brain" id="fig-brain">
+  <div class="pm-fig-head">
+    <span class="pm-fig-n">map</span>
+    <h4>One brain: pain network vs pleasure cluster</h4>
+    <a class="pm-cite" href="https://www.nature.com/articles/35053509">Hunt &amp; Mantyh 2001</a>
+  </div>
+  <svg viewBox="0 0 800 560" role="img" aria-label="Integrative brain map: parallel pain pathways versus compressed hedonic hotspots">
+    <defs>
+      <linearGradient id="pm-brain-fill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0c0d0f"/>
+        <stop offset="100%" stop-color="#060708"/>
+      </linearGradient>
+      <filter id="pm-node-glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <text x="400" y="24" fill="#555c64" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">sagittal schematic · parallel pain routes · compressed reward islands</text>
+    <!-- brain silhouette -->
+    <path d="M 130 70 C 70 110 55 190 75 270 C 95 350 150 410 250 430 C 360 452 480 430 560 360 C 620 300 640 210 610 140 C 580 80 500 52 380 58 C 260 64 170 52 130 70 Z" fill="url(#pm-brain-fill)" stroke="rgba(235,228,220,.14)" stroke-width="1.2"/>
+    <path d="M 560 360 C 590 320 600 260 585 210 C 575 185 555 175 540 195 C 525 220 530 280 548 330 Z" fill="#080909" stroke="rgba(235,228,220,.08)"/>
+    <text x="400" y="468" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">brainstem · PAG · ascending nociceptive gates</text>
+    <!-- external inputs -->
+    <g font-family="ui-monospace,monospace" font-size="8">
+      <rect x="24" y="350" width="88" height="36" rx="3" fill="#0a0b0d" stroke="rgba(184,92,85,.45)"/>
+      <text x="68" y="366" fill="#b85c55" text-anchor="middle">peripheral</text>
+      <text x="68" y="378" fill="#555c64" text-anchor="middle">nociceptors</text>
+      <rect x="24" y="120" width="88" height="36" rx="3" fill="#0a0b0d" stroke="rgba(138,145,153,.45)" stroke-dasharray="4 3"/>
+      <text x="68" y="136" fill="#8a9199" text-anchor="middle">social</text>
+      <text x="68" y="148" fill="#555c64" text-anchor="middle">exclusion</text>
+    </g>
+    <!-- pain pathway nodes -->
+    <g font-family="ui-monospace,monospace">
+      <ellipse cx="520" cy="130" rx="52" ry="28" fill="rgba(184,92,85,.12)" stroke="#b85c55" stroke-width="1.1"/>
+      <text x="520" y="126" fill="#b85c55" font-size="9" text-anchor="middle">SI / SII</text>
+      <text x="520" y="138" fill="#555c64" font-size="7" text-anchor="middle">sensory · Raja 2020</text>
+      <ellipse cx="300" cy="210" rx="44" ry="24" fill="rgba(184,154,106,.1)" stroke="#b89a6a"/>
+      <text x="300" y="206" fill="#b89a6a" font-size="9" text-anchor="middle">thalamus</text>
+      <text x="300" y="218" fill="#555c64" font-size="7" text-anchor="middle">medial relay</text>
+      <ellipse cx="230" cy="150" rx="48" ry="30" fill="rgba(184,92,85,.14)" stroke="#b85c55" stroke-width="1.2" filter="url(#pm-node-glow)">
+        <animate attributeName="stroke-opacity" values=".55;1;.55" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+      <text x="230" y="146" fill="#b85c55" font-size="9" text-anchor="middle">ACC / dACC</text>
+      <text x="230" y="158" fill="#555c64" font-size="7" text-anchor="middle">unpleasantness · Eisenberger</text>
+      <ellipse cx="390" cy="250" rx="40" ry="22" fill="rgba(184,154,106,.1)" stroke="#b89a6a"/>
+      <text x="390" y="246" fill="#b89a6a" font-size="9" text-anchor="middle">amygdala</text>
+      <text x="390" y="258" fill="#555c64" font-size="7" text-anchor="middle">affective gate</text>
+      <ellipse cx="470" cy="280" rx="46" ry="24" fill="rgba(154,123,106,.1)" stroke="#9a7b6a"/>
+      <text x="470" y="276" fill="#9a7b6a" font-size="9" text-anchor="middle">hippocampus</text>
+      <text x="470" y="288" fill="#555c64" font-size="7" text-anchor="middle">episodic · Melzack</text>
+      <ellipse cx="170" cy="110" rx="50" ry="28" fill="rgba(154,123,106,.1)" stroke="#9a7b6a"/>
+      <text x="170" y="106" fill="#9a7b6a" font-size="9" text-anchor="middle">mPFC / OFC</text>
+      <text x="170" y="118" fill="#555c64" font-size="7" text-anchor="middle">appraisal · Lazarus</text>
+    </g>
+    <!-- pleasure cluster (small) -->
+    <g font-family="ui-monospace,monospace">
+      <rect x="118" y="248" width="108" height="72" rx="4" fill="rgba(122,154,140,.06)" stroke="rgba(122,154,140,.35)" stroke-dasharray="3 2"/>
+      <text x="172" y="264" fill="#7a9a8c" font-size="8" text-anchor="middle">hedonic hotspots</text>
+      <text x="172" y="276" fill="#555c64" font-size="7" text-anchor="middle">Berridge 2015</text>
+      <circle cx="148" cy="298" r="14" fill="rgba(122,154,140,.15)" stroke="#7a9a8c"><animate attributeName="r" values="12;15;12" dur="2.8s" repeatCount="indefinite"/></circle>
+      <text x="148" y="301" fill="#7a9a8c" font-size="7" text-anchor="middle">NAc</text>
+      <circle cx="192" cy="306" r="11" fill="rgba(122,154,140,.12)" stroke="#7a9a8c"><animate attributeName="r" values="9;12;9" dur="3s" repeatCount="indefinite"/></circle>
+      <text x="192" y="309" fill="#7a9a8c" font-size="7" text-anchor="middle">VP</text>
+      <circle cx="210" cy="340" r="9" fill="rgba(122,154,140,.1)" stroke="#7a9a8c"/>
+      <text x="210" y="343" fill="#7a9a8c" font-size="7" text-anchor="middle">VTA</text>
+      <text x="172" y="328" fill="#555c64" font-size="7" text-anchor="middle">μ-opioid · dopamine · Leknes</text>
+    </g>
+    <!-- pathways -->
+    <g fill="none" stroke-width="1.2">
+      <path d="M112 368 Q180 340 260 300" stroke="rgba(184,92,85,.55)"/>
+      <path d="M260 300 Q340 250 520 130" stroke="rgba(184,92,85,.45)"/>
+      <text x="330" y="118" fill="#b85c55" font-family="ui-monospace,monospace" font-size="7">spinothalamic → sensory</text>
+      <path d="M112 368 Q200 320 390 250" stroke="rgba(184,154,106,.5)"/>
+      <path d="M390 250 Q310 210 230 150" stroke="rgba(184,154,106,.45)"/>
+      <text x="340" y="228" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="7">spinoparabrachial → limbic</text>
+      <path d="M112 138 Q160 130 230 150" stroke="rgba(138,145,153,.55)" stroke-dasharray="4 3"/>
+      <text x="128" y="168" fill="#8a9199" font-family="ui-monospace,monospace" font-size="7">no nociception</text>
+      <path d="M170 138 Q200 170 230 150" stroke="rgba(154,123,106,.4)"/>
+      <path d="M470 280 Q350 200 230 150" stroke="rgba(154,123,106,.35)"/>
+      <path d="M230 150 Q200 130 170 110" stroke="rgba(154,123,106,.35)"/>
+    </g>
+    <!-- animated signals -->
+    <circle r="3" fill="#b85c55"><animateMotion dur="3.2s" repeatCount="indefinite" path="M112 368 Q180 340 260 300 Q340 250 520 130"/></circle>
+    <circle r="3" fill="#b89a6a"><animateMotion dur="3.4s" repeatCount="indefinite" begin=".5s" path="M112 368 Q200 320 390 250 Q310 210 230 150"/></circle>
+    <circle r="3" fill="#8a9199"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".3s" path="M112 138 Q160 130 230 150"/></circle>
+    <circle r="2.5" fill="#9a7b6a"><animateMotion dur="3.6s" repeatCount="indefinite" begin="1s" path="M470 280 Q350 200 230 150 Q200 130 170 110"/></circle>
+    <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" path="M210 340 L192 306 L148 298"/></circle>
+    <!-- neuromatrix output -->
+    <g transform="translate(590 200)">
+      <rect x="0" y="0" width="148" height="108" rx="4" fill="#120909" stroke="#b85c55" stroke-width="1.2"/>
+      <text x="74" y="22" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">neuromatrix output</text>
+      <text x="74" y="38" fill="#8a9199" font-family="ui-monospace,monospace" font-size="7" text-anchor="middle">Melzack 2001 · distributed pattern</text>
+      <text x="74" y="56" fill="#555c64" font-family="ui-monospace,monospace" font-size="7" text-anchor="middle">sensory + affective + appraisal</text>
+      <text x="74" y="70" fill="#555c64" font-family="ui-monospace,monospace" font-size="7" text-anchor="middle">+ memory + identity + social</text>
+      <text x="74" y="92" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">= high-cardinality pain</text>
+    </g>
+    <path d="M520 130 Q580 160 590 200" fill="none" stroke="rgba(184,92,85,.35)"/>
+    <path d="M230 150 Q420 180 590 230" fill="none" stroke="rgba(184,92,85,.35)"/>
+    <path d="M170 110 Q480 150 590 240" fill="none" stroke="rgba(184,92,85,.25)"/>
+    <!-- pleasure output (small) -->
+    <g transform="translate(590 330)">
+      <rect x="0" y="0" width="148" height="56" rx="4" fill="#0f1210" stroke="#7a9a8c" stroke-width="1"/>
+      <text x="74" y="20" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">compressed pleasure</text>
+      <text x="74" y="36" fill="#555c64" font-family="ui-monospace,monospace" font-size="7" text-anchor="middle">~3 hotspots · ~4 receptor classes</text>
+      <text x="74" y="50" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="7" text-anchor="middle">= low-cardinality bliss</text>
+    </g>
+    <path d="M172 298 Q380 320 590 350" fill="none" stroke="rgba(122,154,140,.35)" stroke-width="1"/>
+    <!-- cardinality contrast -->
+    <text x="400" y="520" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pain: many routes · many nodes · many independent layers → state-space explodes</text>
+    <text x="400" y="538" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">pleasure: few causal sites · shared pharmacology → state-space collapses</text>
+  </svg>
+  <div class="pm-brain-legend" aria-hidden="true">
+    <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
+    <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>
+    <span><i class="p-cog"></i> cognitive / memory (mPFC · hippocampus · appraisal)</span>
+    <span><i class="p-soc"></i> social ingress (dACC · no nociception)</span>
+    <span><i class="p-ple"></i> hedonic hotspots (NAc · VP · VTA)</span>
+  </div>
+  <ul class="pm-fig-cap">
+    <li><strong>Two ascending pain routes</strong> stay separable: somatosensory cortex for intensity/location, limbic cortex for unpleasantness and threat (Hunt &amp; Mantyh; Price).</li>
+    <li><strong>Social pain</strong> enters the same affective matrix via dACC without touching peripheral nociceptors — another full dimension of suffering (Eisenberger).</li>
+    <li><strong>Appraisal and memory</strong> (mPFC, hippocampus) modulate the neuromatrix output — meaning multiplies pain; it does not multiply pleasure the same way (Melzack; Lazarus).</li>
+    <li><strong>Pleasure causation</strong> concentrates in a tiny ventral cluster sharing μ-opioid/dopamine substrate with pain — which is why drugs compress bliss but leave grief intact (Berridge; Leknes).</li>
+    <li><strong>The firmware picture:</strong> a sprawling red pain network feeding a high-cardinality output; a small green island feeding a low-cardinality one. You are wired as a pain machine with a pleasure subroutine.</li>
+  </ul>
+</figure>
+
+<p class="pm-bridge">The pharmacological catalog is small (~11 receptor classes). The pain descriptor catalog is not (78 words, seven ICD categories, eight model axes). Section II counts the product on this anatomy.</p>
 
 ## II. Enumerate it
 
