@@ -11,7 +11,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "scripts"))
 
-from inject_mobile_figures import CSS_BLOCK as MOBILE_CSS, MOBILE, inject_stacks  # noqa: E402
+from inject_mobile_figures import inject_stacks  # noqa: E402
 from restore_evidence_figures import (  # noqa: E402
     PMX_BUILDERS,
     extract_figure,
@@ -164,8 +164,6 @@ ShowToc: false
 <style>
 {css}
 {FIG_CSS}
-/* pm-mobile-fig */
-{MOBILE_CSS}
 </style>
 <div class="pm" id="pain-machines">
 

@@ -46,6 +46,10 @@ ShowToc: false
   color: var(--muted);
   max-width: 42ch;
 }
+@media (max-width: 720px) {
+  .pm { overflow-x: hidden; max-width: 100%; }
+  .pm-lead, .pm-point { max-width: none; }
+}
 .pm-compute {
   margin: 1rem 0 0;
   border: 1px solid var(--line);
@@ -268,140 +272,32 @@ ShowToc: false
 /* pm-mobile-fig */
 
 .pm-fig-wide { display: block; }
-.pm-fig-stack {
+.pm-fig-mobile {
   display: none;
-  gap: .55rem;
-  padding: .75rem .85rem;
   border-top: 1px solid var(--line);
+  background: var(--bg);
 }
-.pm-m-card {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  padding: .7rem .8rem;
-}
-.pm-m-card.pain { border-color: rgba(184, 92, 85, .45); background: #120909; }
-.pm-m-card.gold { border-color: rgba(184, 154, 106, .45); }
-.pm-m-card.good { border-color: rgba(122, 154, 140, .45); background: #0d1a12; }
-.pm-m-card .k {
+.pm-fig-mobile svg {
   display: block;
-  font: 600 .58rem/1.2 ui-monospace, monospace;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--dim);
-  margin-bottom: .35rem;
-}
-.pm-m-card .v {
-  display: block;
-  font-size: .84rem;
-  line-height: 1.45;
-  color: var(--ink);
-}
-.pm-m-card .h {
-  display: block;
-  margin-top: .35rem;
-  font-size: .76rem;
-  line-height: 1.4;
-  color: var(--muted);
-}
-.pm-m-row {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  gap: .45rem .65rem;
-  align-items: start;
-  padding: .45rem 0;
-  border-bottom: 1px solid rgba(235, 228, 220, .06);
-  font-size: .8rem;
-  line-height: 1.45;
-}
-.pm-m-row:last-child { border-bottom: 0; }
-.pm-m-row .k {
-  font: 600 .58rem/1.3 ui-monospace, monospace;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.pm-m-row .v { color: var(--muted); }
-.pm-m-flow { display: grid; gap: .45rem; }
-.pm-m-step {
-  position: relative;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, .02);
-  padding: .55rem .65rem .55rem 2rem;
-  font-size: .8rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
-.pm-m-step strong { display: block; color: var(--ink); font-weight: 500; font-size: .82rem; }
-.pm-m-step .n {
-  position: absolute;
-  left: .55rem;
-  top: .55rem;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 1px solid rgba(184, 154, 106, .45);
-  color: var(--gold);
-  font: 700 .58rem/1.1rem ui-monospace, monospace;
-  text-align: center;
-}
-.pm-m-step:not(:last-child)::after {
-  content: "↓";
-  display: block;
-  text-align: center;
-  color: var(--gold);
-  font-size: .75rem;
-  margin: .15rem 0 -.15rem;
-}
-.pm-m-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
-.pm-m-tag {
-  padding: .25rem .45rem;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  font: 500 .68rem/1.2 ui-monospace, monospace;
-  color: var(--muted);
-}
-.pm-m-tag.pain { border-color: rgba(184, 92, 85, .45); color: #d4847d; }
-.pm-m-tag.good { border-color: rgba(122, 154, 140, .45); color: #9ab8ac; }
-.pm-m-meter { display: grid; gap: .5rem; }
-.pm-m-meter-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: .35rem .5rem;
-  align-items: center;
-  font-size: .76rem;
-}
-.pm-m-meter-row span { color: var(--muted); }
-.pm-m-meter-row em {
-  font: 700 .68rem/1 ui-monospace, monospace;
-  font-style: normal;
-  color: var(--pain);
-}
-.pm-m-meter-track {
-  grid-column: 1 / -1;
-  height: 8px;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-.pm-m-meter-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #b85c55, #b89a6a);
-}
-.pm-m-meter-fill.good { background: linear-gradient(90deg, #5a8a72, #7a9a8c); }
-.pm-m-join {
-  text-align: center;
-  font: 600 .62rem/1 ui-monospace, monospace;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--pain);
-  padding: .25rem 0;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 @media (max-width: 720px) {
-  .pm-fig-evidence .pm-fig-wide { display: none; }
-  .pm-fig-evidence .pm-fig-stack { display: grid; }
-  .pm-fig-evidence { overflow: visible; }
-  .pm-fig-evidence .pm-fig-wide svg { min-width: 0; }
+  .pm .pm-lead,
+  .pm .pm-point { max-width: none; }
+  .pm-fig-evidence .pm-fig-wide { display: none !important; }
+  .pm-fig-evidence .pm-fig-mobile { display: block !important; }
+  .pm-fig-evidence .pm-fig-stack { display: none !important; }
+  .pm-fig-evidence { overflow: visible; max-width: 100%; }
+  .pm-fig-head { flex-direction: column; align-items: flex-start; gap: .3rem; }
+  .pm-fig-head h4 { font-size: .82rem; line-height: 1.35; }
+  .pm-fig-cap { font-size: .8rem; line-height: 1.5; }
+  .pm-chart { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: .5rem .5rem 1rem; }
+  .pm-chart svg { min-width: 0; max-width: none; height: auto; }
 }
 @media (min-width: 721px) {
+  .pm-fig-mobile,
   .pm-fig-stack { display: none !important; }
 }
 
@@ -439,37 +335,30 @@ ShowToc: false
     <text x="476" y="170" fill="#8a9199" font-family="ui-monospace,monospace" font-size="12">Secular → dignity · forbid natural-kind break</text>
     <text x="476" y="210" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">repair yes · exit no</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Product</span>
-    <span class="v">Homo sapiens — shipped at birth without consent</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Warranty mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">WARRANTY · SHIPPED AT BIRTH</text>
+    <rect x="16" y="40" width="328" height="72" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="60" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">Homo sapiens</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">defects: pain · fear · grief · decay · death</text>
+    <rect x="16" y="124" width="328" height="40" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="144" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">terms</text>
+    <text x="28" y="162" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">repair OK · exit forbidden</text>
+    <rect x="16" y="176" width="328" height="40" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="196" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">Christianity</text>
+    <text x="28" y="214" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">sanctify body · forbid exit</text>
+    <rect x="16" y="224" width="328" height="40" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="244" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">Islam</text>
+    <text x="28" y="262" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">amanah · forbid self-ownership</text>
+    <rect x="16" y="272" width="328" height="40" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="292" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">Secular</text>
+    <text x="28" y="310" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">dignity · forbid posthuman</text>
+    <rect x="16" y="328" width="328" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="348" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">repair yes · exit no</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Known defects</span>
-    <span class="v">Pain · fear · grief · decay · death</span>
-  </div>
-  <div class="pm-m-card">
-    <span class="k">Warranty terms</span>
-    <span class="v">Repair permitted · exit prohibited</span>
-    <span class="h">Every civilization slips this card in the crib.</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Christianity</span>
-    <span class="v">Sanctify the body · forbid exit</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Islam</span>
-    <span class="v">Amanah (trust) · forbid self-ownership</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Secular humanism</span>
-    <span class="v">Dignity · forbid natural-kind break</span>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Convergence</span>
-    <span class="v">Repair yes · exit no — same lock, three keys</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">Every civilization assigns repair rights and forbids exit from the inherited human format before consent is possible.</p>
 </figure>
 </section>
@@ -541,20 +430,37 @@ ShowToc: false
       <text x="111" y="12" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">≠ damage magnitude</text>
     </g></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card">
-    <span class="k">Evidence</span>
-    <span class="v">Melzack neuromatrix — pain is distributed brain output</span>
-    <span class="h">Not a wound-to-wire meter.</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Neuromatrix mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">NEUROMATRIX · BRAIN BUILDS PAIN</text>
+    <rect x="16" y="44" width="156" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="64" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">somatic input</text>
+    <text x="28" y="82" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">one contributor</text>
+    <rect x="188" y="44" width="156" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="200" y="64" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">appraisal</text>
+    <text x="200" y="82" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">meaning</text>
+    <rect x="16" y="100" width="156" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="120" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">memory</text>
+    <text x="28" y="138" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">prior episodes</text>
+    <rect x="188" y="100" width="156" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="200" y="120" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">social field</text>
+    <text x="200" y="138" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">context</text>
+    <rect x="102" y="156" width="156" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="114" y="176" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">stress / attention</text>
+    <text x="114" y="194" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">arousal gate</text>
+    <line x1="180" y1="200" x2="180" y2="228" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="72" y="232" width="216" height="52" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="84" y="252" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">neuromatrix</text>
+    <text x="84" y="270" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">pain output pattern</text>
+    <line x1="180" y1="284" x2="180" y2="312" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="48" y="316" width="264" height="48" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="60" y="336" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">pain experience</text>
+    <text x="60" y="354" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">≠ damage magnitude</text>
+</svg>
   </div>
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Somatic input</strong>One contributor · insufficient alone</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>Appraisal · memory · identity</strong>Meaning, prior episodes, self-schema</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Social field · stress</strong>Context and arousal gate</div>
-    <div class="pm-m-step"><span class="n">4</span><strong>Neuromatrix</strong>Brain writes pain output pattern</div>
-    <div class="pm-m-step"><span class="n">5</span><strong>Pain experience</strong>≠ damage magnitude</div>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Melzack broke the courtroom model: the brain builds pain from signal, map, memory, stress, and expectation.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-iasp">
   <div class="pm-fig-head">
@@ -581,25 +487,27 @@ ShowToc: false
     <text x="380" y="198" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">always both · never sensory-only</text>
     <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">IASP 2020</span>
-    <span class="v">Revised definition — two mandatory dimensions</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="IASP mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">IASP 2020 · TWO CHANNELS</text>
+    <rect x="16" y="44" width="328" height="56" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="64" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">sensory</text>
+    <text x="28" y="82" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">quality · intensity · location</text>
+    <rect x="16" y="116" width="328" height="56" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="136" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">emotional</text>
+    <text x="28" y="154" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">unpleasantness · distress · threat</text>
+    <line x1="180" y1="172" x2="180" y2="200" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="48" y="204" width="264" height="52" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="60" y="224" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">pain</text>
+    <text x="60" y="242" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">always both · never sensory-only</text>
+    <rect x="16" y="280" width="328" height="44" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="300" fill="#555c64" font-family="ui-monospace,monospace" font-size="11" font-weight="600">tissue damage</text>
+    <text x="28" y="318" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">associated — but not required</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Sensory channel</span>
-    <span class="v">Quality · intensity · location · duration</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Emotional channel</span>
-    <span class="v">Unpleasantness · distress · threat</span>
-  </div>
-  <div class="pm-m-join">always both → pain</div>
-  <div class="pm-m-card pain">
-    <span class="k">Clinical point</span>
-    <span class="v">Associated with actual or potential tissue damage — but experience can persist without it</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Official medicine: pain is always sensory and emotional — not a tissue meter alone.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-icd11">
   <div class="pm-fig-head">
@@ -649,24 +557,37 @@ ShowToc: false
     <text x="380" y="248" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">each category → nested subtypes · severity · interference · psychosocial modifiers</text>
     <text x="380" y="264" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers = combinatorial clinical space</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">WHO ICD-11 MG30</span>
-    <span class="v">Chronic pain is a disease category, not a long complaint</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="ICD-11 mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">ICD-11 MG30 · CHRONIC PAIN</text>
+    <rect x="16" y="40" width="328" height="34" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="60" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.0 primary / nociplastic</text>
+    <line x1="180" y1="74" x2="180" y2="84" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="84" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="104" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.1 cancer</text>
+    <line x1="180" y1="118" x2="180" y2="128" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="128" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="148" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.2 postsurgical</text>
+    <line x1="180" y1="162" x2="180" y2="172" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="172" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="192" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.3 musculoskeletal</text>
+    <line x1="180" y1="206" x2="180" y2="216" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="216" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="236" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.4 neuropathic</text>
+    <line x1="180" y1="250" x2="180" y2="260" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="260" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="280" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.5 headache · visceral</text>
+    <line x1="180" y1="294" x2="180" y2="304" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="304" width="328" height="34" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="324" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">MG30.6 secondary syndromes</text>
+    <rect x="16" y="356" width="328" height="40" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="376" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">alarm outlives fire</text>
+    <text x="28" y="394" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">chronicity = the illness</text>
+</svg>
   </div>
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>MG30.0 primary / nociplastic</strong>Pain without clear ongoing injury</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>MG30.1 cancer pain</strong>Tumor and treatment-related</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>MG30.2 postsurgical / posttraumatic</strong>Persists after healing expected</div>
-    <div class="pm-m-step"><span class="n">4</span><strong>MG30.3 musculoskeletal</strong>Back, joint, widespread</div>
-    <div class="pm-m-step"><span class="n">5</span><strong>MG30.4–6 neuropathic · headache · visceral</strong>Nerve, cranial, organ pain</div>
-    <div class="pm-m-step"><span class="n">6</span><strong>MG30.7 secondary syndromes</strong>Fibromyalgia, CRPS, etc.</div>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">The alarm can outlive the fire — chronicity becomes the illness</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">ICD-11 makes chronic pain a disease category. The alarm can outlive the fire.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-mcgill">
   <div class="pm-fig-head">
@@ -717,34 +638,34 @@ ShowToc: false
     <rect x="24" y="206" width="712" height="36" rx="3" fill="#120909" stroke="#b85c55"/>
     <text x="380" y="228" fill="#b85c55" font-size="10" text-anchor="middle">78 distinguishable pain states — from vocabulary alone, before combinatorics</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">McGill Pain Questionnaire</span>
-    <span class="v">78 pain descriptors in clinical use</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="McGill mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">MCGILL · 78 PAIN WORDS</text>
+    <rect x="16" y="40" width="328" height="40" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="60" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">pleasure vocabulary</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">reward · satiety · calm</text>
+    <text x="16" y="100" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">pain descriptors multiply ↓</text>
+    <rect x="16" y="120" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="140" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">burning</text>
+    <rect x="188" y="120" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="140" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">stabbing</text>
+    <rect x="16" y="156" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="176" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">sickening</text>
+    <rect x="188" y="156" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="176" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">exhausting</text>
+    <rect x="16" y="192" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="212" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">terrifying</text>
+    <rect x="188" y="192" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="212" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">punishing</text>
+    <rect x="16" y="228" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="248" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">gnawing</text>
+    <rect x="188" y="228" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="248" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">heavy</text>
+</svg>
   </div>
-  <div class="pm-m-card good">
-    <span class="k">Pleasure vocabulary</span>
-    <span class="v">Reward · satiety · calm — few shared words</span>
-  </div>
-  <div class="pm-m-tags">
-    <span class="pm-m-tag pain">burning</span>
-    <span class="pm-m-tag pain">stabbing</span>
-    <span class="pm-m-tag pain">shooting</span>
-    <span class="pm-m-tag pain">sickening</span>
-    <span class="pm-m-tag pain">exhausting</span>
-    <span class="pm-m-tag pain">terrifying</span>
-    <span class="pm-m-tag pain">punishing</span>
-    <span class="pm-m-tag pain">gnawing</span>
-    <span class="pm-m-tag pain">heavy</span>
-    <span class="pm-m-tag pain">splitting</span>
-    <span class="pm-m-tag pain">tight</span>
-    <span class="pm-m-tag pain">nagging</span>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">Pain demands a language map pleasure rarely needs</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">78 pain descriptors in clinical use. Pleasure shares far fewer words.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-price">
   <div class="pm-fig-head">
@@ -777,30 +698,26 @@ ShowToc: false
       <circle r="3" fill="#8a9199"><animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M612 108 L612 130 L380 152"/></circle>
     </g></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Price affect dimensions</span>
-    <span class="v">Same stimulus · multiple ledgers</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Price mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">PRICE · MULTIPLE LEDGERS</text>
+    <text x="16" y="56" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">intensity</text>
+    <rect x="16" y="62" width="278" height="14" fill="#b85c55" opacity="0.85"/>
+    <rect x="16" y="62" width="328" height="14" fill="none" stroke="rgba(235,228,220,.12)"/>
+    <text x="16" y="112" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">unpleasantness</text>
+    <rect x="16" y="118" width="236" height="14" fill="#b85c55" opacity="0.85"/>
+    <rect x="16" y="118" width="328" height="14" fill="none" stroke="rgba(235,228,220,.12)"/>
+    <text x="16" y="168" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">dread</text>
+    <rect x="16" y="174" width="190" height="14" fill="#b85c55" opacity="0.85"/>
+    <rect x="16" y="174" width="328" height="14" fill="none" stroke="rgba(235,228,220,.12)"/>
+    <rect x="16" y="220" width="328" height="48" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="240" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">one stimulus</text>
+    <text x="28" y="258" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">several suffering ledgers</text>
+</svg>
   </div>
-  <div class="pm-m-meter">
-  <div class="pm-m-meter-row">
-    <span>Sensory intensity</span><em>85%</em>
-    <div class="pm-m-meter-track"><div class="pm-m-meter-fill pain" style="width:85%"></div></div>
-  </div>
-  <div class="pm-m-meter-row">
-    <span>Unpleasantness / misery</span><em>72%</em>
-    <div class="pm-m-meter-track"><div class="pm-m-meter-fill pain" style="width:72%"></div></div>
-  </div>
-  <div class="pm-m-meter-row">
-    <span>Anticipatory dread</span><em>58%</em>
-    <div class="pm-m-meter-track"><div class="pm-m-meter-fill pain" style="width:58%"></div></div>
-  </div>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">One injury becomes more than one bill</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Intensity and unpleasantness can separate — one injury, multiple ledgers.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-berridge">
   <div class="pm-fig-head">
@@ -860,18 +777,23 @@ ShowToc: false
     <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1s" path="M260 240 L552 240"/></circle>
     <text x="640" y="232" fill="#555c64" font-family="ui-monospace,monospace" font-size="8">synthetic agonists · interchangeable SKUs</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Berridge wanting vs liking</span>
-    <span class="v">Reward can chase what it no longer enjoys</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Berridge mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">BERRIDGE · WANTING vs LIKING</text>
+    <rect x="16" y="40" width="328" height="80" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="60" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">wanting (large)</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">dopamine pursuit · runs without joy</text>
+    <rect x="16" y="140" width="328" height="56" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="160" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">liking (small hot spots)</text>
+    <text x="28" y="178" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">hedonic islands · NAc · VP</text>
+    <rect x="16" y="220" width="328" height="48" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="240" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">red has empires</text>
+    <text x="28" y="258" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">green has tricks</text>
+</svg>
   </div>
-  <div class="pm-m-row"><span class="k">Wanting</span><span class="v">Large mesolimbic territory — dopamine-driven pursuit</span></div>
-  <div class="pm-m-row"><span class="k">Liking</span><span class="v">Compact hot spots — hedonic 'liking'</span></div>
-  <div class="pm-m-card pain">
-    <span class="k">Pain contrast</span>
-    <span class="v">Red circuitry has empires; green has tricks</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Wanting ≠ liking. Pleasure clusters; pursuit can run without joy.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-leknes">
   <div class="pm-fig-head">
@@ -896,17 +818,25 @@ ShowToc: false
     <circle r="3" fill="#7a9a8c"><animateMotion dur="2.5s" repeatCount="indefinite" begin=".4s" path="M560 92 Q470 92 500 108"/></circle>
     <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Threat / pain</strong>Baseline alarm state</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>Relief</strong>Pleasure with a history of threat</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Reward substitution</strong>End-of-pain can feel like reward</div>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Leknes mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">LEKNES · RELIEF</text>
+    <rect x="16" y="40" width="328" height="44" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="60" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">threat / pain</text>
+    <line x1="180" y1="84" x2="180" y2="96" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="120" width="328" height="44" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="140" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">relief</text>
+    <line x1="180" y1="164" x2="180" y2="176" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="200" width="328" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="220" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">reward feeling</text>
+    <line x1="180" y1="244" x2="180" y2="256" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="280" width="328" height="44" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="300" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">pain still central</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">Even green light often borrows from red darkness</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Relief is pleasure with a history of threat — green borrows from red.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-baumeister">
   <div class="pm-fig-head">
@@ -932,26 +862,21 @@ ShowToc: false
       <text x="230" y="19" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8">negative weighed more thoroughly</text>
     </g></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Baumeister et al.</span>
-    <span class="v">Bad is stronger than good across domains</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Baumeister mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">BAUMEISTER · BAD > GOOD</text>
+    <text x="16" y="48" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">matched bad event</text>
+    <rect x="16" y="54" width="280" height="18" fill="#b85c55"/>
+    <text x="16" y="96" fill="#8a9199" font-family="ui-monospace,monospace" font-size="10">matched good event</text>
+    <rect x="16" y="102" width="110" height="18" fill="#7a9a8c"/>
+    <rect x="16" y="150" width="328" height="48" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="170" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">scale tips red</text>
+    <text x="28" y="188" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">harm writes heavier ink</text>
+</svg>
   </div>
-  <div class="pm-m-meter">
-  <div class="pm-m-meter-row">
-    <span>Impact of matched bad event</span><em>92%</em>
-    <div class="pm-m-meter-track"><div class="pm-m-meter-fill pain" style="width:92%"></div></div>
-  </div>
-  <div class="pm-m-meter-row">
-    <span>Impact of matched good event</span><em>38%</em>
-    <div class="pm-m-meter-track"><div class="pm-m-meter-fill good" style="width:38%"></div></div>
-  </div>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">Harm writes in heavier ink — not an exception in the clinic</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Bad events outweigh matched good ones. Harm writes in heavier ink.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-rozin">
   <div class="pm-fig-head">
@@ -985,18 +910,23 @@ ShowToc: false
     </g>
     <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Rozin & Royzman</span>
-    <span class="v">Negativity bias and contamination</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Rozin mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">ROZIN · CONTAMINATION</text>
+    <rect x="16" y="40" width="156" height="56" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="60" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">good stays local</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">few neighbors</text>
+    <rect x="188" y="40" width="156" height="120" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="60" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">bad spreads</text>
+    <text x="200" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">stain · memory · identity</text>
+    <line x1="172" y1="68" x2="188" y2="68" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="120" width="156" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="140" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">one bad event</text>
+</svg>
   </div>
-  <div class="pm-m-row"><span class="k">Bad spreads</span><span class="v">One stain contaminates neighbors, memory, identity</span></div>
-  <div class="pm-m-row"><span class="k">Good stays local</span><span class="v">Positive events rarely generalize the same way</span></div>
-  <div class="pm-m-card pain">
-    <span class="k">Takeaway</span>
-    <span class="v">Pain machines become culture machines when negativity learns language</span>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Bad spreads to neighbors and meaning. Good stays local.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-eisenberger">
   <div class="pm-fig-head">
@@ -1026,17 +956,24 @@ ShowToc: false
     <rect x="200" y="196" width="360" height="28" rx="3" fill="none" stroke="rgba(184,92,85,.35)" stroke-dasharray="4 3"/>
     <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Eisenberger et al.</span>
-    <span class="v">Social exclusion recruits bodily distress circuits</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Eisenberger mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">EISENBERGER · SOCIAL PAIN</text>
+    <rect x="16" y="44" width="328" height="48" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="64" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">ostracism · rejection</text>
+    <text x="28" y="82" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">face · silence · exile</text>
+    <line x1="180" y1="92" x2="180" y2="120" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="124" width="328" height="48" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="144" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">dACC · anterior insula</text>
+    <text x="28" y="162" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">bodily hurt circuits</text>
+    <line x1="180" y1="172" x2="180" y2="200" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="204" width="328" height="48" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="224" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">social wound = bodily alarm</text>
+</svg>
   </div>
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Ostracism / rejection</strong>Face, silence, room that stops welcoming you</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>dACC · anterior insula</strong>Overlap with physical hurt networks</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Felt injury</strong>Social wound arrives as bodily alarm</div>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Social exclusion recruits the same circuits as bodily hurt.</p>
 </figure><figure class="pm-fig pm-fig-evidence" id="fig-lazarus">
   <div class="pm-fig-head">
@@ -1065,18 +1002,29 @@ ShowToc: false
     </g>
     <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Lazarus & Folkman</span>
-    <span class="v">Appraisal transforms the event</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Lazarus mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">LAZARUS · APPRAISAL</text>
+    <rect x="16" y="40" width="328" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="60" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">event</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">stimulus arrives</text>
+    <line x1="180" y1="84" x2="180" y2="94" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="110" width="328" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="130" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">primary appraisal</text>
+    <text x="28" y="148" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">threat · loss · challenge?</text>
+    <line x1="180" y1="154" x2="180" y2="164" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="180" width="328" height="44" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="200" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">secondary appraisal</text>
+    <text x="28" y="218" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">cope? · blame?</text>
+    <line x1="180" y1="224" x2="180" y2="234" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="250" width="328" height="44" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="270" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">felt pain</text>
+    <text x="28" y="288" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">injury · insult · doom</text>
+</svg>
   </div>
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Primary appraisal</strong>Is this threat, loss, or challenge?</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>Secondary appraisal</strong>Can I cope? Who is to blame?</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Coping response</strong>Emotion-focused or problem-focused</div>
-    <div class="pm-m-step"><span class="n">4</span><strong>Felt pain</strong>Same blow → injury, insult, prophecy, or doom</div>
-  </div>
-  </div>
+  
+
   <p class="pm-fig-cap">Appraisal transforms the event: threat, blame, and coping change the felt blow.</p>
 </figure>
 </section>
@@ -1201,25 +1149,28 @@ ShowToc: false
     <text x="56" y="198" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11">birth pain · toil · grave (hardware properties, not moral invoice)</text>
     <rect x="56" y="218" width="14" height="14" fill="#b85c55"/><text x="80" y="230" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11">root cause: design architecture (not user error)</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Traditional read</span>
-    <span class="v">Disobedience → curse → guilt</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Genesis mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">GENESIS · DEFECT REPORT</text>
+    <rect x="16" y="40" width="328" height="40" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="60" fill="#555c64" font-family="ui-monospace,monospace" font-size="11" font-weight="600">traditional read</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">disobedience → guilt</text>
+    <rect x="16" y="92" width="328" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="112" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">defect read</text>
+    <text x="28" y="130" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">vulnerability → mortality</text>
+    <rect x="16" y="148" width="328" height="36" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="168" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">dust → breath → tree</text>
+    <rect x="16" y="192" width="328" height="36" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="212" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">eyes open · self-report</text>
+    <rect x="16" y="236" width="328" height="36" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="256" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">birth pain · toil · grave</text>
+    <rect x="16" y="288" width="328" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="308" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">root cause: design</text>
+    <text x="28" y="326" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">not user error</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Defect read</span>
-    <span class="v">Embodied vulnerability → reproductive trauma → mortality</span>
-  </div>
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Dust → breath → command</strong>Manufacture sequence</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>Tree → eyes open</strong>Self-report switched on</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Birth pain · toil · grave</strong>Hardware properties, not moral invoice</div>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Root cause</span>
-    <span class="v">Design architecture — not user error</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">The curse list matches a product defect table once you stop assigning guilt downstream.</p>
 </figure>
 <figure class="pm-fig pm-fig-evidence" id="pmx-04">
@@ -1236,20 +1187,22 @@ ShowToc: false
     <text x="40" y="164" fill="#b85c55" font-family="ui-monospace,monospace" font-size="12">pain-machine architecture → consciousness of harm → blame narrative</text>
     <text x="40" y="220" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="13" font-weight="700">fault moves upstream ↑</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Warranty theology</span>
-    <span class="v">Disobedience → Fall → suffering → redemption</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Original sin mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">ORIGINAL SIN · INVERSION</text>
+    <rect x="16" y="40" width="328" height="56" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="60" fill="#555c64" font-family="ui-monospace,monospace" font-size="11" font-weight="600">warranty theology</text>
+    <text x="28" y="78" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">creature guilty → redeem</text>
+    <line x1="180" y1="96" x2="180" y2="116" stroke="#b89a6a" stroke-width="1.2" opacity="0.55"/>
+    <rect x="16" y="120" width="328" height="56" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="140" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">defect report</text>
+    <text x="28" y="158" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">design guilty → mandate</text>
+    <rect x="16" y="196" width="328" height="40" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="216" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">fault moves upstream ↑</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Defect report</span>
-    <span class="v">Pain-machine architecture → consciousness of harm → blame narrative</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Inversion</span>
-    <span class="v">Fault moves upstream — from creature to design</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">Standard theology sends guilt to the creature. The defect report sends it to the design.</p>
 </figure>
 </section>
@@ -1285,24 +1238,36 @@ ShowToc: false
     <text x="760" y="140" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="12" font-weight="700" text-anchor="middle">repair yes</text>
     <text x="760" y="162" fill="#b85c55" font-family="ui-monospace,monospace" font-size="12" font-weight="700" text-anchor="middle">exit no</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card gold">
-    <span class="k">Christianity</span>
-    <span class="v">Sacred: imago Dei · repair: medicine · exit: abandon flesh</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Three locks mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">THREE LOCKS · SAME CLAUSE</text>
+    <text x="16" y="50" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">Christianity</text>
+    <rect x="16" y="56" width="328" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="76" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">imago Dei</text>
+    <rect x="16" y="88" width="156" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="108" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ medicine · charity</text>
+    <rect x="188" y="88" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="108" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✗ abandon flesh</text>
+    <text x="16" y="142" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">Islam</text>
+    <rect x="16" y="148" width="328" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="168" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">fitra · amanah</text>
+    <rect x="16" y="180" width="156" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ harm removal</text>
+    <rect x="188" y="180" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✗ alter creation</text>
+    <text x="16" y="234" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">Secular</text>
+    <rect x="16" y="240" width="328" height="28" fill="#0a0b0d" stroke="rgba(235,228,220,.12)" rx="3"/>
+    <text x="28" y="260" fill="#ebe4dc" font-family="ui-monospace,monospace" font-size="11" font-weight="600">dignity · Factor X</text>
+    <rect x="16" y="272" width="156" height="28" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="292" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ therapy · rights</text>
+    <rect x="188" y="272" width="156" height="28" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="200" y="292" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✗ posthuman taboo</text>
+    <rect x="16" y="320" width="328" height="36" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="340" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">all three: repair yes · exit no</text>
+</svg>
   </div>
-  <div class="pm-m-card gold">
-    <span class="k">Islam</span>
-    <span class="v">Sacred: fitra · repair: harm removal · exit: alter creation</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Secular humanism</span>
-    <span class="v">Sacred: dignity · repair: therapy · exit: posthuman taboo</span>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">All three converge</span>
-    <span class="v">Repair yes · exit no</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">Different heavens, same lock: each permits repair under its authority but forbids exit from the human format.</p>
 </figure>
 </section>
@@ -1332,19 +1297,29 @@ ShowToc: false
     <text x="296" y="272" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Islam: fitra · Q 4:119 altering creation</text>
     <text x="296" y="296" fill="#8a9199" font-family="ui-monospace,monospace" font-size="11">Secular: dignity · species continuity · Factor X</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-flow">
-    <div class="pm-m-step"><span class="n">1</span><strong>Pain medicine</strong>Allowed repair</div>
-    <div class="pm-m-step"><span class="n">2</span><strong>Prosthetics · psychiatry</strong>Allowed repair</div>
-    <div class="pm-m-step"><span class="n">3</span><strong>Gene repair · neural interfaces</strong>Allowed repair</div>
-    <div class="pm-m-step"><span class="n">4</span><strong>Affect editing · synthetic body</strong>Exit — outside original format</div>
-    <div class="pm-m-step"><span class="n">5</span><strong>Substrate migration</strong>Exit — veto band begins</div>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Mandate mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">MANDATE LADDER</text>
+    <rect x="16" y="36" width="328" height="32" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="56" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ pain medicine</text>
+    <rect x="16" y="72" width="328" height="32" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="92" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ prosthetics · psychiatry</text>
+    <rect x="16" y="108" width="328" height="32" fill="#0d1a12" stroke="#7a9a8c" rx="3"/>
+    <text x="28" y="128" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="11" font-weight="600">✓ gene · neural repair</text>
+    <line x1="16" y1="148" x2="344" y2="148" stroke="#b89a6a" stroke-dasharray="4 3"/>
+    <text x="180" y="164" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">OUTSIDE ORIGINAL FORMAT</text>
+    <rect x="16" y="176" width="328" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="196" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">↗ affect editing</text>
+    <rect x="16" y="212" width="328" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="232" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">↗ synthetic body</text>
+    <rect x="16" y="248" width="328" height="32" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="268" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">↗ substrate migration</text>
+    <rect x="16" y="292" width="328" height="36" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="312" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">all regimes veto here</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Veto bands</span>
-    <span class="v">Christian natural law · Islamic fitra Q 4:119 · secular dignity / Factor X</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">Every regime blesses repair until repair becomes escape from the inherited chassis.</p>
 </figure>
 <figure class="pm-fig pm-fig-evidence" id="pmx-11">
@@ -1371,28 +1346,28 @@ ShowToc: false
     <polyline points="40,280 200,250 400,220 600,170 880,100" fill="none" stroke="#b89a6a" stroke-width="2"/>
     <text x="40" y="300" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11">abolition target (not optimization of the warranty)</text></svg>
   </div>
-  <div class="pm-fig-stack">
-  <div class="pm-m-card pain">
-    <span class="k">Involuntary pain-hours</span>
-    <span class="v">↓ target zero</span>
+  <div class="pm-fig-mobile">
+<svg viewBox="0 0 360 520" role="img" aria-label="Audit mobile">
+  <rect width="360" height="520" fill="#040506"/>
+<text x="16" y="24" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="10" font-weight="700">SUFFERING AUDIT</text>
+    <rect x="16" y="36" width="220" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="56" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">involuntary pain-hours</text>
+    <text x="260" y="62" fill="#b85c55" font-family="ui-monospace,monospace" font-size="16" font-weight="700">↓ zero</text>
+    <rect x="16" y="84" width="220" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="104" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">chronic pain prevalence</text>
+    <text x="260" y="110" fill="#b85c55" font-family="ui-monospace,monospace" font-size="16" font-weight="700">20%+</text>
+    <rect x="16" y="132" width="220" height="40" fill="#120909" stroke="#b85c55" rx="3"/>
+    <text x="28" y="152" fill="#b85c55" font-family="ui-monospace,monospace" font-size="11" font-weight="600">severe mental distress</text>
+    <text x="260" y="158" fill="#b85c55" font-family="ui-monospace,monospace" font-size="16" font-weight="700">970M</text>
+    <rect x="16" y="180" width="220" height="40" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="200" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">access to exit tech</text>
+    <text x="260" y="206" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="16" font-weight="700">~0%</text>
+    <rect x="16" y="236" width="328" height="40" fill="#0a0b0d" stroke="#b89a6a" rx="3"/>
+    <text x="28" y="256" fill="#b89a6a" font-family="ui-monospace,monospace" font-size="11" font-weight="600">abolition target</text>
+    <text x="28" y="274" fill="#555c64" font-family="ui-monospace,monospace" font-size="9">not warranty optimization</text>
+</svg>
   </div>
-  <div class="pm-m-card pain">
-    <span class="k">Chronic pain prevalence</span>
-    <span class="v">20%+ globally</span>
-  </div>
-  <div class="pm-m-card pain">
-    <span class="k">Severe mental distress</span>
-    <span class="v">~970M people</span>
-  </div>
-  <div class="pm-m-card gold">
-    <span class="k">Access to exit tech</span>
-    <span class="v">~0% under warranty regimes</span>
-  </div>
-  <div class="pm-m-card">
-    <span class="k">Policy levers</span>
-    <span class="v">Analgesia · psychiatric repair · morphological freedom · personhood law · AI safety</span>
-  </div>
-  </div>
+  
   <p class="pm-fig-cap">Count involuntary suffering instead of revering the inherited human format.</p>
 </figure>
 </section>
