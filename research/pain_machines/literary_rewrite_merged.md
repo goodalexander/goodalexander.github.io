@@ -314,13 +314,6 @@ ShowToc: true
 }
 .pm-arg-cell.warrant p { color: #9a9590; font-size: .76rem; }
 .pm-arg-cell.impact p { color: #a89894; }
-.pm-after {
-  margin: .85rem 0 1.5rem;
-  font-size: .84rem;
-  line-height: 1.6;
-  color: var(--muted);
-  max-width: 62ch;
-}
 .pm-bridge {
   margin: 1.5rem 0 .25rem;
   font-size: .88rem;
@@ -724,9 +717,16 @@ One creature. Too many red doors.
       <text x="111" y="12" fill="#8a9199" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">≠ damage magnitude</text>
     </g>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: neuromatrix">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain is generated output, not a tissue readout.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Melzack's neuromatrix integrates somatic input with memory, appraisal, identity, and context into a neurosignature.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The state-space opens the moment injury becomes self-referential.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Melzack's neuromatrix pulls pain out of the wound and seats it in a whole-person network: body maps, memory, emotion, attention, and meaning. Damage is only one visitor at the table. When a needle can become location, fear, expectation, and biography, the human being was built as a pain machine.</p>
+
+Melzack's neuromatrix pulls pain out of the wound and seats it in a whole-person network: body maps, memory, emotion, attention, and meaning. Damage is only one visitor at the table. When a needle can become location, fear, expectation, and biography, the human being was built as a pain machine.
 
 <figure class="pm-fig" id="fig-iasp">
   <div class="pm-fig-head">
@@ -753,9 +753,16 @@ One creature. Too many red doors.
     <text x="380" y="198" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">always both · never sensory-only</text>
     <text x="380" y="238" fill="#555c64" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">associated with actual or potential tissue damage</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: IASP definition">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain is sensory and emotional by definition.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>IASP 2020 defines pain as an unpleasant sensory and emotional experience tied to actual or potential tissue damage.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Every counted pain starts as a product, not a scalar.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">The IASP definition makes pain an experience with sensory and emotional force joined at the hip. A broken bone, a phantom limb, and fear of the next movement all belong inside the official word. A system that reports hurt through feeling and meaning was built as a pain machine.</p>
+
+The IASP definition makes pain an experience with sensory and emotional force joined at the hip. A broken bone, a phantom limb, and fear of the next movement all belong inside the official word. A system that reports hurt through feeling and meaning was built as a pain machine.
 
 <figure class="pm-fig" id="fig-icd11">
   <div class="pm-fig-head">
@@ -805,9 +812,16 @@ One creature. Too many red doors.
     <text x="380" y="248" fill="#8a9199" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">each category → nested subtypes · severity · interference · psychosocial modifiers</text>
     <text x="380" y="264" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">7 × subtypes × modifiers = combinatorial clinical space</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: ICD-11">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Chronic pain is officially multi-axis.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>ICD-11 MG30 splits chronic pain into seven categories with subtypes, severity, interference, and psychosocial modifiers.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The clinic already runs the combinatorics.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">ICD-11 gives chronic pain a filing cabinet because chronic pain keeps outliving the first wound. Cancer pain, postsurgical pain, neuropathic pain, visceral pain, and musculoskeletal pain demand different routes through medicine. If one word needs a directory before the doctor can treat it, the patient was built as a pain machine.</p>
+
+ICD-11 gives chronic pain a filing cabinet because chronic pain keeps outliving the first wound. Cancer pain, postsurgical pain, neuropathic pain, visceral pain, and musculoskeletal pain demand different routes through medicine. If one word needs a directory before the doctor can treat it, the patient was built as a pain machine.
 
 <figure class="pm-fig" id="fig-mcgill">
   <div class="pm-fig-head">
@@ -858,9 +872,16 @@ One creature. Too many red doors.
     <rect x="24" y="206" width="712" height="36" rx="3" fill="#120909" stroke="#b85c55"/>
     <text x="380" y="228" fill="#b85c55" font-size="10" text-anchor="middle">78 distinguishable pain states — from vocabulary alone, before combinatorics</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: McGill MPQ">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain has a clinical vocabulary because it varies by kind.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>McGill inventories 78 descriptors across 20 subclasses: sensory, affective, evaluative, miscellaneous.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>A one-number pain scale is lossy compression.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">The McGill questionnaire sounds like a drawer full of knives: throbbing, shooting, stabbing, gnawing, hot, sickening, punishing. Patients already know the branches because they live inside them. A creature that needs a thesaurus for hurt was built as a pain machine.</p>
+
+The McGill questionnaire sounds like a drawer full of knives: throbbing, shooting, stabbing, gnawing, hot, sickening, punishing. Patients already know the branches because they live inside them. A creature that needs a thesaurus for hurt was built as a pain machine.
 
 <figure class="pm-fig" id="fig-price">
   <div class="pm-fig-head">
@@ -893,9 +914,16 @@ One creature. Too many red doors.
       <circle r="3" fill="#8a9199"><animateMotion dur="4s" repeatCount="indefinite" begin="1s" path="M612 108 L612 130 L380 152"/></circle>
     </g>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Price dissociation">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain stages dissociate under treatment.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Price separates sensory intensity, unpleasantness, and secondary affect; opioids can reduce unpleasantness more than intensity.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Analgesia exposes hidden axes instead of erasing them.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Price cuts the signal into loudness, ugliness, and the suffering that gathers afterward. Intensity and misery have different jobs; the aftermath can become its own room. When one injury creates several hurts that treatment must handle separately, humans were built as pain machines.</p>
+
+Price cuts the signal into loudness, ugliness, and the suffering that gathers afterward. Intensity and misery have different jobs; the aftermath can become its own room. When one injury creates several hurts that treatment must handle separately, humans were built as pain machines.
 
 <figure class="pm-fig" id="fig-berridge">
   <div class="pm-fig-head">
@@ -955,9 +983,16 @@ One creature. Too many red doors.
     <circle r="2.5" fill="#7a9a8c"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1s" path="M260 240 L552 240"/></circle>
     <text x="640" y="232" fill="#555c64" font-family="ui-monospace,monospace" font-size="8">synthetic agonists · interchangeable SKUs</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Berridge hotspots">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Causal liking is anatomically small.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Berridge and Kringelbach localize hedonic hotspots in NAc, VP, and OFC while wanting sprawls elsewhere.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The green curve begins with a narrow denominator.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Berridge splits wanting from liking and finds small hedonic hot spots, little glowing buttons in a large appetite machine. Desire can chase what pleasure barely touches; pleasure itself can be pushed through narrow causal places. When bliss has compact switches and harm has a whole municipal archive, humans were built as pain machines.</p>
+
+Berridge splits wanting from liking and finds small hedonic hot spots, little glowing buttons in a large appetite machine. Desire can chase what pleasure barely touches; pleasure itself can be pushed through narrow causal places. When bliss has compact switches and harm has a whole municipal archive, humans were built as pain machines.
 
 <figure class="pm-fig" id="fig-leknes">
   <div class="pm-fig-head">
@@ -982,9 +1017,16 @@ One creature. Too many red doors.
     <circle r="3" fill="#7a9a8c"><animateMotion dur="2.5s" repeatCount="indefinite" begin=".4s" path="M560 92 Q470 92 500 108"/></circle>
     <text x="380" y="200" fill="#7a9a8c" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">fentanyl hijacks the same substrate → pleasure SKUs compress · grief does not</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Leknes shared substrate">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Reward has a substitutable substrate.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Leknes and Tracey describe overlapping opioid and dopamine circuitry where pain and reward inhibit and modulate each other.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Engineered bliss quotients; shame does not.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Leknes and Tracey show relief and pleasure sharing opioid and dopamine routes; morphine, food, sex, warmth, and safety can speak in related chemical dialects. Joy remains real. A creature with pleasures that can substitute for one another and harms that keep separate files was built as a pain machine.</p>
+
+Leknes and Tracey show relief and pleasure sharing opioid and dopamine routes; morphine, food, sex, warmth, and safety can speak in related chemical dialects. Joy remains real. A creature with pleasures that can substitute for one another and harms that keep separate files was built as a pain machine.
 
 <figure class="pm-fig" id="fig-baumeister">
   <div class="pm-fig-head">
@@ -1010,9 +1052,16 @@ One creature. Too many red doors.
       <text x="230" y="19" fill="#b85c55" font-family="ui-monospace,monospace" font-size="8">negative weighed more thoroughly</text>
     </g>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Baumeister negativity">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Bad events dominate matched good ones.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Baumeister et al. find stronger effects for bad across trauma, relationships, learning, emotion, and self-concept.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Weight follows resolution: threat gets more address space.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Baumeister's bad-is-stronger-than-good work describes an organism that learns harder from loss, punishment, criticism, and threat than from matched comfort. Bad events stick like burrs; good events often need repetition, ceremony, and a marketing department. A mind that budgets attention this way was built as a pain machine.</p>
+
+Baumeister's bad-is-stronger-than-good work describes an organism that learns harder from loss, punishment, criticism, and threat than from matched comfort. Bad events stick like burrs; good events often need repetition, ceremony, and a marketing department. A mind that budgets attention this way was built as a pain machine.
 
 <figure class="pm-fig" id="fig-rozin">
   <div class="pm-fig-head">
@@ -1046,9 +1095,16 @@ One creature. Too many red doors.
     </g>
     <text x="380" y="200" fill="#b85c55" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">hardware enumerates suffering faster than it compresses bliss</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Rozin differentiation">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Negative states differentiate more finely.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Rozin and Royzman describe negative differentiation: richer categories, representations, and response repertoires for bad than good.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Evolution bought more labels for danger.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Rozin maps negativity as a richer grammar: disgust, fear, contempt, harm, contamination, betrayal. The positive side has power; it often arrives under broad banners like pleasant, safe, wanted, good. When bad has more names and sharper borders, humans were built as pain machines.</p>
+
+Rozin maps negativity as a richer grammar: disgust, fear, contempt, harm, contamination, betrayal. The positive side has power; it often arrives under broad banners like pleasant, safe, wanted, good. When bad has more names and sharper borders, humans were built as pain machines.
 
 <figure class="pm-fig" id="fig-eisenberger">
   <div class="pm-fig-head">
@@ -1078,9 +1134,16 @@ One creature. Too many red doors.
     <rect x="200" y="196" width="360" height="28" rx="3" fill="none" stroke="rgba(184,92,85,.35)" stroke-dasharray="4 3"/>
     <text x="380" y="214" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">peripheral nociceptors: inactive</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Eisenberger social pain">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Rejection can hurt without nociception.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Eisenberger's Cyberball study links ostracism distress to dorsal anterior cingulate activity, without peripheral tissue injury.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Pain gains a social ingress port.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Eisenberger's social pain work makes rejection enter through the body; it refuses to stay politely in the head. A chair left empty, a message unanswered, a tribe turning its back can recruit some of the same alarms as tissue threat. When other people can hurt you without touching you, humans were built as pain machines.</p>
+
+Eisenberger's social pain work makes rejection enter through the body; it refuses to stay politely in the head. A chair left empty, a message unanswered, a tribe turning its back can recruit some of the same alarms as tissue threat. When other people can hurt you without touching you, humans were built as pain machines.
 
 <figure class="pm-fig" id="fig-lazarus">
   <div class="pm-fig-head">
@@ -1109,9 +1172,16 @@ One creature. Too many red doors.
     </g>
     <text x="380" y="208" fill="#b85c55" font-family="ui-monospace,monospace" font-size="9" text-anchor="middle">3 appraisals × same nociception → 3 non-collapsing pain states</text>
   </svg>
+  <div class="pm-arg" role="group" aria-label="Argument: Lazarus appraisal">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Appraisal rewrites the suffering output.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Lazarus and Folkman show identical stressors diverge by frames such as threat, challenge, injustice, fate, and blame.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>Meaning multiplies after the wound is closed.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">Lazarus gives the final cruelty: appraisal. The event changes shape when it means danger, insult, loss, challenge, guilt, or fate. If thought can multiply the wound after the wound is over, the human creature was built as a pain machine.</p>
+
+Lazarus gives the final cruelty: appraisal. The event changes shape when it means danger, insult, loss, challenge, guilt, or fate. If thought can multiply the wound after the wound is over, the human creature was built as a pain machine.
 
 ## The neuroarchitecture
 
@@ -1202,9 +1272,16 @@ Pain keeps adding addresses.
     <span><i class="p-soc"></i> social ingress (dACC · no nociception)</span>
     <span><i class="p-ple"></i> hedonic hotspots (NAc · VP · VTA)</span>
   </div>
+  <div class="pm-arg" role="group" aria-label="Argument: neuroarchitecture">
+    <div class="pm-arg-cell claim"><span class="pm-arg-label">Claim</span><p>Pain sprawls; pleasure clusters.</p></div>
+    <div class="pm-arg-cell warrant"><span class="pm-arg-label">Warrant</span><p>Hunt and Mantyh's sensory and affective paths, plus social and appraisal routes and Berridge hotspots, occupy one organ.</p></div>
+    <div class="pm-arg-cell impact"><span class="pm-arg-label">Impact</span><p>The metaphor becomes a wiring diagram.</p></div>
+  </div>
 </figure>
 
 <p class="pm-after">On the brain, pain sprawls across body maps, insula, cingulate, limbic memory, prefrontal appraisal, and social alarm. Pleasure clusters more tightly around ventral reward, hedonic hot spots, and shared chemicals. A brain that gives harm a city and pleasure a district was built as a pain machine.</p>
+
+On the brain, pain sprawls across body maps, insula, cingulate, limbic memory, prefrontal appraisal, and social alarm. Pleasure clusters more tightly around ventral reward, hedonic hot spots, and shared chemicals. A brain that gives harm a city and pleasure a district was built as a pain machine.
 
 ## II. Count it
 
@@ -1220,52 +1297,11 @@ The final number is the least holy object in the room. The shape matters. Green 
       <button type="button" data-profile="central" class="is-active">central</button>
       <button type="button" data-profile="liberal">liberal</button>
     </div>
-  </div>
+  
 
-  <pre class="pm-src" aria-label="Model source excerpt"><code><span class="k">def</span> analyze(profile):
-    spec = PROFILES[profile]
-    pleasure = pleasure_analysis(spec)  <span class="c"># pharmacological quotient applied</span>
-    pain = pain_analysis(spec)          <span class="c"># collapse = identity</span>
-    ratio = pain[<span class="s">"distinguishable_states"</span>] / pleasure[<span class="s">"effective_states_after_quotient"</span>]
-    <span class="k">return</span> ratio, build_traces</code></pre>
+The widget gives Eden an invoice. Heaven built a creature whose distress keeps itemizing itself after joy has found the shared exit. The creature can be blessed. It can be delighted. Then the tooth starts, or the lover leaves, or the rumor spreads, and the red ledger becomes a cathedral with fluorescent lights.
 
-  <div class="pm-metrics">
-    <div class="pm-metric p"><b id="pm-p-eff">—</b><span>pleasure effective states (post-quotient)</span></div>
-    <div class="pm-metric n"><b id="pm-n-states">—</b><span>pain distinguishable states (full product)</span></div>
-    <div class="pm-metric r"><b id="pm-log10">—</b><span>log₁₀(pain / pleasure)</span></div>
-  </div>
-
-  <div class="pm-chart-cap"><strong>Figure 1</strong>Cumulative log₁₀ state-space build · each axis multiplies distinct states</div>
-  <div class="pm-chart" id="pm-chart" aria-label="Cumulative log10 state-space build"></div>
-
-  <div class="pm-chart-cap"><strong>Figure 2</strong>Inventory cross-check · model output vs McGill descriptor count vs pharmacopeia classes</div>
-  <div class="pm-chart" id="pm-chart-inventory" aria-label="Inventory cross-check"></div>
-
-  <details class="pm-json-wrap">
-    <summary>Export model JSON</summary>
-    <pre class="pm-json" id="pm-json" aria-label="Model output JSON"></pre>
-  </details>
-
-  <div class="pm-foot">
-    Full source: <a href="/research/pain_machines/model.py">model.py</a> ·
-    Run locally: <code>python model.py --profile central --json</code>
-  </div>
-</div>
-
-### Reading Figure 1
-
-Watch the green line do what pleasure is allowed to do: climb, then collapse through a quotient. Different pleasures keep finding the same chemical exits.
-
-Watch the red line refuse. Mechanism, location, affect, appraisal, agency, social field, temporality, identity, episodic binding: each axis survives because changing it changes treatment, impairment, or report. The curve is not decoration. It is the machine discovering new addresses.
-
-### Reading Figure 2
-
-This is the sanity check. Vocabulary alone gives 78 pain descriptors before any product. Pharmacopeia gives about eleven broad engineered-comfort families after quotienting. The model is the cross-product between those facts, not a fitted miracle.
-
-If the exact ratio bothers you, change profile. The sign does not move.
-
-Conservative and liberal profiles bracket the band by varying bin counts only. No fitted constants.
-
+The field test is older than the calculator. Men with flags and rooms have always believed pain is a truth machine. They built torture around that superstition.
 
 ## III. Torture is the dictator's theory of pain
 
