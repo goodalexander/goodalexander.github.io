@@ -36,6 +36,13 @@ function boot(root) {
   const pleasureEl = root.querySelector('#pm-b3d-pleasure');
   const ratioEl = root.querySelector('#pm-b3d-ratio');
   const readoutEl = root.querySelector('#pm-b3d-readout');
+  const painBarEl = root.querySelector('#pm-b3d-pain-bar');
+  const pleasureBarEl = root.querySelector('#pm-b3d-pleasure-bar');
+  const painBarLabel = root.querySelector('#pm-b3d-pain-bar-label');
+  const pleasureBarLabel = root.querySelector('#pm-b3d-pleasure-bar-label');
+  const compareRatioEl = root.querySelector('#pm-b3d-compare-ratio');
+  const calloutPain = root.querySelector('#pm-b3d-callout-pain');
+  const calloutPleasure = root.querySelector('#pm-b3d-callout-pleasure');
 
   const sliders = {
     somatic: bindSlider(root, 'somatic', 72),
@@ -90,6 +97,9 @@ function boot(root) {
 
   const brainParts = createAnatomicalBrain();
   brainGroup.add(brainParts.group);
+
+  const scaleVolumes = createScaleVolumes();
+  brainGroup.add(scaleVolumes.group);
 
   const spinal = new THREE.Vector3(0, -1.72, -0.08);
   const socialIngress = new THREE.Vector3(0.05, 0.62, 1.35);
@@ -185,9 +195,9 @@ function boot(root) {
     t0 = now;
 
     const vals = readSliders(sliders);
-    updateVisuals(vals, now, brainParts, tubes, regionMeshes, labelEls, particles, spinalMarker, socialMarker, starfield);
-    updateMetrics(vals, readoutEl, painEl, pleasureEl, ratioEl);
-    updateLabels(wrap, labelEls, camera);
+    updateVisuals(vals, now, brainParts, scaleVolumes, tubes, regionMeshes, labelEls, particles, spinalMarker, socialMarker, starfield);
+    updateMetrics(vals, readoutEl, painEl, pleasureEl, ratioEl, painBarEl, pleasureBarEl, painBarLabel, pleasureBarLabel, compareRatioEl);
+    updateLabels(wrap, labelEls, camera, scaleVolumes, calloutPain, calloutPleasure);
 
     const intro = Math.min(1, (now - introT) / 2200);
     if (intro < 1 && !reducedMotion) {
@@ -220,14 +230,28 @@ function readSliders(s) {
   };
 }
 
-function updateVisuals(v, now, brainParts, tubes, regionMeshes, labelEls, particles, spinalMarker, socialMarker, starfield) {
+function updateVisuals(v, now, brainParts, scaleVolumes, tubes, regionMeshes, labelEls, particles, spinalMarker, socialMarker, starfield) {
   const pulse = 0.5 + 0.5 * Math.sin(now * 0.0024);
   const painLoad = Math.max(v.somatic * v.sensory, v.somatic * v.affective, v.social, v.cognitive);
+  const pleasureLoad = v.pleasure * (1 - v.pharma * 0.55);
 
   brainParts.cortexMat.emissive.setHex(0x2a1010);
   brainParts.cortexMat.emissiveIntensity = 0.04 + painLoad * 0.22 + pulse * painLoad * 0.06;
   brainParts.innerMat.opacity = 0.08 + painLoad * 0.18;
   brainParts.innerMat.color.setHex(painLoad > 0.45 ? 0x6a1820 : 0x3a1018);
+
+  const painScale = 1 + painLoad * 0.14 + pulse * 0.02;
+  scaleVolumes.painEnvelope.scale.set(1.18 * painScale, 1.02 * painScale, 1.12 * painScale);
+  scaleVolumes.painEnvelope.material.opacity = 0.28 + painLoad * 0.42;
+  scaleVolumes.painShell.material.opacity = 0.04 + painLoad * 0.14;
+
+  const pod = 0.82 + pleasureLoad * 0.28 - v.pharma * 0.38;
+  scaleVolumes.pleasurePod.scale.set(pod * 1.05, pod * 0.72, pod * 0.9);
+  scaleVolumes.pleasurePod.material.opacity = 0.42 + pleasureLoad * 0.45;
+  scaleVolumes.pleasureRing.scale.setScalar(0.9 + pleasureLoad * 0.35 - v.pharma * 0.25);
+  scaleVolumes.pleasureRing.material.opacity = 0.45 + pleasureLoad * 0.5;
+  scaleVolumes.pleasureCore.material.opacity = 0.35 + pleasureLoad * 0.55;
+  scaleVolumes.pleasureCore.scale.setScalar(0.85 + pleasureLoad * 0.4 - v.pharma * 0.3);
 
   Object.entries(tubes).forEach(([key, tube]) => {
     let strength = 0;
@@ -273,7 +297,7 @@ function updateVisuals(v, now, brainParts, tubes, regionMeshes, labelEls, partic
   starfield.rotation.y += 0.00015;
 }
 
-function updateMetrics(v, readoutEl, painEl, pleasureEl, ratioEl) {
+function updateMetrics(v, readoutEl, painEl, pleasureEl, ratioEl, painBarEl, pleasureBarEl, painBarLabel, pleasureBarLabel, compareRatioEl) {
   const painAxes = [
     1 + Math.round(v.somatic * 5),
     1 + Math.round(v.sensory * 5),
@@ -288,20 +312,44 @@ function updateMetrics(v, readoutEl, painEl, pleasureEl, ratioEl) {
   const receptorClasses = Math.max(2, Math.round(4 * (1 - v.pharma * 0.55)));
   const pleasureStates = Math.max(1, Math.round(pleasureRaw / receptorClasses));
   const ratio = painStates / Math.max(pleasureStates, 1);
+  const log10 = Math.log10(ratio);
 
-  painEl.textContent = painStates >= 10000 ? `${(painStates / 1000).toFixed(1)}k` : painStates.toLocaleString();
+  const painFmt = painStates >= 10000 ? `${(painStates / 1000).toFixed(1)}k` : painStates.toLocaleString();
+  painEl.textContent = painFmt;
   pleasureEl.textContent = String(pleasureStates);
-  ratioEl.textContent = `10^${Math.log10(ratio).toFixed(2)}`;
+  ratioEl.textContent = `10^${log10.toFixed(2)}`;
+
+  const maxLog = 5.2;
+  const painBarW = Math.min(100, (Math.log10(Math.max(painStates, 10)) / maxLog) * 100);
+  const pleasureBarW = Math.max(6, Math.min(100, (Math.log10(Math.max(pleasureStates, 2)) / maxLog) * 100));
+  if (painBarEl) painBarEl.style.width = `${painBarW}%`;
+  if (pleasureBarEl) pleasureBarEl.style.width = `${pleasureBarW}%`;
+  if (painBarLabel) painBarLabel.textContent = `${painFmt} states · whole-brain envelope`;
+  if (pleasureBarLabel) pleasureBarLabel.textContent = `${pleasureStates} states · ventral pod`;
+  if (compareRatioEl) compareRatioEl.textContent = `pain footprint ≈ ${Math.round(ratio).toLocaleString()}× larger`;
 
   if (readoutEl) {
     readoutEl.textContent = v.pharma > 0.55
-      ? 'Pharmacology compresses the green ventral cluster — cortical pain routes stay separable.'
-      : 'Drag to rotate · red/gold routes sprawl · green cluster stays small';
+      ? 'Red envelope = pain sprawl · green pod shrinks under pharmacology'
+      : 'Red wireframe wraps cortex/limbic · green pod stays ventral and tiny';
   }
 }
 
-function updateLabels(wrap, labelEls, camera) {
+function updateLabels(wrap, labelEls, camera, scaleVolumes, calloutPain, calloutPleasure) {
   const rect = wrap.getBoundingClientRect();
+  const project = (obj, el) => {
+    if (!el || !obj) return;
+    const p = obj.getWorldPosition(new THREE.Vector3()).project(camera);
+    if (p.z > 1) {
+      el.style.opacity = '0';
+      return;
+    }
+    const x = (p.x * 0.5 + 0.5) * rect.width;
+    const y = (-p.y * 0.5 + 0.5) * rect.height;
+    el.style.opacity = '1';
+    el.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 100%))`;
+  };
+
   labelEls.forEach(({ mesh, el }) => {
     const p = mesh.getWorldPosition(new THREE.Vector3()).project(camera);
     if (p.z > 1) {
@@ -312,6 +360,9 @@ function updateLabels(wrap, labelEls, camera) {
     const y = (-p.y * 0.5 + 0.5) * rect.height;
     el.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
   });
+
+  project(scaleVolumes.painEnvelope, calloutPain);
+  project(scaleVolumes.pleasurePod, calloutPleasure);
 }
 
 function gyriNoise(x, y, z) {
@@ -433,6 +484,74 @@ function createAnatomicalBrain() {
 
   group.rotation.x = -0.08;
   return { group, cortexMat, innerMat };
+}
+
+function createScaleVolumes() {
+  const group = new THREE.Group();
+
+  const painEnvelope = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1, 1),
+    new THREE.MeshBasicMaterial({
+      color: 0xb85c55,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.38,
+      depthWrite: false,
+    }),
+  );
+  painEnvelope.scale.set(1.18, 1.02, 1.12);
+
+  const painShell = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.04, 3),
+    new THREE.MeshBasicMaterial({
+      color: 0xb85c55,
+      transparent: true,
+      opacity: 0.08,
+      side: THREE.BackSide,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  painShell.scale.set(1.14, 1.0, 1.08);
+
+  const pleasurePod = new THREE.Mesh(
+    new THREE.SphereGeometry(0.26, 28, 22),
+    new THREE.MeshBasicMaterial({
+      color: 0x7a9a8c,
+      transparent: true,
+      opacity: 0.55,
+      depthWrite: false,
+    }),
+  );
+  pleasurePod.position.set(-0.04, -0.5, 0.36);
+
+  const pleasureCore = new THREE.Mesh(
+    new THREE.SphereGeometry(0.14, 20, 16),
+    new THREE.MeshBasicMaterial({
+      color: 0x9ec4b8,
+      transparent: true,
+      opacity: 0.65,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    }),
+  );
+  pleasureCore.position.copy(pleasurePod.position);
+
+  const pleasureRing = new THREE.Mesh(
+    new THREE.TorusGeometry(0.3, 0.014, 10, 48),
+    new THREE.MeshBasicMaterial({
+      color: 0x7a9a8c,
+      transparent: true,
+      opacity: 0.65,
+      depthWrite: false,
+    }),
+  );
+  pleasureRing.position.copy(pleasurePod.position);
+  pleasureRing.rotation.x = Math.PI / 2.2;
+
+  group.add(painEnvelope, painShell, pleasurePod, pleasureCore, pleasureRing);
+
+  return { group, painEnvelope, painShell, pleasurePod, pleasureCore, pleasureRing };
 }
 
 function createStarfield() {

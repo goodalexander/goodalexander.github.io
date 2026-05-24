@@ -407,6 +407,92 @@ ShowToc: true
   z-index: 2;
   pointer-events: none;
 }
+.pm-b3d-compare {
+  position: absolute;
+  right: .65rem;
+  top: .65rem;
+  width: min(220px, 42%);
+  padding: .6rem .65rem .65rem;
+  border: 1px solid var(--line);
+  background: rgba(6,7,8,.92);
+  backdrop-filter: blur(6px);
+  z-index: 3;
+  pointer-events: none;
+}
+.pm-b3d-compare-title {
+  margin-bottom: .55rem;
+  font: 600 .62rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.pm-b3d-compare-row {
+  margin-bottom: .55rem;
+}
+.pm-b3d-compare-row:last-of-type { margin-bottom: .45rem; }
+.pm-b3d-compare-row span {
+  display: block;
+  margin-bottom: .2rem;
+  font: 500 .62rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--muted);
+}
+.pm-b3d-compare-row.pain span { color: var(--pain); }
+.pm-b3d-compare-row.pleasure span { color: var(--pleasure); }
+.pm-b3d-compare-row .track {
+  height: 10px;
+  background: rgba(235,228,220,.06);
+  border: 1px solid rgba(235,228,220,.08);
+  overflow: hidden;
+}
+.pm-b3d-compare-row .fill {
+  height: 100%;
+  width: 0;
+  transition: width .25s ease;
+}
+.pm-b3d-compare-row.pain .fill { background: linear-gradient(90deg, #7a3530, var(--pain)); }
+.pm-b3d-compare-row.pleasure .fill { background: linear-gradient(90deg, #4a6a60, var(--pleasure)); min-width: 6px; }
+.pm-b3d-compare-row b {
+  display: block;
+  margin-top: .2rem;
+  font: 500 .68rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.pm-b3d-compare-ratio {
+  padding-top: .45rem;
+  border-top: 1px solid rgba(235,228,220,.08);
+  font: 600 .72rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--gold);
+}
+.pm-b3d-callout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: .35rem .55rem;
+  border: 1px solid;
+  font: 600 .68rem/1.25 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  pointer-events: none;
+  z-index: 2;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+.pm-b3d-callout small {
+  display: block;
+  margin-top: .15rem;
+  font-size: .58rem;
+  font-weight: 500;
+  opacity: .85;
+}
+.pm-b3d-callout.pain {
+  color: var(--pain);
+  border-color: rgba(184,92,85,.45);
+  background: rgba(18,9,9,.88);
+}
+.pm-b3d-callout.pleasure {
+  color: var(--pleasure);
+  border-color: rgba(122,154,140,.45);
+  background: rgba(10,14,12,.88);
+}
 .pm-brain3d-controls {
   padding: .75rem .85rem .85rem;
   background: var(--panel);
@@ -487,6 +573,8 @@ ShowToc: true
   .pm-brain3d-layout { grid-template-columns: 1fr; }
   .pm-brain3d-view { min-height: 360px; }
   .pm-brain3d-view canvas { min-height: 360px; }
+  .pm-b3d-compare { width: min(200px, 88%); left: .65rem; right: auto; top: auto; bottom: 3.2rem; }
+  .pm-brain3d-hud { max-width: 52%; }
 }
 </style>
 
@@ -1016,6 +1104,22 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
           <div class="pm-brain3d-metric p"><b id="pm-b3d-pleasure">—</b><span>pleasure (post-quotient)</span></div>
           <div class="pm-brain3d-metric r"><b id="pm-b3d-ratio">—</b><span>log₁₀ ratio</span></div>
         </div>
+        <div class="pm-b3d-compare" id="pm-b3d-compare" aria-label="Pain versus pleasure state-space footprint">
+          <div class="pm-b3d-compare-title">footprint on brain</div>
+          <div class="pm-b3d-compare-row pain">
+            <span>pain network · sprawls</span>
+            <div class="track"><div class="fill" id="pm-b3d-pain-bar"></div></div>
+            <b id="pm-b3d-pain-bar-label">—</b>
+          </div>
+          <div class="pm-b3d-compare-row pleasure">
+            <span>pleasure cluster · ventral</span>
+            <div class="track"><div class="fill" id="pm-b3d-pleasure-bar"></div></div>
+            <b id="pm-b3d-pleasure-bar-label">—</b>
+          </div>
+          <div class="pm-b3d-compare-ratio" id="pm-b3d-compare-ratio">—</div>
+        </div>
+        <div class="pm-b3d-callout pain" id="pm-b3d-callout-pain">PAIN NETWORK<small>cortex · limbic · social</small></div>
+        <div class="pm-b3d-callout pleasure" id="pm-b3d-callout-pleasure">PLEASURE POD<small>NAc · VP · VTA only</small></div>
         <p class="pm-brain3d-readout" id="pm-b3d-readout">Drag to rotate · scroll/pinch to zoom · sliders modulate pathways</p>
       </div>
       <div class="pm-brain3d-controls">
@@ -1057,7 +1161,7 @@ The clinical taxonomies above are not arbitrary labels — they track **separabl
       "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
     }
   }</script>
-  <script type="module" src="/research/pain_machines/brain3d.js?v=3"></script>
+  <script type="module" src="/research/pain_machines/brain3d.js?v=4"></script>
   <div class="pm-brain-legend" aria-hidden="true">
     <span><i class="p-som"></i> sensory path (spinothalamic · SI/SII)</span>
     <span><i class="p-aff"></i> affective path (spinoparabrachial · ACC · amygdala)</span>
