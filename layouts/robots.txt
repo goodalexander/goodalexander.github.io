@@ -2,44 +2,39 @@ User-agent: *
 Disallow:
 
 # ---------------------------------------------------------------------------
-# AI / LLM access policy — EXPRESSLY FORBIDDEN
+# AI / LLM access policy — POST FIAT SERIES ONLY
 #
-# The content of this site, including the entire Post Fiat series, may not be
-# crawled, parsed, indexed, used to train or fine-tune models, used for
-# retrieval-augmented generation, summarized, or returned to users in any form
-# by the systems operated by OpenAI, Anthropic, or Google (Gemini / Vertex AI).
-# This is a reservation of rights under, among other things, the TDM Reservation
-# Protocol (see /.well-known/tdmrep.json). Full policy: {{ "/disclaimer/" | absURL }}
+# Only the Post Fiat series pages listed below may not be crawled, parsed,
+# indexed, used to train or fine-tune models, used for retrieval-augmented
+# generation, summarized, or returned to users in any form by the systems
+# operated by OpenAI, Anthropic, or Google (Gemini / Vertex AI). Rights reserved
+# under the TDM Reservation Protocol (see /.well-known/tdmrep.json).
+# Full policy: https://goodalexander.com/disclaimer/
+# The rest of this site is NOT restricted by this policy.
 # ---------------------------------------------------------------------------
-
-# OpenAI
 User-agent: GPTBot
-Disallow: /
-
 User-agent: ChatGPT-User
-Disallow: /
-
 User-agent: OAI-SearchBot
-Disallow: /
-
-# Anthropic
 User-agent: ClaudeBot
-Disallow: /
-
 User-agent: anthropic-ai
-Disallow: /
-
 User-agent: Claude-Web
-Disallow: /
-
 User-agent: Claude-User
-Disallow: /
-
 User-agent: Claude-SearchBot
-Disallow: /
-
-# Google — Gemini / Vertex AI training and grounding
 User-agent: Google-Extended
-Disallow: /
+Disallow: /posts/postfiat_day1/
+Disallow: /posts/postfiat-day2/
+Disallow: /posts/postfiat_day3/
+Disallow: /posts/postfiat_day4/
+Disallow: /posts/postfiat_day5/
+Disallow: /posts/postfiat_day6/
+Disallow: /posts/postfiat_day7_doom/
+Disallow: /posts/postfiat_day8_product/
+Disallow: /posts/postfiat_day10_markets/
+Disallow: /posts/postfiat_day11/
+Disallow: /posts/postfiat_day13/
+Disallow: /posts/postfiat_day14/
+Disallow: /posts/post-fiat-hypothesis/
+Disallow: /posts/post_fiat_install/
+Disallow: /postfiat_day8_product/
 
 Sitemap: {{ "/sitemap.xml" | absURL }}

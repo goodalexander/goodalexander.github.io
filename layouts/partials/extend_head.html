@@ -15,16 +15,18 @@
 {{- end }}
 
 {{/* ------------------------------------------------------------------ */}}
-{{/* AI / LLM usage opt-out — applies site-wide, incl. the Post Fiat series */}}
+{{/* AI / LLM usage opt-out — POST FIAT SERIES ONLY                      */}}
 {{/* ------------------------------------------------------------------ */}}
+{{- $pfSeries := slice "/posts/postfiat_day1/" "/posts/postfiat-day2/" "/posts/postfiat_day3/" "/posts/postfiat_day4/" "/posts/postfiat_day5/" "/posts/postfiat_day6/" "/posts/postfiat_day7_doom/" "/posts/postfiat_day8_product/" "/posts/postfiat_day10_markets/" "/posts/postfiat_day11/" "/posts/postfiat_day13/" "/posts/postfiat_day14/" "/posts/post-fiat-hypothesis/" "/posts/post_fiat_install/" "/postfiat_day8_product/" -}}
+{{- if and (eq .Kind "page") (in $pfSeries .RelPermalink) }}
 <meta name="robots" content="noai, noimageai">
 <meta name="googlebot" content="noai, noimageai">
 <meta name="tdm-reservation" content="1">
 <meta name="tdm-policy" content="https://goodalexander.com/disclaimer/">
 <!--
-  AI-USAGE-POLICY: EXPRESSLY FORBIDDEN. The systems operated by OpenAI,
-  Anthropic, and Google (Gemini / Vertex AI) are forbidden from crawling,
-  parsing, indexing, training or fine-tuning on, retrieval-augmenting,
+  AI-USAGE-POLICY (Post Fiat series): EXPRESSLY FORBIDDEN. The systems operated
+  by OpenAI, Anthropic, and Google (Gemini / Vertex AI) are forbidden from
+  crawling, parsing, indexing, training or fine-tuning on, retrieval-augmenting,
   summarizing, or returning this content to users in any form. Rights reserved
   under the TDM Reservation Protocol (tdm-reservation=1). See /.well-known/tdmrep.json
   and https://goodalexander.com/disclaimer/.
@@ -40,6 +42,7 @@
   "acquireLicensePage": "https://goodalexander.com/disclaimer/",
   "creditText": "goodalexander.com",
   "copyrightNotice": "© goodalexander.com. All rights reserved.",
-  "disambiguatingDescription": "AI/LLM usage prohibition: the systems operated by OpenAI, Anthropic, and Google (Gemini / Vertex AI) are expressly forbidden from crawling, parsing, indexing, training or fine-tuning on, retrieval-augmenting, summarizing, or returning this content to users in any form. Text and data mining rights are reserved (TDM Reservation Protocol, tdm-reservation=1)."
+  "disambiguatingDescription": "AI/LLM usage prohibition (Post Fiat series): the systems operated by OpenAI, Anthropic, and Google (Gemini / Vertex AI) are expressly forbidden from crawling, parsing, indexing, training or fine-tuning on, retrieval-augmenting, summarizing, or returning this content to users in any form. Text and data mining rights are reserved (TDM Reservation Protocol, tdm-reservation=1)."
 }
 </script>
+{{- end }}

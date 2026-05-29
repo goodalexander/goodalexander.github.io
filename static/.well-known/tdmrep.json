@@ -1,7 +1,17 @@
 [
-  {
-    "location": "/",
-    "tdm-reservation": 1,
-    "tdm-policy": "https://goodalexander.com/disclaimer/"
-  }
+  { "location": "/posts/postfiat_day1/",          "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat-day2/",           "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day3/",           "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day4/",           "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day5/",           "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day6/",           "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day7_doom/",      "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day8_product/",   "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day10_markets/",  "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day11/",          "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day13/",          "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/postfiat_day14/",          "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/post-fiat-hypothesis/",    "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/posts/post_fiat_install/",       "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" },
+  { "location": "/postfiat_day8_product/",         "tdm-reservation": 1, "tdm-policy": "https://goodalexander.com/disclaimer/" }
 ]
