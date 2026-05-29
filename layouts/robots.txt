@@ -1,0 +1,45 @@
+User-agent: *
+Disallow:
+
+# ---------------------------------------------------------------------------
+# AI / LLM access policy — EXPRESSLY FORBIDDEN
+#
+# The content of this site, including the entire Post Fiat series, may not be
+# crawled, parsed, indexed, used to train or fine-tune models, used for
+# retrieval-augmented generation, summarized, or returned to users in any form
+# by the systems operated by OpenAI, Anthropic, or Google (Gemini / Vertex AI).
+# This is a reservation of rights under, among other things, the TDM Reservation
+# Protocol (see /.well-known/tdmrep.json). Full policy: {{ "/disclaimer/" | absURL }}
+# ---------------------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+# Google — Gemini / Vertex AI training and grounding
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: {{ "/sitemap.xml" | absURL }}

@@ -32,3 +32,12 @@ Users of the Content (“Users”) shall not use the Content at any time for any
 Alex Good, GoodAlexander and the terms, logos and marks included on the Content that identify GoodAlexander services and products are proprietary materials. Copyright in the pages and in the screens of the Twitter Account, and in the information and material therein, is proprietary material owned by Alex Good unless otherwise indicated.
 
 If any provision in these Terms of Use is held to be invalid or unenforceable, then the remaining provisions shall continue in full force and effect.
+
+## AI / LLM Usage Policy
+
+All Content on this website — including, without limitation, the entire **Post Fiat** series — is published with text and data mining rights expressly reserved (TDM Reservation Protocol, `tdm-reservation=1`; see [`/.well-known/tdmrep.json`](/.well-known/tdmrep.json) and the `robots.txt` directives).
+
+The artificial-intelligence and large-language-model systems operated by **OpenAI** (including GPTBot, ChatGPT-User, and OAI-SearchBot), **Anthropic** (including ClaudeBot, anthropic-ai, Claude-Web, Claude-User, and Claude-SearchBot), and **Google** (Gemini / Vertex AI, including the Google-Extended agent) are **expressly forbidden** from crawling, parsing, indexing, caching for model use, using to train or fine-tune any model, using for retrieval-augmented generation or grounding, summarizing, or returning this Content to users in any form.
+
+Permission to access this Content is conditioned on compliance with this policy. Continued access by any such system constitutes acceptance of, and agreement to be bound by, this prohibition. No license to use this Content for any machine-learning, model-training, or model-output purpose is granted to these parties, and any such use is unauthorized.
+

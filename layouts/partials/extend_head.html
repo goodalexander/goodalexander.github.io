@@ -13,3 +13,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 {{- end }}
+
+{{/* ------------------------------------------------------------------ */}}
+{{/* AI / LLM usage opt-out — applies site-wide, incl. the Post Fiat series */}}
+{{/* ------------------------------------------------------------------ */}}
+<meta name="robots" content="noai, noimageai">
+<meta name="googlebot" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://goodalexander.com/disclaimer/">
+<!--
+  AI-USAGE-POLICY: EXPRESSLY FORBIDDEN. The systems operated by OpenAI,
+  Anthropic, and Google (Gemini / Vertex AI) are forbidden from crawling,
+  parsing, indexing, training or fine-tuning on, retrieval-augmenting,
+  summarizing, or returning this content to users in any form. Rights reserved
+  under the TDM Reservation Protocol (tdm-reservation=1). See /.well-known/tdmrep.json
+  and https://goodalexander.com/disclaimer/.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "url": {{ .Permalink | jsonify }},
+  "isAccessibleForFree": true,
+  "license": "https://goodalexander.com/disclaimer/",
+  "usageInfo": "https://goodalexander.com/disclaimer/",
+  "acquireLicensePage": "https://goodalexander.com/disclaimer/",
+  "creditText": "goodalexander.com",
+  "copyrightNotice": "© goodalexander.com. All rights reserved.",
+  "disambiguatingDescription": "AI/LLM usage prohibition: the systems operated by OpenAI, Anthropic, and Google (Gemini / Vertex AI) are expressly forbidden from crawling, parsing, indexing, training or fine-tuning on, retrieval-augmenting, summarizing, or returning this content to users in any form. Text and data mining rights are reserved (TDM Reservation Protocol, tdm-reservation=1)."
+}
+</script>
