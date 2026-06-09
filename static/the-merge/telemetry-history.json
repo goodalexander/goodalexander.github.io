@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-09T08:00:07.210Z",
+  "generated_at": "2026-06-09T16:00:10.000Z",
   "retention_days": 365,
   "snapshots": [
     {
       "date": "2025-08-23",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -43,7 +43,7 @@
     },
     {
       "date": "2025-08-26",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -81,7 +81,7 @@
     },
     {
       "date": "2025-08-27",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -119,7 +119,7 @@
     },
     {
       "date": "2025-08-28",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -157,7 +157,7 @@
     },
     {
       "date": "2025-08-29",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -195,7 +195,7 @@
     },
     {
       "date": "2025-08-30",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -233,7 +233,7 @@
     },
     {
       "date": "2025-09-01",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -271,7 +271,7 @@
     },
     {
       "date": "2025-09-05",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -309,7 +309,7 @@
     },
     {
       "date": "2025-09-15",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -499,7 +499,7 @@
     },
     {
       "date": "2025-11-22",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -537,7 +537,7 @@
     },
     {
       "date": "2025-11-30",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -575,7 +575,7 @@
     },
     {
       "date": "2025-12-31",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -613,7 +613,7 @@
     },
     {
       "date": "2026-01-03",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -651,7 +651,7 @@
     },
     {
       "date": "2026-01-13",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -689,7 +689,7 @@
     },
     {
       "date": "2026-01-17",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -727,7 +727,7 @@
     },
     {
       "date": "2026-01-18",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -765,7 +765,7 @@
     },
     {
       "date": "2026-01-21",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -803,7 +803,7 @@
     },
     {
       "date": "2026-01-22",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -841,7 +841,7 @@
     },
     {
       "date": "2026-01-23",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -879,7 +879,7 @@
     },
     {
       "date": "2026-01-25",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -917,7 +917,7 @@
     },
     {
       "date": "2026-01-29",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -955,7 +955,7 @@
     },
     {
       "date": "2026-02-06",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -993,7 +993,7 @@
     },
     {
       "date": "2026-02-26",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -1031,7 +1031,7 @@
     },
     {
       "date": "2026-03-23",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -1069,7 +1069,7 @@
     },
     {
       "date": "2026-03-24",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -1107,7 +1107,7 @@
     },
     {
       "date": "2026-03-25",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -1805,7 +1805,7 @@
     },
     {
       "date": "2026-05-01",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 29,
       "x_followers": 122787,
       "x_following": 1290,
@@ -1848,7 +1848,7 @@
     },
     {
       "date": "2026-05-02",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 23,
       "x_followers": 122919,
       "x_following": 1289,
@@ -1891,7 +1891,7 @@
     },
     {
       "date": "2026-05-03",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 23,
       "x_followers": 123103,
       "x_following": 1290,
@@ -1934,7 +1934,7 @@
     },
     {
       "date": "2026-05-04",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 30,
       "x_followers": 123189,
       "x_following": 1290,
@@ -1977,7 +1977,7 @@
     },
     {
       "date": "2026-05-05",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": null,
       "x_followers": null,
       "x_following": null,
@@ -2144,7 +2144,7 @@
     },
     {
       "date": "2026-05-09",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 23,
       "x_followers": 124166,
       "x_following": 1295,
@@ -2316,7 +2316,7 @@
     },
     {
       "date": "2026-05-13",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 31,
       "x_followers": 125137,
       "x_following": 1297,
@@ -2402,7 +2402,7 @@
     },
     {
       "date": "2026-05-15",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 31,
       "x_followers": 125589,
       "x_following": 1298,
@@ -2445,7 +2445,7 @@
     },
     {
       "date": "2026-05-16",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 18,
       "x_followers": 125875,
       "x_following": 1301,
@@ -2832,7 +2832,7 @@
     },
     {
       "date": "2026-05-25",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 16,
       "x_followers": 128577,
       "x_following": 1301,
@@ -2875,7 +2875,7 @@
     },
     {
       "date": "2026-05-26",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 14,
       "x_followers": 128933,
       "x_following": 1302,
@@ -2890,18 +2890,18 @@
       "pft_rewards": 0,
       "context_updates": 0,
       "wallet_interactions": 0,
-      "github_private_commits": 124,
-      "github_private_loc": 170255,
-      "github_private_additions": 165045,
-      "github_private_deletions": 5210,
-      "github_public_commits": 16,
-      "github_public_loc": 7447,
-      "github_public_additions": 4208,
-      "github_public_deletions": 3239,
-      "github_total_commits": 140,
-      "github_total_loc": 177702,
-      "github_total_additions": 169253,
-      "github_total_deletions": 8449,
+      "github_private_commits": 37,
+      "github_private_loc": 31866,
+      "github_private_additions": 27850,
+      "github_private_deletions": 4016,
+      "github_public_commits": 13,
+      "github_public_loc": 6117,
+      "github_public_additions": 3502,
+      "github_public_deletions": 2615,
+      "github_total_commits": 50,
+      "github_total_loc": 37983,
+      "github_total_additions": 31352,
+      "github_total_deletions": 6631,
       "local_workspace_files": 4,
       "local_workspace_repos": 0,
       "local_workspace_loc": 729,
@@ -2918,7 +2918,7 @@
     },
     {
       "date": "2026-05-27",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 16,
       "x_followers": 129308,
       "x_following": 1300,
@@ -2961,7 +2961,7 @@
     },
     {
       "date": "2026-05-28",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 16,
       "x_followers": 129579,
       "x_following": 1301,
@@ -3004,7 +3004,7 @@
     },
     {
       "date": "2026-05-29",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 16,
       "x_followers": 129958,
       "x_following": 1302,
@@ -3047,7 +3047,7 @@
     },
     {
       "date": "2026-05-30",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 14,
       "x_followers": 130340,
       "x_following": 1302,
@@ -3090,7 +3090,7 @@
     },
     {
       "date": "2026-05-31",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 21,
       "x_followers": 130703,
       "x_following": 1301,
@@ -3133,7 +3133,7 @@
     },
     {
       "date": "2026-06-01",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 18,
       "x_followers": 131482,
       "x_following": 1302,
@@ -3176,7 +3176,7 @@
     },
     {
       "date": "2026-06-02",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 14,
       "x_followers": 131918,
       "x_following": 1303,
@@ -3219,7 +3219,7 @@
     },
     {
       "date": "2026-06-03",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 16,
       "x_followers": 132278,
       "x_following": 1300,
@@ -3262,7 +3262,7 @@
     },
     {
       "date": "2026-06-04",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 18,
       "x_followers": 133203,
       "x_following": 1299,
@@ -3305,7 +3305,7 @@
     },
     {
       "date": "2026-06-05",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 12,
       "x_followers": 133752,
       "x_following": 1299,
@@ -3348,7 +3348,7 @@
     },
     {
       "date": "2026-06-06",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 13,
       "x_followers": 133926,
       "x_following": 1301,
@@ -3391,7 +3391,7 @@
     },
     {
       "date": "2026-06-07",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 12,
       "x_followers": 134301,
       "x_following": 1300,
@@ -3434,7 +3434,7 @@
     },
     {
       "date": "2026-06-08",
-      "updated_at": "2026-06-09T08:00:02.581Z",
+      "updated_at": "2026-06-09T16:00:03.271Z",
       "dau": 14,
       "x_followers": 134673,
       "x_following": 1301,
@@ -3477,11 +3477,11 @@
     },
     {
       "date": "2026-06-09",
-      "updated_at": "2026-06-09T08:00:07.210Z",
-      "dau": 17,
-      "x_followers": 134814,
+      "updated_at": "2026-06-09T16:00:10.000Z",
+      "dau": 15,
+      "x_followers": 134953,
       "x_following": 1302,
-      "x_posts": 15807,
+      "x_posts": 15808,
       "loc": null,
       "commits": null,
       "task_requests": 0,
@@ -3496,19 +3496,19 @@
       "github_private_loc": 0,
       "github_private_additions": 0,
       "github_private_deletions": 0,
-      "github_public_commits": 5,
-      "github_public_loc": 1799,
-      "github_public_additions": 921,
-      "github_public_deletions": 878,
-      "github_total_commits": 5,
-      "github_total_loc": 1799,
-      "github_total_additions": 921,
-      "github_total_deletions": 878,
-      "local_workspace_files": 10,
+      "github_public_commits": 8,
+      "github_public_loc": 2537,
+      "github_public_additions": 1307,
+      "github_public_deletions": 1230,
+      "github_total_commits": 8,
+      "github_total_loc": 2537,
+      "github_total_additions": 1307,
+      "github_total_deletions": 1230,
+      "local_workspace_files": 16,
       "local_workspace_repos": 0,
-      "local_workspace_loc": 276,
-      "local_workspace_additions": 240,
-      "local_workspace_deletions": 36,
+      "local_workspace_loc": 605,
+      "local_workspace_additions": 521,
+      "local_workspace_deletions": 84,
       "sources": {
         "local_workspace": "redacted_local_workspace_snapshot",
         "current_metrics": "telemetry_snapshot",
