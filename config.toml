@@ -25,18 +25,6 @@ disableXML = true
       tag = "tags"
       series = "series"
     [[languages.en.menu.main]]
-      name = "The Merge"
-      url = "the-merge/"
-      weight = 5
-    [[languages.en.menu.main]]
-      name = "Join Task Node"
-      url = "https://tasknode.postfiat.org/"
-      weight = 6
-    [[languages.en.menu.main]]
-      name = "Validator"
-      url = "validator/"
-      weight = 7
-    [[languages.en.menu.main]]
       name = "Search"
       url = "search/"
       weight = 30
@@ -44,17 +32,13 @@ disableXML = true
       name = "Archive"
       url = "archives"
       weight = 40
-    [[languages.en.menu.main]]
-      name = "Subscribe"
-      url = "subscribe/"
-      weight = 50
       
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
 [params]
   env = "production"
-  description = "goodalexander: navigating a post fiat future. Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake."
+  description = "goodalexander: philosophy, rants, interactive art, and trading ideas."
   author = "goodalexander"
   # author = ["Me", "You"]
   defaultTheme = "dark"
@@ -75,54 +59,23 @@ disableXML = true
 
 
 [params.homeInfoParams]
-  Title = "goodalexander: navigating a post fiat future"
-  Content = '''Philosophy, rants, interactive art, and trading ideas informed by the Post Fiat data lake. Always free. Never financial advice. Please read [Disclaimer](https://goodalexander.com/disclaimer/).'''
-
-  [[params.homeCtas]]
-    title = "Join the Task Node"
-    description = "Use AI to Improve Your Life with a Community."
-    url = "https://tasknode.postfiat.org/"
-    variant = "primary"
-
-  [[params.homeCtas]]
-    title = "Join the Post Fiat Discord"
-    description = "Key announcements, earnings opportunities, and collaboration."
-    url = "https://discord.gg/U6HjgDSmhR"
-
-  [[params.homeCtas]]
-    title = "Join the Mailing List"
-    description = "Subscribe to the Goodalexander Newsletter."
-    url = "/subscribe/"
+  Title = "goodalexander"
+  Content = '''Philosophy, rants, interactive art, and trading ideas. Always free. Never financial advice.'''
 
   [[params.homeCtas]]
     title = "Follow on X (Goodalexander)"
     description = "Long-form notes, market thoughts, and live build updates."
     url = "https://x.com/goodalexander"
 
-  [[params.homeCtas]]
-    title = "Follow on X (Post Fiat Org)"
-    description = "Task Node, protocol, and Post Fiat announcements."
-    url = "https://x.com/postfiatorg"
-  
   [[params.socialIcons]]
     name = "twitter"
     title = "Follow me on twitter"
     url = "https://www.twitter.com/goodalexander"
   
   [[params.socialIcons]]
-    name = "Discord"
-    title = "Join discord community"
-    url = "https://discord.gg/U6HjgDSmhR"
-  
-  [[params.socialIcons]]
     name = "github"
     title = "My Github"
     url = "https://www.github.com/goodalexander"
-
-  [[params.socialIcons]]
-    name = "email"
-    title = "email newsletter"
-    url = "https://goodalexander.com/subscribe/"
 
 #  [params.editPost]
 #    URL = "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
