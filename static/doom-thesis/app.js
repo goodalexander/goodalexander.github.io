@@ -126,6 +126,12 @@
     set('all-in-household', money(latest.all_in_annual_burden_per_household));
     set('all-in-net-income-ratio', pct(latest.all_in_burden_to_public_net_income_ratio));
     set('all-in-discretionary-ratio', pct(latest.all_in_burden_to_discretionary_income_ratio));
+    const cumulativeIncomeDebt = data.cumulative_income_vs_debt;
+    const cumulativeSummary = cumulativeIncomeDebt.summary;
+    set('debt-accrued-since-2000', trillions(cumulativeSummary.public_debt_accrued_trillions, 1));
+    set('cumulative-net-income-since-2000', trillions(cumulativeSummary.cumulative_public_company_netinc_trillions, 1));
+    set('cumulative-debt-income-gap', trillions(cumulativeSummary.debt_accrual_minus_cumulative_netinc_trillions, 1));
+    set('cumulative-debt-income-ratio', `${cumulativeSummary.debt_accrued_to_cumulative_netinc_ratio.toFixed(2)}×`);
     const productivity = data.productivity;
     const productivitySummary = productivity.summary;
     set('utility-capex-per-mwh', `${money(productivitySummary.latest_real_capex_per_mwh, 1)}/MWh`);
@@ -183,6 +189,12 @@
       { color: '#f2eee6', values: burdenHistory.map((d) => ({ year: d.year, value: d.all_in_burden_to_public_net_income_ratio })) },
     ], { yFormat: (v) => `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v), projectionFrom: 2026, points: false, xTicks: 8 });
 
+    const cumulativeHistory = cumulativeIncomeDebt.history;
+    lineChart($('#cumulative-income-debt-chart'), [
+      { color: '#eb735f', values: cumulativeHistory.map((d) => ({ year: d.year, value: d.public_debt_accrued_trillions })) },
+      { color: '#62c6ae', values: cumulativeHistory.map((d) => ({ year: d.year, value: d.cumulative_public_company_netinc_trillions })) },
+    ], { yMin: -1, yMax: 36, headroom: 1, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), points: false, xTicks: 9 });
+
     const utilityProductivity = productivity.utility_capex_generation;
     lineChart($('#utility-productivity-chart'), [
       { color: '#eb735f', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.real_capex_index_2004 })) },
@@ -204,7 +216,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-5', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-6', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

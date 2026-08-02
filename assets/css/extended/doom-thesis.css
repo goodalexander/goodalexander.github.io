@@ -153,6 +153,9 @@
 .doom-productivity-strip > div:first-child strong { color: var(--doom-red); }
 .doom-productivity-strip > div:nth-child(2) strong { color: var(--doom-amber); }
 .doom-productivity-strip > div:nth-child(3) strong,.doom-productivity-strip > div:nth-child(4) strong { color: var(--doom-green); }
+.doom-cumulative-strip { margin-top: 1.2rem; }
+.doom-cumulative-strip > div:nth-child(2) strong { color: var(--doom-green); }
+.doom-cumulative-strip > div:nth-child(3) strong { color: var(--doom-red); }
 .doom-productivity-main-chart { margin-bottom: 1.2rem; }
 .doom-productivity-secondary-charts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .doom-chart-table { margin-top: .5rem; padding-top: .75rem; border-top: 1px solid var(--doom-line); }

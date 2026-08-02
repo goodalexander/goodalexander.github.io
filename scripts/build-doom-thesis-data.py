@@ -41,6 +41,42 @@ def build_payload(doom_root: Path) -> dict:
         doom_root / "doom_index_projection_base_2026_2030.csv"
     )
     maturity = pd.read_csv(doom_root / "treasury_maturity_wall.csv")
+    cumulative_income_debt_daily = pd.read_csv(
+        doom_root
+        / "us_public_company_cumulative_net_income_vs_debt_accrued_daily_2000_2026.csv"
+    )
+    cumulative_income_debt_summary = json.loads(
+        (
+            doom_root / "cumulative_income_vs_debt_summary.json"
+        ).read_text(encoding="utf-8")
+    )
+    cumulative_income_debt_daily["date"] = pd.to_datetime(
+        cumulative_income_debt_daily["date"]
+    )
+    cumulative_income_debt_daily["year"] = (
+        cumulative_income_debt_daily["date"].dt.year
+    )
+    cumulative_income_debt_history = (
+        cumulative_income_debt_daily.sort_values("date")
+        .groupby("year", as_index=False)
+        .tail(1)[
+            [
+                "year",
+                "date",
+                "cumulative_public_company_netinc_trillions",
+                "public_debt_accrued_trillions",
+                "debt_accrual_minus_cumulative_netinc_trillions",
+                "debt_accrued_to_cumulative_netinc_ratio",
+            ]
+        ]
+        .reset_index(drop=True)
+    )
+    cumulative_numeric_columns = cumulative_income_debt_history.select_dtypes(
+        include="number"
+    ).columns
+    cumulative_income_debt_history[cumulative_numeric_columns] = (
+        cumulative_income_debt_history[cumulative_numeric_columns].round(8)
+    )
     utility_productivity = pd.read_csv(
         doom_root / "us_utility_capex_vs_power_generation_2004_2025.csv"
     )
@@ -541,6 +577,10 @@ def build_payload(doom_root: Path) -> dict:
         "annualized_burden_history": records(burden_history.round(8)),
         "interest_history_and_projection": records(interest_panel.round(8)),
         "maturity_wall": records(maturity.round(8)),
+        "cumulative_income_vs_debt": {
+            "summary": cumulative_income_debt_summary,
+            "history": records(cumulative_income_debt_history),
+        },
         "productivity": {
             "summary": {
                 "latest_year": int(utility_latest["calendar_year"]),
@@ -692,6 +732,13 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=productivity[0].keys())
         writer.writeheader()
         writer.writerows(productivity)
+    cumulative_source = (
+        args.doom_data_root
+        / "us_public_company_cumulative_net_income_vs_debt_accrued_daily_2000_2026.csv"
+    )
+    pd.read_csv(cumulative_source).to_csv(
+        args.output_dir / "cumulative-income-vs-debt-daily.csv", index=False
+    )
     print(json.dumps(payload["latest"], indent=2))
 
 

@@ -64,6 +64,41 @@
         </table>
       </div>
     </div>
+
+    <div class="doom-productivity-strip doom-cumulative-strip">
+      <div>
+        <span>Debt added since 2000</span>
+        <strong data-field="debt-accrued-since-2000">—</strong>
+        <small>Gross public debt above the 1999 year-end baseline</small>
+      </div>
+      <div>
+        <span>Cumulative public-company income</span>
+        <strong data-field="cumulative-net-income-since-2000">—</strong>
+        <small>Reported quarterly net income, including 2026 filings</small>
+      </div>
+      <div>
+        <span>Debt accumulation gap</span>
+        <strong data-field="cumulative-debt-income-gap">—</strong>
+        <small>Debt accrued minus cumulative company income</small>
+      </div>
+      <div>
+        <span>Debt added / cumulative income</span>
+        <strong data-field="cumulative-debt-income-ratio">—</strong>
+        <small>Dollar-for-dollar cumulative comparison</small>
+      </div>
+    </div>
+
+    <figure class="doom-panel doom-chart-panel doom-cumulative-panel">
+      <figcaption>
+        <span class="doom-panel-label">Daily source · annual endpoints displayed</span>
+        <h3>Cumulative public-company profit versus debt added</h3>
+        <p>Trillions since 2000; earnings enter when quarterly filings become public</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Gross public debt accrued</span><span style="--swatch:#62c6ae">Cumulative public-company net income</span></div>
+      <svg id="cumulative-income-debt-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Cumulative U.S. public-company net income compared with gross public debt accrued from 2000 through August 2026"></svg>
+      <p class="doom-note doom-chart-note">The income series is point-in-time and survivorship-safe: U.S. domestic common stocks enter only during their public pricing windows; delisted companies remain in history; each ARQ filing adds that quarter’s net income, and later restatements add only the revision delta. The 2026 point includes filings through July 31.</p>
+      <a class="doom-download" href="/doom-thesis/cumulative-income-vs-debt-daily.csv" download>Download daily cumulative CSV <span>↓</span></a>
+    </figure>
   </section>
 
   <section class="doom-section" id="households">
@@ -318,5 +353,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260802-5" defer></script>
+<script src="/doom-thesis/app.js?v=20260802-6" defer></script>
 {{ end }}

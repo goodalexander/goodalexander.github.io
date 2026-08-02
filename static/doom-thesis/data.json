@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-02T19:49:38.211702+00:00",
+  "generated_at_utc": "2026-08-02T20:03:42.324458+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -955,6 +955,240 @@
       "cumulative_pct": 62.32859464
     }
   ],
+  "cumulative_income_vs_debt": {
+    "summary": {
+      "as_of_date": "2026-08-02",
+      "income_latest_filing_date": "2026-07-31",
+      "debt_latest_observation_date": "2026-07-30",
+      "baseline_date": "1999-12-31",
+      "baseline_public_debt_trillions": 5.77609,
+      "current_public_debt_trillions": 39.84111,
+      "public_debt_accrued_trillions": 34.065020000000004,
+      "cumulative_public_company_netinc_trillions": 27.323308059507568,
+      "debt_accrual_minus_cumulative_netinc_trillions": 6.741711940492436,
+      "debt_accrued_to_cumulative_netinc_ratio": 1.246738496151697,
+      "income_method": "Daily point-in-time cumulative net income recognized on each ARQ filing date; later restatements contribute only their revision delta; U.S. domestic common stocks, active and delisted, during their public pricing windows; converted with netinc/fxusd",
+      "debt_method": "Bloomberg PUBLDEBT Index daily total public debt outstanding less the 1999-12-31 baseline"
+    },
+    "history": [
+      {
+        "year": 2000,
+        "date": "2000-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 0.34615532,
+        "public_debt_accrued_trillions": -0.11387,
+        "debt_accrual_minus_cumulative_netinc_trillions": -0.46002532,
+        "debt_accrued_to_cumulative_netinc_ratio": -0.32895637
+      },
+      {
+        "year": 2001,
+        "date": "2001-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 0.46084325,
+        "public_debt_accrued_trillions": 0.16735,
+        "debt_accrual_minus_cumulative_netinc_trillions": -0.29349325,
+        "debt_accrued_to_cumulative_netinc_ratio": 0.36313866
+      },
+      {
+        "year": 2002,
+        "date": "2002-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 0.54525164,
+        "public_debt_accrued_trillions": 0.62962,
+        "debt_accrual_minus_cumulative_netinc_trillions": 0.08436836,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.15473288
+      },
+      {
+        "year": 2003,
+        "date": "2003-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 0.926555,
+        "public_debt_accrued_trillions": 1.22187,
+        "debt_accrual_minus_cumulative_netinc_trillions": 0.295315,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.31872366
+      },
+      {
+        "year": 2004,
+        "date": "2004-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 1.55026016,
+        "public_debt_accrued_trillions": 1.82005,
+        "debt_accrual_minus_cumulative_netinc_trillions": 0.26978984,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.17402875
+      },
+      {
+        "year": 2005,
+        "date": "2005-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 2.28920233,
+        "public_debt_accrued_trillions": 2.39433,
+        "debt_accrual_minus_cumulative_netinc_trillions": 0.10512767,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.04592328
+      },
+      {
+        "year": 2006,
+        "date": "2006-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 3.15641369,
+        "public_debt_accrued_trillions": 2.90414,
+        "debt_accrual_minus_cumulative_netinc_trillions": -0.25227369,
+        "debt_accrued_to_cumulative_netinc_ratio": 0.92007585
+      },
+      {
+        "year": 2007,
+        "date": "2007-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 4.05710355,
+        "public_debt_accrued_trillions": 3.45308,
+        "debt_accrual_minus_cumulative_netinc_trillions": -0.60402355,
+        "debt_accrued_to_cumulative_netinc_ratio": 0.85111951
+      },
+      {
+        "year": 2008,
+        "date": "2008-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 4.49232471,
+        "public_debt_accrued_trillions": 4.92371,
+        "debt_accrual_minus_cumulative_netinc_trillions": 0.43138529,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.09602718
+      },
+      {
+        "year": 2009,
+        "date": "2009-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 4.42355905,
+        "public_debt_accrued_trillions": 6.53526,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.11170095,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.47737601
+      },
+      {
+        "year": 2010,
+        "date": "2010-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 5.17887663,
+        "public_debt_accrued_trillions": 8.24913,
+        "debt_accrual_minus_cumulative_netinc_trillions": 3.07025337,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.59284157
+      },
+      {
+        "year": 2011,
+        "date": "2011-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 6.15571274,
+        "public_debt_accrued_trillions": 9.44685,
+        "debt_accrual_minus_cumulative_netinc_trillions": 3.29113726,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.53464763
+      },
+      {
+        "year": 2012,
+        "date": "2012-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 7.12762873,
+        "public_debt_accrued_trillions": 10.65664,
+        "debt_accrual_minus_cumulative_netinc_trillions": 3.52901127,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.49511716
+      },
+      {
+        "year": 2013,
+        "date": "2013-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 8.31305491,
+        "public_debt_accrued_trillions": 11.57588,
+        "debt_accrual_minus_cumulative_netinc_trillions": 3.26282509,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.39249411
+      },
+      {
+        "year": 2014,
+        "date": "2014-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 9.49940631,
+        "public_debt_accrued_trillions": 12.36535,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.86594369,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.30169714
+      },
+      {
+        "year": 2015,
+        "date": "2015-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 10.43411239,
+        "public_debt_accrued_trillions": 13.14609,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.71197761,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.25991455
+      },
+      {
+        "year": 2016,
+        "date": "2016-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 11.32977912,
+        "public_debt_accrued_trillions": 14.20074,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.87096088,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.25339955
+      },
+      {
+        "year": 2017,
+        "date": "2017-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 12.45905808,
+        "public_debt_accrued_trillions": 14.71666,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.25760192,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.18120165
+      },
+      {
+        "year": 2018,
+        "date": "2018-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 13.85560655,
+        "public_debt_accrued_trillions": 16.19801,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.34240345,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.16905817
+      },
+      {
+        "year": 2019,
+        "date": "2019-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 15.14050112,
+        "public_debt_accrued_trillions": 17.42529,
+        "debt_accrual_minus_cumulative_netinc_trillions": 2.28478888,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.15090576
+      },
+      {
+        "year": 2020,
+        "date": "2020-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 15.93447425,
+        "public_debt_accrued_trillions": 21.97171,
+        "debt_accrual_minus_cumulative_netinc_trillions": 6.03723575,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.37887888
+      },
+      {
+        "year": 2021,
+        "date": "2021-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 17.74303141,
+        "public_debt_accrued_trillions": 23.84112,
+        "debt_accrual_minus_cumulative_netinc_trillions": 6.09808859,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.34368922
+      },
+      {
+        "year": 2022,
+        "date": "2022-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 19.59532546,
+        "public_debt_accrued_trillions": 25.6436,
+        "debt_accrual_minus_cumulative_netinc_trillions": 6.04827454,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.30865905
+      },
+      {
+        "year": 2023,
+        "date": "2023-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 21.41705143,
+        "public_debt_accrued_trillions": 28.2254,
+        "debt_accrual_minus_cumulative_netinc_trillions": 6.80834857,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.31789383
+      },
+      {
+        "year": 2024,
+        "date": "2024-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 23.32581995,
+        "public_debt_accrued_trillions": 30.44252,
+        "debt_accrual_minus_cumulative_netinc_trillions": 7.11670005,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.30509967
+      },
+      {
+        "year": 2025,
+        "date": "2025-12-31T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 25.54698381,
+        "public_debt_accrued_trillions": 32.73792,
+        "debt_accrual_minus_cumulative_netinc_trillions": 7.19093619,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.28147887
+      },
+      {
+        "year": 2026,
+        "date": "2026-08-02T00:00:00.000",
+        "cumulative_public_company_netinc_trillions": 27.32330806,
+        "public_debt_accrued_trillions": 34.06502,
+        "debt_accrual_minus_cumulative_netinc_trillions": 6.74171194,
+        "debt_accrued_to_cumulative_netinc_ratio": 1.2467385
+      }
+    ]
+  },
   "productivity": {
     "summary": {
       "latest_year": 2025,
