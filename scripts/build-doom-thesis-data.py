@@ -259,6 +259,61 @@ def build_payload(doom_root: Path) -> dict:
         float(latest_interest["interest_trillions"])
         + annualized_unfunded_program_cost_trillions
     )
+    burden_history = household[
+        [
+            "year",
+            "ssa_unfunded_75yr_trillions",
+            "medicare_total_resource_gap_75yr_trillions",
+        ]
+    ].merge(interest_panel, on="year", how="inner")
+    burden_history = burden_history[burden_history["year"].between(2004, 2026)]
+    burden_history["unfunded_program_pv_trillions"] = (
+        burden_history["ssa_unfunded_75yr_trillions"]
+        + burden_history["medicare_total_resource_gap_75yr_trillions"]
+    )
+    burden_history["annualized_unfunded_program_cost_trillions"] = (
+        burden_history["unfunded_program_pv_trillions"] * annuity_factor
+    )
+    burden_history["all_in_annual_burden_trillions"] = (
+        burden_history["interest_trillions"]
+        + burden_history["annualized_unfunded_program_cost_trillions"]
+    )
+    burden_history["annualized_unfunded_to_public_net_income_ratio"] = (
+        burden_history["annualized_unfunded_program_cost_trillions"]
+        / burden_history["public_net_income_trillions"]
+    )
+    burden_history["all_in_burden_to_public_net_income_ratio"] = (
+        burden_history["all_in_annual_burden_trillions"]
+        / burden_history["public_net_income_trillions"]
+    )
+    nonpositive_income = burden_history["public_net_income_trillions"] <= 0
+    burden_history.loc[
+        nonpositive_income,
+        [
+            "interest_to_public_net_income_ratio",
+            "annualized_unfunded_to_public_net_income_ratio",
+            "all_in_burden_to_public_net_income_ratio",
+        ],
+    ] = float("nan")
+    burden_history = burden_history.rename(
+        columns={
+            "interest_to_public_net_income_ratio": (
+                "explicit_interest_to_public_net_income_ratio"
+            )
+        }
+    )[
+        [
+            "year",
+            "interest_trillions",
+            "annualized_unfunded_program_cost_trillions",
+            "all_in_annual_burden_trillions",
+            "public_net_income_trillions",
+            "explicit_interest_to_public_net_income_ratio",
+            "annualized_unfunded_to_public_net_income_ratio",
+            "all_in_burden_to_public_net_income_ratio",
+            "period_type",
+        ]
+    ]
     payload = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of_date": str(pd.Timestamp(latest_daily["date"]).date()),
@@ -374,6 +429,7 @@ def build_payload(doom_root: Path) -> dict:
             ),
         },
         "household_history": records(household.round(8)),
+        "annualized_burden_history": records(burden_history.round(8)),
         "interest_history_and_projection": records(interest_panel.round(8)),
         "maturity_wall": records(maturity.round(8)),
         "sources": [

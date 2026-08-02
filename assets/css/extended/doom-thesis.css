@@ -142,6 +142,9 @@
 .doom-burden-strip .doom-burden-total { background: linear-gradient(145deg, rgba(235,115,95,.14), var(--doom-panel) 70%); }
 .doom-burden-strip .doom-burden-total strong,.doom-burden-strip .doom-burden-ratio strong { color: var(--doom-red); }
 .doom-burden-explainer { max-width: 930px; margin: 0 0 1.2rem; color: var(--doom-muted); font-size: .76rem; line-height: 1.6; }
+.doom-burden-history-panel { margin-bottom: 1.2rem; }
+.doom-chart-table { margin-top: .5rem; padding-top: .75rem; border-top: 1px solid var(--doom-line); }
+.doom-chart-note { max-width: none; margin: .8rem 0 0; }
 .doom-method { padding-top: 2rem; border-top: 1px solid var(--doom-line); }
 .doom-method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
 .doom-method-grid > div { padding: 1.5rem; background: var(--doom-panel); }

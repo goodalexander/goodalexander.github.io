@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-02T18:49:08.333025+00:00",
+  "generated_at_utc": "2026-08-02T18:54:30.029319+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -460,6 +460,261 @@
       "liabilities_to_disposable_income_ratio": 11.35112045,
       "liabilities_index_2004": 288.41452848,
       "income_index_2004": 168.05133207
+    }
+  ],
+  "annualized_burden_history": [
+    {
+      "year": 2004,
+      "interest_trillions": 0.160245,
+      "annualized_unfunded_program_cost_trillions": 0.89241446,
+      "all_in_annual_burden_trillions": 1.05265946,
+      "public_net_income_trillions": 0.59620784,
+      "explicit_interest_to_public_net_income_ratio": 0.26877372,
+      "annualized_unfunded_to_public_net_income_ratio": 1.49681772,
+      "all_in_burden_to_public_net_income_ratio": 1.76559144,
+      "period_type": "actual"
+    },
+    {
+      "year": 2005,
+      "interest_trillions": 0.183986,
+      "annualized_unfunded_program_cost_trillions": 0.95278755,
+      "all_in_annual_burden_trillions": 1.13677355,
+      "public_net_income_trillions": 0.6944071,
+      "explicit_interest_to_public_net_income_ratio": 0.26495409,
+      "annualized_unfunded_to_public_net_income_ratio": 1.37208786,
+      "all_in_burden_to_public_net_income_ratio": 1.63704194,
+      "period_type": "actual"
+    },
+    {
+      "year": 2006,
+      "interest_trillions": 0.226603,
+      "annualized_unfunded_program_cost_trillions": 1.03727616,
+      "all_in_annual_burden_trillions": 1.26387916,
+      "public_net_income_trillions": 0.81441427,
+      "explicit_interest_to_public_net_income_ratio": 0.27824046,
+      "annualized_unfunded_to_public_net_income_ratio": 1.27364684,
+      "all_in_burden_to_public_net_income_ratio": 1.5518873,
+      "period_type": "actual"
+    },
+    {
+      "year": 2007,
+      "interest_trillions": 0.237109,
+      "annualized_unfunded_program_cost_trillions": 1.09011668,
+      "all_in_annual_burden_trillions": 1.32722568,
+      "public_net_income_trillions": 0.95328199,
+      "explicit_interest_to_public_net_income_ratio": 0.24872913,
+      "annualized_unfunded_to_public_net_income_ratio": 1.14354062,
+      "all_in_burden_to_public_net_income_ratio": 1.39226974,
+      "period_type": "actual"
+    },
+    {
+      "year": 2008,
+      "interest_trillions": 0.252757,
+      "annualized_unfunded_program_cost_trillions": 1.14146754,
+      "all_in_annual_burden_trillions": 1.39422454,
+      "public_net_income_trillions": 0.55980062,
+      "explicit_interest_to_public_net_income_ratio": 0.45151254,
+      "annualized_unfunded_to_public_net_income_ratio": 2.03906087,
+      "all_in_burden_to_public_net_income_ratio": 2.49057341,
+      "period_type": "actual"
+    },
+    {
+      "year": 2009,
+      "interest_trillions": 0.186902,
+      "annualized_unfunded_program_cost_trillions": 1.22002565,
+      "all_in_annual_burden_trillions": 1.40692765,
+      "public_net_income_trillions": -0.12490274,
+      "explicit_interest_to_public_net_income_ratio": null,
+      "annualized_unfunded_to_public_net_income_ratio": null,
+      "all_in_burden_to_public_net_income_ratio": null,
+      "period_type": "actual"
+    },
+    {
+      "year": 2010,
+      "interest_trillions": 0.196194,
+      "annualized_unfunded_program_cost_trillions": 0.7929731,
+      "all_in_annual_burden_trillions": 0.9891671,
+      "public_net_income_trillions": 0.64094626,
+      "explicit_interest_to_public_net_income_ratio": 0.30610055,
+      "annualized_unfunded_to_public_net_income_ratio": 1.23719125,
+      "all_in_burden_to_public_net_income_ratio": 1.5432918,
+      "period_type": "actual"
+    },
+    {
+      "year": 2011,
+      "interest_trillions": 0.229962,
+      "annualized_unfunded_program_cost_trillions": 0.87333004,
+      "all_in_annual_burden_trillions": 1.10329204,
+      "public_net_income_trillions": 0.94784651,
+      "explicit_interest_to_public_net_income_ratio": 0.24261523,
+      "annualized_unfunded_to_public_net_income_ratio": 0.92138339,
+      "all_in_burden_to_public_net_income_ratio": 1.16399863,
+      "period_type": "actual"
+    },
+    {
+      "year": 2012,
+      "interest_trillions": 0.220408,
+      "annualized_unfunded_program_cost_trillions": 1.00548754,
+      "all_in_annual_burden_trillions": 1.22589554,
+      "public_net_income_trillions": 0.9697141,
+      "explicit_interest_to_public_net_income_ratio": 0.22729173,
+      "annualized_unfunded_to_public_net_income_ratio": 1.0368907,
+      "all_in_burden_to_public_net_income_ratio": 1.26418244,
+      "period_type": "actual"
+    },
+    {
+      "year": 2013,
+      "interest_trillions": 0.220885,
+      "annualized_unfunded_program_cost_trillions": 1.03719184,
+      "all_in_annual_burden_trillions": 1.25807684,
+      "public_net_income_trillions": 1.09434377,
+      "explicit_interest_to_public_net_income_ratio": 0.20184242,
+      "annualized_unfunded_to_public_net_income_ratio": 0.94777516,
+      "all_in_burden_to_public_net_income_ratio": 1.14961758,
+      "period_type": "actual"
+    },
+    {
+      "year": 2014,
+      "interest_trillions": 0.228956,
+      "annualized_unfunded_program_cost_trillions": 1.09849246,
+      "all_in_annual_burden_trillions": 1.32744846,
+      "public_net_income_trillions": 1.18066167,
+      "explicit_interest_to_public_net_income_ratio": 0.19392177,
+      "annualized_unfunded_to_public_net_income_ratio": 0.9304041,
+      "all_in_burden_to_public_net_income_ratio": 1.12432587,
+      "period_type": "actual"
+    },
+    {
+      "year": 2015,
+      "interest_trillions": 0.223181,
+      "annualized_unfunded_program_cost_trillions": 1.08604121,
+      "all_in_annual_burden_trillions": 1.30922221,
+      "public_net_income_trillions": 1.02953178,
+      "explicit_interest_to_public_net_income_ratio": 0.21677913,
+      "annualized_unfunded_to_public_net_income_ratio": 1.05488848,
+      "all_in_burden_to_public_net_income_ratio": 1.27166761,
+      "period_type": "actual"
+    },
+    {
+      "year": 2016,
+      "interest_trillions": 0.240033,
+      "annualized_unfunded_program_cost_trillions": 1.23388223,
+      "all_in_annual_burden_trillions": 1.47391523,
+      "public_net_income_trillions": 0.83357743,
+      "explicit_interest_to_public_net_income_ratio": 0.28795525,
+      "annualized_unfunded_to_public_net_income_ratio": 1.4802251,
+      "all_in_burden_to_public_net_income_ratio": 1.76818035,
+      "period_type": "actual"
+    },
+    {
+      "year": 2017,
+      "interest_trillions": 0.262551,
+      "annualized_unfunded_program_cost_trillions": 1.29290621,
+      "all_in_annual_burden_trillions": 1.55545721,
+      "public_net_income_trillions": 1.08492382,
+      "explicit_interest_to_public_net_income_ratio": 0.24199948,
+      "annualized_unfunded_to_public_net_income_ratio": 1.1917023,
+      "all_in_burden_to_public_net_income_ratio": 1.43370178,
+      "period_type": "actual"
+    },
+    {
+      "year": 2018,
+      "interest_trillions": 0.324975,
+      "annualized_unfunded_program_cost_trillions": 1.42781816,
+      "all_in_annual_burden_trillions": 1.75279316,
+      "public_net_income_trillions": 1.30201358,
+      "explicit_interest_to_public_net_income_ratio": 0.24959417,
+      "annualized_unfunded_to_public_net_income_ratio": 1.09662309,
+      "all_in_burden_to_public_net_income_ratio": 1.34621726,
+      "period_type": "actual"
+    },
+    {
+      "year": 2019,
+      "interest_trillions": 0.375158,
+      "annualized_unfunded_program_cost_trillions": 1.57678344,
+      "all_in_annual_burden_trillions": 1.95194144,
+      "public_net_income_trillions": 1.34966939,
+      "explicit_interest_to_public_net_income_ratio": 0.27796289,
+      "annualized_unfunded_to_public_net_income_ratio": 1.16827384,
+      "all_in_burden_to_public_net_income_ratio": 1.44623672,
+      "period_type": "actual"
+    },
+    {
+      "year": 2020,
+      "interest_trillions": 0.34547,
+      "annualized_unfunded_program_cost_trillions": 1.75666604,
+      "all_in_annual_burden_trillions": 2.10213604,
+      "public_net_income_trillions": 0.80248521,
+      "explicit_interest_to_public_net_income_ratio": 0.43050015,
+      "annualized_unfunded_to_public_net_income_ratio": 2.18903229,
+      "all_in_burden_to_public_net_income_ratio": 2.61953244,
+      "period_type": "actual"
+    },
+    {
+      "year": 2021,
+      "interest_trillions": 0.352338,
+      "annualized_unfunded_program_cost_trillions": 1.91125265,
+      "all_in_annual_burden_trillions": 2.26359065,
+      "public_net_income_trillions": 1.63364311,
+      "explicit_interest_to_public_net_income_ratio": 0.21567624,
+      "annualized_unfunded_to_public_net_income_ratio": 1.1699328,
+      "all_in_burden_to_public_net_income_ratio": 1.38560903,
+      "period_type": "actual"
+    },
+    {
+      "year": 2022,
+      "interest_trillions": 0.475887,
+      "annualized_unfunded_program_cost_trillions": 2.04897527,
+      "all_in_annual_burden_trillions": 2.52486227,
+      "public_net_income_trillions": 1.92358338,
+      "explicit_interest_to_public_net_income_ratio": 0.24739609,
+      "annualized_unfunded_to_public_net_income_ratio": 1.06518662,
+      "all_in_burden_to_public_net_income_ratio": 1.3125827,
+      "period_type": "actual"
+    },
+    {
+      "year": 2023,
+      "interest_trillions": 0.658267,
+      "annualized_unfunded_program_cost_trillions": 2.12205258,
+      "all_in_annual_burden_trillions": 2.78031958,
+      "public_net_income_trillions": 1.78384986,
+      "explicit_interest_to_public_net_income_ratio": 0.3690148,
+      "annualized_unfunded_to_public_net_income_ratio": 1.18959147,
+      "all_in_burden_to_public_net_income_ratio": 1.55860627,
+      "period_type": "actual"
+    },
+    {
+      "year": 2024,
+      "interest_trillions": 0.879879,
+      "annualized_unfunded_program_cost_trillions": 2.11924191,
+      "all_in_annual_burden_trillions": 2.99912091,
+      "public_net_income_trillions": 1.8846467,
+      "explicit_interest_to_public_net_income_ratio": 0.46686681,
+      "annualized_unfunded_to_public_net_income_ratio": 1.12447702,
+      "all_in_burden_to_public_net_income_ratio": 1.59134383,
+      "period_type": "actual"
+    },
+    {
+      "year": 2025,
+      "interest_trillions": 0.970065,
+      "annualized_unfunded_program_cost_trillions": 2.40311915,
+      "all_in_annual_burden_trillions": 3.37318415,
+      "public_net_income_trillions": 2.13653093,
+      "explicit_interest_to_public_net_income_ratio": 0.45403742,
+      "annualized_unfunded_to_public_net_income_ratio": 1.1247762,
+      "all_in_burden_to_public_net_income_ratio": 1.57881363,
+      "period_type": "actual"
+    },
+    {
+      "year": 2026,
+      "interest_trillions": 1.04250317,
+      "annualized_unfunded_program_cost_trillions": 2.65888972,
+      "all_in_annual_burden_trillions": 3.70139289,
+      "public_net_income_trillions": 2.63789187,
+      "explicit_interest_to_public_net_income_ratio": 0.39520315,
+      "annualized_unfunded_to_public_net_income_ratio": 1.00796009,
+      "all_in_burden_to_public_net_income_ratio": 1.40316323,
+      "period_type": "projection"
     }
   ],
   "interest_history_and_projection": [

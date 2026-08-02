@@ -51,8 +51,17 @@
     if ((xMax - xMin) % yearStep !== 0) addSvg(svg, 'text', { x: x(xMax), y: height - 12, 'text-anchor': 'end' }, String(xMax));
 
     series.forEach((item) => {
-      const values = item.values.filter((d) => Number.isFinite(d.value));
-      const d = values.map((point, i) => `${i ? 'L' : 'M'}${x(point.year).toFixed(2)},${y(point.value).toFixed(2)}`).join(' ');
+      const values = item.values.filter((point) => Number.isFinite(point.value));
+      let drawing = false;
+      const d = item.values.map((point) => {
+        if (!Number.isFinite(point.value)) {
+          drawing = false;
+          return '';
+        }
+        const command = drawing ? 'L' : 'M';
+        drawing = true;
+        return `${command}${x(point.year).toFixed(2)},${y(point.value).toFixed(2)}`;
+      }).join(' ');
       addSvg(svg, 'path', { class: 'series-path', d, stroke: item.color, 'stroke-dasharray': item.dash || '' });
       values.forEach((point) => {
         const dot = addSvg(svg, 'circle', { class: 'series-point', cx: x(point.year), cy: y(point.value), r: options.points === false ? 0 : 3.2, fill: item.color });
@@ -130,6 +139,11 @@
     const projections = data.interest_history_and_projection.filter((row) => row.period_type === 'projection');
     $('#projection-table').innerHTML = projections.map((row) => `<tr><td>${row.year}</td><td>${trillions(row.interest_trillions, 2)}</td><td>${trillions(row.public_net_income_trillions, 2)}</td><td>${pct(row.interest_to_public_net_income_ratio)}</td></tr>`).join('');
 
+    const burdenHistory = data.annualized_burden_history;
+    const burdenTableYears = new Set([2004, 2008, 2009, 2012, 2016, 2020, 2024, 2026]);
+    const ratioCell = (value) => Number.isFinite(value) ? pct(value) : 'n/m';
+    $('#burden-history-table').innerHTML = burdenHistory.filter((row) => burdenTableYears.has(row.year)).map((row) => `<tr><td>${row.year}</td><td>${trillions(row.interest_trillions, 2)}</td><td>${trillions(row.annualized_unfunded_program_cost_trillions, 2)}</td><td>${trillions(row.all_in_annual_burden_trillions, 2)}</td><td>${trillions(row.public_net_income_trillions, 2)}</td><td>${ratioCell(row.explicit_interest_to_public_net_income_ratio)}</td><td>${ratioCell(row.all_in_burden_to_public_net_income_ratio)}</td></tr>`).join('');
+
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
     const history = data.household_history;
@@ -148,11 +162,17 @@
       { color: '#62c6ae', values: interest.map((d) => ({ year: d.year, value: d.public_net_income_trillions })) },
     ], { yFormat: (v) => `$${v.toFixed(1)}T`, tooltipFormat: (v) => trillions(v, 2), projectionFrom: 2026, points: false, xTicks: 8 });
 
+    lineChart($('#all-in-ratio-chart'), [
+      { color: '#eb735f', values: burdenHistory.map((d) => ({ year: d.year, value: d.explicit_interest_to_public_net_income_ratio })) },
+      { color: '#8b78d1', values: burdenHistory.map((d) => ({ year: d.year, value: d.annualized_unfunded_to_public_net_income_ratio })) },
+      { color: '#f2eee6', values: burdenHistory.map((d) => ({ year: d.year, value: d.all_in_burden_to_public_net_income_ratio })) },
+    ], { yFormat: (v) => `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v), projectionFrom: 2026, points: false, xTicks: 8 });
+
     maturityChart($('#maturity-chart'), data.maturity_wall);
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-2', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-3', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

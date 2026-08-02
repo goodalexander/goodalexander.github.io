@@ -184,6 +184,23 @@
     </div>
     <p class="doom-burden-explainer">The first number is a current cash outlay. The second converts the Social Security and Medicare present-value gaps into a level 75-year real payment at the Trustees’ 2.3% intermediate real discount rate. They answer different questions; together they show the annual economic funding burden if the promises are honored without allowing the gaps to compound.</p>
 
+    <figure class="doom-panel doom-chart-panel doom-burden-history-panel">
+      <figcaption>
+        <span class="doom-panel-label">2004–2026 · constant-method history</span>
+        <h3>Annual fiscal burden versus U.S. public-company net income</h3>
+        <p>Each historical Social Security and Medicare present-value gap is converted using the same 2.3% real, 75-year annuity factor</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Explicit interest</span><span style="--swatch:#8b78d1">Annualized program gaps</span><span style="--swatch:#f2eee6">Combined burden</span></div>
+      <svg id="all-in-ratio-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Explicit federal interest and annualized unfunded program burden as percentages of U.S. public-company net income from 2004 through 2026"></svg>
+      <div class="doom-table-wrap doom-chart-table">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>Year</th><th>Interest</th><th>Annualized gaps</th><th>Combined</th><th>Public net income</th><th>Interest / NI</th><th>Combined / NI</th></tr></thead>
+          <tbody id="burden-history-table"></tbody>
+        </table>
+      </div>
+      <p class="doom-note doom-chart-note">Ratios are not meaningful in 2009 because aggregate public-company net income was negative. The 2026 point uses the current-curve interest model and rolling four-quarter company income.</p>
+    </figure>
+
     <figure class="doom-panel doom-chart-panel">
       <figcaption>
         <span class="doom-panel-label">Actual through 2025 · model thereafter</span>
@@ -235,5 +252,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260802-2" defer></script>
+<script src="/doom-thesis/app.js?v=20260802-3" defer></script>
 {{ end }}
