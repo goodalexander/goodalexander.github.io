@@ -47,8 +47,13 @@
       addSvg(svg, 'text', { x: margin.left - 10, y: yy + 4, 'text-anchor': 'end' }, options.yFormat ? options.yFormat(value) : value.toFixed(0));
     }
     const yearStep = Math.max(1, Math.ceil((xMax - xMin) / (options.xTicks || 6)));
-    for (let year = xMin; year <= xMax; year += yearStep) addSvg(svg, 'text', { x: x(year), y: height - 12, 'text-anchor': 'middle' }, String(year));
-    if ((xMax - xMin) % yearStep !== 0) addSvg(svg, 'text', { x: x(xMax), y: height - 12, 'text-anchor': 'end' }, String(xMax));
+    const tickYears = [];
+    for (let year = xMin; year <= xMax; year += yearStep) tickYears.push(year);
+    if (tickYears.at(-1) !== xMax) {
+      if (xMax - tickYears.at(-1) < yearStep * 0.6) tickYears[tickYears.length - 1] = xMax;
+      else tickYears.push(xMax);
+    }
+    tickYears.forEach((year) => addSvg(svg, 'text', { x: x(year), y: height - 12, 'text-anchor': year === xMax ? 'end' : 'middle' }, String(year)));
 
     series.forEach((item) => {
       const values = item.values.filter((point) => Number.isFinite(point.value));
@@ -121,6 +126,14 @@
     set('all-in-household', money(latest.all_in_annual_burden_per_household));
     set('all-in-net-income-ratio', pct(latest.all_in_burden_to_public_net_income_ratio));
     set('all-in-discretionary-ratio', pct(latest.all_in_burden_to_discretionary_income_ratio));
+    const productivity = data.productivity;
+    const productivitySummary = productivity.summary;
+    set('utility-capex-per-mwh', `${money(productivitySummary.latest_real_capex_per_mwh, 1)}/MWh`);
+    set('utility-capex-per-mwh-multiple', `${productivitySummary.real_capex_per_mwh_multiple_since_2004.toFixed(2)}×`);
+    set('operating-fcf-margin', pct(productivitySummary.latest_operating_company_fcf_margin));
+    set('fcf-as-of', productivitySummary.current_fcf_as_of_date);
+    set('labor-productivity-cagr', pct(productivitySummary.labor_productivity_cagr_since_2004));
+    set('labor-productivity-latest-growth', pct(productivitySummary.latest_labor_productivity_growth));
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -168,11 +181,28 @@
       { color: '#f2eee6', values: burdenHistory.map((d) => ({ year: d.year, value: d.all_in_burden_to_public_net_income_ratio })) },
     ], { yFormat: (v) => `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v), projectionFrom: 2026, points: false, xTicks: 8 });
 
+    const utilityProductivity = productivity.utility_capex_generation;
+    lineChart($('#utility-productivity-chart'), [
+      { color: '#eb735f', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.real_capex_index_2004 })) },
+      { color: '#62c6ae', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.generation_index_2004 })) },
+    ], { yMin: 80, yMax: 280, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2004=100)`, points: false, xTicks: 8 });
+
+    const fcfMargin = productivity.operating_company_fcf_margin;
+    lineChart($('#fcf-margin-chart'), [
+      { color: '#d7a94b', values: fcfMargin.map((d) => ({ year: d.calendar_year, value: d.aggregate_fcf_margin })) },
+    ], { yMin: 0.03, yMax: 0.10, headroom: 1, yFormat: (v) => `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v), points: true, xTicks: 6, margin: { left: 52, right: 18 } });
+
+    const laborProductivity = productivity.labor_productivity;
+    lineChart($('#labor-productivity-chart'), [
+      { color: '#8b78d1', values: laborProductivity.map((d) => ({ year: d.year, value: d.annual_growth })) },
+      { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
+    ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
+
     maturityChart($('#maturity-chart'), data.maturity_wall);
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-3', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-4', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

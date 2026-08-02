@@ -41,6 +41,74 @@ def build_payload(doom_root: Path) -> dict:
         doom_root / "doom_index_projection_base_2026_2030.csv"
     )
     maturity = pd.read_csv(doom_root / "treasury_maturity_wall.csv")
+    utility_productivity = pd.read_csv(
+        doom_root / "us_utility_capex_vs_power_generation_2004_2025.csv"
+    )
+    operating_fcf = pd.read_csv(
+        doom_root
+        / "sharadar_us_operating_company_annual_fcf_margin_2004_2025.csv"
+    )
+    current_operating_fcf = pd.read_csv(
+        doom_root
+        / "sharadar_us_operating_company_rolling_4q_fcf_snapshot.csv"
+    )
+    operating_fcf["period_type"] = "completed_calendar_year"
+    current_fcf = current_operating_fcf.iloc[0]
+    operating_fcf = pd.concat(
+        [
+            operating_fcf,
+            pd.DataFrame(
+                [
+                    {
+                        "calendar_year": int(
+                            str(current_fcf["as_of_date"])[:4]
+                        ),
+                        "aggregate_fcf_usd": current_fcf[
+                            "aggregate_rolling_4q_fcf_usd"
+                        ],
+                        "matched_revenue_usd": current_fcf[
+                            "aggregate_rolling_4q_revenue_usd"
+                        ],
+                        "aggregate_fcf_margin": current_fcf[
+                            "aggregate_rolling_4q_fcf_margin"
+                        ],
+                        "companies_with_fcf_and_revenue": current_fcf[
+                            "companies_with_four_quarters"
+                        ],
+                        "company_rows": current_fcf["active_companies"],
+                        "superseded_versions_removed": float("nan"),
+                        "period_type": "current_rolling_four_quarters",
+                    }
+                ]
+            ),
+        ],
+        ignore_index=True,
+    )
+
+    labor_productivity_quarterly = fred_series("OPHNFB")
+    labor_productivity_quarterly["year"] = (
+        labor_productivity_quarterly["date"].dt.year
+    )
+    # Calendar-year averages match the annual flow convention used for company
+    # FCF and utility capex. Exclude the incomplete current calendar year.
+    labor_productivity = (
+        labor_productivity_quarterly[
+            labor_productivity_quarterly["year"].between(2003, 2025)
+        ]
+        .groupby("year", as_index=False)["value"]
+        .mean()
+        .rename(columns={"value": "output_per_hour_index"})
+    )
+    labor_productivity["annual_growth"] = labor_productivity[
+        "output_per_hour_index"
+    ].pct_change()
+    labor_productivity["five_year_annualized_growth"] = (
+        labor_productivity["output_per_hour_index"]
+        / labor_productivity["output_per_hour_index"].shift(5)
+    ) ** (1 / 5) - 1
+    labor_productivity = labor_productivity[
+        labor_productivity["year"].between(2004, 2025)
+    ].reset_index(drop=True)
 
     households = fred_series("TTLHH")
     households["year"] = households["date"].dt.year
@@ -314,6 +382,28 @@ def build_payload(doom_root: Path) -> dict:
             "period_type",
         ]
     ]
+    utility_base = utility_productivity.iloc[0]
+    utility_latest = utility_productivity.iloc[-1]
+    fcf_latest = operating_fcf.iloc[-1]
+    labor_base = labor_productivity.iloc[0]
+    labor_latest = labor_productivity.iloc[-1]
+    labor_productivity_cagr = (
+        float(labor_latest["output_per_hour_index"])
+        / float(labor_base["output_per_hour_index"])
+    ) ** (
+        1 / (int(labor_latest["year"]) - int(labor_base["year"]))
+    ) - 1
+    productivity_panel = (
+        utility_productivity.merge(
+            operating_fcf, on="calendar_year", how="outer"
+        )
+        .merge(
+            labor_productivity.rename(columns={"year": "calendar_year"}),
+            on="calendar_year",
+            how="outer",
+        )
+        .sort_values("calendar_year")
+    )
     payload = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of_date": str(pd.Timestamp(latest_daily["date"]).date()),
@@ -432,6 +522,55 @@ def build_payload(doom_root: Path) -> dict:
         "annualized_burden_history": records(burden_history.round(8)),
         "interest_history_and_projection": records(interest_panel.round(8)),
         "maturity_wall": records(maturity.round(8)),
+        "productivity": {
+            "summary": {
+                "latest_year": int(utility_latest["calendar_year"]),
+                "latest_generation_twh": float(
+                    utility_latest["generation_twh"]
+                ),
+                "latest_utility_capex_billions": float(
+                    utility_latest["utility_capex_nominal_usd"] / 1e9
+                ),
+                "latest_real_capex_per_mwh": float(
+                    utility_latest["real_2025_capex_per_mwh"]
+                ),
+                "real_capex_per_mwh_multiple_since_2004": float(
+                    utility_latest["real_2025_capex_per_mwh"]
+                    / utility_base["real_2025_capex_per_mwh"]
+                ),
+                "latest_operating_company_fcf_margin": float(
+                    fcf_latest["aggregate_fcf_margin"]
+                ),
+                "current_fcf_as_of_date": str(current_fcf["as_of_date"]),
+                "current_fcf_latest_filing": str(
+                    current_fcf["latest_filing"]
+                ),
+                "current_fcf_companies": int(
+                    current_fcf["companies_with_four_quarters"]
+                ),
+                "current_fcf_active_companies": int(
+                    current_fcf["active_companies"]
+                ),
+                "latest_labor_productivity_growth": float(
+                    labor_latest["annual_growth"]
+                ),
+                "labor_productivity_cagr_since_2004": float(
+                    labor_productivity_cagr
+                ),
+            },
+            "utility_capex_generation": records(
+                utility_productivity.round(8)
+            ),
+            "operating_company_fcf_margin": records(
+                operating_fcf.round(8)
+            ),
+            "labor_productivity": records(
+                labor_productivity.round(8)
+            ),
+            "combined_annual_panel": records(
+                productivity_panel.round(8)
+            ),
+        },
         "sources": [
             {
                 "name": "Bloomberg public debt",
@@ -473,6 +612,21 @@ def build_payload(doom_root: Path) -> dict:
                 "name": "Sharadar fundamentals",
                 "reference": "Local SF1 ARQ point-in-time four-quarter reconstruction",
             },
+            {
+                "name": "EIA total U.S. electricity generation",
+                "url": "https://www.eia.gov/totalenergy/data/monthly/",
+            },
+            {
+                "name": "BLS nonfarm-business labor productivity",
+                "url": "https://fred.stlouisfed.org/series/OPHNFB",
+            },
+            {
+                "name": "Sharadar utility capex and operating-company FCF",
+                "reference": (
+                    "Local SF1 ARY, latest restatement per ticker and calendar "
+                    "period; U.S. domestic common stocks including delisted names"
+                ),
+            },
         ],
     }
     return payload
@@ -503,6 +657,13 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=history[0].keys())
         writer.writeheader()
         writer.writerows(history)
+    productivity = payload["productivity"]["combined_annual_panel"]
+    with (args.output_dir / "productivity.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=productivity[0].keys())
+        writer.writeheader()
+        writer.writerows(productivity)
     print(json.dumps(payload["latest"], indent=2))
 
 

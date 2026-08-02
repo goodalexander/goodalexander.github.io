@@ -232,9 +232,74 @@
     </div>
   </section>
 
+  <section class="doom-section" id="productivity">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">05 / Productivity</div>
+        <h2>More capital, modest output</h2>
+      </div>
+      <p>Physical power output, corporate cash conversion, and economy-wide output per hour expose different layers of productivity. Together they show where investment is—and is not—turning into measurable output.</p>
+    </div>
+
+    <div class="doom-productivity-strip">
+      <div>
+        <span>Real utility capex / MWh</span>
+        <strong data-field="utility-capex-per-mwh">—</strong>
+        <small><span data-field="utility-capex-per-mwh-multiple">—</span> the 2004 level</small>
+      </div>
+      <div>
+        <span>Operating-company FCF margin</span>
+        <strong data-field="operating-fcf-margin">—</strong>
+        <small>Rolling four quarters as of <span data-field="fcf-as-of">—</span></small>
+      </div>
+      <div>
+        <span>Aggregate productivity growth</span>
+        <strong data-field="labor-productivity-cagr">—</strong>
+        <small>Output-per-hour CAGR, 2004–2025</small>
+      </div>
+      <div>
+        <span>Latest annual productivity growth</span>
+        <strong data-field="labor-productivity-latest-growth">—</strong>
+        <small>BLS nonfarm business, 2025</small>
+      </div>
+    </div>
+
+    <figure class="doom-panel doom-chart-panel doom-productivity-main-chart">
+      <figcaption>
+        <span class="doom-panel-label">2004 = 100 · capex inflation-adjusted</span>
+        <h3>Utility capital investment versus U.S. power generation</h3>
+        <p>Sharadar U.S. Utilities-sector capex compared with EIA total generation across all sectors</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Real utility capex</span><span style="--swatch:#62c6ae">Electricity generation</span></div>
+      <svg id="utility-productivity-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Inflation-adjusted U.S. utility capital expenditure compared with total U.S. electricity generation from 2004 through 2025, indexed to 2004"></svg>
+      <p class="doom-note doom-chart-note">This is a system-level capital-intensity measure, not a levelized cost of electricity. Sharadar Utilities includes gas, water, and multi-utilities; EIA generation includes independent, commercial, and industrial generators.</p>
+    </figure>
+
+    <div class="doom-chart-grid doom-productivity-secondary-charts">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">U.S. public operating companies</span>
+          <h3>Aggregate free-cash-flow margin</h3>
+          <p>Completed annual history through 2025; current 2026 point is rolling four quarters</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#d7a94b">FCF margin</span></div>
+        <svg id="fcf-margin-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Aggregate annual free cash flow margin of U.S. public nonfinancial and nonutility companies from 2004 through 2025 plus the current 2026 rolling-four-quarter value"></svg>
+      </figure>
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">BLS nonfarm business</span>
+          <h3>Output-per-hour growth</h3>
+          <p>Annual-average growth and trailing five-year annualized trend</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#8b78d1">Annual growth</span><span style="--swatch:#62c6ae">Five-year CAGR</span></div>
+        <svg id="labor-productivity-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual U.S. nonfarm business labor productivity growth and five-year annualized trend from 2004 through 2025"></svg>
+      </figure>
+    </div>
+  </section>
+
   <section class="doom-section doom-method" id="methodology">
     <div class="doom-section-head">
-      <div><div class="doom-eyebrow">05 / Read the Fine Print</div><h2>Definitions matter</h2></div>
+      <div><div class="doom-eyebrow">06 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
       <div><h3>What the Doom Index includes</h3><p data-field="doom-definition">—</p></div>
@@ -246,11 +311,12 @@
       <h3>Primary sources</h3>
       <ol id="source-list"></ol>
       <a class="doom-download" href="/doom-thesis/household-liabilities.csv" download>Download household-liability CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/productivity.csv" download>Download productivity CSV <span>↓</span></a>
     </div>
   </section>
 
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260802-3" defer></script>
+<script src="/doom-thesis/app.js?v=20260802-4" defer></script>
 {{ end }}
