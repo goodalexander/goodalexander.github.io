@@ -44,9 +44,9 @@
         <small>2026 current-curve model</small>
       </div>
       <div class="doom-stat">
-        <span>Interest / public earnings</span>
+        <span>Explicit interest / public earnings</span>
         <strong data-field="interest-net-income-ratio">—</strong>
-        <small>Versus rolling four-quarter net income</small>
+        <small>Debt service only; excludes future program gaps</small>
       </div>
     </div>
 
@@ -160,6 +160,30 @@
       <p>The projection replays Treasury’s security-level maturity schedule at the current curve and follows public-debt targets from the federal baseline.</p>
     </div>
 
+    <div class="doom-burden-strip">
+      <div>
+        <span>Explicit debt service</span>
+        <strong data-field="federal-interest">—</strong>
+        <small>Current annual interest</small>
+      </div>
+      <div>
+        <span>Annualized promise funding</span>
+        <strong data-field="annualized-promise-cost">—</strong>
+        <small>Level payment on the 75-year PV gaps</small>
+      </div>
+      <div class="doom-burden-total">
+        <span>All-in annual equivalent</span>
+        <strong data-field="all-in-burden">—</strong>
+        <small><span data-field="all-in-household">—</span> per household</small>
+      </div>
+      <div class="doom-burden-ratio">
+        <span>All-in / public earnings</span>
+        <strong data-field="all-in-net-income-ratio">—</strong>
+        <small><span data-field="all-in-discretionary-ratio">—</span> of household discretionary income</small>
+      </div>
+    </div>
+    <p class="doom-burden-explainer">The first number is a current cash outlay. The second converts the Social Security and Medicare present-value gaps into a level 75-year real payment at the Trustees’ 2.3% intermediate real discount rate. They answer different questions; together they show the annual economic funding burden if the promises are honored without allowing the gaps to compound.</p>
+
     <figure class="doom-panel doom-chart-panel">
       <figcaption>
         <span class="doom-panel-label">Actual through 2025 · model thereafter</span>
@@ -213,4 +237,3 @@
 </article>
 <script src="/doom-thesis/app.js" defer></script>
 {{ end }}
-

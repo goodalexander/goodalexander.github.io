@@ -240,6 +240,25 @@ def build_payload(doom_root: Path) -> dict:
         float(latest_interest["interest_trillions"]) * 1e12
         / float(latest["households"])
     )
+    # Convert the 75-year program funding gaps into a level real annual
+    # payment at the Trustees' 2.3% intermediate ultimate real interest rate.
+    # This is a derived annual-equivalent burden, not a current cash invoice.
+    trustees_real_discount_rate = 0.023
+    funding_horizon_years = 75
+    annuity_factor = trustees_real_discount_rate / (
+        1 - (1 + trustees_real_discount_rate) ** (-funding_horizon_years)
+    )
+    unfunded_program_pv_trillions = float(
+        latest["ssa_unfunded_75yr_trillions"]
+        + latest["medicare_total_resource_gap_75yr_trillions"]
+    )
+    annualized_unfunded_program_cost_trillions = (
+        unfunded_program_pv_trillions * annuity_factor
+    )
+    all_in_annual_burden_trillions = (
+        float(latest_interest["interest_trillions"])
+        + annualized_unfunded_program_cost_trillions
+    )
     payload = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of_date": str(pd.Timestamp(latest_daily["date"]).date()),
@@ -261,6 +280,12 @@ def build_payload(doom_root: Path) -> dict:
                 "St. Louis Fed/BLS definition: after-tax income less food at home, "
                 "housing, transportation, health care, and personal insurance and "
                 "pensions. The latest published benchmark is 2023 and is rounded."
+            ),
+            "annualized_unfunded_burden": (
+                "Derived level real annual payment that amortizes the Social Security "
+                "and Medicare 75-year present-value gaps over 75 years at the Trustees' "
+                "2.3% intermediate ultimate real interest rate. It is an economic "
+                "funding benchmark, not a current legal invoice."
             ),
         },
         "latest": {
@@ -317,6 +342,35 @@ def build_payload(doom_root: Path) -> dict:
             "current_interest_per_household": current_interest_per_household,
             "current_interest_to_discretionary_income_ratio": (
                 current_interest_per_household / mean_discretionary_income
+            ),
+            "trustees_real_discount_rate": trustees_real_discount_rate,
+            "funding_horizon_years": funding_horizon_years,
+            "unfunded_program_pv_trillions": unfunded_program_pv_trillions,
+            "annualized_unfunded_program_cost_trillions": (
+                annualized_unfunded_program_cost_trillions
+            ),
+            "annualized_unfunded_program_cost_per_household": (
+                annualized_unfunded_program_cost_trillions
+                * 1e12
+                / float(latest["households"])
+            ),
+            "annualized_unfunded_to_public_net_income_ratio": (
+                annualized_unfunded_program_cost_trillions
+                / float(latest_interest["public_net_income_trillions"])
+            ),
+            "all_in_annual_burden_trillions": all_in_annual_burden_trillions,
+            "all_in_annual_burden_per_household": (
+                all_in_annual_burden_trillions
+                * 1e12
+                / float(latest["households"])
+            ),
+            "all_in_burden_to_public_net_income_ratio": (
+                all_in_annual_burden_trillions
+                / float(latest_interest["public_net_income_trillions"])
+            ),
+            "all_in_burden_to_discretionary_income_ratio": (
+                all_in_annual_burden_trillions
+                / aggregate_discretionary_income_trillions
             ),
         },
         "household_history": records(household.round(8)),

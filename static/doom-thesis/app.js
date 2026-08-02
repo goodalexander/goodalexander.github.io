@@ -107,6 +107,11 @@
     set('benchmark-interest', trillions(latest.benchmark_interest_trillions, 2));
     set('aggregate-discretionary', trillions(latest.aggregate_discretionary_income_trillions, 2));
     set('current-interest-household', money(latest.current_interest_per_household));
+    set('annualized-promise-cost', trillions(latest.annualized_unfunded_program_cost_trillions, 2));
+    set('all-in-burden', trillions(latest.all_in_annual_burden_trillions, 2));
+    set('all-in-household', money(latest.all_in_annual_burden_per_household));
+    set('all-in-net-income-ratio', pct(latest.all_in_burden_to_public_net_income_ratio));
+    set('all-in-discretionary-ratio', pct(latest.all_in_burden_to_discretionary_income_ratio));
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -156,4 +161,3 @@
       $('[data-error]').hidden = false;
     });
 })();
-

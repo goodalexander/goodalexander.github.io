@@ -1,11 +1,12 @@
 {
-  "generated_at_utc": "2026-08-02T18:28:42.355398+00:00",
+  "generated_at_utc": "2026-08-02T18:49:08.333025+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
     "household_income": "BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.",
     "ratio": "Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.",
-    "discretionary_income": "St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded."
+    "discretionary_income": "St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.",
+    "annualized_unfunded_burden": "Derived level real annual payment that amortizes the Social Security and Medicare 75-year present-value gaps over 75 years at the Trustees' 2.3% intermediate ultimate real interest rate. It is an economic funding benchmark, not a current legal invoice."
   },
   "latest": {
     "year": 2026,
@@ -33,7 +34,17 @@
     "benchmark_interest_trillions": 0.658267,
     "benchmark_interest_to_discretionary_income_ratio": 0.18119042821768827,
     "current_interest_per_household": 7734.276773986895,
-    "current_interest_to_discretionary_income_ratio": 0.28645469533284795
+    "current_interest_to_discretionary_income_ratio": 0.28645469533284795,
+    "trustees_real_discount_rate": 0.023,
+    "funding_horizon_years": 75,
+    "unfunded_program_pv_trillions": 94.6,
+    "annualized_unfunded_program_cost_trillions": 2.6588897207893574,
+    "annualized_unfunded_program_cost_per_household": 19726.16455812269,
+    "annualized_unfunded_to_public_net_income_ratio": 1.007960087387943,
+    "all_in_annual_burden_trillions": 3.701392887155051,
+    "all_in_annual_burden_per_household": 27460.441332109585,
+    "all_in_burden_to_public_net_income_ratio": 1.40316323344404,
+    "all_in_burden_to_discretionary_income_ratio": 1.0188220922901028
   },
   "household_history": [
     {

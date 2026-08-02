@@ -133,6 +133,15 @@
 .doom-quintile-row i { position: absolute; left: 0; bottom: .25rem; width: var(--w); height: 3px; background: var(--doom-green); }
 .doom-quintile-negative i { background: var(--doom-red); }
 .doom-quintiles .doom-note { margin-top: 1.2rem; }
+.doom-burden-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-bottom: .8rem; border: 1px solid var(--doom-line); background: var(--doom-line); }
+.doom-burden-strip > div { min-height: 150px; padding: 1.25rem; background: var(--doom-panel); }
+.doom-burden-strip span { display: block; color: var(--doom-muted); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+.doom-burden-strip strong { display: block; margin: .6rem 0 .35rem; color: var(--doom-ink); font: 500 clamp(1.8rem, 3vw, 2.7rem)/1 "Cormorant Garamond", Georgia, serif; }
+.doom-burden-strip small { color: var(--doom-dim); font-size: .68rem; line-height: 1.4; }
+.doom-burden-strip small span { display: inline; color: inherit; font: inherit; letter-spacing: 0; text-transform: none; }
+.doom-burden-strip .doom-burden-total { background: linear-gradient(145deg, rgba(235,115,95,.14), var(--doom-panel) 70%); }
+.doom-burden-strip .doom-burden-total strong,.doom-burden-strip .doom-burden-ratio strong { color: var(--doom-red); }
+.doom-burden-explainer { max-width: 930px; margin: 0 0 1.2rem; color: var(--doom-muted); font-size: .76rem; line-height: 1.6; }
 .doom-method { padding-top: 2rem; border-top: 1px solid var(--doom-line); }
 .doom-method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
 .doom-method-grid > div { padding: 1.5rem; background: var(--doom-panel); }
@@ -148,6 +157,7 @@
 .doom-error { border-color: rgba(235,115,95,.35); color: var(--doom-red); }
 @media (max-width: 900px) {
   .doom-stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .doom-burden-strip { grid-template-columns: repeat(2, 1fr); }
   .doom-chart-grid,.doom-chart-grid-wide,.doom-squeeze-grid { grid-template-columns: 1fr; }
   .doom-section-head { grid-template-columns: 1fr; gap: .8rem; }
   .doom-chart-panel-narrow { min-height: 0; }
@@ -158,6 +168,7 @@
   .doom-hero h1 { font-size: 4.2rem; }
   .doom-asof { right: 1.25rem; bottom: 1.2rem; left: 1.25rem; }
   .doom-stat-grid { grid-template-columns: 1fr; }
+  .doom-burden-strip { grid-template-columns: 1fr; }
   .doom-stat { min-height: 140px; }
   .doom-panel { padding: 1rem; }
   .doom-section { margin-bottom: 4.5rem; }
