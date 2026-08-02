@@ -152,7 +152,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-2', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {
