@@ -89,6 +89,25 @@ def build_payload(doom_root: Path) -> dict:
     labor_productivity_quarterly["year"] = (
         labor_productivity_quarterly["date"].dt.year
     )
+    labor_productivity_quarterly = labor_productivity_quarterly.sort_values(
+        "date"
+    ).reset_index(drop=True)
+    latest_productivity_quarter = labor_productivity_quarterly.iloc[-1]
+    previous_productivity_quarter = labor_productivity_quarterly.iloc[-2]
+    year_ago_productivity_quarter = labor_productivity_quarterly.iloc[-5]
+    latest_productivity_qoq_annualized = (
+        float(latest_productivity_quarter["value"])
+        / float(previous_productivity_quarter["value"])
+    ) ** 4 - 1
+    latest_productivity_yoy = (
+        float(latest_productivity_quarter["value"])
+        / float(year_ago_productivity_quarter["value"])
+        - 1
+    )
+    latest_productivity_quarter_label = (
+        f"Q{pd.Timestamp(latest_productivity_quarter['date']).quarter} "
+        f"{int(latest_productivity_quarter['year'])}"
+    )
     # Calendar-year averages match the annual flow convention used for company
     # FCF and utility capex. Exclude the incomplete current calendar year.
     labor_productivity = (
@@ -553,6 +572,15 @@ def build_payload(doom_root: Path) -> dict:
                 ),
                 "latest_labor_productivity_growth": float(
                     labor_latest["annual_growth"]
+                ),
+                "latest_labor_productivity_quarter": (
+                    latest_productivity_quarter_label
+                ),
+                "latest_quarter_productivity_growth_annualized": float(
+                    latest_productivity_qoq_annualized
+                ),
+                "latest_quarter_productivity_growth_yoy": float(
+                    latest_productivity_yoy
                 ),
                 "labor_productivity_cagr_since_2004": float(
                     labor_productivity_cagr

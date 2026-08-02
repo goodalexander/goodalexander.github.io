@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-02T19:42:14.631284+00:00",
+  "generated_at_utc": "2026-08-02T19:49:38.211702+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -968,6 +968,9 @@
       "current_fcf_companies": 3124,
       "current_fcf_active_companies": 3407,
       "latest_labor_productivity_growth": 0.022515425309427295,
+      "latest_labor_productivity_quarter": "Q1 2026",
+      "latest_quarter_productivity_growth_annualized": 0.0029189836284104764,
+      "latest_quarter_productivity_growth_yoy": 0.027972148347061188,
       "labor_productivity_cagr_since_2004": 0.01702223447136597
     },
     "utility_capex_generation": [

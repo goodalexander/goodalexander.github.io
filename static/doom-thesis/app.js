@@ -133,7 +133,9 @@
     set('operating-fcf-margin', pct(productivitySummary.latest_operating_company_fcf_margin));
     set('fcf-as-of', productivitySummary.current_fcf_as_of_date);
     set('labor-productivity-cagr', pct(productivitySummary.labor_productivity_cagr_since_2004));
-    set('labor-productivity-latest-growth', pct(productivitySummary.latest_labor_productivity_growth));
+    set('labor-productivity-latest-growth', pct(productivitySummary.latest_quarter_productivity_growth_annualized));
+    set('labor-productivity-quarter', productivitySummary.latest_labor_productivity_quarter);
+    set('labor-productivity-yoy', pct(productivitySummary.latest_quarter_productivity_growth_yoy));
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -202,7 +204,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-4', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-5', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {
