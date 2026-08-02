@@ -1,0 +1,216 @@
+{{ define "main" }}
+<article class="doom-page" data-doom-page>
+  <header class="doom-hero">
+    <div class="doom-kicker">A living balance sheet for the United States</div>
+    <h1>Doom Thesis</h1>
+    <p class="doom-deck">The promises are long dated. The refinancing is not.</p>
+    <p class="doom-intro">Gross federal debt, Social Security and Medicare shortfalls—measured against the households and companies expected to carry them.</p>
+    <div class="doom-asof">Data through <span data-field="as-of">—</span> <span class="doom-live-dot" aria-hidden="true"></span></div>
+  </header>
+
+  <section class="doom-section" id="numbers">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">01 / The Numbers</div>
+        <h2>The liability stack</h2>
+      </div>
+      <p>Present-value estimates are stocks. Income and interest are annual flows. The ratios deliberately show how many current income-years sit beneath the obligation.</p>
+    </div>
+
+    <div class="doom-stat-grid">
+      <div class="doom-stat doom-stat-primary">
+        <span>Total measured liabilities</span>
+        <strong data-field="total-liabilities">—</strong>
+        <small>Debt + Social Security + Medicare</small>
+      </div>
+      <div class="doom-stat">
+        <span>Per household</span>
+        <strong data-field="liabilities-per-household">—</strong>
+        <small>Across <span data-field="households">—</span> households</small>
+      </div>
+      <div class="doom-stat">
+        <span>Mean after-tax income</span>
+        <strong data-field="mean-after-tax">—</strong>
+        <small>BLS consumer unit, <span data-field="mean-income-year">—</span></small>
+      </div>
+      <div class="doom-stat">
+        <span>Liabilities / mean income</span>
+        <strong data-field="liability-income-ratio">—</strong>
+        <small>Approximate after-tax income-years</small>
+      </div>
+      <div class="doom-stat">
+        <span>Federal net interest</span>
+        <strong data-field="federal-interest">—</strong>
+        <small>2026 current-curve model</small>
+      </div>
+      <div class="doom-stat">
+        <span>Interest / public earnings</span>
+        <strong data-field="interest-net-income-ratio">—</strong>
+        <small>Versus rolling four-quarter net income</small>
+      </div>
+    </div>
+
+    <div class="doom-panel doom-table-panel">
+      <div class="doom-panel-head">
+        <div>
+          <span class="doom-panel-label">Current composition</span>
+          <h3>What sits behind the headline</h3>
+        </div>
+      </div>
+      <div class="doom-table-wrap">
+        <table class="doom-table">
+          <thead><tr><th>Liability</th><th>Total</th><th>Per household</th><th>Definition</th></tr></thead>
+          <tbody id="liability-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="doom-section" id="households">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">02 / Households</div>
+        <h2>More obligation, per household</h2>
+      </div>
+      <p>The relevant income benchmark is survey income—not a national-accounts aggregate divided by household count.</p>
+    </div>
+
+    <div class="doom-chart-grid doom-chart-grid-wide">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">Liability components</span>
+          <h3>Total U.S. liabilities</h3>
+          <p>Nominal trillions of dollars</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true">
+          <span style="--swatch:#f2eee6">Total</span><span style="--swatch:#eb735f">Public debt</span><span style="--swatch:#d7a94b">Social Security</span><span style="--swatch:#8b78d1">Medicare</span>
+        </div>
+        <svg id="liability-chart" class="doom-chart" viewBox="0 0 900 360" role="img" aria-label="Total U.S. liabilities from 2004 to 2026"></svg>
+      </figure>
+
+      <figure class="doom-panel doom-chart-panel doom-chart-panel-narrow">
+        <figcaption>
+          <span class="doom-panel-label">Household burden</span>
+          <h3>Liability income-years</h3>
+          <p>Per-household liability divided by mean after-tax income</p>
+        </figcaption>
+        <div class="doom-ratio-callout"><strong data-field="liability-income-ratio">—</strong><span>today</span></div>
+        <svg id="ratio-chart" class="doom-chart" viewBox="0 0 520 360" role="img" aria-label="U.S. liabilities as years of mean after-tax income"></svg>
+      </figure>
+    </div>
+
+    <div class="doom-panel doom-table-panel">
+      <div class="doom-panel-head">
+        <div>
+          <span class="doom-panel-label">Selected years</span>
+          <h3>Liabilities versus household income</h3>
+        </div>
+        <div class="doom-note">Income after 2023 carries forward the latest BLS observation and is explicitly marked.</div>
+      </div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>Year</th><th>Total liabilities</th><th>Per household</th><th>Mean after-tax income</th><th>Income-years</th><th>Status</th></tr></thead>
+          <tbody id="household-history-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="doom-section" id="discretionary">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">03 / The Household Squeeze</div>
+        <h2>Interest versus discretionary income</h2>
+      </div>
+      <p>Discretionary income means after-tax income left after food at home, housing, transportation, healthcare, and insurance and pensions.</p>
+    </div>
+
+    <div class="doom-squeeze-grid">
+      <div class="doom-panel doom-gauge-card">
+        <span class="doom-panel-label">2023 / aligned actuals</span>
+        <div class="doom-gauge" style="--gauge-value:18.1%"><span data-field="benchmark-interest-discretionary">—</span></div>
+        <h3>of household discretionary income</h3>
+        <p>Federal interest was <strong data-field="benchmark-interest">—</strong> against an estimated <strong data-field="aggregate-discretionary">—</strong> nationwide discretionary-income pool.</p>
+      </div>
+      <div class="doom-panel doom-gauge-card doom-gauge-card-hot">
+        <span class="doom-panel-label">2026 / current-curve model</span>
+        <div class="doom-gauge" style="--gauge-value:28.6%"><span data-field="current-interest-discretionary">—</span></div>
+        <h3>of the latest measured pool</h3>
+        <p>Federal interest is now approximately <strong data-field="current-interest-household">—</strong> per household, holding the latest measured discretionary-income benchmark constant.</p>
+      </div>
+      <div class="doom-panel doom-quintiles">
+        <span class="doom-panel-label">Discretionary income by quintile</span>
+        <h3>The average hides the distribution</h3>
+        <div class="doom-quintile-row"><span>Highest 20%</span><b>$96k</b><i style="--w:100%"></i></div>
+        <div class="doom-quintile-row"><span>Fourth 20%</span><b>$35k</b><i style="--w:36.5%"></i></div>
+        <div class="doom-quintile-row"><span>Middle 20%</span><b>$15k</b><i style="--w:15.6%"></i></div>
+        <div class="doom-quintile-row"><span>Second 20%</span><b>$2k</b><i style="--w:2.1%"></i></div>
+        <div class="doom-quintile-row doom-quintile-negative"><span>Lowest 20%</span><b>−$11k</b><i style="--w:11.5%"></i></div>
+        <p class="doom-note">The 2026 interest allocation per household is roughly half of the middle quintile’s entire measured discretionary income. This is a scale comparison, not a literal household bill.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doom-section" id="interest">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">04 / Carrying Cost</div>
+        <h2>The refinancing arrives</h2>
+      </div>
+      <p>The projection replays Treasury’s security-level maturity schedule at the current curve and follows public-debt targets from the federal baseline.</p>
+    </div>
+
+    <figure class="doom-panel doom-chart-panel">
+      <figcaption>
+        <span class="doom-panel-label">Actual through 2025 · model thereafter</span>
+        <h3>Federal net interest versus U.S. public-company net income</h3>
+        <p>Annual trillions; company income is point-in-time rolling four-quarter Sharadar data</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Federal interest</span><span style="--swatch:#62c6ae">Public-company net income</span><span class="doom-legend-projection">Projection</span></div>
+      <svg id="interest-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Federal interest expense compared with U.S. public-company net income"></svg>
+    </figure>
+
+    <div class="doom-chart-grid">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">Treasury maturity wall</span>
+          <h3>Original principal coming due</h3>
+          <p>Trillions by fiscal year; cumulative share of the starting portfolio</p>
+        </figcaption>
+        <svg id="maturity-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Treasury security maturities from 2026 through 2030"></svg>
+      </figure>
+      <div class="doom-panel doom-table-panel">
+        <div class="doom-panel-head"><div><span class="doom-panel-label">Forward table</span><h3>Interest burden, 2026–2030</h3></div></div>
+        <div class="doom-table-wrap">
+          <table class="doom-table doom-table-dense">
+            <thead><tr><th>Year</th><th>Interest</th><th>Public net income</th><th>Ratio</th></tr></thead>
+            <tbody id="projection-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doom-section doom-method" id="methodology">
+    <div class="doom-section-head">
+      <div><div class="doom-eyebrow">05 / Read the Fine Print</div><h2>Definitions matter</h2></div>
+    </div>
+    <div class="doom-method-grid">
+      <div><h3>What the Doom Index includes</h3><p data-field="doom-definition">—</p></div>
+      <div><h3>What “unfunded” means</h3><p>Social Security and Medicare are changing 75-year present-value projection gaps, not fixed bonds or legal invoices. They move with demographics, benefits, taxes, healthcare costs and discount rates.</p></div>
+      <div><h3>What income means</h3><p data-field="income-definition">—</p></div>
+      <div><h3>What the ratio means</h3><p data-field="ratio-definition">—</p></div>
+    </div>
+    <div class="doom-source-block">
+      <h3>Primary sources</h3>
+      <ol id="source-list"></ol>
+      <a class="doom-download" href="/doom-thesis/household-liabilities.csv" download>Download household-liability CSV <span>↓</span></a>
+    </div>
+  </section>
+
+  <div class="doom-loading" data-loading>Loading the balance sheet…</div>
+  <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
+</article>
+<script src="/doom-thesis/app.js" defer></script>
+{{ end }}
+
