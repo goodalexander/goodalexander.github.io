@@ -332,9 +332,112 @@
     </div>
   </section>
 
+  <section class="doom-section" id="tax-valuation">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">06 / Taxing the Base</div>
+        <h2>The revenue is annual. The destruction is capitalized.</h2>
+      </div>
+      <p>A static return to the 1968–1969 federal corporate rate raises a flow of tax receipts by permanently reducing the earnings stream capitalized into equity value.</p>
+    </div>
+
+    <div class="doom-productivity-strip doom-tax-strip">
+      <div>
+        <span>Federal corporate rate</span>
+        <strong class="doom-tax-rate-transition"><span data-field="tax-rate-current">—</span> → <span data-field="tax-rate-max">—</span></strong>
+        <small>Current rate versus the historical maximum</small>
+      </div>
+      <div>
+        <span>Static incremental receipts</span>
+        <strong data-field="tax-incremental-receipts">—</strong>
+        <small><span data-field="tax-deficit-coverage">—</span> of the FY2026 deficit</small>
+      </div>
+      <div>
+        <span>Constant-P/E equity destruction</span>
+        <strong data-field="tax-market-cap-destruction">—</strong>
+        <small><span data-field="tax-market-cap-destruction-pct">—</span> of current public-equity value</small>
+      </div>
+      <div>
+        <span>Capital destroyed / annual tax dollar</span>
+        <strong data-field="tax-destruction-per-dollar">—</strong>
+        <small>Stock of wealth versus recurring annual revenue</small>
+      </div>
+    </div>
+
+    <div class="doom-chart-grid doom-tax-grid">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">Static upper-bound scenario</span>
+          <h3>Deficit relief versus equity repricing</h3>
+          <p>Annual fiscal flows on the left; capitalized equity stock on the right</p>
+        </figcaption>
+        <svg id="tax-stress-chart" class="doom-chart" viewBox="0 0 700 390" role="img" aria-label="Incremental corporate tax receipts and remaining federal deficit compared with implied public-equity market-cap destruction"></svg>
+      </figure>
+      <div class="doom-panel doom-table-panel">
+        <div class="doom-panel-head"><div><span class="doom-panel-label">Valuation sensitivity</span><h3>Earnings loss plus de-rating</h3></div></div>
+        <div class="doom-table-wrap">
+          <table class="doom-table doom-table-dense">
+            <thead><tr><th>P/E change</th><th>Equity loss</th><th>Loss %</th><th>Value lost / tax $</th></tr></thead>
+            <tbody id="tax-scenario-table"></tbody>
+          </table>
+        </div>
+        <p class="doom-note doom-chart-note">This deliberately aggressive static scenario applies the 31.8-point federal statutory-rate increase to positive book pretax income. It does not model deductions, foreign-source rules, credits, loss offsets, behavioral response, or the lower tax base that follows weaker investment and activity.</p>
+      </div>
+    </div>
+
+    <div class="doom-productivity-strip doom-valuation-strip">
+      <div>
+        <span>Operating-company FCF yield</span>
+        <strong data-field="operating-fcf-yield">—</strong>
+        <small><span data-field="operating-fcf">—</span> FCF / <span data-field="operating-market-cap">—</span> market cap</small>
+      </div>
+      <div>
+        <span>30-year Treasury yield</span>
+        <strong data-field="treasury-30y-yield">—</strong>
+        <small>Bloomberg USGG30YR Index</small>
+      </div>
+      <div>
+        <span>SPX forward earnings yield</span>
+        <strong data-field="spx-forward-earnings-yield">—</strong>
+        <small><span data-field="spx-forward-pe">—</span> Bloomberg BEST P/E</small>
+      </div>
+      <div>
+        <span>VCLT long-credit yield</span>
+        <strong data-field="vclt-yield">—</strong>
+        <small>SPX earnings-yield spread: <span data-field="spx-vclt-spread">—</span></small>
+      </div>
+    </div>
+
+    <div class="doom-chart-grid doom-productivity-secondary-charts">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">U.S. operating companies versus Treasuries</span>
+          <h3>Free-cash-flow yield versus the 30-year</h3>
+          <p>Annual endpoints from a daily point-in-time FCF reconstruction</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#d7a94b">Operating-company FCF yield</span><span style="--swatch:#62c6ae">30-year Treasury</span></div>
+        <svg id="fcf-yield-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Aggregate free-cash-flow yield of U.S. public operating companies compared with the 30-year Treasury yield from 2004 through 2026"></svg>
+        <p class="doom-note doom-chart-note">The FCF numerator requires four reported quarters; the market-cap denominator includes the full nonfinancial, nonutility universe. Missing fundamentals therefore bias the displayed FCF yield downward.</p>
+      </figure>
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">Forward equity versus long credit</span>
+          <h3>SPX earnings yield versus VCLT yield</h3>
+          <p>Bloomberg annual endpoints; VCLT yield history begins in 2018</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#8b78d1">SPX forward earnings yield</span><span style="--swatch:#eb735f">VCLT yield</span></div>
+        <svg id="spx-vclt-yield-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="S&P 500 forward earnings yield compared with Vanguard Long-Term Corporate Bond ETF yield from 2018 through 2026"></svg>
+      </figure>
+    </div>
+
+    <a class="doom-download" href="/doom-thesis/corporate-tax-stress.csv" download>Download tax-stress scenarios <span>↓</span></a>
+    <a class="doom-download" href="/doom-thesis/operating-fcf-yield-vs-30y-daily.csv" download>Download daily FCF-yield history <span>↓</span></a>
+    <a class="doom-download" href="/doom-thesis/spx-earnings-yield-vs-vclt-monthly.csv" download>Download Bloomberg valuation history <span>↓</span></a>
+  </section>
+
   <section class="doom-section doom-method" id="methodology">
     <div class="doom-section-head">
-      <div><div class="doom-eyebrow">06 / Read the Fine Print</div><h2>Definitions matter</h2></div>
+      <div><div class="doom-eyebrow">07 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
       <div><h3>What the Doom Index includes</h3><p data-field="doom-definition">—</p></div>
@@ -353,5 +456,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260802-6" defer></script>
+<script src="/doom-thesis/app.js?v=20260802-7" defer></script>
 {{ end }}

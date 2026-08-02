@@ -77,6 +77,40 @@ def build_payload(doom_root: Path) -> dict:
     cumulative_income_debt_history[cumulative_numeric_columns] = (
         cumulative_income_debt_history[cumulative_numeric_columns].round(8)
     )
+    tax_stress_scenarios = pd.read_csv(
+        doom_root / "corporate_tax_stress_scenario.csv"
+    )
+    tax_stress_summary = json.loads(
+        (doom_root / "corporate_tax_stress_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    fcf_yield_vs_30y = pd.read_csv(
+        doom_root
+        / "operating_company_fcf_yield_vs_30y_annual_2004_2026.csv"
+    )
+    valuation_summary = json.loads(
+        (
+            doom_root / "equity_fixed_income_valuation_summary.json"
+        ).read_text(encoding="utf-8")
+    )
+    spx_vclt_monthly = pd.read_csv(
+        doom_root
+        / "spx_forward_earnings_yield_vs_vclt_monthly_2018_2026.csv"
+    ).dropna(
+        subset=[
+            "spx_forward_earnings_yield_pct",
+            "vclt_yas_bond_yield_pct",
+        ]
+    )
+    spx_vclt_monthly["date"] = pd.to_datetime(spx_vclt_monthly["date"])
+    spx_vclt_monthly["year"] = spx_vclt_monthly["date"].dt.year
+    spx_vclt_annual = (
+        spx_vclt_monthly.sort_values("date")
+        .groupby("year", as_index=False)
+        .tail(1)
+        .reset_index(drop=True)
+    )
     utility_productivity = pd.read_csv(
         doom_root / "us_utility_capex_vs_power_generation_2004_2025.csv"
     )
@@ -581,6 +615,15 @@ def build_payload(doom_root: Path) -> dict:
             "summary": cumulative_income_debt_summary,
             "history": records(cumulative_income_debt_history),
         },
+        "tax_valuation": {
+            "tax_summary": tax_stress_summary,
+            "tax_scenarios": records(tax_stress_scenarios.round(8)),
+            "valuation_summary": valuation_summary,
+            "fcf_yield_vs_30y": records(fcf_yield_vs_30y.round(8)),
+            "spx_earnings_yield_vs_vclt": records(
+                spx_vclt_annual.round(8)
+            ),
+        },
         "productivity": {
             "summary": {
                 "latest_year": int(utility_latest["calendar_year"]),
@@ -695,6 +738,21 @@ def build_payload(doom_root: Path) -> dict:
                     "period; U.S. domestic common stocks including delisted names"
                 ),
             },
+            {
+                "name": "IRS historical federal corporation tax rates",
+                "url": "https://www.irs.gov/statistics/soi-tax-stats-historical-table-24",
+            },
+            {
+                "name": "CBO Budget and Economic Outlook: 2026 to 2036",
+                "url": "https://www.cbo.gov/publication/62105",
+            },
+            {
+                "name": "Bloomberg equity and fixed-income valuation",
+                "reference": (
+                    "SPX Index BEST_PE_RATIO; VCLT US Equity "
+                    "YAS_BOND_YLD; USGG30YR Index PX_LAST"
+                ),
+            },
         ],
     }
     return payload
@@ -738,6 +796,21 @@ def main() -> None:
     )
     pd.read_csv(cumulative_source).to_csv(
         args.output_dir / "cumulative-income-vs-debt-daily.csv", index=False
+    )
+    pd.read_csv(
+        args.doom_data_root / "corporate_tax_stress_scenario.csv"
+    ).to_csv(args.output_dir / "corporate-tax-stress.csv", index=False)
+    pd.read_csv(
+        args.doom_data_root
+        / "operating_company_fcf_yield_vs_30y_daily_2004_2026.csv"
+    ).to_csv(
+        args.output_dir / "operating-fcf-yield-vs-30y-daily.csv", index=False
+    )
+    pd.read_csv(
+        args.doom_data_root
+        / "spx_forward_earnings_yield_vs_vclt_monthly_2018_2026.csv"
+    ).to_csv(
+        args.output_dir / "spx-earnings-yield-vs-vclt-monthly.csv", index=False
     )
     print(json.dumps(payload["latest"], indent=2))
 

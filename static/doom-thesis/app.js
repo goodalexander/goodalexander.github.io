@@ -105,6 +105,42 @@
     });
   }
 
+  function taxStressChart(svg, summary, scenario) {
+    svg.replaceChildren();
+    const height = 390;
+    const panels = [
+      {
+        title: 'ANNUAL FISCAL FLOW', left: 48, width: 275, max: 2.1,
+        rows: [
+          ['FY2026 deficit', summary.cbo_fy2026_deficit_trillions, '#eb735f'],
+          ['Static new tax', summary.incremental_static_receipts_trillions, '#62c6ae'],
+          ['Deficit remaining', scenario.remaining_deficit_after_static_receipts_trillions, '#d7a94b'],
+        ],
+      },
+      {
+        title: 'PUBLIC-EQUITY CAPITAL STOCK', left: 390, width: 275, max: 82,
+        rows: [
+          ['Current value', scenario.current_public_equity_market_cap_trillions, '#f2eee6'],
+          ['Value destroyed', scenario.market_cap_destruction_trillions, '#eb735f'],
+          ['Value remaining', scenario.stressed_public_equity_market_cap_trillions, '#8b78d1'],
+        ],
+      },
+    ];
+    panels.forEach((panel) => {
+      addSvg(svg, 'text', { x: panel.left, y: 34, fill: '#d7a94b' }, panel.title);
+      panel.rows.forEach(([label, value, color], index) => {
+        const y = 78 + index * 92;
+        const barWidth = (value / panel.max) * panel.width;
+        addSvg(svg, 'text', { x: panel.left, y, fill: '#a8a49d' }, label);
+        addSvg(svg, 'rect', { x: panel.left, y: y + 14, width: panel.width, height: 24, rx: 2, fill: 'rgba(242,238,230,.06)' });
+        const bar = addSvg(svg, 'rect', { class: 'bar', x: panel.left, y: y + 14, width: Math.max(0, barWidth), height: 24, rx: 2, fill: color });
+        addSvg(bar, 'title', {}, `${label}: ${trillions(value, 2)}`);
+        addSvg(svg, 'text', { x: panel.left, y: y + 61, fill: '#f2eee6' }, trillions(value, 2));
+      });
+    });
+    addSvg(svg, 'line', { x1: 355, x2: 355, y1: 24, y2: height - 26, stroke: 'rgba(242,238,230,.12)' });
+  }
+
   function render(data) {
     const latest = data.latest;
     set('as-of', data.as_of_date);
@@ -132,6 +168,25 @@
     set('cumulative-net-income-since-2000', trillions(cumulativeSummary.cumulative_public_company_netinc_trillions, 1));
     set('cumulative-debt-income-gap', trillions(cumulativeSummary.debt_accrual_minus_cumulative_netinc_trillions, 1));
     set('cumulative-debt-income-ratio', `${cumulativeSummary.debt_accrued_to_cumulative_netinc_ratio.toFixed(2)}×`);
+    const taxValuation = data.tax_valuation;
+    const taxSummary = taxValuation.tax_summary;
+    const valuationSummary = taxValuation.valuation_summary;
+    const baseTaxScenario = taxValuation.tax_scenarios.find((row) => row.scenario === 'constant_multiple');
+    set('tax-rate-current', `${taxSummary.current_federal_rate_pct.toFixed(0)}%`);
+    set('tax-rate-max', `${taxSummary.historical_max_federal_rate_pct.toFixed(1)}%`);
+    set('tax-incremental-receipts', trillions(taxSummary.incremental_static_receipts_trillions, 2));
+    set('tax-deficit-coverage', `${taxSummary.static_deficit_coverage_pct.toFixed(1)}%`);
+    set('tax-market-cap-destruction', trillions(taxSummary.constant_multiple_market_cap_destruction_trillions, 1));
+    set('tax-market-cap-destruction-pct', `${taxSummary.constant_multiple_market_cap_destruction_pct.toFixed(1)}%`);
+    set('tax-destruction-per-dollar', `${taxSummary.constant_multiple_market_cap_destroyed_per_tax_dollar.toFixed(1)}×`);
+    set('operating-fcf-yield', `${valuationSummary.operating_company_fcf_yield_pct.toFixed(2)}%`);
+    set('operating-fcf', trillions(valuationSummary.operating_company_rolling_4q_fcf_trillions, 2));
+    set('operating-market-cap', trillions(valuationSummary.operating_company_market_cap_trillions, 1));
+    set('treasury-30y-yield', `${valuationSummary.us_30y_treasury_yield_pct.toFixed(2)}%`);
+    set('spx-forward-earnings-yield', `${valuationSummary.spx_forward_earnings_yield_pct.toFixed(2)}%`);
+    set('spx-forward-pe', `${valuationSummary.spx_best_pe_ratio.toFixed(1)}×`);
+    set('vclt-yield', `${valuationSummary.vclt_yas_bond_yield_pct.toFixed(2)}%`);
+    set('spx-vclt-spread', `${valuationSummary.spx_earnings_yield_minus_vclt_pct_points.toFixed(2)} pp`);
     const productivity = data.productivity;
     const productivitySummary = productivity.summary;
     set('utility-capex-per-mwh', `${money(productivitySummary.latest_real_capex_per_mwh, 1)}/MWh`);
@@ -164,6 +219,8 @@
     const burdenTableYears = new Set([2004, 2008, 2009, 2012, 2016, 2020, 2024, 2026]);
     const ratioCell = (value) => Number.isFinite(value) ? pct(value) : 'n/m';
     $('#burden-history-table').innerHTML = burdenHistory.filter((row) => burdenTableYears.has(row.year)).map((row) => `<tr><td>${row.year}</td><td>${trillions(row.interest_trillions, 2)}</td><td>${trillions(row.annualized_unfunded_program_cost_trillions, 2)}</td><td>${trillions(row.all_in_annual_burden_trillions, 2)}</td><td>${trillions(row.public_net_income_trillions, 2)}</td><td>${ratioCell(row.explicit_interest_to_public_net_income_ratio)}</td><td>${ratioCell(row.all_in_burden_to_public_net_income_ratio)}</td></tr>`).join('');
+
+    $('#tax-scenario-table').innerHTML = taxValuation.tax_scenarios.map((row) => `<tr><td>${row.pe_multiple_change_pct === 0 ? 'Unchanged' : `${row.pe_multiple_change_pct.toFixed(0)}%`}</td><td>${trillions(row.market_cap_destruction_trillions, 1)}</td><td>${row.market_cap_destruction_pct.toFixed(1)}%</td><td>${row.market_cap_destroyed_per_incremental_tax_dollar.toFixed(1)}×</td></tr>`).join('');
 
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
@@ -212,11 +269,24 @@
       { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
     ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
+    taxStressChart($('#tax-stress-chart'), taxSummary, baseTaxScenario);
+    const fcfYield = taxValuation.fcf_yield_vs_30y;
+    lineChart($('#fcf-yield-chart'), [
+      { color: '#d7a94b', values: fcfYield.map((d) => ({ year: d.year, value: d.aggregate_fcf_yield_pct })) },
+      { color: '#62c6ae', values: fcfYield.map((d) => ({ year: d.year, value: d.us_30y_yield_pct })) },
+    ], { yMin: 0, yMax: 8, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(2)}%`, points: false, xTicks: 6, margin: { left: 46, right: 18 } });
+
+    const spxVclt = taxValuation.spx_earnings_yield_vs_vclt;
+    lineChart($('#spx-vclt-yield-chart'), [
+      { color: '#8b78d1', values: spxVclt.map((d) => ({ year: d.year, value: d.spx_forward_earnings_yield_pct })) },
+      { color: '#eb735f', values: spxVclt.map((d) => ({ year: d.year, value: d.vclt_yas_bond_yield_pct })) },
+    ], { yMin: 0, yMax: 8, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(2)}%`, points: true, xTicks: 6, margin: { left: 46, right: 18 } });
+
     maturityChart($('#maturity-chart'), data.maturity_wall);
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-6', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260802-7', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

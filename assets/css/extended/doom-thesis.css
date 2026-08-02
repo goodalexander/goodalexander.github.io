@@ -158,6 +158,17 @@
 .doom-cumulative-strip > div:nth-child(3) strong { color: var(--doom-red); }
 .doom-productivity-main-chart { margin-bottom: 1.2rem; }
 .doom-productivity-secondary-charts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.doom-tax-strip > div:first-child { background: linear-gradient(145deg, rgba(215,169,75,.14), var(--doom-panel) 70%); }
+.doom-tax-strip > div:first-child strong { color: var(--doom-amber); font-size: clamp(1.55rem, 2.6vw, 2.35rem); }
+.doom-tax-rate-transition span { display: inline; color: inherit; font: inherit; letter-spacing: inherit; text-transform: none; }
+.doom-tax-strip > div:nth-child(2) strong { color: var(--doom-green); }
+.doom-tax-strip > div:nth-child(3) strong,.doom-tax-strip > div:nth-child(4) strong { color: var(--doom-red); }
+.doom-tax-grid { margin-bottom: 1.2rem; }
+.doom-valuation-strip { margin-top: 1.2rem; }
+.doom-valuation-strip > div:first-child { background: linear-gradient(145deg, rgba(215,169,75,.14), var(--doom-panel) 70%); }
+.doom-valuation-strip > div:first-child strong { color: var(--doom-amber); }
+.doom-valuation-strip > div:nth-child(2) strong,.doom-valuation-strip > div:nth-child(4) strong { color: var(--doom-red); }
+.doom-valuation-strip > div:nth-child(3) strong { color: var(--doom-violet); }
 .doom-chart-table { margin-top: .5rem; padding-top: .75rem; border-top: 1px solid var(--doom-line); }
 .doom-chart-note { max-width: none; margin: .8rem 0 0; }
 .doom-method { padding-top: 2rem; border-top: 1px solid var(--doom-line); }
