@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-03T04:09:21.792305+00:00",
+  "generated_at_utc": "2026-08-03T16:14:17.070015+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -2047,7 +2047,7 @@
       "total_annual_adjustment_pct_gdp": 8.331406500721187,
       "tax_only_required_receipts_pct_gdp": 25.87240650072119,
       "tax_only_annual_adjustment_per_household": 19718.664127961834,
-      "warning": "Social Security and Medicare funding gaps overlap with future unified-budget deficits. This construction combines a current-year deficit target with prospective prefunding; it must not be added again to a full 75-year unified-deficit present value."
+      "warning": "Social Security and Medicare funding gaps overlap with future unified-budget deficits. This construction combines a current-year deficit target with prospective prefunding; it must not be added again to a full 75-year unified-deficit present value. The reform shares are present-value financing sensitivities, not specified benefit cuts or independently scored policy packages."
     },
     "funding_endpoints": [
       {
@@ -2119,9 +2119,9 @@
     "tax_mix": [
       {
         "program_reform_share_of_gap_funding_pct": 0.0,
+        "program_reform_pv_reduction_trillions": 0.0,
         "new_tax_revenue_trillions": 2.65787874,
-        "annual_program_reform_trillions": 0.0,
-        "program_reform_pct_current_ss_medicare_outlays": 0.0,
+        "annual_equivalent_program_reform_trillions": 0.0,
         "required_total_federal_receipts_trillions": 8.25379474,
         "required_total_federal_receipts_pct_gdp": 25.8724065,
         "ordinary_income_all_brackets_rate_point_change": 8.41852003,
@@ -2133,13 +2133,14 @@
         "resulting_top_long_term_gains_rate_with_niit_pct": 35.67022831,
         "corporate_income_rate_point_change": 11.87022831,
         "resulting_corporate_income_rate_pct": 32.87022831,
-        "broad_vat_rate_pct": 14.83778539
+        "broad_vat_rate_pct": 14.83778539,
+        "policy_status": "PV financing sensitivity; not a scored reform package"
       },
       {
         "program_reform_share_of_gap_funding_pct": 10.0,
+        "program_reform_pv_reduction_trillions": 6.26980788,
         "new_tax_revenue_trillions": 2.4816554,
-        "annual_program_reform_trillions": 0.17622334,
-        "program_reform_pct_current_ss_medicare_outlays": 5.96798769,
+        "annual_equivalent_program_reform_trillions": 0.17622334,
         "required_total_federal_receipts_trillions": 8.0775714,
         "required_total_federal_receipts_pct_gdp": 25.32001551,
         "ordinary_income_all_brackets_rate_point_change": 7.86035322,
@@ -2151,13 +2152,14 @@
         "resulting_top_long_term_gains_rate_with_niit_pct": 34.88320548,
         "corporate_income_rate_point_change": 11.08320548,
         "resulting_corporate_income_rate_pct": 32.08320548,
-        "broad_vat_rate_pct": 13.85400685
+        "broad_vat_rate_pct": 13.85400685,
+        "policy_status": "PV financing sensitivity; not a scored reform package"
       },
       {
         "program_reform_share_of_gap_funding_pct": 20.0,
+        "program_reform_pv_reduction_trillions": 12.53961576,
         "new_tax_revenue_trillions": 2.30543206,
-        "annual_program_reform_trillions": 0.35244667,
-        "program_reform_pct_current_ss_medicare_outlays": 11.93597539,
+        "annual_equivalent_program_reform_trillions": 0.35244667,
         "required_total_federal_receipts_trillions": 7.90134806,
         "required_total_federal_receipts_pct_gdp": 24.76762453,
         "ordinary_income_all_brackets_rate_point_change": 7.30218641,
@@ -2169,7 +2171,8 @@
         "resulting_top_long_term_gains_rate_with_niit_pct": 34.09618265,
         "corporate_income_rate_point_change": 10.29618265,
         "resulting_corporate_income_rate_pct": 31.29618265,
-        "broad_vat_rate_pct": 12.87022831
+        "broad_vat_rate_pct": 12.87022831,
+        "policy_status": "PV financing sensitivity; not a scored reform package"
       }
     ]
   },

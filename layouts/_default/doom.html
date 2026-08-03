@@ -444,16 +444,17 @@
 
     <div class="doom-panel doom-table-panel">
       <div class="doom-panel-head">
-        <div><span class="doom-panel-label">Selected endpoint · one GDP-year residual</span><h3>Taxation versus gradual program reform</h3></div>
-        <div class="doom-note">The rate mix spreads new revenue across ordinary income, payroll, gains and dividends, corporate income, and a broad VAT.</div>
+        <div><span class="doom-panel-label">Selected endpoint · one GDP-year residual</span><h3>Funding split sensitivity—not a reform proposal</h3></div>
+        <div class="doom-note">The table asks how the tax requirement changes if separately specified reforms eventually reduce part of the program-gap PV.</div>
       </div>
       <div class="doom-table-wrap">
         <table class="doom-table doom-table-dense doom-sustainability-table">
-          <thead><tr><th>Program share</th><th>Annual program reform</th><th>New taxes</th><th>Total receipts / GDP</th><th>All income brackets</th><th>Combined payroll</th><th>Top gains + NIIT</th><th>Corporate</th><th>VAT</th></tr></thead>
+          <thead><tr><th>PV reform share</th><th>Required PV reduction</th><th>New taxes</th><th>Total receipts / GDP</th><th>All income brackets</th><th>Combined payroll</th><th>Top gains + NIIT</th><th>Corporate</th><th>VAT</th></tr></thead>
           <tbody id="sustainability-tax-mix-table"></tbody>
         </table>
       </div>
-      <p class="doom-note doom-chart-note">“Program reform” is a level annual-equivalent reduction in the gap, phased across future benefit growth, eligibility, premiums, and healthcare costs—not an immediate cut to current pensions. Even the 10% reform case requires taxes far beyond historical federal levels. These rate combinations linearly scale JCT marginal scores; large simultaneous hikes would produce nonlinear avoidance and macroeconomic feedback, so they are optimistic revenue estimates.</p>
+      <p class="doom-note doom-chart-note">The 10% row means that an actual, independently scored policy package would have to reduce the 75-year gap PV by the displayed amount. Its annual-equivalent is shown only to make the stock comparable with annual taxes. It is not a current benefit cut, and this table cannot establish whether any reform is non-catastrophic; that requires specifying timing, cohorts, benefit formulas, eligibility, premiums, and healthcare-payment changes.</p>
+      <p class="doom-note doom-chart-note">The tax columns are a separate sensitivity that linearly scales JCT marginal scores. Large simultaneous hikes would produce nonlinear avoidance and macroeconomic feedback, so they are optimistic revenue estimates.</p>
       <p class="doom-note doom-chart-note">Do not add this program funding benchmark to a separate 75-year unified-deficit present value: Social Security and Medicare gaps already overlap with future federal deficits. This construction combines only a current-year deficit target with prospective prefunding.</p>
       <a class="doom-download" href="/doom-thesis/fiscal-sustainability-scenarios.csv" download>Download funding endpoints <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/fiscal-sustainability-tax-mix.csv" download>Download sustainable tax mixes <span>↓</span></a>
@@ -574,5 +575,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-2" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-3" defer></script>
 {{ end }}
