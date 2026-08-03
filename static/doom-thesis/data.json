@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-03T16:14:17.070015+00:00",
+  "generated_at_utc": "2026-08-03T16:32:07.353209+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -2176,6 +2176,74 @@
       }
     ]
   },
+  "growth_escape": {
+    "summary": {
+      "imf_global_real_gdp_growth_2026_pct": 3.0,
+      "imf_global_real_gdp_growth_2027_pct": 3.4,
+      "world_bank_global_real_gdp_growth_2026_pct": 2.5,
+      "world_bank_global_real_gdp_growth_2027_pct": 2.8,
+      "imf_us_real_gdp_growth_2026_pct": 2.3,
+      "imf_us_real_gdp_growth_2027_pct": 2.2,
+      "cbo_us_long_run_real_gdp_growth_pct": 1.8,
+      "cbo_potential_labor_force_growth_pct": 0.4,
+      "cbo_comparable_tax_financing_gdp_level_impact_low_pct": -3.0,
+      "cbo_comparable_tax_financing_gdp_level_impact_high_pct": -10.0,
+      "mechanical_corporate_after_tax_earnings_hit_pct": 15.025605456324287,
+      "equity_loss_with_10pct_derating_pct": 23.52304491069186,
+      "equity_loss_with_20pct_derating_pct": 32.02048436505942,
+      "method": "GDP hurdle makes the current real program gap equal one year of future real GDP without benefit reductions. It is a denominator test, not cash funding, and assumes a stable federal revenue share."
+    },
+    "sensitivity": [
+      {
+        "horizon_years": 10,
+        "real_program_gap_growth_pct": 0.0,
+        "required_real_gdp_cagr_pct": 11.48268754,
+        "required_productivity_cagr_pct": 11.03853341,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 9.68268754,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      },
+      {
+        "horizon_years": 10,
+        "real_program_gap_growth_pct": 2.0,
+        "required_real_gdp_cagr_pct": 13.7123413,
+        "required_productivity_cagr_pct": 13.25930408,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 11.9123413,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      },
+      {
+        "horizon_years": 20,
+        "real_program_gap_growth_pct": 0.0,
+        "required_real_gdp_cagr_pct": 5.58536241,
+        "required_productivity_cagr_pct": 5.16470359,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 3.78536241,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      },
+      {
+        "horizon_years": 20,
+        "real_program_gap_growth_pct": 2.0,
+        "required_real_gdp_cagr_pct": 7.69706965,
+        "required_productivity_cagr_pct": 7.26799766,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 5.89706965,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      },
+      {
+        "horizon_years": 30,
+        "real_program_gap_growth_pct": 0.0,
+        "required_real_gdp_cagr_pct": 3.68974584,
+        "required_productivity_cagr_pct": 3.27663928,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 1.88974584,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      },
+      {
+        "horizon_years": 30,
+        "real_program_gap_growth_pct": 2.0,
+        "required_real_gdp_cagr_pct": 5.76354075,
+        "required_productivity_cagr_pct": 5.34217207,
+        "incremental_real_gdp_growth_vs_cbo_pct_points": 3.96354075,
+        "interpretation": "Growth-only denominator test; does not itself fund the remaining gap."
+      }
+    ]
+  },
   "productivity": {
     "summary": {
       "latest_year": 2025,
@@ -3485,6 +3553,18 @@
     {
       "name": "CBO Budget and Economic Outlook: 2026 to 2036",
       "url": "https://www.cbo.gov/publication/62105"
+    },
+    {
+      "name": "IMF World Economic Outlook Update, July 2026",
+      "url": "https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026"
+    },
+    {
+      "name": "World Bank Global Economic Prospects, June 2026",
+      "url": "https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release"
+    },
+    {
+      "name": "CBO economic effects of financing a permanent spending increase",
+      "url": "https://www.cbo.gov/publication/57021"
     },
     {
       "name": "OMB total federal receipts and outlays",

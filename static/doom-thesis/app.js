@@ -193,6 +193,28 @@
     set('sustainability-adjustment-gdp', `${sustainabilitySummary.total_annual_adjustment_pct_gdp.toFixed(1)}%`);
     set('sustainability-receipts-gdp', `${sustainabilitySummary.tax_only_required_receipts_pct_gdp.toFixed(1)}%`);
     set('sustainability-per-household', money(sustainabilitySummary.tax_only_annual_adjustment_per_household));
+    const growthEscape = data.growth_escape;
+    const growthSummary = growthEscape.summary;
+    const growthHurdle = (horizon, gapGrowth) => growthEscape.sensitivity.find((row) => row.horizon_years === horizon && row.real_program_gap_growth_pct === gapGrowth);
+    const growthRange = (horizon, field) => {
+      const low = growthHurdle(horizon, 0)[field];
+      const high = growthHurdle(horizon, 2)[field];
+      return `${low.toFixed(1)}–${high.toFixed(1)}%`;
+    };
+    set('escape-tax-adjustment', trillions(sustainabilitySummary.total_annual_adjustment_trillions, 2));
+    set('escape-tax-adjustment-gdp', `${sustainabilitySummary.total_annual_adjustment_pct_gdp.toFixed(1)}%`);
+    set('escape-tax-receipts-gdp', `${sustainabilitySummary.tax_only_required_receipts_pct_gdp.toFixed(1)}%`);
+    set('escape-gdp-level-impact', `${Math.abs(growthSummary.cbo_comparable_tax_financing_gdp_level_impact_low_pct).toFixed(0)}–${Math.abs(growthSummary.cbo_comparable_tax_financing_gdp_level_impact_high_pct).toFixed(0)}%`);
+    set('escape-corporate-earnings-hit', `${growthSummary.mechanical_corporate_after_tax_earnings_hit_pct.toFixed(0)}%`);
+    set('escape-equity-loss', `${growthSummary.equity_loss_with_10pct_derating_pct.toFixed(0)}–${growthSummary.equity_loss_with_20pct_derating_pct.toFixed(0)}%`);
+    set('escape-us-consensus', `${growthSummary.imf_us_real_gdp_growth_2026_pct.toFixed(1)}% / ${growthSummary.imf_us_real_gdp_growth_2027_pct.toFixed(1)}%`);
+    set('escape-us-long-run', `${growthSummary.cbo_us_long_run_real_gdp_growth_pct.toFixed(1)}%`);
+    set('escape-global-imf', `${growthSummary.imf_global_real_gdp_growth_2026_pct.toFixed(1)}% / ${growthSummary.imf_global_real_gdp_growth_2027_pct.toFixed(1)}%`);
+    set('escape-global-world-bank', `${growthSummary.world_bank_global_real_gdp_growth_2026_pct.toFixed(1)}% / ${growthSummary.world_bank_global_real_gdp_growth_2027_pct.toFixed(1)}%`);
+    [10, 20, 30].forEach((horizon) => {
+      set(`escape-${horizon}y-gdp`, growthRange(horizon, 'required_real_gdp_cagr_pct'));
+      set(`escape-${horizon}y-productivity`, growthRange(horizon, 'required_productivity_cagr_pct'));
+    });
     set('tax-rate-current', `${taxSummary.current_federal_rate_pct.toFixed(0)}%`);
     set('tax-rate-max', `${taxSummary.historical_max_federal_rate_pct.toFixed(1)}%`);
     set('tax-incremental-receipts', trillions(taxSummary.incremental_static_receipts_trillions, 2));
@@ -319,7 +341,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-3', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-4', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

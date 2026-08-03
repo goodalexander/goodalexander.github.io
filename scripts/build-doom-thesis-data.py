@@ -107,6 +107,14 @@ def build_payload(doom_root: Path) -> dict:
             encoding="utf-8"
         )
     )
+    agi_growth_sensitivity = pd.read_csv(
+        doom_root / "agi_growth_escape_sensitivity.csv"
+    )
+    agi_growth_summary = json.loads(
+        (doom_root / "agi_growth_escape_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
     fcf_yield_vs_30y = pd.read_csv(
         doom_root
         / "operating_company_fcf_yield_vs_30y_annual_2004_2026.csv"
@@ -678,6 +686,10 @@ def build_payload(doom_root: Path) -> dict:
             ),
             "tax_mix": records(sustainability_tax_mix.round(8)),
         },
+        "growth_escape": {
+            "summary": agi_growth_summary,
+            "sensitivity": records(agi_growth_sensitivity.round(8)),
+        },
         "productivity": {
             "summary": {
                 "latest_year": int(utility_latest["calendar_year"]),
@@ -801,6 +813,18 @@ def build_payload(doom_root: Path) -> dict:
                 "url": "https://www.cbo.gov/publication/62105",
             },
             {
+                "name": "IMF World Economic Outlook Update, July 2026",
+                "url": "https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026",
+            },
+            {
+                "name": "World Bank Global Economic Prospects, June 2026",
+                "url": "https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release",
+            },
+            {
+                "name": "CBO economic effects of financing a permanent spending increase",
+                "url": "https://www.cbo.gov/publication/57021",
+            },
+            {
                 "name": "OMB total federal receipts and outlays",
                 "url": "https://fred.stlouisfed.org/series/FYFR",
             },
@@ -881,6 +905,9 @@ def main() -> None:
     pd.read_csv(
         args.doom_data_root / "fiscal_sustainability_tax_mix.csv"
     ).to_csv(args.output_dir / "fiscal-sustainability-tax-mix.csv", index=False)
+    pd.read_csv(
+        args.doom_data_root / "agi_growth_escape_sensitivity.csv"
+    ).to_csv(args.output_dir / "agi-growth-escape-sensitivity.csv", index=False)
     print(json.dumps(payload["latest"], indent=2))
 
 
