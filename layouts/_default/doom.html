@@ -291,7 +291,7 @@
         <div class="doom-eyebrow">05 / Productivity</div>
         <h2>More capital, modest output</h2>
       </div>
-      <p>Physical power output, corporate cash conversion, and economy-wide output per hour expose different layers of productivity. Together they show where investment is—and is not—turning into measurable output.</p>
+      <p>Physical power, human capital, corporate cash conversion, and economy-wide output per hour expose different layers of productivity. Together they show where spending and investment are—and are not—turning into measurable output.</p>
     </div>
 
     <div class="doom-productivity-strip">
@@ -327,6 +327,53 @@
       <svg id="utility-productivity-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Inflation-adjusted U.S. utility capital expenditure compared with total U.S. electricity generation from 2004 through 2025, indexed to 2004"></svg>
       <p class="doom-note doom-chart-note">This is a system-level capital-intensity measure, not a levelized cost of electricity. Sharadar Utilities includes gas, water, and multi-utilities; EIA generation includes independent, commercial, and industrial generators.</p>
     </figure>
+
+    <figure class="doom-panel doom-chart-panel doom-productivity-main-chart">
+      <figcaption>
+        <span class="doom-panel-label">2003 = 100 · spending inflation-adjusted</span>
+        <h3>Education spending versus demonstrated learning</h3>
+        <p>Census current spending per public-school pupil versus national-public grade-8 NAEP reading and mathematics</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Real spending per pupil</span><span style="--swatch:#62c6ae">NAEP reading/math composite</span></div>
+      <svg id="education-productivity-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Inflation-adjusted current public-school spending per pupil compared with national-public grade-8 NAEP reading and mathematics scores from 2003 through 2024, indexed to 2003"></svg>
+      <p class="doom-note doom-chart-note">By 2024, real current spending per pupil was <strong data-field="education-real-spending-change">—</strong> above 2003 while the grade-8 reading/math score index was <strong data-field="education-naep-change">—</strong> below 2003. Normalizing NAEP scores permits a visual comparison; it does not mean the scale measures “percent knowledge,” and this chart is descriptive rather than a causal estimate. The decline is not universal: the public-school graduation rate rose from 80% in 2011–12 to 87% in 2021–22.</p>
+    </figure>
+
+    <div class="doom-productivity-strip doom-human-capital-strip">
+      <div>
+        <span>FY2024 spending / pupil</span>
+        <strong data-field="education-spending-per-pupil">—</strong>
+        <small>Current public-school expenditure</small>
+      </div>
+      <div>
+        <span>Grade-12 reading since 1992</span>
+        <strong data-field="grade12-reading-change">—</strong>
+        <small>NAEP scale points, 2024; bottom decile fell <span data-field="grade12-reading-lower-tail">—</span></small>
+      </div>
+      <div>
+        <span>Adults at literacy Level 1 or below</span>
+        <strong data-field="adult-low-literacy">—</strong>
+        <small>2023, up from <span data-field="adult-low-literacy-prior">—</span> in 2017; NCES cautions on response rates and assessment-mode changes</small>
+      </div>
+      <div>
+        <span>Chronically absent students</span>
+        <strong data-field="chronic-absence">—</strong>
+        <small>2024–25, versus <span data-field="chronic-absence-prior">—</span> pre-pandemic</small>
+      </div>
+    </div>
+
+    <aside class="doom-panel doom-institutional-capacity">
+      <div>
+        <span class="doom-panel-label">Institutional capacity</span>
+        <h3>Weak outputs can become fiscal inputs</h3>
+        <p>Human capital is not only a growth variable. A system also needs legitimacy and administrative competence to collect taxes, enforce rules, and deliver benefits without excessive leakage. In 2025, only <strong data-field="federal-trust">—</strong> of Americans said they trusted the federal government to do what is right always or most of the time.</p>
+      </div>
+      <div class="doom-institutional-number">
+        <strong data-field="medicare-improper-payments">—</strong>
+        <span>FY2025 Medicare improper payments</span>
+        <small>FFS + Part C + Part D. CMS explicitly says this is <em>not</em> a fraud estimate: it also includes underpayments, documentation and coding failures, and other noncompliance. Low trust and payment errors may both signal institutional weakness; these data do not prove that one causes the other.</small>
+      </div>
+    </aside>
 
     <div class="doom-chart-grid doom-productivity-secondary-charts">
       <figure class="doom-panel doom-chart-panel">
@@ -588,11 +635,12 @@
       <ol id="source-list"></ol>
       <a class="doom-download" href="/doom-thesis/household-liabilities.csv" download>Download household-liability CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/productivity.csv" download>Download productivity CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/education-spending-vs-naep.csv" download>Download education productivity CSV <span>↓</span></a>
     </div>
   </section>
 
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-4" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-5" defer></script>
 {{ end }}

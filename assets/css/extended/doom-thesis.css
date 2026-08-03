@@ -173,6 +173,17 @@
 .doom-cumulative-strip > div:nth-child(3) strong { color: var(--doom-red); }
 .doom-productivity-main-chart { margin-bottom: 1.2rem; }
 .doom-productivity-secondary-charts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.doom-human-capital-strip > div:first-child strong { color: var(--doom-red); }
+.doom-human-capital-strip > div:nth-child(2) strong { color: var(--doom-red); }
+.doom-human-capital-strip > div:nth-child(3) strong { color: var(--doom-amber); }
+.doom-human-capital-strip > div:nth-child(4) strong { color: var(--doom-amber); }
+.doom-institutional-capacity { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 2rem; align-items: center; margin-bottom: 1.2rem; }
+.doom-institutional-capacity p { max-width: 760px; margin: .65rem 0 0; color: var(--doom-muted); font-size: .8rem; line-height: 1.65; }
+.doom-institutional-capacity p strong { color: var(--doom-ink); }
+.doom-institutional-number { padding-left: 1.5rem; border-left: 1px solid var(--doom-line); }
+.doom-institutional-number > strong { display: block; color: var(--doom-red); font: 500 clamp(2rem, 4vw, 3.2rem)/1 "Cormorant Garamond", Georgia, serif; }
+.doom-institutional-number > span { display: block; margin-top: .35rem; color: var(--doom-muted); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+.doom-institutional-number small { display: block; margin-top: .75rem; color: var(--doom-dim); font-size: .67rem; line-height: 1.5; }
 .doom-tax-strip > div:first-child { background: linear-gradient(145deg, rgba(215,169,75,.14), var(--doom-panel) 70%); }
 .doom-tax-strip > div:first-child strong { color: var(--doom-amber); font-size: clamp(1.55rem, 2.6vw, 2.35rem); }
 .doom-tax-rate-transition span { display: inline; color: inherit; font: inherit; letter-spacing: inherit; text-transform: none; }
@@ -204,6 +215,8 @@
   .doom-burden-strip { grid-template-columns: repeat(2, 1fr); }
   .doom-productivity-strip { grid-template-columns: repeat(2, 1fr); }
   .doom-chart-grid,.doom-chart-grid-wide,.doom-squeeze-grid { grid-template-columns: 1fr; }
+  .doom-institutional-capacity { grid-template-columns: 1fr; gap: 1.2rem; }
+  .doom-institutional-number { padding: 1rem 0 0; border-top: 1px solid var(--doom-line); border-left: 0; }
   .doom-section-head { grid-template-columns: 1fr; gap: .8rem; }
   .doom-chart-panel-narrow { min-height: 0; }
 }

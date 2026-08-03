@@ -240,6 +240,18 @@
     set('labor-productivity-latest-growth', pct(productivitySummary.latest_quarter_productivity_growth_annualized));
     set('labor-productivity-quarter', productivitySummary.latest_labor_productivity_quarter);
     set('labor-productivity-yoy', pct(productivitySummary.latest_quarter_productivity_growth_yoy));
+    const humanCapital = productivity.human_capital_evidence;
+    set('education-spending-per-pupil', money(productivitySummary.latest_public_school_spending_per_pupil));
+    set('education-real-spending-change', pct(productivitySummary.real_public_school_spending_change_since_2003));
+    set('education-naep-change', pct(Math.abs(productivitySummary.naep_grade8_composite_change_since_2003)));
+    set('grade12-reading-change', `${humanCapital.grade12_reading_point_change_since_1992.toFixed(0)} pts`);
+    set('grade12-reading-lower-tail', `${Math.abs(humanCapital.grade12_reading_10th_percentile_point_change_since_1992).toFixed(0)} points`);
+    set('adult-low-literacy', `${humanCapital.adult_literacy_level1_or_below_pct_2023.toFixed(0)}%`);
+    set('adult-low-literacy-prior', `${humanCapital.adult_literacy_level1_or_below_pct_2017.toFixed(0)}%`);
+    set('chronic-absence', `${humanCapital.chronic_absence_pct_2024_25.toFixed(0)}%`);
+    set('chronic-absence-prior', `${humanCapital.chronic_absence_pct_pre_pandemic.toFixed(0)}%`);
+    set('federal-trust', `${humanCapital.trust_federal_government_pct_2025.toFixed(0)}%`);
+    set('medicare-improper-payments', `$${humanCapital.medicare_improper_payments_billions_fy2025.toFixed(1)}B`);
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -307,6 +319,12 @@
       { color: '#62c6ae', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.generation_index_2004 })) },
     ], { yMin: 80, yMax: 280, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2004=100)`, points: false, xTicks: 8 });
 
+    const educationProductivity = productivity.education_spending_vs_naep;
+    lineChart($('#education-productivity-chart'), [
+      { color: '#eb735f', values: educationProductivity.map((d) => ({ year: d.year, value: d.real_spending_index_2003 })) },
+      { color: '#62c6ae', values: educationProductivity.map((d) => ({ year: d.year, value: d.naep_composite_index_2003 })) },
+    ], { yMin: 95, yMax: 132, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2003=100)`, points: true, xTicks: 8 });
+
     const fcfMargin = productivity.operating_company_fcf_margin;
     lineChart($('#fcf-margin-chart'), [
       { color: '#d7a94b', values: fcfMargin.map((d) => ({ year: d.calendar_year, value: d.aggregate_fcf_margin })) },
@@ -341,7 +359,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-4', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-5', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

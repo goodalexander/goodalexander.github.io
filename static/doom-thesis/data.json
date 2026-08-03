@@ -1,12 +1,13 @@
 {
-  "generated_at_utc": "2026-08-03T16:56:17.016342+00:00",
+  "generated_at_utc": "2026-08-03T18:28:33.047743+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
     "household_income": "BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.",
     "ratio": "Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.",
     "discretionary_income": "St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.",
-    "annualized_unfunded_burden": "Derived level real annual payment that amortizes the Social Security and Medicare 75-year present-value gaps over 75 years at the Trustees' 2.3% intermediate ultimate real interest rate. It is an economic funding benchmark, not a current legal invoice."
+    "annualized_unfunded_burden": "Derived level real annual payment that amortizes the Social Security and Medicare 75-year present-value gaps over 75 years at the Trustees' 2.3% intermediate ultimate real interest rate. It is an economic funding benchmark, not a current legal invoice.",
+    "education_productivity": "Census public-school current spending per pupil, deflated by CPI-U and compared with the equally weighted index of national-public grade-8 NAEP reading and mathematics scores. Chart values are normalized to 2003=100 for visual comparison; NAEP scores are not ratio-scale measures of knowledge, and the relationship is descriptive rather than a causal estimate of spending efficacy."
   },
   "latest": {
     "year": 2026,
@@ -2260,7 +2261,12 @@
       "latest_labor_productivity_quarter": "Q1 2026",
       "latest_quarter_productivity_growth_annualized": 0.0029189836284104764,
       "latest_quarter_productivity_growth_yoy": 0.027972148347061188,
-      "labor_productivity_cagr_since_2004": 0.01702223447136597
+      "labor_productivity_cagr_since_2004": 0.01702223447136597,
+      "latest_public_school_spending_per_pupil": 17619.38902754,
+      "real_public_school_spending_change_since_2003": 0.28877313260000004,
+      "naep_grade8_composite_change_since_2003": -0.015965450499999978,
+      "naep_grade8_reading_point_change_since_2003": -4.669825449999962,
+      "naep_grade8_math_point_change_since_2003": -3.8826285700000085
     },
     "utility_capex_generation": [
       {
@@ -2938,6 +2944,175 @@
         "five_year_annualized_growth": 0.01565845
       }
     ],
+    "education_spending_vs_naep": [
+      {
+        "year": 2003,
+        "nominal_current_spending_per_pupil": 8019.0,
+        "cpi": 184.0,
+        "naep_grade8_reading_score": 261.33261507,
+        "naep_grade8_mathematics_score": 276.11527558,
+        "real_2024_current_spending_per_pupil": 13671.44347011,
+        "real_spending_index_2003": 100.0,
+        "reading_index_2003": 100.0,
+        "math_index_2003": 100.0,
+        "naep_composite_index_2003": 100.0,
+        "real_spending_change_since_2003_pct": 0.0,
+        "naep_composite_change_since_2003_pct": 0.0
+      },
+      {
+        "year": 2005,
+        "nominal_current_spending_per_pupil": 8701.05507141,
+        "cpi": 195.26666667,
+        "naep_grade8_reading_score": 260.4045097,
+        "naep_grade8_mathematics_score": 277.5196845,
+        "real_2024_current_spending_per_pupil": 13978.34597457,
+        "real_spending_index_2003": 102.24484346,
+        "reading_index_2003": 99.64485666,
+        "math_index_2003": 100.50863137,
+        "naep_composite_index_2003": 100.07674402,
+        "real_spending_change_since_2003_pct": 2.24484346,
+        "naep_composite_change_since_2003_pct": 0.07674402
+      },
+      {
+        "year": 2007,
+        "nominal_current_spending_per_pupil": 9666.37752737,
+        "cpi": 207.34416667,
+        "naep_grade8_reading_score": 261.01395065,
+        "naep_grade8_mathematics_score": 280.16946143,
+        "real_2024_current_spending_per_pupil": 14624.59714876,
+        "real_spending_index_2003": 106.97185839,
+        "reading_index_2003": 99.87806175,
+        "math_index_2003": 101.46829466,
+        "naep_composite_index_2003": 100.67317821,
+        "real_spending_change_since_2003_pct": 6.97185839,
+        "naep_composite_change_since_2003_pct": 0.67317821
+      },
+      {
+        "year": 2009,
+        "nominal_current_spending_per_pupil": 10498.66458569,
+        "cpi": 214.56466667,
+        "naep_grade8_reading_score": 262.29361774,
+        "naep_grade8_mathematics_score": 281.67478106,
+        "real_2024_current_spending_per_pupil": 15349.27387694,
+        "real_spending_index_2003": 112.27251834,
+        "reading_index_2003": 100.36773162,
+        "math_index_2003": 102.01347262,
+        "naep_composite_index_2003": 101.19060212,
+        "real_spending_change_since_2003_pct": 12.27251834,
+        "naep_composite_change_since_2003_pct": 1.19060212
+      },
+      {
+        "year": 2011,
+        "nominal_current_spending_per_pupil": 10608.27782349,
+        "cpi": 224.923,
+        "naep_grade8_reading_score": 263.59252633,
+        "naep_grade8_mathematics_score": 282.72713101,
+        "real_2024_current_spending_per_pupil": 14795.27351458,
+        "real_spending_index_2003": 108.2202735,
+        "reading_index_2003": 100.86476434,
+        "math_index_2003": 102.39459965,
+        "naep_composite_index_2003": 101.629682,
+        "real_spending_change_since_2003_pct": 8.2202735,
+        "naep_composite_change_since_2003_pct": 1.629682
+      },
+      {
+        "year": 2013,
+        "nominal_current_spending_per_pupil": 10723.50497965,
+        "cpi": 232.95175,
+        "naep_grade8_reading_score": 266.01913609,
+        "naep_grade8_mathematics_score": 283.61503645,
+        "real_2024_current_spending_per_pupil": 14440.51762803,
+        "real_spending_index_2003": 105.62540568,
+        "reading_index_2003": 101.79331654,
+        "math_index_2003": 102.71617021,
+        "naep_composite_index_2003": 102.25474338,
+        "real_spending_change_since_2003_pct": 5.62540568,
+        "naep_composite_change_since_2003_pct": 2.25474338
+      },
+      {
+        "year": 2015,
+        "nominal_current_spending_per_pupil": 11391.7874053,
+        "cpi": 237.00175,
+        "naep_grade8_reading_score": 263.99397394,
+        "naep_grade8_mathematics_score": 281.27958884,
+        "real_2024_current_spending_per_pupil": 15078.29720286,
+        "real_spending_index_2003": 110.29045496,
+        "reading_index_2003": 101.01837992,
+        "math_index_2003": 101.87034681,
+        "naep_composite_index_2003": 101.44436337,
+        "real_spending_change_since_2003_pct": 10.29045496,
+        "naep_composite_change_since_2003_pct": 1.44436337
+      },
+      {
+        "year": 2017,
+        "nominal_current_spending_per_pupil": 12201.14650876,
+        "cpi": 245.121,
+        "naep_grade8_reading_score": 265.3293601,
+        "naep_grade8_mathematics_score": 281.9575549,
+        "real_2024_current_spending_per_pupil": 15614.6445675,
+        "real_spending_index_2003": 114.21357665,
+        "reading_index_2003": 101.52937092,
+        "math_index_2003": 102.11588414,
+        "naep_composite_index_2003": 101.82262753,
+        "real_spending_change_since_2003_pct": 14.21357665,
+        "naep_composite_change_since_2003_pct": 1.82262753
+      },
+      {
+        "year": 2019,
+        "nominal_current_spending_per_pupil": 13187.34673347,
+        "cpi": 255.65258333,
+        "naep_grade8_reading_score": 261.99832705,
+        "naep_grade8_mathematics_score": 280.98659856,
+        "real_2024_current_spending_per_pupil": 16181.51649222,
+        "real_spending_index_2003": 118.35997075,
+        "reading_index_2003": 100.25473743,
+        "math_index_2003": 101.76423523,
+        "naep_composite_index_2003": 101.00948633,
+        "real_spending_change_since_2003_pct": 18.35997075,
+        "naep_composite_change_since_2003_pct": 1.00948633
+      },
+      {
+        "year": 2022,
+        "nominal_current_spending_per_pupil": 15629.73125156,
+        "cpi": 292.62641667,
+        "naep_grade8_reading_score": 259.10772519,
+        "naep_grade8_mathematics_score": 273.13222861,
+        "real_2024_current_spending_per_pupil": 16755.21333637,
+        "real_spending_index_2003": 122.55628583,
+        "reading_index_2003": 99.14863674,
+        "math_index_2003": 98.91963711,
+        "naep_composite_index_2003": 99.03413692,
+        "real_spending_change_since_2003_pct": 22.55628583,
+        "naep_composite_change_since_2003_pct": -0.96586308
+      },
+      {
+        "year": 2024,
+        "nominal_current_spending_per_pupil": 17619.38902754,
+        "cpi": 313.69816667,
+        "naep_grade8_reading_score": 256.66278962,
+        "naep_grade8_mathematics_score": 272.23264701,
+        "real_2024_current_spending_per_pupil": 17619.38902754,
+        "real_spending_index_2003": 128.87731326,
+        "reading_index_2003": 98.21307209,
+        "math_index_2003": 98.59383782,
+        "naep_composite_index_2003": 98.40345495,
+        "real_spending_change_since_2003_pct": 28.87731326,
+        "naep_composite_change_since_2003_pct": -1.59654505
+      }
+    ],
+    "human_capital_evidence": {
+      "grade12_reading_point_change_since_1992": -10.0,
+      "grade12_reading_10th_percentile_point_change_since_1992": -24.0,
+      "grade12_math_below_basic_pct_2024": 45.0,
+      "adult_literacy_level1_or_below_pct_2017": 19.0,
+      "adult_literacy_level1_or_below_pct_2023": 28.0,
+      "chronic_absence_pct_pre_pandemic": 15.0,
+      "chronic_absence_pct_2024_25": 23.0,
+      "trust_federal_government_pct_2025": 17.0,
+      "medicare_improper_payments_billions_fy2025": 56.73,
+      "medicare_ffs_improper_payment_rate_pct_fy2025": 6.55,
+      "medicare_improper_payment_definition": "CMS explicitly says improper payments are not a fraud measure. They include overpayments, underpayments, missing documentation, coding errors, and administrative failures."
+    },
     "combined_annual_panel": [
       {
         "calendar_year": 2004,
@@ -3541,6 +3716,38 @@
     {
       "name": "BLS nonfarm-business labor productivity",
       "url": "https://fred.stlouisfed.org/series/OPHNFB"
+    },
+    {
+      "name": "Census public-school current spending per pupil",
+      "url": "https://www.census.gov/programs-surveys/school-finances/data/tables.html"
+    },
+    {
+      "name": "NAEP national public grade-8 reading and mathematics",
+      "url": "https://www.nationsreportcard.gov/api_documentation.aspx"
+    },
+    {
+      "name": "NAEP 2024 grade-12 reading and mathematics",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g12/national-trends/"
+    },
+    {
+      "name": "NCES PIAAC 2023 national adult skills",
+      "url": "https://nces.ed.gov/surveys/piaac/2023/national_results.asp"
+    },
+    {
+      "name": "NCES public high-school graduation rates",
+      "url": "https://nces.ed.gov/programs/coe/indicator/coi/high-school-graduation"
+    },
+    {
+      "name": "Education Recovery Scorecard 2026",
+      "url": "https://www.gse.harvard.edu/ideas/news/26/05/new-education-scorecard-finds-u-shaped-recovery"
+    },
+    {
+      "name": "Pew public trust in government, 1958\u20132025",
+      "url": "https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/"
+    },
+    {
+      "name": "CMS FY2025 improper payments fact sheet",
+      "url": "https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet"
     },
     {
       "name": "Sharadar utility capex and operating-company FCF",

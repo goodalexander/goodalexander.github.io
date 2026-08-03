@@ -39,6 +39,7 @@ def build_llm_document(payload: dict) -> str:
     tax_mix = payload["sustainability"]["tax_mix"][0]
     growth = payload["growth_escape"]["summary"]
     productivity = payload["productivity"]["summary"]
+    human_capital = payload["productivity"]["human_capital_evidence"]
     cumulative = payload["cumulative_income_vs_debt"]["summary"]
     valuation = payload["tax_valuation"]["valuation_summary"]
 
@@ -128,6 +129,9 @@ def build_llm_document(payload: dict) -> str:
             f"- Rolling operating-company FCF yield: {valuation['operating_company_fcf_yield_pct']:.2f}% versus a {valuation['us_30y_treasury_yield_pct']:.2f}% 30-year Treasury yield.",
             f"- SPX forward earnings yield: {valuation['spx_forward_earnings_yield_pct']:.2f}% versus VCLT yield of {valuation['vclt_yas_bond_yield_pct']:.2f}%.",
             f"- U.S. electricity generation: {productivity['latest_generation_twh']:,.0f} TWh; utility capex: ${productivity['latest_utility_capex_billions']:.1f} billion; real capex per MWh is {productivity['real_capex_per_mwh_multiple_since_2004']:.2f}x its 2004 level.",
+            f"- Public-school current spending per pupil: ${productivity['latest_public_school_spending_per_pupil']:,.0f} in FY2024. Inflation-adjusted spending rose {productivity['real_public_school_spending_change_since_2003']:.1%} from 2003 while the national-public grade-8 NAEP reading/math composite ended {abs(productivity['naep_grade8_composite_change_since_2003']):.1%} below its 2003 level.",
+            f"- Wider human-capital signals: grade-12 reading was {abs(human_capital['grade12_reading_point_change_since_1992']):.0f} NAEP points below 1992; adults at PIAAC literacy Level 1 or below rose from {human_capital['adult_literacy_level1_or_below_pct_2017']:.0f}% in 2017 to {human_capital['adult_literacy_level1_or_below_pct_2023']:.0f}% in 2023; chronic absence was {human_capital['chronic_absence_pct_2024_25']:.0f}% in 2024–25 versus {human_capital['chronic_absence_pct_pre_pandemic']:.0f}% before the pandemic.",
+            f"- Institutional-capacity context: {human_capital['trust_federal_government_pct_2025']:.0f}% trusted the federal government in 2025. CMS measured ${human_capital['medicare_improper_payments_billions_fy2025']:.2f} billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.",
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
             "",
@@ -142,6 +146,7 @@ def build_llm_document(payload: dict) -> str:
             "- Daily cumulative income versus debt: https://goodalexander.com/doom-thesis/cumulative-income-vs-debt-daily.csv",
             "- Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv",
             "- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv",
+            "- Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv",
             "",
             "## Sources",
             "",
@@ -263,6 +268,9 @@ def build_payload(doom_root: Path) -> dict:
     )
     utility_productivity = pd.read_csv(
         doom_root / "us_utility_capex_vs_power_generation_2004_2025.csv"
+    )
+    education_productivity = pd.read_csv(
+        doom_root / "us_public_school_spending_vs_naep_2003_2024.csv"
     )
     operating_fcf = pd.read_csv(
         doom_root
@@ -641,6 +649,8 @@ def build_payload(doom_root: Path) -> dict:
     ]
     utility_base = utility_productivity.iloc[0]
     utility_latest = utility_productivity.iloc[-1]
+    education_base = education_productivity.iloc[0]
+    education_latest = education_productivity.iloc[-1]
     fcf_latest = operating_fcf.iloc[-1]
     labor_base = labor_productivity.iloc[0]
     labor_latest = labor_productivity.iloc[-1]
@@ -688,6 +698,14 @@ def build_payload(doom_root: Path) -> dict:
                 "and Medicare 75-year present-value gaps over 75 years at the Trustees' "
                 "2.3% intermediate ultimate real interest rate. It is an economic "
                 "funding benchmark, not a current legal invoice."
+            ),
+            "education_productivity": (
+                "Census public-school current spending per pupil, deflated by "
+                "CPI-U and compared with the equally weighted index of national-"
+                "public grade-8 NAEP reading and mathematics scores. Chart values "
+                "are normalized to 2003=100 for visual comparison; NAEP scores are "
+                "not ratio-scale measures of knowledge, and the relationship is "
+                "descriptive rather than a causal estimate of spending efficacy."
             ),
         },
         "latest": {
@@ -854,6 +872,23 @@ def build_payload(doom_root: Path) -> dict:
                 "labor_productivity_cagr_since_2004": float(
                     labor_productivity_cagr
                 ),
+                "latest_public_school_spending_per_pupil": float(
+                    education_latest["nominal_current_spending_per_pupil"]
+                ),
+                "real_public_school_spending_change_since_2003": float(
+                    education_latest["real_spending_index_2003"] / 100 - 1
+                ),
+                "naep_grade8_composite_change_since_2003": float(
+                    education_latest["naep_composite_index_2003"] / 100 - 1
+                ),
+                "naep_grade8_reading_point_change_since_2003": float(
+                    education_latest["naep_grade8_reading_score"]
+                    - education_base["naep_grade8_reading_score"]
+                ),
+                "naep_grade8_math_point_change_since_2003": float(
+                    education_latest["naep_grade8_mathematics_score"]
+                    - education_base["naep_grade8_mathematics_score"]
+                ),
             },
             "utility_capex_generation": records(
                 utility_productivity.round(8)
@@ -864,6 +899,26 @@ def build_payload(doom_root: Path) -> dict:
             "labor_productivity": records(
                 labor_productivity.round(8)
             ),
+            "education_spending_vs_naep": records(
+                education_productivity.round(8)
+            ),
+            "human_capital_evidence": {
+                "grade12_reading_point_change_since_1992": -10.0,
+                "grade12_reading_10th_percentile_point_change_since_1992": -24.0,
+                "grade12_math_below_basic_pct_2024": 45.0,
+                "adult_literacy_level1_or_below_pct_2017": 19.0,
+                "adult_literacy_level1_or_below_pct_2023": 28.0,
+                "chronic_absence_pct_pre_pandemic": 15.0,
+                "chronic_absence_pct_2024_25": 23.0,
+                "trust_federal_government_pct_2025": 17.0,
+                "medicare_improper_payments_billions_fy2025": 56.73,
+                "medicare_ffs_improper_payment_rate_pct_fy2025": 6.55,
+                "medicare_improper_payment_definition": (
+                    "CMS explicitly says improper payments are not a fraud "
+                    "measure. They include overpayments, underpayments, missing "
+                    "documentation, coding errors, and administrative failures."
+                ),
+            },
             "combined_annual_panel": records(
                 productivity_panel.round(8)
             ),
@@ -916,6 +971,38 @@ def build_payload(doom_root: Path) -> dict:
             {
                 "name": "BLS nonfarm-business labor productivity",
                 "url": "https://fred.stlouisfed.org/series/OPHNFB",
+            },
+            {
+                "name": "Census public-school current spending per pupil",
+                "url": "https://www.census.gov/programs-surveys/school-finances/data/tables.html",
+            },
+            {
+                "name": "NAEP national public grade-8 reading and mathematics",
+                "url": "https://www.nationsreportcard.gov/api_documentation.aspx",
+            },
+            {
+                "name": "NAEP 2024 grade-12 reading and mathematics",
+                "url": "https://www.nationsreportcard.gov/reports/reading/2024/g12/national-trends/",
+            },
+            {
+                "name": "NCES PIAAC 2023 national adult skills",
+                "url": "https://nces.ed.gov/surveys/piaac/2023/national_results.asp",
+            },
+            {
+                "name": "NCES public high-school graduation rates",
+                "url": "https://nces.ed.gov/programs/coe/indicator/coi/high-school-graduation",
+            },
+            {
+                "name": "Education Recovery Scorecard 2026",
+                "url": "https://www.gse.harvard.edu/ideas/news/26/05/new-education-scorecard-finds-u-shaped-recovery",
+            },
+            {
+                "name": "Pew public trust in government, 1958–2025",
+                "url": "https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/",
+            },
+            {
+                "name": "CMS FY2025 improper payments fact sheet",
+                "url": "https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet",
             },
             {
                 "name": "Sharadar utility capex and operating-company FCF",
@@ -1008,6 +1095,12 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=productivity[0].keys())
         writer.writeheader()
         writer.writerows(productivity)
+    pd.read_csv(
+        args.doom_data_root
+        / "us_public_school_spending_vs_naep_2003_2024.csv"
+    ).to_csv(
+        args.output_dir / "education-spending-vs-naep.csv", index=False
+    )
     cumulative_source = (
         args.doom_data_root
         / "us_public_company_cumulative_net_income_vs_debt_accrued_daily_2000_2026.csv"
