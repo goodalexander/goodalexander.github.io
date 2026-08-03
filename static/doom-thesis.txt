@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-03T18:28:33.047743+00:00
+Generated: 2026-08-03T18:39:03.181556+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -62,6 +62,8 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - U.S. electricity generation: 4,430 TWh; utility capex: $201.3 billion; real capex per MWh is 2.38x its 2004 level.
 - Public-school current spending per pupil: $17,619 in FY2024. Inflation-adjusted spending rose 28.9% from 2003 while the national-public grade-8 NAEP reading/math composite ended 1.6% below its 2003 level.
 - Wider human-capital signals: grade-12 reading was 10 NAEP points below 1992; adults at PIAAC literacy Level 1 or below rose from 19% in 2017 to 28% in 2023; chronic absence was 23% in 2024–25 versus 15% before the pandemic.
+- Credential versus mastery: the public-school graduation rate rose from 80% in 2011–12 to 87% in 2021–22 and average reported GPA rose from 3.17 in 2010 to 3.36 in 2021, while the ACT composite fell from 21.0 in 2015 to 19.4 in 2025. ACT estimates that changing participation explains much of the aggregate score decline, but the broader school-day cohort also fell from 18.4 to 17.8.
+- School-to-work conversion: SignalFire reported that new graduates were only 7% of Big Tech hires in 2024. Its 2026 report estimates new-grad/entry-level hiring 65% below 2019 at Tech Majors and 76% below 2019 at early-stage startups; top-20 computer-science graduates were 45% less likely to take a Tech Major role in 2025 than the 2022 class. These proprietary LinkedIn-derived estimates measure employer demand and career transitions, not educational quality alone.
 - Institutional-capacity context: 17% trusted the federal government in 2025. CMS measured $56.73 billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
@@ -103,6 +105,11 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - NAEP 2024 grade-12 reading and mathematics: https://www.nationsreportcard.gov/reports/reading/2024/g12/national-trends/
 - NCES PIAAC 2023 national adult skills: https://nces.ed.gov/surveys/piaac/2023/national_results.asp
 - NCES public high-school graduation rates: https://nces.ed.gov/programs/coe/indicator/coi/high-school-graduation
+- ACT 2025 graduating-class results: https://www.act.org/content/dam/act/unsecured/documents/2025-ACT-Graduating-Class-Infographic.pdf
+- ACT graduating-class participation analysis: https://www.act.org/content/dam/act/unsecured/documents/interpreting-graduating-class-data-2024.pdf
+- ACT high-school grade-inflation study: https://industryinsights.act.org/2022/05/grade-inflation-past-decade
+- SignalFire State of Tech Talent 2025: https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025
+- SignalFire State of Tech Talent 2026: https://www.signalfire.com/blog/signalfire-state-of-talent-report-2026
 - Education Recovery Scorecard 2026: https://www.gse.harvard.edu/ideas/news/26/05/new-education-scorecard-finds-u-shaped-recovery
 - Pew public trust in government, 1958–2025: https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/
 - CMS FY2025 improper payments fact sheet: https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet

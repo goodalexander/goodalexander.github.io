@@ -336,7 +336,7 @@
       </figcaption>
       <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Real spending per pupil</span><span style="--swatch:#62c6ae">NAEP reading/math composite</span></div>
       <svg id="education-productivity-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Inflation-adjusted current public-school spending per pupil compared with national-public grade-8 NAEP reading and mathematics scores from 2003 through 2024, indexed to 2003"></svg>
-      <p class="doom-note doom-chart-note">By 2024, real current spending per pupil was <strong data-field="education-real-spending-change">—</strong> above 2003 while the grade-8 reading/math score index was <strong data-field="education-naep-change">—</strong> below 2003. Normalizing NAEP scores permits a visual comparison; it does not mean the scale measures “percent knowledge,” and this chart is descriptive rather than a causal estimate. The decline is not universal: the public-school graduation rate rose from 80% in 2011–12 to 87% in 2021–22.</p>
+      <p class="doom-note doom-chart-note">By 2024, real current spending per pupil was <strong data-field="education-real-spending-change">—</strong> above 2003 while the grade-8 reading/math score index was <strong data-field="education-naep-change">—</strong> below 2003. Normalizing NAEP scores permits a visual comparison; it does not mean the scale measures “percent knowledge,” and this chart is descriptive rather than a causal estimate.</p>
     </figure>
 
     <div class="doom-productivity-strip doom-human-capital-strip">
@@ -361,6 +361,32 @@
         <small>2024–25, versus <span data-field="chronic-absence-prior">—</span> pre-pandemic</small>
       </div>
     </div>
+
+    <section class="doom-panel doom-education-trajectory">
+      <header>
+        <span class="doom-panel-label">The education trajectory</span>
+        <h3>More credentials. Weaker measured mastery. A narrower first rung.</h3>
+        <p>The system is issuing more successful-looking credentials while external assessments have weakened and high-productivity employers are investing much less in beginner talent. The last step is partly a labor-demand shock—not a pure verdict on schools—but it reduces the apprenticeship capacity that turns education into experienced human capital.</p>
+      </header>
+      <div class="doom-trajectory-grid">
+        <div>
+          <span>01 / Credentials</span>
+          <strong><span data-field="graduation-rate-start">—</span> → <span data-field="graduation-rate-end">—</span></strong>
+          <p>Public-school graduation, 2011–12 to 2021–22. Over a similar period, ACT-taker GPA rose from <b data-field="gpa-start">—</b> to <b data-field="gpa-end">—</b>. Neither is a fixed national mastery standard.</p>
+        </div>
+        <div>
+          <span>02 / External mastery</span>
+          <strong><span data-field="act-start">—</span> → <span data-field="act-end">—</span></strong>
+          <p>ACT composite, 2015 to 2025. Broader school-day testing explains much of the aggregate decline, but its more comparable mean also fell from <b data-field="act-schoolday-start">—</b> to <b data-field="act-schoolday-end">—</b>.</p>
+        </div>
+        <div>
+          <span>03 / Entry-level conversion</span>
+          <strong data-field="big-tech-new-grad-share">—</strong>
+          <p>New graduates’ share of 2024 Big Tech hires. SignalFire’s latest report estimates entry-level hiring is <b data-field="tech-major-entry-decline">—</b> below 2019 at Tech Majors and <b data-field="startup-entry-decline">—</b> below 2019 at early-stage startups.</p>
+        </div>
+      </div>
+      <p class="doom-note doom-chart-note">SignalFire’s proprietary Beacon AI tracks professional profiles and organizations. Its company universes and definitions changed between the 2025 and 2026 reports. The latest report also finds graduates from top-20 U.S. computer-science programs were <strong data-field="top-cs-placement-decline">—</strong> less likely to enter a Tech Major in 2025 than the 2022 class. This is evidence of a broken school-to-work conversion channel, not proof that weaker student performance caused the hiring contraction; AI automation, post-ZIRP normalization, and leaner organizational design also matter.</p>
+    </section>
 
     <aside class="doom-panel doom-institutional-capacity">
       <div>
@@ -642,5 +668,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-5" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-6" defer></script>
 {{ end }}

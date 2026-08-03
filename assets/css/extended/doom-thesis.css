@@ -177,6 +177,16 @@
 .doom-human-capital-strip > div:nth-child(2) strong { color: var(--doom-red); }
 .doom-human-capital-strip > div:nth-child(3) strong { color: var(--doom-amber); }
 .doom-human-capital-strip > div:nth-child(4) strong { color: var(--doom-amber); }
+.doom-education-trajectory { margin-bottom: 1.2rem; }
+.doom-education-trajectory > header { max-width: 900px; margin-bottom: 1.2rem; }
+.doom-education-trajectory > header p { margin: .6rem 0 0; color: var(--doom-muted); font-size: .8rem; line-height: 1.65; }
+.doom-trajectory-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
+.doom-trajectory-grid > div { min-height: 205px; padding: 1.25rem; background: rgba(8,10,12,.5); }
+.doom-trajectory-grid > div > span { color: var(--doom-dim); font: 500 .65rem/1.3 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.doom-trajectory-grid strong { display: block; margin: .75rem 0 .6rem; color: var(--doom-red); font: 500 clamp(2rem, 4vw, 3rem)/1 "Cormorant Garamond", Georgia, serif; }
+.doom-trajectory-grid strong span { color: inherit; font: inherit; letter-spacing: inherit; text-transform: none; }
+.doom-trajectory-grid p { margin: 0; color: var(--doom-muted); font-size: .73rem; line-height: 1.55; }
+.doom-trajectory-grid p b { color: var(--doom-ink); font-weight: 600; }
 .doom-institutional-capacity { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 2rem; align-items: center; margin-bottom: 1.2rem; }
 .doom-institutional-capacity p { max-width: 760px; margin: .65rem 0 0; color: var(--doom-muted); font-size: .8rem; line-height: 1.65; }
 .doom-institutional-capacity p strong { color: var(--doom-ink); }
@@ -215,6 +225,8 @@
   .doom-burden-strip { grid-template-columns: repeat(2, 1fr); }
   .doom-productivity-strip { grid-template-columns: repeat(2, 1fr); }
   .doom-chart-grid,.doom-chart-grid-wide,.doom-squeeze-grid { grid-template-columns: 1fr; }
+  .doom-trajectory-grid { grid-template-columns: 1fr; }
+  .doom-trajectory-grid > div { min-height: 0; }
   .doom-institutional-capacity { grid-template-columns: 1fr; gap: 1.2rem; }
   .doom-institutional-number { padding: 1rem 0 0; border-top: 1px solid var(--doom-line); border-left: 0; }
   .doom-section-head { grid-template-columns: 1fr; gap: .8rem; }

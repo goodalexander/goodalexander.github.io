@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-03T18:28:33.047743+00:00",
+  "generated_at_utc": "2026-08-03T18:39:03.181556+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -3104,11 +3104,24 @@
       "grade12_reading_point_change_since_1992": -10.0,
       "grade12_reading_10th_percentile_point_change_since_1992": -24.0,
       "grade12_math_below_basic_pct_2024": 45.0,
+      "public_school_graduation_rate_pct_2011_12": 80.0,
+      "public_school_graduation_rate_pct_2021_22": 87.0,
+      "act_composite_2015": 21.0,
+      "act_composite_2025": 19.4,
+      "act_school_day_composite_2015": 18.4,
+      "act_school_day_composite_2024": 17.8,
+      "act_taker_average_gpa_2010": 3.17,
+      "act_taker_average_gpa_2021": 3.36,
       "adult_literacy_level1_or_below_pct_2017": 19.0,
       "adult_literacy_level1_or_below_pct_2023": 28.0,
       "chronic_absence_pct_pre_pandemic": 15.0,
       "chronic_absence_pct_2024_25": 23.0,
       "trust_federal_government_pct_2025": 17.0,
+      "big_tech_new_grad_share_pct_2024": 7.0,
+      "tech_major_entry_level_hiring_change_since_2019_pct": -65.0,
+      "early_stage_startup_entry_level_hiring_change_since_2019_pct": -76.0,
+      "top20_cs_tech_major_placement_change_2025_vs_2022_pct": -45.0,
+      "tech_hiring_definition": "SignalFire proprietary Beacon AI estimates derived from professional-profile and organization data. Its 2025 Big Tech universe contains the top 15 technology companies by market capitalization; its 2026 Tech Majors universe contains 12 named companies. The series measures employer demand and career transitions, not graduate quality alone.",
       "medicare_improper_payments_billions_fy2025": 56.73,
       "medicare_ffs_improper_payment_rate_pct_fy2025": 6.55,
       "medicare_improper_payment_definition": "CMS explicitly says improper payments are not a fraud measure. They include overpayments, underpayments, missing documentation, coding errors, and administrative failures."
@@ -3736,6 +3749,26 @@
     {
       "name": "NCES public high-school graduation rates",
       "url": "https://nces.ed.gov/programs/coe/indicator/coi/high-school-graduation"
+    },
+    {
+      "name": "ACT 2025 graduating-class results",
+      "url": "https://www.act.org/content/dam/act/unsecured/documents/2025-ACT-Graduating-Class-Infographic.pdf"
+    },
+    {
+      "name": "ACT graduating-class participation analysis",
+      "url": "https://www.act.org/content/dam/act/unsecured/documents/interpreting-graduating-class-data-2024.pdf"
+    },
+    {
+      "name": "ACT high-school grade-inflation study",
+      "url": "https://industryinsights.act.org/2022/05/grade-inflation-past-decade"
+    },
+    {
+      "name": "SignalFire State of Tech Talent 2025",
+      "url": "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025"
+    },
+    {
+      "name": "SignalFire State of Tech Talent 2026",
+      "url": "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2026"
     },
     {
       "name": "Education Recovery Scorecard 2026",

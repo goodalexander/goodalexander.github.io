@@ -250,6 +250,18 @@
     set('adult-low-literacy-prior', `${humanCapital.adult_literacy_level1_or_below_pct_2017.toFixed(0)}%`);
     set('chronic-absence', `${humanCapital.chronic_absence_pct_2024_25.toFixed(0)}%`);
     set('chronic-absence-prior', `${humanCapital.chronic_absence_pct_pre_pandemic.toFixed(0)}%`);
+    set('graduation-rate-start', `${humanCapital.public_school_graduation_rate_pct_2011_12.toFixed(0)}%`);
+    set('graduation-rate-end', `${humanCapital.public_school_graduation_rate_pct_2021_22.toFixed(0)}%`);
+    set('gpa-start', humanCapital.act_taker_average_gpa_2010.toFixed(2));
+    set('gpa-end', humanCapital.act_taker_average_gpa_2021.toFixed(2));
+    set('act-start', humanCapital.act_composite_2015.toFixed(1));
+    set('act-end', humanCapital.act_composite_2025.toFixed(1));
+    set('act-schoolday-start', humanCapital.act_school_day_composite_2015.toFixed(1));
+    set('act-schoolday-end', humanCapital.act_school_day_composite_2024.toFixed(1));
+    set('big-tech-new-grad-share', `${humanCapital.big_tech_new_grad_share_pct_2024.toFixed(0)}%`);
+    set('tech-major-entry-decline', `${Math.abs(humanCapital.tech_major_entry_level_hiring_change_since_2019_pct).toFixed(0)}%`);
+    set('startup-entry-decline', `${Math.abs(humanCapital.early_stage_startup_entry_level_hiring_change_since_2019_pct).toFixed(0)}%`);
+    set('top-cs-placement-decline', `${Math.abs(humanCapital.top20_cs_tech_major_placement_change_2025_vs_2022_pct).toFixed(0)}%`);
     set('federal-trust', `${humanCapital.trust_federal_government_pct_2025.toFixed(0)}%`);
     set('medicare-improper-payments', `$${humanCapital.medicare_improper_payments_billions_fy2025.toFixed(1)}B`);
     set('doom-definition', data.definitions.doom_index);
@@ -359,7 +371,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-5', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-6', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

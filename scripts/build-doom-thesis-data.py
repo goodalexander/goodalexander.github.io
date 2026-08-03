@@ -131,6 +131,8 @@ def build_llm_document(payload: dict) -> str:
             f"- U.S. electricity generation: {productivity['latest_generation_twh']:,.0f} TWh; utility capex: ${productivity['latest_utility_capex_billions']:.1f} billion; real capex per MWh is {productivity['real_capex_per_mwh_multiple_since_2004']:.2f}x its 2004 level.",
             f"- Public-school current spending per pupil: ${productivity['latest_public_school_spending_per_pupil']:,.0f} in FY2024. Inflation-adjusted spending rose {productivity['real_public_school_spending_change_since_2003']:.1%} from 2003 while the national-public grade-8 NAEP reading/math composite ended {abs(productivity['naep_grade8_composite_change_since_2003']):.1%} below its 2003 level.",
             f"- Wider human-capital signals: grade-12 reading was {abs(human_capital['grade12_reading_point_change_since_1992']):.0f} NAEP points below 1992; adults at PIAAC literacy Level 1 or below rose from {human_capital['adult_literacy_level1_or_below_pct_2017']:.0f}% in 2017 to {human_capital['adult_literacy_level1_or_below_pct_2023']:.0f}% in 2023; chronic absence was {human_capital['chronic_absence_pct_2024_25']:.0f}% in 2024–25 versus {human_capital['chronic_absence_pct_pre_pandemic']:.0f}% before the pandemic.",
+            f"- Credential versus mastery: the public-school graduation rate rose from {human_capital['public_school_graduation_rate_pct_2011_12']:.0f}% in 2011–12 to {human_capital['public_school_graduation_rate_pct_2021_22']:.0f}% in 2021–22 and average reported GPA rose from {human_capital['act_taker_average_gpa_2010']:.2f} in 2010 to {human_capital['act_taker_average_gpa_2021']:.2f} in 2021, while the ACT composite fell from {human_capital['act_composite_2015']:.1f} in 2015 to {human_capital['act_composite_2025']:.1f} in 2025. ACT estimates that changing participation explains much of the aggregate score decline, but the broader school-day cohort also fell from {human_capital['act_school_day_composite_2015']:.1f} to {human_capital['act_school_day_composite_2024']:.1f}.",
+            f"- School-to-work conversion: SignalFire reported that new graduates were only {human_capital['big_tech_new_grad_share_pct_2024']:.0f}% of Big Tech hires in 2024. Its 2026 report estimates new-grad/entry-level hiring {abs(human_capital['tech_major_entry_level_hiring_change_since_2019_pct']):.0f}% below 2019 at Tech Majors and {abs(human_capital['early_stage_startup_entry_level_hiring_change_since_2019_pct']):.0f}% below 2019 at early-stage startups; top-20 computer-science graduates were {abs(human_capital['top20_cs_tech_major_placement_change_2025_vs_2022_pct']):.0f}% less likely to take a Tech Major role in 2025 than the 2022 class. These proprietary LinkedIn-derived estimates measure employer demand and career transitions, not educational quality alone.",
             f"- Institutional-capacity context: {human_capital['trust_federal_government_pct_2025']:.0f}% trusted the federal government in 2025. CMS measured ${human_capital['medicare_improper_payments_billions_fy2025']:.2f} billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.",
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
@@ -906,11 +908,31 @@ def build_payload(doom_root: Path) -> dict:
                 "grade12_reading_point_change_since_1992": -10.0,
                 "grade12_reading_10th_percentile_point_change_since_1992": -24.0,
                 "grade12_math_below_basic_pct_2024": 45.0,
+                "public_school_graduation_rate_pct_2011_12": 80.0,
+                "public_school_graduation_rate_pct_2021_22": 87.0,
+                "act_composite_2015": 21.0,
+                "act_composite_2025": 19.4,
+                "act_school_day_composite_2015": 18.4,
+                "act_school_day_composite_2024": 17.8,
+                "act_taker_average_gpa_2010": 3.17,
+                "act_taker_average_gpa_2021": 3.36,
                 "adult_literacy_level1_or_below_pct_2017": 19.0,
                 "adult_literacy_level1_or_below_pct_2023": 28.0,
                 "chronic_absence_pct_pre_pandemic": 15.0,
                 "chronic_absence_pct_2024_25": 23.0,
                 "trust_federal_government_pct_2025": 17.0,
+                "big_tech_new_grad_share_pct_2024": 7.0,
+                "tech_major_entry_level_hiring_change_since_2019_pct": -65.0,
+                "early_stage_startup_entry_level_hiring_change_since_2019_pct": -76.0,
+                "top20_cs_tech_major_placement_change_2025_vs_2022_pct": -45.0,
+                "tech_hiring_definition": (
+                    "SignalFire proprietary Beacon AI estimates derived from "
+                    "professional-profile and organization data. Its 2025 Big "
+                    "Tech universe contains the top 15 technology companies by "
+                    "market capitalization; its 2026 Tech Majors universe contains "
+                    "12 named companies. The series measures employer demand and "
+                    "career transitions, not graduate quality alone."
+                ),
                 "medicare_improper_payments_billions_fy2025": 56.73,
                 "medicare_ffs_improper_payment_rate_pct_fy2025": 6.55,
                 "medicare_improper_payment_definition": (
@@ -991,6 +1013,26 @@ def build_payload(doom_root: Path) -> dict:
             {
                 "name": "NCES public high-school graduation rates",
                 "url": "https://nces.ed.gov/programs/coe/indicator/coi/high-school-graduation",
+            },
+            {
+                "name": "ACT 2025 graduating-class results",
+                "url": "https://www.act.org/content/dam/act/unsecured/documents/2025-ACT-Graduating-Class-Infographic.pdf",
+            },
+            {
+                "name": "ACT graduating-class participation analysis",
+                "url": "https://www.act.org/content/dam/act/unsecured/documents/interpreting-graduating-class-data-2024.pdf",
+            },
+            {
+                "name": "ACT high-school grade-inflation study",
+                "url": "https://industryinsights.act.org/2022/05/grade-inflation-past-decade",
+            },
+            {
+                "name": "SignalFire State of Tech Talent 2025",
+                "url": "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025",
+            },
+            {
+                "name": "SignalFire State of Tech Talent 2026",
+                "url": "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2026",
             },
             {
                 "name": "Education Recovery Scorecard 2026",
