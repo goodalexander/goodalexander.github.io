@@ -138,7 +138,7 @@ def build_llm_document(payload: dict) -> str:
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
-            f"- Fiscal comparison: the deficit was {demographics['deficit_pct_gdp_1945']:.1f}% of GDP in 1945, {demographics['deficit_pct_gdp_2020']:.1f}% in the pandemic year 2020, and {demographics['deficit_pct_gdp_2025']:.1f}% in 2025. CBO projects {demographics['deficit_pct_gdp_2036']:.1f}% in 2036. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
+            f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used by the Doom Index. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
             "",
             "## Definitions",
             "",
@@ -1008,11 +1008,26 @@ def build_payload(doom_root: Path) -> dict:
                 "deficit_pct_gdp_2036": demographic_value(
                     2036, "federal_deficit_pct_gdp"
                 ),
+                "gross_debt_pct_gdp_1945": demographic_value(
+                    1945, "gross_federal_debt_pct_gdp"
+                ),
+                "gross_debt_pct_gdp_1960": demographic_value(
+                    1960, "gross_federal_debt_pct_gdp"
+                ),
+                "gross_debt_pct_gdp_2000": demographic_value(
+                    2000, "gross_federal_debt_pct_gdp"
+                ),
+                "gross_debt_pct_gdp_2020": demographic_value(
+                    2020, "gross_federal_debt_pct_gdp"
+                ),
+                "gross_debt_pct_gdp_2025": demographic_value(
+                    2025, "gross_federal_debt_pct_gdp"
+                ),
             },
             "history_and_projection": records(demographics.round(8)),
             "comparison_years": records(
                 demographics[
-                    demographics["year"].isin([1945, 1960, 2020, 2025, 2036])
+                    demographics["year"].isin([1945, 1960, 2000, 2020, 2025])
                 ].round(8)
             ),
         },
@@ -1032,6 +1047,10 @@ def build_payload(doom_root: Path) -> dict:
             {
                 "name": "OMB/FRED federal surplus or deficit as a share of GDP",
                 "url": "https://fred.stlouisfed.org/series/FYFSDFYGDP",
+            },
+            {
+                "name": "OMB/FRED gross federal debt as a share of GDP",
+                "url": "https://fred.stlouisfed.org/series/GFDGDPA188S",
             },
             {
                 "name": "CBO 2026–2036 budget outlook",

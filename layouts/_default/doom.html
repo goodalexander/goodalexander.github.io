@@ -429,7 +429,7 @@
         <div class="doom-eyebrow">06 / Demographics</div>
         <h2>A structural deficit on a narrowing base</h2>
       </div>
-      <p>World War II produced a much larger temporary deficit, followed by demobilization and a demographic boom. Today’s deficit is smaller but persistent, and it sits beneath a mature pay-as-you-go transfer system with fewer covered workers supporting each beneficiary.</p>
+      <p>World War II left a gross federal debt equal to 114% of GDP, but demobilization and rapid nominal growth cut that ratio by more than half within 15 years. Today the debt stock is higher than the wartime level and sits beneath a mature pay-as-you-go transfer system with fewer covered workers supporting each beneficiary.</p>
     </div>
 
     <div class="doom-productivity-strip doom-demographics-strip">
@@ -449,9 +449,9 @@
         <small>Trustees intermediate projection; <span data-field="demographic-workers-2036">—</span> workers per beneficiary</small>
       </div>
       <div>
-        <span>2036 federal deficit / GDP</span>
-        <strong data-field="demographic-deficit-2036">—</strong>
-        <small>CBO baseline, versus <span data-field="demographic-deficit-2025">—</span> in FY2025</small>
+        <span>2025 gross federal debt / GDP</span>
+        <strong data-field="demographic-debt-2025">—</strong>
+        <small>Versus <span data-field="demographic-debt-1945">—</span> at the end of World War II</small>
       </div>
     </div>
 
@@ -468,16 +468,16 @@
 
     <div class="doom-panel doom-table-panel doom-demographic-comparison">
       <div class="doom-panel-head">
-        <div><span class="doom-panel-label">Fiscal history versus support capacity</span><h3>Similar alarm, different mechanism</h3></div>
-        <div class="doom-note">The fiscal balance is fiscal-year data; the OASDI support ratio is calendar-year data.</div>
+        <div><span class="doom-panel-label">Debt stock versus support capacity</span><h3>The wartime debt ratio came back</h3></div>
+        <div class="doom-note">Gross federal debt is annual fiscal data; the OASDI support ratio is calendar-year data.</div>
       </div>
       <div class="doom-table-wrap">
         <table class="doom-table doom-table-dense">
-          <thead><tr><th>Year</th><th>Deficit / GDP</th><th>Beneficiaries / 100 workers</th><th>Workers / beneficiary</th><th>Interpretation</th></tr></thead>
+          <thead><tr><th>Year</th><th>Gross debt / GDP</th><th>Beneficiaries / 100 workers</th><th>Workers / beneficiary</th><th>Interpretation</th></tr></thead>
           <tbody id="demographic-comparison-table"></tbody>
         </table>
       </div>
-      <p class="doom-note doom-chart-note">FY1945’s deficit was <strong data-field="demographic-deficit-1945">—</strong> of GDP and FY2020’s was <strong data-field="demographic-deficit-2020">—</strong>. Those were emergency spikes. The current problem is less spectacular but more structural: CBO projects deficits to remain above the 50-year average and rise through 2036 as Social Security, Medicare, and net interest increase. The ratio does not prove insolvency by itself; it shows why the same promise requires more taxes, lower benefits, borrowing, or productivity from each worker.</p>
+      <p class="doom-note doom-chart-note">Gross federal debt fell from <strong data-field="demographic-debt-1945-repeat">—</strong> of GDP in 1945 to <strong data-field="demographic-debt-1960">—</strong> in 1960 as wartime spending ended and nominal GDP expanded. By 2025 it was <strong data-field="demographic-debt-2025-repeat">—</strong>—above the WWII level—while the mature OASDI support ratio had deteriorated from 5.1 workers per beneficiary in 1960 to 2.6. The ratio does not prove insolvency by itself; it shows why stabilizing the same debt stock is harder when each worker supports more beneficiaries.</p>
       <a class="doom-download" href="/doom-thesis/demographics-support-ratio.csv" download>Download demographics CSV <span>↓</span></a>
     </div>
   </section>
@@ -728,5 +728,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-7" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-8" defer></script>
 {{ end }}

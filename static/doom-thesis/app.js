@@ -272,10 +272,11 @@
     set('demographic-workers-1960', demographicSummary.workers_per_beneficiary_1960.toFixed(1));
     set('demographic-workers-2025', demographicSummary.workers_per_beneficiary_2025.toFixed(1));
     set('demographic-workers-2036', demographicSummary.workers_per_beneficiary_2036.toFixed(1));
-    set('demographic-deficit-1945', `${demographicSummary.deficit_pct_gdp_1945.toFixed(1)}%`);
-    set('demographic-deficit-2020', `${demographicSummary.deficit_pct_gdp_2020.toFixed(1)}%`);
-    set('demographic-deficit-2025', `${demographicSummary.deficit_pct_gdp_2025.toFixed(1)}%`);
-    set('demographic-deficit-2036', `${demographicSummary.deficit_pct_gdp_2036.toFixed(1)}%`);
+    set('demographic-debt-1945', `${demographicSummary.gross_debt_pct_gdp_1945.toFixed(1)}%`);
+    set('demographic-debt-1945-repeat', `${demographicSummary.gross_debt_pct_gdp_1945.toFixed(1)}%`);
+    set('demographic-debt-1960', `${demographicSummary.gross_debt_pct_gdp_1960.toFixed(1)}%`);
+    set('demographic-debt-2025', `${demographicSummary.gross_debt_pct_gdp_2025.toFixed(1)}%`);
+    set('demographic-debt-2025-repeat', `${demographicSummary.gross_debt_pct_gdp_2025.toFixed(1)}%`);
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -310,16 +311,11 @@
     const demographicInterpretation = {
       1945: 'Wartime peak; Social Security monthly benefits were only five years old.',
       1960: 'A more mature postwar system after major coverage expansion.',
-      2020: 'Pandemic emergency deficit; covered employment also fell.',
-      2025: 'Current mature-system baseline; deficit remains elevated outside recession.',
-      2036: 'CBO deficit and Trustees demographic projections under current law.',
+      2000: 'Pre-GFC low-debt benchmark near the end of the demographic dividend.',
+      2020: 'Pandemic borrowing lifted gross debt above its WWII level.',
+      2025: 'Current mature-system baseline; debt remains above the wartime level.',
     };
-    const fiscalBalance = (row) => {
-      const value = row.federal_surplus_deficit_pct_gdp;
-      if (!Number.isFinite(value)) return '—';
-      return value < 0 ? `${Math.abs(value).toFixed(1)}% deficit` : `${value.toFixed(1)}% surplus`;
-    };
-    $('#demographic-comparison-table').innerHTML = demographics.comparison_years.map((row) => `<tr><td>${row.year}</td><td>${fiscalBalance(row)}</td><td>${row.oasdi_beneficiaries_per_100_workers.toFixed(1)}</td><td>${row.workers_per_oasdi_beneficiary.toFixed(1)}</td><td>${demographicInterpretation[row.year]}</td></tr>`).join('');
+    $('#demographic-comparison-table').innerHTML = demographics.comparison_years.map((row) => `<tr><td>${row.year}</td><td>${row.gross_federal_debt_pct_gdp.toFixed(1)}%</td><td>${row.oasdi_beneficiaries_per_100_workers.toFixed(1)}</td><td>${row.workers_per_oasdi_beneficiary.toFixed(1)}</td><td>${demographicInterpretation[row.year]}</td></tr>`).join('');
 
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
@@ -405,7 +401,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-7', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-8', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

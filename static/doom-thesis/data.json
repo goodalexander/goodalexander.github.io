@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-03T18:58:48.081681+00:00",
+  "generated_at_utc": "2026-08-03T19:09:15.452250+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -3696,7 +3696,12 @@
       "deficit_pct_gdp_2020": 14.5085,
       "deficit_pct_gdp_2025": 5.8526,
       "deficit_pct_gdp_2026": 5.8,
-      "deficit_pct_gdp_2036": 6.7
+      "deficit_pct_gdp_2036": 6.7,
+      "gross_debt_pct_gdp_1945": 114.0754,
+      "gross_debt_pct_gdp_1960": 53.56,
+      "gross_debt_pct_gdp_2000": 54.909,
+      "gross_debt_pct_gdp_2020": 125.858,
+      "gross_debt_pct_gdp_2025": 121.4969
     },
     "history_and_projection": [
       {
@@ -3711,6 +3716,9 @@
         "federal_surplus_deficit_pct_gdp": -21.004,
         "federal_deficit_pct_gdp": 21.004,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 114.0754,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3726,6 +3734,9 @@
         "federal_surplus_deficit_pct_gdp": -1.1192,
         "federal_deficit_pct_gdp": 1.1192,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 85.6827,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3741,6 +3752,9 @@
         "federal_surplus_deficit_pct_gdp": -0.7366,
         "federal_deficit_pct_gdp": 0.7366,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 64.4922,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3756,6 +3770,9 @@
         "federal_surplus_deficit_pct_gdp": 0.0563,
         "federal_deficit_pct_gdp": 0.0,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 53.56,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3771,6 +3788,9 @@
         "federal_surplus_deficit_pct_gdp": -0.1989,
         "federal_deficit_pct_gdp": 0.1989,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 43.4198,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3786,6 +3806,9 @@
         "federal_surplus_deficit_pct_gdp": -0.2715,
         "federal_deficit_pct_gdp": 0.2715,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 35.4886,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3801,6 +3824,9 @@
         "federal_surplus_deficit_pct_gdp": -3.3133,
         "federal_deficit_pct_gdp": 3.3133,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 32.1621,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3816,6 +3842,9 @@
         "federal_surplus_deficit_pct_gdp": -2.6444,
         "federal_deficit_pct_gdp": 2.6444,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 31.8132,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3831,6 +3860,9 @@
         "federal_surplus_deficit_pct_gdp": -4.9778,
         "federal_deficit_pct_gdp": 4.9778,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 41.8854,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3846,6 +3878,9 @@
         "federal_surplus_deficit_pct_gdp": -3.7472,
         "federal_deficit_pct_gdp": 3.7472,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 53.7686,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3861,6 +3896,9 @@
         "federal_surplus_deficit_pct_gdp": -2.1686,
         "federal_deficit_pct_gdp": 2.1686,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 64.4079,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3876,6 +3914,9 @@
         "federal_surplus_deficit_pct_gdp": 2.3351,
         "federal_deficit_pct_gdp": 0.0,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 54.909,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3891,6 +3932,9 @@
         "federal_surplus_deficit_pct_gdp": -2.4793,
         "federal_deficit_pct_gdp": 2.4793,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 60.6272,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3906,6 +3950,9 @@
         "federal_surplus_deficit_pct_gdp": -8.6962,
         "federal_deficit_pct_gdp": 8.6962,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 89.8985,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3921,6 +3968,9 @@
         "federal_surplus_deficit_pct_gdp": -2.4331,
         "federal_deficit_pct_gdp": 2.4331,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 99.0439,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3936,6 +3986,9 @@
         "federal_surplus_deficit_pct_gdp": -4.6208,
         "federal_deficit_pct_gdp": 4.6208,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 105.2438,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3951,6 +4004,9 @@
         "federal_surplus_deficit_pct_gdp": -14.5085,
         "federal_deficit_pct_gdp": 14.5085,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 125.858,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3966,6 +4022,9 @@
         "federal_surplus_deficit_pct_gdp": -12.036,
         "federal_deficit_pct_gdp": 12.036,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 119.641,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3981,6 +4040,9 @@
         "federal_surplus_deficit_pct_gdp": -5.3751,
         "federal_deficit_pct_gdp": 5.3751,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 118.3614,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -3996,6 +4058,9 @@
         "federal_surplus_deficit_pct_gdp": -6.1591,
         "federal_deficit_pct_gdp": 6.1591,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 118.6163,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4011,6 +4076,9 @@
         "federal_surplus_deficit_pct_gdp": -6.2712,
         "federal_deficit_pct_gdp": 6.2712,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 120.2494,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4026,6 +4094,9 @@
         "federal_surplus_deficit_pct_gdp": -5.8526,
         "federal_deficit_pct_gdp": 5.8526,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 121.4969,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4041,6 +4112,9 @@
         "federal_surplus_deficit_pct_gdp": -5.8,
         "federal_deficit_pct_gdp": 5.8,
         "deficit_status": "cbo_baseline_projection",
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://www.cbo.gov/publication/62105"
       },
@@ -4056,6 +4130,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4071,6 +4148,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4086,6 +4166,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4101,6 +4184,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4116,6 +4202,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4131,6 +4220,9 @@
         "federal_surplus_deficit_pct_gdp": -6.7,
         "federal_deficit_pct_gdp": 6.7,
         "deficit_status": "cbo_baseline_projection",
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://www.cbo.gov/publication/62105"
       },
@@ -4146,6 +4238,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4161,6 +4256,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4176,6 +4274,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4191,6 +4292,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4206,6 +4310,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4221,6 +4328,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4236,6 +4346,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       },
@@ -4251,6 +4364,9 @@
         "federal_surplus_deficit_pct_gdp": null,
         "federal_deficit_pct_gdp": null,
         "deficit_status": null,
+        "gross_federal_debt_pct_gdp": null,
+        "debt_gdp_status": null,
+        "debt_gdp_source": null,
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": null
       }
@@ -4268,6 +4384,9 @@
         "federal_surplus_deficit_pct_gdp": -21.004,
         "federal_deficit_pct_gdp": 21.004,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 114.0754,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4283,6 +4402,27 @@
         "federal_surplus_deficit_pct_gdp": 0.0563,
         "federal_deficit_pct_gdp": 0.0,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 53.56,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
+        "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
+        "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
+      },
+      {
+        "year": 2000,
+        "covered_workers_thousands": 154718,
+        "oasi_beneficiaries_thousands": 38556,
+        "di_beneficiaries_thousands": 6606,
+        "oasdi_beneficiaries_thousands": 45162,
+        "support_ratio_status": "historical",
+        "workers_per_oasdi_beneficiary": 3.4258,
+        "oasdi_beneficiaries_per_100_workers": 29.1899,
+        "federal_surplus_deficit_pct_gdp": 2.3351,
+        "federal_deficit_pct_gdp": 0.0,
+        "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 54.909,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4298,6 +4438,9 @@
         "federal_surplus_deficit_pct_gdp": -14.5085,
         "federal_deficit_pct_gdp": 14.5085,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 125.858,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
       },
@@ -4313,23 +4456,11 @@
         "federal_surplus_deficit_pct_gdp": -5.8526,
         "federal_deficit_pct_gdp": 5.8526,
         "deficit_status": "fred_omb_actual",
+        "gross_federal_debt_pct_gdp": 121.4969,
+        "debt_gdp_status": "fred_omb_actual",
+        "debt_gdp_source": "https://fred.stlouisfed.org/series/GFDGDPA188S",
         "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
         "deficit_source": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
-      },
-      {
-        "year": 2036,
-        "covered_workers_thousands": 190685,
-        "oasi_beneficiaries_thousands": 73463,
-        "di_beneficiaries_thousands": 8626,
-        "oasdi_beneficiaries_thousands": 82089,
-        "support_ratio_status": "trustees_intermediate_projection",
-        "workers_per_oasdi_beneficiary": 2.3229,
-        "oasdi_beneficiaries_per_100_workers": 43.0495,
-        "federal_surplus_deficit_pct_gdp": -6.7,
-        "federal_deficit_pct_gdp": 6.7,
-        "deficit_status": "cbo_baseline_projection",
-        "ssa_source": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
-        "deficit_source": "https://www.cbo.gov/publication/62105"
       }
     ]
   },
@@ -4349,6 +4480,10 @@
     {
       "name": "OMB/FRED federal surplus or deficit as a share of GDP",
       "url": "https://fred.stlouisfed.org/series/FYFSDFYGDP"
+    },
+    {
+      "name": "OMB/FRED gross federal debt as a share of GDP",
+      "url": "https://fred.stlouisfed.org/series/GFDGDPA188S"
     },
     {
       "name": "CBO 2026\u20132036 budget outlook",

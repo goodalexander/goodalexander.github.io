@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-03T18:58:48.081681+00:00
+Generated: 2026-08-03T19:09:15.452250+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -68,7 +68,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
 - Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
-- Fiscal comparison: the deficit was 21.0% of GDP in 1945, 14.5% in the pandemic year 2020, and 5.9% in 2025. CBO projects 6.7% in 2036. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
+- Debt comparison: gross federal debt was 114.1% of GDP in 1945, fell to 53.6% in 1960, and stood at 121.5% in 2025. This is the gross-debt definition used by the Doom Index. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
 
 ## Definitions
 
@@ -96,6 +96,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Social Security Trustees: https://www.ssa.gov/oact/TR/2026/IV_B_LRest.html
 - Social Security covered workers and beneficiaries: https://www.ssa.gov/oact/TR/2026/lr4b4.html
 - OMB/FRED federal surplus or deficit as a share of GDP: https://fred.stlouisfed.org/series/FYFSDFYGDP
+- OMB/FRED gross federal debt as a share of GDP: https://fred.stlouisfed.org/series/GFDGDPA188S
 - CBO 2026–2036 budget outlook: https://www.cbo.gov/publication/62105
 - Social Security program history: https://www.ssa.gov/history/1940.html
 - Medicare Trustees: https://www.cms.gov/oact/tr/2026
