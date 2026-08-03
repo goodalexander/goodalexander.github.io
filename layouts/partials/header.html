@@ -24,6 +24,13 @@
     </nav>
 
     <div class="ga-header-actions">
+      <a class="ga-search-link{{ if eq .Layout "search" }} is-active{{ end }}" href="/search/" aria-label="Search the site" title="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <path d="m16 16 4 4"></path>
+        </svg>
+        <span>Search</span>
+      </a>
       <a class="ga-x-link" href="https://x.com/goodalexander" rel="me noopener" target="_blank" aria-label="GoodAlexander on X">𝕏</a>
       {{- if not site.Params.disableThemeToggle }}
       <button class="ga-theme-toggle" id="theme-toggle" accesskey="t" title="Switch theme" aria-label="Switch theme">
