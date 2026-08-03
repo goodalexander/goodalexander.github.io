@@ -85,6 +85,17 @@ def build_payload(doom_root: Path) -> dict:
             encoding="utf-8"
         )
     )
+    federal_receipts = pd.read_csv(
+        doom_root / "us_federal_total_receipts_fy2004_2030.csv"
+    )
+    federal_receipts_composition = pd.read_csv(
+        doom_root / "us_federal_receipts_composition_fy2026.csv"
+    )
+    federal_receipts_summary = json.loads(
+        (doom_root / "federal_receipts_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
     fcf_yield_vs_30y = pd.read_csv(
         doom_root
         / "operating_company_fcf_yield_vs_30y_annual_2004_2026.csv"
@@ -416,6 +427,24 @@ def build_payload(doom_root: Path) -> dict:
         float(latest_interest["interest_trillions"])
         + annualized_unfunded_program_cost_trillions
     )
+    federal_receipts_summary["fy2026_receipts_per_household"] = (
+        federal_receipts_summary["fy2026_projected_receipts_trillions"]
+        * 1e12
+        / float(latest["households"])
+    )
+    federal_receipts_summary["fy2026_interest_share_of_receipts_pct"] = (
+        float(latest_interest["interest_trillions"])
+        / federal_receipts_summary["fy2026_projected_receipts_trillions"]
+        * 100
+    )
+    federal_receipts_summary["fy2026_corporate_tax_share_pct"] = float(
+        federal_receipts_composition.loc[
+            federal_receipts_composition["category"].eq(
+                "Corporate income taxes"
+            ),
+            "share_of_total_pct",
+        ].iloc[0]
+    )
     burden_history = household[
         [
             "year",
@@ -624,6 +653,13 @@ def build_payload(doom_root: Path) -> dict:
                 spx_vclt_annual.round(8)
             ),
         },
+        "federal_receipts": {
+            "summary": federal_receipts_summary,
+            "history_and_projection": records(federal_receipts.round(8)),
+            "fy2026_composition": records(
+                federal_receipts_composition.round(8)
+            ),
+        },
         "productivity": {
             "summary": {
                 "latest_year": int(utility_latest["calendar_year"]),
@@ -747,6 +783,10 @@ def build_payload(doom_root: Path) -> dict:
                 "url": "https://www.cbo.gov/publication/62105",
             },
             {
+                "name": "OMB total federal receipts and outlays",
+                "url": "https://fred.stlouisfed.org/series/FYFR",
+            },
+            {
                 "name": "Bloomberg equity and fixed-income valuation",
                 "reference": (
                     "SPX Index BEST_PE_RATIO; VCLT US Equity "
@@ -812,6 +852,9 @@ def main() -> None:
     ).to_csv(
         args.output_dir / "spx-earnings-yield-vs-vclt-monthly.csv", index=False
     )
+    pd.read_csv(
+        args.doom_data_root / "us_federal_total_receipts_fy2004_2030.csv"
+    ).to_csv(args.output_dir / "federal-receipts.csv", index=False)
     print(json.dumps(payload["latest"], indent=2))
 
 

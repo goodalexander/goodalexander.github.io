@@ -172,6 +172,15 @@
     const taxSummary = taxValuation.tax_summary;
     const valuationSummary = taxValuation.valuation_summary;
     const baseTaxScenario = taxValuation.tax_scenarios.find((row) => row.scenario === 'constant_multiple');
+    const federalReceipts = data.federal_receipts;
+    const receiptsSummary = federalReceipts.summary;
+    set('federal-receipts-actual', trillions(receiptsSummary.latest_actual_receipts_trillions, 2));
+    set('federal-receipts-projected', trillions(receiptsSummary.fy2026_projected_receipts_trillions, 2));
+    set('federal-outlays-projected', trillions(receiptsSummary.fy2026_projected_outlays_trillions, 2));
+    set('federal-receipts-coverage', `${receiptsSummary.fy2026_projected_receipts_coverage_of_outlays_pct.toFixed(1)}%`);
+    set('federal-receipts-per-household', money(receiptsSummary.fy2026_receipts_per_household));
+    set('interest-share-receipts', `${receiptsSummary.fy2026_interest_share_of_receipts_pct.toFixed(1)}%`);
+    set('corporate-tax-share-receipts', `${receiptsSummary.fy2026_corporate_tax_share_pct.toFixed(1)}%`);
     set('tax-rate-current', `${taxSummary.current_federal_rate_pct.toFixed(0)}%`);
     set('tax-rate-max', `${taxSummary.historical_max_federal_rate_pct.toFixed(1)}%`);
     set('tax-incremental-receipts', trillions(taxSummary.incremental_static_receipts_trillions, 2));
@@ -222,6 +231,10 @@
 
     $('#tax-scenario-table').innerHTML = taxValuation.tax_scenarios.map((row) => `<tr><td>${row.pe_multiple_change_pct === 0 ? 'Unchanged' : `${row.pe_multiple_change_pct.toFixed(0)}%`}</td><td>${trillions(row.market_cap_destruction_trillions, 1)}</td><td>${row.market_cap_destruction_pct.toFixed(1)}%</td><td>${row.market_cap_destroyed_per_incremental_tax_dollar.toFixed(1)}×</td></tr>`).join('');
 
+    const receiptTableYears = new Set([2004, 2008, 2012, 2016, 2020, 2024, 2025, 2026, 2030]);
+    $('#federal-receipts-table').innerHTML = federalReceipts.history_and_projection.filter((row) => receiptTableYears.has(row.fiscal_year)).map((row) => `<tr><td>${row.fiscal_year}</td><td>${trillions(row.total_federal_receipts_trillions, 2)}</td><td>${trillions(row.total_federal_outlays_trillions, 2)}</td><td>${trillions(row.unified_deficit_trillions, 2)}</td><td>${row.receipts_coverage_of_outlays_pct.toFixed(1)}%</td><td>${row.period_type}</td></tr>`).join('');
+    $('#federal-receipts-composition-table').innerHTML = federalReceipts.fy2026_composition.map((row) => `<tr><td>${row.category}</td><td>${trillions(row.amount_trillions, 2)}</td><td>${row.share_of_total_pct.toFixed(1)}%</td></tr>`).join('');
+
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
     const history = data.household_history;
@@ -269,6 +282,12 @@
       { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
     ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
+    const receiptHistory = federalReceipts.history_and_projection;
+    lineChart($('#federal-receipts-chart'), [
+      { color: '#62c6ae', values: receiptHistory.map((d) => ({ year: d.fiscal_year, value: d.total_federal_receipts_trillions })) },
+      { color: '#eb735f', values: receiptHistory.map((d) => ({ year: d.fiscal_year, value: d.total_federal_outlays_trillions })) },
+    ], { yMin: 0, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), projectionFrom: 2026, points: false, xTicks: 8 });
+
     taxStressChart($('#tax-stress-chart'), taxSummary, baseTaxScenario);
     const fcfYield = taxValuation.fcf_yield_vs_30y;
     lineChart($('#fcf-yield-chart'), [
@@ -286,7 +305,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260802-7', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-1', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

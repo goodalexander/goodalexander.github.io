@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-02T21:56:18.397776+00:00",
+  "generated_at_utc": "2026-08-03T03:55:51.924616+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -1666,6 +1666,367 @@
       }
     ]
   },
+  "federal_receipts": {
+    "summary": {
+      "latest_actual_fiscal_year": 2025,
+      "latest_actual_receipts_trillions": 5.236421,
+      "latest_actual_outlays_trillions": 7.011105,
+      "latest_actual_deficit_trillions": 1.7746839999999997,
+      "latest_actual_receipts_pct_gdp": 17.02231,
+      "latest_actual_receipts_coverage_of_outlays_pct": 74.68752785759165,
+      "receipts_cagr_2004_2025": 0.049985619540736215,
+      "fy2026_projected_receipts_trillions": 5.595916,
+      "fy2026_projected_outlays_trillions": 7.448619,
+      "fy2026_projected_deficit_trillions": 1.852703,
+      "fy2026_projected_receipts_pct_gdp": 17.541,
+      "fy2026_projected_receipts_coverage_of_outlays_pct": 75.1268926494965,
+      "definition": "Total federal receipts: tax collections plus customs duties and other federal receipts. Completed years are OMB actuals; 2026 through 2030 are CBO current-law projections.",
+      "fy2026_receipts_per_household": 41515.809778173454,
+      "fy2026_interest_share_of_receipts_pct": 18.629714355356544,
+      "fy2026_corporate_tax_share_pct": 7.219175555887543
+    },
+    "history_and_projection": [
+      {
+        "fiscal_year": 2004,
+        "fiscal_year_end": "2004-09-30",
+        "total_federal_receipts_trillions": 1.880114,
+        "total_federal_outlays_trillions": 2.292841,
+        "unified_deficit_trillions": 0.412727,
+        "receipts_pct_gdp": 15.38908,
+        "receipts_coverage_of_outlays_pct": 81.99931875,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2005,
+        "fiscal_year_end": "2005-09-30",
+        "total_federal_receipts_trillions": 2.153611,
+        "total_federal_outlays_trillions": 2.471957,
+        "unified_deficit_trillions": 0.318346,
+        "receipts_pct_gdp": 16.51644,
+        "receipts_coverage_of_outlays_pct": 87.12170155,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2006,
+        "fiscal_year_end": "2006-09-30",
+        "total_federal_receipts_trillions": 2.406869,
+        "total_federal_outlays_trillions": 2.65505,
+        "unified_deficit_trillions": 0.248181,
+        "receipts_pct_gdp": 17.42141,
+        "receipts_coverage_of_outlays_pct": 90.65249242,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2007,
+        "fiscal_year_end": "2007-09-30",
+        "total_federal_receipts_trillions": 2.567985,
+        "total_federal_outlays_trillions": 2.728686,
+        "unified_deficit_trillions": 0.160701,
+        "receipts_pct_gdp": 17.74178,
+        "receipts_coverage_of_outlays_pct": 94.11068184,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2008,
+        "fiscal_year_end": "2008-09-30",
+        "total_federal_receipts_trillions": 2.523991,
+        "total_federal_outlays_trillions": 2.982544,
+        "unified_deficit_trillions": 0.458553,
+        "receipts_pct_gdp": 17.08879,
+        "receipts_coverage_of_outlays_pct": 84.62544056,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2009,
+        "fiscal_year_end": "2009-09-30",
+        "total_federal_receipts_trillions": 2.104989,
+        "total_federal_outlays_trillions": 3.517677,
+        "unified_deficit_trillions": 1.412688,
+        "receipts_pct_gdp": 14.53916,
+        "receipts_coverage_of_outlays_pct": 59.84031507,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2010,
+        "fiscal_year_end": "2010-09-30",
+        "total_federal_receipts_trillions": 2.162706,
+        "total_federal_outlays_trillions": 3.457079,
+        "unified_deficit_trillions": 1.294373,
+        "receipts_pct_gdp": 14.37112,
+        "receipts_coverage_of_outlays_pct": 62.5587671,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2011,
+        "fiscal_year_end": "2011-09-30",
+        "total_federal_receipts_trillions": 2.303466,
+        "total_federal_outlays_trillions": 3.603065,
+        "unified_deficit_trillions": 1.299599,
+        "receipts_pct_gdp": 14.76606,
+        "receipts_coverage_of_outlays_pct": 63.93073675,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2012,
+        "fiscal_year_end": "2012-09-30",
+        "total_federal_receipts_trillions": 2.44999,
+        "total_federal_outlays_trillions": 3.526563,
+        "unified_deficit_trillions": 1.076573,
+        "receipts_pct_gdp": 15.07318,
+        "receipts_coverage_of_outlays_pct": 69.47245803,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2013,
+        "fiscal_year_end": "2013-09-30",
+        "total_federal_receipts_trillions": 2.775106,
+        "total_federal_outlays_trillions": 3.454881,
+        "unified_deficit_trillions": 0.679775,
+        "receipts_pct_gdp": 16.43954,
+        "receipts_coverage_of_outlays_pct": 80.32421377,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2014,
+        "fiscal_year_end": "2014-09-30",
+        "total_federal_receipts_trillions": 3.021491,
+        "total_federal_outlays_trillions": 3.506284,
+        "unified_deficit_trillions": 0.484793,
+        "receipts_pct_gdp": 17.15963,
+        "receipts_coverage_of_outlays_pct": 86.17359575,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2015,
+        "fiscal_year_end": "2015-09-30",
+        "total_federal_receipts_trillions": 3.24989,
+        "total_federal_outlays_trillions": 3.69185,
+        "unified_deficit_trillions": 0.44196,
+        "receipts_pct_gdp": 17.7638,
+        "receipts_coverage_of_outlays_pct": 88.02876607,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2016,
+        "fiscal_year_end": "2016-09-30",
+        "total_federal_receipts_trillions": 3.267965,
+        "total_federal_outlays_trillions": 3.852615,
+        "unified_deficit_trillions": 0.58465,
+        "receipts_pct_gdp": 17.37825,
+        "receipts_coverage_of_outlays_pct": 84.82459317,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2017,
+        "fiscal_year_end": "2017-09-30",
+        "total_federal_receipts_trillions": 3.316184,
+        "total_federal_outlays_trillions": 3.981634,
+        "unified_deficit_trillions": 0.66545,
+        "receipts_pct_gdp": 16.90887,
+        "receipts_coverage_of_outlays_pct": 83.28701232,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2018,
+        "fiscal_year_end": "2018-09-30",
+        "total_federal_receipts_trillions": 3.329907,
+        "total_federal_outlays_trillions": 4.108981,
+        "unified_deficit_trillions": 0.779074,
+        "receipts_pct_gdp": 16.12037,
+        "receipts_coverage_of_outlays_pct": 81.03972737,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2019,
+        "fiscal_year_end": "2019-09-30",
+        "total_federal_receipts_trillions": 3.463364,
+        "total_federal_outlays_trillions": 4.446952,
+        "unified_deficit_trillions": 0.983588,
+        "receipts_pct_gdp": 16.07877,
+        "receipts_coverage_of_outlays_pct": 77.88174912,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2020,
+        "fiscal_year_end": "2020-09-30",
+        "total_federal_receipts_trillions": 3.421164,
+        "total_federal_outlays_trillions": 6.516817,
+        "unified_deficit_trillions": 3.095653,
+        "receipts_pct_gdp": 16.00524,
+        "receipts_coverage_of_outlays_pct": 52.49746924,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2021,
+        "fiscal_year_end": "2021-09-30",
+        "total_federal_receipts_trillions": 4.047111,
+        "total_federal_outlays_trillions": 6.820705,
+        "unified_deficit_trillions": 2.773594,
+        "receipts_pct_gdp": 17.05796,
+        "receipts_coverage_of_outlays_pct": 59.33566985,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2022,
+        "fiscal_year_end": "2022-09-30",
+        "total_federal_receipts_trillions": 4.897339,
+        "total_federal_outlays_trillions": 6.27151,
+        "unified_deficit_trillions": 1.374171,
+        "receipts_pct_gdp": 18.79644,
+        "receipts_coverage_of_outlays_pct": 78.08867402,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2023,
+        "fiscal_year_end": "2023-09-30",
+        "total_federal_receipts_trillions": 4.440948,
+        "total_federal_outlays_trillions": 6.128415,
+        "unified_deficit_trillions": 1.687467,
+        "receipts_pct_gdp": 15.96802,
+        "receipts_coverage_of_outlays_pct": 72.46487061,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2024,
+        "fiscal_year_end": "2024-09-30",
+        "total_federal_receipts_trillions": 4.919884,
+        "total_federal_outlays_trillions": 6.735261,
+        "unified_deficit_trillions": 1.815377,
+        "receipts_pct_gdp": 16.79255,
+        "receipts_coverage_of_outlays_pct": 73.04667184,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2025,
+        "fiscal_year_end": "2025-09-30",
+        "total_federal_receipts_trillions": 5.236421,
+        "total_federal_outlays_trillions": 7.011105,
+        "unified_deficit_trillions": 1.774684,
+        "receipts_pct_gdp": 17.02231,
+        "receipts_coverage_of_outlays_pct": 74.68752786,
+        "period_type": "actual",
+        "source": "OMB/FRED FYFR, FYONET, FYFRGDA188S"
+      },
+      {
+        "fiscal_year": 2026,
+        "fiscal_year_end": "2026-09-30",
+        "total_federal_receipts_trillions": 5.595916,
+        "total_federal_outlays_trillions": 7.448619,
+        "unified_deficit_trillions": 1.852703,
+        "receipts_pct_gdp": 17.541,
+        "receipts_coverage_of_outlays_pct": 75.12689265,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2027,
+        "fiscal_year_end": "2027-09-30",
+        "total_federal_receipts_trillions": 5.885198,
+        "total_federal_outlays_trillions": 7.772401,
+        "unified_deficit_trillions": 1.887203,
+        "receipts_pct_gdp": 17.665,
+        "receipts_coverage_of_outlays_pct": 75.7191761,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2028,
+        "fiscal_year_end": "2028-09-30",
+        "total_federal_receipts_trillions": 6.071468,
+        "total_federal_outlays_trillions": 8.151126,
+        "unified_deficit_trillions": 2.079658,
+        "receipts_pct_gdp": null,
+        "receipts_coverage_of_outlays_pct": 74.48624889,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2029,
+        "fiscal_year_end": "2029-09-30",
+        "total_federal_receipts_trillions": 6.319789,
+        "total_federal_outlays_trillions": 8.339504,
+        "unified_deficit_trillions": 2.019715,
+        "receipts_pct_gdp": null,
+        "receipts_coverage_of_outlays_pct": 75.78135342,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2030,
+        "fiscal_year_end": "2030-09-30",
+        "total_federal_receipts_trillions": 6.594999,
+        "total_federal_outlays_trillions": 8.795641,
+        "unified_deficit_trillions": 2.200642,
+        "receipts_pct_gdp": null,
+        "receipts_coverage_of_outlays_pct": 74.98031127,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      }
+    ],
+    "fy2026_composition": [
+      {
+        "fiscal_year": 2026,
+        "category": "Individual income taxes",
+        "amount_trillions": 2.751291,
+        "share_of_total_pct": 49.16605253,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2026,
+        "category": "Payroll taxes",
+        "amount_trillions": 1.825573,
+        "share_of_total_pct": 32.62330957,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2026,
+        "category": "Customs duties",
+        "amount_trillions": 0.418388,
+        "share_of_total_pct": 7.47666691,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2026,
+        "category": "Corporate income taxes",
+        "amount_trillions": 0.403979,
+        "share_of_total_pct": 7.21917556,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      },
+      {
+        "fiscal_year": 2026,
+        "category": "Other receipts",
+        "amount_trillions": 0.196685,
+        "share_of_total_pct": 3.51479543,
+        "period_type": "CBO projection",
+        "source": "CBO Budget and Economic Outlook: 2026 to 2036"
+      }
+    ]
+  },
   "productivity": {
     "summary": {
       "latest_year": 2025,
@@ -2975,6 +3336,10 @@
     {
       "name": "CBO Budget and Economic Outlook: 2026 to 2036",
       "url": "https://www.cbo.gov/publication/62105"
+    },
+    {
+      "name": "OMB total federal receipts and outlays",
+      "url": "https://fred.stlouisfed.org/series/FYFR"
     },
     {
       "name": "Bloomberg equity and fixed-income valuation",

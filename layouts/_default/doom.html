@@ -341,6 +341,62 @@
       <p>A static return to the 1968–1969 federal corporate rate raises a flow of tax receipts by permanently reducing the earnings stream capitalized into equity value.</p>
     </div>
 
+    <div class="doom-productivity-strip doom-receipts-strip">
+      <div>
+        <span>FY2025 total federal receipts</span>
+        <strong data-field="federal-receipts-actual">—</strong>
+        <small>Latest completed fiscal year</small>
+      </div>
+      <div>
+        <span>FY2026 projected receipts</span>
+        <strong data-field="federal-receipts-projected">—</strong>
+        <small><span data-field="federal-receipts-per-household">—</span> per household</small>
+      </div>
+      <div>
+        <span>FY2026 projected outlays</span>
+        <strong data-field="federal-outlays-projected">—</strong>
+        <small>Receipts cover <span data-field="federal-receipts-coverage">—</span></small>
+      </div>
+      <div>
+        <span>Interest / federal receipts</span>
+        <strong data-field="interest-share-receipts">—</strong>
+        <small>2026 current-curve interest model</small>
+      </div>
+    </div>
+
+    <div class="doom-chart-grid doom-tax-grid">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">OMB actuals through FY2025 · CBO thereafter</span>
+          <h3>Total federal receipts versus outlays</h3>
+          <p>Tax collections and other receipts compared with total federal spending</p>
+        </figcaption>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#62c6ae">Total receipts</span><span style="--swatch:#eb735f">Total outlays</span><span class="doom-legend-projection">Projection</span></div>
+        <svg id="federal-receipts-chart" class="doom-chart" viewBox="0 0 700 390" role="img" aria-label="Total U.S. federal receipts compared with total federal outlays from fiscal year 2004 through 2030"></svg>
+      </figure>
+      <div class="doom-panel doom-table-panel">
+        <div class="doom-panel-head"><div><span class="doom-panel-label">FY2026 CBO projection</span><h3>Where federal receipts come from</h3></div></div>
+        <div class="doom-table-wrap">
+          <table class="doom-table doom-table-dense">
+            <thead><tr><th>Source</th><th>Amount</th><th>Share</th></tr></thead>
+            <tbody id="federal-receipts-composition-table"></tbody>
+          </table>
+        </div>
+        <p class="doom-note doom-chart-note">Corporate income taxes are only <strong data-field="corporate-tax-share-receipts">—</strong> of projected federal receipts. “Total receipts” includes taxes, customs duties, and the smaller other-receipts category.</p>
+      </div>
+    </div>
+
+    <div class="doom-panel doom-table-panel">
+      <div class="doom-panel-head"><div><span class="doom-panel-label">Selected fiscal years</span><h3>The federal collection and spending ledger</h3></div></div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>FY</th><th>Receipts</th><th>Outlays</th><th>Deficit</th><th>Spending covered</th><th>Status</th></tr></thead>
+          <tbody id="federal-receipts-table"></tbody>
+        </table>
+      </div>
+      <a class="doom-download" href="/doom-thesis/federal-receipts.csv" download>Download federal-receipts CSV <span>↓</span></a>
+    </div>
+
     <div class="doom-productivity-strip doom-tax-strip">
       <div>
         <span>Federal corporate rate</span>
@@ -456,5 +512,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260802-7" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-1" defer></script>
 {{ end }}
