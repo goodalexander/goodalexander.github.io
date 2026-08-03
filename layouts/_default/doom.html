@@ -8,6 +8,183 @@
     <div class="doom-asof">Data through <span data-field="as-of">—</span> <span class="doom-live-dot" aria-hidden="true"></span></div>
   </header>
 
+  {{- $doomIndex := readFile "static/doom-thesis/doom-index-framework.json" | transform.Unmarshal -}}
+  {{- $claimCount := 0 -}}
+  {{- $warrantedCount := 0 -}}
+  {{- $partialCount := 0 -}}
+  {{- range $doomIndex.components -}}
+    {{- range .claims -}}
+      {{- $claimCount = add $claimCount 1 -}}
+      {{- if eq .status "warranted" }}{{ $warrantedCount = add $warrantedCount 1 }}{{ end -}}
+      {{- if eq .status "partial" }}{{ $partialCount = add $partialCount 1 }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+
+  <section class="doom-section doom-index-system" id="doom-index">
+    <div class="doom-index-intro">
+      <div>
+        <div class="doom-eyebrow">00 / Doom Index</div>
+        <h2>A falsifiable thesis, not a mood.</h2>
+      </div>
+      <p>The Doom Thesis is a chain of contentions intended to inform long/short equity, macro, and cryptocurrency investing. This section shows exactly what is supported, what is incomplete, and what would invalidate the thesis.</p>
+    </div>
+
+    <div class="doom-index-status-grid">
+      <div class="doom-index-score-card">
+        <span>Current index</span>
+        <strong>—<small>/100</small></strong>
+        <em>{{ $doomIndex.status_label }}</em>
+      </div>
+      <div>
+        <span>Fully warranted claims</span>
+        <strong>{{ $warrantedCount }}<small>/{{ $claimCount }}</small></strong>
+        <em>{{ $partialCount }} additional claims are partly warranted</em>
+      </div>
+      <div>
+        <span>Publication gate</span>
+        <strong>80<small>%</small></strong>
+        <em>Minimum reproducible weighted coverage</em>
+      </div>
+      <div class="doom-index-stop-card">
+        <span>Portfolio stop</span>
+        <strong>&lt;20</strong>
+        <em>Exit Doom-linked positions</em>
+      </div>
+    </div>
+
+    <div class="doom-index-plain">
+      <h3>Simply put</h3>
+      <p>Structural malinvestment and political transfers have created a fiscal burden that requires decisive adjustment unless AI produces extraordinary economy-wide productivity. The thesis remains intact while that productivity escape is unlikely, the AI buildout remains capital-intensive with uncertain returns, and a politically plausible fiscal settlement remains absent.</p>
+      <div class="doom-index-kill-switch">
+        <span>The kill switch</span>
+        <p>{{ $doomIndex.stop_rule.override }} The score is also exited normally if it falls below {{ $doomIndex.stop_rule.threshold }}.</p>
+      </div>
+      <p class="doom-note">A 0–100 composite is not automatically a probability. The number stays withheld until the inputs are reproducible and its probability interpretation is calibrated against history. Missing evidence is not scored as 50 or quietly treated as fact.</p>
+    </div>
+
+    <div class="doom-index-scale" aria-label="Proposed Doom Index interpretation">
+      <div><b>0–19</b><span>Thesis invalidated</span></div>
+      <div><b>20–39</b><span>Doom is a tail case</span></div>
+      <div><b>40–59</b><span>Contested regime</span></div>
+      <div><b>60–79</b><span>Doom is base case</span></div>
+      <div><b>80–100</b><span>High-conviction regime</span></div>
+    </div>
+
+    <div class="doom-index-section-head">
+      <div>
+        <span class="doom-panel-label">Completion inventory</span>
+        <h3>Open every input. Audit every claim.</h3>
+      </div>
+      <p>Checked means the current page contains a direct, reproducible warrant. Partial, missing, and conceptual claims remain visibly open.</p>
+    </div>
+
+    <div class="doom-index-components">
+      {{- range $index, $component := $doomIndex.components }}
+      <details class="doom-index-component" id="component-{{ $component.id }}"{{ if eq $index 0 }} open{{ end }}>
+        <summary>
+          <span class="doom-index-component-number">{{ printf "%02d" (add $index 1) }}</span>
+          <span class="doom-index-component-title"><b>{{ $component.title }}</b><small>{{ $component.contention }}</small></span>
+          <span class="doom-index-weight">{{ $component.weight }}% weight</span>
+          <span class="doom-index-status doom-index-status-{{ $component.status }}">{{ $component.status }}</span>
+          <span class="doom-index-expand" aria-hidden="true">+</span>
+        </summary>
+        <div class="doom-index-component-body">
+          <div class="doom-index-component-copy">
+            <div>
+              <span class="doom-panel-label">Plain English</span>
+              <p>{{ $component.plain_english }}</p>
+            </div>
+            <div>
+              <span class="doom-panel-label">Proposed scoring rule</span>
+              <p>{{ $component.score_rule }}</p>
+            </div>
+            <div>
+              <span class="doom-panel-label">Update cadence</span>
+              <p>{{ $component.update_frequency }}</p>
+            </div>
+          </div>
+
+          <div class="doom-index-claims">
+            <span class="doom-panel-label">Claim checklist</span>
+            {{- range $component.claims }}
+            <div class="doom-index-claim doom-index-claim-{{ .status }}">
+              <span class="doom-index-checkbox" aria-hidden="true">{{ if eq .status "warranted" }}✓{{ else if eq .status "partial" }}◐{{ else }}{{ end }}</span>
+              <div><b>{{ .text }}</b><p>{{ .note }}</p></div>
+              <span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span>
+            </div>
+            {{- end }}
+          </div>
+
+          <div class="doom-index-evidence-grid">
+            <div>
+              <span class="doom-panel-label">Evidence already on this page</span>
+              <ul>
+                {{- range $component.existing_evidence }}<li><a href="{{ .href }}">{{ .label }} <span>→</span></a></li>{{ end }}
+              </ul>
+            </div>
+            <div>
+              <span class="doom-panel-label">Missing warrants</span>
+              <ul>{{- range $component.missing_warrants }}<li>{{ . }}</li>{{ end }}</ul>
+            </div>
+          </div>
+
+          {{- with $component.candidate_markets }}
+          <div class="doom-index-markets">
+            <span class="doom-panel-label">Prediction-market candidates</span>
+            <div>
+              {{- range . }}
+              <a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .label }} ↗</b><span>{{ .use }}</span></a>
+              {{- end }}
+            </div>
+            <p class="doom-note">These are candidate observables, not endorsements and not direct measures of the full Doom contention. Contract wording, liquidity, and resolution rules must be captured with every snapshot.</p>
+          </div>
+          {{- end }}
+        </div>
+      </details>
+      {{- end }}
+    </div>
+
+    <div class="doom-index-section-head doom-index-downstream-head">
+      <div><span class="doom-panel-label">Downstream, not yet scored</span><h3>Scenarios and investment modules</h3></div>
+      <p>These are implications of the thesis. They should not inflate the score merely because they sound consistent with it.</p>
+    </div>
+    <div class="doom-index-downstream-grid">
+      <div class="doom-index-scenario-column">
+        <h4>Scenario chain</h4>
+        {{- range $doomIndex.downstream_scenarios }}
+        <details>
+          <summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary>
+          <p>{{ .summary }}</p><small><b>Needed:</b> {{ .needed }}</small>
+        </details>
+        {{- end }}
+      </div>
+      <div class="doom-index-scenario-column">
+        <h4>Investment sub-strategies</h4>
+        {{- range $doomIndex.strategy_modules }}
+        <details>
+          <summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary>
+          <p>{{ .thesis }}</p><small><b>Release gate:</b> {{ .requirements }}</small>
+        </details>
+        {{- end }}
+      </div>
+    </div>
+
+    <details class="doom-index-runbook">
+      <summary><span><b>Update runbook</b><small>How this becomes a regularly refreshed quantitative index</small></span><span aria-hidden="true">+</span></summary>
+      <div>
+        <ol>
+          <li><b>Daily:</b> debt, market data, rolling company fundamentals, Treasury refinancing, valuation, freshness, and stop conditions.</li>
+          <li><b>Weekly:</b> admissible prediction markets, legislation, policy events, and evidence-status changes.</li>
+          <li><b>Quarterly:</b> productivity vintages, AI capex and monetization, infrastructure bottlenecks, and distraction-economy inputs.</li>
+          <li><b>Annual/vintage:</b> Trustees, CBO, income, education, demographics, time use, trust, and governance.</li>
+          <li><b>Every release:</b> attribute score changes, enforce the 80% coverage gate, apply the productivity override, preserve the prior vintage, and publish quality flags.</li>
+        </ol>
+        <p>No sub-strategy becomes “investable” without a point-in-time backtest, costs, liquidity and borrow constraints, sizing, drawdown analysis, and explicit execution rules.</p>
+        <a class="doom-download" href="/doom-thesis/doom-index-framework.json" download>Download framework JSON <span>↓</span></a>
+      </div>
+    </details>
+  </section>
+
   <section class="doom-section doom-opening-thesis" id="thesis">
     <div class="doom-opening-copy">
       <div class="doom-eyebrow">The choice</div>
@@ -710,7 +887,7 @@
       <div><div class="doom-eyebrow">08 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
-      <div><h3>What the Doom Index includes</h3><p data-field="doom-definition">—</p></div>
+      <div><h3>What the measured liability stack includes</h3><p data-field="doom-definition">—</p></div>
       <div><h3>What “unfunded” means</h3><p>Social Security and Medicare are changing 75-year present-value projection gaps, not fixed bonds or legal invoices. They move with demographics, benefits, taxes, healthcare costs and discount rates.</p></div>
       <div><h3>What income means</h3><p data-field="income-definition">—</p></div>
       <div><h3>What the ratio means</h3><p data-field="ratio-definition">—</p></div>
@@ -728,5 +905,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-8" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-9" defer></script>
 {{ end }}

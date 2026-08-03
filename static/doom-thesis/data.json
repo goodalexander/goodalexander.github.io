@@ -2,7 +2,8 @@
   "generated_at_utc": "2026-08-03T19:09:15.452250+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
-    "doom_index": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
+    "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
+    "doom_index": "Legacy data-key definition for the measured liability stack; this is not the new 0–100 Doom Index evidence score.",
     "household_income": "BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.",
     "ratio": "Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.",
     "discretionary_income": "St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.",

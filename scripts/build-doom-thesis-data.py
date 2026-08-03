@@ -82,12 +82,21 @@ def build_llm_document(payload: dict) -> str:
             "",
             "This is what it would take to right-size the fiscal and monetary situation in the United States. Bring the annual deficit down to 3% of GDP and reduce the Social Security and Medicare funding gap to one year of GDP without cutting promised benefits. On current math, that requires a recurring $2.66 trillion annual adjustment, or economic growth fast enough to make the bill small relative to the economy. A tax-led adjustment is likely to produce a lower-growth, lower-valuation transition rather than a painless accounting fix. This is why AGI moon math is appealing: extraordinary productivity is the only believable non-austerity route that could honor the promises without some combination of very large taxes, benefit cuts, inflation, or financial repression. It would have to be a sustained change in the growth regime, not a one-year AI boom.",
             "",
+            "## Doom Index research status",
+            "",
+            "- Intended output: a 0–100 estimate that the Doom Thesis is the most likely medium-term regime.",
+            "- Current score: withheld. Version 0.1 is a claim inventory and evidence-completion system, not a calibrated probability.",
+            "- Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.",
+            "- Portfolio rule: exit Doom-linked positions below 20.",
+            "- Productivity override: cap the score at 19 if the probability that U.S. productivity averages at least 5% for the next five years becomes the base case (50% or greater). The required forecast ensemble is not yet built.",
+            "- Framework JSON: https://goodalexander.com/doom-thesis/doom-index-framework.json",
+            "",
             "## The numbers",
             "",
             f"- Gross public debt: ${latest['public_debt_trillions']:.2f} trillion.",
             f"- Social Security 75-year open-group present-value shortfall: ${latest['ssa_unfunded_75yr_trillions']:.1f} trillion.",
             f"- Medicare 75-year government-wide resource gap: ${latest['medicare_resource_gap_trillions']:.1f} trillion.",
-            f"- Combined Doom Index liabilities: ${latest['total_liabilities_trillions']:.2f} trillion, or ${latest['total_liabilities_per_household']:,.0f} per household.",
+            f"- Combined measured liabilities: ${latest['total_liabilities_trillions']:.2f} trillion, or ${latest['total_liabilities_per_household']:,.0f} per household.",
             f"- Median household income: ${latest['median_pretax_household_income']:,.0f} before tax and ${latest['median_post_tax_household_income']:,.0f} after tax ({int(latest['median_household_income_year'])}).",
             f"- Current federal interest: ${latest['precise_interest_trillions']:.2f} trillion, equal to {latest['interest_to_public_net_income_ratio']:.1%} of rolling public-company net income.",
             f"- Annualized payment for the full Social Security and Medicare gaps: ${latest['annualized_unfunded_program_cost_trillions']:.2f} trillion. With current interest, the all-in annual economic burden is ${latest['all_in_annual_burden_trillions']:.2f} trillion, or {latest['all_in_burden_to_public_net_income_ratio']:.1%} of public-company net income.",
@@ -138,7 +147,7 @@ def build_llm_document(payload: dict) -> str:
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
-            f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used by the Doom Index. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
+            f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
             "",
             "## Definitions",
             "",
@@ -693,9 +702,13 @@ def build_payload(doom_root: Path) -> dict:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of_date": str(pd.Timestamp(latest_daily["date"]).date()),
         "definitions": {
-            "doom_index": (
+            "measured_liability_stack": (
                 "Gross federal debt plus the OASDI 75-year open-group present-value "
                 "shortfall plus Medicare's 75-year government-wide resource gap."
+            ),
+            "doom_index": (
+                "Legacy data-key definition for the measured liability stack; this is "
+                "not the new 0–100 Doom Index evidence score."
             ),
             "household_income": (
                 "BLS Consumer Expenditure Survey mean after-tax income per consumer "

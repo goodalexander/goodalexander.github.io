@@ -277,7 +277,7 @@
     set('demographic-debt-1960', `${demographicSummary.gross_debt_pct_gdp_1960.toFixed(1)}%`);
     set('demographic-debt-2025', `${demographicSummary.gross_debt_pct_gdp_2025.toFixed(1)}%`);
     set('demographic-debt-2025-repeat', `${demographicSummary.gross_debt_pct_gdp_2025.toFixed(1)}%`);
-    set('doom-definition', data.definitions.doom_index);
+    set('doom-definition', data.definitions.measured_liability_stack || data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
 
