@@ -14,7 +14,7 @@ As some of you might have noted I tweeted that I liquidated a long TAO position 
 
 This was of course partly luck, and market beta but heavily informed by the work of our new Team Member, IridiumEagle - who is tasked with fundamentally researching AI coins. He holds a pHD in CS, and was the CTO of an AI focused start-up in the biological computation space. He’s new to crypto. Below is our report detailing a neutral view on TAO. We are extremely excited about AI coins ([as per earlier posts](https://goodalexander.com/posts/left-curve-path/)), but as great as it would be to “left curve it” and just buy everything we’ve quickly realized that we need stronger fundamental views to hold investments through losses.
 
-This report is technical and market commentary not a recommendation to buy or sell securities or commodities and we have no relationship with the Bittensor, TAO or associated teams that would encourage positive or negative statements. Please consult our Disclaimer [Disclaimer](/pages/disclaimer.md)
+This report is technical and market commentary not a recommendation to buy or sell securities or commodities and we have no relationship with the Bittensor, TAO or associated teams that would encourage positive or negative statements. Please consult our [Disclaimer](/disclaimer/).
 
 ## Executive Summary 
 
@@ -814,4 +814,3 @@ We hope you enjoyed our report. If you have feedback, e-mail alex@agti.net and r
         async>
     </script>
 </div>
-

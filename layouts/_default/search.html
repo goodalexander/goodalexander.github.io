@@ -1,0 +1,14 @@
+{{- define "main" }}
+<section class="ga-list-shell ga-search-shell">
+  <header class="ga-page-header">
+    <p class="ga-eyebrow"><span></span> Find a note</p>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div id="searchbox" class="ga-search-box">
+    <input id="searchInput" autofocus placeholder="Search the notebook…" aria-label="Search" type="search" autocomplete="off" maxlength="64">
+    <span aria-hidden="true">⌕</span>
+    <ul id="searchResults" aria-label="Search results"></ul>
+  </div>
+</section>
+{{- end }}

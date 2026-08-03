@@ -1,0 +1,45 @@
+{{- if not site.Params.disableThemeToggle }}
+<script>
+  (function () {
+    const preference = localStorage.getItem('pref-theme');
+    if (preference === 'dark' || (!preference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark');
+    } else if (preference === 'light') {
+      document.body.classList.remove('dark');
+    }
+  })();
+</script>
+{{- end }}
+<header class="ga-header">
+  <div class="ga-header-inner">
+    <a class="ga-wordmark" href="{{ "" | absLangURL }}" aria-label="GoodAlexander home">
+      <span class="ga-wordmark-mark" aria-hidden="true"></span>
+      <span>GOODALEXANDER</span>
+    </a>
+
+    <nav class="ga-nav" aria-label="Primary navigation">
+      <a{{ if .IsHome }} class="is-active"{{ end }} href="/">Research</a>
+      <a{{ if eq .RelPermalink "/doom-thesis/" }} class="is-active"{{ end }} href="/doom-thesis/">Doom Thesis</a>
+      <a{{ if eq .Layout "archives" }} class="is-active"{{ end }} href="/archives/">Archive</a>
+    </nav>
+
+    <div class="ga-header-actions">
+      <a class="ga-x-link" href="https://x.com/goodalexander" rel="me noopener" target="_blank" aria-label="GoodAlexander on X">𝕏</a>
+      {{- if not site.Params.disableThemeToggle }}
+      <button class="ga-theme-toggle" id="theme-toggle" accesskey="t" title="Switch theme" aria-label="Switch theme">
+        <span aria-hidden="true"></span>
+      </button>
+      {{- end }}
+      <details class="ga-mobile-nav">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="/">Research</a>
+          <a href="/doom-thesis/">Doom Thesis</a>
+          <a href="/archives/">Archive</a>
+          <a href="/search/">Search</a>
+          <a href="/subscribe/">Subscribe</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

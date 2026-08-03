@@ -1,0 +1,46 @@
+{{- define "main" }}
+<article class="post-single ga-article">
+  <div class="ga-article-shell">
+    <a class="ga-back-link" href="/">← Back to research</a>
+    <header class="post-header ga-article-header">
+      {{- $category := "Research" -}}
+      {{- with .Params.categories }}{{ if gt (len .) 0 }}{{ $category = index . 0 }}{{ end }}{{ end -}}
+      <p class="ga-eyebrow"><span></span> {{ $category }}</p>
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- with .Description }}<p class="post-description">{{ . }}</p>{{ end }}
+      <div class="ga-article-meta">
+        <span>By GoodAlexander</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        <span>{{ .ReadingTime }} min read</span>
+      </div>
+    </header>
+  </div>
+
+  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+  <div class="ga-article-cover">{{ partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}</div>
+
+  <div class="ga-reading-column">
+    {{- if (.Param "ShowToc") }}{{ partial "toc.html" . }}{{ end }}
+    {{- if .Content }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }}
+      {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+
+    <footer class="post-footer ga-article-footer">
+      {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+      <ul class="post-tags">
+        {{- range ($.GetTerms $tags) }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{- end }}
+      </ul>
+      {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+      <div class="ga-share"><span>Share this note</span>{{ partial "share_icons.html" . }}</div>
+      {{- end }}
+    </footer>
+  </div>
+
+  {{- if (.Param "ShowPostNavLinks") }}<div class="ga-post-nav">{{ partial "post_nav_links.html" . }}</div>{{ end }}
+  {{- if (.Param "comments") }}{{ partial "comments.html" . }}{{ end }}
+</article>
+{{- end }}

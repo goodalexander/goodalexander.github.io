@@ -1,0 +1,27 @@
+{{- define "main" }}
+<section class="ga-list-shell ga-archive-shell">
+  <header class="ga-page-header">
+    <p class="ga-eyebrow"><span></span> Complete index</p>
+    <h1>{{ .Title }}</h1>
+    <p>Every published note, organized chronologically.</p>
+  </header>
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+  {{- $pages = where $pages "File.BaseFileName" "!=" "new_html" -}}
+  {{- range $pages.GroupByPublishDate "2006" }}
+  {{- if ne .Key "0001" }}
+  <section class="ga-archive-year">
+    <div class="ga-archive-year-head"><h2>{{ .Key }}</h2><span>{{ len .Pages }} notes</span></div>
+    <div class="ga-archive-entries">
+      {{- range .Pages }}
+      <article>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">↗</a>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+</section>
+{{- end }}

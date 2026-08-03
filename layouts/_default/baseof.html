@@ -4,32 +4,19 @@
 
 <!DOCTYPE html>
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
-
 <head>
     {{- partial "head.html" . }}
 </head>
-
-{{- if .IsHome }}
-<body class="ga-front-page" id="top">
-    <main class="ga-front-main">
+{{- $pageClass := "ga-list-page" -}}
+{{- if .IsHome }}{{ $pageClass = "ga-home-page" }}{{ end -}}
+{{- if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}{{ $pageClass = "ga-article-page" }}{{ end -}}
+{{- if eq .Layout "doom" }}{{ $pageClass = "ga-doom-page" }}{{ end -}}
+<body class="ga-site {{ $pageClass }}{{ if eq site.Params.defaultTheme `dark` }} dark{{ end }}" id="top">
+    <a class="ga-skip-link" href="#content">Skip to content</a>
+    {{- partial "header.html" . -}}
+    <main class="ga-main" id="content">
         {{- block "main" . }}{{ end }}
     </main>
+    {{- partial "footer.html" . -}}
 </body>
-{{- else }}
-<body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
-{{- print "list" -}}
-{{- end -}}
-{{- if eq site.Params.defaultTheme `dark` -}}
-{{- print " dark" }}
-{{- end -}}
-" id="top">
-    {{- partialCached "header.html" . .Page -}}
-    <main class="main">
-        {{- block "main" . }}{{ end }}
-    </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
-</body>
-{{- end }}
-
 </html>

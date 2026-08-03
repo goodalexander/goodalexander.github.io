@@ -1,0 +1,37 @@
+{{- define "main" }}
+<section class="ga-list-shell">
+  <header class="ga-page-header">
+    <p class="ga-eyebrow"><span></span> Index</p>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . | markdownify }}</p>{{ end }}
+  </header>
+
+  {{- if .Content }}<div class="post-content ga-page-intro">{{ .Content }}</div>{{ end }}
+  {{- $pages := union .RegularPages .Sections -}}
+  {{- $paginator := .Paginate $pages -}}
+  <div class="ga-feed-list ga-list-feed">
+    {{- range $index, $page := $paginator.Pages }}
+    <article class="ga-feed-row">
+      <span class="ga-feed-index">{{ printf "%02d" (add $index 1) }}</span>
+      <div class="ga-feed-content">
+        <p>{{ $page.Type | title }}</p>
+        <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+        <div>{{ $page.Summary | plainify | htmlUnescape | truncate 180 }}</div>
+      </div>
+      <div class="ga-feed-meta">
+        <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "02 Jan 2006" }}</time>
+        <span>{{ $page.ReadingTime }} min read</span>
+      </div>
+      <a class="ga-feed-arrow" href="{{ $page.RelPermalink }}" aria-label="Read {{ $page.Title }}"><span>↗</span></a>
+    </article>
+    {{- end }}
+  </div>
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="ga-pagination" aria-label="Pagination">
+    {{- if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">← Newer</a>{{ else }}<span></span>{{ end }}
+    <span>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    {{- if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Older →</a>{{ else }}<span></span>{{ end }}
+  </nav>
+  {{- end }}
+</section>
+{{- end }}
