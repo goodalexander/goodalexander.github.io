@@ -1,0 +1,7 @@
+# goodalexander.com
+
+## Primary research
+
+- [Doom Thesis — machine-readable edition](https://goodalexander.com/doom-thesis.txt): A sourced fiscal, corporate-income, productivity, and valuation analysis of U.S. public debt and unfunded federal programs.
+
+- [Doom Thesis — interactive page](https://goodalexander.com/doom-thesis/)

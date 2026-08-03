@@ -31,6 +31,126 @@ def records(frame: pd.DataFrame) -> list[dict]:
     return json.loads(frame.to_json(orient="records", date_format="iso"))
 
 
+def build_llm_document(payload: dict) -> str:
+    """Return a compact, JavaScript-free snapshot for automated readers."""
+    latest = payload["latest"]
+    receipts = payload["federal_receipts"]["summary"]
+    sustainability = payload["sustainability"]["summary"]
+    tax_mix = payload["sustainability"]["tax_mix"][0]
+    growth = payload["growth_escape"]["summary"]
+    productivity = payload["productivity"]["summary"]
+    cumulative = payload["cumulative_income_vs_debt"]["summary"]
+    valuation = payload["tax_valuation"]["valuation_summary"]
+
+    def hurdle(horizon: int, gap_growth: float) -> dict:
+        return next(
+            row
+            for row in payload["growth_escape"]["sensitivity"]
+            if row["horizon_years"] == horizon
+            and row["real_program_gap_growth_pct"] == gap_growth
+        )
+
+    hurdle_lines = []
+    for horizon in (10, 20, 30):
+        low = hurdle(horizon, 0.0)
+        high = hurdle(horizon, 2.0)
+        hurdle_lines.append(
+            f"- {horizon} years: real GDP {low['required_real_gdp_cagr_pct']:.1f}%–"
+            f"{high['required_real_gdp_cagr_pct']:.1f}%; productivity "
+            f"{low['required_productivity_cagr_pct']:.1f}%–"
+            f"{high['required_productivity_cagr_pct']:.1f}% annually."
+        )
+
+    source_lines = []
+    for source in payload["sources"]:
+        location = source.get("url") or source.get("reference")
+        source_lines.append(f"- {source['name']}: {location}")
+
+    return "\n".join(
+        [
+            "# Doom Thesis — machine-readable edition",
+            "",
+            f"Generated: {payload['generated_at_utc']}",
+            f"Data as of: {payload['as_of_date']}",
+            "Canonical human page: https://goodalexander.com/doom-thesis/",
+            "Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt",
+            "Full structured data: https://goodalexander.com/doom-thesis/data.json",
+            "",
+            "## Executive thesis",
+            "",
+            "This is what it would take to right-size the fiscal and monetary situation in the United States. Bring the annual deficit down to 3% of GDP and reduce the Social Security and Medicare funding gap to one year of GDP without cutting promised benefits. On current math, that requires a recurring $2.66 trillion annual adjustment, or economic growth fast enough to make the bill small relative to the economy. A tax-led adjustment is likely to produce a lower-growth, lower-valuation transition rather than a painless accounting fix. This is why AGI moon math is appealing: extraordinary productivity is the only believable non-austerity route that could honor the promises without some combination of very large taxes, benefit cuts, inflation, or financial repression. It would have to be a sustained change in the growth regime, not a one-year AI boom.",
+            "",
+            "## The numbers",
+            "",
+            f"- Gross public debt: ${latest['public_debt_trillions']:.2f} trillion.",
+            f"- Social Security 75-year open-group present-value shortfall: ${latest['ssa_unfunded_75yr_trillions']:.1f} trillion.",
+            f"- Medicare 75-year government-wide resource gap: ${latest['medicare_resource_gap_trillions']:.1f} trillion.",
+            f"- Combined Doom Index liabilities: ${latest['total_liabilities_trillions']:.2f} trillion, or ${latest['total_liabilities_per_household']:,.0f} per household.",
+            f"- Median household income: ${latest['median_pretax_household_income']:,.0f} before tax and ${latest['median_post_tax_household_income']:,.0f} after tax ({int(latest['median_household_income_year'])}).",
+            f"- Current federal interest: ${latest['precise_interest_trillions']:.2f} trillion, equal to {latest['interest_to_public_net_income_ratio']:.1%} of rolling public-company net income.",
+            f"- Annualized payment for the full Social Security and Medicare gaps: ${latest['annualized_unfunded_program_cost_trillions']:.2f} trillion. With current interest, the all-in annual economic burden is ${latest['all_in_annual_burden_trillions']:.2f} trillion, or {latest['all_in_burden_to_public_net_income_ratio']:.1%} of public-company net income.",
+            "",
+            "## Current fiscal flow",
+            "",
+            f"- FY2026 projected receipts: ${receipts['fy2026_projected_receipts_trillions']:.2f} trillion ({receipts['fy2026_projected_receipts_pct_gdp']:.1f}% of GDP).",
+            f"- FY2026 projected outlays: ${receipts['fy2026_projected_outlays_trillions']:.2f} trillion.",
+            f"- FY2026 projected deficit: ${receipts['fy2026_projected_deficit_trillions']:.2f} trillion.",
+            f"- Receipts cover {receipts['fy2026_projected_receipts_coverage_of_outlays_pct']:.1f}% of outlays; interest consumes {receipts['fy2026_interest_share_of_receipts_pct']:.1f}% of receipts.",
+            "",
+            "## Prudent reduction sensitivity",
+            "",
+            f"Definition: {sustainability['definition']}",
+            f"- Annual deficit correction: ${sustainability['annual_deficit_correction_trillions']:.2f} trillion.",
+            f"- Annual equivalent funding needed to reduce the program gap: ${sustainability['annual_program_gap_funding_trillions']:.2f} trillion.",
+            f"- Total recurring adjustment: ${sustainability['total_annual_adjustment_trillions']:.2f} trillion, or {sustainability['total_annual_adjustment_pct_gdp']:.1f}% of GDP.",
+            f"- Tax-only federal receipts would rise from {receipts['fy2026_projected_receipts_pct_gdp']:.1f}% to {sustainability['tax_only_required_receipts_pct_gdp']:.1f}% of GDP.",
+            f"- Illustrative tax-only endpoint: top ordinary rate {tax_mix['resulting_top_ordinary_income_rate_pct']:.1f}%; combined standard payroll rate {tax_mix['resulting_combined_standard_payroll_rate_pct']:.1f}%; top long-term gains including NIIT {tax_mix['resulting_top_long_term_gains_rate_with_niit_pct']:.1f}%; corporate rate {tax_mix['resulting_corporate_income_rate_pct']:.1f}%; broad VAT {tax_mix['broad_vat_rate_pct']:.1f}%.",
+            f"- Warning: {sustainability['warning']}",
+            "",
+            "## Economy and stock-market sensitivity",
+            "",
+            f"- CBO tax-financing experiments of comparable scale put the GDP level {abs(growth['cbo_comparable_tax_financing_gdp_level_impact_low_pct']):.0f}%–{abs(growth['cbo_comparable_tax_financing_gdp_level_impact_high_pct']):.0f}% below baseline after ten years. This is a comparison, not a forecast of this exact package.",
+            f"- The modeled corporate-rate change mechanically reduces after-tax earnings by about {growth['mechanical_corporate_after_tax_earnings_hit_pct']:.0f}%.",
+            f"- Combining that earnings effect with a 10%–20% P/E de-rating implies a mechanical equity-value loss of {growth['equity_loss_with_10pct_derating_pct']:.0f}%–{growth['equity_loss_with_20pct_derating_pct']:.0f}%. A recessionary implementation could be worse.",
+            "",
+            "## Consensus growth and the AGI escape hurdle",
+            "",
+            f"- IMF U.S. real GDP growth: {growth['imf_us_real_gdp_growth_2026_pct']:.1f}% in 2026 and {growth['imf_us_real_gdp_growth_2027_pct']:.1f}% in 2027.",
+            f"- CBO longer-run U.S. real GDP growth: about {growth['cbo_us_long_run_real_gdp_growth_pct']:.1f}%.",
+            f"- IMF global growth: {growth['imf_global_real_gdp_growth_2026_pct']:.1f}% in 2026 and {growth['imf_global_real_gdp_growth_2027_pct']:.1f}% in 2027; World Bank: {growth['world_bank_global_real_gdp_growth_2026_pct']:.1f}% and {growth['world_bank_global_real_gdp_growth_2027_pct']:.1f}%.",
+            "- Growth needed to dilute the current program gap from roughly 297% to 100% of GDP, assuming the real gap itself grows between 0% and 2% annually:",
+            *hurdle_lines,
+            f"- Method: {growth['method']}",
+            "",
+            "## Debt, corporate income, productivity, and valuation",
+            "",
+            f"- Since the end of 1999, public debt accrued by ${cumulative['public_debt_accrued_trillions']:.2f} trillion versus ${cumulative['cumulative_public_company_netinc_trillions']:.2f} trillion of cumulative public-company net income, a {cumulative['debt_accrued_to_cumulative_netinc_ratio']:.2f}x ratio.",
+            f"- Rolling operating-company FCF yield: {valuation['operating_company_fcf_yield_pct']:.2f}% versus a {valuation['us_30y_treasury_yield_pct']:.2f}% 30-year Treasury yield.",
+            f"- SPX forward earnings yield: {valuation['spx_forward_earnings_yield_pct']:.2f}% versus VCLT yield of {valuation['vclt_yas_bond_yield_pct']:.2f}%.",
+            f"- U.S. electricity generation: {productivity['latest_generation_twh']:,.0f} TWh; utility capex: ${productivity['latest_utility_capex_billions']:.1f} billion; real capex per MWh is {productivity['real_capex_per_mwh_multiple_since_2004']:.2f}x its 2004 level.",
+            f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
+            f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
+            "",
+            "## Definitions",
+            "",
+            *[f"- {name}: {definition}" for name, definition in payload["definitions"].items()],
+            "",
+            "## Data downloads",
+            "",
+            "- Full JSON: https://goodalexander.com/doom-thesis/data.json",
+            "- Household liabilities: https://goodalexander.com/doom-thesis/household-liabilities.csv",
+            "- Daily cumulative income versus debt: https://goodalexander.com/doom-thesis/cumulative-income-vs-debt-daily.csv",
+            "- Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv",
+            "- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv",
+            "",
+            "## Sources",
+            "",
+            *source_lines,
+            "",
+        ]
+    )
+
+
 def build_payload(doom_root: Path) -> dict:
     annual = pd.read_csv(doom_root / "doom_index_2004_2026.csv")
     daily = pd.read_csv(doom_root / "doom_index_daily_2004_2026.csv")
@@ -857,6 +977,22 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "data.json").write_text(
         json.dumps(payload, indent=2) + "\n", encoding="utf-8"
+    )
+    llm_document = build_llm_document(payload)
+    static_root = args.output_dir.parent
+    (static_root / "doom-thesis.txt").write_text(
+        llm_document, encoding="utf-8"
+    )
+    (static_root / "llms.txt").write_text(
+        "# goodalexander.com\n\n"
+        "## Primary research\n\n"
+        "- [Doom Thesis — machine-readable edition]"
+        "(https://goodalexander.com/doom-thesis.txt): "
+        "A sourced fiscal, corporate-income, productivity, and valuation "
+        "analysis of U.S. public debt and unfunded federal programs.\n\n"
+        "- [Doom Thesis — interactive page]"
+        "(https://goodalexander.com/doom-thesis/)\n",
+        encoding="utf-8",
     )
     history = payload["household_history"]
     with (args.output_dir / "household-liabilities.csv").open(

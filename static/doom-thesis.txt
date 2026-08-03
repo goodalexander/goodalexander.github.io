@@ -1,0 +1,103 @@
+# Doom Thesis — machine-readable edition
+
+Generated: 2026-08-03T16:56:17.016342+00:00
+Data as of: 2026-08-02
+Canonical human page: https://goodalexander.com/doom-thesis/
+Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
+Full structured data: https://goodalexander.com/doom-thesis/data.json
+
+## Executive thesis
+
+This is what it would take to right-size the fiscal and monetary situation in the United States. Bring the annual deficit down to 3% of GDP and reduce the Social Security and Medicare funding gap to one year of GDP without cutting promised benefits. On current math, that requires a recurring $2.66 trillion annual adjustment, or economic growth fast enough to make the bill small relative to the economy. A tax-led adjustment is likely to produce a lower-growth, lower-valuation transition rather than a painless accounting fix. This is why AGI moon math is appealing: extraordinary productivity is the only believable non-austerity route that could honor the promises without some combination of very large taxes, benefit cuts, inflation, or financial repression. It would have to be a sustained change in the growth regime, not a one-year AI boom.
+
+## The numbers
+
+- Gross public debt: $39.84 trillion.
+- Social Security 75-year open-group present-value shortfall: $29.3 trillion.
+- Medicare 75-year government-wide resource gap: $65.3 trillion.
+- Combined Doom Index liabilities: $134.44 trillion, or $997,412 per household.
+- Median household income: $83,730 before tax and $72,330 after tax (2024).
+- Current federal interest: $1.04 trillion, equal to 39.5% of rolling public-company net income.
+- Annualized payment for the full Social Security and Medicare gaps: $2.66 trillion. With current interest, the all-in annual economic burden is $3.70 trillion, or 140.3% of public-company net income.
+
+## Current fiscal flow
+
+- FY2026 projected receipts: $5.60 trillion (17.5% of GDP).
+- FY2026 projected outlays: $7.45 trillion.
+- FY2026 projected deficit: $1.85 trillion.
+- Receipts cover 75.1% of outlays; interest consumes 18.6% of receipts.
+
+## Prudent reduction sensitivity
+
+Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the combined Social Security and Medicare 75-year present-value funding gap to no more than one year of current GDP.
+- Annual deficit correction: $0.90 trillion.
+- Annual equivalent funding needed to reduce the program gap: $1.76 trillion.
+- Total recurring adjustment: $2.66 trillion, or 8.3% of GDP.
+- Tax-only federal receipts would rise from 17.5% to 25.9% of GDP.
+- Illustrative tax-only endpoint: top ordinary rate 45.4%; combined standard payroll rate 21.2%; top long-term gains including NIIT 35.7%; corporate rate 32.9%; broad VAT 14.8%.
+- Warning: Social Security and Medicare funding gaps overlap with future unified-budget deficits. This construction combines a current-year deficit target with prospective prefunding; it must not be added again to a full 75-year unified-deficit present value. The reform shares are present-value financing sensitivities, not specified benefit cuts or independently scored policy packages.
+
+## Economy and stock-market sensitivity
+
+- CBO tax-financing experiments of comparable scale put the GDP level 3%–10% below baseline after ten years. This is a comparison, not a forecast of this exact package.
+- The modeled corporate-rate change mechanically reduces after-tax earnings by about 15%.
+- Combining that earnings effect with a 10%–20% P/E de-rating implies a mechanical equity-value loss of 24%–32%. A recessionary implementation could be worse.
+
+## Consensus growth and the AGI escape hurdle
+
+- IMF U.S. real GDP growth: 2.3% in 2026 and 2.2% in 2027.
+- CBO longer-run U.S. real GDP growth: about 1.8%.
+- IMF global growth: 3.0% in 2026 and 3.4% in 2027; World Bank: 2.5% and 2.8%.
+- Growth needed to dilute the current program gap from roughly 297% to 100% of GDP, assuming the real gap itself grows between 0% and 2% annually:
+- 10 years: real GDP 11.5%–13.7%; productivity 11.0%–13.3% annually.
+- 20 years: real GDP 5.6%–7.7%; productivity 5.2%–7.3% annually.
+- 30 years: real GDP 3.7%–5.8%; productivity 3.3%–5.3% annually.
+- Method: GDP hurdle makes the current real program gap equal one year of future real GDP without benefit reductions. It is a denominator test, not cash funding, and assumes a stable federal revenue share.
+
+## Debt, corporate income, productivity, and valuation
+
+- Since the end of 1999, public debt accrued by $34.07 trillion versus $27.32 trillion of cumulative public-company net income, a 1.25x ratio.
+- Rolling operating-company FCF yield: 2.68% versus a 5.27% 30-year Treasury yield.
+- SPX forward earnings yield: 4.73% versus VCLT yield of 6.19%.
+- U.S. electricity generation: 4,430 TWh; utility capex: $201.3 billion; real capex per MWh is 2.38x its 2004 level.
+- Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
+- Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
+
+## Definitions
+
+- doom_index: Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.
+- household_income: BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.
+- ratio: Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.
+- discretionary_income: St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.
+- annualized_unfunded_burden: Derived level real annual payment that amortizes the Social Security and Medicare 75-year present-value gaps over 75 years at the Trustees' 2.3% intermediate ultimate real interest rate. It is an economic funding benchmark, not a current legal invoice.
+
+## Data downloads
+
+- Full JSON: https://goodalexander.com/doom-thesis/data.json
+- Household liabilities: https://goodalexander.com/doom-thesis/household-liabilities.csv
+- Daily cumulative income versus debt: https://goodalexander.com/doom-thesis/cumulative-income-vs-debt-daily.csv
+- Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv
+- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv
+
+## Sources
+
+- Bloomberg public debt: PUBLDEBT Index / PX_LAST
+- Social Security Trustees: https://www.ssa.gov/oact/TR/2026/IV_B_LRest.html
+- Medicare Trustees: https://www.cms.gov/oact/tr/2026
+- Census total households: https://fred.stlouisfed.org/series/TTLHH
+- BLS mean after-tax income per consumer unit: https://fred.stlouisfed.org/series/CXUINCAFTTXLB0101M
+- Census 2024 median household income before and after tax: https://www.census.gov/library/publications/2025/demo/p60-286.html
+- St. Louis Fed discretionary-income benchmark: https://www.stlouisfed.org/open-vault/2025/aug/primer-discretionary-income
+- Treasury MSPD: https://fiscaldata.treasury.gov/datasets/monthly-statement-public-debt/
+- CBO Budget and Economic Outlook: https://www.cbo.gov/publication/61882
+- Sharadar fundamentals: Local SF1 ARQ point-in-time four-quarter reconstruction
+- EIA total U.S. electricity generation: https://www.eia.gov/totalenergy/data/monthly/
+- BLS nonfarm-business labor productivity: https://fred.stlouisfed.org/series/OPHNFB
+- Sharadar utility capex and operating-company FCF: Local SF1 ARY, latest restatement per ticker and calendar period; U.S. domestic common stocks including delisted names
+- IRS historical federal corporation tax rates: https://www.irs.gov/statistics/soi-tax-stats-historical-table-24
+- CBO Budget and Economic Outlook: 2026 to 2036: https://www.cbo.gov/publication/62105
+- IMF World Economic Outlook Update, July 2026: https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026
+- World Bank Global Economic Prospects, June 2026: https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release
+- CBO economic effects of financing a permanent spending increase: https://www.cbo.gov/publication/57021
+- OMB total federal receipts and outlays: https://fred.stlouisfed.org/series/FYFR
+- Bloomberg equity and fixed-income valuation: SPX Index BEST_PE_RATIO; VCLT US Equity YAS_BOND_YLD; USGG30YR Index PX_LAST
