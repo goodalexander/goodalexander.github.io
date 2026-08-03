@@ -96,6 +96,17 @@ def build_payload(doom_root: Path) -> dict:
             encoding="utf-8"
         )
     )
+    sustainability_funding = pd.read_csv(
+        doom_root / "fiscal_sustainability_funding_scenarios.csv"
+    )
+    sustainability_tax_mix = pd.read_csv(
+        doom_root / "fiscal_sustainability_tax_mix.csv"
+    )
+    sustainability_summary = json.loads(
+        (doom_root / "fiscal_sustainability_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
     fcf_yield_vs_30y = pd.read_csv(
         doom_root
         / "operating_company_fcf_yield_vs_30y_annual_2004_2026.csv"
@@ -660,6 +671,13 @@ def build_payload(doom_root: Path) -> dict:
                 federal_receipts_composition.round(8)
             ),
         },
+        "sustainability": {
+            "summary": sustainability_summary,
+            "funding_endpoints": records(
+                sustainability_funding.round(8)
+            ),
+            "tax_mix": records(sustainability_tax_mix.round(8)),
+        },
         "productivity": {
             "summary": {
                 "latest_year": int(utility_latest["calendar_year"]),
@@ -855,6 +873,14 @@ def main() -> None:
     pd.read_csv(
         args.doom_data_root / "us_federal_total_receipts_fy2004_2030.csv"
     ).to_csv(args.output_dir / "federal-receipts.csv", index=False)
+    pd.read_csv(
+        args.doom_data_root / "fiscal_sustainability_funding_scenarios.csv"
+    ).to_csv(
+        args.output_dir / "fiscal-sustainability-scenarios.csv", index=False
+    )
+    pd.read_csv(
+        args.doom_data_root / "fiscal_sustainability_tax_mix.csv"
+    ).to_csv(args.output_dir / "fiscal-sustainability-tax-mix.csv", index=False)
     print(json.dumps(payload["latest"], indent=2))
 
 

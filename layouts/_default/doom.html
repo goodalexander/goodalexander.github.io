@@ -397,6 +397,68 @@
       <a class="doom-download" href="/doom-thesis/federal-receipts.csv" download>Download federal-receipts CSV <span>↓</span></a>
     </div>
 
+    <div class="doom-section-head doom-sustainability-head">
+      <div>
+        <div class="doom-eyebrow">Sustainable course</div>
+        <h2>What it costs to unwind the gap</h2>
+      </div>
+      <p>“Reasonable” is defined here as reducing the current deficit to 3% of GDP while shrinking the combined Social Security and Medicare 75-year funding gap from almost three years of GDP to one—not forcing it to zero.</p>
+    </div>
+
+    <div class="doom-productivity-strip doom-sustainability-strip">
+      <div>
+        <span>Current program funding gap</span>
+        <strong data-field="sustainability-current-gap">—</strong>
+        <small><span data-field="sustainability-current-gap-gdp">—</span> of current GDP</small>
+      </div>
+      <div>
+        <span>Reasonable residual gap</span>
+        <strong data-field="sustainability-residual-gap">—</strong>
+        <small>One year of GDP; PV reduction <span data-field="sustainability-pv-reduction">—</span></small>
+      </div>
+      <div>
+        <span>Total annual adjustment</span>
+        <strong data-field="sustainability-total-adjustment">—</strong>
+        <small><span data-field="sustainability-adjustment-gdp">—</span> of GDP</small>
+      </div>
+      <div>
+        <span>Tax-only receipts required</span>
+        <strong data-field="sustainability-receipts-gdp">—</strong>
+        <small><span data-field="sustainability-per-household">—</span> additional per household equivalent</small>
+      </div>
+    </div>
+
+    <div class="doom-panel doom-table-panel">
+      <div class="doom-panel-head">
+        <div><span class="doom-panel-label">75 years · 2.3% real funding rate</span><h3>Choose the residual risk</h3></div>
+        <div class="doom-note"><span data-field="sustainability-deficit-fix">—</span> fixes the current deficit; the program column funds the selected reduction in the present-value gap.</div>
+      </div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense doom-sustainability-table">
+          <thead><tr><th>Endpoint</th><th>Residual program gap</th><th>Annual deficit fix</th><th>Annual program funding</th><th>Total adjustment</th><th>Tax-only receipts / GDP</th><th>Per household</th></tr></thead>
+          <tbody id="sustainability-endpoint-table"></tbody>
+        </table>
+      </div>
+      <p class="doom-note doom-chart-note">The selected prudent course requires <strong data-field="sustainability-program-funding">—</strong> of annual program-gap funding in addition to the current-deficit correction. The per-household figure is a scale equivalent, not a proposal for a uniform household tax.</p>
+    </div>
+
+    <div class="doom-panel doom-table-panel">
+      <div class="doom-panel-head">
+        <div><span class="doom-panel-label">Selected endpoint · one GDP-year residual</span><h3>Taxation versus gradual program reform</h3></div>
+        <div class="doom-note">The rate mix spreads new revenue across ordinary income, payroll, gains and dividends, corporate income, and a broad VAT.</div>
+      </div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense doom-sustainability-table">
+          <thead><tr><th>Program share</th><th>Annual program reform</th><th>New taxes</th><th>Total receipts / GDP</th><th>All income brackets</th><th>Combined payroll</th><th>Top gains + NIIT</th><th>Corporate</th><th>VAT</th></tr></thead>
+          <tbody id="sustainability-tax-mix-table"></tbody>
+        </table>
+      </div>
+      <p class="doom-note doom-chart-note">“Program reform” is a level annual-equivalent reduction in the gap, phased across future benefit growth, eligibility, premiums, and healthcare costs—not an immediate cut to current pensions. Even the 10% reform case requires taxes far beyond historical federal levels. These rate combinations linearly scale JCT marginal scores; large simultaneous hikes would produce nonlinear avoidance and macroeconomic feedback, so they are optimistic revenue estimates.</p>
+      <p class="doom-note doom-chart-note">Do not add this program funding benchmark to a separate 75-year unified-deficit present value: Social Security and Medicare gaps already overlap with future federal deficits. This construction combines only a current-year deficit target with prospective prefunding.</p>
+      <a class="doom-download" href="/doom-thesis/fiscal-sustainability-scenarios.csv" download>Download funding endpoints <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/fiscal-sustainability-tax-mix.csv" download>Download sustainable tax mixes <span>↓</span></a>
+    </div>
+
     <div class="doom-productivity-strip doom-tax-strip">
       <div>
         <span>Federal corporate rate</span>
@@ -512,5 +574,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-1" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-2" defer></script>
 {{ end }}

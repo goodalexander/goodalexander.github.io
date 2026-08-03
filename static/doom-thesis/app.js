@@ -181,6 +181,18 @@
     set('federal-receipts-per-household', money(receiptsSummary.fy2026_receipts_per_household));
     set('interest-share-receipts', `${receiptsSummary.fy2026_interest_share_of_receipts_pct.toFixed(1)}%`);
     set('corporate-tax-share-receipts', `${receiptsSummary.fy2026_corporate_tax_share_pct.toFixed(1)}%`);
+    const sustainability = data.sustainability;
+    const sustainabilitySummary = sustainability.summary;
+    set('sustainability-current-gap', trillions(sustainabilitySummary.current_program_gap_trillions, 1));
+    set('sustainability-current-gap-gdp', `${sustainabilitySummary.current_program_gap_pct_gdp.toFixed(0)}%`);
+    set('sustainability-residual-gap', trillions(sustainabilitySummary.reasonable_residual_gap_trillions, 1));
+    set('sustainability-pv-reduction', trillions(sustainabilitySummary.program_gap_pv_reduction_trillions, 1));
+    set('sustainability-deficit-fix', trillions(sustainabilitySummary.annual_deficit_correction_trillions, 2));
+    set('sustainability-program-funding', trillions(sustainabilitySummary.annual_program_gap_funding_trillions, 2));
+    set('sustainability-total-adjustment', trillions(sustainabilitySummary.total_annual_adjustment_trillions, 2));
+    set('sustainability-adjustment-gdp', `${sustainabilitySummary.total_annual_adjustment_pct_gdp.toFixed(1)}%`);
+    set('sustainability-receipts-gdp', `${sustainabilitySummary.tax_only_required_receipts_pct_gdp.toFixed(1)}%`);
+    set('sustainability-per-household', money(sustainabilitySummary.tax_only_annual_adjustment_per_household));
     set('tax-rate-current', `${taxSummary.current_federal_rate_pct.toFixed(0)}%`);
     set('tax-rate-max', `${taxSummary.historical_max_federal_rate_pct.toFixed(1)}%`);
     set('tax-incremental-receipts', trillions(taxSummary.incremental_static_receipts_trillions, 2));
@@ -234,6 +246,8 @@
     const receiptTableYears = new Set([2004, 2008, 2012, 2016, 2020, 2024, 2025, 2026, 2030]);
     $('#federal-receipts-table').innerHTML = federalReceipts.history_and_projection.filter((row) => receiptTableYears.has(row.fiscal_year)).map((row) => `<tr><td>${row.fiscal_year}</td><td>${trillions(row.total_federal_receipts_trillions, 2)}</td><td>${trillions(row.total_federal_outlays_trillions, 2)}</td><td>${trillions(row.unified_deficit_trillions, 2)}</td><td>${row.receipts_coverage_of_outlays_pct.toFixed(1)}%</td><td>${row.period_type}</td></tr>`).join('');
     $('#federal-receipts-composition-table').innerHTML = federalReceipts.fy2026_composition.map((row) => `<tr><td>${row.category}</td><td>${trillions(row.amount_trillions, 2)}</td><td>${row.share_of_total_pct.toFixed(1)}%</td></tr>`).join('');
+    $('#sustainability-endpoint-table').innerHTML = sustainability.funding_endpoints.map((row) => `<tr><td>${row.endpoint}</td><td>${trillions(row.residual_program_gap_trillions, 1)}<small>${row.residual_program_gap_pct_gdp.toFixed(0)}% GDP</small></td><td>${trillions(row.annual_deficit_correction_trillions, 2)}</td><td>${trillions(row.annual_program_gap_funding_trillions, 2)}</td><td>${trillions(row.total_annual_adjustment_trillions, 2)}<small>${row.total_annual_adjustment_pct_gdp.toFixed(1)}% GDP</small></td><td>${row.required_federal_receipts_pct_gdp_if_tax_only.toFixed(1)}%</td><td>${money(row.annual_adjustment_per_household)}</td></tr>`).join('');
+    $('#sustainability-tax-mix-table').innerHTML = sustainability.tax_mix.map((row) => `<tr><td>${row.program_reform_share_of_gap_funding_pct.toFixed(0)}%</td><td>${trillions(row.annual_program_reform_trillions, 2)}<small>${row.program_reform_pct_current_ss_medicare_outlays.toFixed(1)}% of current outlays</small></td><td>${trillions(row.new_tax_revenue_trillions, 2)}</td><td>${row.required_total_federal_receipts_pct_gdp.toFixed(1)}%</td><td>+${row.ordinary_income_all_brackets_rate_point_change.toFixed(1)} pp<small>top → ${row.resulting_top_ordinary_income_rate_pct.toFixed(1)}%</small></td><td>${row.resulting_combined_standard_payroll_rate_pct.toFixed(1)}%</td><td>${row.resulting_top_long_term_gains_rate_with_niit_pct.toFixed(1)}%</td><td>${row.resulting_corporate_income_rate_pct.toFixed(1)}%</td><td>${row.broad_vat_rate_pct.toFixed(1)}%</td></tr>`).join('');
 
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
@@ -305,7 +319,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-1', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-2', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

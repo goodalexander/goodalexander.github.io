@@ -97,6 +97,10 @@
 .doom-table tbody tr:last-child td { border-bottom: 0; }
 .doom-table-dense { font-size: .78rem; }
 .doom-table-dense td { padding-top: .72rem; padding-bottom: .72rem; }
+.doom-sustainability-head { margin-top: 4.5rem; }
+.doom-sustainability-table { min-width: 1040px; }
+.doom-sustainability-table td:last-child { max-width: none; white-space: nowrap; text-align: right; }
+.doom-sustainability-table td small { display: block; margin-top: .18rem; color: var(--doom-dim); font-size: .62rem; font-weight: 400; }
 .doom-chart-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 1.2rem; min-width: 0; }
 .doom-chart-grid > * { min-width: 0; }
 .doom-chart-grid-wide { grid-template-columns: 1.55fr .75fr; margin-bottom: 1.2rem; }
