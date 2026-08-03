@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-03T18:39:03.181556+00:00
+Generated: 2026-08-03T18:58:48.081681+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -54,7 +54,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - 30 years: real GDP 3.7%–5.8%; productivity 3.3%–5.3% annually.
 - Method: GDP hurdle makes the current real program gap equal one year of future real GDP without benefit reductions. It is a denominator test, not cash funding, and assumes a stable federal revenue share.
 
-## Debt, corporate income, productivity, and valuation
+## Debt, corporate income, productivity, demographics, and valuation
 
 - Since the end of 1999, public debt accrued by $34.07 trillion versus $27.32 trillion of cumulative public-company net income, a 1.25x ratio.
 - Rolling operating-company FCF yield: 2.68% versus a 5.27% 30-year Treasury yield.
@@ -67,6 +67,8 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Institutional-capacity context: 17% trusted the federal government in 2025. CMS measured $56.73 billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
+- Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
+- Fiscal comparison: the deficit was 21.0% of GDP in 1945, 14.5% in the pandemic year 2020, and 5.9% in 2025. CBO projects 6.7% in 2036. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
 
 ## Definitions
 
@@ -76,6 +78,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - discretionary_income: St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.
 - annualized_unfunded_burden: Derived level real annual payment that amortizes the Social Security and Medicare 75-year present-value gaps over 75 years at the Trustees' 2.3% intermediate ultimate real interest rate. It is an economic funding benchmark, not a current legal invoice.
 - education_productivity: Census public-school current spending per pupil, deflated by CPI-U and compared with the equally weighted index of national-public grade-8 NAEP reading and mathematics scores. Chart values are normalized to 2003=100 for visual comparison; NAEP scores are not ratio-scale measures of knowledge, and the relationship is descriptive rather than a causal estimate of spending efficacy.
+- demographic_support_ratio: OASDI beneficiaries in current-payment status on June 30 per 100 people who had OASDI-covered earnings at some point during the calendar year. OASDI includes old-age, survivor, and disability beneficiaries; it is broader than pensioners.
 
 ## Data downloads
 
@@ -85,11 +88,16 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv
 - AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv
 - Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv
+- OASDI support ratio and deficit comparison: https://goodalexander.com/doom-thesis/demographics-support-ratio.csv
 
 ## Sources
 
 - Bloomberg public debt: PUBLDEBT Index / PX_LAST
 - Social Security Trustees: https://www.ssa.gov/oact/TR/2026/IV_B_LRest.html
+- Social Security covered workers and beneficiaries: https://www.ssa.gov/oact/TR/2026/lr4b4.html
+- OMB/FRED federal surplus or deficit as a share of GDP: https://fred.stlouisfed.org/series/FYFSDFYGDP
+- CBO 2026–2036 budget outlook: https://www.cbo.gov/publication/62105
+- Social Security program history: https://www.ssa.gov/history/1940.html
 - Medicare Trustees: https://www.cms.gov/oact/tr/2026
 - Census total households: https://fred.stlouisfed.org/series/TTLHH
 - BLS mean after-tax income per consumer unit: https://fred.stlouisfed.org/series/CXUINCAFTTXLB0101M

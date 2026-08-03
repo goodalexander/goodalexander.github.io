@@ -40,6 +40,7 @@ def build_llm_document(payload: dict) -> str:
     growth = payload["growth_escape"]["summary"]
     productivity = payload["productivity"]["summary"]
     human_capital = payload["productivity"]["human_capital_evidence"]
+    demographics = payload["demographics"]["summary"]
     cumulative = payload["cumulative_income_vs_debt"]["summary"]
     valuation = payload["tax_valuation"]["valuation_summary"]
 
@@ -123,7 +124,7 @@ def build_llm_document(payload: dict) -> str:
             *hurdle_lines,
             f"- Method: {growth['method']}",
             "",
-            "## Debt, corporate income, productivity, and valuation",
+            "## Debt, corporate income, productivity, demographics, and valuation",
             "",
             f"- Since the end of 1999, public debt accrued by ${cumulative['public_debt_accrued_trillions']:.2f} trillion versus ${cumulative['cumulative_public_company_netinc_trillions']:.2f} trillion of cumulative public-company net income, a {cumulative['debt_accrued_to_cumulative_netinc_ratio']:.2f}x ratio.",
             f"- Rolling operating-company FCF yield: {valuation['operating_company_fcf_yield_pct']:.2f}% versus a {valuation['us_30y_treasury_yield_pct']:.2f}% 30-year Treasury yield.",
@@ -136,6 +137,8 @@ def build_llm_document(payload: dict) -> str:
             f"- Institutional-capacity context: {human_capital['trust_federal_government_pct_2025']:.0f}% trusted the federal government in 2025. CMS measured ${human_capital['medicare_improper_payments_billions_fy2025']:.2f} billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.",
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
+            f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
+            f"- Fiscal comparison: the deficit was {demographics['deficit_pct_gdp_1945']:.1f}% of GDP in 1945, {demographics['deficit_pct_gdp_2020']:.1f}% in the pandemic year 2020, and {demographics['deficit_pct_gdp_2025']:.1f}% in 2025. CBO projects {demographics['deficit_pct_gdp_2036']:.1f}% in 2036. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
             "",
             "## Definitions",
             "",
@@ -149,6 +152,7 @@ def build_llm_document(payload: dict) -> str:
             "- Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv",
             "- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv",
             "- Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv",
+            "- OASDI support ratio and deficit comparison: https://goodalexander.com/doom-thesis/demographics-support-ratio.csv",
             "",
             "## Sources",
             "",
@@ -273,6 +277,10 @@ def build_payload(doom_root: Path) -> dict:
     )
     education_productivity = pd.read_csv(
         doom_root / "us_public_school_spending_vs_naep_2003_2024.csv"
+    )
+    demographics = pd.read_csv(
+        doom_root
+        / "us_oasdi_beneficiaries_workers_and_deficit_1945_2100.csv"
     )
     operating_fcf = pd.read_csv(
         doom_root
@@ -673,6 +681,14 @@ def build_payload(doom_root: Path) -> dict:
         )
         .sort_values("calendar_year")
     )
+    demographic_rows = {
+        int(row["year"]): row
+        for _, row in demographics.iterrows()
+    }
+
+    def demographic_value(year: int, column: str) -> float:
+        return float(demographic_rows[year][column])
+
     payload = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "as_of_date": str(pd.Timestamp(latest_daily["date"]).date()),
@@ -708,6 +724,12 @@ def build_payload(doom_root: Path) -> dict:
                 "are normalized to 2003=100 for visual comparison; NAEP scores are "
                 "not ratio-scale measures of knowledge, and the relationship is "
                 "descriptive rather than a causal estimate of spending efficacy."
+            ),
+            "demographic_support_ratio": (
+                "OASDI beneficiaries in current-payment status on June 30 per "
+                "100 people who had OASDI-covered earnings at some point during "
+                "the calendar year. OASDI includes old-age, survivor, and "
+                "disability beneficiaries; it is broader than pensioners."
             ),
         },
         "latest": {
@@ -945,6 +967,55 @@ def build_payload(doom_root: Path) -> dict:
                 productivity_panel.round(8)
             ),
         },
+        "demographics": {
+            "summary": {
+                "workers_per_beneficiary_1945": demographic_value(
+                    1945, "workers_per_oasdi_beneficiary"
+                ),
+                "workers_per_beneficiary_1960": demographic_value(
+                    1960, "workers_per_oasdi_beneficiary"
+                ),
+                "workers_per_beneficiary_2025": demographic_value(
+                    2025, "workers_per_oasdi_beneficiary"
+                ),
+                "workers_per_beneficiary_2036": demographic_value(
+                    2036, "workers_per_oasdi_beneficiary"
+                ),
+                "beneficiaries_per_100_workers_1945": demographic_value(
+                    1945, "oasdi_beneficiaries_per_100_workers"
+                ),
+                "beneficiaries_per_100_workers_1960": demographic_value(
+                    1960, "oasdi_beneficiaries_per_100_workers"
+                ),
+                "beneficiaries_per_100_workers_2025": demographic_value(
+                    2025, "oasdi_beneficiaries_per_100_workers"
+                ),
+                "beneficiaries_per_100_workers_2036": demographic_value(
+                    2036, "oasdi_beneficiaries_per_100_workers"
+                ),
+                "deficit_pct_gdp_1945": demographic_value(
+                    1945, "federal_deficit_pct_gdp"
+                ),
+                "deficit_pct_gdp_2020": demographic_value(
+                    2020, "federal_deficit_pct_gdp"
+                ),
+                "deficit_pct_gdp_2025": demographic_value(
+                    2025, "federal_deficit_pct_gdp"
+                ),
+                "deficit_pct_gdp_2026": demographic_value(
+                    2026, "federal_deficit_pct_gdp"
+                ),
+                "deficit_pct_gdp_2036": demographic_value(
+                    2036, "federal_deficit_pct_gdp"
+                ),
+            },
+            "history_and_projection": records(demographics.round(8)),
+            "comparison_years": records(
+                demographics[
+                    demographics["year"].isin([1945, 1960, 2020, 2025, 2036])
+                ].round(8)
+            ),
+        },
         "sources": [
             {
                 "name": "Bloomberg public debt",
@@ -953,6 +1024,22 @@ def build_payload(doom_root: Path) -> dict:
             {
                 "name": "Social Security Trustees",
                 "url": "https://www.ssa.gov/oact/TR/2026/IV_B_LRest.html",
+            },
+            {
+                "name": "Social Security covered workers and beneficiaries",
+                "url": "https://www.ssa.gov/oact/TR/2026/lr4b4.html",
+            },
+            {
+                "name": "OMB/FRED federal surplus or deficit as a share of GDP",
+                "url": "https://fred.stlouisfed.org/series/FYFSDFYGDP",
+            },
+            {
+                "name": "CBO 2026–2036 budget outlook",
+                "url": "https://www.cbo.gov/publication/62105",
+            },
+            {
+                "name": "Social Security program history",
+                "url": "https://www.ssa.gov/history/1940.html",
             },
             {
                 "name": "Medicare Trustees",
@@ -1142,6 +1229,12 @@ def main() -> None:
         / "us_public_school_spending_vs_naep_2003_2024.csv"
     ).to_csv(
         args.output_dir / "education-spending-vs-naep.csv", index=False
+    )
+    pd.read_csv(
+        args.doom_data_root
+        / "us_oasdi_beneficiaries_workers_and_deficit_1945_2100.csv"
+    ).to_csv(
+        args.output_dir / "demographics-support-ratio.csv", index=False
     )
     cumulative_source = (
         args.doom_data_root

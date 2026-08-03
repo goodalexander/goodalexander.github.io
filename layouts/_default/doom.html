@@ -423,10 +423,69 @@
     </div>
   </section>
 
+  <section class="doom-section" id="demographics">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">06 / Demographics</div>
+        <h2>A structural deficit on a narrowing base</h2>
+      </div>
+      <p>World War II produced a much larger temporary deficit, followed by demobilization and a demographic boom. Today’s deficit is smaller but persistent, and it sits beneath a mature pay-as-you-go transfer system with fewer covered workers supporting each beneficiary.</p>
+    </div>
+
+    <div class="doom-productivity-strip doom-demographics-strip">
+      <div>
+        <span>2025 beneficiaries / 100 workers</span>
+        <strong data-field="demographic-beneficiaries-2025">—</strong>
+        <small><span data-field="demographic-workers-2025">—</span> covered workers per OASDI beneficiary</small>
+      </div>
+      <div>
+        <span>1960 beneficiaries / 100 workers</span>
+        <strong data-field="demographic-beneficiaries-1960">—</strong>
+        <small><span data-field="demographic-workers-1960">—</span> covered workers per beneficiary</small>
+      </div>
+      <div>
+        <span>2036 beneficiaries / 100 workers</span>
+        <strong data-field="demographic-beneficiaries-2036">—</strong>
+        <small>Trustees intermediate projection; <span data-field="demographic-workers-2036">—</span> workers per beneficiary</small>
+      </div>
+      <div>
+        <span>2036 federal deficit / GDP</span>
+        <strong data-field="demographic-deficit-2036">—</strong>
+        <small>CBO baseline, versus <span data-field="demographic-deficit-2025">—</span> in FY2025</small>
+      </div>
+    </div>
+
+    <figure class="doom-panel doom-chart-panel doom-productivity-main-chart">
+      <figcaption>
+        <span class="doom-panel-label">OASDI · selected years · 2026–2100 projected</span>
+        <h3>More beneficiaries for every 100 covered workers</h3>
+        <p>Old-age, survivor, and disability beneficiaries in current-payment status relative to workers with OASDI-covered earnings</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#eb735f">Historical</span><span style="--swatch:#8b78d1">Trustees intermediate projection</span><span class="doom-legend-projection">Projection</span></div>
+      <svg id="demographic-support-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="OASDI beneficiaries per 100 covered workers from 1945 through 2025 and projected through 2100"></svg>
+      <p class="doom-note doom-chart-note">The 1945 ratio is not a clean steady-state demographic benchmark: ongoing monthly Social Security benefits had begun only in 1940, and coverage expanded materially in the 1950s. The mature-system comparison is more defensible from roughly 1960 onward. “Beneficiaries” is broader than “pensioners” because OASDI also includes survivors and disabled workers.</p>
+    </figure>
+
+    <div class="doom-panel doom-table-panel doom-demographic-comparison">
+      <div class="doom-panel-head">
+        <div><span class="doom-panel-label">Fiscal history versus support capacity</span><h3>Similar alarm, different mechanism</h3></div>
+        <div class="doom-note">The fiscal balance is fiscal-year data; the OASDI support ratio is calendar-year data.</div>
+      </div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>Year</th><th>Deficit / GDP</th><th>Beneficiaries / 100 workers</th><th>Workers / beneficiary</th><th>Interpretation</th></tr></thead>
+          <tbody id="demographic-comparison-table"></tbody>
+        </table>
+      </div>
+      <p class="doom-note doom-chart-note">FY1945’s deficit was <strong data-field="demographic-deficit-1945">—</strong> of GDP and FY2020’s was <strong data-field="demographic-deficit-2020">—</strong>. Those were emergency spikes. The current problem is less spectacular but more structural: CBO projects deficits to remain above the 50-year average and rise through 2036 as Social Security, Medicare, and net interest increase. The ratio does not prove insolvency by itself; it shows why the same promise requires more taxes, lower benefits, borrowing, or productivity from each worker.</p>
+      <a class="doom-download" href="/doom-thesis/demographics-support-ratio.csv" download>Download demographics CSV <span>↓</span></a>
+    </div>
+  </section>
+
   <section class="doom-section" id="tax-valuation">
     <div class="doom-section-head">
       <div>
-        <div class="doom-eyebrow">06 / Taxing the Base</div>
+        <div class="doom-eyebrow">07 / Taxing the Base</div>
         <h2>The revenue is annual. The destruction is capitalized.</h2>
       </div>
       <p>A static return to the 1968–1969 federal corporate rate raises a flow of tax receipts by permanently reducing the earnings stream capitalized into equity value.</p>
@@ -648,7 +707,7 @@
 
   <section class="doom-section doom-method" id="methodology">
     <div class="doom-section-head">
-      <div><div class="doom-eyebrow">07 / Read the Fine Print</div><h2>Definitions matter</h2></div>
+      <div><div class="doom-eyebrow">08 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
       <div><h3>What the Doom Index includes</h3><p data-field="doom-definition">—</p></div>
@@ -662,11 +721,12 @@
       <a class="doom-download" href="/doom-thesis/household-liabilities.csv" download>Download household-liability CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/productivity.csv" download>Download productivity CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/education-spending-vs-naep.csv" download>Download education productivity CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/demographics-support-ratio.csv" download>Download demographics CSV <span>↓</span></a>
     </div>
   </section>
 
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-6" defer></script>
+<script src="/doom-thesis/app.js?v=20260803-7" defer></script>
 {{ end }}

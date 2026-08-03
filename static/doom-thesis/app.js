@@ -36,7 +36,7 @@
     if (options.projectionFrom) {
       addSvg(svg, 'rect', { class: 'projection-zone', x: x(options.projectionFrom), y: margin.top, width: width - margin.right - x(options.projectionFrom), height: height - margin.top - margin.bottom });
       addSvg(svg, 'line', { class: 'projection-line', x1: x(options.projectionFrom), x2: x(options.projectionFrom), y1: margin.top, y2: height - margin.bottom });
-      addSvg(svg, 'text', { x: x(options.projectionFrom) + 8, y: margin.top + 12 }, 'MODEL');
+      addSvg(svg, 'text', { x: x(options.projectionFrom) + 8, y: margin.top + 12 }, options.projectionLabel || 'MODEL');
     }
 
     const ticks = options.yTicks || 5;
@@ -264,6 +264,18 @@
     set('top-cs-placement-decline', `${Math.abs(humanCapital.top20_cs_tech_major_placement_change_2025_vs_2022_pct).toFixed(0)}%`);
     set('federal-trust', `${humanCapital.trust_federal_government_pct_2025.toFixed(0)}%`);
     set('medicare-improper-payments', `$${humanCapital.medicare_improper_payments_billions_fy2025.toFixed(1)}B`);
+    const demographics = data.demographics;
+    const demographicSummary = demographics.summary;
+    set('demographic-beneficiaries-1960', demographicSummary.beneficiaries_per_100_workers_1960.toFixed(1));
+    set('demographic-beneficiaries-2025', demographicSummary.beneficiaries_per_100_workers_2025.toFixed(1));
+    set('demographic-beneficiaries-2036', demographicSummary.beneficiaries_per_100_workers_2036.toFixed(1));
+    set('demographic-workers-1960', demographicSummary.workers_per_beneficiary_1960.toFixed(1));
+    set('demographic-workers-2025', demographicSummary.workers_per_beneficiary_2025.toFixed(1));
+    set('demographic-workers-2036', demographicSummary.workers_per_beneficiary_2036.toFixed(1));
+    set('demographic-deficit-1945', `${demographicSummary.deficit_pct_gdp_1945.toFixed(1)}%`);
+    set('demographic-deficit-2020', `${demographicSummary.deficit_pct_gdp_2020.toFixed(1)}%`);
+    set('demographic-deficit-2025', `${demographicSummary.deficit_pct_gdp_2025.toFixed(1)}%`);
+    set('demographic-deficit-2036', `${demographicSummary.deficit_pct_gdp_2036.toFixed(1)}%`);
     set('doom-definition', data.definitions.doom_index);
     set('income-definition', data.definitions.household_income);
     set('ratio-definition', data.definitions.ratio);
@@ -294,6 +306,20 @@
     $('#federal-receipts-composition-table').innerHTML = federalReceipts.fy2026_composition.map((row) => `<tr><td>${row.category}</td><td>${trillions(row.amount_trillions, 2)}</td><td>${row.share_of_total_pct.toFixed(1)}%</td></tr>`).join('');
     $('#sustainability-endpoint-table').innerHTML = sustainability.funding_endpoints.map((row) => `<tr><td>${row.endpoint}</td><td>${trillions(row.residual_program_gap_trillions, 1)}<small>${row.residual_program_gap_pct_gdp.toFixed(0)}% GDP</small></td><td>${trillions(row.annual_deficit_correction_trillions, 2)}</td><td>${trillions(row.annual_program_gap_funding_trillions, 2)}</td><td>${trillions(row.total_annual_adjustment_trillions, 2)}<small>${row.total_annual_adjustment_pct_gdp.toFixed(1)}% GDP</small></td><td>${row.required_federal_receipts_pct_gdp_if_tax_only.toFixed(1)}%</td><td>${money(row.annual_adjustment_per_household)}</td></tr>`).join('');
     $('#sustainability-tax-mix-table').innerHTML = sustainability.tax_mix.map((row) => `<tr><td>${row.program_reform_share_of_gap_funding_pct.toFixed(0)}%</td><td>${trillions(row.program_reform_pv_reduction_trillions, 1)}<small>${trillions(row.annual_equivalent_program_reform_trillions, 2)}/yr equivalent</small></td><td>${trillions(row.new_tax_revenue_trillions, 2)}</td><td>${row.required_total_federal_receipts_pct_gdp.toFixed(1)}%</td><td>+${row.ordinary_income_all_brackets_rate_point_change.toFixed(1)} pp<small>top → ${row.resulting_top_ordinary_income_rate_pct.toFixed(1)}%</small></td><td>${row.resulting_combined_standard_payroll_rate_pct.toFixed(1)}%</td><td>${row.resulting_top_long_term_gains_rate_with_niit_pct.toFixed(1)}%</td><td>${row.resulting_corporate_income_rate_pct.toFixed(1)}%</td><td>${row.broad_vat_rate_pct.toFixed(1)}%</td></tr>`).join('');
+
+    const demographicInterpretation = {
+      1945: 'Wartime peak; Social Security monthly benefits were only five years old.',
+      1960: 'A more mature postwar system after major coverage expansion.',
+      2020: 'Pandemic emergency deficit; covered employment also fell.',
+      2025: 'Current mature-system baseline; deficit remains elevated outside recession.',
+      2036: 'CBO deficit and Trustees demographic projections under current law.',
+    };
+    const fiscalBalance = (row) => {
+      const value = row.federal_surplus_deficit_pct_gdp;
+      if (!Number.isFinite(value)) return '—';
+      return value < 0 ? `${Math.abs(value).toFixed(1)}% deficit` : `${value.toFixed(1)}% surplus`;
+    };
+    $('#demographic-comparison-table').innerHTML = demographics.comparison_years.map((row) => `<tr><td>${row.year}</td><td>${fiscalBalance(row)}</td><td>${row.oasdi_beneficiaries_per_100_workers.toFixed(1)}</td><td>${row.workers_per_oasdi_beneficiary.toFixed(1)}</td><td>${demographicInterpretation[row.year]}</td></tr>`).join('');
 
     $('#source-list').innerHTML = data.sources.map((source) => source.url ? `<li><a href="${source.url}" target="_blank" rel="noopener">${source.name}</a></li>` : `<li>${source.name}: ${source.reference}</li>`).join('');
 
@@ -348,6 +374,14 @@
       { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
     ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
+    const demographicHistory = demographics.history_and_projection;
+    const demographicActual = demographicHistory.filter((row) => row.year <= 2025);
+    const demographicProjection = demographicHistory.filter((row) => row.year >= 2025);
+    lineChart($('#demographic-support-chart'), [
+      { color: '#eb735f', values: demographicActual.map((d) => ({ year: d.year, value: d.oasdi_beneficiaries_per_100_workers })) },
+      { color: '#8b78d1', values: demographicProjection.map((d) => ({ year: d.year, value: d.oasdi_beneficiaries_per_100_workers })) },
+    ], { yMin: 0, yMax: 60, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} beneficiaries per 100 workers`, projectionFrom: 2026, projectionLabel: 'TRUSTEES', points: true, xTicks: 8, margin: { left: 52, right: 24 } });
+
     const receiptHistory = federalReceipts.history_and_projection;
     lineChart($('#federal-receipts-chart'), [
       { color: '#62c6ae', values: receiptHistory.map((d) => ({ year: d.fiscal_year, value: d.total_federal_receipts_trillions })) },
@@ -371,7 +405,7 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-6', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260803-7', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

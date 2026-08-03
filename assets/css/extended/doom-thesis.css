@@ -168,6 +168,8 @@
 .doom-productivity-strip > div:first-child strong { color: var(--doom-red); }
 .doom-productivity-strip > div:nth-child(2) strong { color: var(--doom-amber); }
 .doom-productivity-strip > div:nth-child(3) strong,.doom-productivity-strip > div:nth-child(4) strong { color: var(--doom-green); }
+.doom-demographics-strip > div:nth-child(3) strong { color: var(--doom-violet); }
+.doom-demographic-comparison .doom-table { min-width: 820px; }
 .doom-cumulative-strip { margin-top: 1.2rem; }
 .doom-cumulative-strip > div:nth-child(2) strong { color: var(--doom-green); }
 .doom-cumulative-strip > div:nth-child(3) strong { color: var(--doom-red); }
