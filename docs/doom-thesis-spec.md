@@ -148,6 +148,10 @@ Required indicators:
   probability of at least 5%.
 - Output-per-real-dollar panels for physical infrastructure, education/human
   capital, and operating-company cash generation.
+- Point-in-time rolling-four-quarter real revenue growth, operating-cash-flow
+  margin, and FCF margin for U.S. operating companies outside the score-70+
+  Distraction Economy basket; retain nominal growth in the audit data and use
+  the GDP deflator for the scored series.
 - An explicit decomposition of positive AI automation effects and negative
   attention, displacement, transition, and capital-misallocation effects.
 
@@ -158,20 +162,26 @@ Component acceptance gate:
 - [x] Education spending versus NAEP, ACT context, graduation, and entry-level
   technology hiring evidence exists, with causal caveats.
 - [x] Daily point-in-time operating-company rolling-four-quarter FCF exists.
+- [x] A daily point-in-time real-business bridge exists outside known
+  distraction businesses, using a shared four-quarter revenue/NCFO/FCF cohort
+  and retaining a literal all-sector diagnostic.
 - [x] The mechanical AGI growth hurdle is shown against consensus baselines.
 - [x] A versioned five-year productivity research distribution and mechanical
   5% override calculation exist.
 - [ ] The override is approved for live execution after calibration and
   governance review.
-- [ ] AI's positive and offsetting effects are estimated in one coherent model.
+- [ ] AI's positive and offsetting effects are estimated in one coherent model;
+  private returns earned from distraction are not counted as a productivity
+  escape without broad real-business pass-through.
 - [ ] Real-time source vintages prevent revised BLS data from leaking into the
   historical score.
 
 ### 4.3 AI capital efficiency — 15%
 
-Plain English: AI can add to measured investment and GDP while still destroying
-capital if attributable revenue and durable cash flow do not compensate for
-compute, data-center, power, networking, and depreciation costs.
+Plain English: AI can add to measured investment and GDP—and can even earn
+private returns—without producing an economy-wide productivity escape. Revenue
+from better attention capture is not equivalent to durable revenue growth and
+cash conversion across businesses outside distraction.
 
 Required indicators:
 

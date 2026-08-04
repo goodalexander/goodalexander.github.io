@@ -11,11 +11,11 @@
     },
     {
       "component_id": "productivity-escape",
-      "component_score": 81.84121673620933,
+      "component_score": 80.64183667429103,
       "coverage_pct": 100.0,
       "title": "Productivity escape",
       "weight": 20.0,
-      "weighted_contribution": 16.368243347241865
+      "weighted_contribution": 16.128367334858204
     },
     {
       "component_id": "ai-capital-efficiency",
@@ -59,7 +59,7 @@
     }
   ],
   "coverage_pct": 90.75,
-  "generated_at": "2026-08-04T03:37:14.804375+00:00",
+  "generated_at": "2026-08-04T15:01:44.613349+00:00",
   "indicators": [
     {
       "as_of": "2025-09-30",
@@ -233,22 +233,41 @@
       "within_component_weight": 15.0
     },
     {
-      "as_of": "2026-08-02",
+      "as_of": "2026-08-04",
       "component_id": "productivity-escape",
       "component_title": "Productivity escape",
       "direction": "decreasing",
-      "fresh_until": "2026-12-31",
+      "fresh_until": "2026-12-02",
       "high_threshold": 15,
-      "indicator_id": "operating_company_fcf_margin_pct",
-      "indicator_score": 63.19604255466571,
-      "label": "U.S. operating-company FCF margin",
+      "indicator_id": "real_business_ex_distraction_fcf_margin_pct",
+      "indicator_score": 71.12842187077209,
+      "label": "Real-business FCF margin ex distraction",
       "low_threshold": 5,
-      "note": "",
+      "note": "Point-in-time ARQ replay; excludes known score-70+ distraction businesses, Financial Services, and Utilities.",
       "quality_flag": "current",
-      "raw_value": 8.68039574453343,
-      "source": "Sharadar ARQ",
+      "raw_value": 7.887157812922791,
+      "source": "Sharadar ARQ and GLM 5.2 distraction taxonomy",
       "total_index_weight": 2.0,
       "unit": "%",
+      "within_component_weight": 10.0
+    },
+    {
+      "as_of": "2026-08-04",
+      "component_id": "productivity-escape",
+      "component_title": "Productivity escape",
+      "direction": "decreasing",
+      "fresh_until": "2026-12-02",
+      "high_threshold": 8,
+      "indicator_id": "real_business_ex_distraction_real_revenue_growth_yoy_pct",
+      "indicator_score": 75.07382006471072,
+      "label": "Real-business real revenue growth ex distraction",
+      "low_threshold": 0,
+      "note": "GDP-deflator-adjusted aggregate revenue growth; current-vintage GDPDEF, mix, M&A, entry, and cyclicality prevent a standalone causal productivity interpretation.",
+      "quality_flag": "current",
+      "raw_value": 1.9940943948231429,
+      "source": "Sharadar ARQ, GLM 5.2 distraction taxonomy, and FRED GDPDEF",
+      "total_index_weight": 2.0,
+      "unit": "% real YoY",
       "within_component_weight": 10.0
     },
     {
@@ -266,9 +285,9 @@
       "quality_flag": "current",
       "raw_value": 2.5,
       "source": "Philadelphia Fed SPF PROD10, CBO, BLS/FRED OPHNFB, disclosed AI scenarios",
-      "total_index_weight": 5.0,
+      "total_index_weight": 3.0,
       "unit": "% probability",
-      "within_component_weight": 25.0
+      "within_component_weight": 15.0
     },
     {
       "as_of": "2026-08-04",
@@ -1171,11 +1190,11 @@
   },
   "missing_input_sensitivity": {
     "interpretation": "Bounds assign every missing or stale indicator either 0 or 100 without reweighting.",
-    "lower": 62.20162516532081,
-    "upper": 71.45162516532082
+    "lower": 61.96174915293715,
+    "upper": 71.21174915293716
   },
   "published_probability": null,
-  "research_score": 68.06306506999977,
+  "research_score": 67.8231890576161,
   "status": "research_evidence_score_not_probability",
   "stop_status": {
     "operational": false,
@@ -1185,6 +1204,6 @@
     "threshold": 20,
     "triggered": false
   },
-  "uncapped_research_score": 68.06306506999977,
-  "version": "0.6.0"
+  "uncapped_research_score": 67.8231890576161,
+  "version": "0.7.0"
 }

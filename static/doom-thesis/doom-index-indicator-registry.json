@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.7.0",
   "score_type": "research_evidence_score",
   "calibration": "fixed economic thresholds; not a regime probability",
   "missing_rule": "Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
@@ -25,8 +25,9 @@
         {"id": "labor_productivity_latest_qoq_annualized_pct", "label": "Latest quarterly labor-productivity growth", "weight": 10, "unit": "%", "low": 0, "high": 5, "direction": "decreasing", "frequency": "quarterly", "source": "BLS nonfarm business productivity"},
         {"id": "utility_real_capex_per_mwh_multiple", "label": "Real utility capex per MWh versus 2004", "weight": 20, "unit": "x", "low": 1, "high": 3, "direction": "increasing", "frequency": "annual", "source": "Sharadar, EIA, CPI-U"},
         {"id": "education_spending_outcome_gap_pct_points", "label": "Real school spending growth minus NAEP outcome growth", "weight": 15, "unit": "percentage points", "low": 0, "high": 40, "direction": "increasing", "frequency": "assessment vintage", "source": "Census, NCES NAEP, CPI-U"},
-        {"id": "operating_company_fcf_margin_pct", "label": "U.S. operating-company FCF margin", "weight": 10, "unit": "%", "low": 5, "high": 15, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar ARQ"},
-        {"id": "productivity_escape_probability_pct", "label": "Research probability of five-year productivity at or above 5%", "weight": 25, "unit": "% probability", "low": 0, "high": 50, "direction": "decreasing", "frequency": "annual forecast vintage", "source": "Philadelphia Fed SPF PROD10, CBO, BLS/FRED OPHNFB, disclosed AI scenarios"}
+        {"id": "real_business_ex_distraction_fcf_margin_pct", "label": "Real-business FCF margin ex distraction", "weight": 10, "unit": "%", "low": 5, "high": 15, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar ARQ and GLM 5.2 distraction taxonomy"},
+        {"id": "real_business_ex_distraction_real_revenue_growth_yoy_pct", "label": "Real-business real revenue growth ex distraction", "weight": 10, "unit": "% real YoY", "low": 0, "high": 8, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar ARQ, GLM 5.2 distraction taxonomy, and FRED GDPDEF"},
+        {"id": "productivity_escape_probability_pct", "label": "Research probability of five-year productivity at or above 5%", "weight": 15, "unit": "% probability", "low": 0, "high": 50, "direction": "decreasing", "frequency": "annual forecast vintage", "source": "Philadelphia Fed SPF PROD10, CBO, BLS/FRED OPHNFB, disclosed AI scenarios"}
       ]
     },
     {

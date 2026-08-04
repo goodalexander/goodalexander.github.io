@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-04T03:37:16.992052+00:00
+Generated: 2026-08-04T15:01:45.764382+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -12,8 +12,8 @@ This is what it would take to right-size the fiscal and monetary situation in th
 
 ## Doom Index research status
 
-- Current research evidence score: 68.1/100 at 90.8% weighted input coverage.
-- Missing-input sensitivity: 62.2–71.5.
+- Current research evidence score: 67.8/100 at 90.8% weighted input coverage.
+- Missing-input sensitivity: 62.0–71.2.
 - This is a fixed-threshold evidence score, not a calibrated regime probability or an investable signal.
 - Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.
 - Portfolio rule: exit Doom-linked positions below 20.
@@ -76,6 +76,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - School-to-work conversion: SignalFire reported that new graduates were only 7% of Big Tech hires in 2024. Its 2026 report estimates new-grad/entry-level hiring 65% below 2019 at Tech Majors and 76% below 2019 at early-stage startups; top-20 computer-science graduates were 45% less likely to take a Tech Major role in 2025 than the 2022 class. These proprietary LinkedIn-derived estimates measure employer demand and career transitions, not educational quality alone.
 - Institutional-capacity context: 17% trusted the federal government in 2025. CMS measured $56.73 billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
+- Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of 2.0% (6.4% nominal), FCF margin of 7.9%, and operating-cash-flow margin of 14.3% as of 2026-08-04. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
 - Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
 - Debt comparison: gross federal debt was 114.1% of GDP in 1945, fell to 53.6% in 1960, and stood at 121.5% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
@@ -99,6 +100,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv
 - AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv
 - Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv
+- Daily real-business productivity ex distraction: https://goodalexander.com/doom-thesis/real-business-productivity-ex-distraction-daily.csv
 - OASDI support ratio and deficit comparison: https://goodalexander.com/doom-thesis/demographics-support-ratio.csv
 
 ## Sources
@@ -134,6 +136,7 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Pew public trust in government, 1958–2025: https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/
 - CMS FY2025 improper payments fact sheet: https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet
 - Sharadar utility capex and operating-company FCF: Local SF1 ARY, latest restatement per ticker and calendar period; U.S. domestic common stocks including delisted names
+- Sharadar real-business productivity bridge: Local SF1 ARQ replayed point in time by datekey; U.S. domestic common stocks excluding GLM 5.2 distraction scores >=70, with Financial Services and Utilities excluded from the primary FCF cut
 - IRS historical federal corporation tax rates: https://www.irs.gov/statistics/soi-tax-stats-historical-table-24
 - CBO Budget and Economic Outlook: 2026 to 2036: https://www.cbo.gov/publication/62105
 - IMF World Economic Outlook Update, July 2026: https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026

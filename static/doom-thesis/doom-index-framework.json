@@ -58,11 +58,12 @@
       "existing_evidence": [
         {"label": "AGI growth hurdle", "href": "#thesis"},
         {"label": "Productivity evidence", "href": "#productivity"},
+        {"label": "Real-business outcomes ex distraction", "href": "#productivity"},
         {"label": "Education trajectory", "href": "#productivity"}
       ],
       "missing_warrants": [
         "Calibrate and govern the completed five-year research ensemble rather than treating its scenario-weighted tail as an objective probability.",
-        "Estimate AI's positive and negative productivity channels without assuming the net sign.",
+        "Estimate AI's positive and negative productivity channels without assuming the net sign; do not count private returns earned from distraction as an economy-wide productivity gain.",
         "Approve the execution and revision convention for the now-reproducible 5% research override."
       ],
       "candidate_markets": [
@@ -73,6 +74,7 @@
       ],
       "claims": [
         {"status": "warranted", "text": "Observed productivity has not yet established a sustained 5% regime.", "note": "The existing BLS quarterly and five-year trend series supports the historical statement, not the forward probability."},
+        {"status": "partial", "text": "Broad operating companies outside known distraction businesses are showing measurable real revenue growth and cash conversion.", "note": "A daily point-in-time Sharadar bridge now tracks rolling-four-quarter GDP-deflator-adjusted revenue growth, operating-cash-flow margin, and FCF margin for U.S. nonfinancial, nonutility companies outside the score-70+ distraction basket. Current-vintage GDPDEF, mix, acquisitions, entry, and cyclicality prevent a causal AI-productivity interpretation."},
         {"status": "partial", "text": "Several high-spending systems are producing weak measured output gains.", "note": "Utilities and education are documented descriptively, but the charts do not establish causation."},
         {"status": "missing", "text": "AI's offsetting effects will prevent massive net productivity acceleration.", "note": "This is central to the thesis but currently has no decomposed empirical model."},
         {"status": "warranted", "text": "Five-percent sustained productivity growth would invalidate the Doom base case.", "note": "The threshold and research estimator are explicit and reproducible; live execution remains gated on calibration and governance."}
@@ -84,8 +86,8 @@
       "weight": 15,
       "status": "partial",
       "contention": "AI requires massive capital investment whose realized economic return remains uncertain.",
-      "plain_english": "The buildout can add to GDP while still destroying capital if revenue, margins, and durable cash flow do not compensate for data-center, power, networking, and model costs.",
-      "score_rule": "Track hyperscaler AI capex, incremental AI revenue and gross profit, depreciation, power demand, data-center utilization, and an estimated incremental return on invested capital.",
+      "plain_english": "The buildout can add to GDP and earn private returns without delivering a broad productivity escape. Revenue earned by capturing more attention is economically different from durable cash-flow and revenue gains across businesses outside distraction.",
+      "score_rule": "Track hyperscaler AI capex, incremental AI revenue and gross profit, depreciation, power demand, data-center utilization, estimated incremental return on invested capital, monetization destination, and pass-through into real-business revenue growth and cash-flow margins outside distraction.",
       "update_frequency": "Quarterly filings and earnings calls; monthly infrastructure and pricing checks",
       "existing_evidence": [
         {"label": "Operating-company FCF", "href": "#productivity"},
@@ -96,6 +98,7 @@
         "Validate the completed disclosure-based AI revenue and cash-return ranges as specifically attributable to AI.",
         "Separate replacement capex, ordinary cloud capex, and genuinely incremental AI infrastructure.",
         "Estimate incremental ROIC under low, base, and high monetization cases.",
+        "Classify attributable AI monetization by productive versus distraction destination; private AI profitability alone cannot satisfy the productivity-escape gate.",
         "Replace the new market-wide HBM forecast panel with realized supply, transacted price, lead-time, and accelerator-utilization histories; extend the prospective Artificial Analysis quality-band video-cost snapshots before assigning weight."
       ],
       "claims": [

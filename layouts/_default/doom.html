@@ -571,9 +571,9 @@
         <small><span data-field="utility-capex-per-mwh-multiple">—</span> the 2004 level</small>
       </div>
       <div>
-        <span>Operating-company FCF margin</span>
-        <strong data-field="operating-fcf-margin">—</strong>
-        <small>Rolling four quarters as of <span data-field="fcf-as-of">—</span></small>
+        <span>Real-business real revenue growth</span>
+        <strong data-field="real-business-revenue-growth">—</strong>
+        <small>Ex-distraction rolling four quarters as of <span data-field="real-business-as-of">—</span></small>
       </div>
       <div>
         <span>Aggregate productivity growth</span>
@@ -674,12 +674,13 @@
     <div class="doom-chart-grid doom-productivity-secondary-charts">
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
-          <span class="doom-panel-label">U.S. public operating companies</span>
-          <h3>Aggregate free-cash-flow margin</h3>
-          <p>Completed annual history through 2025; current 2026 point is rolling four quarters</p>
+          <span class="doom-panel-label">The real-business productivity bridge</span>
+          <h3>Real revenue growth and cash conversion outside distraction</h3>
+          <p>Point-in-time rolling four quarters; U.S. public operating companies excluding score-70+ distraction businesses</p>
         </figcaption>
-        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#d7a94b">FCF margin</span></div>
-        <svg id="fcf-margin-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Aggregate annual free cash flow margin of U.S. public nonfinancial and nonutility companies from 2004 through 2025 plus the current 2026 rolling-four-quarter value"></svg>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#62c6ae">Real revenue growth</span><span style="--swatch:#d7a94b">FCF margin</span></div>
+        <svg id="real-business-productivity-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Rolling-four-quarter GDP-deflator-adjusted revenue growth and free cash flow margin of U.S. public nonfinancial and nonutility companies outside the score-70 distraction basket from 2004 through 2026"></svg>
+        <p class="doom-note doom-chart-note">Latest: <strong data-field="real-business-fcf-margin">—</strong> FCF margin, up <strong data-field="real-business-fcf-margin-change">—</strong> year over year, across <strong data-field="real-business-companies">—</strong> companies with the same four quarters of revenue and cash-flow data. Real growth uses the latest publicly available current-vintage GDP deflator. This is a broad operating-outcome bridge—not a causal AI-productivity estimate—because mix, M&amp;A, entry, and cyclicality also move it.</p>
       </figure>
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
@@ -990,6 +991,7 @@
       <ol id="source-list"></ol>
       <a class="doom-download" href="/doom-thesis/household-liabilities.csv" download>Download household-liability CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/productivity.csv" download>Download productivity CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/real-business-productivity-ex-distraction-daily.csv" download>Download daily real-business productivity CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/education-spending-vs-naep.csv" download>Download education productivity CSV <span>↓</span></a>
       <a class="doom-download" href="/doom-thesis/demographics-support-ratio.csv" download>Download demographics CSV <span>↓</span></a>
     </div>
@@ -998,5 +1000,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260803-9" defer></script>
+<script src="/doom-thesis/app.js?v=20260804-2" defer></script>
 {{ end }}

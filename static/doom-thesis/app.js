@@ -236,6 +236,11 @@
     set('utility-capex-per-mwh-multiple', `${productivitySummary.real_capex_per_mwh_multiple_since_2004.toFixed(2)}×`);
     set('operating-fcf-margin', pct(productivitySummary.latest_operating_company_fcf_margin));
     set('fcf-as-of', productivitySummary.current_fcf_as_of_date);
+    set('real-business-revenue-growth', `${productivitySummary.latest_real_business_real_revenue_growth_yoy_pct.toFixed(1)}%`);
+    set('real-business-fcf-margin', `${productivitySummary.latest_real_business_fcf_margin_pct.toFixed(1)}%`);
+    set('real-business-fcf-margin-change', `${productivitySummary.latest_real_business_fcf_margin_change_yoy_pp >= 0 ? '+' : ''}${productivitySummary.latest_real_business_fcf_margin_change_yoy_pp.toFixed(2)} pp`);
+    set('real-business-as-of', productivitySummary.real_business_as_of_date);
+    set('real-business-companies', productivitySummary.real_business_companies_with_shared_rolling_4q.toLocaleString());
     set('labor-productivity-cagr', pct(productivitySummary.labor_productivity_cagr_since_2004));
     set('labor-productivity-latest-growth', pct(productivitySummary.latest_quarter_productivity_growth_annualized));
     set('labor-productivity-quarter', productivitySummary.latest_labor_productivity_quarter);
@@ -373,10 +378,11 @@
       { color: '#62c6ae', values: educationProductivity.map((d) => ({ year: d.year, value: d.naep_composite_index_2003 })) },
     ], { yMin: 95, yMax: 132, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2003=100)`, points: true, xTicks: 8 });
 
-    const fcfMargin = productivity.operating_company_fcf_margin;
-    lineChart($('#fcf-margin-chart'), [
-      { color: '#d7a94b', values: fcfMargin.map((d) => ({ year: d.calendar_year, value: d.aggregate_fcf_margin })) },
-    ], { yMin: 0.03, yMax: 0.10, headroom: 1, yFormat: (v) => `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v), points: true, xTicks: 6, margin: { left: 52, right: 18 } });
+    const realBusiness = productivity.real_business_ex_distraction.annual_history;
+    lineChart($('#real-business-productivity-chart'), [
+      { color: '#62c6ae', values: realBusiness.map((d) => ({ year: d.calendar_year, value: d.operating_ex_distraction_real_revenue_growth_yoy_pct })) },
+      { color: '#d7a94b', values: realBusiness.map((d) => ({ year: d.calendar_year, value: d.operating_ex_distraction_fcf_margin_pct })) },
+    ], { yMin: -20, yMax: 20, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(2)}%`, points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
     const laborProductivity = productivity.labor_productivity;
     lineChart($('#labor-productivity-chart'), [
@@ -426,7 +432,7 @@
     }).join('') : '<tr><td colspan="6">No archived releases yet.</td></tr>';
   }
 
-  fetch('/doom-thesis/data.json?v=20260804-1', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260804-2', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

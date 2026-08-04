@@ -98,10 +98,11 @@ cd /home/pfrpc/repos/navstrategies
 .venv/bin/python scripts/run_distraction_economy_glm52_scores.py --as-of-date 2026-07-31 --workers 200 --invalid-response-retries 3
 .venv/bin/python scripts/build_distraction_vs_industrials_marketcap.py --as-of-date 2026-07-31 --minimum-score 70 --scores /home/pfrpc/repos/data/doom_thesis/distraction_economy_scores_glm52_ever_1b_marketcap_2026-07-31.csv
 .venv/bin/python /home/pfrpc/repos/us_debt_research/build_distraction_industrials_fcf.py --as-of-date 2026-07-31 --minimum-score 70 --scores /home/pfrpc/repos/data/doom_thesis/distraction_economy_scores_glm52_ever_1b_marketcap_2026-07-31.csv
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_real_business_productivity.py --scores /home/pfrpc/repos/data/doom_thesis/distraction_economy_scores_glm52_ever_1b_marketcap_2026-07-31.csv --minimum-score 70
 ```
 
-For a new vintage, change the date in all three commands and use the newly
-dated score file in both basket builders. Do not use `--force` for a routine
+For a new vintage, change the date in all four commands and use the newly
+dated score file in all three downstream builders. Do not use `--force` for a routine
 refresh: successful model responses are cached, while invalid responses receive
 fresh recovery attempts. A release fails coverage if `n_failed` is nonzero;
 failed companies remain unscored rather than receiving an invented default.
@@ -111,6 +112,15 @@ signal. The current historical market-cap and FCF panels apply the 2026
 classification retrospectively, which is appropriate for describing the
 capital-allocation history but not for claiming a historical implementable
 portfolio. Preserve that caveat in every release.
+
+The real-business productivity bridge also applies the frozen classification
+retrospectively. It publishes a daily point-in-time accounting series, but the
+membership taxonomy itself is not historically vintaged. Its primary cut
+excludes Financial Services and Utilities because conventional FCF is not
+comparable in those sectors; the all-sector ex-distraction cut remains in the
+same output as a disclosed robustness check. Nominal revenue growth remains in
+the audit file; the scored series is adjusted by the latest publicly available
+current-vintage GDP deflator, conservatively dated 31 days after quarter-end.
 
 ## Required score table
 

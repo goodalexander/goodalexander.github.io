@@ -155,6 +155,7 @@ def build_llm_document(payload: dict) -> str:
             f"- School-to-work conversion: SignalFire reported that new graduates were only {human_capital['big_tech_new_grad_share_pct_2024']:.0f}% of Big Tech hires in 2024. Its 2026 report estimates new-grad/entry-level hiring {abs(human_capital['tech_major_entry_level_hiring_change_since_2019_pct']):.0f}% below 2019 at Tech Majors and {abs(human_capital['early_stage_startup_entry_level_hiring_change_since_2019_pct']):.0f}% below 2019 at early-stage startups; top-20 computer-science graduates were {abs(human_capital['top20_cs_tech_major_placement_change_2025_vs_2022_pct']):.0f}% less likely to take a Tech Major role in 2025 than the 2022 class. These proprietary LinkedIn-derived estimates measure employer demand and career transitions, not educational quality alone.",
             f"- Institutional-capacity context: {human_capital['trust_federal_government_pct_2025']:.0f}% trusted the federal government in 2025. CMS measured ${human_capital['medicare_improper_payments_billions_fy2025']:.2f} billion of FY2025 Medicare FFS, Part C, and Part D improper payments; CMS explicitly states this is not a fraud estimate.",
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
+            f"- Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of {productivity['latest_real_business_real_revenue_growth_yoy_pct']:.1f}% ({productivity['latest_real_business_revenue_growth_yoy_pct']:.1f}% nominal), FCF margin of {productivity['latest_real_business_fcf_margin_pct']:.1f}%, and operating-cash-flow margin of {productivity['latest_real_business_operating_cash_flow_margin_pct']:.1f}% as of {productivity['real_business_as_of_date']}. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
             f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
@@ -171,6 +172,7 @@ def build_llm_document(payload: dict) -> str:
             "- Fiscal sustainability scenarios: https://goodalexander.com/doom-thesis/fiscal-sustainability-scenarios.csv",
             "- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv",
             "- Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv",
+            "- Daily real-business productivity ex distraction: https://goodalexander.com/doom-thesis/real-business-productivity-ex-distraction-daily.csv",
             "- OASDI support ratio and deficit comparison: https://goodalexander.com/doom-thesis/demographics-support-ratio.csv",
             "",
             "## Sources",
@@ -329,6 +331,14 @@ def build_payload(doom_root: Path) -> dict:
     current_operating_fcf = pd.read_csv(
         doom_root
         / "sharadar_us_operating_company_rolling_4q_fcf_snapshot.csv"
+    )
+    real_business_productivity = pd.read_csv(
+        doom_root / "real_business_productivity_ex_distraction_annual.csv"
+    )
+    real_business_productivity_summary = json.loads(
+        (doom_root / "real_business_productivity_ex_distraction_summary.json").read_text(
+            encoding="utf-8"
+        )
     )
     operating_fcf["period_type"] = "completed_calendar_year"
     current_fcf = current_operating_fcf.iloc[0]
@@ -702,6 +712,7 @@ def build_payload(doom_root: Path) -> dict:
     education_base = education_productivity.iloc[0]
     education_latest = education_productivity.iloc[-1]
     fcf_latest = operating_fcf.iloc[-1]
+    real_business_latest = real_business_productivity.iloc[-1]
     labor_base = labor_productivity.iloc[0]
     labor_latest = labor_productivity.iloc[-1]
     labor_productivity_cagr = (
@@ -924,6 +935,37 @@ def build_payload(doom_root: Path) -> dict:
                 "latest_operating_company_fcf_margin": float(
                     fcf_latest["aggregate_fcf_margin"]
                 ),
+                "latest_real_business_revenue_growth_yoy_pct": float(
+                    real_business_latest[
+                        "operating_ex_distraction_revenue_growth_yoy_pct"
+                    ]
+                ),
+                "latest_real_business_real_revenue_growth_yoy_pct": float(
+                    real_business_latest[
+                        "operating_ex_distraction_real_revenue_growth_yoy_pct"
+                    ]
+                ),
+                "latest_real_business_fcf_margin_pct": float(
+                    real_business_latest[
+                        "operating_ex_distraction_fcf_margin_pct"
+                    ]
+                ),
+                "latest_real_business_operating_cash_flow_margin_pct": float(
+                    real_business_latest[
+                        "operating_ex_distraction_operating_cash_flow_margin_pct"
+                    ]
+                ),
+                "latest_real_business_fcf_margin_change_yoy_pp": float(
+                    real_business_latest[
+                        "operating_ex_distraction_fcf_margin_change_yoy_pp"
+                    ]
+                ),
+                "real_business_as_of_date": str(real_business_latest["date"]),
+                "real_business_companies_with_shared_rolling_4q": int(
+                    real_business_latest[
+                        "operating_ex_distraction_companies_with_shared_rolling_4q"
+                    ]
+                ),
                 "current_fcf_as_of_date": str(current_fcf["as_of_date"]),
                 "current_fcf_latest_filing": str(
                     current_fcf["latest_filing"]
@@ -973,6 +1015,12 @@ def build_payload(doom_root: Path) -> dict:
             "operating_company_fcf_margin": records(
                 operating_fcf.round(8)
             ),
+            "real_business_ex_distraction": {
+                "summary": real_business_productivity_summary,
+                "annual_history": records(
+                    round_numeric(real_business_productivity)
+                ),
+            },
             "labor_productivity": records(
                 labor_productivity.round(8)
             ),
@@ -1213,6 +1261,14 @@ def build_payload(doom_root: Path) -> dict:
                 ),
             },
             {
+                "name": "Sharadar real-business productivity bridge",
+                "reference": (
+                    "Local SF1 ARQ replayed point in time by datekey; U.S. domestic "
+                    "common stocks excluding GLM 5.2 distraction scores >=70, with "
+                    "Financial Services and Utilities excluded from the primary FCF cut"
+                ),
+            },
+            {
                 "name": "IRS historical federal corporation tax rates",
                 "url": "https://www.irs.gov/statistics/soi-tax-stats-historical-table-24",
             },
@@ -1307,6 +1363,14 @@ def main() -> None:
         / "us_public_school_spending_vs_naep_2003_2024.csv"
     ).to_csv(
         args.output_dir / "education-spending-vs-naep.csv", index=False
+    )
+    pd.read_csv(
+        args.doom_data_root
+        / "real_business_productivity_ex_distraction_daily.csv"
+    ).to_csv(
+        args.output_dir
+        / "real-business-productivity-ex-distraction-daily.csv",
+        index=False,
     )
     pd.read_csv(
         args.doom_data_root
