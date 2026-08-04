@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-04T21:01:02.627009+00:00",
+  "generated_at_utc": "2026-08-04T21:16:14.160914+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -14721,12 +14721,18 @@
   },
   "common_prosperity": {
     "summary": {
-      "generated_at_utc": "2026-08-04T20:57:52.390879+00:00",
+      "generated_at_utc": "2026-08-04T21:14:02.751175+00:00",
       "housing": {
         "as_of_year": 2026,
         "mortgage_rate_pct": 6.66,
         "median_new_house_price_usd": 410700.0,
         "median_personal_income_nowcast_usd": 48974.661492022424,
+        "median_household_income_nowcast_usd": 90842.89780077619,
+        "mortgage_payment_burden_pct_median_household_income": 27.890986661182403,
+        "mortgage_payment_change_since_2006_pct": -8.280717186181107,
+        "mortgage_payment_change_since_1976_pct": 4.863736844201694,
+        "house_price_to_median_household_income": 4.520991843530677,
+        "house_price_multiple_1976": 3.4850275807722615,
         "interest_only_burden_pct_median_personal_income": 55.85055448408872,
         "change_since_2006_pct": -7.8228876786637365,
         "change_since_1976_pct": -14.50606520857659,
@@ -14738,7 +14744,10 @@
         "big_macs_per_median_work_hour": 5.006028938906753,
         "change_since_2000_pct": -21.993009925905195,
         "change_since_2006_pct": -17.038685841068414,
-        "assumption": "Median usual weekly nominal earnings divided by 40 hours"
+        "change_since_1976_proxy_pct": -11.86568769530364,
+        "big_mac_price_1976_usd": 0.75,
+        "big_macs_per_median_work_hour_1976_proxy": 5.68,
+        "assumption": "The comparable 2000+ series uses median usual weekly nominal earnings divided by 40 hours. The 1976 benchmark uses a documented Columbus, Nebraska menu price and the BLS CPS May 1976 median usual hourly earnings for all wage and salary workers, so it is explicitly a proxy."
       },
       "market_concentration": {
         "as_of_date": "2026-08-03",
@@ -14791,15 +14800,15 @@
         ],
         "rows": [
           {
-            "indicator": "Housing interest burden",
-            "current_display": "55.9%",
+            "indicator": "Median-new-home mortgage payment burden",
+            "current_display": "27.9%",
             "since_2006": {
               "available": true,
               "requested_year": 2006,
               "baseline_label": "2006",
-              "baseline_value": 60.59047965116279,
-              "current_value": 55.85055448408872,
-              "change": -7.8228876786637365,
+              "baseline_value": 30.409076265672898,
+              "current_value": 27.890986661182403,
+              "change": -8.280717186181107,
               "change_kind": "percent",
               "note": null
             },
@@ -14807,13 +14816,13 @@
               "available": true,
               "requested_year": 1976,
               "baseline_label": "1976",
-              "baseline_value": 65.32692011467876,
-              "current_value": 55.85055448408872,
-              "change": -14.50606520857659,
+              "baseline_value": 26.597361013961045,
+              "current_value": 27.890986661182403,
+              "change": 4.863736844201694,
               "change_kind": "percent",
               "note": null
             },
-            "definition": "Mortgage rate \u00d7 median new-house price / median personal income"
+            "definition": "Annual principal-and-interest on a 30-year fixed mortgage with 20% down / median household income"
           },
           {
             "indicator": "Big Macs per median work hour",
@@ -14829,16 +14838,16 @@
               "note": null
             },
             "since_1976": {
-              "available": false,
+              "available": true,
               "requested_year": 1976,
-              "baseline_label": null,
-              "baseline_value": null,
+              "baseline_label": "1976",
+              "baseline_value": 5.68,
               "current_value": 5.006028938906753,
-              "change": null,
+              "change": -11.86568769530364,
               "change_kind": "percent",
-              "note": "The Economist U.S. Big Mac series begins in 2000"
+              "note": "1976 proxy: 75-cent documented Columbus, Nebraska menu price and $4.26 CPS median usual hourly earnings; the national comparable price series begins in 2000"
             },
-            "definition": "BLS median weekly earnings / 40 / U.S. Big Mac price"
+            "definition": "2000+ BLS median weekly earnings / 40 / U.S. Big Mac price; 1976 is a disclosed proxy"
           },
           {
             "indicator": "NVDA / Russell 2000 market cap",
@@ -15023,8 +15032,8 @@
               "requested_year": 2006,
               "baseline_label": "2006",
               "baseline_value": 0.012569087136929462,
-              "current_value": 0.049368208499417775,
-              "change": 292.77481301222065,
+              "current_value": 0.04937537555610295,
+              "change": 292.83183431064185,
               "change_kind": "percent",
               "note": null
             },
@@ -15033,8 +15042,8 @@
               "requested_year": 1976,
               "baseline_label": "1976",
               "baseline_value": 0.009875492513790385,
-              "current_value": 0.049368208499417775,
-              "change": 399.90629257709196,
+              "current_value": 0.04937537555610295,
+              "change": 399.97886674668564,
               "change_kind": "percent",
               "note": null
             },
@@ -15048,8 +15057,8 @@
               "requested_year": 2006,
               "baseline_label": "2006",
               "baseline_value": 0.0013103734439834024,
-              "current_value": 0.0009000358367413301,
-              "change": -31.314554574205022,
+              "current_value": 0.0008974083290296004,
+              "change": -31.515070520540313,
               "change_kind": "percent",
               "note": null
             },
@@ -15058,8 +15067,8 @@
               "requested_year": 1976,
               "baseline_label": "1976",
               "baseline_value": 0.0006453900709219858,
-              "current_value": 0.0009000358367413301,
-              "change": 39.456102176403895,
+              "current_value": 0.0008974083290296004,
+              "change": 39.048982849641376,
               "change_kind": "percent",
               "note": "1976 oil uses EIA U.S. crude first-purchase price because a WTI series is unavailable"
             },
@@ -15075,8 +15084,13 @@
         "mortgage_rate_pct": 8.86584906,
         "median_new_house_price_usd": 44225.0,
         "median_personal_income_usd": 6002.0,
+        "median_household_income_usd": 12690.0,
         "annual_interest_only_burden_usd": 3920.92174528,
         "housing_interest_burden_pct_median_personal_income": 65.32692011,
+        "mortgage_principal_20pct_down_usd": 35380.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 3375.20511267,
+        "mortgage_payment_burden_pct_median_household_income": 26.59736101,
+        "house_price_to_median_household_income": 3.48502758,
         "income_status": "Census annual actual"
       },
       {
@@ -15084,8 +15098,13 @@
         "mortgage_rate_pct": 8.84519231,
         "median_new_house_price_usd": 48900.0,
         "median_personal_income_usd": 6429.0,
+        "median_household_income_usd": 13570.0,
         "annual_interest_only_burden_usd": 4325.29903846,
         "housing_interest_burden_pct_median_personal_income": 67.27794429,
+        "mortgage_principal_20pct_down_usd": 39120.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 3725.04836192,
+        "mortgage_payment_burden_pct_median_household_income": 27.45061431,
+        "house_price_to_median_household_income": 3.60353721,
         "income_status": "Census annual actual"
       },
       {
@@ -15093,8 +15112,13 @@
         "mortgage_rate_pct": 9.64173077,
         "median_new_house_price_usd": 55850.0,
         "median_personal_income_usd": 6813.0,
+        "median_household_income_usd": 15060.0,
         "annual_interest_only_burden_usd": 5384.90663462,
         "housing_interest_burden_pct_median_personal_income": 79.03870005,
+        "mortgage_principal_20pct_down_usd": 44680.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 4563.87111716,
+        "mortgage_payment_burden_pct_median_household_income": 30.30458909,
+        "house_price_to_median_household_income": 3.70849934,
         "income_status": "Census annual actual"
       },
       {
@@ -15102,8 +15126,13 @@
         "mortgage_rate_pct": 11.20365385,
         "median_new_house_price_usd": 62750.0,
         "median_personal_income_usd": 7254.0,
+        "median_household_income_usd": 16460.0,
         "annual_interest_only_burden_usd": 7030.29278846,
         "housing_interest_burden_pct_median_personal_income": 96.91608476,
+        "mortgage_principal_20pct_down_usd": 50200.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 5829.68689637,
+        "mortgage_payment_burden_pct_median_household_income": 35.41729585,
+        "house_price_to_median_household_income": 3.81227217,
         "income_status": "Census annual actual"
       },
       {
@@ -15111,8 +15140,13 @@
         "mortgage_rate_pct": 13.74211538,
         "median_new_house_price_usd": 64750.0,
         "median_personal_income_usd": 7944.0,
+        "median_household_income_usd": 17710.0,
         "annual_interest_only_burden_usd": 8898.01971154,
         "housing_interest_burden_pct_median_personal_income": 112.00931158,
+        "mortgage_principal_20pct_down_usd": 51800.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 7238.47170797,
+        "mortgage_payment_burden_pct_median_household_income": 40.87222873,
+        "house_price_to_median_household_income": 3.65612648,
         "income_status": "Census annual actual"
       },
       {
@@ -15120,8 +15154,13 @@
         "mortgage_rate_pct": 16.64150943,
         "median_new_house_price_usd": 68950.0,
         "median_personal_income_usd": 8532.0,
+        "median_household_income_usd": 19070.0,
         "annual_interest_only_burden_usd": 11474.32075472,
         "housing_interest_burden_pct_median_personal_income": 134.48570974,
+        "mortgage_principal_20pct_down_usd": 55160.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9244.40687236,
+        "mortgage_payment_burden_pct_median_household_income": 48.47617657,
+        "house_price_to_median_household_income": 3.61562664,
         "income_status": "Census annual actual"
       },
       {
@@ -15129,8 +15168,13 @@
         "mortgage_rate_pct": 16.04365385,
         "median_new_house_price_usd": 69225.0,
         "median_personal_income_usd": 9143.0,
+        "median_household_income_usd": 20170.0,
         "annual_interest_only_burden_usd": 11106.219375,
         "housing_interest_burden_pct_median_personal_income": 121.47237641,
+        "mortgage_principal_20pct_down_usd": 55380.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8960.11399377,
+        "mortgage_payment_burden_pct_median_household_income": 44.42297468,
+        "house_price_to_median_household_income": 3.43207734,
         "income_status": "Census annual actual"
       },
       {
@@ -15138,8 +15182,13 @@
         "mortgage_rate_pct": 13.23538462,
         "median_new_house_price_usd": 75375.0,
         "median_personal_income_usd": 9720.0,
+        "median_household_income_usd": 20890.0,
         "annual_interest_only_burden_usd": 9976.17115385,
         "housing_interest_burden_pct_median_personal_income": 102.6355057,
+        "mortgage_principal_20pct_down_usd": 60300.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8137.80379114,
+        "mortgage_payment_burden_pct_median_household_income": 38.95549924,
+        "house_price_to_median_household_income": 3.60818573,
         "income_status": "Census annual actual"
       },
       {
@@ -15147,8 +15196,13 @@
         "mortgage_rate_pct": 13.87769231,
         "median_new_house_price_usd": 79950.0,
         "median_personal_income_usd": 10420.0,
+        "median_household_income_usd": 22420.0,
         "annual_interest_only_burden_usd": 11095.215,
         "housing_interest_burden_pct_median_personal_income": 106.4799904,
+        "mortgage_principal_20pct_down_usd": 63960.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9019.87780031,
+        "mortgage_payment_burden_pct_median_household_income": 40.23139072,
+        "house_price_to_median_household_income": 3.56601249,
         "income_status": "Census annual actual"
       },
       {
@@ -15156,8 +15210,13 @@
         "mortgage_rate_pct": 12.43019231,
         "median_new_house_price_usd": 84275.0,
         "median_personal_income_usd": 11010.0,
+        "median_household_income_usd": 23620.0,
         "annual_interest_only_burden_usd": 10475.54456731,
         "housing_interest_burden_pct_median_personal_income": 95.14572722,
+        "mortgage_principal_20pct_down_usd": 67420.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8590.74174201,
+        "mortgage_payment_burden_pct_median_household_income": 36.3706255,
+        "house_price_to_median_household_income": 3.56795089,
         "income_status": "Census annual actual"
       },
       {
@@ -15165,8 +15224,13 @@
         "mortgage_rate_pct": 10.18730769,
         "median_new_house_price_usd": 92025.0,
         "median_personal_income_usd": 11550.0,
+        "median_household_income_usd": 24900.0,
         "annual_interest_only_burden_usd": 9374.86990385,
         "housing_interest_burden_pct_median_personal_income": 81.1677048,
+        "mortgage_principal_20pct_down_usd": 73620.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 7875.37528533,
+        "mortgage_payment_burden_pct_median_household_income": 31.62801319,
+        "house_price_to_median_household_income": 3.69578313,
         "income_status": "Census annual actual"
       },
       {
@@ -15174,8 +15238,13 @@
         "mortgage_rate_pct": 10.21339623,
         "median_new_house_price_usd": 104700.0,
         "median_personal_income_usd": 12100.0,
+        "median_household_income_usd": 26060.0,
         "annual_interest_only_burden_usd": 10693.42584906,
         "housing_interest_burden_pct_median_personal_income": 88.37542024,
+        "mortgage_principal_20pct_down_usd": 83760.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8979.55509926,
+        "mortgage_payment_burden_pct_median_household_income": 34.45723369,
+        "house_price_to_median_household_income": 4.01765157,
         "income_status": "Census annual actual"
       },
       {
@@ -15183,8 +15252,13 @@
         "mortgage_rate_pct": 10.34173077,
         "median_new_house_price_usd": 112225.0,
         "median_personal_income_usd": 12940.0,
+        "median_household_income_usd": 27230.0,
         "annual_interest_only_burden_usd": 11606.00735577,
         "housing_interest_burden_pct_median_personal_income": 89.69093783,
+        "mortgage_principal_20pct_down_usd": 89780.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9727.78140513,
+        "mortgage_payment_burden_pct_median_household_income": 35.7245002,
+        "house_price_to_median_household_income": 4.12137349,
         "income_status": "Census annual actual"
       },
       {
@@ -15192,8 +15266,13 @@
         "mortgage_rate_pct": 10.31942308,
         "median_new_house_price_usd": 120425.0,
         "median_personal_income_usd": 13860.0,
+        "median_household_income_usd": 28910.0,
         "annual_interest_only_burden_usd": 12427.16524038,
         "housing_interest_burden_pct_median_personal_income": 89.66208687,
+        "mortgage_principal_20pct_down_usd": 96340.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10419.35883481,
+        "mortgage_payment_burden_pct_median_household_income": 36.04067394,
+        "house_price_to_median_household_income": 4.16551366,
         "income_status": "Census annual actual"
       },
       {
@@ -15201,8 +15280,13 @@
         "mortgage_rate_pct": 10.12942308,
         "median_new_house_price_usd": 122300.0,
         "median_personal_income_usd": 14380.0,
+        "median_household_income_usd": 29940.0,
         "annual_interest_only_burden_usd": 12388.28442308,
         "housing_interest_burden_pct_median_personal_income": 86.14940489,
+        "mortgage_principal_20pct_down_usd": 97840.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10415.85643534,
+        "mortgage_payment_burden_pct_median_household_income": 34.78909965,
+        "house_price_to_median_household_income": 4.08483634,
         "income_status": "Census annual actual"
       },
       {
@@ -15210,8 +15294,13 @@
         "mortgage_rate_pct": 9.24653846,
         "median_new_house_price_usd": 119975.0,
         "median_personal_income_usd": 14690.0,
+        "median_household_income_usd": 30130.0,
         "annual_interest_only_burden_usd": 11093.53451923,
         "housing_interest_burden_pct_median_personal_income": 75.51759373,
+        "mortgage_principal_20pct_down_usd": 95980.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9472.35749126,
+        "mortgage_payment_burden_pct_median_household_income": 31.43829237,
+        "house_price_to_median_household_income": 3.98191172,
         "income_status": "Census annual actual"
       },
       {
@@ -15219,8 +15308,13 @@
         "mortgage_rate_pct": 8.39018868,
         "median_new_house_price_usd": 121375.0,
         "median_personal_income_usd": 14900.0,
+        "median_household_income_usd": 30640.0,
         "annual_interest_only_burden_usd": 10183.59150943,
         "housing_interest_burden_pct_median_personal_income": 68.34625174,
+        "mortgage_principal_20pct_down_usd": 97100.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8868.8574068,
+        "mortgage_payment_burden_pct_median_household_income": 28.94535707,
+        "house_price_to_median_household_income": 3.96132507,
         "income_status": "Census annual actual"
       },
       {
@@ -15228,8 +15322,13 @@
         "mortgage_rate_pct": 7.31461538,
         "median_new_house_price_usd": 126500.0,
         "median_personal_income_usd": 15430.0,
+        "median_household_income_usd": 31240.0,
         "annual_interest_only_burden_usd": 9252.98846154,
         "housing_interest_burden_pct_median_personal_income": 59.96752081,
+        "mortgage_principal_20pct_down_usd": 101200.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 8337.6386425,
+        "mortgage_payment_burden_pct_median_household_income": 26.68898413,
+        "house_price_to_median_household_income": 4.04929577,
         "income_status": "Census annual actual"
       },
       {
@@ -15237,8 +15336,13 @@
         "mortgage_rate_pct": 8.38076923,
         "median_new_house_price_usd": 130425.0,
         "median_personal_income_usd": 15940.0,
+        "median_household_income_usd": 32260.0,
         "annual_interest_only_burden_usd": 10930.61826923,
         "housing_interest_burden_pct_median_personal_income": 68.57351486,
+        "mortgage_principal_20pct_down_usd": 104340.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9521.81194227,
+        "mortgage_payment_burden_pct_median_household_income": 29.51584607,
+        "house_price_to_median_household_income": 4.04293242,
         "income_status": "Census annual actual"
       },
       {
@@ -15246,8 +15350,13 @@
         "mortgage_rate_pct": 7.93461538,
         "median_new_house_price_usd": 133475.0,
         "median_personal_income_usd": 16780.0,
+        "median_household_income_usd": 34080.0,
         "annual_interest_only_burden_usd": 10590.72788462,
         "housing_interest_burden_pct_median_personal_income": 63.11518406,
+        "mortgage_principal_20pct_down_usd": 106780.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9343.82599148,
+        "mortgage_payment_burden_pct_median_household_income": 27.41732979,
+        "house_price_to_median_household_income": 3.91651995,
         "income_status": "Census annual actual"
       },
       {
@@ -15255,8 +15364,13 @@
         "mortgage_rate_pct": 7.80615385,
         "median_new_house_price_usd": 140250.0,
         "median_personal_income_usd": 17590.0,
+        "median_household_income_usd": 35490.0,
         "annual_interest_only_burden_usd": 10948.13076923,
         "housing_interest_burden_pct_median_personal_income": 62.24065247,
+        "mortgage_principal_20pct_down_usd": 112200.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9698.0728529,
+        "mortgage_payment_burden_pct_median_household_income": 27.3262126,
+        "house_price_to_median_household_income": 3.95181741,
         "income_status": "Census annual actual"
       },
       {
@@ -15264,8 +15378,13 @@
         "mortgage_rate_pct": 7.59884615,
         "median_new_house_price_usd": 145000.0,
         "median_personal_income_usd": 18760.0,
+        "median_household_income_usd": 37010.0,
         "annual_interest_only_burden_usd": 11018.32692308,
         "housing_interest_burden_pct_median_personal_income": 58.73308594,
+        "mortgage_principal_20pct_down_usd": 116000.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9827.4564881,
+        "mortgage_payment_burden_pct_median_household_income": 26.55351658,
+        "house_price_to_median_household_income": 3.91786004,
         "income_status": "Census annual actual"
       },
       {
@@ -15273,8 +15392,13 @@
         "mortgage_rate_pct": 6.94264151,
         "median_new_house_price_usd": 151925.0,
         "median_personal_income_usd": 19950.0,
+        "median_household_income_usd": 38890.0,
         "annual_interest_only_burden_usd": 10547.60811321,
         "housing_interest_burden_pct_median_personal_income": 52.87021611,
+        "mortgage_principal_20pct_down_usd": 121540.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 9647.18577036,
+        "mortgage_payment_burden_pct_median_household_income": 24.80634037,
+        "house_price_to_median_household_income": 3.90653124,
         "income_status": "Census annual actual"
       },
       {
@@ -15282,8 +15406,13 @@
         "mortgage_rate_pct": 7.44,
         "median_new_house_price_usd": 160125.0,
         "median_personal_income_usd": 20580.0,
+        "median_household_income_usd": 40700.0,
         "annual_interest_only_burden_usd": 11913.3,
         "housing_interest_burden_pct_median_personal_income": 57.8877551,
+        "mortgage_principal_20pct_down_usd": 128100.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10685.24015435,
+        "mortgage_payment_burden_pct_median_household_income": 26.25366131,
+        "house_price_to_median_household_income": 3.93427518,
         "income_status": "Census annual actual"
       },
       {
@@ -15291,8 +15420,13 @@
         "mortgage_rate_pct": 8.05346154,
         "median_new_house_price_usd": 167550.0,
         "median_personal_income_usd": 21520.0,
+        "median_household_income_usd": 41990.0,
         "annual_interest_only_burden_usd": 13493.57480769,
         "housing_interest_burden_pct_median_personal_income": 62.70248517,
+        "mortgage_principal_20pct_down_usd": 134040.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 11862.45793117,
+        "mortgage_payment_burden_pct_median_household_income": 28.25067381,
+        "house_price_to_median_household_income": 3.99023577,
         "income_status": "Census annual actual"
       },
       {
@@ -15300,8 +15434,13 @@
         "mortgage_rate_pct": 6.96788462,
         "median_new_house_price_usd": 173100.0,
         "median_personal_income_usd": 21930.0,
+        "median_household_income_usd": 42230.0,
         "annual_interest_only_burden_usd": 12061.40826923,
         "housing_interest_burden_pct_median_personal_income": 54.99958171,
+        "mortgage_principal_20pct_down_usd": 138480.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 11019.91218835,
+        "mortgage_payment_burden_pct_median_household_income": 26.09498505,
+        "house_price_to_median_household_income": 4.09898177,
         "income_status": "Census annual actual"
       },
       {
@@ -15309,8 +15448,13 @@
         "mortgage_rate_pct": 6.53730769,
         "median_new_house_price_usd": 186025.0,
         "median_personal_income_usd": 22120.0,
+        "median_household_income_usd": 42410.0,
         "annual_interest_only_burden_usd": 12161.02663462,
         "housing_interest_burden_pct_median_personal_income": 54.97751643,
+        "mortgage_principal_20pct_down_usd": 148820.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 11331.57553764,
+        "mortgage_payment_burden_pct_median_household_income": 26.71911233,
+        "house_price_to_median_household_income": 4.38634756,
         "income_status": "Census annual actual"
       },
       {
@@ -15318,8 +15462,13 @@
         "mortgage_rate_pct": 5.82698113,
         "median_new_house_price_usd": 192125.0,
         "median_personal_income_usd": 22670.0,
+        "median_household_income_usd": 43320.0,
         "annual_interest_only_burden_usd": 11195.0875,
         "housing_interest_burden_pct_median_personal_income": 49.38282973,
+        "mortgage_principal_20pct_down_usd": 153700.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10853.78389762,
+        "mortgage_payment_burden_pct_median_household_income": 25.05490281,
+        "house_price_to_median_household_income": 4.43501847,
         "income_status": "Census annual actual"
       },
       {
@@ -15327,8 +15476,13 @@
         "mortgage_rate_pct": 5.83923077,
         "median_new_house_price_usd": 218150.0,
         "median_personal_income_usd": 23210.0,
+        "median_household_income_usd": 44330.0,
         "annual_interest_only_burden_usd": 12738.28192308,
         "housing_interest_burden_pct_median_personal_income": 54.88273125,
+        "mortgage_principal_20pct_down_usd": 174520.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 12340.38585922,
+        "mortgage_payment_burden_pct_median_household_income": 27.83754987,
+        "house_price_to_median_household_income": 4.9210467,
         "income_status": "Census annual actual"
       },
       {
@@ -15336,8 +15490,13 @@
         "mortgage_rate_pct": 5.86673077,
         "median_new_house_price_usd": 236550.0,
         "median_personal_income_usd": 24330.0,
+        "median_household_income_usd": 46330.0,
         "annual_interest_only_burden_usd": 13877.75163462,
         "housing_interest_burden_pct_median_personal_income": 57.03966969,
+        "mortgage_principal_20pct_down_usd": 189240.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13421.11356266,
+        "mortgage_payment_burden_pct_median_household_income": 28.96851622,
+        "house_price_to_median_household_income": 5.105763,
         "income_status": "Census annual actual"
       },
       {
@@ -15345,8 +15504,13 @@
         "mortgage_rate_pct": 6.41326923,
         "median_new_house_price_usd": 243750.0,
         "median_personal_income_usd": 25800.0,
+        "median_household_income_usd": 48200.0,
         "annual_interest_only_burden_usd": 15632.34375,
         "housing_interest_burden_pct_median_personal_income": 60.59047965,
+        "mortgage_principal_20pct_down_usd": 195000.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 14657.17476005,
+        "mortgage_payment_burden_pct_median_household_income": 30.40907627,
+        "house_price_to_median_household_income": 5.05705394,
         "income_status": "Census annual actual"
       },
       {
@@ -15354,8 +15518,13 @@
         "mortgage_rate_pct": 6.33730769,
         "median_new_house_price_usd": 244950.0,
         "median_personal_income_usd": 26630.0,
+        "median_household_income_usd": 50230.0,
         "annual_interest_only_burden_usd": 15523.23519231,
         "housing_interest_burden_pct_median_personal_income": 58.29228386,
+        "mortgage_principal_20pct_down_usd": 195960.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 14612.50365589,
+        "mortgage_payment_burden_pct_median_household_income": 29.09118785,
+        "house_price_to_median_household_income": 4.87656779,
         "income_status": "Census annual actual"
       },
       {
@@ -15363,8 +15532,13 @@
         "mortgage_rate_pct": 6.02716981,
         "median_new_house_price_usd": 229550.0,
         "median_personal_income_usd": 26510.0,
+        "median_household_income_usd": 50300.0,
         "annual_interest_only_burden_usd": 13835.36830189,
         "housing_interest_burden_pct_median_personal_income": 52.18924293,
+        "mortgage_principal_20pct_down_usd": 183640.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13250.6934504,
+        "mortgage_payment_burden_pct_median_household_income": 26.34332694,
+        "house_price_to_median_household_income": 4.56361829,
         "income_status": "Census annual actual"
       },
       {
@@ -15372,8 +15546,13 @@
         "mortgage_rate_pct": 5.03653846,
         "median_new_house_price_usd": 215650.0,
         "median_personal_income_usd": 26130.0,
+        "median_household_income_usd": 49780.0,
         "annual_interest_only_burden_usd": 10861.29519231,
         "housing_interest_burden_pct_median_personal_income": 41.56638038,
+        "mortgage_principal_20pct_down_usd": 172520.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 11159.77188583,
+        "mortgage_payment_burden_pct_median_household_income": 22.41818378,
+        "house_price_to_median_household_income": 4.33206107,
         "income_status": "Census annual actual"
       },
       {
@@ -15381,8 +15560,13 @@
         "mortgage_rate_pct": 4.68980769,
         "median_new_house_price_usd": 222700.0,
         "median_personal_income_usd": 26180.0,
+        "median_household_income_usd": 49280.0,
         "annual_interest_only_burden_usd": 10444.20173077,
         "housing_interest_burden_pct_median_personal_income": 39.89381868,
+        "mortgage_principal_20pct_down_usd": 178160.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 11074.96807397,
+        "mortgage_payment_burden_pct_median_household_income": 22.47355534,
+        "house_price_to_median_household_income": 4.51907468,
         "income_status": "Census annual actual"
       },
       {
@@ -15390,8 +15574,13 @@
         "mortgage_rate_pct": 4.44788462,
         "median_new_house_price_usd": 224900.0,
         "median_personal_income_usd": 26590.0,
+        "median_household_income_usd": 50050.0,
         "annual_interest_only_burden_usd": 10003.2925,
         "housing_interest_burden_pct_median_personal_income": 37.62050583,
+        "mortgage_principal_20pct_down_usd": 179920.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10872.78389899,
+        "mortgage_payment_burden_pct_median_household_income": 21.72384395,
+        "house_price_to_median_household_income": 4.49350649,
         "income_status": "Census annual actual"
       },
       {
@@ -15399,8 +15588,13 @@
         "mortgage_rate_pct": 3.6575,
         "median_new_house_price_usd": 244400.0,
         "median_personal_income_usd": 26990.0,
+        "median_household_income_usd": 51020.0,
         "annual_interest_only_burden_usd": 8938.93,
         "housing_interest_burden_pct_median_personal_income": 33.1194146,
+        "mortgage_principal_20pct_down_usd": 195520.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 10743.02208265,
+        "mortgage_payment_burden_pct_median_household_income": 21.05649173,
+        "house_price_to_median_household_income": 4.79027832,
         "income_status": "Census annual actual"
       },
       {
@@ -15408,8 +15602,13 @@
         "mortgage_rate_pct": 3.97557692,
         "median_new_house_price_usd": 266225.0,
         "median_personal_income_usd": 27680.0,
+        "median_household_income_usd": 53590.0,
         "annual_interest_only_burden_usd": 10583.97966346,
         "housing_interest_burden_pct_median_personal_income": 38.23692075,
+        "mortgage_principal_20pct_down_usd": 212980.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 12165.63095881,
+        "mortgage_payment_burden_pct_median_household_income": 22.701308,
+        "house_price_to_median_household_income": 4.96781116,
         "income_status": "Census annual actual"
       },
       {
@@ -15417,8 +15616,13 @@
         "mortgage_rate_pct": 4.16886792,
         "median_new_house_price_usd": 285775.0,
         "median_personal_income_usd": 28760.0,
+        "median_household_income_usd": 53660.0,
         "annual_interest_only_burden_usd": 11913.58231132,
         "housing_interest_burden_pct_median_personal_income": 41.42413877,
+        "mortgage_principal_20pct_down_usd": 228620.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13366.09030906,
+        "mortgage_payment_burden_pct_median_household_income": 24.90885261,
+        "house_price_to_median_household_income": 5.32566157,
         "income_status": "Census annual actual"
       },
       {
@@ -15426,8 +15630,13 @@
         "mortgage_rate_pct": 3.85057692,
         "median_new_house_price_usd": 294150.0,
         "median_personal_income_usd": 30240.0,
+        "median_household_income_usd": 56520.0,
         "annual_interest_only_burden_usd": 11326.47201923,
         "housing_interest_burden_pct_median_personal_income": 37.45526461,
+        "mortgage_principal_20pct_down_usd": 235320.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13239.32478115,
+        "mortgage_payment_burden_pct_median_household_income": 23.42414151,
+        "house_price_to_median_household_income": 5.20435244,
         "income_status": "Census annual actual"
       },
       {
@@ -15435,8 +15644,13 @@
         "mortgage_rate_pct": 3.65403846,
         "median_new_house_price_usd": 305125.0,
         "median_personal_income_usd": 31100.0,
+        "median_household_income_usd": 59040.0,
         "annual_interest_only_burden_usd": 11149.38485577,
         "housing_interest_burden_pct_median_personal_income": 35.85011208,
+        "mortgage_principal_20pct_down_usd": 244100.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13406.57536705,
+        "mortgage_payment_burden_pct_median_household_income": 22.7076141,
+        "house_price_to_median_household_income": 5.16810637,
         "income_status": "Census annual actual"
       },
       {
@@ -15444,8 +15658,13 @@
         "mortgage_rate_pct": 3.98980769,
         "median_new_house_price_usd": 322425.0,
         "median_personal_income_usd": 31960.0,
+        "median_household_income_usd": 61370.0,
         "annual_interest_only_burden_usd": 12864.13745192,
         "housing_interest_burden_pct_median_personal_income": 40.25074297,
+        "mortgage_principal_20pct_down_usd": 257940.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 14759.15809824,
+        "mortgage_payment_burden_pct_median_household_income": 24.04946733,
+        "house_price_to_median_household_income": 5.2537885,
         "income_status": "Census annual actual"
       },
       {
@@ -15453,8 +15672,13 @@
         "mortgage_rate_pct": 4.54461538,
         "median_new_house_price_usd": 325275.0,
         "median_personal_income_usd": 33710.0,
+        "median_household_income_usd": 63180.0,
         "annual_interest_only_burden_usd": 14782.49769231,
         "housing_interest_burden_pct_median_personal_income": 43.85196586,
+        "mortgage_principal_20pct_down_usd": 260220.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 15904.84523616,
+        "mortgage_payment_burden_pct_median_household_income": 25.17386077,
+        "house_price_to_median_household_income": 5.14838557,
         "income_status": "Census annual actual"
       },
       {
@@ -15462,8 +15686,13 @@
         "mortgage_rate_pct": 3.93576923,
         "median_new_house_price_usd": 320250.0,
         "median_personal_income_usd": 35980.0,
+        "median_household_income_usd": 68700.0,
         "annual_interest_only_burden_usd": 12604.30096154,
         "housing_interest_burden_pct_median_personal_income": 35.03140901,
+        "mortgage_principal_20pct_down_usd": 256200.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 14564.0398368,
+        "mortgage_payment_burden_pct_median_household_income": 21.19947574,
+        "house_price_to_median_household_income": 4.66157205,
         "income_status": "Census annual actual"
       },
       {
@@ -15471,8 +15700,13 @@
         "mortgage_rate_pct": 3.11169811,
         "median_new_house_price_usd": 328150.0,
         "median_personal_income_usd": 35850.0,
+        "median_household_income_usd": 68010.0,
         "annual_interest_only_burden_usd": 10211.03735849,
         "housing_interest_burden_pct_median_personal_income": 28.48267046,
+        "mortgage_principal_20pct_down_usd": 262520.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 13472.06552621,
+        "mortgage_payment_burden_pct_median_household_income": 19.80894799,
+        "house_price_to_median_household_income": 4.82502573,
         "income_status": "Census annual actual"
       },
       {
@@ -15480,8 +15714,13 @@
         "mortgage_rate_pct": 2.95769231,
         "median_new_house_price_usd": 383000.0,
         "median_personal_income_usd": 37520.0,
+        "median_household_income_usd": 70780.0,
         "annual_interest_only_burden_usd": 11327.96153846,
         "housing_interest_burden_pct_median_personal_income": 30.19179515,
+        "mortgage_principal_20pct_down_usd": 306400.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 15417.76763457,
+        "mortgage_payment_burden_pct_median_household_income": 21.78266125,
+        "house_price_to_median_household_income": 5.41113309,
         "income_status": "Census annual actual"
       },
       {
@@ -15489,8 +15728,13 @@
         "mortgage_rate_pct": 5.34403846,
         "median_new_house_price_usd": 432950.0,
         "median_personal_income_usd": 40480.0,
+        "median_household_income_usd": 74580.0,
         "annual_interest_only_burden_usd": 23137.01451923,
         "housing_interest_burden_pct_median_personal_income": 57.15665642,
+        "mortgage_principal_20pct_down_usd": 346360.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 23194.0352583,
+        "mortgage_payment_burden_pct_median_household_income": 31.09953776,
+        "house_price_to_median_household_income": 5.80517565,
         "income_status": "Census annual actual"
       },
       {
@@ -15498,8 +15742,13 @@
         "mortgage_rate_pct": 6.80673077,
         "median_new_house_price_usd": 426525.0,
         "median_personal_income_usd": 42220.0,
+        "median_household_income_usd": 80610.0,
         "annual_interest_only_burden_usd": 29032.40841346,
         "housing_interest_burden_pct_median_personal_income": 68.76458648,
+        "mortgage_principal_20pct_down_usd": 341220.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 26712.35022174,
+        "mortgage_payment_burden_pct_median_household_income": 33.13776234,
+        "house_price_to_median_household_income": 5.29121697,
         "income_status": "Census annual actual"
       },
       {
@@ -15507,8 +15756,13 @@
         "mortgage_rate_pct": 6.72115385,
         "median_new_house_price_usd": 418975.0,
         "median_personal_income_usd": 45140.0,
+        "median_household_income_usd": 83730.0,
         "annual_interest_only_burden_usd": 28159.95432692,
         "housing_interest_burden_pct_median_personal_income": 62.38359399,
+        "mortgage_principal_20pct_down_usd": 335180.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 26010.5762861,
+        "mortgage_payment_burden_pct_median_household_income": 31.06482299,
+        "house_price_to_median_household_income": 5.00388152,
         "income_status": "Census annual actual"
       },
       {
@@ -15516,19 +15770,38 @@
         "mortgage_rate_pct": 6.66,
         "median_new_house_price_usd": 410700.0,
         "median_personal_income_usd": 48974.66149202,
+        "median_household_income_usd": 90842.89780078,
         "annual_interest_only_burden_usd": 27352.62,
         "housing_interest_burden_pct_median_personal_income": 55.85055448,
-        "income_status": "2024 Census median personal income scaled by BLS median nominal weekly earnings through Q2 2026"
+        "mortgage_principal_20pct_down_usd": 328560.0,
+        "annual_mortgage_principal_interest_20pct_down_usd": 25336.98050825,
+        "mortgage_payment_burden_pct_median_household_income": 27.89098666,
+        "house_price_to_median_household_income": 4.52099184,
+        "income_status": "2024 Census median personal and household income scaled by BLS median nominal weekly earnings through Q2 2026"
       }
     ],
     "big_mac_history": [
+      {
+        "date": "1976-07-01",
+        "local_price": 0.75,
+        "year": 1976,
+        "median_usual_weekly_earnings_usd": null,
+        "median_hourly_earnings_40h_assumption_usd": 4.26,
+        "big_macs_per_median_work_hour": 5.68,
+        "price_source": "Documented 1976 Columbus, Nebraska McDonald's menu",
+        "earnings_source": "BLS CPS May 1976 median usual hourly earnings, all wage and salary workers",
+        "comparison_status": "historical location-and-population proxy; not the national 2000+ series"
+      },
       {
         "date": "2000-04-01",
         "local_price": 2.24,
         "year": 2000,
         "median_usual_weekly_earnings_usd": 575.0,
         "median_hourly_earnings_40h_assumption_usd": 14.375,
-        "big_macs_per_median_work_hour": 6.41741071
+        "big_macs_per_median_work_hour": 6.41741071,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2001-04-01",
@@ -15536,7 +15809,10 @@
         "year": 2001,
         "median_usual_weekly_earnings_usd": 595.75,
         "median_hourly_earnings_40h_assumption_usd": 14.89375,
-        "big_macs_per_median_work_hour": 6.64899554
+        "big_macs_per_median_work_hour": 6.64899554,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2002-04-01",
@@ -15544,7 +15820,10 @@
         "year": 2002,
         "median_usual_weekly_earnings_usd": 608.25,
         "median_hourly_earnings_40h_assumption_usd": 15.20625,
-        "big_macs_per_median_work_hour": 6.47074468
+        "big_macs_per_median_work_hour": 6.47074468,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2003-04-01",
@@ -15552,7 +15831,10 @@
         "year": 2003,
         "median_usual_weekly_earnings_usd": 619.5,
         "median_hourly_earnings_40h_assumption_usd": 15.4875,
-        "big_macs_per_median_work_hour": 6.29573171
+        "big_macs_per_median_work_hour": 6.29573171,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2004-05-01",
@@ -15560,7 +15842,10 @@
         "year": 2004,
         "median_usual_weekly_earnings_usd": 638.0,
         "median_hourly_earnings_40h_assumption_usd": 15.95,
-        "big_macs_per_median_work_hour": 6.45748988
+        "big_macs_per_median_work_hour": 6.45748988,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2005-06-01",
@@ -15568,7 +15853,10 @@
         "year": 2005,
         "median_usual_weekly_earnings_usd": 650.75,
         "median_hourly_earnings_40h_assumption_usd": 16.26875,
-        "big_macs_per_median_work_hour": 6.30571705
+        "big_macs_per_median_work_hour": 6.30571705,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2006-05-01",
@@ -15576,7 +15864,10 @@
         "year": 2006,
         "median_usual_weekly_earnings_usd": 671.0,
         "median_hourly_earnings_40h_assumption_usd": 16.775,
-        "big_macs_per_median_work_hour": 6.03417266
+        "big_macs_per_median_work_hour": 6.03417266,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2007-06-01",
@@ -15584,7 +15875,10 @@
         "year": 2007,
         "median_usual_weekly_earnings_usd": 694.5,
         "median_hourly_earnings_40h_assumption_usd": 17.3625,
-        "big_macs_per_median_work_hour": 5.7875
+        "big_macs_per_median_work_hour": 5.7875,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2008-06-01",
@@ -15592,7 +15886,10 @@
         "year": 2008,
         "median_usual_weekly_earnings_usd": 721.5,
         "median_hourly_earnings_40h_assumption_usd": 18.0375,
-        "big_macs_per_median_work_hour": 5.61915888
+        "big_macs_per_median_work_hour": 5.61915888,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2009-07-01",
@@ -15600,7 +15897,10 @@
         "year": 2009,
         "median_usual_weekly_earnings_usd": 739.5,
         "median_hourly_earnings_40h_assumption_usd": 18.4875,
-        "big_macs_per_median_work_hour": 5.38994169
+        "big_macs_per_median_work_hour": 5.38994169,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2010-07-01",
@@ -15608,7 +15908,10 @@
         "year": 2010,
         "median_usual_weekly_earnings_usd": 746.5,
         "median_hourly_earnings_40h_assumption_usd": 18.6625,
-        "big_macs_per_median_work_hour": 5.2868272
+        "big_macs_per_median_work_hour": 5.2868272,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2011-07-01",
@@ -15616,7 +15919,10 @@
         "year": 2011,
         "median_usual_weekly_earnings_usd": 756.0,
         "median_hourly_earnings_40h_assumption_usd": 18.9,
-        "big_macs_per_median_work_hour": 5.19230769
+        "big_macs_per_median_work_hour": 5.19230769,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2012-07-01",
@@ -15624,7 +15930,10 @@
         "year": 2012,
         "median_usual_weekly_earnings_usd": 768.25,
         "median_hourly_earnings_40h_assumption_usd": 19.20625,
-        "big_macs_per_median_work_hour": 4.85006313
+        "big_macs_per_median_work_hour": 4.85006313,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2013-07-01",
@@ -15632,7 +15941,10 @@
         "year": 2013,
         "median_usual_weekly_earnings_usd": 776.5,
         "median_hourly_earnings_40h_assumption_usd": 19.4125,
-        "big_macs_per_median_work_hour": 4.64413876
+        "big_macs_per_median_work_hour": 4.64413876,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2014-07-01",
@@ -15640,7 +15952,10 @@
         "year": 2014,
         "median_usual_weekly_earnings_usd": 791.0,
         "median_hourly_earnings_40h_assumption_usd": 19.775,
-        "big_macs_per_median_work_hour": 4.60955711
+        "big_macs_per_median_work_hour": 4.60955711,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2015-07-01",
@@ -15648,7 +15963,10 @@
         "year": 2015,
         "median_usual_weekly_earnings_usd": 808.75,
         "median_hourly_earnings_40h_assumption_usd": 20.21875,
-        "big_macs_per_median_work_hour": 4.71299534
+        "big_macs_per_median_work_hour": 4.71299534,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2016-07-01",
@@ -15656,7 +15974,10 @@
         "year": 2016,
         "median_usual_weekly_earnings_usd": 832.5,
         "median_hourly_earnings_40h_assumption_usd": 20.8125,
-        "big_macs_per_median_work_hour": 4.625
+        "big_macs_per_median_work_hour": 4.625,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2017-07-01",
@@ -15664,7 +15985,10 @@
         "year": 2017,
         "median_usual_weekly_earnings_usd": 859.75,
         "median_hourly_earnings_40h_assumption_usd": 21.49375,
-        "big_macs_per_median_work_hour": 4.77638889
+        "big_macs_per_median_work_hour": 4.77638889,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2018-07-01",
@@ -15672,7 +15996,10 @@
         "year": 2018,
         "median_usual_weekly_earnings_usd": 886.0,
         "median_hourly_earnings_40h_assumption_usd": 22.15,
-        "big_macs_per_median_work_hour": 4.79437229
+        "big_macs_per_median_work_hour": 4.79437229,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2019-07-09",
@@ -15680,7 +16007,10 @@
         "year": 2019,
         "median_usual_weekly_earnings_usd": 917.0,
         "median_hourly_earnings_40h_assumption_usd": 22.925,
-        "big_macs_per_median_work_hour": 4.86730361
+        "big_macs_per_median_work_hour": 4.86730361,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2020-07-01",
@@ -15688,7 +16018,10 @@
         "year": 2020,
         "median_usual_weekly_earnings_usd": 984.25,
         "median_hourly_earnings_40h_assumption_usd": 24.60625,
-        "big_macs_per_median_work_hour": 5.10503112
+        "big_macs_per_median_work_hour": 5.10503112,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2021-07-01",
@@ -15696,7 +16029,10 @@
         "year": 2021,
         "median_usual_weekly_earnings_usd": 997.5,
         "median_hourly_earnings_40h_assumption_usd": 24.9375,
-        "big_macs_per_median_work_hour": 5.05831643
+        "big_macs_per_median_work_hour": 5.05831643,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2022-07-01",
@@ -15704,7 +16040,10 @@
         "year": 2022,
         "median_usual_weekly_earnings_usd": 1058.25,
         "median_hourly_earnings_40h_assumption_usd": 26.45625,
-        "big_macs_per_median_work_hour": 5.13713592
+        "big_macs_per_median_work_hour": 5.13713592,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2023-07-01",
@@ -15712,7 +16051,10 @@
         "year": 2023,
         "median_usual_weekly_earnings_usd": 1115.75,
         "median_hourly_earnings_40h_assumption_usd": 27.89375,
-        "big_macs_per_median_work_hour": 4.99887993
+        "big_macs_per_median_work_hour": 4.99887993,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2024-07-01",
@@ -15720,7 +16062,10 @@
         "year": 2024,
         "median_usual_weekly_earnings_usd": 1159.5,
         "median_hourly_earnings_40h_assumption_usd": 28.9875,
-        "big_macs_per_median_work_hour": 5.09446397
+        "big_macs_per_median_work_hour": 5.09446397,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2025-07-01",
@@ -15728,7 +16073,10 @@
         "year": 2025,
         "median_usual_weekly_earnings_usd": 1204.0,
         "median_hourly_earnings_40h_assumption_usd": 30.1,
-        "big_macs_per_median_work_hour": 5.00831947
+        "big_macs_per_median_work_hour": 5.00831947,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       },
       {
         "date": "2026-07-01",
@@ -15736,7 +16084,10 @@
         "year": 2026,
         "median_usual_weekly_earnings_usd": 1245.5,
         "median_hourly_earnings_40h_assumption_usd": 31.1375,
-        "big_macs_per_median_work_hour": 5.00602894
+        "big_macs_per_median_work_hour": 5.00602894,
+        "price_source": "The Economist U.S. observation",
+        "earnings_source": "BLS median usual weekly earnings / 40",
+        "comparison_status": "comparable 2000+ series"
       }
     ],
     "affordability_snapshot": [
@@ -15778,39 +16129,39 @@
       },
       {
         "item": "One troy-ounce gold bar",
-        "cost_usd": 4133.60009766,
+        "cost_usd": 4134.20019531,
         "cost_year": 2026,
         "definition": "front_month_gold_futures_proxy",
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
-        "median_household_incomes_required": 0.04936821,
-        "pct_of_one_median_household_income": 4.93682085,
+        "median_household_incomes_required": 0.04937538,
+        "pct_of_one_median_household_income": 4.93753756,
         "cost_usd_2006": 605.83,
         "median_household_income_usd_2006": 48200.0,
         "median_household_incomes_required_2006": 0.01256909,
-        "affordability_change_since_2006_pct": 292.77481301,
+        "affordability_change_since_2006_pct": 292.83183431,
         "cost_usd_1976": 125.32,
         "median_household_income_usd_1976": 12690.0,
         "median_household_incomes_required_1976": 0.00987549,
-        "affordability_change_since_1976_pct": 399.90629258
+        "affordability_change_since_1976_pct": 399.97886675
       },
       {
         "item": "One barrel of WTI crude oil",
-        "cost_usd": 75.36000061,
+        "cost_usd": 75.13999939,
         "cost_year": 2026,
         "definition": "front_month_wti_futures_proxy",
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
-        "median_household_incomes_required": 0.00090004,
-        "pct_of_one_median_household_income": 0.09000358,
+        "median_household_incomes_required": 0.00089741,
+        "pct_of_one_median_household_income": 0.08974083,
         "cost_usd_2006": 63.16,
         "median_household_income_usd_2006": 48200.0,
         "median_household_incomes_required_2006": 0.00131037,
-        "affordability_change_since_2006_pct": -31.31455457,
+        "affordability_change_since_2006_pct": -31.51507052,
         "cost_usd_1976": 8.19,
         "median_household_income_usd_1976": 12690.0,
         "median_household_incomes_required_1976": 0.00064539,
-        "affordability_change_since_1976_pct": 39.45610218
+        "affordability_change_since_1976_pct": 39.04898285
       }
     ],
     "native_completed_fertility": [
@@ -17297,7 +17648,7 @@
     },
     {
       "name": "Census median personal and household income",
-      "url": "https://fred.stlouisfed.org/series/MEPAINUSA646N"
+      "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html"
     },
     {
       "name": "BLS median usual weekly nominal earnings",
@@ -17306,6 +17657,14 @@
     {
       "name": "The Economist Big Mac data",
       "url": "https://github.com/TheEconomist/big-mac-data"
+    },
+    {
+      "name": "Documented 1976 Columbus, Nebraska McDonald's menu",
+      "url": "https://mchallmanagement.com/History/40th_Anniversary_Article.pdf"
+    },
+    {
+      "name": "BLS CPS May 1976 usual hourly earnings",
+      "url": "https://www.asasrms.org/Proceedings/y1976/Earnings%20Data%20From%20The%20CPS%20-%20New%20Collection%20Efforts%20And%20Some%20Findings.pdf"
     },
     {
       "name": "iShares IWM current holdings",

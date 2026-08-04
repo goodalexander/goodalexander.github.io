@@ -657,14 +657,14 @@
 
     <div class="doom-productivity-strip doom-common-prosperity-strip">
       <div>
-        <span>House-price interest burden</span>
+        <span>Median-new-home payment burden</span>
         <strong data-field="common-housing-burden">—</strong>
-        <small>Mortgage rate × median new-house price / median personal income; <b data-field="common-housing-change-2006">—</b> since 2006 · <b data-field="common-housing-change-1976">—</b> since 1976</small>
+        <small>30-year principal + interest, 20% down / median household income; <b data-field="common-housing-change-2006">—</b> since 2006 · <b data-field="common-housing-change-1976">—</b> since 1976</small>
       </div>
       <div>
         <span>Big Macs / median work hour</span>
         <strong data-field="common-big-macs-hour">—</strong>
-        <small><b data-field="common-big-mac-change-2006">—</b> since 2006 · 1976 n/a because the price series begins in 2000</small>
+        <small><b data-field="common-big-mac-change-2006">—</b> since 2006 · <b data-field="common-big-mac-change-1976">—</b> versus the disclosed 1976 location proxy</small>
       </div>
       <div>
         <span>NVDA / Russell 2000 market cap</span>
@@ -692,21 +692,22 @@
     <div class="doom-chart-grid doom-common-prosperity-charts">
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
-          <span class="doom-panel-label">1976–2026 · current income is a nowcast</span>
-          <h3>The interest-only cost of the median new house</h3>
-          <p>Thirty-year mortgage rate × median new-house price, divided by median personal income</p>
+          <span class="doom-panel-label">1976–2026 · 20% down · current income is a nowcast</span>
+          <h3>Actual mortgage payment burden</h3>
+          <p>Annual principal and interest on a 30-year fixed mortgage, divided by median household income</p>
         </figcaption>
-        <svg id="common-housing-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual interest-only housing burden as a percent of median personal income from 1976 through 2026"></svg>
-        <p class="doom-note doom-chart-note">This deliberately follows the requested formula. It is not a mortgage payment or a conventional affordability index: it assumes interest on 100% of the purchase price, omits principal, down payment, taxes, insurance, and existing-home mix. The long-window comparisons are negative because mortgage rates were far higher at both anchors; the same measure is <strong data-field="common-housing-change-2021">—</strong> since 2021. The 2026 income denominator scales the latest 2024 Census median personal income by BLS median nominal weekly-earnings growth.</p>
+        <svg id="common-housing-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual principal-and-interest payment on a median new house as a percent of median household income from 1976 through 2026"></svg>
+        <p class="doom-note doom-chart-note">This is a financing comparison, not a full ownership-cost index: it omits property tax, insurance, maintenance, and the existing-home mix. The result does <em>not</em> say 1976 was less affordable: payment burden was 26.6% then versus 27.9% now. The price itself rose from <strong data-field="common-housing-price-multiple-1976">—</strong> to <strong data-field="common-housing-price-multiple">—</strong> median household incomes; 1976's 8.87% mortgage rate offset part of that price gap. The 2026 income denominator scales official 2024 Census household income by BLS median nominal weekly-earnings growth.</p>
       </figure>
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
-          <span class="doom-panel-label">The Economist + BLS</span>
+          <span class="doom-panel-label">The Economist + BLS · documented 1976 proxy</span>
           <h3>Big Macs purchasable per median work hour</h3>
           <p>A concrete wage-purchasing-power proxy using nominal median full-time earnings</p>
         </figcaption>
-        <svg id="common-big-mac-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Number of Big Macs purchasable with one median work hour from 2000 through 2026"></svg>
-        <p class="doom-note doom-chart-note">BLS reports weekly—not hourly—median usual earnings for this series. The chart divides by 40 hours. Big Mac prices are The Economist’s U.S. observations and are not a complete household cost-of-living basket.</p>
+        <div class="doom-legend" aria-hidden="true"><span style="--swatch:#d7a94b">Comparable national series, 2000+</span><span style="--swatch:#eb735f">1976 documented proxy</span></div>
+        <svg id="common-big-mac-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Number of Big Macs purchasable with one median work hour, including a documented 1976 proxy and the comparable national series from 2000 through 2026"></svg>
+        <p class="doom-note doom-chart-note">A 1976 Columbus, Nebraska McDonald’s menu lists a Big Mac at 75¢; BLS’s May 1976 CPS table reports $4.26 median usual hourly earnings, implying 5.68 Big Macs per hour. That point is a location-and-worker-population proxy, not a national average. The comparable 2000+ line uses The Economist’s U.S. price observations and BLS median full-time weekly earnings divided by 40.</p>
       </figure>
     </div>
 
@@ -1079,5 +1080,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260804-2" defer></script>
+<script src="/doom-thesis/app.js?v=20260804-3" defer></script>
 {{ end }}

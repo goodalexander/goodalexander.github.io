@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-04T21:01:02.627009+00:00
+Generated: 2026-08-04T21:16:14.160914+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -78,8 +78,8 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
 - Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of 2.0% (6.4% nominal), FCF margin of 7.9%, and operating-cash-flow margin of 14.3% as of 2026-08-04. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
-- Common Prosperity housing burden: the requested mortgage-rate × median-new-house-price measure equals 55.9% of nowcast median personal income, -8% since 2006 and -15% since 1976.
-- A median full-time work hour buys 5.01 Big Macs, -17% since 2006; the source series begins in 2000, so no 1976 value is asserted.
+- Common Prosperity housing burden: principal and interest on an 80% 30-year fixed mortgage against the median new-house price equals 27.9% of nowcast median household income, -8% since 2006 and +5% since 1976. The new-house price itself is 4.52x income versus 3.49x in 1976.
+- A median full-time work hour buys 5.01 Big Macs, -17% since 2006. A documented 75-cent Columbus, Nebraska menu and the May 1976 CPS median usual hourly wage imply a disclosed 1976 proxy of 5.68, or -12% to today; the national comparable Big Mac price series begins in 2000.
 - NVDA market capitalization is 135% of the summed market capitalization of matched current IWM constituents; Sharadar covers 98.6% of IWM equity weight.
 - Social outcomes: life expectancy changed +1.2 years since 2006 and +6.0 years since 1976; native-born women ages 40–50 report 1.916 completed births; the 2024 suicide rate was 13.7 per 100,000 (+24.5% since 2006); measured obesity among adults ages 20–74 was 40.8% (+25.8 percentage points since the 1976–1980 survey).
 - Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
@@ -145,9 +145,11 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Sharadar real-business productivity bridge: Local SF1 ARQ replayed point in time by datekey; U.S. domestic common stocks excluding GLM 5.2 distraction scores >=70, with Financial Services and Utilities excluded from the primary FCF cut
 - Freddie Mac 30-year mortgage rate: https://fred.stlouisfed.org/series/MORTGAGE30US
 - Census/HUD median new-house sale price: https://fred.stlouisfed.org/series/MSPUS
-- Census median personal and household income: https://fred.stlouisfed.org/series/MEPAINUSA646N
+- Census median personal and household income: https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html
 - BLS median usual weekly nominal earnings: https://fred.stlouisfed.org/series/LES1252881500Q
 - The Economist Big Mac data: https://github.com/TheEconomist/big-mac-data
+- Documented 1976 Columbus, Nebraska McDonald's menu: https://mchallmanagement.com/History/40th_Anniversary_Article.pdf
+- BLS CPS May 1976 usual hourly earnings: https://www.asasrms.org/Proceedings/y1976/Earnings%20Data%20From%20The%20CPS%20-%20New%20Collection%20Efforts%20And%20Some%20Findings.pdf
 - iShares IWM current holdings: https://www.ishares.com/us/products/239710/ishares-russell-2000-etf
 - Census CPS completed fertility by nativity: https://www.census.gov/data/tables/2024/demo/fertility/women-fertility.html
 - CDC suicide trends, 2001–2024: https://www.cdc.gov/suicide/data/index.html

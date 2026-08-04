@@ -85,14 +85,17 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
     def test_common_prosperity_preserves_metric_boundaries(self) -> None:
         for marker in (
             "06 / Common Prosperity",
-            "Mortgage rate × median new-house price / median personal income",
+            "Annual principal and interest on a 30-year fixed mortgage",
+            "The result does <em>not</em> say 1976 was less affordable",
+            "1976 documented proxy",
+            "Big Mac at 75¢",
             "IWM’s",
             "is not used as “Russell 2000 market cap.”",
             "Birth certificates do not identify U.S.-born or citizen mothers.",
             "one troy-ounce investment bar",
             "What changed since 2006 and since 1976?",
             "No interpolation, retrospective IWM-membership substitution",
-            "1976–2026 · current income is a nowcast",
+            "1976–2026 · 20% down · current income is a nowcast",
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)

@@ -1,28 +1,29 @@
-date,local_price,year,median_usual_weekly_earnings_usd,median_hourly_earnings_40h_assumption_usd,big_macs_per_median_work_hour
-2000-04-01,2.24,2000,575.0,14.375,6.4174107142857135
-2001-04-01,2.24,2001,595.75,14.89375,6.648995535714286
-2002-04-01,2.35,2002,608.25,15.20625,6.470744680851064
-2003-04-01,2.46,2003,619.5,15.4875,6.295731707317073
-2004-05-01,2.47,2004,638.0,15.95,6.45748987854251
-2005-06-01,2.58,2005,650.75,16.26875,6.305717054263566
-2006-05-01,2.78,2006,671.0,16.775,6.034172661870503
-2007-06-01,3.0,2007,694.5,17.3625,5.7875000000000005
-2008-06-01,3.21,2008,721.5,18.0375,5.619158878504673
-2009-07-01,3.43,2009,739.5,18.4875,5.389941690962099
-2010-07-01,3.53,2010,746.5,18.6625,5.286827195467422
-2011-07-01,3.64,2011,756.0,18.9,5.192307692307692
-2012-07-01,3.96,2012,768.25,19.20625,4.850063131313132
-2013-07-01,4.18,2013,776.5,19.4125,4.644138755980862
-2014-07-01,4.29,2014,791.0,19.775,4.609557109557109
-2015-07-01,4.29,2015,808.75,20.21875,4.712995337995338
-2016-07-01,4.5,2016,832.5,20.8125,4.625
-2017-07-01,4.5,2017,859.75,21.49375,4.776388888888889
-2018-07-01,4.62,2018,886.0,22.15,4.794372294372294
-2019-07-09,4.71,2019,917.0,22.925,4.8673036093418265
-2020-07-01,4.82,2020,984.25,24.60625,5.10503112033195
-2021-07-01,4.93,2021,997.5,24.9375,5.058316430020284
-2022-07-01,5.15,2022,1058.25,26.45625,5.1371359223300965
-2023-07-01,5.58,2023,1115.75,27.89375,4.998879928315413
-2024-07-01,5.69,2024,1159.5,28.9875,5.094463971880492
-2025-07-01,6.01,2025,1204.0,30.1,5.0083194675540765
-2026-07-01,6.22,2026,1245.5,31.1375,5.006028938906753
+date,local_price,year,median_usual_weekly_earnings_usd,median_hourly_earnings_40h_assumption_usd,big_macs_per_median_work_hour,price_source,earnings_source,comparison_status
+1976-07-01,0.75,1976,,4.26,5.68,"Documented 1976 Columbus, Nebraska McDonald's menu","BLS CPS May 1976 median usual hourly earnings, all wage and salary workers",historical location-and-population proxy; not the national 2000+ series
+2000-04-01,2.24,2000,575.0,14.375,6.4174107142857135,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2001-04-01,2.24,2001,595.75,14.89375,6.648995535714286,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2002-04-01,2.35,2002,608.25,15.20625,6.470744680851064,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2003-04-01,2.46,2003,619.5,15.4875,6.295731707317073,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2004-05-01,2.47,2004,638.0,15.95,6.45748987854251,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2005-06-01,2.58,2005,650.75,16.26875,6.305717054263566,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2006-05-01,2.78,2006,671.0,16.775,6.034172661870503,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2007-06-01,3.0,2007,694.5,17.3625,5.7875000000000005,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2008-06-01,3.21,2008,721.5,18.0375,5.619158878504673,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2009-07-01,3.43,2009,739.5,18.4875,5.389941690962099,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2010-07-01,3.53,2010,746.5,18.6625,5.286827195467422,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2011-07-01,3.64,2011,756.0,18.9,5.192307692307692,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2012-07-01,3.96,2012,768.25,19.20625,4.850063131313132,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2013-07-01,4.18,2013,776.5,19.4125,4.644138755980862,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2014-07-01,4.29,2014,791.0,19.775,4.609557109557109,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2015-07-01,4.29,2015,808.75,20.21875,4.712995337995338,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2016-07-01,4.5,2016,832.5,20.8125,4.625,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2017-07-01,4.5,2017,859.75,21.49375,4.776388888888889,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2018-07-01,4.62,2018,886.0,22.15,4.794372294372294,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2019-07-09,4.71,2019,917.0,22.925,4.8673036093418265,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2020-07-01,4.82,2020,984.25,24.60625,5.10503112033195,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2021-07-01,4.93,2021,997.5,24.9375,5.058316430020284,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2022-07-01,5.15,2022,1058.25,26.45625,5.1371359223300965,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2023-07-01,5.58,2023,1115.75,27.89375,4.998879928315413,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2024-07-01,5.69,2024,1159.5,28.9875,5.094463971880492,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2025-07-01,6.01,2025,1204.0,30.1,5.0083194675540765,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series
+2026-07-01,6.22,2026,1245.5,31.1375,5.006028938906753,The Economist U.S. observation,BLS median usual weekly earnings / 40,comparable 2000+ series

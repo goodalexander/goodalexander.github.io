@@ -280,12 +280,14 @@
     const commonFertility = commonSummary.native_completed_fertility;
     const commonSuicide = commonSummary.suicide;
     const commonObesity = commonSummary.obesity;
-    set('common-housing-burden', `${commonHousing.interest_only_burden_pct_median_personal_income.toFixed(1)}%`);
-    set('common-housing-change-2006', signedPercent(commonHousing.change_since_2006_pct, 0));
-    set('common-housing-change-1976', signedPercent(commonHousing.change_since_1976_pct, 0));
-    set('common-housing-change-2021', signedPercent(commonHousing.change_since_2021_pct, 0));
+    set('common-housing-burden', `${commonHousing.mortgage_payment_burden_pct_median_household_income.toFixed(1)}%`);
+    set('common-housing-change-2006', signedPercent(commonHousing.mortgage_payment_change_since_2006_pct, 0));
+    set('common-housing-change-1976', signedPercent(commonHousing.mortgage_payment_change_since_1976_pct, 0));
+    set('common-housing-price-multiple', `${commonHousing.house_price_to_median_household_income.toFixed(2)}×`);
+    set('common-housing-price-multiple-1976', `${commonHousing.house_price_multiple_1976.toFixed(2)}×`);
     set('common-big-macs-hour', commonBurger.big_macs_per_median_work_hour.toFixed(2));
     set('common-big-mac-change-2006', signedPercent(commonBurger.change_since_2006_pct, 0));
+    set('common-big-mac-change-1976', signedPercent(commonBurger.change_since_1976_proxy_pct, 0));
     set('common-nvda-russell-ratio', `${commonConcentration.nvda_to_russell_2000_marketcap_pct.toFixed(0)}%`);
     set('common-iwm-coverage', `${commonConcentration.matched_iwm_portfolio_weight_pct.toFixed(1)}%`);
     set('common-life-change', signedNumber(commonLife.five_year_change_years, 1, ' yrs'));
@@ -477,11 +479,12 @@
     ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
     lineChart($('#common-housing-chart'), [
-      { color: '#eb735f', values: common.housing_history.map((d) => ({ year: d.year, value: d.housing_interest_burden_pct_median_personal_income })) },
-    ], { yMin: 20, yMax: 150, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(1)}% of median personal income`, points: false, xTicks: 7, margin: { left: 50, right: 18 } });
+      { color: '#eb735f', values: common.housing_history.map((d) => ({ year: d.year, value: d.mortgage_payment_burden_pct_median_household_income })) },
+    ], { yMin: 15, yMax: 55, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(1)}% of median household income`, points: false, xTicks: 7, margin: { left: 50, right: 18 } });
 
     lineChart($('#common-big-mac-chart'), [
-      { color: '#d7a94b', values: common.big_mac_history.map((d) => ({ year: d.year, value: d.big_macs_per_median_work_hour })) },
+      { color: '#d7a94b', values: common.big_mac_history.filter((d) => d.year >= 2000).map((d) => ({ year: d.year, value: d.big_macs_per_median_work_hour })) },
+      { color: '#eb735f', values: common.big_mac_history.filter((d) => d.year === 1976).map((d) => ({ year: d.year, label: '1976 documented proxy', value: d.big_macs_per_median_work_hour })) },
     ], { yMin: 4, yMax: 7, headroom: 1, yFormat: (v) => v.toFixed(1), tooltipFormat: (v) => `${v.toFixed(2)} Big Macs/hour`, points: true, xTicks: 7, margin: { left: 46, right: 18 } });
 
     const indexed = (rows, field, startYear = -Infinity) => {

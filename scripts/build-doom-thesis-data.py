@@ -158,8 +158,8 @@ def build_llm_document(payload: dict) -> str:
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of {productivity['latest_real_business_real_revenue_growth_yoy_pct']:.1f}% ({productivity['latest_real_business_revenue_growth_yoy_pct']:.1f}% nominal), FCF margin of {productivity['latest_real_business_fcf_margin_pct']:.1f}%, and operating-cash-flow margin of {productivity['latest_real_business_operating_cash_flow_margin_pct']:.1f}% as of {productivity['real_business_as_of_date']}. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
-            f"- Common Prosperity housing burden: the requested mortgage-rate × median-new-house-price measure equals {common['housing']['interest_only_burden_pct_median_personal_income']:.1f}% of nowcast median personal income, {common['housing']['change_since_2006_pct']:+.0f}% since 2006 and {common['housing']['change_since_1976_pct']:+.0f}% since 1976.",
-            f"- A median full-time work hour buys {common['big_mac']['big_macs_per_median_work_hour']:.2f} Big Macs, {common['big_mac']['change_since_2006_pct']:+.0f}% since 2006; the source series begins in 2000, so no 1976 value is asserted.",
+            f"- Common Prosperity housing burden: principal and interest on an 80% 30-year fixed mortgage against the median new-house price equals {common['housing']['mortgage_payment_burden_pct_median_household_income']:.1f}% of nowcast median household income, {common['housing']['mortgage_payment_change_since_2006_pct']:+.0f}% since 2006 and {common['housing']['mortgage_payment_change_since_1976_pct']:+.0f}% since 1976. The new-house price itself is {common['housing']['house_price_to_median_household_income']:.2f}x income versus {common['housing']['house_price_multiple_1976']:.2f}x in 1976.",
+            f"- A median full-time work hour buys {common['big_mac']['big_macs_per_median_work_hour']:.2f} Big Macs, {common['big_mac']['change_since_2006_pct']:+.0f}% since 2006. A documented 75-cent Columbus, Nebraska menu and the May 1976 CPS median usual hourly wage imply a disclosed 1976 proxy of {common['big_mac']['big_macs_per_median_work_hour_1976_proxy']:.2f}, or {common['big_mac']['change_since_1976_proxy_pct']:+.0f}% to today; the national comparable Big Mac price series begins in 2000.",
             f"- NVDA market capitalization is {common['market_concentration']['nvda_to_russell_2000_marketcap_pct']:.0f}% of the summed market capitalization of matched current IWM constituents; Sharadar covers {common['market_concentration']['matched_iwm_portfolio_weight_pct']:.1f}% of IWM equity weight.",
             f"- Social outcomes: life expectancy changed {common['life_expectancy']['change_since_2006_years']:+.1f} years since 2006 and {common['life_expectancy']['change_since_1976_years']:+.1f} years since 1976; native-born women ages 40–50 report {common['native_completed_fertility']['children_per_native_born_woman_age_40_50']:.3f} completed births; the 2024 suicide rate was {common['suicide']['rate_per_100k']:.1f} per 100,000 ({common['suicide']['change_since_2006_pct']:+.1f}% since 2006); measured obesity among adults ages 20–74 was {common['obesity']['adult_obesity_pct']:.1f}% ({common['obesity']['change_since_1976_1980_percentage_points']:+.1f} percentage points since the 1976–1980 survey).",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
@@ -1339,7 +1339,7 @@ def build_payload(doom_root: Path) -> dict:
             },
             {
                 "name": "Census median personal and household income",
-                "url": "https://fred.stlouisfed.org/series/MEPAINUSA646N",
+                "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html",
             },
             {
                 "name": "BLS median usual weekly nominal earnings",
@@ -1348,6 +1348,14 @@ def build_payload(doom_root: Path) -> dict:
             {
                 "name": "The Economist Big Mac data",
                 "url": "https://github.com/TheEconomist/big-mac-data",
+            },
+            {
+                "name": "Documented 1976 Columbus, Nebraska McDonald's menu",
+                "url": "https://mchallmanagement.com/History/40th_Anniversary_Article.pdf",
+            },
+            {
+                "name": "BLS CPS May 1976 usual hourly earnings",
+                "url": "https://www.asasrms.org/Proceedings/y1976/Earnings%20Data%20From%20The%20CPS%20-%20New%20Collection%20Efforts%20And%20Some%20Findings.pdf",
             },
             {
                 "name": "iShares IWM current holdings",
