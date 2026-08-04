@@ -90,6 +90,9 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
             "is not used as “Russell 2000 market cap.”",
             "Birth certificates do not identify U.S.-born or citizen mothers.",
             "one troy-ounce investment bar",
+            "What changed since 2006 and since 1976?",
+            "No interpolation, retrospective IWM-membership substitution",
+            "1976–2026 · current income is a nowcast",
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)

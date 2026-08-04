@@ -281,13 +281,16 @@
     const commonSuicide = commonSummary.suicide;
     const commonObesity = commonSummary.obesity;
     set('common-housing-burden', `${commonHousing.interest_only_burden_pct_median_personal_income.toFixed(1)}%`);
+    set('common-housing-change-2006', signedPercent(commonHousing.change_since_2006_pct, 0));
+    set('common-housing-change-1976', signedPercent(commonHousing.change_since_1976_pct, 0));
     set('common-housing-change-2021', signedPercent(commonHousing.change_since_2021_pct, 0));
     set('common-big-macs-hour', commonBurger.big_macs_per_median_work_hour.toFixed(2));
-    set('common-big-mac-change', signedPercent(commonBurger.change_since_2000_pct, 0));
+    set('common-big-mac-change-2006', signedPercent(commonBurger.change_since_2006_pct, 0));
     set('common-nvda-russell-ratio', `${commonConcentration.nvda_to_russell_2000_marketcap_pct.toFixed(0)}%`);
     set('common-iwm-coverage', `${commonConcentration.matched_iwm_portfolio_weight_pct.toFixed(1)}%`);
     set('common-life-change', signedNumber(commonLife.five_year_change_years, 1, ' yrs'));
-    set('common-life-year', commonLife.as_of_year);
+    set('common-life-change-2006', signedNumber(commonLife.change_since_2006_years, 1, ' yrs'));
+    set('common-life-change-1976', signedNumber(commonLife.change_since_1976_years, 1, ' yrs'));
     set('common-concentration-date', commonConcentration.as_of_date);
     set('common-nvda-marketcap', trillions(commonConcentration.nvda_marketcap_usd / 1e12, 2));
     set('common-russell-marketcap', trillions(commonConcentration.russell_2000_constituent_marketcap_usd / 1e12, 2));
@@ -300,12 +303,26 @@
     set('common-suicide-vs-average', signedPercent(commonSuicide.pct_vs_prior_10_year_average, 1));
     set('common-suicide-rate', commonSuicide.rate_per_100k.toFixed(1));
     set('common-suicide-since-2001', signedPercent(commonSuicide.change_since_2001_pct, 0));
+    set('common-suicide-since-2006', signedPercent(commonSuicide.change_since_2006_pct, 0));
     set('common-obesity-vs-average', signedPercent(commonObesity.pct_vs_prior_decade_cycle_average, 1));
     set('common-obesity-rate', `${commonObesity.adult_obesity_pct.toFixed(1)}%`);
+    set('common-obesity-since-2006', signedNumber(commonObesity.change_since_2005_2006_percentage_points, 1, ' pp'));
+    set('common-obesity-since-1976', signedNumber(commonObesity.change_since_1976_1980_percentage_points, 1, ' pp'));
     set('common-life-level', `${commonLife.years.toFixed(1)} yrs`);
+    set('common-life-level-change-2006', signedNumber(commonLife.change_since_2006_years, 1, ' yrs'));
+    set('common-life-level-change-1976', signedNumber(commonLife.change_since_1976_years, 1, ' yrs'));
     const commonIncome = common.affordability_snapshot[0].median_household_income_usd;
     set('common-median-household-income', money(commonIncome));
     $('#common-affordability-table').innerHTML = common.affordability_snapshot.map((row) => `<tr><td>${row.item}<small>${row.definition.replaceAll('_', ' ')}</small></td><td>${money(row.cost_usd, row.cost_usd < 100 ? 2 : 0)}</td><td>${row.median_household_incomes_required.toFixed(3)}×</td><td>${row.pct_of_one_median_household_income.toFixed(row.pct_of_one_median_household_income < 1 ? 2 : 1)}%</td></tr>`).join('');
+    const commonWindowCell = (window) => {
+      if (!window.available) return `<span class="doom-common-na">n/a</span><small>${window.note}</small>`;
+      let value;
+      if (window.change_kind === 'absolute_years') value = signedNumber(window.change, 1, ' yrs');
+      else if (window.change_kind === 'percentage_points') value = signedNumber(window.change, 1, ' pp');
+      else value = signedPercent(window.change, 0);
+      return `<b>${value}</b><small>vs ${window.baseline_label}</small>${window.note ? `<small>${window.note}</small>` : ''}`;
+    };
+    $('#common-window-table').innerHTML = commonSummary.comparison_windows.rows.map((row) => `<tr><td>${row.indicator}<small>${row.definition}</small></td><td>${row.current_display}</td><td>${commonWindowCell(row.since_2006)}</td><td>${commonWindowCell(row.since_1976)}</td></tr>`).join('');
     const demographics = data.demographics;
     const demographicSummary = demographics.summary;
     set('demographic-beneficiaries-1960', demographicSummary.beneficiaries_per_100_workers_1960.toFixed(1));
@@ -461,7 +478,7 @@
 
     lineChart($('#common-housing-chart'), [
       { color: '#eb735f', values: common.housing_history.map((d) => ({ year: d.year, value: d.housing_interest_burden_pct_median_personal_income })) },
-    ], { yMin: 20, yMax: 80, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(1)}% of median personal income`, points: false, xTicks: 7, margin: { left: 50, right: 18 } });
+    ], { yMin: 20, yMax: 150, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(1)}% of median personal income`, points: false, xTicks: 7, margin: { left: 50, right: 18 } });
 
     lineChart($('#common-big-mac-chart'), [
       { color: '#d7a94b', values: common.big_mac_history.map((d) => ({ year: d.year, value: d.big_macs_per_median_work_hour })) },
@@ -473,11 +490,11 @@
       return eligible.map((row) => ({ year: row.year, label: row.survey_period || row.year, value: Number(row[field]) / base * 100 }));
     };
     lineChart($('#common-social-chart'), [
-      { color: '#62c6ae', values: indexed(common.life_expectancy, 'life_expectancy_years', 2000) },
+      { color: '#62c6ae', values: indexed(common.life_expectancy, 'life_expectancy_years', 1976) },
       { color: '#eb735f', values: indexed(common.suicide, 'suicide_rate_per_100k', 2001) },
-      { color: '#d7a94b', values: indexed(common.obesity, 'adult_obesity_pct', 1999) },
+      { color: '#d7a94b', values: indexed(common.obesity, 'adult_obesity_pct', 1976) },
       { color: '#8b78d1', values: indexed(common.native_completed_fertility, 'native_born_women_40_50_children_ever_born_per_woman', 2014) },
-    ], { yMin: 70, yMax: 145, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (first observation=100)`, points: true, xTicks: 8 });
+    ], { yMin: 70, yMax: 290, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (anchor=100)`, points: true, xTicks: 8 });
 
     const demographicHistory = demographics.history_and_projection;
     const demographicActual = demographicHistory.filter((row) => row.year <= 2025);
@@ -521,7 +538,7 @@
     }).join('') : '<tr><td colspan="6">No archived releases yet.</td></tr>';
   }
 
-  fetch('/doom-thesis/data.json?v=20260804-3', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260804-4', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

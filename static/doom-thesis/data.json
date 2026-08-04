@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-04T20:32:18.996125+00:00",
+  "generated_at_utc": "2026-08-04T21:01:02.627009+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -14721,14 +14721,15 @@
   },
   "common_prosperity": {
     "summary": {
-      "generated_at_utc": "2026-08-04T20:28:12.985066+00:00",
+      "generated_at_utc": "2026-08-04T20:57:52.390879+00:00",
       "housing": {
         "as_of_year": 2026,
         "mortgage_rate_pct": 6.66,
         "median_new_house_price_usd": 410700.0,
         "median_personal_income_nowcast_usd": 48974.661492022424,
         "interest_only_burden_pct_median_personal_income": 55.85055448408872,
-        "change_since_2000_pct": -10.927685981892832,
+        "change_since_2006_pct": -7.8228876786637365,
+        "change_since_1976_pct": -14.50606520857659,
         "change_since_2021_pct": 84.98586856321566
       },
       "big_mac": {
@@ -14736,6 +14737,7 @@
         "big_mac_price_usd": 6.22,
         "big_macs_per_median_work_hour": 5.006028938906753,
         "change_since_2000_pct": -21.993009925905195,
+        "change_since_2006_pct": -17.038685841068414,
         "assumption": "Median usual weekly nominal earnings divided by 40 hours"
       },
       "market_concentration": {
@@ -14752,7 +14754,9 @@
       "life_expectancy": {
         "as_of_year": 2024,
         "years": 78.890243902439,
-        "five_year_change_years": 0.10243902439019337
+        "five_year_change_years": 0.10243902439019337,
+        "change_since_2006_years": 1.202439024390202,
+        "change_since_1976_years": 6.034146341463398
       },
       "native_completed_fertility": {
         "as_of_year": 2024,
@@ -14767,17 +14771,521 @@
         "deaths": 48824,
         "prior_10_year_average_rate": 13.74,
         "pct_vs_prior_10_year_average": -0.29112081513829047,
-        "change_since_2001_pct": 28.037383177570096
+        "change_since_2001_pct": 28.037383177570096,
+        "change_since_2006_pct": 24.545454545454536
       },
       "obesity": {
         "survey_period": "August 2021\u2013August 2023",
-        "adult_obesity_pct": 40.3,
-        "prior_decade_cycle_average_pct": 39.900000000000006,
-        "pct_vs_prior_decade_cycle_average": 1.0025062656641381
+        "adult_obesity_pct": 40.8,
+        "prior_decade_cycle_average_pct": 40.333333333333336,
+        "pct_vs_prior_decade_cycle_average": 1.157024793388417,
+        "population_age_range": "20-74",
+        "change_since_2005_2006_percentage_points": 5.699999999999996,
+        "change_since_1976_1980_percentage_points": 25.799999999999997
       },
-      "interpretation": "These are separate affordability, health, family-formation, and market-concentration diagnostics. They support the hypothesis that a less rewarding offline life increases demand for distraction; they do not identify that causal effect by themselves."
+      "interpretation": "These are separate affordability, health, family-formation, and market-concentration diagnostics. They support the hypothesis that a less rewarding offline life increases demand for distraction; they do not identify that causal effect by themselves.",
+      "comparison_windows": {
+        "requested_years": [
+          2006,
+          1976
+        ],
+        "rows": [
+          {
+            "indicator": "Housing interest burden",
+            "current_display": "55.9%",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 60.59047965116279,
+              "current_value": 55.85055448408872,
+              "change": -7.8228876786637365,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 65.32692011467876,
+              "current_value": 55.85055448408872,
+              "change": -14.50606520857659,
+              "change_kind": "percent",
+              "note": null
+            },
+            "definition": "Mortgage rate \u00d7 median new-house price / median personal income"
+          },
+          {
+            "indicator": "Big Macs per median work hour",
+            "current_display": "5.01",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 6.034172661870503,
+              "current_value": 5.006028938906753,
+              "change": -17.038685841068414,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": false,
+              "requested_year": 1976,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 5.006028938906753,
+              "change": null,
+              "change_kind": "percent",
+              "note": "The Economist U.S. Big Mac series begins in 2000"
+            },
+            "definition": "BLS median weekly earnings / 40 / U.S. Big Mac price"
+          },
+          {
+            "indicator": "NVDA / Russell 2000 market cap",
+            "current_display": "135%",
+            "since_2006": {
+              "available": false,
+              "requested_year": 2006,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 135.36947574635911,
+              "change": null,
+              "change_kind": "percent",
+              "note": "Current IWM membership is not a point-in-time 2006 constituent set"
+            },
+            "since_1976": {
+              "available": false,
+              "requested_year": 1976,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 135.36947574635911,
+              "change": null,
+              "change_kind": "percent",
+              "note": "Russell 2000 and IWM did not exist in 1976; NVDA was not public"
+            },
+            "definition": "Current IWM equity constituents joined to latest Sharadar company market cap"
+          },
+          {
+            "indicator": "Life expectancy",
+            "current_display": "78.9 years",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 77.6878048780488,
+              "current_value": 78.890243902439,
+              "change": 1.202439024390202,
+              "change_kind": "absolute_years",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 72.8560975609756,
+              "current_value": 78.890243902439,
+              "change": 6.034146341463398,
+              "change_kind": "absolute_years",
+              "note": null
+            },
+            "definition": "Life expectancy at birth"
+          },
+          {
+            "indicator": "Native-born completed fertility",
+            "current_display": "1.916",
+            "since_2006": {
+              "available": false,
+              "requested_year": 2006,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 1.916,
+              "change": null,
+              "change_kind": "percent",
+              "note": "The directly comparable native-born ages 40-50 series begins in 2014"
+            },
+            "since_1976": {
+              "available": false,
+              "requested_year": 1976,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 1.916,
+              "change": null,
+              "change_kind": "percent",
+              "note": "The directly comparable native-born ages 40-50 series begins in 2014"
+            },
+            "definition": "Children ever born per native-born woman age 40-50"
+          },
+          {
+            "indicator": "Suicide rate",
+            "current_display": "13.7 per 100,000",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 11.0,
+              "current_value": 13.7,
+              "change": 24.545454545454536,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": false,
+              "requested_year": 1976,
+              "baseline_label": null,
+              "baseline_value": null,
+              "current_value": 13.7,
+              "change": null,
+              "change_kind": "percent",
+              "note": "The CDC dashboard's consistently defined published trend begins in 2001"
+            },
+            "definition": "CDC published national suicide-rate trend"
+          },
+          {
+            "indicator": "Measured adult obesity, ages 20-74",
+            "current_display": "40.8%",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2005\u20132006",
+              "baseline_value": 35.1,
+              "current_value": 40.8,
+              "change": 5.699999999999996,
+              "change_kind": "percentage_points",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976\u20131980",
+              "baseline_value": 15.0,
+              "current_value": 40.8,
+              "change": 25.799999999999997,
+              "change_kind": "percentage_points",
+              "note": null
+            },
+            "definition": "Age-adjusted measured NHANES prevalence, ages 20-74"
+          },
+          {
+            "indicator": "Harvard undergraduate tuition",
+            "current_display": "0.743 household incomes",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 0.5965145228215768,
+              "current_value": 0.7431744894303117,
+              "change": 24.586151886967933,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 0.32308904649330183,
+              "current_value": 0.7431744894303117,
+              "change": 130.02156758221108,
+              "change_kind": "percent",
+              "note": null
+            },
+            "definition": "Cost divided by nominal median household income"
+          },
+          {
+            "indicator": "Penn undergraduate tuition",
+            "current_display": "0.784 household incomes",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 0.6068879668049793,
+              "current_value": 0.7843067001074884,
+              "change": 29.23418209073205,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 0.2959022852639874,
+              "current_value": 0.7843067001074884,
+              "change": 165.0559793439155,
+              "change_kind": "percent",
+              "note": null
+            },
+            "definition": "Cost divided by nominal median household income"
+          },
+          {
+            "indicator": "One troy-ounce gold bar",
+            "current_display": "0.049 household incomes",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 0.012569087136929462,
+              "current_value": 0.049368208499417775,
+              "change": 292.77481301222065,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 0.009875492513790385,
+              "current_value": 0.049368208499417775,
+              "change": 399.90629257709196,
+              "change_kind": "percent",
+              "note": null
+            },
+            "definition": "Cost divided by nominal median household income"
+          },
+          {
+            "indicator": "One barrel of WTI crude oil",
+            "current_display": "0.001 household incomes",
+            "since_2006": {
+              "available": true,
+              "requested_year": 2006,
+              "baseline_label": "2006",
+              "baseline_value": 0.0013103734439834024,
+              "current_value": 0.0009000358367413301,
+              "change": -31.314554574205022,
+              "change_kind": "percent",
+              "note": null
+            },
+            "since_1976": {
+              "available": true,
+              "requested_year": 1976,
+              "baseline_label": "1976",
+              "baseline_value": 0.0006453900709219858,
+              "current_value": 0.0009000358367413301,
+              "change": 39.456102176403895,
+              "change_kind": "percent",
+              "note": "1976 oil uses EIA U.S. crude first-purchase price because a WTI series is unavailable"
+            },
+            "definition": "Cost divided by nominal median household income"
+          }
+        ],
+        "rule": "Use the exact anchor year where available; use the named survey cycle spanning the anchor for periodic survey data; otherwise mark the comparison unavailable rather than interpolate or change definitions."
+      }
     },
     "housing_history": [
+      {
+        "year": 1976,
+        "mortgage_rate_pct": 8.86584906,
+        "median_new_house_price_usd": 44225.0,
+        "median_personal_income_usd": 6002.0,
+        "annual_interest_only_burden_usd": 3920.92174528,
+        "housing_interest_burden_pct_median_personal_income": 65.32692011,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1977,
+        "mortgage_rate_pct": 8.84519231,
+        "median_new_house_price_usd": 48900.0,
+        "median_personal_income_usd": 6429.0,
+        "annual_interest_only_burden_usd": 4325.29903846,
+        "housing_interest_burden_pct_median_personal_income": 67.27794429,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1978,
+        "mortgage_rate_pct": 9.64173077,
+        "median_new_house_price_usd": 55850.0,
+        "median_personal_income_usd": 6813.0,
+        "annual_interest_only_burden_usd": 5384.90663462,
+        "housing_interest_burden_pct_median_personal_income": 79.03870005,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1979,
+        "mortgage_rate_pct": 11.20365385,
+        "median_new_house_price_usd": 62750.0,
+        "median_personal_income_usd": 7254.0,
+        "annual_interest_only_burden_usd": 7030.29278846,
+        "housing_interest_burden_pct_median_personal_income": 96.91608476,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1980,
+        "mortgage_rate_pct": 13.74211538,
+        "median_new_house_price_usd": 64750.0,
+        "median_personal_income_usd": 7944.0,
+        "annual_interest_only_burden_usd": 8898.01971154,
+        "housing_interest_burden_pct_median_personal_income": 112.00931158,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1981,
+        "mortgage_rate_pct": 16.64150943,
+        "median_new_house_price_usd": 68950.0,
+        "median_personal_income_usd": 8532.0,
+        "annual_interest_only_burden_usd": 11474.32075472,
+        "housing_interest_burden_pct_median_personal_income": 134.48570974,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1982,
+        "mortgage_rate_pct": 16.04365385,
+        "median_new_house_price_usd": 69225.0,
+        "median_personal_income_usd": 9143.0,
+        "annual_interest_only_burden_usd": 11106.219375,
+        "housing_interest_burden_pct_median_personal_income": 121.47237641,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1983,
+        "mortgage_rate_pct": 13.23538462,
+        "median_new_house_price_usd": 75375.0,
+        "median_personal_income_usd": 9720.0,
+        "annual_interest_only_burden_usd": 9976.17115385,
+        "housing_interest_burden_pct_median_personal_income": 102.6355057,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1984,
+        "mortgage_rate_pct": 13.87769231,
+        "median_new_house_price_usd": 79950.0,
+        "median_personal_income_usd": 10420.0,
+        "annual_interest_only_burden_usd": 11095.215,
+        "housing_interest_burden_pct_median_personal_income": 106.4799904,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1985,
+        "mortgage_rate_pct": 12.43019231,
+        "median_new_house_price_usd": 84275.0,
+        "median_personal_income_usd": 11010.0,
+        "annual_interest_only_burden_usd": 10475.54456731,
+        "housing_interest_burden_pct_median_personal_income": 95.14572722,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1986,
+        "mortgage_rate_pct": 10.18730769,
+        "median_new_house_price_usd": 92025.0,
+        "median_personal_income_usd": 11550.0,
+        "annual_interest_only_burden_usd": 9374.86990385,
+        "housing_interest_burden_pct_median_personal_income": 81.1677048,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1987,
+        "mortgage_rate_pct": 10.21339623,
+        "median_new_house_price_usd": 104700.0,
+        "median_personal_income_usd": 12100.0,
+        "annual_interest_only_burden_usd": 10693.42584906,
+        "housing_interest_burden_pct_median_personal_income": 88.37542024,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1988,
+        "mortgage_rate_pct": 10.34173077,
+        "median_new_house_price_usd": 112225.0,
+        "median_personal_income_usd": 12940.0,
+        "annual_interest_only_burden_usd": 11606.00735577,
+        "housing_interest_burden_pct_median_personal_income": 89.69093783,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1989,
+        "mortgage_rate_pct": 10.31942308,
+        "median_new_house_price_usd": 120425.0,
+        "median_personal_income_usd": 13860.0,
+        "annual_interest_only_burden_usd": 12427.16524038,
+        "housing_interest_burden_pct_median_personal_income": 89.66208687,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1990,
+        "mortgage_rate_pct": 10.12942308,
+        "median_new_house_price_usd": 122300.0,
+        "median_personal_income_usd": 14380.0,
+        "annual_interest_only_burden_usd": 12388.28442308,
+        "housing_interest_burden_pct_median_personal_income": 86.14940489,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1991,
+        "mortgage_rate_pct": 9.24653846,
+        "median_new_house_price_usd": 119975.0,
+        "median_personal_income_usd": 14690.0,
+        "annual_interest_only_burden_usd": 11093.53451923,
+        "housing_interest_burden_pct_median_personal_income": 75.51759373,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1992,
+        "mortgage_rate_pct": 8.39018868,
+        "median_new_house_price_usd": 121375.0,
+        "median_personal_income_usd": 14900.0,
+        "annual_interest_only_burden_usd": 10183.59150943,
+        "housing_interest_burden_pct_median_personal_income": 68.34625174,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1993,
+        "mortgage_rate_pct": 7.31461538,
+        "median_new_house_price_usd": 126500.0,
+        "median_personal_income_usd": 15430.0,
+        "annual_interest_only_burden_usd": 9252.98846154,
+        "housing_interest_burden_pct_median_personal_income": 59.96752081,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1994,
+        "mortgage_rate_pct": 8.38076923,
+        "median_new_house_price_usd": 130425.0,
+        "median_personal_income_usd": 15940.0,
+        "annual_interest_only_burden_usd": 10930.61826923,
+        "housing_interest_burden_pct_median_personal_income": 68.57351486,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1995,
+        "mortgage_rate_pct": 7.93461538,
+        "median_new_house_price_usd": 133475.0,
+        "median_personal_income_usd": 16780.0,
+        "annual_interest_only_burden_usd": 10590.72788462,
+        "housing_interest_burden_pct_median_personal_income": 63.11518406,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1996,
+        "mortgage_rate_pct": 7.80615385,
+        "median_new_house_price_usd": 140250.0,
+        "median_personal_income_usd": 17590.0,
+        "annual_interest_only_burden_usd": 10948.13076923,
+        "housing_interest_burden_pct_median_personal_income": 62.24065247,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1997,
+        "mortgage_rate_pct": 7.59884615,
+        "median_new_house_price_usd": 145000.0,
+        "median_personal_income_usd": 18760.0,
+        "annual_interest_only_burden_usd": 11018.32692308,
+        "housing_interest_burden_pct_median_personal_income": 58.73308594,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1998,
+        "mortgage_rate_pct": 6.94264151,
+        "median_new_house_price_usd": 151925.0,
+        "median_personal_income_usd": 19950.0,
+        "annual_interest_only_burden_usd": 10547.60811321,
+        "housing_interest_burden_pct_median_personal_income": 52.87021611,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 1999,
+        "mortgage_rate_pct": 7.44,
+        "median_new_house_price_usd": 160125.0,
+        "median_personal_income_usd": 20580.0,
+        "annual_interest_only_burden_usd": 11913.3,
+        "housing_interest_burden_pct_median_personal_income": 57.8877551,
+        "income_status": "Census annual actual"
+      },
       {
         "year": 2000,
         "mortgage_rate_pct": 8.05346154,
@@ -15240,7 +15748,15 @@
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
         "median_household_incomes_required": 0.74317449,
-        "pct_of_one_median_household_income": 74.31744894
+        "pct_of_one_median_household_income": 74.31744894,
+        "cost_usd_2006": 28752.0,
+        "median_household_income_usd_2006": 48200.0,
+        "median_household_incomes_required_2006": 0.59651452,
+        "affordability_change_since_2006_pct": 24.58615189,
+        "cost_usd_1976": 4100.0,
+        "median_household_income_usd_1976": 12690.0,
+        "median_household_incomes_required_1976": 0.32308905,
+        "affordability_change_since_1976_pct": 130.02156758
       },
       {
         "item": "Penn undergraduate tuition",
@@ -15250,27 +15766,51 @@
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
         "median_household_incomes_required": 0.7843067,
-        "pct_of_one_median_household_income": 78.43067001
+        "pct_of_one_median_household_income": 78.43067001,
+        "cost_usd_2006": 29252.0,
+        "median_household_income_usd_2006": 48200.0,
+        "median_household_incomes_required_2006": 0.60688797,
+        "affordability_change_since_2006_pct": 29.23418209,
+        "cost_usd_1976": 3755.0,
+        "median_household_income_usd_1976": 12690.0,
+        "median_household_incomes_required_1976": 0.29590229,
+        "affordability_change_since_1976_pct": 165.05597934
       },
       {
         "item": "One troy-ounce gold bar",
-        "cost_usd": 4134.20019531,
+        "cost_usd": 4133.60009766,
         "cost_year": 2026,
         "definition": "front_month_gold_futures_proxy",
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
-        "median_household_incomes_required": 0.04937538,
-        "pct_of_one_median_household_income": 4.93753756
+        "median_household_incomes_required": 0.04936821,
+        "pct_of_one_median_household_income": 4.93682085,
+        "cost_usd_2006": 605.83,
+        "median_household_income_usd_2006": 48200.0,
+        "median_household_incomes_required_2006": 0.01256909,
+        "affordability_change_since_2006_pct": 292.77481301,
+        "cost_usd_1976": 125.32,
+        "median_household_income_usd_1976": 12690.0,
+        "median_household_incomes_required_1976": 0.00987549,
+        "affordability_change_since_1976_pct": 399.90629258
       },
       {
         "item": "One barrel of WTI crude oil",
-        "cost_usd": 75.29000092,
+        "cost_usd": 75.36000061,
         "cost_year": 2026,
         "definition": "front_month_wti_futures_proxy",
         "median_household_income_usd": 83730.0,
         "income_year": 2024,
-        "median_household_incomes_required": 0.0008992,
-        "pct_of_one_median_household_income": 0.08991998
+        "median_household_incomes_required": 0.00090004,
+        "pct_of_one_median_household_income": 0.09000358,
+        "cost_usd_2006": 63.16,
+        "median_household_income_usd_2006": 48200.0,
+        "median_household_incomes_required_2006": 0.00131037,
+        "affordability_change_since_2006_pct": -31.31455457,
+        "cost_usd_1976": 8.19,
+        "median_household_income_usd_1976": 12690.0,
+        "median_household_incomes_required_1976": 0.00064539,
+        "affordability_change_since_1976_pct": 39.45610218
       }
     ],
     "native_completed_fertility": [
@@ -15313,29 +15853,149 @@
     ],
     "life_expectancy": [
       {
+        "year": 1976,
+        "life_expectancy_years": 72.85609756,
+        "five_year_change_years": null
+      },
+      {
+        "year": 1977,
+        "life_expectancy_years": 73.25609756,
+        "five_year_change_years": null
+      },
+      {
+        "year": 1978,
+        "life_expectancy_years": 73.35609756,
+        "five_year_change_years": null
+      },
+      {
+        "year": 1979,
+        "life_expectancy_years": 73.80487805,
+        "five_year_change_years": null
+      },
+      {
+        "year": 1980,
+        "life_expectancy_years": 73.6097561,
+        "five_year_change_years": null
+      },
+      {
+        "year": 1981,
+        "life_expectancy_years": 74.0097561,
+        "five_year_change_years": 1.15365854
+      },
+      {
+        "year": 1982,
+        "life_expectancy_years": 74.36097561,
+        "five_year_change_years": 1.10487805
+      },
+      {
+        "year": 1983,
+        "life_expectancy_years": 74.46341463,
+        "five_year_change_years": 1.10731707
+      },
+      {
+        "year": 1984,
+        "life_expectancy_years": 74.56341463,
+        "five_year_change_years": 0.75853659
+      },
+      {
+        "year": 1985,
+        "life_expectancy_years": 74.56341463,
+        "five_year_change_years": 0.95365854
+      },
+      {
+        "year": 1986,
+        "life_expectancy_years": 74.61463415,
+        "five_year_change_years": 0.60487805
+      },
+      {
+        "year": 1987,
+        "life_expectancy_years": 74.76585366,
+        "five_year_change_years": 0.40487805
+      },
+      {
+        "year": 1988,
+        "life_expectancy_years": 74.76585366,
+        "five_year_change_years": 0.30243902
+      },
+      {
+        "year": 1989,
+        "life_expectancy_years": 75.01707317,
+        "five_year_change_years": 0.45365854
+      },
+      {
+        "year": 1990,
+        "life_expectancy_years": 75.21463415,
+        "five_year_change_years": 0.65121951
+      },
+      {
+        "year": 1991,
+        "life_expectancy_years": 75.36585366,
+        "five_year_change_years": 0.75121951
+      },
+      {
+        "year": 1992,
+        "life_expectancy_years": 75.61707317,
+        "five_year_change_years": 0.85121951
+      },
+      {
+        "year": 1993,
+        "life_expectancy_years": 75.4195122,
+        "five_year_change_years": 0.65365854
+      },
+      {
+        "year": 1994,
+        "life_expectancy_years": 75.6195122,
+        "five_year_change_years": 0.60243902
+      },
+      {
+        "year": 1995,
+        "life_expectancy_years": 75.62195122,
+        "five_year_change_years": 0.40731707
+      },
+      {
+        "year": 1996,
+        "life_expectancy_years": 76.02682927,
+        "five_year_change_years": 0.66097561
+      },
+      {
+        "year": 1997,
+        "life_expectancy_years": 76.42926829,
+        "five_year_change_years": 0.81219512
+      },
+      {
+        "year": 1998,
+        "life_expectancy_years": 76.5804878,
+        "five_year_change_years": 1.16097561
+      },
+      {
+        "year": 1999,
+        "life_expectancy_years": 76.58292683,
+        "five_year_change_years": 0.96341463
+      },
+      {
         "year": 2000,
         "life_expectancy_years": 76.63658537,
-        "five_year_change_years": null
+        "five_year_change_years": 1.01463415
       },
       {
         "year": 2001,
         "life_expectancy_years": 76.83658537,
-        "five_year_change_years": null
+        "five_year_change_years": 0.8097561
       },
       {
         "year": 2002,
         "life_expectancy_years": 76.93658537,
-        "five_year_change_years": null
+        "five_year_change_years": 0.50731707
       },
       {
         "year": 2003,
         "life_expectancy_years": 77.03658537,
-        "five_year_change_years": null
+        "five_year_change_years": 0.45609756
       },
       {
         "year": 2004,
         "life_expectancy_years": 77.48780488,
-        "five_year_change_years": null
+        "five_year_change_years": 0.90487805
       },
       {
         "year": 2005,
@@ -15610,88 +16270,109 @@
     ],
     "obesity": [
       {
+        "survey_period": "1960\u20131962",
+        "adult_obesity_pct": 13.4,
+        "year": 1960,
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -66.7768595
+      },
+      {
+        "survey_period": "1971\u20131974",
+        "adult_obesity_pct": 14.5,
+        "year": 1971,
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -64.04958678
+      },
+      {
+        "survey_period": "1976\u20131980",
+        "adult_obesity_pct": 15.0,
+        "year": 1976,
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -62.80991736
+      },
+      {
         "survey_period": "1988\u20131994",
-        "adult_obesity_pct": 22.9,
+        "adult_obesity_pct": 23.2,
         "year": 1988,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -42.60651629
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -42.47933884
       },
       {
         "survey_period": "1999\u20132000",
-        "adult_obesity_pct": 30.5,
+        "adult_obesity_pct": 30.9,
         "year": 1999,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -23.55889724
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -23.38842975
       },
       {
         "survey_period": "2001\u20132002",
-        "adult_obesity_pct": 30.5,
+        "adult_obesity_pct": 31.2,
         "year": 2001,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -23.55889724
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -22.6446281
       },
       {
         "survey_period": "2003\u20132004",
-        "adult_obesity_pct": 32.2,
+        "adult_obesity_pct": 32.9,
         "year": 2003,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -19.29824561
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -18.42975207
       },
       {
         "survey_period": "2005\u20132006",
-        "adult_obesity_pct": 34.3,
+        "adult_obesity_pct": 35.1,
         "year": 2005,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -14.03508772
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -12.97520661
       },
       {
         "survey_period": "2007\u20132008",
-        "adult_obesity_pct": 33.7,
+        "adult_obesity_pct": 34.3,
         "year": 2007,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -15.53884712
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -14.95867769
       },
       {
         "survey_period": "2009\u20132010",
-        "adult_obesity_pct": 35.7,
+        "adult_obesity_pct": 36.1,
         "year": 2009,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -10.52631579
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -10.49586777
       },
       {
         "survey_period": "2011\u20132012",
-        "adult_obesity_pct": 34.9,
+        "adult_obesity_pct": 35.3,
         "year": 2011,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -12.53132832
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -12.47933884
       },
       {
         "survey_period": "2013\u20132014",
-        "adult_obesity_pct": 37.7,
+        "adult_obesity_pct": 38.2,
         "year": 2013,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -5.51378446
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -5.2892562
       },
       {
         "survey_period": "2015\u20132016",
-        "adult_obesity_pct": 39.6,
+        "adult_obesity_pct": 40.0,
         "year": 2015,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": -0.7518797
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": -0.82644628
       },
       {
         "survey_period": "2017\u20132018",
-        "adult_obesity_pct": 42.4,
+        "adult_obesity_pct": 42.8,
         "year": 2017,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": 6.26566416
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": 6.11570248
       },
       {
         "survey_period": "August 2021\u2013August 2023",
-        "adult_obesity_pct": 40.3,
+        "adult_obesity_pct": 40.8,
         "year": 2021,
-        "prior_decade_cycle_average_pct": 39.9,
-        "pct_vs_prior_decade_cycle_average": 1.00250627
+        "prior_decade_cycle_average_pct": 40.33333333,
+        "pct_vs_prior_decade_cycle_average": 1.15702479
       }
     ]
   },
@@ -16653,6 +17334,30 @@
     {
       "name": "Penn 2026\u201327 undergraduate tuition",
       "url": "https://srfs.upenn.edu/costs-budgeting/undergraduate-tuition-and-fees"
+    },
+    {
+      "name": "Harvard historical tuition and 2006 Fact Book",
+      "url": "https://oira.harvard.edu/files/2023/02/harvard_fact_book_2006-2007.pdf"
+    },
+    {
+      "name": "1976 Harvard tuition contemporaneous record",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1976-pt14/pdf/GPO-CRECB-1976-pt14-6-3.pdf"
+    },
+    {
+      "name": "Penn historical tuition",
+      "url": "https://archives.upenn.edu/exhibits/penn-history/tuition/tuition-1970-1979/"
+    },
+    {
+      "name": "Census 1976 median household income",
+      "url": "https://www.census.gov/library/publications/1978/demo/p60-109.html"
+    },
+    {
+      "name": "USGS historical gold prices",
+      "url": "https://pubs.usgs.gov/sir/2012/5188/sir2012-5188.pdf"
+    },
+    {
+      "name": "EIA historical crude-oil first-purchase prices",
+      "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?f=a&n=pet&s=f000000__3"
     },
     {
       "name": "IRS historical federal corporation tax rates",

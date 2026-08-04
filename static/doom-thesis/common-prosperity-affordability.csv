@@ -1,5 +1,5 @@
-item,cost_usd,cost_year,definition,median_household_income_usd,income_year,median_household_incomes_required,pct_of_one_median_household_income
-Harvard undergraduate tuition,62226.0,2026,tuition_only,83730.0,2024,0.7431744894303117,74.31744894303117
-Penn undergraduate tuition,65670.0,2026,tuition_only,83730.0,2024,0.7843067001074884,78.43067001074884
-One troy-ounce gold bar,4134.2001953125,2026,front_month_gold_futures_proxy,83730.0,2024,0.0493753755561029,4.937537555610295
-One barrel of WTI crude oil,75.29000091552734,2026,front_month_wti_futures_proxy,83730.0,2024,0.0008991998198438,0.0899199819843871
+item,cost_usd,cost_year,definition,median_household_income_usd,income_year,median_household_incomes_required,pct_of_one_median_household_income,cost_usd_2006,median_household_income_usd_2006,median_household_incomes_required_2006,affordability_change_since_2006_pct,cost_usd_1976,median_household_income_usd_1976,median_household_incomes_required_1976,affordability_change_since_1976_pct
+Harvard undergraduate tuition,62226.0,2026,tuition_only,83730.0,2024,0.7431744894303117,74.31744894303117,28752.0,48200.0,0.5965145228215768,24.586151886967933,4100.0,12690.0,0.3230890464933018,130.02156758221108
+Penn undergraduate tuition,65670.0,2026,tuition_only,83730.0,2024,0.7843067001074884,78.43067001074884,29252.0,48200.0,0.6068879668049793,29.23418209073205,3755.0,12690.0,0.2959022852639874,165.0559793439155
+One troy-ounce gold bar,4133.60009765625,2026,front_month_gold_futures_proxy,83730.0,2024,0.0493682084994177,4.936820849941777,605.83,48200.0,0.0125690871369294,292.77481301222065,125.32,12690.0,0.0098754925137903,399.906292577092
+One barrel of WTI crude oil,75.36000061035156,2026,front_month_wti_futures_proxy,83730.0,2024,0.0009000358367413,0.090003583674133,63.16,48200.0,0.0013103734439834,-31.314554574205022,8.19,12690.0,0.0006453900709219,39.456102176403895

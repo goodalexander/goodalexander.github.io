@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-04T20:32:18.996125+00:00
+Generated: 2026-08-04T21:01:02.627009+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -78,10 +78,10 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - Current aggregate operating-company FCF margin: 8.7%, reconstructed from four rolling reported quarters through 2026-08-02.
 - Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of 2.0% (6.4% nominal), FCF margin of 7.9%, and operating-cash-flow margin of 14.3% as of 2026-08-04. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.
 - Latest nonfarm-business productivity: 0.3% quarter-over-quarter annualized and 2.8% year-over-year in Q1 2026.
-- Common Prosperity housing burden: the requested mortgage-rate × median-new-house-price measure equals 55.9% of nowcast median personal income, 85% above 2021 but 11% below 2000 because mortgage rates were also high then.
-- A median full-time work hour buys 5.01 Big Macs, 22% fewer than in 2000 under a 40-hour-week conversion.
+- Common Prosperity housing burden: the requested mortgage-rate × median-new-house-price measure equals 55.9% of nowcast median personal income, -8% since 2006 and -15% since 1976.
+- A median full-time work hour buys 5.01 Big Macs, -17% since 2006; the source series begins in 2000, so no 1976 value is asserted.
 - NVDA market capitalization is 135% of the summed market capitalization of matched current IWM constituents; Sharadar covers 98.6% of IWM equity weight.
-- Social outcomes: life expectancy changed +0.1 years over five years; native-born women ages 40–50 report 1.916 completed births; the 2024 suicide rate was 13.7 per 100,000 (-0.3% versus its prior ten-year average); measured adult obesity was 40.3% (+1.0% versus the prior-decade NHANES-cycle average).
+- Social outcomes: life expectancy changed +1.2 years since 2006 and +6.0 years since 1976; native-born women ages 40–50 report 1.916 completed births; the 2024 suicide rate was 13.7 per 100,000 (+24.5% since 2006); measured obesity among adults ages 20–74 was 40.8% (+25.8 percentage points since the 1976–1980 survey).
 - Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
 - Debt comparison: gross federal debt was 114.1% of GDP in 1945, fell to 53.6% in 1960, and stood at 121.5% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
 
@@ -155,6 +155,12 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - CDC 2024 life expectancy: https://www.cdc.gov/nchs/products/databriefs/db548.htm
 - Harvard 2026–27 undergraduate tuition: https://college.harvard.edu/financial-aid/how-aid-works
 - Penn 2026–27 undergraduate tuition: https://srfs.upenn.edu/costs-budgeting/undergraduate-tuition-and-fees
+- Harvard historical tuition and 2006 Fact Book: https://oira.harvard.edu/files/2023/02/harvard_fact_book_2006-2007.pdf
+- 1976 Harvard tuition contemporaneous record: https://www.govinfo.gov/content/pkg/GPO-CRECB-1976-pt14/pdf/GPO-CRECB-1976-pt14-6-3.pdf
+- Penn historical tuition: https://archives.upenn.edu/exhibits/penn-history/tuition/tuition-1970-1979/
+- Census 1976 median household income: https://www.census.gov/library/publications/1978/demo/p60-109.html
+- USGS historical gold prices: https://pubs.usgs.gov/sir/2012/5188/sir2012-5188.pdf
+- EIA historical crude-oil first-purchase prices: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?f=a&n=pet&s=f000000__3
 - IRS historical federal corporation tax rates: https://www.irs.gov/statistics/soi-tax-stats-historical-table-24
 - CBO Budget and Economic Outlook: 2026 to 2036: https://www.cbo.gov/publication/62105
 - IMF World Economic Outlook Update, July 2026: https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026

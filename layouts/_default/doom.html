@@ -659,34 +659,45 @@
       <div>
         <span>House-price interest burden</span>
         <strong data-field="common-housing-burden">—</strong>
-        <small>Mortgage rate × median new-house price / median personal income; <b data-field="common-housing-change-2021">—</b> since 2021</small>
+        <small>Mortgage rate × median new-house price / median personal income; <b data-field="common-housing-change-2006">—</b> since 2006 · <b data-field="common-housing-change-1976">—</b> since 1976</small>
       </div>
       <div>
         <span>Big Macs / median work hour</span>
         <strong data-field="common-big-macs-hour">—</strong>
-        <small><b data-field="common-big-mac-change">—</b> since 2000; weekly earnings divided by 40 hours</small>
+        <small><b data-field="common-big-mac-change-2006">—</b> since 2006 · 1976 n/a because the price series begins in 2000</small>
       </div>
       <div>
         <span>NVDA / Russell 2000 market cap</span>
         <strong data-field="common-nvda-russell-ratio">—</strong>
-        <small>Current IWM constituents joined to Sharadar; <b data-field="common-iwm-coverage">—</b> of IWM equity weight matched</small>
+        <small>Current IWM constituents joined to Sharadar; <b data-field="common-iwm-coverage">—</b> matched. No valid 2006 or 1976 point-in-time constituent comparison.</small>
       </div>
       <div>
         <span>Life expectancy, five-year change</span>
         <strong data-field="common-life-change">—</strong>
-        <small><span data-field="common-life-year">—</span> versus five years earlier</small>
+        <small><b data-field="common-life-change-2006">—</b> since 2006 · <b data-field="common-life-change-1976">—</b> since 1976</small>
       </div>
+    </div>
+
+    <div class="doom-panel doom-table-panel doom-common-window-panel">
+      <div class="doom-panel-head"><div><span class="doom-panel-label">Two fixed historical anchors</span><h3>What changed since 2006 and since 1976?</h3><p>Every indicator uses the same requested windows when its definition and source permit it. Missing history stays visibly unavailable.</p></div></div>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense doom-common-window-table">
+          <thead><tr><th>Indicator</th><th>Current</th><th>Since 2006</th><th>Since 1976</th></tr></thead>
+          <tbody id="common-window-table"></tbody>
+        </table>
+      </div>
+      <p class="doom-note doom-chart-note">For periodic surveys, the named survey cycle spanning the anchor is used. No interpolation, retrospective IWM-membership substitution, or silent change in population definition is permitted.</p>
     </div>
 
     <div class="doom-chart-grid doom-common-prosperity-charts">
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
-          <span class="doom-panel-label">2000–2026 · current income is a nowcast</span>
+          <span class="doom-panel-label">1976–2026 · current income is a nowcast</span>
           <h3>The interest-only cost of the median new house</h3>
           <p>Thirty-year mortgage rate × median new-house price, divided by median personal income</p>
         </figcaption>
-        <svg id="common-housing-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual interest-only housing burden as a percent of median personal income from 2000 through 2026"></svg>
-        <p class="doom-note doom-chart-note">This deliberately follows the requested formula. It is not a mortgage payment or a conventional affordability index: it assumes interest on 100% of the purchase price, omits principal, down payment, taxes, insurance, and existing-home mix. The 2026 income denominator scales the latest 2024 Census median personal income by BLS median nominal weekly-earnings growth.</p>
+        <svg id="common-housing-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual interest-only housing burden as a percent of median personal income from 1976 through 2026"></svg>
+        <p class="doom-note doom-chart-note">This deliberately follows the requested formula. It is not a mortgage payment or a conventional affordability index: it assumes interest on 100% of the purchase price, omits principal, down payment, taxes, insurance, and existing-home mix. The long-window comparisons are negative because mortgage rates were far higher at both anchors; the same measure is <strong data-field="common-housing-change-2021">—</strong> since 2021. The 2026 income denominator scales the latest 2024 Census median personal income by BLS median nominal weekly-earnings growth.</p>
       </figure>
       <figure class="doom-panel doom-chart-panel">
         <figcaption>
@@ -725,34 +736,34 @@
       <div>
         <span>Native-born completed fertility</span>
         <strong data-field="common-native-fertility">—</strong>
-        <small>Children per native-born woman age 40–50; <b data-field="common-native-fertility-change">—</b> since 2014. National 2024 TFR: <span data-field="common-national-tfr">—</span></small>
+        <small>Children per native-born woman age 40–50; comparable series begins 2014. National 2024 TFR: <span data-field="common-national-tfr">—</span></small>
       </div>
       <div>
         <span>Suicide rate / prior 10y average</span>
         <strong data-field="common-suicide-vs-average">—</strong>
-        <small><span data-field="common-suicide-rate">—</span> per 100,000 in 2024; <b data-field="common-suicide-since-2001">—</b> since 2001</small>
+        <small><span data-field="common-suicide-rate">—</span> per 100,000 in 2024; <b data-field="common-suicide-since-2006">—</b> since 2006 · published trend begins 2001</small>
       </div>
       <div>
-        <span>Adult obesity / prior-decade cycles</span>
+        <span>Adult obesity, ages 20–74</span>
         <strong data-field="common-obesity-vs-average">—</strong>
-        <small><span data-field="common-obesity-rate">—</span> measured prevalence, August 2021–August 2023</small>
+        <small><span data-field="common-obesity-rate">—</span> measured prevalence; <b data-field="common-obesity-since-2006">—</b> since 2005–06 · <b data-field="common-obesity-since-1976">—</b> since 1976–80</small>
       </div>
       <div>
         <span>Life expectancy</span>
         <strong data-field="common-life-level">—</strong>
-        <small>Years in 2024; the pandemic decline has been recovered</small>
+        <small><b data-field="common-life-level-change-2006">—</b> since 2006 · <b data-field="common-life-level-change-1976">—</b> since 1976</small>
       </div>
     </div>
 
     <figure class="doom-panel doom-chart-panel doom-productivity-main-chart">
       <figcaption>
-        <span class="doom-panel-label">Each series’ first observation = 100</span>
+        <span class="doom-panel-label">1976 = 100 where available; otherwise first observation = 100</span>
         <h3>Health and family-formation trajectories</h3>
         <p>Life expectancy, suicide, measured adult obesity, and completed fertility among native-born women</p>
       </figcaption>
       <div class="doom-legend" aria-hidden="true"><span style="--swatch:#62c6ae">Life expectancy</span><span style="--swatch:#eb735f">Suicide rate</span><span style="--swatch:#d7a94b">Adult obesity</span><span style="--swatch:#8b78d1">Native completed fertility</span></div>
       <svg id="common-social-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Indexed life expectancy, suicide rate, adult obesity, and native-born completed fertility histories"></svg>
-      <p class="doom-note doom-chart-note">Baselines differ because the official series differ: life expectancy starts in 2000, suicide in 2001, obesity in 1999–2000, and the comparable CPS native-born completed-fertility series in 2014. Birth certificates do not identify U.S.-born or citizen mothers. The CPS measure therefore answers the nativity question directly but is lagging: it records completed births among native-born women ages 40–50, not the current-year birth rate.</p>
+      <p class="doom-note doom-chart-note">Life expectancy and the comparable ages-20–74 obesity series use 1976 baselines. The CDC suicide dashboard begins in 2001, and the comparable CPS native-born completed-fertility series begins in 2014, so those series use their first observations. Birth certificates do not identify U.S.-born or citizen mothers. The CPS measure answers the nativity question directly but is lagging: it records completed births among native-born women ages 40–50, not the current-year birth rate.</p>
     </figure>
 
     <div class="doom-common-downloads">
