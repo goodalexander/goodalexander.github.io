@@ -1,0 +1,41 @@
+{
+  "admissibility_rule": "A direct-package contract must specify U.S. federal enactment, a deadline before fiscal stress is realized, and a recurring budget effect large enough to map to the prudent-course adjustment.",
+  "api_subsystem_status": "complete",
+  "as_of_date": "2026-08-04",
+  "best_live_fiscal_outcome_market": {
+    "close_time": "2026-10-20T12:29:00Z",
+    "market_id": "KXDEFGDP-26OCT20-T5",
+    "midpoint_probability_pct": 10.0,
+    "open_interest_contracts": 19531.5,
+    "platform": "Kalshi",
+    "title": "Will U.S. federal deficit-to-GDP for FY2026 be below 5%?",
+    "url": "https://kalshi.com/markets/kxdefgdp-26oct20",
+    "volume_contracts": 65969.53,
+    "why_not_direct": "One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.",
+    "yes_ask_pct": 10.999999999999998,
+    "yes_bid_pct": 9.0
+  },
+  "candidate_count": 96,
+  "critical_caveats": [
+    "Kalshi volume_fp is contract volume, not USD; the normalized data preserves that unit.",
+    "Polymarket volume is USD-denominated; executable bid/ask comes from the public CLOB book when available.",
+    "Adjacent outcome markets do not identify passage probability and receive zero direct score weight."
+  ],
+  "direct_adjustment_passage_probability_pct": null,
+  "direct_package_market_status": "no_direct_contract_use_modeled_probability",
+  "generated_at": "2026-08-04T16:48:41.550277+00:00",
+  "interpretation": "The API and order-book subsystem is complete. Market candidates are corroborating features; when no contract directly maps to the prudent package, the scored passage probability comes from the separately disclosed empirical enactment model rather than remaining missing.",
+  "live_candidate_count": 5,
+  "platform_counts": {
+    "Kalshi": 2,
+    "Polymarket": 94
+  },
+  "raw_request_manifest": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T164837.622259+0000/request_manifest.json",
+  "sources": {
+    "kalshi_api_docs": "https://docs.kalshi.com/getting_started/quick_start_market_data",
+    "kalshi_public_api": "https://external-api.kalshi.com/trade-api/v2/markets",
+    "polymarket_api_docs": "https://docs.polymarket.com/api-reference/introduction",
+    "polymarket_clob": "https://clob.polymarket.com/book",
+    "polymarket_gamma_search": "https://gamma-api.polymarket.com/public-search"
+  }
+}

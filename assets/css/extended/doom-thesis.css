@@ -273,6 +273,7 @@
 .doom-index-status-missing { border-color: rgba(235,115,95,.35); color: var(--doom-red); }
 .doom-index-status-conceptual { border-color: rgba(139,120,209,.4); color: var(--doom-violet); }
 .doom-index-status-current { border-color: rgba(98,198,174,.35); color: var(--doom-green); }
+.doom-index-status-modeled { border-color: rgba(215,169,75,.45); color: var(--doom-amber); }
 .doom-index-status-stale { border-color: rgba(215,169,75,.35); color: var(--doom-amber); }
 .doom-index-expand { color: var(--doom-amber); font: 300 1.5rem/1 sans-serif; transition: transform .2s ease; }
 .doom-index-component[open] > summary .doom-index-expand { transform: rotate(45deg); }

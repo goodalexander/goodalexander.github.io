@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-04T15:01:45.764382+00:00
+Generated: 2026-08-04T16:50:49.429654+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -12,10 +12,10 @@ This is what it would take to right-size the fiscal and monetary situation in th
 
 ## Doom Index research status
 
-- Current research evidence score: 67.8/100 at 90.8% weighted input coverage.
-- Missing-input sensitivity: 62.0–71.2.
+- Current research evidence score: 69.4/100 at 100.0% weighted input coverage.
+- Missing-input sensitivity: 69.4–69.4.
 - This is a fixed-threshold evidence score, not a calibrated regime probability or an investable signal.
-- Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.
+- Publication gate: 100% of weighted inputs must be current or explicitly modeled and reproducible; modeled inputs retain visible sensitivity, and historical calibration remains a separate strategy gate.
 - Portfolio rule: exit Doom-linked positions below 20.
 - Productivity override: the current research estimate is 2.5% that U.S. productivity averages at least 5% for five years, versus a 50% trigger. The estimate is reproducible but not calibrated for live execution.
 - Framework JSON: https://goodalexander.com/doom-thesis/doom-index-framework.json

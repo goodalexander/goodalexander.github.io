@@ -2,7 +2,7 @@
   "version": "0.7.0",
   "score_type": "research_evidence_score",
   "calibration": "fixed economic thresholds; not a regime probability",
-  "missing_rule": "Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
+  "missing_rule": "Current observations and explicitly modeled inputs receive a score; modeled inputs retain a visible quality flag and sensitivity. Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
   "components": [
     {
       "id": "fiscal-constraint",
@@ -68,7 +68,7 @@
         {"id": "required_adjustment_pct_gdp", "label": "Required recurring adjustment / GDP", "weight": 25, "unit": "%", "low": 1, "high": 10, "direction": "increasing", "frequency": "CBO/Trustees vintage", "source": "Doom fiscal sustainability model"},
         {"id": "required_receipts_increase_pct", "label": "Tax-only increase over current receipts", "weight": 25, "unit": "%", "low": 5, "high": 50, "direction": "increasing", "frequency": "CBO/Trustees vintage", "source": "Doom fiscal sustainability model"},
         {"id": "projected_deficit_above_target_pct_gdp", "label": "2036 projected deficit above prudent target", "weight": 25, "unit": "percentage points", "low": 0, "high": 5, "direction": "increasing", "frequency": "CBO vintage", "source": "CBO Budget and Economic Outlook"},
-        {"id": "direct_adjustment_passage_probability_pct", "label": "Probability of timely sufficient fiscal package", "weight": 25, "unit": "%", "low": 0, "high": 100, "direction": "decreasing", "frequency": "weekly", "source": "Admissible prediction markets/polling model; currently missing"},
+        {"id": "direct_adjustment_passage_probability_pct", "label": "Modeled probability of timely sufficient fiscal package", "weight": 25, "unit": "%", "low": 0, "high": 100, "direction": "decreasing", "frequency": "monthly and event-driven", "source": "Disclosed US enactment / IMF adjustment-scale / Gallup acceptance model; prediction markets are diagnostic"},
         {"id": "largest_recent_enacted_adjustment_pct_gdp", "label": "Largest recent enacted annualized adjustment / GDP", "weight": 0, "unit": "%", "low": 1, "high": 8.3314, "direction": "decreasing", "frequency": "event-driven", "source": "CBO ex-ante scores for selected major enactments since 2011; diagnostic only"},
         {"id": "support_entitlement_cost_changes_pct", "label": "Support for significant Social Security/Medicare cost changes", "weight": 0, "unit": "%", "low": 25, "high": 75, "direction": "decreasing", "frequency": "poll vintage", "source": "Gallup Federal Budget Deficit historical trend; diagnostic only"}
         ,{"id": "market_probability_deficit_below_5_pct_fy2026", "label": "Market probability FY2026 deficit/GDP is below 5%", "weight": 0, "unit": "% probability", "low": 0, "high": 100, "direction": "decreasing", "frequency": "daily snapshot", "source": "Kalshi KXDEFGDP public API; one-year fiscal-outcome diagnostic, not package-passage probability"}
@@ -82,7 +82,7 @@
         {"id": "ten_year_breakeven_pct", "label": "10-year breakeven inflation", "weight": 15, "unit": "%", "low": 2.25, "high": 3.5, "direction": "increasing", "frequency": "daily", "source": "FRED T10YIE"},
         {"id": "five_year_five_year_forward_inflation_pct", "label": "5y5y forward inflation", "weight": 15, "unit": "%", "low": 2.25, "high": 3.25, "direction": "increasing", "frequency": "daily", "source": "FRED T5YIFR"},
         {"id": "ten_year_real_yield_pct", "label": "10-year real yield", "weight": 15, "unit": "%", "low": -1, "high": 2.5, "direction": "decreasing", "frequency": "daily", "source": "FRED DFII10"},
-        {"id": "ten_year_term_premium_pct", "label": "10-year term premium", "weight": 15, "unit": "%", "low": 0, "high": 2, "direction": "increasing", "frequency": "daily", "source": "FRED THREEFYTP10"},
+        {"id": "ten_year_term_premium_pct", "label": "10-year term premium", "weight": 15, "unit": "%", "low": 0, "high": 2, "direction": "increasing", "frequency": "daily estimate with publication lag", "source": "FRED THREEFYTP10"},
         {"id": "fed_assets_pct_gdp", "label": "Federal Reserve assets / GDP", "weight": 15, "unit": "%", "low": 15, "high": 35, "direction": "increasing", "frequency": "weekly/quarterly", "source": "FRED WALCL and GDP"},
         {"id": "m2_pct_gdp", "label": "M2 / GDP", "weight": 15, "unit": "%", "low": 60, "high": 100, "direction": "increasing", "frequency": "monthly/quarterly", "source": "FRED M2SL and GDP"},
         {"id": "move_index", "label": "Treasury rate volatility", "weight": 10, "unit": "index", "low": 70, "high": 180, "direction": "increasing", "frequency": "daily", "source": "Bloomberg MOVE Index"},

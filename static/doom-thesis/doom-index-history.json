@@ -1,11 +1,11 @@
 {
   "version": "0.7.0",
-  "generated_at": "2026-08-04T15:01:45.100603+00:00",
+  "generated_at": "2026-08-04T16:50:47.709823+00:00",
   "status": "coverage_gated_research_evidence_history_not_probability",
-  "minimum_publication_coverage_pct": 80.0,
+  "minimum_publication_coverage_pct": 100.0,
   "methodology": {
     "score": "Same fixed transforms and weights as the current research evidence score.",
-    "coverage": "A score is publication-comparable only when at least 80% of total input weight is observed.",
+    "coverage": "A score is publication-comparable only when 100% of weighted inputs are current or explicitly modeled.",
     "vintage_warning": "FRED/BLS macro history is current-vintage; historical trading calibration requires ALFRED real-time vintages.",
     "basket_warning": "The 2026 distraction classifier membership is applied retrospectively and is not an implementable historical portfolio."
   },
@@ -233,12 +233,12 @@
     {
       "calendar_year": 2026,
       "as_of_date": "2026-08-04",
-      "research_score": 67.8231890576,
-      "diagnostic_score": 67.8231890576,
-      "coverage_pct": 90.75,
+      "research_score": 69.3702218802,
+      "diagnostic_score": 69.3702218802,
+      "coverage_pct": 100.0,
       "publication_comparable": true,
-      "missing_input_lower_bound": 61.9617491529,
-      "missing_input_upper_bound": 71.2117491529
+      "missing_input_lower_bound": 69.3702218802,
+      "missing_input_upper_bound": 69.3702218802
     }
   ]
 }

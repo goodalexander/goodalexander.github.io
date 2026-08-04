@@ -1,0 +1,1161 @@
+platform,event_id,market_id,title,status,close_time,yes_bid_pct,yes_ask_pct,yes_bid_size_contracts,yes_ask_size_contracts,no_bid_pct,no_ask_pct,midpoint_probability_pct,last_probability_pct,volume_native,volume_unit,liquidity_usd,open_interest_contracts,rules,mapping,admissible_for_direct_package_probability,rejection_reason,url
+Kalshi,KXDEFGDP-26OCT20,KXDEFGDP-26OCT20-T5,Will U.S. federal deficit-to-GDP for FY2026 be below 5%?,open,2026-10-20T12:29:00Z,9.0,10.999999999999998,48.37,17.0,89.0,91.0,10.0,9.0,65969.53,contracts,0.0,19531.5,"If the U.S. federal budget deficit as a percentage of GDP for fiscal year 2026, as reported in the U.S. Treasury / Office of Management and Budget Joint Statement on Budget Results for Fiscal Year 2026, is below 5%, then the market resolves to Yes.",fiscal_outcome_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxdefgdp-26oct20
+Kalshi,KXSOCIALSECURITYDEPLETE-33,KXSOCIALSECURITYDEPLETE-33-33JAN01,"Will it be reported by any of the Source Agencies that the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law before Jan 1, 2033?",open,2033-01-01T04:59:00Z,13.0,19.999999999999996,101.69,100.89,80.0,87.0,16.5,19.0,2162.76,contracts,0.0,83.8,"If the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law  after Issuance and before Jan 1, 2033, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsocialsecuritydeplete-33
+Polymarket,73226,665518,Will the U.S. national debt hit $40 trillion before 2027?,open,2026-12-31T00:00:00Z,97.7,99.6,10.0,35.8,,,98.65,98.0,5840.286935000001,USD,3027.82059,3566.862989,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+Polymarket,73226,665519,Will the U.S. national debt hit $41 trillion before 2027?,open,2026-12-31T00:00:00Z,24.0,51.0,42.41,70.55,,,37.5,26.0,641.542184,USD,544.1058,3566.862989,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+Polymarket,73226,665520,Will the U.S. national debt hit $42 trillion before 2027?,open,2026-12-31T00:00:00Z,1.7999999999999998,5.8999999999999995,10.0,35.0,,,3.8499999999999996,8.0,5284.423352,USD,4219.1545,3566.862989,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+Polymarket,378798,1981726,"Will Trump say ""Million"" or ""Billion"" or ""Trillion"" 15+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.5,6875.732334,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981727,"Will Trump say ""Tax"" 10+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,10462.715164999998,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981728,"Will Trump say ""Job"" 12+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.7000000000000001,18276.526137000004,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981729,"Will Trump say ""Percent"" 10+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.1,5574.863098,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981730,"Will Trump say ""Win"" or ""Won"" 3+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,98.7,2034.739402,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981731,"Will Trump say ""Biden"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,15367.821343999996,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981732,"Will Trump say ""Waitress"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,7700.518069999999,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981733,"Will Trump say ""Farmer"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,2407.1007820000004,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981734,"Will Trump say ""Favored Nation"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.1,8697.148115,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981735,"Will Trump say ""Made in America"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,4389.164584999999,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981736,"Will Trump say ""Deficit"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.2,3727.66646,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981737,"Will Trump say ""Hottest"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,16905.338975,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981738,"Will Trump say ""Dow"" or ""S&P"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,8243.925921,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981739,"Will Trump say ""Fed"" or ""Federal Reserve"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.1,5416.0947750000005,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981740,"Will Trump say ""Regulation"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.0,1212.8353689999997,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981741,"Will Trump say ""Great Big Beautiful Bill"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,32640.087543,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981742,"Will Trump say ""Women's sports"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,5136.475759000001,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981743,"Will Trump say ""Air force"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.1,10415.755275,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981744,"Will Trump say ""Russia"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.5,6882.526796,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981745,"Will Trump say ""Refund"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,4126.766124000001,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981746,"Will Trump say ""DoorDash"" or ""McDonald's"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,43944.55452599999,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981747,"Will Trump say ""Election"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,6.0,5368.826023,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981748,"Will Trump say ""Fake News"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,5499.828158,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981749,"Will Trump say ""Crypto"" or ""Bitcoin"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.1,41483.09095899999,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,1981750,Will Trump's remarks not air?,closed,2026-04-16T00:00:00Z,,0.1,,,,,0.0,0.4,10662.636762,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,2000929,"Will Trump say ""Trump Account"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.5,100.0,,,,,99.75,99.9,1138.1576650000002,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,378798,2000944,"Will Trump say ""Child"" or ""Childhood"" during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.9,4209.118660000001,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
+
+This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
+
+Plural and possessive forms of the listed term will count toward the resolution of this market regardless of context; however, other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g., joyful is not a compound word for ""joy,"" however, ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+This market is explicitly about the event titled ""The President participates in a Roundtable and Remarks on Tax Day"" scheduled for April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/). Speeches, events, or comments that occur outside of the named, scheduled event will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
+Polymarket,73226,665517,Will the U.S. national debt hit $39 trillion before 2027?,closed,2026-12-31T00:00:00Z,99.9,100.0,,,,,99.95,99.9,11766.252471000002,USD,7791.08089,3566.862989,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+Polymarket,18167,522523,Will DOGE balance the budget in 2025?,closed,2026-01-31T12:00:00Z,,0.1,,,,,0.0,3.6999999999999997,69874.57023,USD,0.0,0.0,"This market will resolve to ""Yes"" if the budget is balanced for the 2025 fiscal year, i.e. if revenue minus spending is 0 or greater. Otherwise, this market will resolve to ""No.""
+
+The resolution source will be the Federal Surplus/Deficit published by the U.S. Office of Management and Budget (OMB) here https://fred.stlouisfed.org/series/FYFSD.
+
+ This market will resolve according to the first data release from the OMB - any further updates won't be considered.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/will-doge-balance-the-budget-in-2025
+Polymarket,17823,521944,Will Elon and DOGE cut less than $50b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,99.9,376677.513767,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17823,521945,Will Elon and DOGE cut between $50-100b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,0.1,393958.815472,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17823,521946,Will Elon and DOGE cut between $100-150b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,0.1,323175.027969,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17823,521947,Will Elon and DOGE cut between $150-200b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,0.1,351348.203601,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17823,521948,Will Elon and DOGE cut between $200-250b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,0.1,460807.290343,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17823,521949,Will Elon and DOGE cut more than $250b in federal spending in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,0.1,749255.394903,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to the amount federal government current expenditures decrease by between the Q4 2024 report and the Q4 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the Q4 2024 value minus the Q4 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q4 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q4 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-much-spending-will-elon-and-doge-cut-in-2025
+Polymarket,17824,521963,Will Elon cut the budget by at least 10% in 2025?,closed,2026-02-28T12:00:00Z,,0.1,,,,,0.0,0.1,205099.809218,USD,,0.0,"In Q4 2024, government expenditures were $7,106,807,000,000 see (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by 10% or more between the Q4 2024 report and the Q4 2025 report. Otherwise, it will resolve to ""No"".
+
+Any 2025 quarterly report of $6,396,126,000,000 or less will qualify for a “Yes” resolution.
+
+Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/will-elon-cut-the-budget-by-at-least-10-in-2025
+Polymarket,17825,521964,Will Elon cut the budget by at least 5% in 2025?,closed,2026-02-28T12:00:00Z,,0.1,,,,,0.0,0.1,202621.311693,USD,,0.0,"In Q4 2024, government expenditures were $7,106,807,000,000 (see https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by 5% or more between the Q4 2024 report and the Q4 2025 report. Otherwise, it will resolve to ""No"".
+
+Any 2025 quarterly report of $6,751,467,000,000 or less will qualify for a “Yes” resolution.
+
+Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/will-elon-cut-the-budget-by-at-least-5-in-2025
+Polymarket,15924,516482,Will federal spending decrease by less than $250b between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,99.9,100.0,,,,,99.95,100.0,742914.19559,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by less than $250,000,000,000 between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,15924,516483,Will federal spending decrease by $250-500b between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,,0.1,,,,,0.0,100.0,198269.792919,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by between $250,000,000,000 (inclusive) and $500,000,000,000 (exclusive) between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,15924,516484,Will federal spending decrease by $500-750b between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,,0.1,,,,,0.0,100.0,160657.737791,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by between $500,000,000,000 (inclusive) and $750,000,000,000 (exclusive) between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,15924,516485,Will federal spending decrease by $750b-1t between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,,0.1,,,,,0.0,100.0,604875.384167,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by between $750,000,000,000 (inclusive) and $1,000,000,000,000 (exclusive) between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,15924,516486,Will federal spending decrease by $1-2t between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,,0.1,,,,,0.0,100.0,444793.271918,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by between $1,000,000,000,000 (inclusive) and $2,000,000,000,000 (inclusive) between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,15924,516487,Will federal spending decrease by more than $2t between Q4 2024 and Q2 2025?,closed,2025-06-30T12:00:00Z,,0.1,,,,,0.0,100.0,763420.273262,USD,,0.0,"This market will resolve based on federal government current expenditures as reported by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).
+
+This market will resolve to “Yes” if federal government current expenditures decrease by more than $2,000,000,000,000 between the Q4 2024 report and the Q2 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the Q4 2024 value minus the Q2 2025 value.
+
+The figures will be based on the initial Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The figures will be based on the Q4 2024 and Q2 2025 values as reported by the St. Louis Federal Reserve Bank as soon as the data for Q2 2025 becomes available, regardless of whether later revisions are made.
+
+This market's resolution source is the Federal Government: Current Expenditures chart maintained by the St. Louis Federal Reserve Bank, displayed here (https://fred.stlouisfed.org/series/FGEXPND).",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/federal-spending-elon-and-doge-cut-in-first-6-months
+Polymarket,17456,520751,Will fewer than 50k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,100.0,211908.007223,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520752,Will 50-100k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,99.9,100.0,,,,,99.95,100.0,69282.157173,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520753,Will 100-150k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,100.0,56860.455833,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520754,Will 150-200k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,100.0,181553.043208,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520755,Will 200-250k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,0.1,231743.895705,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520756,Will 250-300k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,0.1,310763.754488,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520757,Will 300-350k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,0.3,167874.666868,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520758,Will 350-400k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,0.5,484366.785875,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520759,Will 400-450k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,0.1,186089.168798,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520760,Will 450-500k federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,100.0,238294.25601,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17456,520761,Will 500k or more federal employees accept the buyout?,closed,2025-02-28T12:00:00Z,,0.1,,,,,0.0,100.0,366437.281385,USD,,0.0,"The Trump administration announced Tuesday that it is offering deferred resignations to all federal employees who opt to leave their jobs by February 6 (see: https://www.opm.gov/fork)
+
+This market will resolve according to the number of employees that accept the deferred resignation offer.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The resolution source for this market will be official information from the Trump Administration. If the number is reported as a percentage of the Federal workforce, with no reporting of the actual number by February 28, 11:59 PM ET, this market will use the most exact unrounded percentage reported out of 3,010,000 to calculate the number of deferred resignations (https://fred.stlouisfed.org/series/CES9091000001).
+
+If the Trump Administration does not publish the number or percentage of employees that accept the deferred resignation offer by February 28, 11:59 PM ET, this market will resolve based on a consensus of credible reporting.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/how-many-federal-employees-will-accept-buyout
+Polymarket,17828,521993,Will Elon and DOGE cut less than 50k employees in 2025?,closed,2026-01-06T12:00:00Z,,0.1,,,,,0.0,0.1,314812.224438,USD,,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve according to the decrease in the seasonally adjusted number of federal employees between the December 2024 report and the December 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the December 2024 value minus the December 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial December 2025 figure will be based on the report scheduled for release on January 9, 2026. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-2025
+Polymarket,17828,521994,Will Elon and DOGE cut 50-100k employees in 2025?,closed,2026-01-06T12:00:00Z,,0.1,,,,,0.0,0.2,49162.076557,USD,,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve according to the decrease in the seasonally adjusted number of federal employees between the December 2024 report and the December 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the December 2024 value minus the December 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial December 2025 figure will be based on the report scheduled for release on January 9, 2026. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-2025
+Polymarket,17828,521995,Will Elon and DOGE cut 100-150k employees in 2025?,closed,2026-01-06T12:00:00Z,,0.1,,,,,0.0,0.2,50231.559048,USD,,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve according to the decrease in the seasonally adjusted number of federal employees between the December 2024 report and the December 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the December 2024 value minus the December 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial December 2025 figure will be based on the report scheduled for release on January 9, 2026. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-2025
+Polymarket,17828,521996,Will Elon and DOGE cut 150-200k employees in 2025?,closed,2026-01-06T12:00:00Z,,0.1,,,,,0.0,0.2,162417.25964,USD,,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve according to the decrease in the seasonally adjusted number of federal employees between the December 2024 report and the December 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the December 2024 value minus the December 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial December 2025 figure will be based on the report scheduled for release on January 9, 2026. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-2025
+Polymarket,17828,521997,Will Elon and DOGE cut more than 200k employees in 2025?,closed,2026-01-06T12:00:00Z,99.9,100.0,,,,,99.95,99.9,180579.147959,USD,,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve according to the decrease in the seasonally adjusted number of federal employees between the December 2024 report and the December 2025 report.
+
+If the reported value falls exactly between two brackets, then this market will resolve to the higher range bracket.
+
+The difference will be calculated as the December 2024 value minus the December 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial December 2025 figure will be based on the report scheduled for release on January 9, 2026. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-2025
+Polymarket,15688,516072,"Will the number of federal employees decrease by less than 25,000 between December and June?",closed,2025-07-03T12:00:00Z,,0.1,,,,,0.0,100.0,152926.021241,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases by less than 25,000 between the December 2024 report and the June 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the December 2024 value minus the June 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial June 2025 figure will be based on the report scheduled for release on July 3, 2025. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,15688,516073,"Will the number of federal employees decrease by 25,000-50,000 between December and June?",closed,2025-07-03T12:00:00Z,,0.1,,,,,0.0,100.0,126301.53855,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases by between 25,000 (inclusive) and 50,000 (exclusive) between the December 2024 report and the June 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the December 2024 value minus the June 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial June 2025 figure will be based on the report scheduled for release on July 3, 2025. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,15688,516074,"Will the number of federal employees decrease by 50,000-100,000 between December and June?",closed,2025-07-03T12:00:00Z,99.9,100.0,,,,,99.95,100.0,750321.464423,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases by between 50,000 (inclusive) and 100,000 (exclusive) between the December 2024 report and the June 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the December 2024 value minus the June 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial June 2025 figure will be based on the report scheduled for release on July 3, 2025. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,15688,516075,"Will the number of federal employees decrease by 100,000-200,000 between December and June?",closed,2025-07-03T12:00:00Z,,0.1,,,,,0.0,100.0,371865.046316,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases by between 100,000 (inclusive) and 200,000 (exclusive) between the December 2024 report and the June 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the December 2024 value minus the June 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial June 2025 figure will be based on the report scheduled for release on July 3, 2025. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,15688,516076,"Will the number of federal employees decrease by 200,000 or more between December and June?",closed,2025-07-03T12:00:00Z,,0.1,,,,,0.0,100.0,440848.932284,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases by 200,000 or more between the December 2024 report and the June 2025 report. Otherwise, it will resolve to ""No"".
+
+The difference will be calculated as the December 2024 value minus the June 2025 value.
+
+The December 2024 figure will be based on the initial December 2024 BLS Employment Situation report scheduled for release on January 3, 2025, and the initial June 2025 figure will be based on the report scheduled for release on July 3, 2025. Revisions made to these figures will not be considered, only the values reported in the initial reports will be used.
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,15688,516077,Will the number of federal employees decrease be unknown?,closed,2025-07-03T12:00:00Z,0.0,100.0,,,,,50.0,0.0,1842263.002814,USD,0.0,0.0,"This market will resolve based on the seasonally adjusted number of federal employees, as reported by the U.S. Bureau of Labor Statistics (BLS) under the ""All Employees, Federal"" series (CES9091000001), displayed here (https://fred.stlouisfed.org/series/CES9091000001)
+
+This market will resolve to “Yes” if the seasonally adjusted number of federal employees decreases between December and June is not known by July 31, 2025 11:59 PM ET. Otherwise, it will resolve to ""No"".
+
+The resolution source will be the BLS Employment Situation data, specifically the series CES9091000001, available at https://fred.stlouisfed.org/series/CES9091000001 or the official BLS website.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/of-jobs-elon-and-doge-cut-in-first-6-months
+Polymarket,16283,517320,Will U.S. National debt surpass $38 trillion in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,100.0,655536.057559,USD,,0.0,"This market will resolve to ""Yes"" if the U.S. national debt surpasses 38 trillion dollars at any point before December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/will-us-national-debt-surpass-38-trillion-in-2025
+Polymarket,31563,561404,Will the U.S. national debt hit $37 trillion in 2025?,closed,2025-12-31T00:00:00Z,99.9,100.0,,,,,99.95,100.0,36936.854796,USD,,0.0,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-this-year
+Polymarket,31563,561405,Will the U.S. national debt hit $38 trillion in 2025?,closed,2025-12-31T00:00:00Z,99.9,100.0,,,,,99.95,100.0,41001.869814,USD,,0.0,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-this-year
+Polymarket,31563,561406,Will the U.S. national debt hit $39 trillion in 2025?,closed,2025-12-31T00:00:00Z,,0.1,,,,,0.0,100.0,44850.546717,USD,,0.0,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-this-year
+Polymarket,31563,561407,Will the U.S. national debt hit $40 trillion in 2025?,closed,2025-12-31T00:00:00Z,,0.1,,,,,0.0,0.4,8659.662737,USD,,0.0,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-this-year
+Polymarket,153871,1145250,"Will Keir Starmer say ""Reform"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.9,911.708694,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145251,"Will Keir Starmer say ""NHS"" or ""National Health Service"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.9,1619.699924,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145252,"Will Keir Starmer say ""Trump"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,2.0,675.98754,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145253,"Will Keir Starmer say ""Greenland"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,0.8999999999999999,1666.403239,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145254,"Will Keir Starmer say ""Ukraine"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.8,1162.767015,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145255,"Will Keir Starmer say ""Russia"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.0,1565.4252,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145256,"Will Keir Starmer say ""Venezuela"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,78.0,272.831324,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145257,"Will Keir Starmer say ""Debt"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,55.00000000000001,280.194583,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145258,"Will Keir Starmer say ""Tax"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.9,1326.290897,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145259,"Will Keir Starmer say ""Immigrant"" or ""Immigration"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,99.9,100.0,,,,,99.95,99.7,1445.949239,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145260,"Will Keir Starmer say ""Healthcare"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,89.0,778.12765,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,153871,1145261,"Will Keir Starmer say ""AI"" or ""Artificial Intelligence"" at the next Prime Minister's Questions?",closed,2026-01-14T00:00:00Z,,0.1,,,,,0.0,1.0,657.78683,USD,,0.0,"Keir Starmer is scheduled to participate in the Prime Minister's Questions (PMQs) in the Commons Chamber in the Palace of Westminster on every Wednesday. (https://www.parliament.uk/visiting/visiting-and-tours/watch-committees-and-debates/prime-ministers-questions/).
+
+This market will resolve to ""Yes"" if Keir Starmer says the listed term during the next Prime Minister's Question Time event he participates in. Otherwise, the market will resolve to ""No"".
+
+Any usage of the term regardless of context will count toward the resolution of this market.
+
+Pluralization/possessive of the term will count toward the resolution of this market, however other forms will NOT count.
+
+Instances where the term is used in a compound word will count regardless of context (e.g. joyful is not a compound word for ""joy,"" however ""killjoy"" is a compounding of the words ""kill"" and ""joy"").
+
+If this market requires a specified number of mentions of a person’s first or last name, a full-name mention will count as one mention (e.g., if a market is about “Joe / Biden 5+ times,” a mention of “Joe Biden” will count once).
+
+AI-generated audio or video will not count toward this market's resolution.
+
+If no such Prime Minister's Question Time event happens by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"". If Starmer ceases to be Prime Minister for any length of time by February 28, 2026, 11:59 PM ET, this market will resolve to ""No"".
+
+This market is explicitly about scheduled events featuring Keir Starmer titled ""Prime Minister's Question Time"" (https://www.parallelparliament.co.uk/mp/keir-starmer/dept/cabinet-office/calendar). Speeches, events, or comments that occur outside of named, scheduled events will not qualify toward this market's resolution. If the event contains a Q&A, it will count toward the resolution of this market.
+
+The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-keir-starmer-say-at-the-next-prime-ministers-questions-event-773
+Polymarket,10472,501167,Capital gains tax increase before election day?,closed,2024-11-04T12:00:00Z,,0.8,,,,,0.0,100.0,59611.272139,USD,,0.0,"This market will resolve to “Yes” if, by Nov 4, 2024, 11:59 PM ET a bill is signed into law in the U.S. which effectively increases the top net long-term capital gains tax rate for individuals to a rate higher than 20%. Otherwise, this market will resolve to ""No.""
+
+Note: if a bill has the effect of treating net long-term capital gains as ordinary income, and the top rate on the income is above 20%, it will suffice to resolve this market to ""Yes."" Surtaxes or other modifications to what is considered long-term capital gains will not suffice to resolve this market to ""Yes.""",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/capital-gains-tax-increase-before-election-day
+Polymarket,20185,526580,Trump signs bill cutting Social Security before July?,closed,2025-06-30T12:00:00Z,,0.5,,,,,0.0,100.0,6986.616245,USD,,0.0,"This market will resolve to ""Yes"" if legislation that includes a reduction in Social Security funding or eligibility is passed by both the US House of Representatives and Senate and signed into law by the Donald Trump by June 30, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+A reduction in Social Security refers to a decrease in federal funding or a significant reduction in benefits, as widely reported by a consensus of credible reporting. Temporary or minor administrative changes will not count.
+
+The primary resolution source for this market will be official information from the US government, however a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/trump-signs-bill-cutting-social-security-before-july
+Polymarket,24467,544534,Will next reconciliation bill end taxes on tips in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,100.0,40107.644548,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs a reconciliation bill that explicitly eliminates federal income taxes on tips earned by workers in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+Legislation which includes specific exceptions where federal income tax on tips remains applicable for specified groups (whether by income or type of worker, etc) will still qualify, as long as the primary outcome of the law is the removal of federal income tax on tips.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe that includes major federal tax policy changes.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,24467,544535,Will next reconciliation bill reduce taxes on Social Security in 2025?,closed,2025-12-31T12:00:00Z,,0.1,,,,,0.0,100.0,234865.45396,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs signs a reconciliation bill that explicitly eliminates or cuts federal taxes on Social Security benefits in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+Legislation which includes specific exceptions where federal income tax on Social Security benefits remains applicable for specified groups (whether by income or type of worker, etc) will still qualify, as long as the primary outcome of the law is the removal or reduction of federal income tax on Social Security benefits.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe that includes major federal tax policy changes.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,24467,544536,Will next reconciliation bill end electric vehicle tax credits in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,100.0,12754.656051,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs a reconciliation bill that explicitly eliminates or cuts federal tax credits on Electric Vehicle purchases in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+Legislation which includes specific exceptions where federal tax credits on EV purchases remain available for specified categories (e.g. tax credits remain available for purchase of EV vehicles of one type, or for people in a certain age bracket, etc) will still qualify, as long as the primary outcome of the law is the removal or reduction of federal tax credits on electric vehicles.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe that includes major federal tax policy changes.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,24467,544538,Will next reconciliation bill lift debt ceiling in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,100.0,14253.860604,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs a reconciliation bill that explicitly lifts or abolishes the debt ceiling in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,24467,544541,Will next reconciliation bill extend income tax cut for high earners in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,100.0,7192.580783,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs a reconciliation bill that explicitly extends the current 37% top individual income tax rate set by the 2017 Tax Cuts and Jobs Act (TCJA) in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,24467,544543,Will next reconciliation bill extend income tax cut for high earners in 2025?,closed,2025-12-31T12:00:00Z,99.9,100.0,,,,,99.95,99.9,11646.803793,USD,,0.0,"This market will resolve to ""Yes"" if Donald Trump signs a reconciliation bill that explicitly includes an increase or elimination of the cap to the state and local tax deduction on any class of taxpayer earning above $10,000 in the United States by December 31, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The bill must be explicitly passed using the budget reconciliation process, which allows for expedited consideration in the Senate and requires only a simple majority.
+
+This market will resolve based on the first reconciliation bill signed into law by Donald Trump during the market’s timeframe.
+
+If it becomes impossible for Trump to sign legislation (e.g. he resigns), this market will resolve to ""No"".
+
+This market's primary resolution source will be official information from the Trump administration, however a consensus of credible information will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-next-reconciliation-bill
+Polymarket,20184,526579,Trump signs bill cutting Medicare before July?,closed,2025-06-30T12:00:00Z,,0.5,,,,,0.0,100.0,97899.276688,USD,,0.0,"This market will resolve to ""Yes"" if legislation that includes a reduction in Medicare funding or eligibility is passed by both the US House of Representatives and Senate and signed into law by the Donald Trump by June 30, 2025, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+A reduction in Medicare refers to a decrease in federal funding or a significant reduction in benefits, as widely reported by a consensus of credible reporting. Temporary or minor administrative changes will not count.
+
+The primary resolution source for this market will be official information from the US government, however a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/trump-signs-bill-cutting-medicare-before-july

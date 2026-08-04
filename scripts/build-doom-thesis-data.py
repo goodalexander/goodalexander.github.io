@@ -96,7 +96,7 @@ def build_llm_document(payload: dict) -> str:
             f"- Current research evidence score: {doom_score['research_score']:.1f}/100 at {doom_score['coverage_pct']:.1f}% weighted input coverage.",
             f"- Missing-input sensitivity: {doom_score['missing_input_sensitivity']['lower']:.1f}–{doom_score['missing_input_sensitivity']['upper']:.1f}.",
             "- This is a fixed-threshold evidence score, not a calibrated regime probability or an investable signal.",
-            "- Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.",
+            "- Publication gate: 100% of weighted inputs must be current or explicitly modeled and reproducible; modeled inputs retain visible sensitivity, and historical calibration remains a separate strategy gate.",
             "- Portfolio rule: exit Doom-linked positions below 20.",
             f"- Productivity override: the current research estimate is {productivity_escape['productivity_escape_probability_pct']:.1f}% that U.S. productivity averages at least 5% for five years, versus a 50% trigger. The estimate is reproducible but not calibrated for live execution.",
             "- Framework JSON: https://goodalexander.com/doom-thesis/doom-index-framework.json",

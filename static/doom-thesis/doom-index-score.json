@@ -19,11 +19,11 @@
     },
     {
       "component_id": "ai-capital-efficiency",
-      "component_score": 80.34851149138339,
-      "coverage_pct": 80.0,
+      "component_score": 84.27880919310672,
+      "coverage_pct": 100.0,
       "title": "AI capital intensity and returns",
       "weight": 15.0,
-      "weighted_contribution": 12.052276723707509
+      "weighted_contribution": 12.641821378966007
     },
     {
       "component_id": "distraction-economy",
@@ -35,19 +35,19 @@
     },
     {
       "component_id": "political-feasibility",
-      "component_score": 83.29910483662069,
-      "coverage_pct": 75.0,
+      "component_score": 87.04099529413217,
+      "coverage_pct": 100.0,
       "title": "Political feasibility of adjustment",
       "weight": 15.0,
-      "weighted_contribution": 12.494865725493103
+      "weighted_contribution": 13.056149294119825
     },
     {
       "component_id": "debasement-repression",
-      "component_score": 13.090725142566995,
-      "coverage_pct": 75.0,
+      "component_score": 17.052771129652516,
+      "coverage_pct": 100.0,
       "title": "Debasement and financial repression",
       "weight": 10.0,
-      "weighted_contribution": 1.3090725142566995
+      "weighted_contribution": 1.7052771129652515
     },
     {
       "component_id": "institutional-control",
@@ -58,8 +58,8 @@
       "weighted_contribution": 7.455986348445361
     }
   ],
-  "coverage_pct": 90.75,
-  "generated_at": "2026-08-04T15:01:44.613349+00:00",
+  "coverage_pct": 100.0,
+  "generated_at": "2026-08-04T16:50:47.184802+00:00",
   "indicators": [
     {
       "as_of": "2025-09-30",
@@ -392,11 +392,11 @@
       "fresh_until": "2026-11-30",
       "high_threshold": 100,
       "indicator_id": "ai_revenue_to_hyperscaler_capex_pct",
-      "indicator_score": null,
+      "indicator_score": 100.0,
       "label": "Disclosed/inferred AI revenue run rate / hyperscaler capex",
       "low_threshold": 20,
-      "note": "Mixes exact disclosures, a lower bound, and disclosed attribution assumptions; excluded from the score until validated.",
-      "quality_flag": "estimated",
+      "note": "Scored model input mixing exact disclosures, a lower bound, and disclosed attribution assumptions; use the published scenario range, not the point estimate alone.",
+      "quality_flag": "modeled",
       "raw_value": 11.380913851816944,
       "source": "Microsoft, Alphabet, and Amazon investor disclosures plus disclosed assumptions",
       "total_index_weight": 1.5,
@@ -411,11 +411,11 @@
       "fresh_until": "2026-11-30",
       "high_threshold": 25,
       "indicator_id": "ai_cash_flow_to_hyperscaler_capex_pct",
-      "indicator_score": null,
+      "indicator_score": 100.0,
       "label": "Modeled AI cash flow / hyperscaler capex",
       "low_threshold": 5,
-      "note": "Modeled cash-coverage proxy, not ROIC; excluded from the score until attributable cash flow is validated.",
-      "quality_flag": "estimated",
+      "note": "Scored modeled cash-coverage proxy, not ROIC; its margin and attributable-capex assumptions are published in the scenario table.",
+      "quality_flag": "modeled",
       "raw_value": 3.9833198481359307,
       "source": "Doom AI monetization sensitivity; not ROIC",
       "total_index_weight": 1.5,
@@ -651,20 +651,20 @@
       "within_component_weight": 25.0
     },
     {
-      "as_of": null,
+      "as_of": "2026-08-04",
       "component_id": "political-feasibility",
       "component_title": "Political feasibility of adjustment",
       "direction": "decreasing",
-      "fresh_until": null,
+      "fresh_until": "2026-11-04",
       "high_threshold": 100,
       "indicator_id": "direct_adjustment_passage_probability_pct",
-      "indicator_score": null,
-      "label": "Probability of timely sufficient fiscal package",
+      "indicator_score": 98.26666666666667,
+      "label": "Modeled probability of timely sufficient fiscal package",
       "low_threshold": 0,
-      "note": "No admissible direct package market or calibrated polling model exists. Adjacent outcome contracts remain diagnostics only.",
-      "quality_flag": "missing",
-      "raw_value": null,
-      "source": "Admissible prediction markets/polling model; currently missing",
+      "note": "Structured empirical base-rate model, not an exchange price. Display with the published low/base/high sensitivity; adjacent outcome contracts remain diagnostics only.",
+      "quality_flag": "modeled",
+      "raw_value": 1.7333333333333336,
+      "source": "Disclosed US enactment / IMF adjustment-scale / Gallup acceptance model; prediction markets are diagnostic",
       "total_index_weight": 3.75,
       "unit": "%",
       "within_component_weight": 25.0
@@ -791,11 +791,11 @@
       "fresh_until": null,
       "high_threshold": 2,
       "indicator_id": "ten_year_term_premium_pct",
-      "indicator_score": null,
+      "indicator_score": 41.88,
       "label": "10-year term premium",
       "low_threshold": 0,
       "note": "",
-      "quality_flag": "stale",
+      "quality_flag": "current",
       "raw_value": 0.8376,
       "source": "FRED THREEFYTP10",
       "total_index_weight": 1.5,
@@ -841,19 +841,19 @@
       "within_component_weight": 15.0
     },
     {
-      "as_of": null,
+      "as_of": "2026-08-03",
       "component_id": "debasement-repression",
       "component_title": "Debasement and financial repression",
       "direction": "increasing",
       "fresh_until": null,
       "high_threshold": 180,
       "indicator_id": "move_index",
-      "indicator_score": null,
+      "indicator_score": 9.527272727272731,
       "label": "Treasury rate volatility",
       "low_threshold": 70,
       "note": "",
-      "quality_flag": "missing",
-      "raw_value": null,
+      "quality_flag": "current",
+      "raw_value": 80.48,
       "source": "Bloomberg MOVE Index",
       "total_index_weight": 1.0,
       "unit": "index",
@@ -1133,12 +1133,12 @@
       "fresh_until": "2027-02-28",
       "high_threshold": 20000,
       "indicator_id": "documented_local_surveillance_records",
-      "indicator_score": 67.14,
+      "indicator_score": 67.13333333333334,
       "label": "EFF Atlas documented local surveillance records",
       "low_threshold": 5000,
       "note": "Diagnostic current cross-section only: EFF Atlas records are documented agency/technology observations, not devices, people surveilled, spending, or a deployment time series.",
       "quality_flag": "current",
-      "raw_value": 15071.0,
+      "raw_value": 15070.0,
       "source": "EFF Atlas of Surveillance; current cross-section, not a deployment time series",
       "total_index_weight": 0.0,
       "unit": "records",
@@ -1190,11 +1190,11 @@
   },
   "missing_input_sensitivity": {
     "interpretation": "Bounds assign every missing or stale indicator either 0 or 100 without reweighting.",
-    "lower": 61.96174915293715,
-    "upper": 71.21174915293716
+    "lower": 69.3702218802099,
+    "upper": 69.3702218802099
   },
   "published_probability": null,
-  "research_score": 67.8231890576161,
+  "research_score": 69.37022188020988,
   "status": "research_evidence_score_not_probability",
   "stop_status": {
     "operational": false,
@@ -1204,6 +1204,6 @@
     "threshold": 20,
     "triggered": false
   },
-  "uncapped_research_score": 67.8231890576161,
+  "uncapped_research_score": 69.37022188020988,
   "version": "0.7.0"
 }

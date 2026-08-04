@@ -11,6 +11,7 @@
   {{- $doomIndex := readFile "static/doom-thesis/doom-index-framework.json" | transform.Unmarshal -}}
   {{- $doomScore := readFile "static/doom-thesis/doom-index-score.json" | transform.Unmarshal -}}
   {{- $doomHistory := readFile "static/doom-thesis/doom-index-history.json" | transform.Unmarshal -}}
+  {{- $fiscalMarkets := readFile "static/doom-thesis/fiscal-prediction-markets-summary.json" | transform.Unmarshal -}}
   {{- $claimCount := 0 -}}
   {{- $warrantedCount := 0 -}}
   {{- $partialCount := 0 -}}
@@ -40,7 +41,7 @@
       <div>
         <span>Current weighted coverage</span>
         <strong>{{ printf "%.1f" $doomScore.coverage_pct }}<small>%</small></strong>
-        <em>Missing and stale inputs are not scored</em>
+        <em>100% weighted coverage required; modeled inputs visibly flagged</em>
       </div>
       <div>
         <span>Missing-input range</span>
@@ -61,7 +62,7 @@
         <span>The kill switch</span>
         <p>{{ $doomIndex.stop_rule.override }} The score is also exited normally if it falls below {{ $doomIndex.stop_rule.threshold }}.</p>
       </div>
-      <p class="doom-note">The live number is a research evidence score built from fixed, disclosed thresholds. It is not yet a probability or a trading signal: historical calibration, the five-year productivity forecast override, and execution rules remain incomplete. Missing evidence is not scored as 50 or quietly treated as fact.</p>
+      <p class="doom-note">The live number is a research evidence score built from fixed, disclosed thresholds. Every weighted input is populated; modeled inputs are labeled and retain sensitivity ranges. It is not a probability or live trading signal until the point-in-time history and execution rules pass their separate acceptance tests.</p>
     </div>
 
     <div class="doom-index-scale" aria-label="Proposed Doom Index interpretation">
@@ -73,7 +74,7 @@
     </div>
 
     <details class="doom-index-runbook">
-      <summary><span><b>Coverage-gated score history</b><small>Diagnostic values remain unpublished below 80% coverage</small></span><span aria-hidden="true">+</span></summary>
+      <summary><span><b>Coverage-gated score history</b><small>Diagnostic values remain unpublished below 100% weighted coverage</small></span><span aria-hidden="true">+</span></summary>
       <div class="doom-table-wrap">
         <table class="doom-table doom-table-dense">
           <thead><tr><th>Year</th><th>Published score</th><th>Diagnostic</th><th>Coverage</th><th>Missing-input range</th><th>Status</th></tr></thead>
@@ -90,7 +91,33 @@
           {{- end }}
           </tbody>
         </table>
-        <p class="doom-note">Only 2026 currently clears the 80% publication gate. Earlier diagnostic values are shown to expose missing-data sensitivity, not as a backfilled or investable historical index.</p>
+        <p class="doom-note">Only 2026 currently clears the 100% publication gate. Earlier diagnostic values expose missing-data sensitivity; they are not backfilled or investable historical index values.</p>
+      </div>
+    </details>
+
+    {{- with $fiscalMarkets.best_live_fiscal_outcome_market }}
+    <details class="doom-index-runbook">
+      <summary><span><b>Verified live prediction-market input</b><small>API-discovered and order-book checked; adjacent to the thesis, never substituted for it</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-index-runbook-body">
+        <p><a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .platform }} · {{ .title }} ↗</b></a></p>
+        <p>{{ printf "%.1f" .yes_bid_pct }}% bid / {{ printf "%.1f" .yes_ask_pct }}% ask · {{ printf "%.1f" .midpoint_probability_pct }}% midpoint · {{ .open_interest_contracts }} contracts open interest.</p>
+        <p class="doom-note">{{ .why_not_direct }} The complete current discovery output is downloadable as <a href="/doom-thesis/fiscal-prediction-market-candidates.csv">CSV</a>; raw request hashes live in the release archive.</p>
+      </div>
+    </details>
+    {{- end }}
+
+    <details class="doom-index-runbook" open>
+      <summary><span><b>Remaining warrant inventory</b><small>Every thesis claim not yet warranted—active work, not missing score inputs</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-index-runbook-body">
+        <ul>
+          {{- range $component := $doomIndex.components }}
+            {{- range $claim := $component.claims }}
+              {{- if ne $claim.status "warranted" }}
+          <li><b>{{ $component.title }} · {{ $claim.status }}:</b> {{ $claim.text }} <span class="doom-note">{{ $claim.note }}</span></li>
+              {{- end }}
+            {{- end }}
+          {{- end }}
+        </ul>
       </div>
     </details>
 
@@ -151,10 +178,11 @@
               <div class="doom-index-indicator-row">
                 <div>
                   <b>{{ .label }}</b>
-                  <small>{{ .source }}{{ with .as_of }} · as of {{ . }}{{ end }}</small>
+                  <small>{{ if gt .total_index_weight 0.0 }}Scored · {{ printf "%.2f" .total_index_weight }}% index weight{{ else }}Diagnostic · zero index weight{{ end }} · {{ .source }}{{ with .as_of }} · as of {{ . }}{{ end }}</small>
+                  {{- with .note }}<small>{{ . }}</small>{{ end }}
                 </div>
                 <span class="doom-index-indicator-value">{{ if ne .raw_value nil }}{{ printf "%.1f" .raw_value }}{{ .unit }}{{ else }}—{{ end }}</span>
-                <span class="doom-index-indicator-score">{{ if ne .indicator_score nil }}{{ printf "%.0f" .indicator_score }}{{ else }}—{{ end }}<small>/100</small></span>
+                <span class="doom-index-indicator-score">{{ if gt .total_index_weight 0.0 }}{{ if ne .indicator_score nil }}{{ printf "%.0f" .indicator_score }}{{ else }}—{{ end }}<small>/100</small>{{ else }}<small>diagnostic</small>{{ end }}</span>
                 <span class="doom-index-status doom-index-status-{{ .quality_flag }}">{{ .quality_flag }}</span>
               </div>
               {{- end }}
@@ -181,7 +209,7 @@
               </ul>
             </div>
             <div>
-              <span class="doom-panel-label">Missing warrants</span>
+              <span class="doom-panel-label">Active acceptance work</span>
               <ul>{{- range $component.missing_warrants }}<li>{{ . }}</li>{{ end }}</ul>
             </div>
           </div>
@@ -266,7 +294,7 @@
           <li><b>Weekly:</b> admissible prediction markets, legislation, policy events, and evidence-status changes.</li>
           <li><b>Quarterly:</b> productivity vintages, AI capex and monetization, infrastructure bottlenecks, and distraction-economy inputs.</li>
           <li><b>Annual/vintage:</b> Trustees, CBO, income, education, demographics, time use, trust, and governance.</li>
-          <li><b>Every release:</b> attribute score changes, enforce the 80% coverage gate, apply the productivity override, preserve the prior vintage, and publish quality flags.</li>
+          <li><b>Every release:</b> attribute score changes, enforce the 100% weighted-coverage gate, apply the productivity override, preserve the prior vintage, and publish quality flags.</li>
         </ol>
         <p>No sub-strategy becomes “investable” without a point-in-time backtest, costs, liquidity and borrow constraints, sizing, drawdown analysis, and explicit execution rules.</p>
         <a class="doom-download" href="/doom-thesis/doom-index-framework.json" download>Download framework JSON <span>↓</span></a>

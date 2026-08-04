@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.8.0",
   "last_reviewed": "2026-08-04",
   "specification": {
     "canonical": "docs/doom-thesis-spec.md",
@@ -11,7 +11,7 @@
   "published_score": null,
   "research_score_path": "/doom-thesis/doom-index-score.json",
   "interpretation": "The live 0–100 number is a fixed-threshold research evidence score. It is not a probability or an operational trading signal until indicator history is point-in-time, historically calibrated, reviewed out of sample, and the productivity override is operational.",
-  "publication_rule": "A research evidence score may be displayed with coverage and missing-input bounds. Do not label it a probability or activate portfolio stops until at least 80% of weight is current and reproducible, every core component passes its gate, and historical calibration has been reviewed out of sample.",
+  "publication_rule": "Publish the headline research evidence score only when 100% of weighted inputs are current or explicitly modeled and reproducible. Modeled inputs must retain visible quality flags and sensitivity. Do not label the score a probability or activate portfolio stops until historical point-in-time calibration has been reviewed out of sample.",
   "stop_rule": {
     "threshold": 20,
     "action": "Exit Doom Index-linked positions",
@@ -66,12 +66,6 @@
         "Estimate AI's positive and negative productivity channels without assuming the net sign; do not count private returns earned from distraction as an economy-wide productivity gain.",
         "Approve the execution and revision convention for the now-reproducible 5% research override."
       ],
-      "candidate_markets": [
-        {"label": "Kalshi: FY2026 deficit/GDP below 5%", "url": "https://kalshi.com/markets/kxdefgdp-26oct20", "use": "Live one-year fiscal-outcome probability; not enactment probability for a recurring prudent package."},
-        {"label": "Polymarket: U.S. GDP growth in 2026", "url": "https://polymarket.com/event/gdp-growth-in-2026", "use": "Near-term GDP proxy only; not a productivity or five-year market."},
-        {"label": "Kalshi: quarterly U.S. GDP growth", "url": "https://kalshi.com/markets/kxgdp", "use": "Near-term growth nowcast; not the thesis-breaking productivity probability."},
-        {"label": "Polymarket: U.S. recession by end-2026", "url": "https://polymarket.com/event/us-recession-by-end-of-2026", "use": "Cyclical downside proxy, not structural productivity."}
-      ],
       "claims": [
         {"status": "warranted", "text": "Observed productivity has not yet established a sustained 5% regime.", "note": "The existing BLS quarterly and five-year trend series supports the historical statement, not the forward probability."},
         {"status": "partial", "text": "Broad operating companies outside known distraction businesses are showing measurable real revenue growth and cash conversion.", "note": "A daily point-in-time Sharadar bridge now tracks rolling-four-quarter GDP-deflator-adjusted revenue growth, operating-cash-flow margin, and FCF margin for U.S. nonfinancial, nonutility companies outside the score-70+ distraction basket. Current-vintage GDPDEF, mix, acquisitions, entry, and cyclicality prevent a causal AI-productivity interpretation."},
@@ -103,7 +97,7 @@
       ],
       "claims": [
         {"status": "partial", "text": "The AI-adjacent hyperscaler buildout is massive relative to current cash conversion.", "note": "A point-in-time Sharadar panel measures aggregate capex, revenue, operating cash flow, FCF, depreciation, and growth for AMZN, GOOGL, META, MSFT, and ORCL. Company capex is not yet attributable AI capex."},
-        {"status": "partial", "text": "The economic return on the AI buildout is questionable.", "note": "The base disclosure model finds $64B of AI revenue run rate and $22.4B of modeled cash flow against $562B of annual capex. Those figures mix exact disclosures and assumptions and are excluded from scoring until attributable cash flow and the investment stock are validated."},
+        {"status": "partial", "text": "The economic return on the AI buildout is questionable.", "note": "The base disclosure model finds $64B of AI revenue run rate and $22.4B of modeled cash flow against $562B of annual capex. Exact disclosures and attribution assumptions are now scored as visibly modeled inputs with a published sensitivity table; this remains a cash-coverage proxy rather than ROIC."},
         {"status": "partial", "text": "A memory-enterprise bottleneck has delayed the full social and economic impact.", "note": "Micron and Samsung disclosure events are now paired with a market-wide TrendForce forecast panel: HBM is estimated to consume 22% of DRAM wafer input but supply 9% of bits in 2026, and SK hynix plus Samsung account for 78% of forecast HBM bit output. These are forecasts; continuous realized prices, lead times, and accelerator utilization remain absent."},
         {"status": "partial", "text": "The cost of generating AI video is falling rapidly.", "note": "Official vendor API floors for comparable 720p video with audio fell 87.5% from $0.40 to $0.05 per second. Archived quality scores are still needed before calling the series quality-adjusted."}
       ]
@@ -149,22 +143,17 @@
         {"label": "Tax and reform sensitivity", "href": "#tax-valuation"},
         {"label": "Institutional trust context", "href": "#productivity"}
       ],
-      "candidate_markets": [
-        {"label": "Kalshi: Congress and legislation", "url": "https://kalshi.com/category/politics/congress", "use": "Useful for bill passage and shutdown proxies; no direct prudent-fiscal-package contract found."},
-        {"label": "Polymarket: peak U.S. national debt before 2027", "url": "https://polymarket.com/event/peak-us-national-debt-before-2027/will-the-us-national-debt-hit-39-trillion-before-2027", "use": "Debt-path proxy with limited horizon and liquidity."},
-        {"label": "Kalshi: crypto market-structure legislation", "url": "https://kalshi.com/markets/kxcryptostructure/crypto-market-structure", "use": "Legislative-capacity and financialization proxy, not an austerity probability."}
-      ],
       "missing_warrants": [
-        "No liquid market directly prices passage of a package comparable to the prudent reduction scenario.",
+        "Backtest and recalibrate the completed empirical enactment model as new proposals, roll calls, enactments, dilution, and reversals accumulate.",
         "Extend the completed major-enactment scale panel to proposals, roll calls, dilution, implementation, reversals, and realized primary-balance effects.",
         "Extend the completed Gallup tax, spending-concern, and deficit-remedy panel with repeated comparable measures of benefit reform, inflation tolerance, wealth taxation, and financial repression.",
         "Model revenue feedback and policy dilution between proposal and enactment."
       ],
       "claims": [
-        {"status": "partial", "text": "A prudent fiscal adjustment is politically difficult under current conditions.", "note": "The live proxy scores required adjustment/GDP, the tax-only receipts increase, and projected deficit persistence. The direct passage-probability input remains missing, so this is not proof of infeasibility."},
+        {"status": "partial", "text": "A prudent fiscal adjustment is politically difficult under current conditions.", "note": "The live model scores required adjustment/GDP, the tax-only receipts increase, projected deficit persistence, and a disclosed 1.73% base-rate estimate of timely sufficient enactment with a 0.15%-6.0% sensitivity range. This is a model, not proof of infeasibility."},
         {"status": "warranted", "text": "The prudent adjustment is far larger than selected recent enacted precedents.", "note": "Across seven major laws with contemporaneous CBO/JCT scores since 2011, none reaches the 8.33%-of-GDP recurring prudent adjustment on a simple annualized budget-window basis. The largest deficit-reducing precedent, the 2011 Budget Control Act, is about 1.33% of enactment-year GDP—roughly one-sixth of the required scale—and later laws modified its caps."},
         {"status": "warranted", "text": "Concern about federal spending does not imply support for the principal benefit adjustment.", "note": "Gallup reports 79% worried a great deal or fair amount about federal spending in 2026, while its 2025 question found 39% favoring and 57% opposing significant Social Security and Medicare cost changes. These are separate questions and are not a calibrated package-passage probability."},
-        {"status": "partial", "text": "Prediction markets can provide useful political and macro inputs.", "note": "A reproducible Kalshi/Polymarket discovery and snapshot archive now exists. The live Kalshi FY2026 deficit/GDP-below-5% contract was 9% bid / 11% ask on 2026-08-04, but it resolves a one-year outcome rather than enactment of the recurring prudent package; the direct input therefore remains missing."},
+        {"status": "warranted", "text": "Prediction markets can provide useful political and macro inputs.", "note": "Production Kalshi and Polymarket clients now paginate discovery, flatten all event markets, read executable order books, preserve native units, and archive hashed raw responses. The live Kalshi FY2026 deficit/GDP-below-5% contract was 9% bid / 11% ask on 2026-08-04; because it resolves a different event, it is corroborating evidence rather than a substitute for the enactment model."},
         {"status": "missing", "text": "Politicians will choose indirect adjustment before explicit austerity.", "note": "This requires historical base rates and observable policy probabilities."}
       ]
     },
@@ -190,7 +179,7 @@
         {"status": "partial", "text": "Fiscal pressure increases incentives for inflationary or repressive adjustment.", "note": "The incentive is plausible and historically grounded, but the current page lacks a regime model."},
         {"status": "warranted", "text": "The narrow current observed-repression condition is not met.", "note": "The latest matched 10-year real yield is positive and the coded U.S. panel contains no current broad capital-control or asset-confiscation law. Fed ownership is 14.8% of the constructed market-facing debt denominator; this is a diagnostic, not proof of compelled private demand."},
         {"status": "conceptual", "text": "CBDCs or digitized money will be used for wealth taxation and control.", "note": "No current U.S. policy path or conditional probability is supplied."},
-        {"status": "partial", "text": "Inflation expectations will unanchor and fixed-income volatility will force repression.", "note": "Breakevens, 5y5y inflation, real yields, term premium, Fed assets, M2, and MOVE are wired with thresholds; MOVE is currently missing and the causal regime transition is not established."},
+        {"status": "partial", "text": "Inflation expectations will unanchor and fixed-income volatility will force repression.", "note": "Breakevens, 5y5y inflation, real yields, term premium, Fed assets, M2, and MOVE are wired with thresholds and currently populated. The August 4 refresh used a visibly disclosed delayed-quote fallback for MOVE because the Bloomberg bridge timed out; the causal regime transition is not established."},
         {"status": "conceptual", "text": "Asset confiscation is a likely endpoint.", "note": "The term requires a precise legal and economic definition before it can enter the score."}
       ]
     },
