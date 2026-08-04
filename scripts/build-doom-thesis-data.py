@@ -211,6 +211,16 @@ def build_payload(doom_root: Path) -> dict:
     distraction_attention_summary = json.loads(
         (doom_root / "distraction_attention_summary.json").read_text()
     )
+    distraction_search_attention = pd.read_csv(
+        doom_root
+        / "google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv"
+    )
+    distraction_search_attention_summary = json.loads(
+        (
+            doom_root
+            / "google_trends_ai_porn_best_colleges_trade_school_worldwide_summary.json"
+        ).read_text()
+    )
     distraction_personalization = pd.read_csv(
         doom_root / "distraction_personalization_lift_events.csv"
     )
@@ -911,9 +921,13 @@ def build_payload(doom_root: Path) -> dict:
             "marketcap_summary": distraction_marketcap_summary,
             "fcf_summary": distraction_fcf_summary,
             "attention_summary": distraction_attention_summary,
+            "search_attention_summary": distraction_search_attention_summary,
             "marketcap_history": records(distraction_marketcap.round(8)),
             "fcf_history": records(distraction_fcf.round(8)),
             "attention_history": records(distraction_attention.round(8)),
+            "search_attention_history": records(
+                distraction_search_attention.round(8)
+            ),
             "personalization_events": records(distraction_personalization.round(8)),
         },
         "productivity": {
@@ -1370,6 +1384,13 @@ def main() -> None:
     ).to_csv(
         args.output_dir
         / "real-business-productivity-ex-distraction-daily.csv",
+        index=False,
+    )
+    pd.read_csv(
+        args.doom_data_root
+        / "google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv"
+    ).to_csv(
+        args.output_dir / "search-attention-allocation-weekly.csv",
         index=False,
     )
     pd.read_csv(

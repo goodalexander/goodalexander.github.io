@@ -23,14 +23,14 @@
   ],
   "direct_adjustment_passage_probability_pct": null,
   "direct_package_market_status": "no_direct_contract_use_modeled_probability",
-  "generated_at": "2026-08-04T17:08:45.105844+00:00",
+  "generated_at": "2026-08-04T17:35:52.499114+00:00",
   "interpretation": "The API and order-book subsystem is complete. Market candidates are corroborating features; when no contract directly maps to the prudent package, the scored passage probability comes from the separately disclosed empirical enactment model rather than remaining missing.",
   "live_candidate_count": 5,
   "platform_counts": {
     "Kalshi": 2,
     "Polymarket": 94
   },
-  "raw_request_manifest": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T170839.881353+0000/request_manifest.json",
+  "raw_request_manifest": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T173547.223452+0000/request_manifest.json",
   "sources": {
     "kalshi_api_docs": "https://docs.kalshi.com/getting_started/quick_start_market_data",
     "kalshi_public_api": "https://external-api.kalshi.com/trade-api/v2/markets",

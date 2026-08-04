@@ -53,7 +53,7 @@
       if (xMax - tickYears.at(-1) < yearStep * 0.6) tickYears[tickYears.length - 1] = xMax;
       else tickYears.push(xMax);
     }
-    tickYears.forEach((year) => addSvg(svg, 'text', { x: x(year), y: height - 12, 'text-anchor': year === xMax ? 'end' : 'middle' }, String(year)));
+    tickYears.forEach((year) => addSvg(svg, 'text', { x: x(year), y: height - 12, 'text-anchor': year === xMax ? 'end' : 'middle' }, options.xFormat ? options.xFormat(year) : String(year)));
 
     series.forEach((item) => {
       const values = item.values.filter((point) => Number.isFinite(point.value));
@@ -70,7 +70,7 @@
       addSvg(svg, 'path', { class: 'series-path', d, stroke: item.color, 'stroke-dasharray': item.dash || '' });
       values.forEach((point) => {
         const dot = addSvg(svg, 'circle', { class: 'series-point', cx: x(point.year), cy: y(point.value), r: options.points === false ? 0 : 3.2, fill: item.color });
-        addSvg(dot, 'title', {}, `${point.year}: ${options.tooltipFormat ? options.tooltipFormat(point.value) : point.value}`);
+        addSvg(dot, 'title', {}, `${point.label ?? point.year}: ${options.tooltipFormat ? options.tooltipFormat(point.value) : point.value}`);
       });
     });
   }
@@ -353,6 +353,11 @@
     ], { yMin: -1, yMax: 36, headroom: 1, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), points: false, xTicks: 9 });
 
     const distraction = data.distraction_economy;
+    const searchSignal = distraction.search_attention_summary.doom_signal;
+    set('search-level-ratio', `${searchSignal.ai_porn_to_constructive_52w_ratio.toFixed(2)}×`);
+    set('search-ai-porn-growth', `${searchSignal.ai_porn_12w_ma_yoy_pct.toFixed(1)}%`);
+    set('search-constructive-growth', `${searchSignal.constructive_education_12w_ma_yoy_pct.toFixed(1)}%`);
+    set('search-doom-score', `${searchSignal.attention_allocation_doom_score.toFixed(1)}/100`);
     lineChart($('#distraction-marketcap-chart'), [
       { color: '#eb735f', values: distraction.marketcap_history.map((d) => ({ year: d.calendar_year, value: d.distraction_marketcap_trillions })) },
       { color: '#62c6ae', values: distraction.marketcap_history.map((d) => ({ year: d.calendar_year, value: d.industrials_marketcap_trillions })) },
@@ -365,6 +370,33 @@
       { color: '#eb735f', values: distraction.attention_history.map((d) => ({ year: d.year, value: d.measured_digital_leisure_hours })) },
       { color: '#62c6ae', values: distraction.attention_history.map((d) => ({ year: d.year, value: d.socializing_communicating_hours })) },
     ], { yMin: 0, yMax: 3.6, headroom: 1, yFormat: (v) => `${v.toFixed(1)}h`, tooltipFormat: (v) => `${v.toFixed(2)} hours/day`, points: true, xTicks: 8, margin: { left: 48, right: 18 } });
+
+    const searchByDate = new Map();
+    distraction.search_attention_history.forEach((row) => {
+      if (row.trend_index_52w_ma === null || row.trend_index_52w_ma === undefined) return;
+      const entry = searchByDate.get(row.date_to) || {};
+      entry[row.term] = Number(row.trend_index_52w_ma);
+      searchByDate.set(row.date_to, entry);
+    });
+    const fractionalYear = (isoDate) => {
+      const date = new Date(`${isoDate}T00:00:00Z`);
+      const start = Date.UTC(date.getUTCFullYear(), 0, 1);
+      const end = Date.UTC(date.getUTCFullYear() + 1, 0, 1);
+      return date.getUTCFullYear() + (date.getTime() - start) / (end - start);
+    };
+    const searchAttention = [...searchByDate.entries()]
+      .filter(([, values]) => Number.isFinite(values['AI Porn']) && Number.isFinite(values['Best Colleges']) && Number.isFinite(values['Trade School']))
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([date, values]) => ({
+        year: fractionalYear(date),
+        label: date,
+        aiPorn: values['AI Porn'],
+        constructive: (values['Best Colleges'] + values['Trade School']) / 2,
+      }));
+    lineChart($('#search-attention-chart'), [
+      { color: '#eb735f', values: searchAttention.map((d) => ({ year: d.year, label: d.label, value: d.aiPorn })) },
+      { color: '#62c6ae', values: searchAttention.map((d) => ({ year: d.year, label: d.label, value: d.constructive })) },
+    ], { yMin: 0, yMax: 100, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => v.toFixed(1), points: false, xTicks: 5, xFormat: (v) => String(Math.floor(v)), margin: { left: 48, right: 18 } });
 
     const utilityProductivity = productivity.utility_capex_generation;
     lineChart($('#utility-productivity-chart'), [

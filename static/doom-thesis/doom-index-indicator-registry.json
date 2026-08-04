@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "score_type": "research_evidence_score",
   "calibration": "fixed economic thresholds; not a regime probability",
   "missing_rule": "Current observations and explicitly modeled inputs receive a score; modeled inputs retain a visible quality flag and sensitivity. Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
@@ -35,9 +35,12 @@
       "title": "The distraction economy",
       "weight": 15,
       "indicators": [
-        {"id": "distraction_to_industrials_marketcap_pct", "label": "Distraction market cap / Industrials market cap", "weight": 45, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily market / annual display", "source": "Sharadar DAILY and GLM 5.2 taxonomy"},
-        {"id": "distraction_to_industrials_fcf_pct", "label": "Distraction rolling-four-quarter FCF / Industrials FCF", "weight": 30, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ and GLM 5.2 taxonomy"},
-        {"id": "digital_leisure_to_socializing_ratio", "label": "Measured digital leisure / socializing time", "weight": 25, "unit": "x", "low": 3.6794871795, "high": 7.358974359, "direction": "increasing", "frequency": "annual", "source": "BLS American Time Use Survey Table 11A and LABSTAT"}
+        {"id": "distraction_to_industrials_marketcap_pct", "label": "Distraction market cap / Industrials market cap", "weight": 35, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily market / annual display", "source": "Sharadar DAILY and GLM 5.2 taxonomy"},
+        {"id": "distraction_to_industrials_fcf_pct", "label": "Distraction rolling-four-quarter FCF / Industrials FCF", "weight": 25, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ and GLM 5.2 taxonomy"},
+        {"id": "digital_leisure_to_socializing_ratio", "label": "Measured digital leisure / socializing time", "weight": 20, "unit": "x", "low": 3.6794871795, "high": 7.358974359, "direction": "increasing", "frequency": "annual", "source": "BLS American Time Use Survey Table 11A and LABSTAT"},
+        {"id": "search_attention_allocation_doom_score", "label": "AI-porn versus constructive-education search attention", "weight": 20, "unit": "/100", "low": 0, "high": 100, "direction": "increasing", "frequency": "weekly", "source": "DataForSEO Google Trends worldwide grouped query; AI Porn, Best Colleges, Trade School"},
+        {"id": "ai_porn_to_constructive_attention_52w_ratio", "label": "AI Porn / constructive education 52-week search index", "weight": 0, "unit": "x", "low": 1, "high": 3, "direction": "increasing", "frequency": "weekly diagnostic", "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent"},
+        {"id": "ai_porn_minus_constructive_attention_growth_pp", "label": "AI Porn minus constructive education 12-week YoY growth", "weight": 0, "unit": "percentage points", "low": -50, "high": 50, "direction": "increasing", "frequency": "weekly diagnostic", "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent"}
       ]
     },
     {

@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "1.0.0",
   "last_reviewed": "2026-08-04",
   "specification": {
     "canonical": "docs/doom-thesis-spec.md",
@@ -81,10 +81,11 @@
       "status": "partial",
       "contention": "AI may raise measured capability while reducing human attention, agency, and effective productivity through personalized media and addiction loops.",
       "plain_english": "Cheaper, more personalized content can consume the time and focus that better tools theoretically save. A productivity model that counts only workplace automation misses this offset.",
-      "score_rule": "Measure attention-platform value and usage against industrial capacity, screen-time intensity, ad-personalization economics, labor displacement, and credible causal estimates of attention loss.",
-      "update_frequency": "Quarterly market-cap and revenue panel; annual time-use data; research-vintage updates",
+      "score_rule": "Measure attention-platform value and cash flow against industrial capacity, observed digital leisure versus socializing, and a weekly Google Trends allocation signal. The search signal equally combines the AI Porn/constructive-education 52-week level ratio and the difference between their trailing-12-week YoY growth rates.",
+      "update_frequency": "Weekly search attention; quarterly market-cap and revenue panel; annual time-use data",
       "existing_evidence": [
         {"label": "Distraction market cap and FCF", "href": "#distraction-economy-charts"},
+        {"label": "Search attention allocation", "href": "#distraction-economy-charts"},
         {"label": "Human-capital evidence", "href": "#productivity"}
       ],
       "missing_warrants": [
@@ -99,6 +100,7 @@
         {"status": "partial", "text": "Distraction businesses generate material cash flow relative to Industrials.", "note": "The daily comparison uses the core point-in-time ARQ/datekey replay and four distinct calendar quarters; the interpretation still needs business-model and causal controls."},
         {"status": "partial", "text": "AI personalization materially increases media and advertising consumption.", "note": "Meta reports a 24% increase in Instagram time spent since Reels, a 7% view lift from Q4 2025 Facebook ranking improvements, and a 20% Threads time-spent lift from recommendation optimizations. These company measurements are not yet a consistent cross-platform or economy-wide causal panel."},
         {"status": "warranted", "text": "Measured digital leisure has risen relative to socializing.", "note": "BLS ATUS primary-activity data show television plus leisure gaming/computer use at 3.23 hours per day in 2025 versus 2.87 in 2003, while socializing fell from 0.78 to 0.58 hours; the ratio rose about 51%. Concurrent phone use is omitted."},
+        {"status": "warranted", "text": "A reproducible weekly search-attention allocation signal now compares AI pornography with constructive education interest.", "note": "One worldwide grouped Google Trends request places AI Porn, Best Colleges, and Trade School on a shared scale. The scored signal equally combines the 52-week level ratio and the 12-week-average YoY growth differential; English-language term choice, relative normalization, and historical revisions remain explicit caveats."},
         {"status": "missing", "text": "The resulting attention loss offsets a meaningful share of AI productivity gains.", "note": "This needs causal evidence and sensitivity bounds."}
       ]
     },
