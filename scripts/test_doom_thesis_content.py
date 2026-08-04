@@ -12,16 +12,10 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PROCESS_MARKERS = (
     "Active acceptance work",
-    "Claim checklist",
     "Update runbook",
-    "Immutable release archive",
-    "Coverage-gated score history",
-    "Proposed scoring rule",
-    "Update cadence",
     "Acceptance gate:",
     "Release gate:",
-    "Current weighted coverage",
-    "Missing-input range",
+    "Remaining warrant inventory",
     "Freeze a reproducible fiscal-stress normalization",
     "Separate current-law arithmetic",
     "Backtest how the proposed measures behaved",
@@ -74,6 +68,19 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
 
     def test_thesis_links_to_separate_checklist(self) -> None:
         self.assertIn('href=/doom-thesis/checklist/', self.thesis)
+
+    def test_thesis_preserves_expandable_component_auditability(self) -> None:
+        self.assertEqual(self.thesis.count("<details class=doom-index-component"), 6)
+        for marker in (
+            "Current quantitative inputs",
+            "Claim audit",
+            "Evidence already on this page",
+            "Scoring rule",
+            "Coverage-gated score history",
+            "Release provenance",
+        ):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, self.thesis)
 
 
 if __name__ == "__main__":

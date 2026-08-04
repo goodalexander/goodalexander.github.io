@@ -281,6 +281,7 @@
 .doom-index-component[open] > summary .doom-index-expand { transform: rotate(45deg); }
 .doom-index-component-body { padding: 0 1rem 1.5rem 76px; }
 .doom-index-component-copy { display: grid; grid-template-columns: 1.1fr 1.1fr .8fr; gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
+.doom-index-component-copy-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .doom-index-component-copy > div { padding: 1.1rem; background: rgba(8,10,12,.5); }
 .doom-index-component-copy p { margin: .55rem 0 0; color: var(--doom-muted); font-size: .73rem; line-height: 1.6; }
 .doom-index-indicators { margin-top: 1.2rem; border: 1px solid var(--doom-line); background: rgba(8,10,12,.5); }
@@ -304,6 +305,7 @@
 .doom-index-claim b { display: block; color: var(--doom-ink); font-size: .78rem; line-height: 1.45; }
 .doom-index-claim p { margin: .3rem 0 0; color: var(--doom-dim); font-size: .69rem; line-height: 1.5; }
 .doom-index-evidence-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 1px; margin-top: 1.2rem; border: 1px solid var(--doom-line); background: var(--doom-line); }
+.doom-index-evidence-grid-single { grid-template-columns: 1fr; }
 .doom-index-evidence-grid > div { padding: 1.15rem; background: rgba(8,10,12,.5); }
 .doom-index-evidence-grid ul { margin: .7rem 0 0; padding: 0; color: var(--doom-muted); font-size: .72rem; line-height: 1.55; list-style: none; }
 .doom-index-evidence-grid li { position: relative; margin: .45rem 0; padding-left: 1rem; }
