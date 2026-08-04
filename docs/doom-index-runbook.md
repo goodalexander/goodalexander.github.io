@@ -2,10 +2,13 @@
 
 The Doom Index is intended to become a 0–100 estimate that the Doom Thesis is
 the most likely medium-term U.S. regime. It is not yet a published probability.
-Version 0.1 is a claim inventory and evidence-completion system.
+Version 0.5 includes a live fixed-threshold research evidence score. It is not
+yet a calibrated probability or operational trading signal.
 
-The canonical component specification is
-`static/doom-thesis/doom-index-framework.json`. The public copy is available at
+The canonical human-readable specification is `docs/doom-thesis-spec.md`, with
+the author's source brief preserved at `docs/doom-thesis-original-brief.md`.
+The machine-readable component framework is
+`static/doom-thesis/doom-index-framework.json`; its public copy is available at
 `/doom-thesis/doom-index-framework.json`.
 
 ## Publication gate
@@ -86,9 +89,102 @@ cd /home/pfrpc/repos/goodalexander.github.io
 hugo --gc --minify
 ```
 
+## Distraction Economy refresh
+
+The current frozen 2026-07-31 research vintage is reproducible with:
+
+```bash
+cd /home/pfrpc/repos/navstrategies
+.venv/bin/python scripts/run_distraction_economy_glm52_scores.py --as-of-date 2026-07-31 --workers 200 --invalid-response-retries 3
+.venv/bin/python scripts/build_distraction_vs_industrials_marketcap.py --as-of-date 2026-07-31 --minimum-score 70 --scores /home/pfrpc/repos/data/doom_thesis/distraction_economy_scores_glm52_ever_1b_marketcap_2026-07-31.csv
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_distraction_industrials_fcf.py --as-of-date 2026-07-31 --minimum-score 70 --scores /home/pfrpc/repos/data/doom_thesis/distraction_economy_scores_glm52_ever_1b_marketcap_2026-07-31.csv
+```
+
+For a new vintage, change the date in all three commands and use the newly
+dated score file in both basket builders. Do not use `--force` for a routine
+refresh: successful model responses are cached, while invalid responses receive
+fresh recovery attempts. A release fails coverage if `n_failed` is nonzero;
+failed companies remain unscored rather than receiving an invented default.
+
+The classification is a research taxonomy, not yet a point-in-time trading
+signal. The current historical market-cap and FCF panels apply the 2026
+classification retrospectively, which is appropriate for describing the
+capital-allocation history but not for claiming a historical implementable
+portfolio. Preserve that caveat in every release.
+
 ## Required score table
 
-Every scored indicator must eventually occupy one row with:
+The current registry is `static/doom-thesis/doom-index-indicator-registry.json`.
+Current machine outputs are `/doom-thesis/doom-index-score.json`,
+`data/doom_thesis/doom_index_component_scores.csv`, and
+`data/doom_thesis/doom_index_indicator_scores.csv`.
+
+Refresh the new component feeders and composite with:
+
+```bash
+cd /home/pfrpc/repos/navstrategies
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_ai_capital_efficiency.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_ai_monetization_bottlenecks.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_ai_video_quality_frontier.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_hbm_market_panel.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_distraction_attention.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_political_fiscal_history.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_political_polling.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_fiscal_prediction_markets.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_debasement_repression.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_financial_repression_ownership.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_institutional_confidence_panel.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_governance_outcomes.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_verified_fraud_enforcement.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_exit_proxies.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_surveillance_deployment.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_protest_unrest_panel.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_financial_bread_circuses.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_command_control_signposts.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_superintelligence_exit_signposts.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_legitimacy_political_feasibility.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_productivity_escape_forecast.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_doom_index_evidence_score.py
+.venv/bin/python /home/pfrpc/repos/us_debt_research/build_doom_index_history.py
+```
+
+The canonical fail-loud release command is:
+
+```bash
+cd /home/pfrpc/repos/navstrategies
+.venv/bin/python /home/pfrpc/repos/us_debt_research/refresh_doom_index.py --profile score
+```
+
+Use `--profile daily` to prepend the point-in-time company and Treasury
+refreshes, or `--profile full` for all admitted annual/source-vintage builders.
+The normal release must reach Bloomberg. `--skip-bloomberg` is a degraded
+research mode that is retained in the release manifest and leaves Bloomberg
+inputs missing. Each non-dry run writes a unique immutable manifest beneath
+`data/doom_thesis/releases/` and publishes the latest manifest on the site.
+
+If Bloomberg is unavailable, the repression builder still refreshes FRED and
+marks MOVE missing. Never pass `--skip-bloomberg` in a normal scheduled release;
+that option exists for deterministic offline tests and research rebuilds.
+
+## Scheduled refresh and health alerts
+
+Version-controlled user units live in `ops/systemd/user/`. Install them with:
+
+```bash
+systemctl --user link /home/pfrpc/repos/goodalexander.github.io/ops/systemd/user/goodalexander-doom-index-*.service
+systemctl --user link /home/pfrpc/repos/goodalexander.github.io/ops/systemd/user/goodalexander-doom-index-*.timer
+systemctl --user daemon-reload
+systemctl --user enable --now goodalexander-doom-index-daily.timer goodalexander-doom-index-full.timer goodalexander-doom-index-health.timer
+```
+
+The daily panel runs at 07:15 UTC, the full panel runs Sunday at 09:15 UTC,
+and release health is checked every six hours against a 36-hour age limit.
+Failures always write `data/doom_thesis/doom_index_last_alert.json`. To deliver
+the same payload externally, set `DOOM_INDEX_ALERT_WEBHOOK_URL` in
+`~/.config/navstrategies/credentials.env`; the URL itself is never written to
+the alert artifact or release manifest.
+
+Every scored indicator occupies one row with:
 
 | Field | Meaning |
 |---|---|

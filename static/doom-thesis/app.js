@@ -347,6 +347,20 @@
       { color: '#62c6ae', values: cumulativeHistory.map((d) => ({ year: d.year, value: d.cumulative_public_company_netinc_trillions })) },
     ], { yMin: -1, yMax: 36, headroom: 1, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), points: false, xTicks: 9 });
 
+    const distraction = data.distraction_economy;
+    lineChart($('#distraction-marketcap-chart'), [
+      { color: '#eb735f', values: distraction.marketcap_history.map((d) => ({ year: d.calendar_year, value: d.distraction_marketcap_trillions })) },
+      { color: '#62c6ae', values: distraction.marketcap_history.map((d) => ({ year: d.calendar_year, value: d.industrials_marketcap_trillions })) },
+    ], { yMin: 0, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), points: false, xTicks: 6, margin: { left: 48, right: 18 } });
+    lineChart($('#distraction-fcf-chart'), [
+      { color: '#eb735f', values: distraction.fcf_history.map((d) => ({ year: d.calendar_year, value: d.distraction_rolling_4q_fcf_billions })) },
+      { color: '#62c6ae', values: distraction.fcf_history.map((d) => ({ year: d.calendar_year, value: d.industrials_rolling_4q_fcf_billions })) },
+    ], { yMin: -100, yMax: 400, headroom: 1, yFormat: (v) => `$${v.toFixed(0)}B`, tooltipFormat: (v) => `$${v.toFixed(1)}B`, points: false, xTicks: 6, margin: { left: 54, right: 18 } });
+    lineChart($('#distraction-attention-chart'), [
+      { color: '#eb735f', values: distraction.attention_history.map((d) => ({ year: d.year, value: d.measured_digital_leisure_hours })) },
+      { color: '#62c6ae', values: distraction.attention_history.map((d) => ({ year: d.year, value: d.socializing_communicating_hours })) },
+    ], { yMin: 0, yMax: 3.6, headroom: 1, yFormat: (v) => `${v.toFixed(1)}h`, tooltipFormat: (v) => `${v.toFixed(2)} hours/day`, points: true, xTicks: 8, margin: { left: 48, right: 18 } });
+
     const utilityProductivity = productivity.utility_capex_generation;
     lineChart($('#utility-productivity-chart'), [
       { color: '#eb735f', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.real_capex_index_2004 })) },
@@ -401,12 +415,32 @@
     page.classList.add('is-loaded');
   }
 
-  fetch('/doom-thesis/data.json?v=20260803-8', { cache: 'no-cache' })
+  function renderReleaseHistory(payload) {
+    const target = $('#doom-release-history-table');
+    if (!target) return;
+    const rows = (payload.releases || []).slice(0, 8);
+    target.innerHTML = rows.length ? rows.map((row) => {
+      const bloomberg = row.skip_bloomberg ? 'degraded / skipped' : 'normal attempt';
+      const finished = row.finished_at ? new Date(row.finished_at).toISOString().replace('.000Z', 'Z') : '—';
+      return `<tr><td>${row.release_id || '—'}</td><td>${finished}</td><td>${row.profile || '—'}</td><td>${row.status || '—'}</td><td>${Number(row.artifact_count || 0)}</td><td>${bloomberg}</td></tr>`;
+    }).join('') : '<tr><td colspan="6">No archived releases yet.</td></tr>';
+  }
+
+  fetch('/doom-thesis/data.json?v=20260804-1', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {
       console.error('Doom Thesis data load failed', error);
       $('[data-loading]').hidden = true;
       $('[data-error]').hidden = false;
+    });
+
+  fetch('/doom-thesis/doom-index-release-index.json?v=20260804-1', { cache: 'no-cache' })
+    .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+    .then(renderReleaseHistory)
+    .catch((error) => {
+      console.error('Doom Index release archive load failed', error);
+      const target = $('#doom-release-history-table');
+      if (target) target.innerHTML = '<tr><td colspan="6">Release archive unavailable.</td></tr>';
     });
 })();

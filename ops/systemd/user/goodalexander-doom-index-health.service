@@ -1,0 +1,9 @@
+[Unit]
+Description=Check GoodAlexander Doom Index release health
+OnFailure=goodalexander-doom-index-alert@%n.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/repos
+EnvironmentFile=-%h/.config/navstrategies/credentials.env
+ExecStart=%h/repos/navstrategies/.venv/bin/python %h/repos/us_debt_research/check_doom_index_release_health.py --max-age-hours 36

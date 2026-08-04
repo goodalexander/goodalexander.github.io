@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-03T19:09:15.452250+00:00
+Generated: 2026-08-04T03:37:16.992052+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -12,11 +12,12 @@ This is what it would take to right-size the fiscal and monetary situation in th
 
 ## Doom Index research status
 
-- Intended output: a 0–100 estimate that the Doom Thesis is the most likely medium-term regime.
-- Current score: withheld. Version 0.1 is a claim inventory and evidence-completion system, not a calibrated probability.
+- Current research evidence score: 68.1/100 at 90.8% weighted input coverage.
+- Missing-input sensitivity: 62.2–71.5.
+- This is a fixed-threshold evidence score, not a calibrated regime probability or an investable signal.
 - Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.
 - Portfolio rule: exit Doom-linked positions below 20.
-- Productivity override: cap the score at 19 if the probability that U.S. productivity averages at least 5% for the next five years becomes the base case (50% or greater). The required forecast ensemble is not yet built.
+- Productivity override: the current research estimate is 2.5% that U.S. productivity averages at least 5% for five years, versus a 50% trigger. The estimate is reproducible but not calibrated for live execution.
 - Framework JSON: https://goodalexander.com/doom-thesis/doom-index-framework.json
 
 ## The numbers

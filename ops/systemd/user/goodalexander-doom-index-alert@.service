@@ -1,0 +1,9 @@
+[Unit]
+Description=Record and deliver Doom Index failure alert for %i
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/repos
+EnvironmentFile=-%h/.config/navstrategies/credentials.env
+ExecStart=%h/repos/navstrategies/.venv/bin/python %h/repos/us_debt_research/send_doom_index_alert.py --unit %i

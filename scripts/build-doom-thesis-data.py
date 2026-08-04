@@ -31,6 +31,13 @@ def records(frame: pd.DataFrame) -> list[dict]:
     return json.loads(frame.to_json(orient="records", date_format="iso"))
 
 
+def round_numeric(frame: pd.DataFrame, digits: int = 8) -> pd.DataFrame:
+    result = frame.copy()
+    columns = result.select_dtypes(include="number").columns
+    result[columns] = result[columns].round(digits)
+    return result
+
+
 def build_llm_document(payload: dict) -> str:
     """Return a compact, JavaScript-free snapshot for automated readers."""
     latest = payload["latest"]
@@ -43,6 +50,8 @@ def build_llm_document(payload: dict) -> str:
     demographics = payload["demographics"]["summary"]
     cumulative = payload["cumulative_income_vs_debt"]["summary"]
     valuation = payload["tax_valuation"]["valuation_summary"]
+    doom_score = payload["doom_index_score"]
+    productivity_escape = payload["productivity_escape_forecast"]
 
     def hurdle(horizon: int, gap_growth: float) -> dict:
         return next(
@@ -84,11 +93,12 @@ def build_llm_document(payload: dict) -> str:
             "",
             "## Doom Index research status",
             "",
-            "- Intended output: a 0–100 estimate that the Doom Thesis is the most likely medium-term regime.",
-            "- Current score: withheld. Version 0.1 is a claim inventory and evidence-completion system, not a calibrated probability.",
+            f"- Current research evidence score: {doom_score['research_score']:.1f}/100 at {doom_score['coverage_pct']:.1f}% weighted input coverage.",
+            f"- Missing-input sensitivity: {doom_score['missing_input_sensitivity']['lower']:.1f}–{doom_score['missing_input_sensitivity']['upper']:.1f}.",
+            "- This is a fixed-threshold evidence score, not a calibrated regime probability or an investable signal.",
             "- Publication gate: at least 80% of component weight must have current, reproducible indicators and the historical calibration must be reviewed out of sample.",
             "- Portfolio rule: exit Doom-linked positions below 20.",
-            "- Productivity override: cap the score at 19 if the probability that U.S. productivity averages at least 5% for the next five years becomes the base case (50% or greater). The required forecast ensemble is not yet built.",
+            f"- Productivity override: the current research estimate is {productivity_escape['productivity_escape_probability_pct']:.1f}% that U.S. productivity averages at least 5% for five years, versus a 50% trigger. The estimate is reproducible but not calibrated for live execution.",
             "- Framework JSON: https://goodalexander.com/doom-thesis/doom-index-framework.json",
             "",
             "## The numbers",
@@ -181,6 +191,27 @@ def build_payload(doom_root: Path) -> dict:
         doom_root / "doom_index_projection_base_2026_2030.csv"
     )
     maturity = pd.read_csv(doom_root / "treasury_maturity_wall.csv")
+    distraction_marketcap = pd.read_csv(
+        doom_root / "distraction_ge70_vs_industrials_marketcap_annual_2026-07-31.csv"
+    )
+    distraction_fcf = pd.read_csv(
+        doom_root / "distraction_ge70_vs_industrials_rolling_4q_fcf_2004_2026_annual.csv"
+    )
+    distraction_marketcap_summary = json.loads(
+        (doom_root / "distraction_ge70_vs_industrials_marketcap_annual_2026-07-31_summary.json").read_text()
+    )
+    distraction_fcf_summary = json.loads(
+        (doom_root / "distraction_ge70_vs_industrials_rolling_4q_fcf_2004_2026_summary.json").read_text()
+    )
+    distraction_attention = pd.read_csv(
+        doom_root / "distraction_atus_time_use_2003_2025.csv"
+    )
+    distraction_attention_summary = json.loads(
+        (doom_root / "distraction_attention_summary.json").read_text()
+    )
+    distraction_personalization = pd.read_csv(
+        doom_root / "distraction_personalization_lift_events.csv"
+    )
     cumulative_income_debt_daily = pd.read_csv(
         doom_root
         / "us_public_company_cumulative_net_income_vs_debt_accrued_daily_2000_2026.csv"
@@ -844,7 +875,7 @@ def build_payload(doom_root: Path) -> dict:
             "valuation_summary": valuation_summary,
             "fcf_yield_vs_30y": records(fcf_yield_vs_30y.round(8)),
             "spx_earnings_yield_vs_vclt": records(
-                spx_vclt_annual.round(8)
+                round_numeric(spx_vclt_annual)
             ),
         },
         "federal_receipts": {
@@ -864,6 +895,15 @@ def build_payload(doom_root: Path) -> dict:
         "growth_escape": {
             "summary": agi_growth_summary,
             "sensitivity": records(agi_growth_sensitivity.round(8)),
+        },
+        "distraction_economy": {
+            "marketcap_summary": distraction_marketcap_summary,
+            "fcf_summary": distraction_fcf_summary,
+            "attention_summary": distraction_attention_summary,
+            "marketcap_history": records(distraction_marketcap.round(8)),
+            "fcf_history": records(distraction_fcf.round(8)),
+            "attention_history": records(distraction_attention.round(8)),
+            "personalization_events": records(distraction_personalization.round(8)),
         },
         "productivity": {
             "summary": {
@@ -1205,6 +1245,12 @@ def build_payload(doom_root: Path) -> dict:
             },
         ],
     }
+    payload["doom_index_score"] = json.loads(
+        (doom_root / "doom_index_research_score.json").read_text()
+    )
+    payload["productivity_escape_forecast"] = json.loads(
+        (doom_root / "productivity_escape_forecast_summary.json").read_text()
+    )
     return payload
 
 

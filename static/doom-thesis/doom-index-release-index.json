@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-08-04T03:37:17.587800+00:00",
+  "release_count": 6,
+  "releases": [
+    {
+      "release_id": "20260804T033510.059652Z",
+      "started_at": "2026-08-04T03:35:10.059652+00:00",
+      "finished_at": "2026-08-04T03:37:17.579983+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": true,
+      "failed_stage": null,
+      "artifact_count": 32,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T033510.059652Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T032732.059408Z",
+      "started_at": "2026-08-04T03:27:32.059408+00:00",
+      "finished_at": "2026-08-04T03:30:02.082366+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": true,
+      "failed_stage": null,
+      "artifact_count": 0,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T032732.059408Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T031710.959683Z",
+      "started_at": "2026-08-04T03:17:10.959683+00:00",
+      "finished_at": "2026-08-04T03:19:07.406241+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": true,
+      "failed_stage": null,
+      "artifact_count": 0,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T031710.959683Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T021803.463087Z",
+      "started_at": "2026-08-04T02:18:03.463087+00:00",
+      "finished_at": "2026-08-04T02:18:17.381595+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": true,
+      "failed_stage": null,
+      "artifact_count": 0,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T021803.463087Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T015520.757004Z",
+      "started_at": "2026-08-04T01:55:20.757004+00:00",
+      "finished_at": "2026-08-04T01:55:28.271921+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": true,
+      "failed_stage": null,
+      "artifact_count": 0,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T015520.757004Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T015450.868231Z",
+      "started_at": "2026-08-04T01:54:50.868231+00:00",
+      "finished_at": "2026-08-04T01:54:59.321901+00:00",
+      "profile": "score",
+      "status": "failed",
+      "skip_bloomberg": true,
+      "failed_stage": "site-data-payload",
+      "artifact_count": 0,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T015450.868231Z/manifest.json"
+    }
+  ]
+}

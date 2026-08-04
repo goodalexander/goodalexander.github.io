@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh the GoodAlexander Doom Index full panel weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 09:15:00 UTC
+RandomizedDelaySec=30m
+Persistent=true
+Unit=goodalexander-doom-index-full.service
+
+[Install]
+WantedBy=timers.target

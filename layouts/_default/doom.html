@@ -9,6 +9,8 @@
   </header>
 
   {{- $doomIndex := readFile "static/doom-thesis/doom-index-framework.json" | transform.Unmarshal -}}
+  {{- $doomScore := readFile "static/doom-thesis/doom-index-score.json" | transform.Unmarshal -}}
+  {{- $doomHistory := readFile "static/doom-thesis/doom-index-history.json" | transform.Unmarshal -}}
   {{- $claimCount := 0 -}}
   {{- $warrantedCount := 0 -}}
   {{- $partialCount := 0 -}}
@@ -31,24 +33,24 @@
 
     <div class="doom-index-status-grid">
       <div class="doom-index-score-card">
-        <span>Current index</span>
-        <strong>—<small>/100</small></strong>
-        <em>{{ $doomIndex.status_label }}</em>
+        <span>Research evidence score</span>
+        <strong>{{ printf "%.0f" $doomScore.research_score }}<small>/100</small></strong>
+        <em>As of {{ $doomScore.as_of_date }} · not a calibrated probability</em>
       </div>
       <div>
-        <span>Fully warranted claims</span>
-        <strong>{{ $warrantedCount }}<small>/{{ $claimCount }}</small></strong>
-        <em>{{ $partialCount }} additional claims are partly warranted</em>
+        <span>Current weighted coverage</span>
+        <strong>{{ printf "%.1f" $doomScore.coverage_pct }}<small>%</small></strong>
+        <em>Missing and stale inputs are not scored</em>
       </div>
       <div>
-        <span>Publication gate</span>
-        <strong>80<small>%</small></strong>
-        <em>Minimum reproducible weighted coverage</em>
+        <span>Missing-input range</span>
+        <strong>{{ printf "%.0f" $doomScore.missing_input_sensitivity.lower }}–{{ printf "%.0f" $doomScore.missing_input_sensitivity.upper }}</strong>
+        <em>Every absent input set to 0 or 100</em>
       </div>
       <div class="doom-index-stop-card">
         <span>Portfolio stop</span>
         <strong>&lt;20</strong>
-        <em>Exit Doom-linked positions</em>
+        <em>Rule specified · execution not yet live</em>
       </div>
     </div>
 
@@ -59,7 +61,7 @@
         <span>The kill switch</span>
         <p>{{ $doomIndex.stop_rule.override }} The score is also exited normally if it falls below {{ $doomIndex.stop_rule.threshold }}.</p>
       </div>
-      <p class="doom-note">A 0–100 composite is not automatically a probability. The number stays withheld until the inputs are reproducible and its probability interpretation is calibrated against history. Missing evidence is not scored as 50 or quietly treated as fact.</p>
+      <p class="doom-note">The live number is a research evidence score built from fixed, disclosed thresholds. It is not yet a probability or a trading signal: historical calibration, the five-year productivity forecast override, and execution rules remain incomplete. Missing evidence is not scored as 50 or quietly treated as fact.</p>
     </div>
 
     <div class="doom-index-scale" aria-label="Proposed Doom Index interpretation">
@@ -69,6 +71,39 @@
       <div><b>60–79</b><span>Doom is base case</span></div>
       <div><b>80–100</b><span>High-conviction regime</span></div>
     </div>
+
+    <details class="doom-index-runbook">
+      <summary><span><b>Coverage-gated score history</b><small>Diagnostic values remain unpublished below 80% coverage</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>Year</th><th>Published score</th><th>Diagnostic</th><th>Coverage</th><th>Missing-input range</th><th>Status</th></tr></thead>
+          <tbody>
+          {{- range last 6 $doomHistory.history }}
+            <tr>
+              <td>{{ .calendar_year }}</td>
+              <td>{{ if ne .research_score nil }}{{ printf "%.1f" .research_score }}{{ else }}—{{ end }}</td>
+              <td>{{ printf "%.1f" .diagnostic_score }}</td>
+              <td>{{ printf "%.1f%%" .coverage_pct }}</td>
+              <td>{{ printf "%.1f–%.1f" .missing_input_lower_bound .missing_input_upper_bound }}</td>
+              <td>{{ if .publication_comparable }}Published{{ else }}Below coverage gate{{ end }}</td>
+            </tr>
+          {{- end }}
+          </tbody>
+        </table>
+        <p class="doom-note">Only 2026 currently clears the 80% publication gate. Earlier diagnostic values are shown to expose missing-data sensitivity, not as a backfilled or investable historical index.</p>
+      </div>
+    </details>
+
+    <details class="doom-index-runbook">
+      <summary><span><b>Immutable release archive</b><small>Frozen artifacts, hashes, profile, and provider-degradation state</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-table-wrap">
+        <table class="doom-table doom-table-dense">
+          <thead><tr><th>Release</th><th>Finished</th><th>Profile</th><th>Status</th><th>Artifacts</th><th>Bloomberg</th></tr></thead>
+          <tbody id="doom-release-history-table"><tr><td colspan="6">Loading release archive…</td></tr></tbody>
+        </table>
+        <p class="doom-note">Each successful release retains frozen copies of every canonical artifact plus SHA-256 hashes. “Degraded” means the explicit research-only Bloomberg skip was used; it is never relabeled as a normal production release.</p>
+      </div>
+    </details>
 
     <div class="doom-index-section-head">
       <div>
@@ -80,11 +115,13 @@
 
     <div class="doom-index-components">
       {{- range $index, $component := $doomIndex.components }}
+      {{- $componentScores := where $doomScore.components "component_id" $component.id -}}
+      {{- $componentScore := index $componentScores 0 -}}
       <details class="doom-index-component" id="component-{{ $component.id }}"{{ if eq $index 0 }} open{{ end }}>
         <summary>
           <span class="doom-index-component-number">{{ printf "%02d" (add $index 1) }}</span>
           <span class="doom-index-component-title"><b>{{ $component.title }}</b><small>{{ $component.contention }}</small></span>
-          <span class="doom-index-weight">{{ $component.weight }}% weight</span>
+          <span class="doom-index-weight">{{ $component.weight }}% weight<br>{{ printf "%.0f" $componentScore.component_score }} score · {{ printf "%.0f" $componentScore.coverage_pct }}% coverage</span>
           <span class="doom-index-status doom-index-status-{{ $component.status }}">{{ $component.status }}</span>
           <span class="doom-index-expand" aria-hidden="true">+</span>
         </summary>
@@ -102,6 +139,27 @@
               <span class="doom-panel-label">Update cadence</span>
               <p>{{ $component.update_frequency }}</p>
             </div>
+          </div>
+
+          <div class="doom-index-indicators">
+            <div class="doom-index-indicators-head">
+              <span class="doom-panel-label">Current quantitative inputs</span>
+              <small>Every transform is clipped to 0–100. Higher always means more Doom evidence.</small>
+            </div>
+            <div class="doom-index-indicator-table">
+              {{- range where $doomScore.indicators "component_id" $component.id }}
+              <div class="doom-index-indicator-row">
+                <div>
+                  <b>{{ .label }}</b>
+                  <small>{{ .source }}{{ with .as_of }} · as of {{ . }}{{ end }}</small>
+                </div>
+                <span class="doom-index-indicator-value">{{ if ne .raw_value nil }}{{ printf "%.1f" .raw_value }}{{ .unit }}{{ else }}—{{ end }}</span>
+                <span class="doom-index-indicator-score">{{ if ne .indicator_score nil }}{{ printf "%.0f" .indicator_score }}{{ else }}—{{ end }}<small>/100</small></span>
+                <span class="doom-index-status doom-index-status-{{ .quality_flag }}">{{ .quality_flag }}</span>
+              </div>
+              {{- end }}
+            </div>
+            <p class="doom-note">Component score: <b>{{ printf "%.1f" $componentScore.component_score }}/100</b> at <b>{{ printf "%.1f" $componentScore.coverage_pct }}%</b> input coverage. Open the methodology file for every threshold, direction, weight, source, and missing-data rule.</p>
           </div>
 
           <div class="doom-index-claims">
@@ -144,6 +202,35 @@
       {{- end }}
     </div>
 
+    <div class="doom-index-section-head doom-index-downstream-head" id="distraction-economy-charts">
+      <div><span class="doom-panel-label">Measured capital allocation</span><h3>The Distraction Economy versus Industrials</h3></div>
+      <p>The score-≥70 GLM 5.2 basket contains companies whose economics benefit directly from greater digital distraction. These charts measure capital and cash flow—not the claimed social harm.</p>
+    </div>
+    <div class="doom-chart-grid doom-productivity-secondary-charts">
+      <figure class="doom-panel doom-chart-panel">
+        <div class="doom-panel-head">
+          <div><span class="doom-panel-label">Market capitalization · $T</span><h3>Expected profit pools</h3></div>
+          <div class="doom-legend"><span class="legend-red">Distraction</span><span class="legend-teal">Industrials</span></div>
+        </div>
+        <svg id="distraction-marketcap-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Distraction Economy and U.S. Industrials market capitalization from 2004 through 2026"></svg>
+      </figure>
+      <figure class="doom-panel doom-chart-panel">
+        <div class="doom-panel-head">
+          <div><span class="doom-panel-label">Rolling four-quarter FCF · $B</span><h3>Cash generation</h3></div>
+          <div class="doom-legend"><span class="legend-red">Distraction</span><span class="legend-teal">Industrials</span></div>
+        </div>
+        <svg id="distraction-fcf-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Distraction Economy and U.S. Industrials rolling four-quarter free cash flow from 2004 through 2026"></svg>
+      </figure>
+      <figure class="doom-panel doom-chart-panel doom-chart-panel-wide">
+        <div class="doom-panel-head">
+          <div><span class="doom-panel-label">Average primary-activity hours per day</span><h3>Digital leisure versus socializing</h3></div>
+          <div class="doom-legend"><span class="legend-red">TV + leisure computer/games</span><span class="legend-teal">Socializing</span></div>
+        </div>
+        <svg id="distraction-attention-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Measured television and leisure computer time versus socializing time from 2003 through 2025"></svg>
+      </figure>
+    </div>
+    <p class="doom-note doom-chart-note">Sources: Sharadar DAILY market cap and point-in-time ARQ filings, including delisted U.S. companies; BLS American Time Use Survey. The 2026 classifier is applied retrospectively, so the company charts are descriptive rather than an implementable historical portfolio. ATUS measures only the primary activity, omits simultaneous phone use, and has no annual 2020 estimate. The measured digital-leisure/socializing ratio rose roughly 51% from 2003 to 2025; that is attention-allocation evidence, not a causal estimate of lost productivity.</p>
+
     <div class="doom-index-section-head doom-index-downstream-head">
       <div><span class="doom-panel-label">Downstream, not yet scored</span><h3>Scenarios and investment modules</h3></div>
       <p>These are implications of the thesis. They should not inflate the score merely because they sound consistent with it.</p>
@@ -154,7 +241,9 @@
         {{- range $doomIndex.downstream_scenarios }}
         <details>
           <summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary>
-          <p>{{ .summary }}</p><small><b>Needed:</b> {{ .needed }}</small>
+          <p>{{ .summary }}</p>
+          {{- with .existing_evidence }}<small><b>Measured now:</b> {{ . }}</small>{{ end }}
+          <small><b>Needed:</b> {{ .needed }}</small>
         </details>
         {{- end }}
       </div>
@@ -181,6 +270,10 @@
         </ol>
         <p>No sub-strategy becomes “investable” without a point-in-time backtest, costs, liquidity and borrow constraints, sizing, drawdown analysis, and explicit execution rules.</p>
         <a class="doom-download" href="/doom-thesis/doom-index-framework.json" download>Download framework JSON <span>↓</span></a>
+        <a class="doom-download" href="/doom-thesis/doom-index-indicator-registry.json" download>Download indicator registry <span>↓</span></a>
+        <a class="doom-download" href="/doom-thesis/doom-index-score.json" download>Download current score <span>↓</span></a>
+        <a class="doom-download" href="/doom-thesis/doom-index-history.json" download>Download coverage-gated history <span>↓</span></a>
+        <a class="doom-download" href="/doom-thesis/latest-release-manifest.json" download>Download latest release manifest <span>↓</span></a>
       </div>
     </details>
   </section>

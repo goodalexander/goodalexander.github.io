@@ -1,0 +1,12 @@
+[Unit]
+Description=Check GoodAlexander Doom Index release health every six hours
+
+[Timer]
+OnBootSec=10m
+OnUnitActiveSec=6h
+AccuracySec=5m
+Persistent=true
+Unit=goodalexander-doom-index-health.service
+
+[Install]
+WantedBy=timers.target
