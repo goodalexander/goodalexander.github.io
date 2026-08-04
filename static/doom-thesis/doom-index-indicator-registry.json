@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "score_type": "research_evidence_score",
   "calibration": "fixed economic thresholds; not a regime probability",
   "missing_rule": "Current observations and explicitly modeled inputs receive a score; modeled inputs retain a visible quality flag and sensitivity. Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
@@ -19,7 +19,7 @@
     {
       "id": "productivity-escape",
       "title": "Productivity escape",
-      "weight": 20,
+      "weight": 30,
       "indicators": [
         {"id": "labor_productivity_five_year_cagr_pct", "label": "Five-year labor-productivity growth", "weight": 20, "unit": "%", "low": 1, "high": 5, "direction": "decreasing", "frequency": "annual", "source": "BLS/FRED OPHNFB"},
         {"id": "labor_productivity_latest_qoq_annualized_pct", "label": "Latest quarterly labor-productivity growth", "weight": 10, "unit": "%", "low": 0, "high": 5, "direction": "decreasing", "frequency": "quarterly", "source": "BLS nonfarm business productivity"},
@@ -31,29 +31,9 @@
       ]
     },
     {
-      "id": "ai-capital-efficiency",
-      "title": "AI capital intensity and returns",
-      "weight": 15,
-      "indicators": [
-        {"id": "hyperscaler_capex_pct_revenue", "label": "Hyperscaler capex / revenue", "weight": 16, "unit": "%", "low": 10, "high": 35, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ; AMZN, GOOGL, META, MSFT, ORCL"},
-        {"id": "hyperscaler_capex_pct_operating_cash_flow", "label": "Hyperscaler capex / operating cash flow", "weight": 16, "unit": "%", "low": 25, "high": 100, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ"},
-        {"id": "hyperscaler_fcf_margin_pct", "label": "Hyperscaler FCF margin", "weight": 16, "unit": "%", "low": 0, "high": 25, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar ARQ"},
-        {"id": "hyperscaler_capex_to_depreciation", "label": "Hyperscaler capex / depreciation", "weight": 16, "unit": "x", "low": 1, "high": 4, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ"},
-        {"id": "hyperscaler_capex_growth_yoy_pct", "label": "Hyperscaler capex growth", "weight": 16, "unit": "%", "low": 0, "high": 50, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ"},
-        {"id": "ai_revenue_to_hyperscaler_capex_pct", "label": "Disclosed/inferred AI revenue run rate / hyperscaler capex", "weight": 10, "unit": "%", "low": 20, "high": 100, "direction": "decreasing", "frequency": "quarterly disclosure vintage", "source": "Microsoft, Alphabet, and Amazon investor disclosures plus disclosed assumptions"},
-        {"id": "ai_cash_flow_to_hyperscaler_capex_pct", "label": "Modeled AI cash flow / hyperscaler capex", "weight": 10, "unit": "%", "low": 5, "high": 25, "direction": "decreasing", "frequency": "quarterly disclosure vintage", "source": "Doom AI monetization sensitivity; not ROIC"},
-        {"id": "ai_video_api_floor_decline_pct", "label": "720p audio AI-video API floor decline", "weight": 0, "unit": "%", "low": 0, "high": 95, "direction": "decreasing", "frequency": "vendor pricing event", "source": "Google and OpenAI official API pricing"},
-        {"id": "ai_video_quality_adjusted_frontier_cost_usd_per_minute", "label": "Quality-band AI-video frontier cost", "weight": 0, "unit": "$/minute", "low": 1, "high": 25, "direction": "decreasing", "frequency": "daily snapshot", "source": "Artificial Analysis Text-to-Video with Audio Arena; cheapest price within 95% of frontier Elo, prospective diagnostic only"},
-        {"id": "hbm_bottleneck_disclosure_score", "label": "HBM bottleneck disclosure-event severity", "weight": 0, "unit": "/100", "low": 0, "high": 100, "direction": "increasing", "frequency": "earnings event", "source": "Micron and Samsung official disclosures"},
-        {"id": "hbm_share_total_dram_wafer_input_pct", "label": "HBM share of DRAM wafer input", "weight": 0, "unit": "%", "low": 10, "high": 35, "direction": "increasing", "frequency": "forecast vintage", "source": "TrendForce public market forecast; diagnostic only"},
-        {"id": "hbm_share_total_dram_bit_supply_pct", "label": "HBM share of DRAM bit supply", "weight": 0, "unit": "%", "low": 5, "high": 20, "direction": "increasing", "frequency": "forecast vintage", "source": "TrendForce public market forecast; diagnostic only"},
-        {"id": "hbm_top_two_supplier_share_pct", "label": "HBM top-two supplier share", "weight": 0, "unit": "%", "low": 50, "high": 100, "direction": "increasing", "frequency": "forecast vintage", "source": "TrendForce supplier bit-output forecast; diagnostic only"}
-      ]
-    },
-    {
       "id": "distraction-economy",
       "title": "The distraction economy",
-      "weight": 10,
+      "weight": 15,
       "indicators": [
         {"id": "distraction_to_industrials_marketcap_pct", "label": "Distraction market cap / Industrials market cap", "weight": 45, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily market / annual display", "source": "Sharadar DAILY and GLM 5.2 taxonomy"},
         {"id": "distraction_to_industrials_fcf_pct", "label": "Distraction rolling-four-quarter FCF / Industrials FCF", "weight": 30, "unit": "%", "low": 25, "high": 175, "direction": "increasing", "frequency": "daily filing replay", "source": "Sharadar ARQ and GLM 5.2 taxonomy"},

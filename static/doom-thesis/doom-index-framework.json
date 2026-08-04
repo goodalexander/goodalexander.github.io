@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "last_reviewed": "2026-08-04",
   "specification": {
     "canonical": "docs/doom-thesis-spec.md",
@@ -49,7 +49,7 @@
     {
       "id": "productivity-escape",
       "title": "Productivity escape",
-      "weight": 20,
+      "weight": 30,
       "status": "partial",
       "contention": "Rapid productivity acceleration is not yet the base case, and the fiscal escape velocity is far above consensus.",
       "plain_english": "Ordinary productivity growth does not make the liability stack disappear. The thesis breaks only if AI produces a sustained, economy-wide step-change large enough to outrun the obligations.",
@@ -75,37 +75,9 @@
       ]
     },
     {
-      "id": "ai-capital-efficiency",
-      "title": "AI capital intensity and returns",
-      "weight": 15,
-      "status": "partial",
-      "contention": "AI requires massive capital investment whose realized economic return remains uncertain.",
-      "plain_english": "The buildout can add to GDP and earn private returns without delivering a broad productivity escape. Revenue earned by capturing more attention is economically different from durable cash-flow and revenue gains across businesses outside distraction.",
-      "score_rule": "Track hyperscaler AI capex, incremental AI revenue and gross profit, depreciation, power demand, data-center utilization, estimated incremental return on invested capital, monetization destination, and pass-through into real-business revenue growth and cash-flow margins outside distraction.",
-      "update_frequency": "Quarterly filings and earnings calls; monthly infrastructure and pricing checks",
-      "existing_evidence": [
-        {"label": "Operating-company FCF", "href": "#productivity"},
-        {"label": "Equity versus fixed income", "href": "#tax-valuation"},
-        {"label": "Point-in-time hyperscaler capital intensity", "href": "#component-ai-capital-efficiency"}
-      ],
-      "missing_warrants": [
-        "Validate the completed disclosure-based AI revenue and cash-return ranges as specifically attributable to AI.",
-        "Separate replacement capex, ordinary cloud capex, and genuinely incremental AI infrastructure.",
-        "Estimate incremental ROIC under low, base, and high monetization cases.",
-        "Classify attributable AI monetization by productive versus distraction destination; private AI profitability alone cannot satisfy the productivity-escape gate.",
-        "Replace the new market-wide HBM forecast panel with realized supply, transacted price, lead-time, and accelerator-utilization histories; extend the prospective Artificial Analysis quality-band video-cost snapshots before assigning weight."
-      ],
-      "claims": [
-        {"status": "partial", "text": "The AI-adjacent hyperscaler buildout is massive relative to current cash conversion.", "note": "A point-in-time Sharadar panel measures aggregate capex, revenue, operating cash flow, FCF, depreciation, and growth for AMZN, GOOGL, META, MSFT, and ORCL. Company capex is not yet attributable AI capex."},
-        {"status": "partial", "text": "The economic return on the AI buildout is questionable.", "note": "The base disclosure model finds $64B of AI revenue run rate and $22.4B of modeled cash flow against $562B of annual capex. Exact disclosures and attribution assumptions are now scored as visibly modeled inputs with a published sensitivity table; this remains a cash-coverage proxy rather than ROIC."},
-        {"status": "partial", "text": "A memory-enterprise bottleneck has delayed the full social and economic impact.", "note": "Micron and Samsung disclosure events are now paired with a market-wide TrendForce forecast panel: HBM is estimated to consume 22% of DRAM wafer input but supply 9% of bits in 2026, and SK hynix plus Samsung account for 78% of forecast HBM bit output. These are forecasts; continuous realized prices, lead times, and accelerator utilization remain absent."},
-        {"status": "partial", "text": "The cost of generating AI video is falling rapidly.", "note": "Official vendor API floors for comparable 720p video with audio fell 87.5% from $0.40 to $0.05 per second. Archived quality scores are still needed before calling the series quality-adjusted."}
-      ]
-    },
-    {
       "id": "distraction-economy",
       "title": "The distraction economy",
-      "weight": 10,
+      "weight": 15,
       "status": "partial",
       "contention": "AI may raise measured capability while reducing human attention, agency, and effective productivity through personalized media and addiction loops.",
       "plain_english": "Cheaper, more personalized content can consume the time and focus that better tools theoretically save. A productivity model that counts only workplace automation misses this offset.",
