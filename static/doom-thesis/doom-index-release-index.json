@@ -1,7 +1,29 @@
 {
-  "generated_at": "2026-08-04T17:38:01.339144+00:00",
-  "release_count": 12,
+  "generated_at": "2026-08-04T18:05:35.420862+00:00",
+  "release_count": 14,
   "releases": [
+    {
+      "release_id": "20260804T180239.867487Z",
+      "started_at": "2026-08-04T18:02:39.867487+00:00",
+      "finished_at": "2026-08-04T18:05:35.372546+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": false,
+      "failed_stage": null,
+      "artifact_count": 73,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/manifest.json"
+    },
+    {
+      "release_id": "20260804T175552.012670Z",
+      "started_at": "2026-08-04T17:55:52.012670+00:00",
+      "finished_at": "2026-08-04T17:58:27.951695+00:00",
+      "profile": "score",
+      "status": "failed",
+      "skip_bloomberg": false,
+      "failed_stage": "command-control-signposts",
+      "artifact_count": 72,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T175552.012670Z/manifest.json"
+    },
     {
       "release_id": "20260804T173500.087190Z",
       "started_at": "2026-08-04T17:35:00.087190+00:00",

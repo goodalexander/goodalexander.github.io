@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_reviewed": "2026-08-04",
   "specification": {
     "canonical": "docs/doom-thesis-spec.md",
@@ -26,7 +26,7 @@
       "status": "partial",
       "contention": "The United States has a structural fiscal gap that cannot be closed painlessly under consensus growth.",
       "plain_english": "Debt, interest, and promised-program funding are growing faster than the ordinary tax base. Stabilization requires unusually strong growth, materially higher revenue, benefit reform, inflation, or some combination.",
-      "score_rule": "Score from debt and deficit trajectories, interest burden, program-gap annual equivalent, and the size of the recurring adjustment required to reach the prudent scenario.",
+      "score_rule": "Score from debt and deficit trajectories, interest burden, program-gap annual equivalent, and the size of the recurring adjustment required to reach the prudent scenario. The unified-deficit input scores 0 at 3% of GDP or less and 100 at 8% or more, so persistent deficits near 6% register as material stress rather than safety.",
       "update_frequency": "Daily debt; monthly interest model; CBO vintage; annual Trustees reports",
       "existing_evidence": [
         {"label": "Liability stack", "href": "#numbers"},

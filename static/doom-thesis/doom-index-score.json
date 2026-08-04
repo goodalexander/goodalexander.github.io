@@ -3,11 +3,11 @@
   "components": [
     {
       "component_id": "fiscal-constraint",
-      "component_score": 59.56312698410901,
+      "component_score": 64.63441587299789,
       "coverage_pct": 100.0,
       "title": "Fiscal constraint",
       "weight": 20.0,
-      "weighted_contribution": 11.912625396821802
+      "weighted_contribution": 12.92688317459958
     },
     {
       "component_id": "productivity-escape",
@@ -51,7 +51,7 @@
     }
   ],
   "coverage_pct": 100.0,
-  "generated_at": "2026-08-04T17:37:59.294708+00:00",
+  "generated_at": "2026-08-04T18:05:32.039067+00:00",
   "indicators": [
     {
       "as_of": "2025-09-30",
@@ -78,15 +78,15 @@
       "component_title": "Fiscal constraint",
       "direction": "increasing",
       "fresh_until": "2027-12-31",
-      "high_threshold": 12,
+      "high_threshold": 8,
       "indicator_id": "deficit_pct_gdp",
-      "indicator_score": 31.695555555555554,
+      "indicator_score": 57.052,
       "label": "Unified deficit / GDP",
       "low_threshold": 3,
       "note": "",
       "quality_flag": "current",
       "raw_value": 5.8526,
-      "source": "OMB/FRED FYFSDFYGDP",
+      "source": "OMB/FRED FYFSDFYGDP; 0 at <=3% and 100 at >=8% under the disclosed fiscal-stress convention",
       "total_index_weight": 4.0,
       "unit": "%",
       "within_component_weight": 20.0
@@ -517,12 +517,12 @@
       "fresh_until": "2026-10-20",
       "high_threshold": 100,
       "indicator_id": "market_probability_deficit_below_5_pct_fy2026",
-      "indicator_score": 90.0,
+      "indicator_score": 90.5,
       "label": "Market probability FY2026 deficit/GDP is below 5%",
       "low_threshold": 0,
       "note": "Diagnostic only: one-year deficit/GDP outcome, not passage of a recurring prudent-course package; midpoint is sensitive to spread and liquidity.",
       "quality_flag": "current",
-      "raw_value": 10.0,
+      "raw_value": 9.5,
       "source": "Kalshi KXDEFGDP public API; one-year fiscal-outcome diagnostic, not package-passage probability",
       "total_index_weight": 0.0,
       "unit": "% probability",
@@ -992,11 +992,11 @@
   },
   "missing_input_sensitivity": {
     "interpretation": "Bounds assign every missing or stale indicator either 0 or 100 without reweighting.",
-    "lower": 66.79025893538554,
-    "upper": 66.79025893538554
+    "lower": 67.80451671316331,
+    "upper": 67.80451671316331
   },
   "published_probability": null,
-  "research_score": 66.79025893538554,
+  "research_score": 67.80451671316331,
   "status": "research_evidence_score_not_probability",
   "stop_status": {
     "operational": false,
@@ -1006,6 +1006,6 @@
     "threshold": 20,
     "triggered": false
   },
-  "uncapped_research_score": 66.79025893538554,
-  "version": "0.9.0"
+  "uncapped_research_score": 67.80451671316331,
+  "version": "1.0.0"
 }

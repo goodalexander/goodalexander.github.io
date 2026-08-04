@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "1.0.0",
   "score_type": "research_evidence_score",
   "calibration": "fixed economic thresholds; not a regime probability",
   "missing_rule": "Current observations and explicitly modeled inputs receive a score; modeled inputs retain a visible quality flag and sensitivity. Missing or stale indicators do not receive a score. Available indicators are reweighted within a component and coverage is published separately.",
@@ -10,7 +10,7 @@
       "weight": 20,
       "indicators": [
         {"id": "gross_debt_pct_gdp", "label": "Gross federal debt / GDP", "weight": 25, "unit": "%", "low": 60, "high": 150, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED GFDGDPA188S"},
-        {"id": "deficit_pct_gdp", "label": "Unified deficit / GDP", "weight": 20, "unit": "%", "low": 3, "high": 12, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED FYFSDFYGDP"},
+        {"id": "deficit_pct_gdp", "label": "Unified deficit / GDP", "weight": 20, "unit": "%", "low": 3, "high": 8, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED FYFSDFYGDP; 0 at <=3% and 100 at >=8% under the disclosed fiscal-stress convention"},
         {"id": "net_interest_pct_receipts", "label": "Federal interest / receipts", "weight": 20, "unit": "%", "low": 5, "high": 30, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED FYOINT and FYFR"},
         {"id": "program_gap_pct_gdp", "label": "Social Security and Medicare 75-year gap / GDP", "weight": 20, "unit": "%", "low": 100, "high": 400, "direction": "increasing", "frequency": "annual vintage", "source": "SSA/CMS Trustees and Treasury Statement of Social Insurance"},
         {"id": "prudent_adjustment_pct_gdp", "label": "Recurring prudent-course adjustment / GDP", "weight": 15, "unit": "%", "low": 1, "high": 10, "direction": "increasing", "frequency": "CBO/Trustees vintage", "source": "Doom fiscal sustainability model"}
