@@ -1,0 +1,115 @@
+{{ define "main" }}
+{{- $framework := readFile "static/doom-thesis/doom-index-framework.json" | transform.Unmarshal -}}
+{{- $score := readFile "static/doom-thesis/doom-index-score.json" | transform.Unmarshal -}}
+{{- $history := readFile "static/doom-thesis/doom-index-history.json" | transform.Unmarshal -}}
+{{- $releases := readFile "static/doom-thesis/doom-index-release-index.json" | transform.Unmarshal -}}
+{{- $markets := readFile "static/doom-thesis/fiscal-prediction-markets-summary.json" | transform.Unmarshal -}}
+
+<article class="doom-page doom-checklist-page">
+  <header class="doom-hero">
+    <div class="doom-kicker">Internal research and release operations</div>
+    <h1>Doom Thesis Checklist</h1>
+    <p class="doom-deck">What remains to be proven, maintained, and tested.</p>
+    <p class="doom-intro">This page holds the acceptance gates, missing warrants, scoring mechanics, data cadence, and release archive removed from the reader-facing thesis.</p>
+    <a class="doom-download" href="/doom-thesis/">Return to the Doom Thesis <span>→</span></a>
+  </header>
+
+  <section class="doom-section doom-index-system">
+    <div class="doom-index-status-grid">
+      <div class="doom-index-score-card"><span>Current evidence score</span><strong>{{ printf "%.1f" $score.research_score }}<small>/100</small></strong><em>As of {{ $score.as_of_date }}</em></div>
+      <div><span>Weighted coverage</span><strong>{{ printf "%.1f" $score.coverage_pct }}<small>%</small></strong><em>Publication requires 100%</em></div>
+      <div><span>Missing-input range</span><strong>{{ printf "%.1f" $score.missing_input_sensitivity.lower }}–{{ printf "%.1f" $score.missing_input_sensitivity.upper }}</strong><em>Missing observations set to either bound</em></div>
+      <div class="doom-index-stop-card"><span>Portfolio stop</span><strong>&lt;20</strong><em>{{ $framework.stop_rule.override }}</em></div>
+    </div>
+
+    <div class="doom-index-section-head">
+      <div><span class="doom-panel-label">Historical acceptance</span><h3>Coverage-gated score history</h3></div>
+      <p>Diagnostic values are not published as comparable index history until weighted coverage reaches 100%.</p>
+    </div>
+    <div class="doom-table-wrap">
+      <table class="doom-table doom-table-dense">
+        <thead><tr><th>Year</th><th>Published score</th><th>Diagnostic</th><th>Coverage</th><th>Missing-input range</th><th>Status</th></tr></thead>
+        <tbody>{{- range $history.history }}<tr><td>{{ .calendar_year }}</td><td>{{ if ne .research_score nil }}{{ printf "%.1f" .research_score }}{{ else }}—{{ end }}</td><td>{{ printf "%.1f" .diagnostic_score }}</td><td>{{ printf "%.1f%%" .coverage_pct }}</td><td>{{ printf "%.1f–%.1f" .missing_input_lower_bound .missing_input_upper_bound }}</td><td>{{ if .publication_comparable }}Published{{ else }}Below coverage gate{{ end }}</td></tr>{{- end }}</tbody>
+      </table>
+    </div>
+
+    <div class="doom-index-section-head">
+      <div><span class="doom-panel-label">Acceptance inventory</span><h3>Claims, evidence, and open work</h3></div>
+      <p>Checked claims have a direct warrant. Partial, missing, and conceptual claims remain explicit work items.</p>
+    </div>
+    <div class="doom-index-components">
+      {{- range $index, $component := $framework.components }}
+      {{- $componentScores := where $score.components "component_id" $component.id -}}
+      {{- $componentScore := index $componentScores 0 -}}
+      <details class="doom-index-component"{{ if eq $index 0 }} open{{ end }}>
+        <summary>
+          <span class="doom-index-component-number">{{ printf "%02d" (add $index 1) }}</span>
+          <span class="doom-index-component-title"><b>{{ $component.title }}</b><small>{{ $component.contention }}</small></span>
+          <span class="doom-index-weight">{{ $component.weight }}% weight<br>{{ printf "%.1f" $componentScore.component_score }} score</span>
+          <span class="doom-index-status doom-index-status-{{ $component.status }}">{{ $component.status }}</span>
+          <span class="doom-index-expand" aria-hidden="true">+</span>
+        </summary>
+        <div class="doom-index-component-body">
+          <div class="doom-index-component-copy">
+            <div><span class="doom-panel-label">Plain English</span><p>{{ $component.plain_english }}</p></div>
+            <div><span class="doom-panel-label">Scoring rule</span><p>{{ $component.score_rule }}</p></div>
+            <div><span class="doom-panel-label">Update cadence</span><p>{{ $component.update_frequency }}</p></div>
+          </div>
+          <div class="doom-index-indicators">
+            <div class="doom-index-indicators-head"><span class="doom-panel-label">Quantitative inputs</span><small>Higher always means more Doom evidence.</small></div>
+            <div class="doom-index-indicator-table">
+              {{- range where $score.indicators "component_id" $component.id }}
+              <div class="doom-index-indicator-row">
+                <div><b>{{ .label }}</b><small>{{ if gt .total_index_weight 0.0 }}Scored · {{ printf "%.2f" .total_index_weight }}% index weight{{ else }}Diagnostic · zero weight{{ end }} · {{ .source }}{{ with .as_of }} · as of {{ . }}{{ end }}</small>{{ with .note }}<small>{{ . }}</small>{{ end }}</div>
+                <span class="doom-index-indicator-value">{{ if ne .raw_value nil }}{{ printf "%.1f" .raw_value }}{{ .unit }}{{ else }}—{{ end }}</span>
+                <span class="doom-index-indicator-score">{{ if gt .total_index_weight 0.0 }}{{ if ne .indicator_score nil }}{{ printf "%.0f" .indicator_score }}{{ else }}—{{ end }}<small>/100</small>{{ else }}<small>diagnostic</small>{{ end }}</span>
+                <span class="doom-index-status doom-index-status-{{ .quality_flag }}">{{ .quality_flag }}</span>
+              </div>
+              {{- end }}
+            </div>
+          </div>
+          <div class="doom-index-claims">
+            <span class="doom-panel-label">Claim checklist</span>
+            {{- range $component.claims }}
+            <div class="doom-index-claim doom-index-claim-{{ .status }}"><span class="doom-index-checkbox" aria-hidden="true">{{ if eq .status "warranted" }}✓{{ else if eq .status "partial" }}◐{{ end }}</span><div><b>{{ .text }}</b><p>{{ .note }}</p></div><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></div>
+            {{- end }}
+          </div>
+          <div class="doom-index-evidence-grid">
+            <div><span class="doom-panel-label">Existing evidence</span><ul>{{- range $component.existing_evidence }}<li><a href="/doom-thesis/{{ .href }}">{{ .label }} <span>→</span></a></li>{{ end }}</ul></div>
+            <div><span class="doom-panel-label">To do</span><ul>{{- range $component.missing_warrants }}<li>{{ . }}</li>{{ end }}</ul></div>
+          </div>
+          {{- with $component.candidate_markets }}
+          <div class="doom-index-markets"><span class="doom-panel-label">Prediction-market candidates</span><div>{{- range . }}<a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .label }} ↗</b><span>{{ .use }}</span></a>{{- end }}</div></div>
+          {{- end }}
+        </div>
+      </details>
+      {{- end }}
+    </div>
+
+    {{- with $markets.best_live_fiscal_outcome_market }}
+    <details class="doom-index-runbook">
+      <summary><span><b>Verified live prediction-market input</b><small>API-discovered and order-book checked</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-index-runbook-body"><p><a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .platform }} · {{ .title }} ↗</b></a></p><p>{{ printf "%.1f" .yes_bid_pct }}% bid / {{ printf "%.1f" .yes_ask_pct }}% ask · {{ printf "%.1f" .midpoint_probability_pct }}% midpoint · {{ .open_interest_contracts }} contracts open interest.</p><p class="doom-note">{{ .why_not_direct }}</p></div>
+    </details>
+    {{- end }}
+
+    <div class="doom-index-section-head"><div><span class="doom-panel-label">Strategy acceptance</span><h3>Investment modules</h3></div><p>Each module stays non-investable until its implementation requirements are complete.</p></div>
+    <div class="doom-index-downstream-grid">
+      <div class="doom-index-scenario-column"><h4>Scenario work</h4>{{- range $framework.downstream_scenarios }}<details><summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary><p>{{ .summary }}</p><small><b>To do:</b> {{ .needed }}</small></details>{{- end }}</div>
+      <div class="doom-index-scenario-column"><h4>Sub-strategies</h4>{{- range $framework.strategy_modules }}<details><summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary><p>{{ .thesis }}</p><small><b>Acceptance gate:</b> {{ .requirements }}</small></details>{{- end }}</div>
+    </div>
+
+    <details class="doom-index-runbook" open>
+      <summary><span><b>Update runbook</b><small>Refresh cadence and release controls</small></span><span aria-hidden="true">+</span></summary>
+      <div><ol><li><b>Daily:</b> debt, market data, rolling company fundamentals, Treasury refinancing, valuation, freshness, and stop conditions.</li><li><b>Weekly:</b> admissible prediction markets, legislation, policy events, and evidence-status changes.</li><li><b>Quarterly:</b> productivity vintages, AI monetization, infrastructure bottlenecks, and distraction-economy inputs.</li><li><b>Annual/vintage:</b> Trustees, CBO, income, education, demographics, time use, trust, and governance.</li><li><b>Every release:</b> attribute score changes, enforce weighted coverage, apply the productivity override, preserve the prior vintage, and publish quality flags.</li></ol><p>No sub-strategy becomes investable without a point-in-time backtest, costs, liquidity and borrow constraints, sizing, drawdown analysis, and explicit execution rules.</p></div>
+    </details>
+
+    <details class="doom-index-runbook">
+      <summary><span><b>Immutable release archive</b><small>Frozen artifacts, hashes, profiles, and provider state</small></span><span aria-hidden="true">+</span></summary>
+      <div class="doom-table-wrap"><table class="doom-table doom-table-dense"><thead><tr><th>Release</th><th>Finished</th><th>Profile</th><th>Status</th><th>Artifacts</th><th>Bloomberg</th></tr></thead><tbody>{{- range first 12 $releases.releases }}<tr><td>{{ .release_id }}</td><td>{{ .finished_at }}</td><td>{{ .profile }}</td><td>{{ .status }}</td><td>{{ .artifact_count }}</td><td>{{ if .skip_bloomberg }}Degraded / skipped{{ else }}Normal attempt{{ end }}</td></tr>{{- end }}</tbody></table></div>
+    </details>
+
+    <div class="doom-source-block"><h3>Machine-readable research files</h3><a class="doom-download" href="/doom-thesis/doom-index-framework.json" download>Framework JSON <span>↓</span></a><a class="doom-download" href="/doom-thesis/doom-index-indicator-registry.json" download>Indicator registry <span>↓</span></a><a class="doom-download" href="/doom-thesis/doom-index-score.json" download>Current score <span>↓</span></a><a class="doom-download" href="/doom-thesis/doom-index-history.json" download>Coverage-gated history <span>↓</span></a><a class="doom-download" href="/doom-thesis/latest-release-manifest.json" download>Latest release manifest <span>↓</span></a></div>
+  </section>
+</article>
+{{ end }}

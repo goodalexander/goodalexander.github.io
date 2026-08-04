@@ -230,6 +230,7 @@
 .doom-index-intro h2 { max-width: 780px; margin: .45rem 0 0; color: var(--doom-ink); font: 500 clamp(2.8rem, 6vw, 5.8rem)/.92 "Cormorant Garamond", Georgia, serif; letter-spacing: -.05em; }
 .doom-index-intro > p { margin: 0; color: var(--doom-muted); font-size: .94rem; line-height: 1.7; }
 .doom-index-status-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
+.doom-index-status-grid-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .doom-index-status-grid > div { min-height: 176px; padding: 1.35rem; background: var(--doom-panel); }
 .doom-index-status-grid > div > span { display: block; color: var(--doom-muted); font: 600 .64rem/1.3 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .09em; text-transform: uppercase; }
 .doom-index-status-grid strong { display: block; margin: .7rem 0 .45rem; color: var(--doom-ink); font: 500 clamp(2.5rem, 5vw, 4.2rem)/.9 "Cormorant Garamond", Georgia, serif; letter-spacing: -.04em; }
@@ -261,6 +262,7 @@
 .doom-index-components { border-top: 1px solid var(--doom-line); }
 .doom-index-component { border-bottom: 1px solid var(--doom-line); background: rgba(255,255,255,.008); }
 .doom-index-component[open] { background: var(--doom-panel); }
+.doom-index-component-summary { display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px; gap: 1.1rem; align-items: center; min-height: 104px; padding: 1.2rem 1rem; }
 .doom-index-component > summary { display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 92px 24px; gap: 1.1rem; align-items: center; min-height: 104px; padding: 1.2rem 1rem; cursor: pointer; list-style: none; }
 .doom-index-component > summary::-webkit-details-marker { display: none; }
 .doom-index-component-number { color: var(--doom-dim); font: 500 .65rem "JetBrains Mono", ui-monospace, monospace; }
@@ -337,6 +339,9 @@
 .doom-index-runbook li { margin-bottom: .55rem; padding-left: .3rem; }
 .doom-index-runbook li b { color: var(--doom-ink); }
 .doom-index-runbook p { color: var(--doom-dim); font-size: .7rem; line-height: 1.55; }
+.doom-checklist-page .doom-hero { min-height: 500px; }
+.doom-checklist-page .doom-index-section-head { margin-top: 4.5rem; }
+.doom-checklist-page .doom-source-block { margin-top: 3rem; }
 @media (max-width: 900px) {
   .doom-stat-grid { grid-template-columns: repeat(2, 1fr); }
   .doom-burden-strip { grid-template-columns: repeat(2, 1fr); }
@@ -352,6 +357,7 @@
   .doom-index-intro,.doom-index-section-head { grid-template-columns: 1fr; gap: 1rem; }
   .doom-index-status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .doom-index-component > summary { grid-template-columns: 36px minmax(0, 1fr) 80px 24px; }
+  .doom-index-component-summary { grid-template-columns: 36px minmax(0, 1fr) 80px; }
   .doom-index-component > summary .doom-index-weight { display: none; }
   .doom-index-component-body { padding-left: 60px; }
   .doom-index-component-copy { grid-template-columns: 1fr; }
@@ -374,6 +380,8 @@
   .doom-source-block ol { columns: 1; }
   .doom-table { min-width: 680px; }
   .doom-index-status-grid,.doom-index-scale { grid-template-columns: 1fr; }
+  .doom-index-component-summary { grid-template-columns: 28px minmax(0, 1fr); gap: .7rem; }
+  .doom-index-component-summary .doom-index-weight { grid-column: 2; }
   .doom-index-status-grid > div { min-height: 138px; }
   .doom-index-scale > div { min-height: 0; border-right: 0; border-bottom: 1px solid var(--doom-line); }
   .doom-index-scale > div:last-child { border-bottom: 0; }

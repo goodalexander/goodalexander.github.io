@@ -10,7 +10,7 @@
 {{- $pageClass := "ga-list-page" -}}
 {{- if .IsHome }}{{ $pageClass = "ga-home-page" }}{{ end -}}
 {{- if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}{{ $pageClass = "ga-article-page" }}{{ end -}}
-{{- if eq .Layout "doom" }}{{ $pageClass = "ga-doom-page" }}{{ end -}}
+{{- if or (eq .Layout "doom") (eq .Layout "doom-checklist") }}{{ $pageClass = "ga-doom-page" }}{{ end -}}
 <body class="ga-site {{ $pageClass }}{{ if eq site.Params.defaultTheme `dark` }} dark{{ end }}" id="top">
     <a class="ga-skip-link" href="#content">Skip to content</a>
     {{- partial "header.html" . -}}
