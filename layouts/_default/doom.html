@@ -646,10 +646,126 @@
     </div>
   </section>
 
+  <section class="doom-section" id="common-prosperity">
+    <div class="doom-section-head">
+      <div>
+        <div class="doom-eyebrow">06 / Common Prosperity</div>
+        <h2>When ordinary life pays less</h2>
+      </div>
+      <p>The proposed bridge is behavioral: when housing, education, and basic stores of value move farther from ordinary earnings—and health and family-formation outcomes stagnate—offline life becomes less rewarding. That can increase the appeal of personalized distraction. These indicators measure the pressure; they do not, by themselves, prove that it causes distraction demand.</p>
+    </div>
+
+    <div class="doom-productivity-strip doom-common-prosperity-strip">
+      <div>
+        <span>House-price interest burden</span>
+        <strong data-field="common-housing-burden">—</strong>
+        <small>Mortgage rate × median new-house price / median personal income; <b data-field="common-housing-change-2021">—</b> since 2021</small>
+      </div>
+      <div>
+        <span>Big Macs / median work hour</span>
+        <strong data-field="common-big-macs-hour">—</strong>
+        <small><b data-field="common-big-mac-change">—</b> since 2000; weekly earnings divided by 40 hours</small>
+      </div>
+      <div>
+        <span>NVDA / Russell 2000 market cap</span>
+        <strong data-field="common-nvda-russell-ratio">—</strong>
+        <small>Current IWM constituents joined to Sharadar; <b data-field="common-iwm-coverage">—</b> of IWM equity weight matched</small>
+      </div>
+      <div>
+        <span>Life expectancy, five-year change</span>
+        <strong data-field="common-life-change">—</strong>
+        <small><span data-field="common-life-year">—</span> versus five years earlier</small>
+      </div>
+    </div>
+
+    <div class="doom-chart-grid doom-common-prosperity-charts">
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">2000–2026 · current income is a nowcast</span>
+          <h3>The interest-only cost of the median new house</h3>
+          <p>Thirty-year mortgage rate × median new-house price, divided by median personal income</p>
+        </figcaption>
+        <svg id="common-housing-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Annual interest-only housing burden as a percent of median personal income from 2000 through 2026"></svg>
+        <p class="doom-note doom-chart-note">This deliberately follows the requested formula. It is not a mortgage payment or a conventional affordability index: it assumes interest on 100% of the purchase price, omits principal, down payment, taxes, insurance, and existing-home mix. The 2026 income denominator scales the latest 2024 Census median personal income by BLS median nominal weekly-earnings growth.</p>
+      </figure>
+      <figure class="doom-panel doom-chart-panel">
+        <figcaption>
+          <span class="doom-panel-label">The Economist + BLS</span>
+          <h3>Big Macs purchasable per median work hour</h3>
+          <p>A concrete wage-purchasing-power proxy using nominal median full-time earnings</p>
+        </figcaption>
+        <svg id="common-big-mac-chart" class="doom-chart" viewBox="0 0 700 360" role="img" aria-label="Number of Big Macs purchasable with one median work hour from 2000 through 2026"></svg>
+        <p class="doom-note doom-chart-note">BLS reports weekly—not hourly—median usual earnings for this series. The chart divides by 40 hours. Big Mac prices are The Economist’s U.S. observations and are not a complete household cost-of-living basket.</p>
+      </figure>
+    </div>
+
+    <div class="doom-chart-grid doom-common-concentration-grid">
+      <div class="doom-panel doom-common-concentration">
+        <span class="doom-panel-label">Market concentration · <span data-field="common-concentration-date">—</span></span>
+        <h3>One company is larger than the small-cap market</h3>
+        <div class="doom-common-market-bars" aria-label="Nvidia market capitalization compared with current Russell 2000 constituent market capitalization">
+          <div><span>NVDA</span><i style="--common-bar:100%"></i><strong data-field="common-nvda-marketcap">—</strong></div>
+          <div><span>Russell 2000</span><i data-common-russell-bar></i><strong data-field="common-russell-marketcap">—</strong></div>
+        </div>
+        <p>iShares supplies the current IWM constituent list; Sharadar supplies each matched company’s full market capitalization. IWM’s <strong data-field="common-iwm-aum">—</strong> of ETF assets is shown only as a cross-check and is not used as “Russell 2000 market cap.” Current membership is not a point-in-time historical backtest.</p>
+      </div>
+      <div class="doom-panel doom-table-panel">
+        <div class="doom-panel-head"><div><span class="doom-panel-label">Latest observable prices / latest official income</span><h3>How much of one median household income?</h3></div></div>
+        <div class="doom-table-wrap">
+          <table class="doom-table doom-table-dense">
+            <thead><tr><th>Item</th><th>Price</th><th>Income-years</th><th>% of one income</th></tr></thead>
+            <tbody id="common-affordability-table"></tbody>
+          </table>
+        </div>
+        <p class="doom-note doom-chart-note">Harvard and Penn are tuition-only sticker prices before aid, fees, room, or board. “One bar” means one troy-ounce investment bar. Gold and oil use front-month futures as tradable price proxies. Every ratio uses the latest official 2024 median household income of <span data-field="common-median-household-income">—</span>, so it is a gross-income comparison—not a claim that households pay these prices from one year’s cash flow.</p>
+      </div>
+    </div>
+
+    <div class="doom-productivity-strip doom-common-social-strip">
+      <div>
+        <span>Native-born completed fertility</span>
+        <strong data-field="common-native-fertility">—</strong>
+        <small>Children per native-born woman age 40–50; <b data-field="common-native-fertility-change">—</b> since 2014. National 2024 TFR: <span data-field="common-national-tfr">—</span></small>
+      </div>
+      <div>
+        <span>Suicide rate / prior 10y average</span>
+        <strong data-field="common-suicide-vs-average">—</strong>
+        <small><span data-field="common-suicide-rate">—</span> per 100,000 in 2024; <b data-field="common-suicide-since-2001">—</b> since 2001</small>
+      </div>
+      <div>
+        <span>Adult obesity / prior-decade cycles</span>
+        <strong data-field="common-obesity-vs-average">—</strong>
+        <small><span data-field="common-obesity-rate">—</span> measured prevalence, August 2021–August 2023</small>
+      </div>
+      <div>
+        <span>Life expectancy</span>
+        <strong data-field="common-life-level">—</strong>
+        <small>Years in 2024; the pandemic decline has been recovered</small>
+      </div>
+    </div>
+
+    <figure class="doom-panel doom-chart-panel doom-productivity-main-chart">
+      <figcaption>
+        <span class="doom-panel-label">Each series’ first observation = 100</span>
+        <h3>Health and family-formation trajectories</h3>
+        <p>Life expectancy, suicide, measured adult obesity, and completed fertility among native-born women</p>
+      </figcaption>
+      <div class="doom-legend" aria-hidden="true"><span style="--swatch:#62c6ae">Life expectancy</span><span style="--swatch:#eb735f">Suicide rate</span><span style="--swatch:#d7a94b">Adult obesity</span><span style="--swatch:#8b78d1">Native completed fertility</span></div>
+      <svg id="common-social-chart" class="doom-chart doom-chart-large" viewBox="0 0 1100 420" role="img" aria-label="Indexed life expectancy, suicide rate, adult obesity, and native-born completed fertility histories"></svg>
+      <p class="doom-note doom-chart-note">Baselines differ because the official series differ: life expectancy starts in 2000, suicide in 2001, obesity in 1999–2000, and the comparable CPS native-born completed-fertility series in 2014. Birth certificates do not identify U.S.-born or citizen mothers. The CPS measure therefore answers the nativity question directly but is lagging: it records completed births among native-born women ages 40–50, not the current-year birth rate.</p>
+    </figure>
+
+    <div class="doom-common-downloads">
+      <a class="doom-download" href="/doom-thesis/common-prosperity-housing.csv" download>Housing history CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/common-prosperity-affordability.csv" download>Affordability snapshot CSV <span>↓</span></a>
+      <a class="doom-download" href="/doom-thesis/common-prosperity-native-fertility.csv" download>Native fertility CSV <span>↓</span></a>
+    </div>
+  </section>
+
   <section class="doom-section" id="demographics">
     <div class="doom-section-head">
       <div>
-        <div class="doom-eyebrow">06 / Demographics</div>
+        <div class="doom-eyebrow">07 / Demographics</div>
         <h2>A structural deficit on a narrowing base</h2>
       </div>
       <p>World War II left a gross federal debt equal to 114% of GDP, but demobilization and rapid nominal growth cut that ratio by more than half within 15 years. Today the debt stock is higher than the wartime level and sits beneath a mature pay-as-you-go transfer system with fewer covered workers supporting each beneficiary.</p>
@@ -708,7 +824,7 @@
   <section class="doom-section" id="tax-valuation">
     <div class="doom-section-head">
       <div>
-        <div class="doom-eyebrow">07 / Taxing the Base</div>
+        <div class="doom-eyebrow">08 / Taxing the Base</div>
         <h2>The revenue is annual. The destruction is capitalized.</h2>
       </div>
       <p>A static return to the 1968–1969 federal corporate rate raises a flow of tax receipts by permanently reducing the earnings stream capitalized into equity value.</p>
@@ -930,7 +1046,7 @@
 
   <section class="doom-section doom-method" id="methodology">
     <div class="doom-section-head">
-      <div><div class="doom-eyebrow">08 / Read the Fine Print</div><h2>Definitions matter</h2></div>
+      <div><div class="doom-eyebrow">09 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
       <div><h3>What the measured liability stack includes</h3><p data-field="doom-definition">—</p></div>

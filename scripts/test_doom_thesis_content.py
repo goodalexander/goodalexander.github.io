@@ -82,6 +82,18 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)
 
+    def test_common_prosperity_preserves_metric_boundaries(self) -> None:
+        for marker in (
+            "06 / Common Prosperity",
+            "Mortgage rate × median new-house price / median personal income",
+            "IWM’s",
+            "is not used as “Russell 2000 market cap.”",
+            "Birth certificates do not identify U.S.-born or citizen mothers.",
+            "one troy-ounce investment bar",
+        ):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, self.thesis)
+
 
 if __name__ == "__main__":
     unittest.main()

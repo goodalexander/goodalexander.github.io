@@ -7,6 +7,8 @@
   const money = (n, digits = 0) => `$${Number(n).toLocaleString('en-US', { maximumFractionDigits: digits, minimumFractionDigits: digits })}`;
   const trillions = (n, digits = 1) => `$${Number(n).toFixed(digits)}T`;
   const pct = (n, digits = 1) => `${(Number(n) * 100).toFixed(digits)}%`;
+  const signedPercent = (n, digits = 1) => `${Number(n) >= 0 ? '+' : ''}${Number(n).toFixed(digits)}%`;
+  const signedNumber = (n, digits = 1, suffix = '') => `${Number(n) >= 0 ? '+' : ''}${Number(n).toFixed(digits)}${suffix}`;
   const set = (name, value) => $$(`[data-field="${name}"]`).forEach((el) => { el.textContent = value; });
   const svgNS = 'http://www.w3.org/2000/svg';
   const addSvg = (parent, name, attrs = {}, text = '') => {
@@ -269,6 +271,41 @@
     set('top-cs-placement-decline', `${Math.abs(humanCapital.top20_cs_tech_major_placement_change_2025_vs_2022_pct).toFixed(0)}%`);
     set('federal-trust', `${humanCapital.trust_federal_government_pct_2025.toFixed(0)}%`);
     set('medicare-improper-payments', `$${humanCapital.medicare_improper_payments_billions_fy2025.toFixed(1)}B`);
+    const common = data.common_prosperity;
+    const commonSummary = common.summary;
+    const commonHousing = commonSummary.housing;
+    const commonBurger = commonSummary.big_mac;
+    const commonConcentration = commonSummary.market_concentration;
+    const commonLife = commonSummary.life_expectancy;
+    const commonFertility = commonSummary.native_completed_fertility;
+    const commonSuicide = commonSummary.suicide;
+    const commonObesity = commonSummary.obesity;
+    set('common-housing-burden', `${commonHousing.interest_only_burden_pct_median_personal_income.toFixed(1)}%`);
+    set('common-housing-change-2021', signedPercent(commonHousing.change_since_2021_pct, 0));
+    set('common-big-macs-hour', commonBurger.big_macs_per_median_work_hour.toFixed(2));
+    set('common-big-mac-change', signedPercent(commonBurger.change_since_2000_pct, 0));
+    set('common-nvda-russell-ratio', `${commonConcentration.nvda_to_russell_2000_marketcap_pct.toFixed(0)}%`);
+    set('common-iwm-coverage', `${commonConcentration.matched_iwm_portfolio_weight_pct.toFixed(1)}%`);
+    set('common-life-change', signedNumber(commonLife.five_year_change_years, 1, ' yrs'));
+    set('common-life-year', commonLife.as_of_year);
+    set('common-concentration-date', commonConcentration.as_of_date);
+    set('common-nvda-marketcap', trillions(commonConcentration.nvda_marketcap_usd / 1e12, 2));
+    set('common-russell-marketcap', trillions(commonConcentration.russell_2000_constituent_marketcap_usd / 1e12, 2));
+    set('common-iwm-aum', `$${(commonConcentration.iwm_net_assets_proxy_usd / 1e9).toFixed(1)}B`);
+    const russellBar = $('[data-common-russell-bar]');
+    if (russellBar) russellBar.style.setProperty('--common-bar', `${Math.min(100, commonConcentration.russell_2000_constituent_marketcap_usd / commonConcentration.nvda_marketcap_usd * 100).toFixed(1)}%`);
+    set('common-native-fertility', commonFertility.children_per_native_born_woman_age_40_50.toFixed(3));
+    set('common-native-fertility-change', signedPercent(commonFertility.change_since_2014_pct, 1));
+    set('common-national-tfr', commonFertility.national_total_fertility_rate_2024.toFixed(3));
+    set('common-suicide-vs-average', signedPercent(commonSuicide.pct_vs_prior_10_year_average, 1));
+    set('common-suicide-rate', commonSuicide.rate_per_100k.toFixed(1));
+    set('common-suicide-since-2001', signedPercent(commonSuicide.change_since_2001_pct, 0));
+    set('common-obesity-vs-average', signedPercent(commonObesity.pct_vs_prior_decade_cycle_average, 1));
+    set('common-obesity-rate', `${commonObesity.adult_obesity_pct.toFixed(1)}%`);
+    set('common-life-level', `${commonLife.years.toFixed(1)} yrs`);
+    const commonIncome = common.affordability_snapshot[0].median_household_income_usd;
+    set('common-median-household-income', money(commonIncome));
+    $('#common-affordability-table').innerHTML = common.affordability_snapshot.map((row) => `<tr><td>${row.item}<small>${row.definition.replaceAll('_', ' ')}</small></td><td>${money(row.cost_usd, row.cost_usd < 100 ? 2 : 0)}</td><td>${row.median_household_incomes_required.toFixed(3)}×</td><td>${row.pct_of_one_median_household_income.toFixed(row.pct_of_one_median_household_income < 1 ? 2 : 1)}%</td></tr>`).join('');
     const demographics = data.demographics;
     const demographicSummary = demographics.summary;
     set('demographic-beneficiaries-1960', demographicSummary.beneficiaries_per_100_workers_1960.toFixed(1));
@@ -422,6 +459,26 @@
       { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
     ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
 
+    lineChart($('#common-housing-chart'), [
+      { color: '#eb735f', values: common.housing_history.map((d) => ({ year: d.year, value: d.housing_interest_burden_pct_median_personal_income })) },
+    ], { yMin: 20, yMax: 80, headroom: 1, yFormat: (v) => `${v.toFixed(0)}%`, tooltipFormat: (v) => `${v.toFixed(1)}% of median personal income`, points: false, xTicks: 7, margin: { left: 50, right: 18 } });
+
+    lineChart($('#common-big-mac-chart'), [
+      { color: '#d7a94b', values: common.big_mac_history.map((d) => ({ year: d.year, value: d.big_macs_per_median_work_hour })) },
+    ], { yMin: 4, yMax: 7, headroom: 1, yFormat: (v) => v.toFixed(1), tooltipFormat: (v) => `${v.toFixed(2)} Big Macs/hour`, points: true, xTicks: 7, margin: { left: 46, right: 18 } });
+
+    const indexed = (rows, field, startYear = -Infinity) => {
+      const eligible = rows.filter((row) => row.year >= startYear && Number.isFinite(Number(row[field])));
+      const base = Number(eligible[0][field]);
+      return eligible.map((row) => ({ year: row.year, label: row.survey_period || row.year, value: Number(row[field]) / base * 100 }));
+    };
+    lineChart($('#common-social-chart'), [
+      { color: '#62c6ae', values: indexed(common.life_expectancy, 'life_expectancy_years', 2000) },
+      { color: '#eb735f', values: indexed(common.suicide, 'suicide_rate_per_100k', 2001) },
+      { color: '#d7a94b', values: indexed(common.obesity, 'adult_obesity_pct', 1999) },
+      { color: '#8b78d1', values: indexed(common.native_completed_fertility, 'native_born_women_40_50_children_ever_born_per_woman', 2014) },
+    ], { yMin: 70, yMax: 145, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (first observation=100)`, points: true, xTicks: 8 });
+
     const demographicHistory = demographics.history_and_projection;
     const demographicActual = demographicHistory.filter((row) => row.year <= 2025);
     const demographicProjection = demographicHistory.filter((row) => row.year >= 2025);
@@ -464,7 +521,7 @@
     }).join('') : '<tr><td colspan="6">No archived releases yet.</td></tr>';
   }
 
-  fetch('/doom-thesis/data.json?v=20260804-2', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260804-3', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {

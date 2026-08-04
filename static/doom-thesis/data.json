@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-04T20:09:01.315539+00:00",
+  "generated_at_utc": "2026-08-04T20:32:18.996125+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -14719,6 +14719,982 @@
       }
     ]
   },
+  "common_prosperity": {
+    "summary": {
+      "generated_at_utc": "2026-08-04T20:28:12.985066+00:00",
+      "housing": {
+        "as_of_year": 2026,
+        "mortgage_rate_pct": 6.66,
+        "median_new_house_price_usd": 410700.0,
+        "median_personal_income_nowcast_usd": 48974.661492022424,
+        "interest_only_burden_pct_median_personal_income": 55.85055448408872,
+        "change_since_2000_pct": -10.927685981892832,
+        "change_since_2021_pct": 84.98586856321566
+      },
+      "big_mac": {
+        "as_of_year": 2026,
+        "big_mac_price_usd": 6.22,
+        "big_macs_per_median_work_hour": 5.006028938906753,
+        "change_since_2000_pct": -21.993009925905195,
+        "assumption": "Median usual weekly nominal earnings divided by 40 hours"
+      },
+      "market_concentration": {
+        "as_of_date": "2026-08-03",
+        "iwm_equity_holdings": 1963,
+        "sharadar_matched_holdings": 1939,
+        "matched_iwm_portfolio_weight_pct": 98.58000000000001,
+        "iwm_net_assets_proxy_usd": 80553967925.53,
+        "russell_2000_constituent_marketcap_usd": 3694103100000.0,
+        "nvda_marketcap_usd": 5000688000000.0,
+        "nvda_to_russell_2000_marketcap_pct": 135.36947574635911,
+        "definition": "Current iShares IWM equity constituent identities joined to each ticker's latest Sharadar company market cap. This is not IWM ETF AUM."
+      },
+      "life_expectancy": {
+        "as_of_year": 2024,
+        "years": 78.890243902439,
+        "five_year_change_years": 0.10243902439019337
+      },
+      "native_completed_fertility": {
+        "as_of_year": 2024,
+        "children_per_native_born_woman_age_40_50": 1.916,
+        "change_since_2014_pct": -1.0330578512396715,
+        "national_total_fertility_rate_2024": 1.599,
+        "definition": "CPS completed fertility, native-born women ages 40-50; not citizenship and not a contemporaneous birth rate"
+      },
+      "suicide": {
+        "as_of_year": 2024,
+        "rate_per_100k": 13.7,
+        "deaths": 48824,
+        "prior_10_year_average_rate": 13.74,
+        "pct_vs_prior_10_year_average": -0.29112081513829047,
+        "change_since_2001_pct": 28.037383177570096
+      },
+      "obesity": {
+        "survey_period": "August 2021\u2013August 2023",
+        "adult_obesity_pct": 40.3,
+        "prior_decade_cycle_average_pct": 39.900000000000006,
+        "pct_vs_prior_decade_cycle_average": 1.0025062656641381
+      },
+      "interpretation": "These are separate affordability, health, family-formation, and market-concentration diagnostics. They support the hypothesis that a less rewarding offline life increases demand for distraction; they do not identify that causal effect by themselves."
+    },
+    "housing_history": [
+      {
+        "year": 2000,
+        "mortgage_rate_pct": 8.05346154,
+        "median_new_house_price_usd": 167550.0,
+        "median_personal_income_usd": 21520.0,
+        "annual_interest_only_burden_usd": 13493.57480769,
+        "housing_interest_burden_pct_median_personal_income": 62.70248517,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2001,
+        "mortgage_rate_pct": 6.96788462,
+        "median_new_house_price_usd": 173100.0,
+        "median_personal_income_usd": 21930.0,
+        "annual_interest_only_burden_usd": 12061.40826923,
+        "housing_interest_burden_pct_median_personal_income": 54.99958171,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2002,
+        "mortgage_rate_pct": 6.53730769,
+        "median_new_house_price_usd": 186025.0,
+        "median_personal_income_usd": 22120.0,
+        "annual_interest_only_burden_usd": 12161.02663462,
+        "housing_interest_burden_pct_median_personal_income": 54.97751643,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2003,
+        "mortgage_rate_pct": 5.82698113,
+        "median_new_house_price_usd": 192125.0,
+        "median_personal_income_usd": 22670.0,
+        "annual_interest_only_burden_usd": 11195.0875,
+        "housing_interest_burden_pct_median_personal_income": 49.38282973,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2004,
+        "mortgage_rate_pct": 5.83923077,
+        "median_new_house_price_usd": 218150.0,
+        "median_personal_income_usd": 23210.0,
+        "annual_interest_only_burden_usd": 12738.28192308,
+        "housing_interest_burden_pct_median_personal_income": 54.88273125,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2005,
+        "mortgage_rate_pct": 5.86673077,
+        "median_new_house_price_usd": 236550.0,
+        "median_personal_income_usd": 24330.0,
+        "annual_interest_only_burden_usd": 13877.75163462,
+        "housing_interest_burden_pct_median_personal_income": 57.03966969,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2006,
+        "mortgage_rate_pct": 6.41326923,
+        "median_new_house_price_usd": 243750.0,
+        "median_personal_income_usd": 25800.0,
+        "annual_interest_only_burden_usd": 15632.34375,
+        "housing_interest_burden_pct_median_personal_income": 60.59047965,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2007,
+        "mortgage_rate_pct": 6.33730769,
+        "median_new_house_price_usd": 244950.0,
+        "median_personal_income_usd": 26630.0,
+        "annual_interest_only_burden_usd": 15523.23519231,
+        "housing_interest_burden_pct_median_personal_income": 58.29228386,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2008,
+        "mortgage_rate_pct": 6.02716981,
+        "median_new_house_price_usd": 229550.0,
+        "median_personal_income_usd": 26510.0,
+        "annual_interest_only_burden_usd": 13835.36830189,
+        "housing_interest_burden_pct_median_personal_income": 52.18924293,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2009,
+        "mortgage_rate_pct": 5.03653846,
+        "median_new_house_price_usd": 215650.0,
+        "median_personal_income_usd": 26130.0,
+        "annual_interest_only_burden_usd": 10861.29519231,
+        "housing_interest_burden_pct_median_personal_income": 41.56638038,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2010,
+        "mortgage_rate_pct": 4.68980769,
+        "median_new_house_price_usd": 222700.0,
+        "median_personal_income_usd": 26180.0,
+        "annual_interest_only_burden_usd": 10444.20173077,
+        "housing_interest_burden_pct_median_personal_income": 39.89381868,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2011,
+        "mortgage_rate_pct": 4.44788462,
+        "median_new_house_price_usd": 224900.0,
+        "median_personal_income_usd": 26590.0,
+        "annual_interest_only_burden_usd": 10003.2925,
+        "housing_interest_burden_pct_median_personal_income": 37.62050583,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2012,
+        "mortgage_rate_pct": 3.6575,
+        "median_new_house_price_usd": 244400.0,
+        "median_personal_income_usd": 26990.0,
+        "annual_interest_only_burden_usd": 8938.93,
+        "housing_interest_burden_pct_median_personal_income": 33.1194146,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2013,
+        "mortgage_rate_pct": 3.97557692,
+        "median_new_house_price_usd": 266225.0,
+        "median_personal_income_usd": 27680.0,
+        "annual_interest_only_burden_usd": 10583.97966346,
+        "housing_interest_burden_pct_median_personal_income": 38.23692075,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2014,
+        "mortgage_rate_pct": 4.16886792,
+        "median_new_house_price_usd": 285775.0,
+        "median_personal_income_usd": 28760.0,
+        "annual_interest_only_burden_usd": 11913.58231132,
+        "housing_interest_burden_pct_median_personal_income": 41.42413877,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2015,
+        "mortgage_rate_pct": 3.85057692,
+        "median_new_house_price_usd": 294150.0,
+        "median_personal_income_usd": 30240.0,
+        "annual_interest_only_burden_usd": 11326.47201923,
+        "housing_interest_burden_pct_median_personal_income": 37.45526461,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2016,
+        "mortgage_rate_pct": 3.65403846,
+        "median_new_house_price_usd": 305125.0,
+        "median_personal_income_usd": 31100.0,
+        "annual_interest_only_burden_usd": 11149.38485577,
+        "housing_interest_burden_pct_median_personal_income": 35.85011208,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2017,
+        "mortgage_rate_pct": 3.98980769,
+        "median_new_house_price_usd": 322425.0,
+        "median_personal_income_usd": 31960.0,
+        "annual_interest_only_burden_usd": 12864.13745192,
+        "housing_interest_burden_pct_median_personal_income": 40.25074297,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2018,
+        "mortgage_rate_pct": 4.54461538,
+        "median_new_house_price_usd": 325275.0,
+        "median_personal_income_usd": 33710.0,
+        "annual_interest_only_burden_usd": 14782.49769231,
+        "housing_interest_burden_pct_median_personal_income": 43.85196586,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2019,
+        "mortgage_rate_pct": 3.93576923,
+        "median_new_house_price_usd": 320250.0,
+        "median_personal_income_usd": 35980.0,
+        "annual_interest_only_burden_usd": 12604.30096154,
+        "housing_interest_burden_pct_median_personal_income": 35.03140901,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2020,
+        "mortgage_rate_pct": 3.11169811,
+        "median_new_house_price_usd": 328150.0,
+        "median_personal_income_usd": 35850.0,
+        "annual_interest_only_burden_usd": 10211.03735849,
+        "housing_interest_burden_pct_median_personal_income": 28.48267046,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2021,
+        "mortgage_rate_pct": 2.95769231,
+        "median_new_house_price_usd": 383000.0,
+        "median_personal_income_usd": 37520.0,
+        "annual_interest_only_burden_usd": 11327.96153846,
+        "housing_interest_burden_pct_median_personal_income": 30.19179515,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2022,
+        "mortgage_rate_pct": 5.34403846,
+        "median_new_house_price_usd": 432950.0,
+        "median_personal_income_usd": 40480.0,
+        "annual_interest_only_burden_usd": 23137.01451923,
+        "housing_interest_burden_pct_median_personal_income": 57.15665642,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2023,
+        "mortgage_rate_pct": 6.80673077,
+        "median_new_house_price_usd": 426525.0,
+        "median_personal_income_usd": 42220.0,
+        "annual_interest_only_burden_usd": 29032.40841346,
+        "housing_interest_burden_pct_median_personal_income": 68.76458648,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2024,
+        "mortgage_rate_pct": 6.72115385,
+        "median_new_house_price_usd": 418975.0,
+        "median_personal_income_usd": 45140.0,
+        "annual_interest_only_burden_usd": 28159.95432692,
+        "housing_interest_burden_pct_median_personal_income": 62.38359399,
+        "income_status": "Census annual actual"
+      },
+      {
+        "year": 2026,
+        "mortgage_rate_pct": 6.66,
+        "median_new_house_price_usd": 410700.0,
+        "median_personal_income_usd": 48974.66149202,
+        "annual_interest_only_burden_usd": 27352.62,
+        "housing_interest_burden_pct_median_personal_income": 55.85055448,
+        "income_status": "2024 Census median personal income scaled by BLS median nominal weekly earnings through Q2 2026"
+      }
+    ],
+    "big_mac_history": [
+      {
+        "date": "2000-04-01",
+        "local_price": 2.24,
+        "year": 2000,
+        "median_usual_weekly_earnings_usd": 575.0,
+        "median_hourly_earnings_40h_assumption_usd": 14.375,
+        "big_macs_per_median_work_hour": 6.41741071
+      },
+      {
+        "date": "2001-04-01",
+        "local_price": 2.24,
+        "year": 2001,
+        "median_usual_weekly_earnings_usd": 595.75,
+        "median_hourly_earnings_40h_assumption_usd": 14.89375,
+        "big_macs_per_median_work_hour": 6.64899554
+      },
+      {
+        "date": "2002-04-01",
+        "local_price": 2.35,
+        "year": 2002,
+        "median_usual_weekly_earnings_usd": 608.25,
+        "median_hourly_earnings_40h_assumption_usd": 15.20625,
+        "big_macs_per_median_work_hour": 6.47074468
+      },
+      {
+        "date": "2003-04-01",
+        "local_price": 2.46,
+        "year": 2003,
+        "median_usual_weekly_earnings_usd": 619.5,
+        "median_hourly_earnings_40h_assumption_usd": 15.4875,
+        "big_macs_per_median_work_hour": 6.29573171
+      },
+      {
+        "date": "2004-05-01",
+        "local_price": 2.47,
+        "year": 2004,
+        "median_usual_weekly_earnings_usd": 638.0,
+        "median_hourly_earnings_40h_assumption_usd": 15.95,
+        "big_macs_per_median_work_hour": 6.45748988
+      },
+      {
+        "date": "2005-06-01",
+        "local_price": 2.58,
+        "year": 2005,
+        "median_usual_weekly_earnings_usd": 650.75,
+        "median_hourly_earnings_40h_assumption_usd": 16.26875,
+        "big_macs_per_median_work_hour": 6.30571705
+      },
+      {
+        "date": "2006-05-01",
+        "local_price": 2.78,
+        "year": 2006,
+        "median_usual_weekly_earnings_usd": 671.0,
+        "median_hourly_earnings_40h_assumption_usd": 16.775,
+        "big_macs_per_median_work_hour": 6.03417266
+      },
+      {
+        "date": "2007-06-01",
+        "local_price": 3.0,
+        "year": 2007,
+        "median_usual_weekly_earnings_usd": 694.5,
+        "median_hourly_earnings_40h_assumption_usd": 17.3625,
+        "big_macs_per_median_work_hour": 5.7875
+      },
+      {
+        "date": "2008-06-01",
+        "local_price": 3.21,
+        "year": 2008,
+        "median_usual_weekly_earnings_usd": 721.5,
+        "median_hourly_earnings_40h_assumption_usd": 18.0375,
+        "big_macs_per_median_work_hour": 5.61915888
+      },
+      {
+        "date": "2009-07-01",
+        "local_price": 3.43,
+        "year": 2009,
+        "median_usual_weekly_earnings_usd": 739.5,
+        "median_hourly_earnings_40h_assumption_usd": 18.4875,
+        "big_macs_per_median_work_hour": 5.38994169
+      },
+      {
+        "date": "2010-07-01",
+        "local_price": 3.53,
+        "year": 2010,
+        "median_usual_weekly_earnings_usd": 746.5,
+        "median_hourly_earnings_40h_assumption_usd": 18.6625,
+        "big_macs_per_median_work_hour": 5.2868272
+      },
+      {
+        "date": "2011-07-01",
+        "local_price": 3.64,
+        "year": 2011,
+        "median_usual_weekly_earnings_usd": 756.0,
+        "median_hourly_earnings_40h_assumption_usd": 18.9,
+        "big_macs_per_median_work_hour": 5.19230769
+      },
+      {
+        "date": "2012-07-01",
+        "local_price": 3.96,
+        "year": 2012,
+        "median_usual_weekly_earnings_usd": 768.25,
+        "median_hourly_earnings_40h_assumption_usd": 19.20625,
+        "big_macs_per_median_work_hour": 4.85006313
+      },
+      {
+        "date": "2013-07-01",
+        "local_price": 4.18,
+        "year": 2013,
+        "median_usual_weekly_earnings_usd": 776.5,
+        "median_hourly_earnings_40h_assumption_usd": 19.4125,
+        "big_macs_per_median_work_hour": 4.64413876
+      },
+      {
+        "date": "2014-07-01",
+        "local_price": 4.29,
+        "year": 2014,
+        "median_usual_weekly_earnings_usd": 791.0,
+        "median_hourly_earnings_40h_assumption_usd": 19.775,
+        "big_macs_per_median_work_hour": 4.60955711
+      },
+      {
+        "date": "2015-07-01",
+        "local_price": 4.29,
+        "year": 2015,
+        "median_usual_weekly_earnings_usd": 808.75,
+        "median_hourly_earnings_40h_assumption_usd": 20.21875,
+        "big_macs_per_median_work_hour": 4.71299534
+      },
+      {
+        "date": "2016-07-01",
+        "local_price": 4.5,
+        "year": 2016,
+        "median_usual_weekly_earnings_usd": 832.5,
+        "median_hourly_earnings_40h_assumption_usd": 20.8125,
+        "big_macs_per_median_work_hour": 4.625
+      },
+      {
+        "date": "2017-07-01",
+        "local_price": 4.5,
+        "year": 2017,
+        "median_usual_weekly_earnings_usd": 859.75,
+        "median_hourly_earnings_40h_assumption_usd": 21.49375,
+        "big_macs_per_median_work_hour": 4.77638889
+      },
+      {
+        "date": "2018-07-01",
+        "local_price": 4.62,
+        "year": 2018,
+        "median_usual_weekly_earnings_usd": 886.0,
+        "median_hourly_earnings_40h_assumption_usd": 22.15,
+        "big_macs_per_median_work_hour": 4.79437229
+      },
+      {
+        "date": "2019-07-09",
+        "local_price": 4.71,
+        "year": 2019,
+        "median_usual_weekly_earnings_usd": 917.0,
+        "median_hourly_earnings_40h_assumption_usd": 22.925,
+        "big_macs_per_median_work_hour": 4.86730361
+      },
+      {
+        "date": "2020-07-01",
+        "local_price": 4.82,
+        "year": 2020,
+        "median_usual_weekly_earnings_usd": 984.25,
+        "median_hourly_earnings_40h_assumption_usd": 24.60625,
+        "big_macs_per_median_work_hour": 5.10503112
+      },
+      {
+        "date": "2021-07-01",
+        "local_price": 4.93,
+        "year": 2021,
+        "median_usual_weekly_earnings_usd": 997.5,
+        "median_hourly_earnings_40h_assumption_usd": 24.9375,
+        "big_macs_per_median_work_hour": 5.05831643
+      },
+      {
+        "date": "2022-07-01",
+        "local_price": 5.15,
+        "year": 2022,
+        "median_usual_weekly_earnings_usd": 1058.25,
+        "median_hourly_earnings_40h_assumption_usd": 26.45625,
+        "big_macs_per_median_work_hour": 5.13713592
+      },
+      {
+        "date": "2023-07-01",
+        "local_price": 5.58,
+        "year": 2023,
+        "median_usual_weekly_earnings_usd": 1115.75,
+        "median_hourly_earnings_40h_assumption_usd": 27.89375,
+        "big_macs_per_median_work_hour": 4.99887993
+      },
+      {
+        "date": "2024-07-01",
+        "local_price": 5.69,
+        "year": 2024,
+        "median_usual_weekly_earnings_usd": 1159.5,
+        "median_hourly_earnings_40h_assumption_usd": 28.9875,
+        "big_macs_per_median_work_hour": 5.09446397
+      },
+      {
+        "date": "2025-07-01",
+        "local_price": 6.01,
+        "year": 2025,
+        "median_usual_weekly_earnings_usd": 1204.0,
+        "median_hourly_earnings_40h_assumption_usd": 30.1,
+        "big_macs_per_median_work_hour": 5.00831947
+      },
+      {
+        "date": "2026-07-01",
+        "local_price": 6.22,
+        "year": 2026,
+        "median_usual_weekly_earnings_usd": 1245.5,
+        "median_hourly_earnings_40h_assumption_usd": 31.1375,
+        "big_macs_per_median_work_hour": 5.00602894
+      }
+    ],
+    "affordability_snapshot": [
+      {
+        "item": "Harvard undergraduate tuition",
+        "cost_usd": 62226.0,
+        "cost_year": 2026,
+        "definition": "tuition_only",
+        "median_household_income_usd": 83730.0,
+        "income_year": 2024,
+        "median_household_incomes_required": 0.74317449,
+        "pct_of_one_median_household_income": 74.31744894
+      },
+      {
+        "item": "Penn undergraduate tuition",
+        "cost_usd": 65670.0,
+        "cost_year": 2026,
+        "definition": "tuition_only",
+        "median_household_income_usd": 83730.0,
+        "income_year": 2024,
+        "median_household_incomes_required": 0.7843067,
+        "pct_of_one_median_household_income": 78.43067001
+      },
+      {
+        "item": "One troy-ounce gold bar",
+        "cost_usd": 4134.20019531,
+        "cost_year": 2026,
+        "definition": "front_month_gold_futures_proxy",
+        "median_household_income_usd": 83730.0,
+        "income_year": 2024,
+        "median_household_incomes_required": 0.04937538,
+        "pct_of_one_median_household_income": 4.93753756
+      },
+      {
+        "item": "One barrel of WTI crude oil",
+        "cost_usd": 75.29000092,
+        "cost_year": 2026,
+        "definition": "front_month_wti_futures_proxy",
+        "median_household_income_usd": 83730.0,
+        "income_year": 2024,
+        "median_household_incomes_required": 0.0008992,
+        "pct_of_one_median_household_income": 0.08991998
+      }
+    ],
+    "native_completed_fertility": [
+      {
+        "year": 2014,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.936,
+        "native_born_women_40_44_children_ever_born_per_woman": 1.959,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.918
+      },
+      {
+        "year": 2016,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.926,
+        "native_born_women_40_44_children_ever_born_per_woman": 1.992,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.876
+      },
+      {
+        "year": 2018,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.957,
+        "native_born_women_40_44_children_ever_born_per_woman": 2.002,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.923
+      },
+      {
+        "year": 2020,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.935,
+        "native_born_women_40_44_children_ever_born_per_woman": 1.942,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.929
+      },
+      {
+        "year": 2022,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.866,
+        "native_born_women_40_44_children_ever_born_per_woman": 1.874,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.859
+      },
+      {
+        "year": 2024,
+        "native_born_women_40_50_children_ever_born_per_woman": 1.916,
+        "native_born_women_40_44_children_ever_born_per_woman": 1.873,
+        "native_born_women_45_50_children_ever_born_per_woman": 1.956
+      }
+    ],
+    "life_expectancy": [
+      {
+        "year": 2000,
+        "life_expectancy_years": 76.63658537,
+        "five_year_change_years": null
+      },
+      {
+        "year": 2001,
+        "life_expectancy_years": 76.83658537,
+        "five_year_change_years": null
+      },
+      {
+        "year": 2002,
+        "life_expectancy_years": 76.93658537,
+        "five_year_change_years": null
+      },
+      {
+        "year": 2003,
+        "life_expectancy_years": 77.03658537,
+        "five_year_change_years": null
+      },
+      {
+        "year": 2004,
+        "life_expectancy_years": 77.48780488,
+        "five_year_change_years": null
+      },
+      {
+        "year": 2005,
+        "life_expectancy_years": 77.48780488,
+        "five_year_change_years": 0.85121951
+      },
+      {
+        "year": 2006,
+        "life_expectancy_years": 77.68780488,
+        "five_year_change_years": 0.85121951
+      },
+      {
+        "year": 2007,
+        "life_expectancy_years": 77.98780488,
+        "five_year_change_years": 1.05121951
+      },
+      {
+        "year": 2008,
+        "life_expectancy_years": 78.03902439,
+        "five_year_change_years": 1.00243902
+      },
+      {
+        "year": 2009,
+        "life_expectancy_years": 78.3902439,
+        "five_year_change_years": 0.90243902
+      },
+      {
+        "year": 2010,
+        "life_expectancy_years": 78.54146341,
+        "five_year_change_years": 1.05365854
+      },
+      {
+        "year": 2011,
+        "life_expectancy_years": 78.64146341,
+        "five_year_change_years": 0.95365854
+      },
+      {
+        "year": 2012,
+        "life_expectancy_years": 78.74146341,
+        "five_year_change_years": 0.75365854
+      },
+      {
+        "year": 2013,
+        "life_expectancy_years": 78.74146341,
+        "five_year_change_years": 0.70243902
+      },
+      {
+        "year": 2014,
+        "life_expectancy_years": 78.84146341,
+        "five_year_change_years": 0.45121951
+      },
+      {
+        "year": 2015,
+        "life_expectancy_years": 78.6902439,
+        "five_year_change_years": 0.14878049
+      },
+      {
+        "year": 2016,
+        "life_expectancy_years": 78.53902439,
+        "five_year_change_years": -0.10243902
+      },
+      {
+        "year": 2017,
+        "life_expectancy_years": 78.53902439,
+        "five_year_change_years": -0.20243902
+      },
+      {
+        "year": 2018,
+        "life_expectancy_years": 78.63902439,
+        "five_year_change_years": -0.10243902
+      },
+      {
+        "year": 2019,
+        "life_expectancy_years": 78.78780488,
+        "five_year_change_years": -0.05365854
+      },
+      {
+        "year": 2020,
+        "life_expectancy_years": 76.9804878,
+        "five_year_change_years": -1.7097561
+      },
+      {
+        "year": 2021,
+        "life_expectancy_years": 76.32926829,
+        "five_year_change_years": -2.2097561
+      },
+      {
+        "year": 2022,
+        "life_expectancy_years": 77.43414634,
+        "five_year_change_years": -1.10487805
+      },
+      {
+        "year": 2023,
+        "life_expectancy_years": 78.38536585,
+        "five_year_change_years": -0.25365854
+      },
+      {
+        "year": 2024,
+        "life_expectancy_years": 78.8902439,
+        "five_year_change_years": 0.10243902
+      }
+    ],
+    "suicide": [
+      {
+        "year": 2001,
+        "suicide_rate_per_100k": 10.7,
+        "suicide_deaths": 30622,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2002,
+        "suicide_rate_per_100k": 11.0,
+        "suicide_deaths": 31655,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2003,
+        "suicide_rate_per_100k": 10.8,
+        "suicide_deaths": 31484,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2004,
+        "suicide_rate_per_100k": 11.0,
+        "suicide_deaths": 32439,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2005,
+        "suicide_rate_per_100k": 10.9,
+        "suicide_deaths": 32637,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2006,
+        "suicide_rate_per_100k": 11.0,
+        "suicide_deaths": 33300,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2007,
+        "suicide_rate_per_100k": 11.3,
+        "suicide_deaths": 34598,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2008,
+        "suicide_rate_per_100k": 11.6,
+        "suicide_deaths": 36035,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2009,
+        "suicide_rate_per_100k": 11.8,
+        "suicide_deaths": 36909,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2010,
+        "suicide_rate_per_100k": 12.1,
+        "suicide_deaths": 38364,
+        "prior_10_year_average_rate": null,
+        "pct_vs_prior_10_year_average": null
+      },
+      {
+        "year": 2011,
+        "suicide_rate_per_100k": 12.3,
+        "suicide_deaths": 39518,
+        "prior_10_year_average_rate": 11.22,
+        "pct_vs_prior_10_year_average": 9.62566845
+      },
+      {
+        "year": 2012,
+        "suicide_rate_per_100k": 12.5,
+        "suicide_deaths": 40600,
+        "prior_10_year_average_rate": 11.38,
+        "pct_vs_prior_10_year_average": 9.84182777
+      },
+      {
+        "year": 2013,
+        "suicide_rate_per_100k": 12.6,
+        "suicide_deaths": 41149,
+        "prior_10_year_average_rate": 11.53,
+        "pct_vs_prior_10_year_average": 9.28013877
+      },
+      {
+        "year": 2014,
+        "suicide_rate_per_100k": 13.0,
+        "suicide_deaths": 42826,
+        "prior_10_year_average_rate": 11.71,
+        "pct_vs_prior_10_year_average": 11.01622545
+      },
+      {
+        "year": 2015,
+        "suicide_rate_per_100k": 13.3,
+        "suicide_deaths": 44193,
+        "prior_10_year_average_rate": 11.91,
+        "pct_vs_prior_10_year_average": 11.67086482
+      },
+      {
+        "year": 2016,
+        "suicide_rate_per_100k": 13.4,
+        "suicide_deaths": 44965,
+        "prior_10_year_average_rate": 12.15,
+        "pct_vs_prior_10_year_average": 10.28806584
+      },
+      {
+        "year": 2017,
+        "suicide_rate_per_100k": 14.0,
+        "suicide_deaths": 47173,
+        "prior_10_year_average_rate": 12.39,
+        "pct_vs_prior_10_year_average": 12.99435028
+      },
+      {
+        "year": 2018,
+        "suicide_rate_per_100k": 14.2,
+        "suicide_deaths": 48344,
+        "prior_10_year_average_rate": 12.66,
+        "pct_vs_prior_10_year_average": 12.164297
+      },
+      {
+        "year": 2019,
+        "suicide_rate_per_100k": 13.9,
+        "suicide_deaths": 47511,
+        "prior_10_year_average_rate": 12.92,
+        "pct_vs_prior_10_year_average": 7.58513932
+      },
+      {
+        "year": 2020,
+        "suicide_rate_per_100k": 13.4,
+        "suicide_deaths": 45979,
+        "prior_10_year_average_rate": 13.13,
+        "pct_vs_prior_10_year_average": 2.05635948
+      },
+      {
+        "year": 2021,
+        "suicide_rate_per_100k": 14.0,
+        "suicide_deaths": 48183,
+        "prior_10_year_average_rate": 13.26,
+        "pct_vs_prior_10_year_average": 5.58069382
+      },
+      {
+        "year": 2022,
+        "suicide_rate_per_100k": 14.2,
+        "suicide_deaths": 49476,
+        "prior_10_year_average_rate": 13.43,
+        "pct_vs_prior_10_year_average": 5.73343261
+      },
+      {
+        "year": 2023,
+        "suicide_rate_per_100k": 14.0,
+        "suicide_deaths": 49316,
+        "prior_10_year_average_rate": 13.6,
+        "pct_vs_prior_10_year_average": 2.94117647
+      },
+      {
+        "year": 2024,
+        "suicide_rate_per_100k": 13.7,
+        "suicide_deaths": 48824,
+        "prior_10_year_average_rate": 13.74,
+        "pct_vs_prior_10_year_average": -0.29112082
+      }
+    ],
+    "obesity": [
+      {
+        "survey_period": "1988\u20131994",
+        "adult_obesity_pct": 22.9,
+        "year": 1988,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -42.60651629
+      },
+      {
+        "survey_period": "1999\u20132000",
+        "adult_obesity_pct": 30.5,
+        "year": 1999,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -23.55889724
+      },
+      {
+        "survey_period": "2001\u20132002",
+        "adult_obesity_pct": 30.5,
+        "year": 2001,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -23.55889724
+      },
+      {
+        "survey_period": "2003\u20132004",
+        "adult_obesity_pct": 32.2,
+        "year": 2003,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -19.29824561
+      },
+      {
+        "survey_period": "2005\u20132006",
+        "adult_obesity_pct": 34.3,
+        "year": 2005,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -14.03508772
+      },
+      {
+        "survey_period": "2007\u20132008",
+        "adult_obesity_pct": 33.7,
+        "year": 2007,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -15.53884712
+      },
+      {
+        "survey_period": "2009\u20132010",
+        "adult_obesity_pct": 35.7,
+        "year": 2009,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -10.52631579
+      },
+      {
+        "survey_period": "2011\u20132012",
+        "adult_obesity_pct": 34.9,
+        "year": 2011,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -12.53132832
+      },
+      {
+        "survey_period": "2013\u20132014",
+        "adult_obesity_pct": 37.7,
+        "year": 2013,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -5.51378446
+      },
+      {
+        "survey_period": "2015\u20132016",
+        "adult_obesity_pct": 39.6,
+        "year": 2015,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": -0.7518797
+      },
+      {
+        "survey_period": "2017\u20132018",
+        "adult_obesity_pct": 42.4,
+        "year": 2017,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": 6.26566416
+      },
+      {
+        "survey_period": "August 2021\u2013August 2023",
+        "adult_obesity_pct": 40.3,
+        "year": 2021,
+        "prior_decade_cycle_average_pct": 39.9,
+        "pct_vs_prior_decade_cycle_average": 1.00250627
+      }
+    ]
+  },
   "demographics": {
     "summary": {
       "workers_per_beneficiary_1945": 41.9439,
@@ -15629,6 +16605,54 @@
     {
       "name": "Sharadar real-business productivity bridge",
       "reference": "Local SF1 ARQ replayed point in time by datekey; U.S. domestic common stocks excluding GLM 5.2 distraction scores >=70, with Financial Services and Utilities excluded from the primary FCF cut"
+    },
+    {
+      "name": "Freddie Mac 30-year mortgage rate",
+      "url": "https://fred.stlouisfed.org/series/MORTGAGE30US"
+    },
+    {
+      "name": "Census/HUD median new-house sale price",
+      "url": "https://fred.stlouisfed.org/series/MSPUS"
+    },
+    {
+      "name": "Census median personal and household income",
+      "url": "https://fred.stlouisfed.org/series/MEPAINUSA646N"
+    },
+    {
+      "name": "BLS median usual weekly nominal earnings",
+      "url": "https://fred.stlouisfed.org/series/LES1252881500Q"
+    },
+    {
+      "name": "The Economist Big Mac data",
+      "url": "https://github.com/TheEconomist/big-mac-data"
+    },
+    {
+      "name": "iShares IWM current holdings",
+      "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf"
+    },
+    {
+      "name": "Census CPS completed fertility by nativity",
+      "url": "https://www.census.gov/data/tables/2024/demo/fertility/women-fertility.html"
+    },
+    {
+      "name": "CDC suicide trends, 2001\u20132024",
+      "url": "https://www.cdc.gov/suicide/data/index.html"
+    },
+    {
+      "name": "CDC measured adult obesity history",
+      "url": "https://www.cdc.gov/nchs/data/hestat/hestat111.htm"
+    },
+    {
+      "name": "CDC 2024 life expectancy",
+      "url": "https://www.cdc.gov/nchs/products/databriefs/db548.htm"
+    },
+    {
+      "name": "Harvard 2026\u201327 undergraduate tuition",
+      "url": "https://college.harvard.edu/financial-aid/how-aid-works"
+    },
+    {
+      "name": "Penn 2026\u201327 undergraduate tuition",
+      "url": "https://srfs.upenn.edu/costs-budgeting/undergraduate-tuition-and-fees"
     },
     {
       "name": "IRS historical federal corporation tax rates",

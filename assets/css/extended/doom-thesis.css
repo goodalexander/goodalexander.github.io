@@ -210,6 +210,19 @@
 .doom-valuation-strip > div:nth-child(3) strong { color: var(--doom-violet); }
 .doom-chart-table { margin-top: .5rem; padding-top: .75rem; border-top: 1px solid var(--doom-line); }
 .doom-chart-note { max-width: none; margin: .8rem 0 0; }
+.doom-common-concentration { display: flex; flex-direction: column; justify-content: center; }
+.doom-common-concentration-grid { grid-template-columns: .85fr 1.15fr; }
+.doom-common-concentration h3 { margin: .25rem 0 1.3rem; }
+.doom-common-concentration > p { margin: 1.2rem 0 0; color: var(--doom-muted); font-size: .76rem; line-height: 1.65; }
+.doom-common-market-bars { display: grid; gap: 1rem; }
+.doom-common-market-bars > div { display: grid; grid-template-columns: 88px minmax(120px,1fr) 86px; gap: .8rem; align-items: center; }
+.doom-common-market-bars span { color: var(--doom-dim); font: .68rem "JetBrains Mono",ui-monospace,monospace; letter-spacing: .08em; }
+.doom-common-market-bars i { display: block; width: var(--common-bar); height: 22px; border-radius: 2px; background: linear-gradient(90deg,var(--doom-red),#d7a94b); }
+.doom-common-market-bars > div:nth-child(2) i { background: var(--doom-green); }
+.doom-common-market-bars strong { color: var(--doom-ink); font: 700 .9rem "JetBrains Mono",ui-monospace,monospace; text-align: right; }
+.doom-common-downloads { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.2rem; }
+.doom-common-downloads .doom-download { margin-top: 0; }
+#common-affordability-table td:first-child small { display: block; margin-top: .2rem; color: var(--doom-dim); font-size: .58rem; font-weight: 400; line-height: 1.3; }
 .doom-method { padding-top: 2rem; border-top: 1px solid var(--doom-line); }
 .doom-method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 1px solid var(--doom-line); background: var(--doom-line); }
 .doom-method-grid > div { padding: 1.5rem; background: var(--doom-panel); }

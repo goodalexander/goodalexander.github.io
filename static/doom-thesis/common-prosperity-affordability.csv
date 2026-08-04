@@ -1,0 +1,5 @@
+item,cost_usd,cost_year,definition,median_household_income_usd,income_year,median_household_incomes_required,pct_of_one_median_household_income
+Harvard undergraduate tuition,62226.0,2026,tuition_only,83730.0,2024,0.7431744894303117,74.31744894303117
+Penn undergraduate tuition,65670.0,2026,tuition_only,83730.0,2024,0.7843067001074884,78.43067001074884
+One troy-ounce gold bar,4134.2001953125,2026,front_month_gold_futures_proxy,83730.0,2024,0.0493753755561029,4.937537555610295
+One barrel of WTI crude oil,75.29000091552734,2026,front_month_wti_futures_proxy,83730.0,2024,0.0008991998198438,0.0899199819843871

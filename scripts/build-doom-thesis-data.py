@@ -48,6 +48,7 @@ def build_llm_document(payload: dict) -> str:
     productivity = payload["productivity"]["summary"]
     human_capital = payload["productivity"]["human_capital_evidence"]
     demographics = payload["demographics"]["summary"]
+    common = payload["common_prosperity"]["summary"]
     cumulative = payload["cumulative_income_vs_debt"]["summary"]
     valuation = payload["tax_valuation"]["valuation_summary"]
     doom_score = payload["doom_index_score"]
@@ -157,6 +158,10 @@ def build_llm_document(payload: dict) -> str:
             f"- Current aggregate operating-company FCF margin: {productivity['latest_operating_company_fcf_margin']:.1%}, reconstructed from four rolling reported quarters through {productivity['current_fcf_as_of_date']}.",
             f"- Outside the score-70+ distraction basket, U.S. nonfinancial, nonutility public companies have rolling-four-quarter real revenue growth of {productivity['latest_real_business_real_revenue_growth_yoy_pct']:.1f}% ({productivity['latest_real_business_revenue_growth_yoy_pct']:.1f}% nominal), FCF margin of {productivity['latest_real_business_fcf_margin_pct']:.1f}%, and operating-cash-flow margin of {productivity['latest_real_business_operating_cash_flow_margin_pct']:.1f}% as of {productivity['real_business_as_of_date']}. Real growth uses the latest publicly available current-vintage GDP deflator. This is an observable broad-business outcome bridge, not a causal estimate of AI productivity: mix, acquisitions, entry, and cyclicality also affect it.",
             f"- Latest nonfarm-business productivity: {productivity['latest_quarter_productivity_growth_annualized']:.1%} quarter-over-quarter annualized and {productivity['latest_quarter_productivity_growth_yoy']:.1%} year-over-year in {productivity['latest_labor_productivity_quarter']}.",
+            f"- Common Prosperity housing burden: the requested mortgage-rate × median-new-house-price measure equals {common['housing']['interest_only_burden_pct_median_personal_income']:.1f}% of nowcast median personal income, {common['housing']['change_since_2021_pct']:.0f}% above 2021 but {abs(common['housing']['change_since_2000_pct']):.0f}% below 2000 because mortgage rates were also high then.",
+            f"- A median full-time work hour buys {common['big_mac']['big_macs_per_median_work_hour']:.2f} Big Macs, {abs(common['big_mac']['change_since_2000_pct']):.0f}% fewer than in 2000 under a 40-hour-week conversion.",
+            f"- NVDA market capitalization is {common['market_concentration']['nvda_to_russell_2000_marketcap_pct']:.0f}% of the summed market capitalization of matched current IWM constituents; Sharadar covers {common['market_concentration']['matched_iwm_portfolio_weight_pct']:.1f}% of IWM equity weight.",
+            f"- Social outcomes: life expectancy changed {common['life_expectancy']['five_year_change_years']:+.1f} years over five years; native-born women ages 40–50 report {common['native_completed_fertility']['children_per_native_born_woman_age_40_50']:.3f} completed births; the 2024 suicide rate was {common['suicide']['rate_per_100k']:.1f} per 100,000 ({common['suicide']['pct_vs_prior_10_year_average']:+.1f}% versus its prior ten-year average); measured adult obesity was {common['obesity']['adult_obesity_pct']:.1f}% ({common['obesity']['pct_vs_prior_decade_cycle_average']:+.1f}% versus the prior-decade NHANES-cycle average).",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
             f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
             "",
@@ -173,6 +178,8 @@ def build_llm_document(payload: dict) -> str:
             "- AGI growth sensitivity: https://goodalexander.com/doom-thesis/agi-growth-escape-sensitivity.csv",
             "- Education spending versus NAEP: https://goodalexander.com/doom-thesis/education-spending-vs-naep.csv",
             "- Daily real-business productivity ex distraction: https://goodalexander.com/doom-thesis/real-business-productivity-ex-distraction-daily.csv",
+            "- Common Prosperity affordability snapshot: https://goodalexander.com/doom-thesis/common-prosperity-affordability.csv",
+            "- Common Prosperity housing history: https://goodalexander.com/doom-thesis/common-prosperity-housing.csv",
             "- OASDI support ratio and deficit comparison: https://goodalexander.com/doom-thesis/demographics-support-ratio.csv",
             "",
             "## Sources",
@@ -349,6 +356,32 @@ def build_payload(doom_root: Path) -> dict:
         (doom_root / "real_business_productivity_ex_distraction_summary.json").read_text(
             encoding="utf-8"
         )
+    )
+    common_prosperity_summary = json.loads(
+        (doom_root / "common_prosperity_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    common_prosperity_housing = pd.read_csv(
+        doom_root / "common_prosperity_housing_2000_2026.csv"
+    )
+    common_prosperity_big_mac = pd.read_csv(
+        doom_root / "common_prosperity_big_macs_per_hour_2000_2026.csv"
+    )
+    common_prosperity_affordability = pd.read_csv(
+        doom_root / "common_prosperity_affordability_snapshot.csv"
+    )
+    common_prosperity_fertility = pd.read_csv(
+        doom_root / "common_prosperity_native_completed_fertility_2014_2024.csv"
+    )
+    common_prosperity_life = pd.read_csv(
+        doom_root / "common_prosperity_life_expectancy_2000_2024.csv"
+    )
+    common_prosperity_suicide = pd.read_csv(
+        doom_root / "common_prosperity_suicide_2001_2024.csv"
+    )
+    common_prosperity_obesity = pd.read_csv(
+        doom_root / "common_prosperity_obesity_nhanes.csv"
     )
     operating_fcf["period_type"] = "completed_calendar_year"
     current_fcf = current_operating_fcf.iloc[0]
@@ -1082,6 +1115,20 @@ def build_payload(doom_root: Path) -> dict:
                 productivity_panel.round(8)
             ),
         },
+        "common_prosperity": {
+            "summary": common_prosperity_summary,
+            "housing_history": records(round_numeric(common_prosperity_housing)),
+            "big_mac_history": records(round_numeric(common_prosperity_big_mac)),
+            "affordability_snapshot": records(
+                round_numeric(common_prosperity_affordability)
+            ),
+            "native_completed_fertility": records(
+                round_numeric(common_prosperity_fertility)
+            ),
+            "life_expectancy": records(round_numeric(common_prosperity_life)),
+            "suicide": records(round_numeric(common_prosperity_suicide)),
+            "obesity": records(round_numeric(common_prosperity_obesity)),
+        },
         "demographics": {
             "summary": {
                 "workers_per_beneficiary_1945": demographic_value(
@@ -1283,6 +1330,54 @@ def build_payload(doom_root: Path) -> dict:
                 ),
             },
             {
+                "name": "Freddie Mac 30-year mortgage rate",
+                "url": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+            },
+            {
+                "name": "Census/HUD median new-house sale price",
+                "url": "https://fred.stlouisfed.org/series/MSPUS",
+            },
+            {
+                "name": "Census median personal and household income",
+                "url": "https://fred.stlouisfed.org/series/MEPAINUSA646N",
+            },
+            {
+                "name": "BLS median usual weekly nominal earnings",
+                "url": "https://fred.stlouisfed.org/series/LES1252881500Q",
+            },
+            {
+                "name": "The Economist Big Mac data",
+                "url": "https://github.com/TheEconomist/big-mac-data",
+            },
+            {
+                "name": "iShares IWM current holdings",
+                "url": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+            },
+            {
+                "name": "Census CPS completed fertility by nativity",
+                "url": "https://www.census.gov/data/tables/2024/demo/fertility/women-fertility.html",
+            },
+            {
+                "name": "CDC suicide trends, 2001–2024",
+                "url": "https://www.cdc.gov/suicide/data/index.html",
+            },
+            {
+                "name": "CDC measured adult obesity history",
+                "url": "https://www.cdc.gov/nchs/data/hestat/hestat111.htm",
+            },
+            {
+                "name": "CDC 2024 life expectancy",
+                "url": "https://www.cdc.gov/nchs/products/databriefs/db548.htm",
+            },
+            {
+                "name": "Harvard 2026–27 undergraduate tuition",
+                "url": "https://college.harvard.edu/financial-aid/how-aid-works",
+            },
+            {
+                "name": "Penn 2026–27 undergraduate tuition",
+                "url": "https://srfs.upenn.edu/costs-budgeting/undergraduate-tuition-and-fees",
+            },
+            {
                 "name": "IRS historical federal corporation tax rates",
                 "url": "https://www.irs.gov/statistics/soi-tax-stats-historical-table-24",
             },
@@ -1435,6 +1530,19 @@ def main() -> None:
     pd.read_csv(
         args.doom_data_root / "agi_growth_escape_sensitivity.csv"
     ).to_csv(args.output_dir / "agi-growth-escape-sensitivity.csv", index=False)
+    common_downloads = {
+        "common_prosperity_housing_2000_2026.csv": "common-prosperity-housing.csv",
+        "common_prosperity_big_macs_per_hour_2000_2026.csv": "common-prosperity-big-macs.csv",
+        "common_prosperity_affordability_snapshot.csv": "common-prosperity-affordability.csv",
+        "common_prosperity_native_completed_fertility_2014_2024.csv": "common-prosperity-native-fertility.csv",
+        "common_prosperity_life_expectancy_2000_2024.csv": "common-prosperity-life-expectancy.csv",
+        "common_prosperity_suicide_2001_2024.csv": "common-prosperity-suicide.csv",
+        "common_prosperity_obesity_nhanes.csv": "common-prosperity-obesity.csv",
+    }
+    for source_name, output_name in common_downloads.items():
+        pd.read_csv(args.doom_data_root / source_name).to_csv(
+            args.output_dir / output_name, index=False
+        )
     print(json.dumps(payload["latest"], indent=2))
 
 
