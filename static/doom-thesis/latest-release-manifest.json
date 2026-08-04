@@ -1,6 +1,6 @@
 {
-  "release_id": "20260804T180239.867487Z",
-  "started_at": "2026-08-04T18:02:39.867487+00:00",
+  "release_id": "20260804T200602.311608Z",
+  "started_at": "2026-08-04T20:06:02.311608+00:00",
   "profile": "score",
   "dry_run": false,
   "skip_bloomberg": false,
@@ -15,7 +15,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.495,
+      "elapsed_seconds": 1.454,
       "output_tail": "{\n  \"ai_capital_intensity_score\": 80.34851149138339,\n  \"as_of_date\": \"2026-08-04\",\n  \"capex_growth_yoy_pct\": 82.66198056915297,\n  \"capex_to_depreciation_multiple\": 3.196813106851309,\n  \"capex_to_operating_cash_flow_pct\": 81.22956964629036,\n  \"capex_to_revenue_pct\": 30.41361477692428,\n  \"companies_in_public_universe\": 5,\n  \"critical_caveat\": \"Sharadar-reported company capex is not attributable AI capex. The score measures disclosed hyperscaler capital intensity and cash conversion; it must not be described as AI ROIC.\",\n  \"fcf_margin_pct\": 7.027941185219398,\n  \"incremental_revenue_per_prior_capex\": 0.940771971766479,\n  \"methodology\": \"Replay Sharadar ARQ records by datekey; retain the latest filing version then known for each ticker and calendardate; sum four distinct quarters; include companies only during public windows.\",\n  \"rolling_4q_capex_billions\": 562.345,\n  \"rolling_4q_fcf_billions\": 129.946,\n  \"rolling_4q_revenue_billions\": 1848.991,\n  \"score_coverage_pct\": 100.0,\n  \"score_definition\": \"Equal-weight mean of five fixed-threshold capital-intensity stress signals: capex/revenue (10%-35%), capex/operating cash flow (25%-100%), inverse FCF margin (25%-0%), capex/depreciation (1x-4x), and year-over-year capex growth (0%-50%). Values are clipped to 0-100.\",\n  \"tickers\": [\n    \"AMZN\",\n    \"GOOGL\",\n    \"META\",\n    \"MSFT\",\n    \"ORCL\"\n  ]\n}\n"
     },
     {
@@ -27,7 +27,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.351,
+      "elapsed_seconds": 0.359,
       "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"total_hyperscaler_capex_billions\": 562.345,\n  \"base_disclosed_or_inferred_ai_revenue_run_rate_billions\": 64.0,\n  \"base_revenue_to_total_hyperscaler_capex_pct\": 11.380913851816944,\n  \"base_modeled_ai_cash_flow_billions\": 22.4,\n  \"base_cash_flow_to_total_hyperscaler_capex_pct\": 3.9833198481359307,\n  \"base_cash_flow_to_modeled_attributable_capex_pct\": 5.311093130847907,\n  \"video_720p_audio_api_floor_decline_pct\": 87.5,\n  \"current_video_720p_audio_api_floor_usd_per_second\": 0.05,\n  \"latest_memory_bottleneck_severity_0_100\": 55.0,\n  \"critical_caveat\": \"Revenue ranges mix exact disclosures, lower bounds, and labeled assumptions. Annual cash flow divided by annual capex is not ROIC because capex is a flow, asset lives differ, and counterfactual maintenance investment is unknown.\",\n  \"video_caveat\": \"The historical vendor-price series compares listed 720p video-with-audio API floors and is not quality-adjusted. A separate Artificial Analysis blind-preference quality-band frontier now starts prospectively; current Elo is not backfilled onto old prices.\",\n  \"memory_caveat\": \"The HBM series is a coded disclosure-event index, not a market-wide quantity, price, or lead-time series.\"\n}\n"
     },
     {
@@ -39,8 +39,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.771,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:02:42.407297+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"benchmark\": \"Artificial Analysis Text-to-Video with Audio Arena\",\n  \"quality_band_pct_of_frontier_elo\": 95.0,\n  \"frontier_model\": \"Gemini Omni Flash\",\n  \"frontier_creator\": \"Google\",\n  \"frontier_elo\": 1243.0,\n  \"frontier_samples\": 10737,\n  \"quality_adjusted_cost_winner\": {\n    \"model\": \"Gemini Omni Flash\",\n    \"creator\": \"Google\",\n    \"elo\": 1243.0,\n    \"quality_fraction_of_frontier_pct\": 100.0,\n    \"api_price_usd_per_minute\": 6.0,\n    \"samples\": 10737,\n    \"released\": \"May 2026\"\n  },\n  \"interpretation\": \"This is the lowest listed API price among models whose current blind-preference Elo is at least 95% of the current leader. It is a quality-band cost frontier, not a claim that one Elo point has constant economic value.\",\n  \"critical_caveats\": [\n    \"Arena Elo is relative and can move as models and votes change; it is not comparable across unrelated leaderboard modalities.\",\n    \"User preferences in a public arena need not match professional production quality, prompt adherence, safety, latency, reliability, or enterprise workflow value.\",\n    \"Listed API price can differ by duration, resolution, audio, provider route, discounts, and failed-generation policy.\",\n    \"The series begins prospectively with retrieval snapshots. Current Elo is never backfilled onto prior release dates.\",\n    \"The 95% band is a predeclared research convention and sensitivity bands should be shown before this diagnostic receives index weight.\"\n  ],\n  \"sources\": {\n    \"leaderboard\": \"https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video\",\n    \"methodology\": \"https://artificialanalysis.ai/video/methodology\"\n  }\n}\n"
+      "elapsed_seconds": 0.579,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:06:04.628492+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"benchmark\": \"Artificial Analysis Text-to-Video with Audio Arena\",\n  \"quality_band_pct_of_frontier_elo\": 95.0,\n  \"frontier_model\": \"Gemini Omni Flash\",\n  \"frontier_creator\": \"Google\",\n  \"frontier_elo\": 1244.0,\n  \"frontier_samples\": 10644,\n  \"quality_adjusted_cost_winner\": {\n    \"model\": \"Gemini Omni Flash\",\n    \"creator\": \"Google\",\n    \"elo\": 1244.0,\n    \"quality_fraction_of_frontier_pct\": 100.0,\n    \"api_price_usd_per_minute\": 6.0,\n    \"samples\": 10644,\n    \"released\": \"May 2026\"\n  },\n  \"interpretation\": \"This is the lowest listed API price among models whose current blind-preference Elo is at least 95% of the current leader. It is a quality-band cost frontier, not a claim that one Elo point has constant economic value.\",\n  \"critical_caveats\": [\n    \"Arena Elo is relative and can move as models and votes change; it is not comparable across unrelated leaderboard modalities.\",\n    \"User preferences in a public arena need not match professional production quality, prompt adherence, safety, latency, reliability, or enterprise workflow value.\",\n    \"Listed API price can differ by duration, resolution, audio, provider route, discounts, and failed-generation policy.\",\n    \"The series begins prospectively with retrieval snapshots. Current Elo is never backfilled onto prior release dates.\",\n    \"The 95% band is a predeclared research convention and sensitivity bands should be shown before this diagnostic receives index weight.\"\n  ],\n  \"sources\": {\n    \"leaderboard\": \"https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video\",\n    \"methodology\": \"https://artificialanalysis.ai/video/methodology\"\n  }\n}\n"
     },
     {
       "name": "hbm-market-panel",
@@ -51,8 +51,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 3.692,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:02:46.109863+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"forecast_vintage\": \"2026-06-02\",\n  \"hbm_capacity\": {\n    \"2026_share_total_dram_wafer_input_pct\": 22.0,\n    \"2026_share_total_dram_bit_supply_pct\": 9.0,\n    \"2027_share_total_dram_wafer_input_pct\": 30.0,\n    \"2027_share_total_dram_bit_supply_pct\": 13.0\n  },\n  \"supplier_bit_output_share_2026_pct\": {\n    \"SK hynix\": 50.0,\n    \"Samsung\": 28.0,\n    \"Micron/other residual\": 22.0\n  },\n  \"production_cycle_context\": \"TrendForce's March 2026 news summary cites industry sources saying HBM4 production takes more than six months from DRAM wafer to final packaging.\",\n  \"latest_price_regime\": {\n    \"information_date\": \"2026-06-02\",\n    \"forecast_period\": \"2027\",\n    \"segment\": \"HBM4\",\n    \"direction\": \"increase\",\n    \"magnitude\": \"severalfold supplier proposal/expectation\",\n    \"source\": \"https://www.trendforce.com/presscenter/news/20260602-13074.html\",\n    \"note\": \"Public summary says suppliers are expected to seek severalfold contract increases; this is not a transacted price observation.\"\n  },\n  \"interpretation\": \"Public market-wide data now quantify HBM's growing claim on DRAM capacity and supplier concentration. The evidence supports a tight, slow-to-adjust input market, but public summaries do not provide a continuous transacted HBM price or lead-time series.\",\n  \"critical_caveats\": [\n    \"2026 and 2027 values are TrendForce forecasts, not realized production; retain the information-date vintage.\",\n    \"Wafer-input share and bit-supply share differ because HBM die size, stacking, and yields differ from conventional DRAM.\",\n    \"Micron/other supplier share is a residual calculated from published SK hynix and Samsung shares, not a separately published estimate.\",\n    \"The more-than-six-month production-cycle statement is a reported industry-source estimate, not an audited lead-time series.\",\n    \"The severalfold 2027 price statement describes expected supplier proposals/pricing power, not completed contracts or an exact market price.\",\n    \"This panel remains diagnostic with zero index weight until realized capacity, price, lead-time, and accelerator-utilization histories are available.\"\n  ],\n  \"sources\": {\n    \"capacity_and_price\": \"https://www.trendforce.com/presscenter/news/20260602-13074.html\",\n    \"supplier_share_and_cycle\": \"https://www.trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march/\",\n    \"price_events\": [\n      \"https://www.trendforce.com/research/download/RP250815RT\",\n      \"https://www.trendforce.com/research/download/RP260429DH3\",\n      \"https://www.trendforce.com/presscenter/news/20260602-13074.html\"\n    ]\n  }\n}\n"
+      "elapsed_seconds": 3.456,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:06:08.097937+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"forecast_vintage\": \"2026-06-02\",\n  \"hbm_capacity\": {\n    \"2026_share_total_dram_wafer_input_pct\": 22.0,\n    \"2026_share_total_dram_bit_supply_pct\": 9.0,\n    \"2027_share_total_dram_wafer_input_pct\": 30.0,\n    \"2027_share_total_dram_bit_supply_pct\": 13.0\n  },\n  \"supplier_bit_output_share_2026_pct\": {\n    \"SK hynix\": 50.0,\n    \"Samsung\": 28.0,\n    \"Micron/other residual\": 22.0\n  },\n  \"production_cycle_context\": \"TrendForce's March 2026 news summary cites industry sources saying HBM4 production takes more than six months from DRAM wafer to final packaging.\",\n  \"latest_price_regime\": {\n    \"information_date\": \"2026-06-02\",\n    \"forecast_period\": \"2027\",\n    \"segment\": \"HBM4\",\n    \"direction\": \"increase\",\n    \"magnitude\": \"severalfold supplier proposal/expectation\",\n    \"source\": \"https://www.trendforce.com/presscenter/news/20260602-13074.html\",\n    \"note\": \"Public summary says suppliers are expected to seek severalfold contract increases; this is not a transacted price observation.\"\n  },\n  \"interpretation\": \"Public market-wide data now quantify HBM's growing claim on DRAM capacity and supplier concentration. The evidence supports a tight, slow-to-adjust input market, but public summaries do not provide a continuous transacted HBM price or lead-time series.\",\n  \"critical_caveats\": [\n    \"2026 and 2027 values are TrendForce forecasts, not realized production; retain the information-date vintage.\",\n    \"Wafer-input share and bit-supply share differ because HBM die size, stacking, and yields differ from conventional DRAM.\",\n    \"Micron/other supplier share is a residual calculated from published SK hynix and Samsung shares, not a separately published estimate.\",\n    \"The more-than-six-month production-cycle statement is a reported industry-source estimate, not an audited lead-time series.\",\n    \"The severalfold 2027 price statement describes expected supplier proposals/pricing power, not completed contracts or an exact market price.\",\n    \"This panel remains diagnostic with zero index weight until realized capacity, price, lead-time, and accelerator-utilization histories are available.\"\n  ],\n  \"sources\": {\n    \"capacity_and_price\": \"https://www.trendforce.com/presscenter/news/20260602-13074.html\",\n    \"supplier_share_and_cycle\": \"https://www.trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march/\",\n    \"price_events\": [\n      \"https://www.trendforce.com/research/download/RP250815RT\",\n      \"https://www.trendforce.com/research/download/RP260429DH3\",\n      \"https://www.trendforce.com/presscenter/news/20260602-13074.html\"\n    ]\n  }\n}\n"
     },
     {
       "name": "distraction-attention",
@@ -63,7 +63,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 3.818,
+      "elapsed_seconds": 3.874,
       "output_tail": "{\n  \"as_of_date\": \"2025-12-31\",\n  \"baseline_year\": 2003,\n  \"latest_year\": 2025,\n  \"baseline_measured_digital_leisure_hours\": 2.87,\n  \"latest_measured_digital_leisure_hours\": 3.23,\n  \"measured_digital_leisure_change_pct\": 12.543554006968627,\n  \"baseline_socializing_hours\": 0.78,\n  \"latest_socializing_hours\": 0.58,\n  \"socializing_change_pct\": -25.64102564102565,\n  \"baseline_digital_leisure_to_socializing_ratio\": 3.6794871794871793,\n  \"latest_digital_leisure_to_socializing_ratio\": 5.56896551724138,\n  \"ratio_change_pct\": 51.35167607833717,\n  \"score_threshold_low\": 3.6794871794871793,\n  \"score_threshold_high\": 7.358974358974359,\n  \"score_threshold_method\": \"Zero at the 2003 baseline and 100 if the measured digital-leisure/socializing ratio doubles; clipped linearly between those anchors.\",\n  \"source\": \"U.S. Bureau of Labor Statistics American Time Use Survey LABSTAT series; direct BLS public API with DBnomics's BLS mirror as a rate-limit fallback\",\n  \"latest_release_sources\": [\n    \"https://www.bls.gov/news.release/archives/atus_06262025.htm\",\n    \"https://www.bls.gov/news.release/atus.t11A.htm\"\n  ],\n  \"series\": {\n    \"watching_tv_hours\": {\n      \"series_id\": \"TUU10101AA01014236\",\n      \"label\": \"Watching television\"\n    },\n    \"games_computer_leisure_hours\": {\n      \"series_id\": \"TUU10101AA01016299\",\n      \"label\": \"Playing games and computer use for leisure\"\n    },\n    \"socializing_communicating_hours\": {\n      \"series_id\": \"TUU10101AA01013951\",\n      \"label\": \"Socializing and communicating\"\n    },\n    \"reading_personal_hours\": {\n      \"series_id\": \"TUU10101AA01006315\",\n      \"label\": \"Reading for personal interest\"\n    },\n    \"sports_exercise_recreation_hours\": {\n      \"series_id\": \"TUU10101AA01006711\",\n      \"label\": \"Participating in sports, exercise, or recreation\"\n    }\n  },\n  \"caveat\": \"ATUS records a respondent's primary activity. Concurrent smartphone or media use during work, commuting, eating, or socializing is not captured, and the survey has no annual 2020 estimate. Television and leisure computer use are not inherently harmful; the ratio is a descriptive attention-allocation proxy, not a causal productivity estimate.\"\n}\n"
     },
     {
@@ -76,8 +76,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 23.998,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:03:13.937633+00:00\",\n  \"source\": \"DataForSEO Google Trends explore/live\",\n  \"geography\": \"Worldwide (location omitted)\",\n  \"query_mode\": \"One grouped request with shared normalization\",\n  \"time_range\": \"past_5_years\",\n  \"terms\": [\n    \"AI Porn\",\n    \"Best Colleges\",\n    \"Trade School\"\n  ],\n  \"weekly_intervals\": 262,\n  \"first_week_ending\": \"2021-08-07\",\n  \"latest_week_ending\": \"2026-08-01\",\n  \"yoy_definition\": \"Latest trailing-12-week mean divided by the trailing-12-week mean 52 weekly observations earlier, minus one.\",\n  \"doom_signal\": {\n    \"attention_allocation_doom_score\": 23.73702093355039,\n    \"construction\": \"Equal-weight mean of the level-ratio and growth-differential subscores.\",\n    \"ai_porn_52w_ma\": 81.07692307692308,\n    \"constructive_education_52w_ma\": 43.97115384615385,\n    \"ai_porn_to_constructive_52w_ratio\": 1.8438661710037174,\n    \"level_ratio_score\": 42.19330855018587,\n    \"level_ratio_score_rule\": \"0 at AI Porn / constructive 52-week MA <=1x; 100 at >=3x; linear and clipped.\",\n    \"ai_porn_12w_ma_yoy_pct\": 45.40612516644473,\n    \"constructive_education_12w_ma_yoy_pct\": 90.12539184952982,\n    \"ai_porn_minus_constructive_growth_pp\": -44.71926668308509,\n    \"growth_differential_score\": 5.280733316914912,\n    \"growth_differential_score_rule\": \"0 when AI Porn growth trails constructive growth by 50 percentage points or more; 100 when it leads by 50 points or more; linear and clipped.\",\n    \"constructive_definition\": \"Equal-weight mean of the jointly normalized Best Colleges and Trade School indices.\",\n    \"critical_caveat\": \"Worldwide English-language query terms are an attention proxy, not educational enrollment or pornography consumption. Google Trends history is relative and can be renormalized or revised.\"\n  },\n  \"response_reported_cost_usd\": 0.011,\n  \"cost_this_run_usd\": 0.011,\n  \"reused_cached_response\": false,\n  \"latest\": [\n    {\n      \"term\": \"AI Porn\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 92.0,\n      \"latest_12w_ma\": 91.0,\n      \"prior_year_12w_ma\": 62.583333333333336,\n      \"latest_12w_ma_yoy_pct\": 45.40612516644473,\n      \"latest_52w_ma\": 81.07692307692308\n    },\n    {\n      \"term\": \"Best Colleges\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 52.0,\n      \"latest_12w_ma\": 61.5,\n      \"prior_year_12w_ma\": 38.25,\n      \"latest_12w_ma_yoy_pct\": 60.7843137254902,\n      \"latest_52w_ma\": 50.61538461538461\n    },\n    {\n      \"term\": \"Trade School\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 22.0,\n      \"latest_12w_ma\": 39.583333333333336,\n      \"prior_year_12w_ma\": 14.916666666666666,\n      \"latest_12w_ma_yoy_pct\": 165.36312849162016,\n      \"latest_52w_ma\": 37.32692307692308\n    }\n  ],\n  \"files\": {\n    \"raw_response\": \"/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_raw.json\",\n    \"weekly_panel\": \"/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv\"\n  }\n}\n"
+      "elapsed_seconds": 17.147,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:06:29.125114+00:00\",\n  \"source\": \"DataForSEO Google Trends explore/live\",\n  \"geography\": \"Worldwide (location omitted)\",\n  \"query_mode\": \"One grouped request with shared normalization\",\n  \"time_range\": \"past_5_years\",\n  \"terms\": [\n    \"AI Porn\",\n    \"Best Colleges\",\n    \"Trade School\"\n  ],\n  \"weekly_intervals\": 262,\n  \"first_week_ending\": \"2021-08-07\",\n  \"latest_week_ending\": \"2026-08-01\",\n  \"yoy_definition\": \"Latest trailing-12-week mean divided by the trailing-12-week mean 52 weekly observations earlier, minus one.\",\n  \"doom_signal\": {\n    \"attention_allocation_doom_score\": 23.560129578785695,\n    \"construction\": \"Equal-weight mean of the level-ratio and growth-differential subscores.\",\n    \"ai_porn_52w_ma\": 81.07692307692308,\n    \"constructive_education_52w_ma\": 43.99038461538461,\n    \"ai_porn_to_constructive_52w_ratio\": 1.8430601092896177,\n    \"level_ratio_score\": 42.153005464480884,\n    \"level_ratio_score_rule\": \"0 at AI Porn / constructive 52-week MA <=1x; 100 at >=3x; linear and clipped.\",\n    \"ai_porn_12w_ma_yoy_pct\": 45.40612516644473,\n    \"constructive_education_12w_ma_yoy_pct\": 90.43887147335423,\n    \"ai_porn_minus_constructive_growth_pp\": -45.032746306909495,\n    \"growth_differential_score\": 4.967253693090505,\n    \"growth_differential_score_rule\": \"0 when AI Porn growth trails constructive growth by 50 percentage points or more; 100 when it leads by 50 points or more; linear and clipped.\",\n    \"constructive_definition\": \"Equal-weight mean of the jointly normalized Best Colleges and Trade School indices.\",\n    \"critical_caveat\": \"Worldwide English-language query terms are an attention proxy, not educational enrollment or pornography consumption. Google Trends history is relative and can be renormalized or revised.\"\n  },\n  \"response_reported_cost_usd\": 0.011,\n  \"cost_this_run_usd\": 0.011,\n  \"reused_cached_response\": false,\n  \"latest\": [\n    {\n      \"term\": \"AI Porn\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 94.0,\n      \"latest_12w_ma\": 91.0,\n      \"prior_year_12w_ma\": 62.583333333333336,\n      \"latest_12w_ma_yoy_pct\": 45.40612516644473,\n      \"latest_52w_ma\": 81.07692307692308\n    },\n    {\n      \"term\": \"Best Colleges\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 54.0,\n      \"latest_12w_ma\": 61.666666666666664,\n      \"prior_year_12w_ma\": 38.25,\n      \"latest_12w_ma_yoy_pct\": 61.220043572984736,\n      \"latest_52w_ma\": 50.65384615384615\n    },\n    {\n      \"term\": \"Trade School\",\n      \"latest_week_ending\": \"2026-08-01\",\n      \"latest_week_index\": 22.0,\n      \"latest_12w_ma\": 39.583333333333336,\n      \"prior_year_12w_ma\": 14.916666666666666,\n      \"latest_12w_ma_yoy_pct\": 165.36312849162016,\n      \"latest_52w_ma\": 37.32692307692308\n    }\n  ],\n  \"files\": {\n    \"raw_response\": \"/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_raw.json\",\n    \"weekly_panel\": \"/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv\"\n  }\n}\n"
     },
     {
       "name": "political-fiscal-history",
@@ -88,7 +88,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.339,
+      "elapsed_seconds": 0.34,
       "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"required_recurring_adjustment_pct_gdp\": 8.331406500721187,\n  \"major_enactments_count\": 7,\n  \"deficit_reducing_enactments_count\": 3,\n  \"prudent_scale_enactments_count\": 0,\n  \"largest_annualized_reduction_name\": \"Budget Control Act of 2011\",\n  \"largest_annualized_reduction_pct_gdp\": 1.3255685316090338,\n  \"required_to_largest_precedent_multiple\": 6.285157124700415,\n  \"interpretation\": \"None of the seven selected major enactments reached the prudent adjustment scale on a simple annualized CBO-score/GDP basis. This is evidence about scale, not a calibrated passage probability.\",\n  \"critical_caveat\": \"Budget-window scores mix temporary and permanent provisions, use different contemporaneous baselines, and are not realized primary-balance changes. The inventory is a documented major-law panel since 2011, not every fiscal bill, proposal, roll call, dilution, reversal, or implementation outcome.\"\n}\n"
     },
     {
@@ -100,7 +100,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.336,
+      "elapsed_seconds": 2.318,
       "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_tax_poll_year\": 2026,\n  \"taxes_too_high_pct\": 59.0,\n  \"taxes_fair_pct\": 47.0,\n  \"latest_spending_worry_year\": 2026,\n  \"worry_great_or_fair_amount_pct\": 79.0,\n  \"latest_policy_support_year\": 2025,\n  \"mean_support_across_listed_deficit_options_pct\": 48.0,\n  \"support_social_security_medicare_cost_changes_pct\": 39.0,\n  \"oppose_social_security_medicare_cost_changes_pct\": 57.0,\n  \"interpretation\": \"Concern about federal spending is broad, but support is fragmented across remedies. In 2025, only 39% favored significant Social Security and Medicare cost changes even though 79% expressed at least a fair amount of concern about federal spending in 2026.\",\n  \"critical_caveat\": \"Separate-question support cannot be multiplied or averaged into a calibrated probability that voters or Congress will support one combined prudent package. Question wording and political context matter.\",\n  \"sources\": [\n    \"https://news.gallup.com/poll/1714/taxes.aspx\",\n    \"https://news.gallup.com/poll/147626/federal-budget-deficit.aspx\"\n  ]\n}\n"
     },
     {
@@ -112,8 +112,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 5.624,
-      "output_tail": "/home/pfrpc/repos/us_debt_research/build_fiscal_prediction_markets.py:431: Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.\nSee https://pandas.pydata.org/docs/user_guide/migration-3-strings.html#string-migration-select-dtypes for details on how to write code that works with pandas 2 and 3.\n  for column in candidates.select_dtypes(include=\"object\").columns:\n{\n  \"admissibility_rule\": \"A direct-package contract must specify U.S. federal enactment, a deadline before fiscal stress is realized, and a recurring budget effect large enough to map to the prudent-course adjustment.\",\n  \"api_subsystem_status\": \"complete\",\n  \"as_of_date\": \"2026-08-04\",\n  \"best_live_fiscal_outcome_market\": {\n    \"close_time\": \"2026-10-20T12:29:00Z\",\n    \"market_id\": \"KXDEFGDP-26OCT20-T5\",\n    \"midpoint_probability_pct\": 9.5,\n    \"open_interest_contracts\": 19531.5,\n    \"platform\": \"Kalshi\",\n    \"title\": \"Will U.S. federal deficit-to-GDP for FY2026 be below 5%?\",\n    \"url\": \"https://kalshi.com/markets/kxdefgdp-26oct20\",\n    \"volume_contracts\": 65969.53,\n    \"why_not_direct\": \"One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.\",\n    \"yes_ask_pct\": 10.999999999999998,\n    \"yes_bid_pct\": 8.0\n  },\n  \"candidate_count\": 96,\n  \"critical_caveats\": [\n    \"Kalshi volume_fp is contract volume, not USD; the normalized data preserves that unit.\",\n    \"Polymarket volume is USD-denominated; executable bid/ask comes from the public CLOB book when available.\",\n    \"Adjacent outcome markets do not identify passage probability and receive zero direct score weight.\"\n  ],\n  \"direct_adjustment_passage_probability_pct\": null,\n  \"direct_package_market_status\": \"no_direct_contract_use_modeled_probability\",\n  \"generated_at\": \"2026-08-04T18:03:21.207155+00:00\",\n  \"interpretation\": \"The API and order-book subsystem is complete. Market candidates are corroborating features; when no contract directly maps to the prudent package, the scored passage probability comes from the separately disclosed empirical enactment model rather than remaining missing.\",\n  \"live_candidate_count\": 5,\n  \"platform_counts\": {\n    \"Kalshi\": 2,\n    \"Polymarket\": 94\n  },\n  \"raw_request_manifest\": \"/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/request_manifest.json\",\n  \"sources\": {\n    \"kalshi_api_docs\": \"https://docs.kalshi.com/getting_started/quick_start_market_data\",\n    \"kalshi_public_api\": \"https://external-api.kalshi.com/trade-api/v2/markets\",\n    \"polymarket_api_docs\": \"https://docs.polymarket.com/api-reference/introduction\",\n    \"polymarket_clob\": \"https://clob.polymarket.com/book\",\n    \"polymarket_gamma_search\": \"https://gamma-api.polymarket.com/public-search\"\n  }\n}\n"
+      "elapsed_seconds": 5.639,
+      "output_tail": "/home/pfrpc/repos/us_debt_research/build_fiscal_prediction_markets.py:431: Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.\nSee https://pandas.pydata.org/docs/user_guide/migration-3-strings.html#string-migration-select-dtypes for details on how to write code that works with pandas 2 and 3.\n  for column in candidates.select_dtypes(include=\"object\").columns:\n{\n  \"admissibility_rule\": \"A direct-package contract must specify U.S. federal enactment, a deadline before fiscal stress is realized, and a recurring budget effect large enough to map to the prudent-course adjustment.\",\n  \"api_subsystem_status\": \"complete\",\n  \"as_of_date\": \"2026-08-04\",\n  \"best_live_fiscal_outcome_market\": {\n    \"close_time\": \"2026-10-20T12:29:00Z\",\n    \"market_id\": \"KXDEFGDP-26OCT20-T5\",\n    \"midpoint_probability_pct\": 10.0,\n    \"open_interest_contracts\": 19531.5,\n    \"platform\": \"Kalshi\",\n    \"title\": \"Will U.S. federal deficit-to-GDP for FY2026 be below 5%?\",\n    \"url\": \"https://kalshi.com/markets/kxdefgdp-26oct20\",\n    \"volume_contracts\": 66009.53,\n    \"why_not_direct\": \"One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.\",\n    \"yes_ask_pct\": 10.999999999999998,\n    \"yes_bid_pct\": 9.0\n  },\n  \"candidate_count\": 96,\n  \"critical_caveats\": [\n    \"Kalshi volume_fp is contract volume, not USD; the normalized data preserves that unit.\",\n    \"Polymarket volume is USD-denominated; executable bid/ask comes from the public CLOB book when available.\",\n    \"Adjacent outcome markets do not identify passage probability and receive zero direct score weight.\"\n  ],\n  \"direct_adjustment_passage_probability_pct\": null,\n  \"direct_package_market_status\": \"no_direct_contract_use_modeled_probability\",\n  \"generated_at\": \"2026-08-04T20:06:37.401762+00:00\",\n  \"interpretation\": \"The API and order-book subsystem is complete. Market candidates are corroborating features; when no contract directly maps to the prudent package, the scored passage probability comes from the separately disclosed empirical enactment model rather than remaining missing.\",\n  \"live_candidate_count\": 5,\n  \"platform_counts\": {\n    \"Kalshi\": 2,\n    \"Polymarket\": 94\n  },\n  \"raw_request_manifest\": \"/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/request_manifest.json\",\n  \"sources\": {\n    \"kalshi_api_docs\": \"https://docs.kalshi.com/getting_started/quick_start_market_data\",\n    \"kalshi_public_api\": \"https://external-api.kalshi.com/trade-api/v2/markets\",\n    \"polymarket_api_docs\": \"https://docs.polymarket.com/api-reference/introduction\",\n    \"polymarket_clob\": \"https://clob.polymarket.com/book\",\n    \"polymarket_gamma_search\": \"https://gamma-api.polymarket.com/public-search\"\n  }\n}\n"
     },
     {
       "name": "political-adjustment-probability",
@@ -124,8 +124,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.35,
-      "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"direct_adjustment_passage_probability_pct\": 1.7333333333333336,\n  \"event_definition\": \"A recurring US federal fiscal package enacted in time to put the prudent-course path into effect, with an annual budget improvement at least equal to the modeled required adjustment as a share of GDP.\",\n  \"generated_at\": \"2026-08-04T18:03:21.592077+00:00\",\n  \"largest_us_precedent_pct_gdp\": 1.3255685316090338,\n  \"market_corroboration\": {\n    \"close_time\": \"2026-10-20T12:29:00Z\",\n    \"market_id\": \"KXDEFGDP-26OCT20-T5\",\n    \"midpoint_probability_pct\": 9.5,\n    \"open_interest_contracts\": 19531.5,\n    \"platform\": \"Kalshi\",\n    \"title\": \"Will U.S. federal deficit-to-GDP for FY2026 be below 5%?\",\n    \"url\": \"https://kalshi.com/markets/kxdefgdp-26oct20\",\n    \"volume_contracts\": 65969.53,\n    \"why_not_direct\": \"One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.\",\n    \"yes_ask_pct\": 10.999999999999998,\n    \"yes_bid_pct\": 8.0\n  },\n  \"market_corroboration_usage\": \"Diagnostic only. The live deficit/GDP contract has different timing and resolution criteria, so it is not substituted into the direct passage estimate.\",\n  \"method\": \"Product of a Laplace-smoothed share of selected major US fiscal enactments that reduced deficits, the IMF 5% historical tail share for consolidation episodes larger than 3% of GDP (used as an upper-bound scale proxy because the required package is larger), and entitlement-reform support normalized to 50%.\",\n  \"model_factors\": {\n    \"major_deficit_reduction_enactment_pct\": 44.44444444444444,\n    \"political_acceptance_multiplier\": 0.78,\n    \"sufficient_scale_conditional_pct\": 5.0,\n    \"support_entitlement_changes_pct\": 39.0\n  },\n  \"model_risk\": \"This is a structured base-rate estimate, not an exchange price or a statistically identified congressional forecast. The low/base/high range is the decision-useful output; the point estimate must not be presented without that range.\",\n  \"quality_flag\": \"modeled\",\n  \"required_adjustment_pct_gdp\": 8.331406500721187,\n  \"required_to_largest_us_precedent_multiple\": 6.285157124700415,\n  \"sensitivity\": [\n    {\n      \"major_deficit_reduction_enactment_pct\": 25.0,\n      \"political_acceptance_multiplier\": 0.6,\n      \"scenario\": \"low\",\n      \"sufficient_scale_conditional_pct\": 1.0,\n      \"timely_sufficient_package_probability_pct\": 0.15\n    },\n    {\n      \"major_deficit_reduction_enactment_pct\": 44.44444444444444,\n      \"political_acceptance_multiplier\": 0.78,\n      \"scenario\": \"base\",\n      \"sufficient_scale_conditional_pct\": 5.0,\n      \"timely_sufficient_package_probability_pct\": 1.7333333333333334\n    },\n    {\n      \"major_deficit_reduction_enactment_pct\": 60.0,\n      \"political_acceptance_multiplier\": 1.0,\n      \"scenario\": \"high\",\n      \"sufficient_scale_conditional_pct\": 10.0,\n      \"timely_sufficient_package_probability_pct\": 6.0\n    }\n  ],\n  \"sources\": [\n    \"https://www.elibrary.imf.org/display/book/9781475547900/ch002.xml\",\n    \"https://news.gallup.com/poll/1714/taxes.aspx\",\n    \"https://news.gallup.com/poll/147626/federal-budget-deficit.aspx\",\n    \"political_fiscal_history_summary.json\",\n    \"fiscal_prediction_markets_summary.json\"\n  ],\n  \"status\": \"complete_model_estimate\"\n}\n"
+      "elapsed_seconds": 0.352,
+      "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"direct_adjustment_passage_probability_pct\": 1.7333333333333336,\n  \"event_definition\": \"A recurring US federal fiscal package enacted in time to put the prudent-course path into effect, with an annual budget improvement at least equal to the modeled required adjustment as a share of GDP.\",\n  \"generated_at\": \"2026-08-04T20:06:37.779008+00:00\",\n  \"largest_us_precedent_pct_gdp\": 1.3255685316090338,\n  \"market_corroboration\": {\n    \"close_time\": \"2026-10-20T12:29:00Z\",\n    \"market_id\": \"KXDEFGDP-26OCT20-T5\",\n    \"midpoint_probability_pct\": 10.0,\n    \"open_interest_contracts\": 19531.5,\n    \"platform\": \"Kalshi\",\n    \"title\": \"Will U.S. federal deficit-to-GDP for FY2026 be below 5%?\",\n    \"url\": \"https://kalshi.com/markets/kxdefgdp-26oct20\",\n    \"volume_contracts\": 66009.53,\n    \"why_not_direct\": \"One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.\",\n    \"yes_ask_pct\": 10.999999999999998,\n    \"yes_bid_pct\": 9.0\n  },\n  \"market_corroboration_usage\": \"Diagnostic only. The live deficit/GDP contract has different timing and resolution criteria, so it is not substituted into the direct passage estimate.\",\n  \"method\": \"Product of a Laplace-smoothed share of selected major US fiscal enactments that reduced deficits, the IMF 5% historical tail share for consolidation episodes larger than 3% of GDP (used as an upper-bound scale proxy because the required package is larger), and entitlement-reform support normalized to 50%.\",\n  \"model_factors\": {\n    \"major_deficit_reduction_enactment_pct\": 44.44444444444444,\n    \"political_acceptance_multiplier\": 0.78,\n    \"sufficient_scale_conditional_pct\": 5.0,\n    \"support_entitlement_changes_pct\": 39.0\n  },\n  \"model_risk\": \"This is a structured base-rate estimate, not an exchange price or a statistically identified congressional forecast. The low/base/high range is the decision-useful output; the point estimate must not be presented without that range.\",\n  \"quality_flag\": \"modeled\",\n  \"required_adjustment_pct_gdp\": 8.331406500721187,\n  \"required_to_largest_us_precedent_multiple\": 6.285157124700415,\n  \"sensitivity\": [\n    {\n      \"major_deficit_reduction_enactment_pct\": 25.0,\n      \"political_acceptance_multiplier\": 0.6,\n      \"scenario\": \"low\",\n      \"sufficient_scale_conditional_pct\": 1.0,\n      \"timely_sufficient_package_probability_pct\": 0.15\n    },\n    {\n      \"major_deficit_reduction_enactment_pct\": 44.44444444444444,\n      \"political_acceptance_multiplier\": 0.78,\n      \"scenario\": \"base\",\n      \"sufficient_scale_conditional_pct\": 5.0,\n      \"timely_sufficient_package_probability_pct\": 1.7333333333333334\n    },\n    {\n      \"major_deficit_reduction_enactment_pct\": 60.0,\n      \"political_acceptance_multiplier\": 1.0,\n      \"scenario\": \"high\",\n      \"sufficient_scale_conditional_pct\": 10.0,\n      \"timely_sufficient_package_probability_pct\": 6.0\n    }\n  ],\n  \"sources\": [\n    \"https://www.elibrary.imf.org/display/book/9781475547900/ch002.xml\",\n    \"https://news.gallup.com/poll/1714/taxes.aspx\",\n    \"https://news.gallup.com/poll/147626/federal-budget-deficit.aspx\",\n    \"political_fiscal_history_summary.json\",\n    \"fiscal_prediction_markets_summary.json\"\n  ],\n  \"status\": \"complete_model_estimate\"\n}\n"
     },
     {
       "name": "debasement-repression",
@@ -136,8 +136,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 25.408,
-      "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"bloomberg_move_provider\": {\n    \"bloomberg_error\": \"BloombergRemoteError: Bloomberg request timed out after 20s: http://100.111.98.12:5555/bdh\",\n    \"error\": null,\n    \"source\": \"https://r.jina.ai/http://finance.yahoo.com/quote/%5EMOVE/history/\",\n    \"status\": \"current_fallback\"\n  },\n  \"critical_caveat\": \"This measures market and monetary conditions associated with debasement or repression risk. It does not establish that financial repression, a CBDC, capital controls, or confiscation has occurred.\",\n  \"debasement_repression_score\": 16.69441406287253,\n  \"generated_at\": \"2026-08-04T18:03:46.983292+00:00\",\n  \"historical_vintage_caveat\": \"The current build uses current-vintage FRED histories. GDP and monetary aggregates require ALFRED release vintages before this history can be used as a point-in-time trading backtest.\",\n  \"quality\": [\n    {\n      \"age_days\": 1,\n      \"fresh_days\": 10,\n      \"indicator\": \"ten_year_breakeven_pct\",\n      \"label\": \"10-year breakeven inflation\",\n      \"observation_date\": \"2026-08-03\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/T10YIE\",\n      \"value\": 2.27\n    },\n    {\n      \"age_days\": 1,\n      \"fresh_days\": 10,\n      \"indicator\": \"five_year_five_year_forward_inflation_pct\",\n      \"label\": \"5-year, 5-year forward inflation expectation\",\n      \"observation_date\": \"2026-08-03\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/T5YIFR\",\n      \"value\": 2.31\n    },\n    {\n      \"age_days\": 4,\n      \"fresh_days\": 10,\n      \"indicator\": \"ten_year_real_yield_pct\",\n      \"label\": \"10-year Treasury inflation-indexed yield\",\n      \"observation_date\": \"2026-07-31\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/DFII10\",\n      \"value\": 2.47\n    },\n    {\n      \"age_days\": 11,\n      \"fresh_days\": 17,\n      \"indicator\": \"ten_year_term_premium_pct\",\n      \"label\": \"Kim-Wright 10-year zero-coupon term premium\",\n      \"observation_date\": \"2026-07-24\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/THREEFYTP10\",\n      \"value\": 0.8376\n    },\n    {\n      \"age_days\": 6,\n      \"fresh_days\": 14,\n      \"indicator\": \"fed_total_assets_usd_millions\",\n      \"label\": \"Federal Reserve total assets\",\n      \"observation_date\": \"2026-07-29\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/WALCL\",\n      \"value\": 6738190.0\n    },\n    {\n      \"age_days\": 64,\n      \"fresh_days\": 75,\n      \"indicator\": \"m2_usd_billions\",\n      \"label\": \"M2 money stock\",\n      \"observation_date\": \"2026-06-01\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/M2SL\",\n      \"value\": 23155.2\n    },\n    {\n      \"age_days\": 125,\n      \"fresh_days\": 130,\n      \"indicator\": \"nominal_gdp_usd_billions_saar\",\n      \"label\": \"Nominal gross domestic product\",\n      \"observation_date\": \"2026-04-01\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/GDP\",\n      \"value\": 32475.21\n    },\n    {\n      \"age_days\": 1,\n      \"fresh_days\": 10,\n      \"indicator\": \"move_index\",\n      \"label\": \"ICE BofA MOVE Index\",\n      \"observation_date\": \"2026-08-03\",\n      \"quality_flag\": \"current\",\n      \"source\": \"Bloomberg MOVE Index / PX_LAST\",\n      \"value\": 80.48\n    }\n  ],\n  \"score_coverage_pct\": 100.0,\n  \"score_definition\": \"Equal-weight fixed-threshold pressure score across 10-year breakeven inflation, 5y5y forward inflation, inverse 10-year real yield, 10-year term premium, Fed assets/GDP, M2/GDP, and MOVE. Missing inputs reduce reported coverage and are not imputed.\"\n}\n"
+      "elapsed_seconds": 22.972,
+      "output_tail": "{\n  \"as_of_date\": \"2026-08-04\",\n  \"bloomberg_move_provider\": {\n    \"bloomberg_error\": \"BloombergRemoteError: Bloomberg request timed out after 20s: http://100.111.98.12:5555/bdh\",\n    \"error\": null,\n    \"source\": \"https://r.jina.ai/http://finance.yahoo.com/quote/%5EMOVE/history/\",\n    \"status\": \"current_fallback\"\n  },\n  \"critical_caveat\": \"This measures market and monetary conditions associated with debasement or repression risk. It does not establish that financial repression, a CBDC, capital controls, or confiscation has occurred.\",\n  \"debasement_repression_score\": 16.91227120572967,\n  \"generated_at\": \"2026-08-04T20:07:00.727748+00:00\",\n  \"historical_vintage_caveat\": \"The current build uses current-vintage FRED histories. GDP and monetary aggregates require ALFRED release vintages before this history can be used as a point-in-time trading backtest.\",\n  \"quality\": [\n    {\n      \"age_days\": 1,\n      \"fresh_days\": 10,\n      \"indicator\": \"ten_year_breakeven_pct\",\n      \"label\": \"10-year breakeven inflation\",\n      \"observation_date\": \"2026-08-03\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/T10YIE\",\n      \"value\": 2.27\n    },\n    {\n      \"age_days\": 1,\n      \"fresh_days\": 10,\n      \"indicator\": \"five_year_five_year_forward_inflation_pct\",\n      \"label\": \"5-year, 5-year forward inflation expectation\",\n      \"observation_date\": \"2026-08-03\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/T5YIFR\",\n      \"value\": 2.31\n    },\n    {\n      \"age_days\": 4,\n      \"fresh_days\": 10,\n      \"indicator\": \"ten_year_real_yield_pct\",\n      \"label\": \"10-year Treasury inflation-indexed yield\",\n      \"observation_date\": \"2026-07-31\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/DFII10\",\n      \"value\": 2.47\n    },\n    {\n      \"age_days\": 4,\n      \"fresh_days\": 17,\n      \"indicator\": \"ten_year_term_premium_pct\",\n      \"label\": \"Kim-Wright 10-year zero-coupon term premium\",\n      \"observation_date\": \"2026-07-31\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/THREEFYTP10\",\n      \"value\": 0.8681\n    },\n    {\n      \"age_days\": 6,\n      \"fresh_days\": 14,\n      \"indicator\": \"fed_total_assets_usd_millions\",\n      \"label\": \"Federal Reserve total assets\",\n      \"observation_date\": \"2026-07-29\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/WALCL\",\n      \"value\": 6738190.0\n    },\n    {\n      \"age_days\": 64,\n      \"fresh_days\": 75,\n      \"indicator\": \"m2_usd_billions\",\n      \"label\": \"M2 money stock\",\n      \"observation_date\": \"2026-06-01\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/M2SL\",\n      \"value\": 23155.2\n    },\n    {\n      \"age_days\": 125,\n      \"fresh_days\": 130,\n      \"indicator\": \"nominal_gdp_usd_billions_saar\",\n      \"label\": \"Nominal gross domestic product\",\n      \"observation_date\": \"2026-04-01\",\n      \"quality_flag\": \"current\",\n      \"source\": \"https://fred.stlouisfed.org/series/GDP\",\n      \"value\": 32475.21\n    },\n    {\n      \"age_days\": 0,\n      \"fresh_days\": 10,\n      \"indicator\": \"move_index\",\n      \"label\": \"ICE BofA MOVE Index\",\n      \"observation_date\": \"2026-08-04\",\n      \"quality_flag\": \"current\",\n      \"source\": \"Bloomberg MOVE Index / PX_LAST\",\n      \"value\": 80.48\n    }\n  ],\n  \"score_coverage_pct\": 100.0,\n  \"score_definition\": \"Equal-weight fixed-threshold pressure score across 10-year breakeven inflation, 5y5y forward inflation, inverse 10-year real yield, 10-year term premium, Fed assets/GDP, M2/GDP, and MOVE. Missing inputs reduce reported coverage and are not imputed.\"\n}\n"
     },
     {
       "name": "financial-repression-ownership",
@@ -148,8 +148,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.781,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:03:48.769553+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_ownership_observation_date\": \"2026-01-01\",\n  \"fed_holdings_usd_trillions\": 4.693551,\n  \"private_investor_holdings_usd_trillions\": 27.0411,\n  \"foreign_holdings_usd_trillions\": 9.2709,\n  \"fed_share_market_facing_debt_pct\": 14.789987764478647,\n  \"foreign_share_market_facing_debt_pct\": 29.213807960264006,\n  \"ten_year_real_yield_pct\": 1.93,\n  \"observed_financial_repression\": false,\n  \"operational_definition\": \"Observed financial repression requires both a negative ex-ante 10-year real Treasury yield and a currently binding broad rule that compels Treasury holdings or restricts creditor exit. Monetary accommodation, central-bank ownership, stablecoin reserve eligibility, CBDC research, and proposals are diagnostics but do not satisfy the definition alone.\",\n  \"current_assessment\": \"The narrow observed-repression flag is false. The latest matched 10-year real yield is positive, no coded broad capital-control or asset-confiscation law is in force, and the 2025 executive order prohibits executive-branch CBDC promotion. The GENIUS Act creates a potential regulated Treasury-demand channel but is not a CBDC or capital control.\",\n  \"critical_caveats\": [\n    \"FDHBPIN is Treasury's private-investor category; foreign investors are a subset, while Federal Reserve holdings are added to construct the displayed market-facing denominator.\",\n    \"Quarterly ownership observations are matched to daily real yields within 100 days and are not a security-level holder file.\",\n    \"The event panel is a reproducible U.S. policy taxonomy, not a complete legal history or proof of future intent.\"\n  ],\n  \"sources\": {\n    \"FDHBFRBN\": \"https://fred.stlouisfed.org/series/FDHBFRBN\",\n    \"FDHBPIN\": \"https://fred.stlouisfed.org/series/FDHBPIN\",\n    \"FDHBFIN\": \"https://fred.stlouisfed.org/series/FDHBFIN\",\n    \"DFII10\": \"https://fred.stlouisfed.org/series/DFII10\"\n  }\n}\n"
+      "elapsed_seconds": 2.419,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:07:03.148494+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_ownership_observation_date\": \"2026-01-01\",\n  \"fed_holdings_usd_trillions\": 4.693551,\n  \"private_investor_holdings_usd_trillions\": 27.0411,\n  \"foreign_holdings_usd_trillions\": 9.2709,\n  \"fed_share_market_facing_debt_pct\": 14.789987764478647,\n  \"foreign_share_market_facing_debt_pct\": 29.213807960264006,\n  \"ten_year_real_yield_pct\": 1.93,\n  \"observed_financial_repression\": false,\n  \"operational_definition\": \"Observed financial repression requires both a negative ex-ante 10-year real Treasury yield and a currently binding broad rule that compels Treasury holdings or restricts creditor exit. Monetary accommodation, central-bank ownership, stablecoin reserve eligibility, CBDC research, and proposals are diagnostics but do not satisfy the definition alone.\",\n  \"current_assessment\": \"The narrow observed-repression flag is false. The latest matched 10-year real yield is positive, no coded broad capital-control or asset-confiscation law is in force, and the 2025 executive order prohibits executive-branch CBDC promotion. The GENIUS Act creates a potential regulated Treasury-demand channel but is not a CBDC or capital control.\",\n  \"critical_caveats\": [\n    \"FDHBPIN is Treasury's private-investor category; foreign investors are a subset, while Federal Reserve holdings are added to construct the displayed market-facing denominator.\",\n    \"Quarterly ownership observations are matched to daily real yields within 100 days and are not a security-level holder file.\",\n    \"The event panel is a reproducible U.S. policy taxonomy, not a complete legal history or proof of future intent.\"\n  ],\n  \"sources\": {\n    \"FDHBFRBN\": \"https://fred.stlouisfed.org/series/FDHBFRBN\",\n    \"FDHBPIN\": \"https://fred.stlouisfed.org/series/FDHBPIN\",\n    \"FDHBFIN\": \"https://fred.stlouisfed.org/series/FDHBFIN\",\n    \"DFII10\": \"https://fred.stlouisfed.org/series/DFII10\"\n  }\n}\n"
     },
     {
       "name": "institutional-confidence-panel",
@@ -160,8 +160,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.784,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:03:49.561894+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_poll_year\": 2026,\n  \"core_14_average_confidence_pct\": 26.857142857142858,\n  \"first_full_core_14_year\": 1993,\n  \"first_full_core_14_average_confidence_pct\": 37.785714285714285,\n  \"change_since_first_full_core_14_pct_points\": -10.928571428571427,\n  \"latest_selected_institutions_pct\": {\n    \"Congress\": 9.0,\n    \"Supreme Court\": 27.0,\n    \"Banks\": 28.0,\n    \"Big Business\": 17.0,\n    \"Newspapers\": 17.0,\n    \"Television news\": 14.0\n  },\n  \"interpretation\": \"Institutional confidence is broad-based but heterogeneous. The panel preserves each institution and separately reports elected/judicial, economic, and news-media groupings; no subgroup is relabeled as democratic collapse or coercion.\",\n  \"critical_caveats\": [\n    \"Gallup confidence is survey sentiment, not an objective measure of institutional performance or a transition probability.\",\n    \"Annual values average multiple published polls when Gallup lists more than one observation in a year.\",\n    \"The 14-institution comparison begins only when all 14 core series are available; newer categories such as Big Tech are excluded from that fixed basket.\"\n  ],\n  \"source\": \"https://news.gallup.com/poll/1597/confidence-institutions.aspx\"\n}\n"
+      "elapsed_seconds": 0.861,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:07:04.009393+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_poll_year\": 2026,\n  \"core_14_average_confidence_pct\": 26.857142857142858,\n  \"first_full_core_14_year\": 1993,\n  \"first_full_core_14_average_confidence_pct\": 37.785714285714285,\n  \"change_since_first_full_core_14_pct_points\": -10.928571428571427,\n  \"latest_selected_institutions_pct\": {\n    \"Congress\": 9.0,\n    \"Supreme Court\": 27.0,\n    \"Banks\": 28.0,\n    \"Big Business\": 17.0,\n    \"Newspapers\": 17.0,\n    \"Television news\": 14.0\n  },\n  \"interpretation\": \"Institutional confidence is broad-based but heterogeneous. The panel preserves each institution and separately reports elected/judicial, economic, and news-media groupings; no subgroup is relabeled as democratic collapse or coercion.\",\n  \"critical_caveats\": [\n    \"Gallup confidence is survey sentiment, not an objective measure of institutional performance or a transition probability.\",\n    \"Annual values average multiple published polls when Gallup lists more than one observation in a year.\",\n    \"The 14-institution comparison begins only when all 14 core series are available; newer categories such as Big Tech are excluded from that fixed basket.\"\n  ],\n  \"source\": \"https://news.gallup.com/poll/1597/confidence-institutions.aspx\"\n}\n"
     },
     {
       "name": "governance-outcomes",
@@ -172,8 +172,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.957,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:03:50.511214+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_vdem_outcome_year\": 2025,\n  \"latest\": {\n    \"liberal_democracy_index\": 0.571,\n    \"human_rights_index\": 0.826,\n    \"physical_integrity_rights_index\": 0.789,\n    \"legislative_constraints_index\": 0.61,\n    \"judicial_constraints_index\": 0.844,\n    \"freedom_expression_index\": 0.729,\n    \"freedom_association_index\": 0.913,\n    \"executive_centralization_index\": 0.153,\n    \"executive_corruption_index\": 0.044,\n    \"freedom_house_score\": 81.0\n  },\n  \"change_since_2004\": {\n    \"liberal_democracy_index\": -0.2280000000000001,\n    \"human_rights_index\": -0.08000000000000007,\n    \"physical_integrity_rights_index\": -0.029999999999999916,\n    \"legislative_constraints_index\": -0.32999999999999996,\n    \"judicial_constraints_index\": -0.10499999999999998,\n    \"freedom_expression_index\": -0.23099999999999998,\n    \"freedom_association_index\": -0.025999999999999912,\n    \"executive_centralization_index\": 0.109,\n    \"executive_corruption_index\": 0.031,\n    \"freedom_house_score\": -12.0\n  },\n  \"directions\": {\n    \"liberal_democracy_index\": \"higher_is_better\",\n    \"human_rights_index\": \"higher_is_better\",\n    \"physical_integrity_rights_index\": \"higher_is_better\",\n    \"legislative_constraints_index\": \"higher_is_better\",\n    \"judicial_constraints_index\": \"higher_is_better\",\n    \"freedom_expression_index\": \"higher_is_better\",\n    \"freedom_association_index\": \"higher_is_better\",\n    \"executive_centralization_index\": \"higher_is_worse\",\n    \"executive_corruption_index\": \"higher_is_worse\",\n    \"freedom_house_score\": \"higher_is_better\"\n  },\n  \"interpretation\": \"The 2026 V-Dem vintage records a sharp 2025 deterioration in several U.S. governance measures. Freedom House also reports a lower 2025 total. These expert-coded indices warrant a governance-deterioration signal, not a deterministic forecast of authoritarian transition.\",\n  \"critical_caveats\": [\n    \"V-Dem values are latent estimates based mainly on country-expert assessments; later releases can revise the entire historical series.\",\n    \"Freedom House and V-Dem overlap conceptually and must not be treated as statistically independent votes.\",\n    \"The panel measures governance and civil liberties. It does not directly measure protest counts, surveillance deployment, capital flight, or political violence.\",\n    \"Our World in Data standardizes the producer datasets; the underlying producers are V-Dem v16 and Freedom House 2026.\"\n  ],\n  \"sources\": {\n    \"liberal_democracy_index\": \"https://ourworldindata.org/grapher/liberal-democracy-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"human_rights_index\": \"https://ourworldindata.org/grapher/civil-liberties-index-vdem.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"physical_integrity_rights_index\": \"https://ourworldindata.org/grapher/physical-integrity-rights-index-vdem.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"legislative_constraints_index\": \"https://ourworldindata.org/grapher/legislative-constraints-on-the-executive-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"judicial_constraints_index\": \"https://ourworldindata.org/grapher/judicial-constraints-on-the-executive-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_expression_index\": \"https://ourworldindata.org/grapher/freedom-of-expression-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_association_index\": \"https://ourworldindata.org/grapher/freedom-of-association-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"executive_centralization_index\": \"https://ourworldindata.org/grapher/political-centralization-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"executive_corruption_index\": \"https://ourworldindata.org/grapher/executive-corruption-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_house_score\": \"https://ourworldindata.org/grapher/freedom-score-fh.csv?v=1&csvType=full&useColumnShortNames=false\"\n  },\n  \"producer_sources\": [\n    \"https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf\",\n    \"https://freedomhouse.org/report/freedom-world\"\n  ]\n}\n"
+      "elapsed_seconds": 1.48,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:07:05.492757+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_vdem_outcome_year\": 2025,\n  \"latest\": {\n    \"liberal_democracy_index\": 0.571,\n    \"human_rights_index\": 0.826,\n    \"physical_integrity_rights_index\": 0.789,\n    \"legislative_constraints_index\": 0.61,\n    \"judicial_constraints_index\": 0.844,\n    \"freedom_expression_index\": 0.729,\n    \"freedom_association_index\": 0.913,\n    \"executive_centralization_index\": 0.153,\n    \"executive_corruption_index\": 0.044,\n    \"freedom_house_score\": 81.0\n  },\n  \"change_since_2004\": {\n    \"liberal_democracy_index\": -0.2280000000000001,\n    \"human_rights_index\": -0.08000000000000007,\n    \"physical_integrity_rights_index\": -0.029999999999999916,\n    \"legislative_constraints_index\": -0.32999999999999996,\n    \"judicial_constraints_index\": -0.10499999999999998,\n    \"freedom_expression_index\": -0.23099999999999998,\n    \"freedom_association_index\": -0.025999999999999912,\n    \"executive_centralization_index\": 0.109,\n    \"executive_corruption_index\": 0.031,\n    \"freedom_house_score\": -12.0\n  },\n  \"directions\": {\n    \"liberal_democracy_index\": \"higher_is_better\",\n    \"human_rights_index\": \"higher_is_better\",\n    \"physical_integrity_rights_index\": \"higher_is_better\",\n    \"legislative_constraints_index\": \"higher_is_better\",\n    \"judicial_constraints_index\": \"higher_is_better\",\n    \"freedom_expression_index\": \"higher_is_better\",\n    \"freedom_association_index\": \"higher_is_better\",\n    \"executive_centralization_index\": \"higher_is_worse\",\n    \"executive_corruption_index\": \"higher_is_worse\",\n    \"freedom_house_score\": \"higher_is_better\"\n  },\n  \"interpretation\": \"The 2026 V-Dem vintage records a sharp 2025 deterioration in several U.S. governance measures. Freedom House also reports a lower 2025 total. These expert-coded indices warrant a governance-deterioration signal, not a deterministic forecast of authoritarian transition.\",\n  \"critical_caveats\": [\n    \"V-Dem values are latent estimates based mainly on country-expert assessments; later releases can revise the entire historical series.\",\n    \"Freedom House and V-Dem overlap conceptually and must not be treated as statistically independent votes.\",\n    \"The panel measures governance and civil liberties. It does not directly measure protest counts, surveillance deployment, capital flight, or political violence.\",\n    \"Our World in Data standardizes the producer datasets; the underlying producers are V-Dem v16 and Freedom House 2026.\"\n  ],\n  \"sources\": {\n    \"liberal_democracy_index\": \"https://ourworldindata.org/grapher/liberal-democracy-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"human_rights_index\": \"https://ourworldindata.org/grapher/civil-liberties-index-vdem.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"physical_integrity_rights_index\": \"https://ourworldindata.org/grapher/physical-integrity-rights-index-vdem.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"legislative_constraints_index\": \"https://ourworldindata.org/grapher/legislative-constraints-on-the-executive-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"judicial_constraints_index\": \"https://ourworldindata.org/grapher/judicial-constraints-on-the-executive-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_expression_index\": \"https://ourworldindata.org/grapher/freedom-of-expression-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_association_index\": \"https://ourworldindata.org/grapher/freedom-of-association-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"executive_centralization_index\": \"https://ourworldindata.org/grapher/political-centralization-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"executive_corruption_index\": \"https://ourworldindata.org/grapher/executive-corruption-index.csv?v=1&csvType=full&useColumnShortNames=false\",\n    \"freedom_house_score\": \"https://ourworldindata.org/grapher/freedom-score-fh.csv?v=1&csvType=full&useColumnShortNames=false\"\n  },\n  \"producer_sources\": [\n    \"https://www.v-dem.net/documents/75/V-Dem_Institute_Democracy_Report_2026_lowres.pdf\",\n    \"https://freedomhouse.org/report/freedom-world\"\n  ]\n}\n"
     },
     {
       "name": "verified-fraud-enforcement",
@@ -184,8 +184,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.6,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:03:51.106618+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_fiscal_year\": 2025,\n  \"latest_total_settlements_judgments_usd_billions\": 6.888096266,\n  \"latest_hhs_related_share_pct\": 83.06411975166203,\n  \"latest_qui_tam_new_matters\": 1297,\n  \"cumulative_settlements_judgments_since_1987_usd_billions\": 85.652583091,\n  \"interpretation\": \"False Claims Act settlements and judgments reached a record $6.89 billion in FY2025 and qui tam matters reached 1,297. This is a verified enforcement-output series, not an estimate of the incidence, stock, or growth rate of fraud.\",\n  \"critical_caveats\": [\n    \"Settlements may resolve allegations without a determination of liability; judgments and settlements are not identical to criminal convictions.\",\n    \"Recoveries depend on enforcement capacity, case mix, litigation timing, damages, and reporting scope as well as underlying misconduct.\",\n    \"DOJ notes a reporting-scope change beginning October 1, 2019 for some non-qui-tam matters handled by U.S. Attorneys' Offices.\",\n    \"The series must remain separate from improper payments, the tax gap, corruption indices, and total estimated fraud loss.\"\n  ],\n  \"sources\": [\n    \"https://www.justice.gov/opa/pr/false-claims-act-settlements-and-judgments-exceed-68b-fiscal-year-2025\",\n    \"https://www.justice.gov/opa/media/1424121/dl\"\n  ]\n}\n"
+      "elapsed_seconds": 0.904,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:07:06.350651+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_fiscal_year\": 2025,\n  \"latest_total_settlements_judgments_usd_billions\": 6.888096266,\n  \"latest_hhs_related_share_pct\": 83.06411975166203,\n  \"latest_qui_tam_new_matters\": 1297,\n  \"cumulative_settlements_judgments_since_1987_usd_billions\": 85.652583091,\n  \"interpretation\": \"False Claims Act settlements and judgments reached a record $6.89 billion in FY2025 and qui tam matters reached 1,297. This is a verified enforcement-output series, not an estimate of the incidence, stock, or growth rate of fraud.\",\n  \"critical_caveats\": [\n    \"Settlements may resolve allegations without a determination of liability; judgments and settlements are not identical to criminal convictions.\",\n    \"Recoveries depend on enforcement capacity, case mix, litigation timing, damages, and reporting scope as well as underlying misconduct.\",\n    \"DOJ notes a reporting-scope change beginning October 1, 2019 for some non-qui-tam matters handled by U.S. Attorneys' Offices.\",\n    \"The series must remain separate from improper payments, the tax gap, corruption indices, and total estimated fraud loss.\"\n  ],\n  \"sources\": [\n    \"https://www.justice.gov/opa/pr/false-claims-act-settlements-and-judgments-exceed-68b-fiscal-year-2025\",\n    \"https://www.justice.gov/opa/media/1424121/dl\"\n  ]\n}\n"
     },
     {
       "name": "exit-proxies",
@@ -196,8 +196,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 71.266,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:02.380277+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"current_partial_year\": 2026,\n  \"current_partial_year_listed_expatriates\": 3243,\n  \"current_partial_year_quarters\": 2,\n  \"latest_complete_year\": 2025,\n  \"latest_complete_year_listed_expatriates\": 4889,\n  \"latest_financial_flow_year\": 2025,\n  \"resident_foreign_asset_acquisition_usd_trillions\": 1.665027,\n  \"resident_foreign_asset_acquisition_pct_gdp\": 5.29883243632291,\n  \"interpretation\": \"The Federal Register list is a narrow legal-expatriation count, while BEA resident acquisition of foreign assets is a broad balance-of-payments flow. They are published together as distinct exit diagnostics and are not combined into a capital-flight score.\",\n  \"critical_caveats\": [\n    \"The expatriation list includes covered expatriates and certain long-term residents reported to Treasury; it is not total emigration, and publication/reporting rules can change.\",\n    \"The current year is partial and must not be compared with full calendar years without quarter matching.\",\n    \"U.S. residents routinely acquire foreign assets for diversification, trade, direct investment, and institutional portfolio management; IEAAA is not identified capital flight.\",\n    \"GDP and BEA international-transaction histories are current vintages and can be revised.\"\n  ],\n  \"sources\": [\n    \"https://www.federalregister.gov/\",\n    \"https://fred.stlouisfed.org/series/IEAAA\",\n    \"https://www.bea.gov/help/glossary/financial-account-international\"\n  ]\n}\n"
+      "elapsed_seconds": 85.818,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:32.223273+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"current_partial_year\": 2026,\n  \"current_partial_year_listed_expatriates\": 3243,\n  \"current_partial_year_quarters\": 2,\n  \"latest_complete_year\": 2025,\n  \"latest_complete_year_listed_expatriates\": 4889,\n  \"latest_financial_flow_year\": 2025,\n  \"resident_foreign_asset_acquisition_usd_trillions\": 1.665027,\n  \"resident_foreign_asset_acquisition_pct_gdp\": 5.29883243632291,\n  \"interpretation\": \"The Federal Register list is a narrow legal-expatriation count, while BEA resident acquisition of foreign assets is a broad balance-of-payments flow. They are published together as distinct exit diagnostics and are not combined into a capital-flight score.\",\n  \"critical_caveats\": [\n    \"The expatriation list includes covered expatriates and certain long-term residents reported to Treasury; it is not total emigration, and publication/reporting rules can change.\",\n    \"The current year is partial and must not be compared with full calendar years without quarter matching.\",\n    \"U.S. residents routinely acquire foreign assets for diversification, trade, direct investment, and institutional portfolio management; IEAAA is not identified capital flight.\",\n    \"GDP and BEA international-transaction histories are current vintages and can be revised.\"\n  ],\n  \"sources\": [\n    \"https://www.federalregister.gov/\",\n    \"https://fred.stlouisfed.org/series/IEAAA\",\n    \"https://www.bea.gov/help/glossary/financial-account-international\"\n  ]\n}\n"
     },
     {
       "name": "surveillance-deployment",
@@ -208,8 +208,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.92,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:04.277532+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"court_authorized_intercepts\": {\n    \"start_year\": 2004,\n    \"start_count\": 1710,\n    \"peak_year\": 2015,\n    \"peak_count\": 4148,\n    \"latest_year\": 2025,\n    \"latest_count\": 1735,\n    \"change_from_start_pct\": 1.4619883040935644,\n    \"change_from_peak_pct\": -58.172613307618136\n  },\n  \"eff_atlas_current_inventory\": {\n    \"records\": 15070,\n    \"agencies\": 7751,\n    \"states_and_territories\": 56,\n    \"technology_counts\": {\n      \"Body-worn Cameras\": 5465,\n      \"Automated License Plate Readers\": 4083,\n      \"Drones\": 1805,\n      \"Third-party Investigative Platforms\": 1055,\n      \"Face Recognition\": 975,\n      \"Camera Registry\": 755,\n      \"Gunshot Detection\": 246,\n      \"Real-Time Crime Center\": 238,\n      \"Predictive Policing\": 200,\n      \"Video Analytics\": 84,\n      \"Cell-site Simulator\": 83,\n      \"Fusion Center\": 81\n    }\n  },\n  \"interpretation\": \"The narrow court-authorized intercept series is near its 2004 level and well below its 2015 peak, while the EFF Atlas documents a large present-day local surveillance footprint. The two facts can coexist and neither establishes a complete trend in U.S. surveillance capacity.\",\n  \"critical_caveats\": [\n    \"The U.S. Courts series covers court-authorized wire, oral, and electronic intercept applications under 18 U.S.C. 2519. It excludes national-security surveillance, warrantless collection, ordinary search warrants, and many local technologies.\",\n    \"The series uses applications reported in each annual publication, matching the U.S. Courts headline comparison. Delayed reports are shown separately by the Courts and can make eventual year totals higher.\",\n    \"EFF Atlas records are documented technology/agency observations, not unique devices, people surveilled, spending, or demonstrated abuse.\",\n    \"EFF source-document dates are not deployment dates. The Atlas is therefore used only as a current cross-section, never as an adoption time series.\",\n    \"This feeder is diagnostic and receives zero Doom Index weight until a broader, predeclared surveillance-capacity panel is validated.\"\n  ],\n  \"sources\": {\n    \"wiretap_2004_2014\": \"https://www.uscourts.gov/sites/default/files/table_7_1.pdf\",\n    \"wiretap_2015_2025\": \"https://www.uscourts.gov/sites/default/files/document/wiretap_7_1231.2025.xlsx\",\n    \"wiretap_methodology\": \"https://www.uscourts.gov/data-news/reports/statistical-reports/wiretap-reports/wiretap-report-2025\",\n    \"eff_atlas_data\": \"https://atlasofsurveillance.org/download.csv\",\n    \"eff_atlas_methodology\": \"https://kiosk.atlasofsurveillance.org/data-library\"\n  }\n}\n"
+      "elapsed_seconds": 1.578,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:33.786777+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"court_authorized_intercepts\": {\n    \"start_year\": 2004,\n    \"start_count\": 1710,\n    \"peak_year\": 2015,\n    \"peak_count\": 4148,\n    \"latest_year\": 2025,\n    \"latest_count\": 1735,\n    \"change_from_start_pct\": 1.4619883040935644,\n    \"change_from_peak_pct\": -58.172613307618136\n  },\n  \"eff_atlas_current_inventory\": {\n    \"records\": 15070,\n    \"agencies\": 7751,\n    \"states_and_territories\": 56,\n    \"technology_counts\": {\n      \"Body-worn Cameras\": 5465,\n      \"Automated License Plate Readers\": 4083,\n      \"Drones\": 1805,\n      \"Third-party Investigative Platforms\": 1055,\n      \"Face Recognition\": 975,\n      \"Camera Registry\": 755,\n      \"Gunshot Detection\": 246,\n      \"Real-Time Crime Center\": 238,\n      \"Predictive Policing\": 200,\n      \"Video Analytics\": 84,\n      \"Cell-site Simulator\": 83,\n      \"Fusion Center\": 81\n    }\n  },\n  \"interpretation\": \"The narrow court-authorized intercept series is near its 2004 level and well below its 2015 peak, while the EFF Atlas documents a large present-day local surveillance footprint. The two facts can coexist and neither establishes a complete trend in U.S. surveillance capacity.\",\n  \"critical_caveats\": [\n    \"The U.S. Courts series covers court-authorized wire, oral, and electronic intercept applications under 18 U.S.C. 2519. It excludes national-security surveillance, warrantless collection, ordinary search warrants, and many local technologies.\",\n    \"The series uses applications reported in each annual publication, matching the U.S. Courts headline comparison. Delayed reports are shown separately by the Courts and can make eventual year totals higher.\",\n    \"EFF Atlas records are documented technology/agency observations, not unique devices, people surveilled, spending, or demonstrated abuse.\",\n    \"EFF source-document dates are not deployment dates. The Atlas is therefore used only as a current cross-section, never as an adoption time series.\",\n    \"This feeder is diagnostic and receives zero Doom Index weight until a broader, predeclared surveillance-capacity panel is validated.\"\n  ],\n  \"sources\": {\n    \"wiretap_2004_2014\": \"https://www.uscourts.gov/sites/default/files/table_7_1.pdf\",\n    \"wiretap_2015_2025\": \"https://www.uscourts.gov/sites/default/files/document/wiretap_7_1231.2025.xlsx\",\n    \"wiretap_methodology\": \"https://www.uscourts.gov/data-news/reports/statistical-reports/wiretap-reports/wiretap-report-2025\",\n    \"eff_atlas_data\": \"https://atlasofsurveillance.org/download.csv\",\n    \"eff_atlas_methodology\": \"https://kiosk.atlasofsurveillance.org/data-library\"\n  }\n}\n"
     },
     {
       "name": "protest-unrest-panel",
@@ -220,8 +220,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 6.7,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:10.989171+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_complete_year\": 2025,\n  \"latest_complete_year_metrics\": {\n    \"event_count\": 39152,\n    \"events_with_arrest_reported\": 301,\n    \"arrest_reported_share_pct\": 0.7687985288107887,\n    \"events_with_serious_harm_or_damage_reported\": 136,\n    \"serious_harm_or_damage_reported_share_pct\": 0.3473641193297916,\n    \"size_estimate_coverage_pct\": 32.910196158561504\n  },\n  \"change_from_first_complete_year\": {\n    \"first_year\": 2017,\n    \"event_count_pct\": 260.08461326220913,\n    \"serious_harm_or_damage_share_pct_points\": -0.6643161896925573\n  },\n  \"current_partial_year\": {\n    \"year\": 2026,\n    \"through\": \"2026-03-31\",\n    \"event_count\": 15909,\n    \"serious_harm_or_damage_reported_share_pct\": 0.29543025960148345\n  },\n  \"interpretation\": \"CCC records political crowd events, which are a form of civic participation as well as a possible stress signal. Event volume is therefore kept separate from arrests, reported injuries/casualties, and property damage. The latter remain rare in the latest complete year.\",\n  \"critical_caveats\": [\n    \"The series measures publicly reported and fact-checked political crowd events; media availability, coding resources, and source discovery can change over time.\",\n    \"An arrest is not proof of protester violence or wrongdoing and is never included in the serious-harm-or-damage flag.\",\n    \"The serious-harm-or-damage flag records whether any participant/police injury, casualty, or property damage was reported; it does not identify who caused it or measure severity.\",\n    \"Crowd-size coverage is incomplete and estimates can be ranges. Participation totals are published only as descriptive bounds, not scored.\",\n    \"The 2026 row is partial and is not compared with full calendar years.\",\n    \"This feeder is diagnostic with zero Doom Index weight until event-coverage breaks and the transition from protest to coercion are calibrated.\"\n  ],\n  \"sources\": {\n    \"project_methodology\": \"https://ash.harvard.edu/programs/crowd-counting-consortium/\",\n    \"2017_2020\": \"https://doi.org/10.7910/DVN/6OPP7H\",\n    \"2021_2024\": \"https://doi.org/10.7910/DVN/9MMYDI\",\n    \"2025_present\": \"https://doi.org/10.7910/DVN/RI9JFU\"\n  }\n}\n"
+      "elapsed_seconds": 5.533,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:39.325462+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"latest_complete_year\": 2025,\n  \"latest_complete_year_metrics\": {\n    \"event_count\": 39152,\n    \"events_with_arrest_reported\": 301,\n    \"arrest_reported_share_pct\": 0.7687985288107887,\n    \"events_with_serious_harm_or_damage_reported\": 136,\n    \"serious_harm_or_damage_reported_share_pct\": 0.3473641193297916,\n    \"size_estimate_coverage_pct\": 32.910196158561504\n  },\n  \"change_from_first_complete_year\": {\n    \"first_year\": 2017,\n    \"event_count_pct\": 260.08461326220913,\n    \"serious_harm_or_damage_share_pct_points\": -0.6643161896925573\n  },\n  \"current_partial_year\": {\n    \"year\": 2026,\n    \"through\": \"2026-03-31\",\n    \"event_count\": 15909,\n    \"serious_harm_or_damage_reported_share_pct\": 0.29543025960148345\n  },\n  \"interpretation\": \"CCC records political crowd events, which are a form of civic participation as well as a possible stress signal. Event volume is therefore kept separate from arrests, reported injuries/casualties, and property damage. The latter remain rare in the latest complete year.\",\n  \"critical_caveats\": [\n    \"The series measures publicly reported and fact-checked political crowd events; media availability, coding resources, and source discovery can change over time.\",\n    \"An arrest is not proof of protester violence or wrongdoing and is never included in the serious-harm-or-damage flag.\",\n    \"The serious-harm-or-damage flag records whether any participant/police injury, casualty, or property damage was reported; it does not identify who caused it or measure severity.\",\n    \"Crowd-size coverage is incomplete and estimates can be ranges. Participation totals are published only as descriptive bounds, not scored.\",\n    \"The 2026 row is partial and is not compared with full calendar years.\",\n    \"This feeder is diagnostic with zero Doom Index weight until event-coverage breaks and the transition from protest to coercion are calibrated.\"\n  ],\n  \"sources\": {\n    \"project_methodology\": \"https://ash.harvard.edu/programs/crowd-counting-consortium/\",\n    \"2017_2020\": \"https://doi.org/10.7910/DVN/6OPP7H\",\n    \"2021_2024\": \"https://doi.org/10.7910/DVN/9MMYDI\",\n    \"2025_present\": \"https://doi.org/10.7910/DVN/RI9JFU\"\n  }\n}\n"
     },
     {
       "name": "financial-bread-circuses",
@@ -232,8 +232,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 2.334,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:13.331215+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"stablecoin_supply\": {\n    \"observation_date\": \"2026-08-04\",\n    \"usd_billions\": 305.81694070082,\n    \"multiple_since_2020_year_end\": 11.299470019926412,\n    \"change_since_2024_year_end_pct\": 48.86533450259583\n  },\n  \"commercial_gaming\": {\n    \"latest_full_year\": 2025,\n    \"revenue_usd_billions\": 78.72,\n    \"revenue_change_since_2021_pct\": 48.52830188679245,\n    \"sports_betting_handle_usd_billions\": 166.94,\n    \"sports_betting_revenue_usd_billions\": 16.96,\n    \"igaming_revenue_usd_billions\": 10.74\n  },\n  \"may_2026_market_substitution_snapshot\": {\n    \"state_regulated_sports_handle_usd_billions\": 12.06,\n    \"kalshi_sports_event_contract_volume_usd_billions\": 15.0,\n    \"kalshi_value_is_aga_description\": \"nearly $15 billion\",\n    \"observation_month\": \"2026-05\"\n  },\n  \"crypto_perpetual_volume_benchmarks\": [\n    {\n      \"year\": 2023,\n      \"annual_volume_usd_trillions\": 28.0,\n      \"qualifier\": \"industry estimate cited in CFTC filing\"\n    },\n    {\n      \"year\": 2025,\n      \"annual_volume_usd_trillions\": 90.0,\n      \"qualifier\": \"more than; industry estimate cited in CFTC filing\"\n    }\n  ],\n  \"interpretation\": \"Digital dollar collateral and legal betting channels have expanded rapidly. This establishes financialization and distribution capacity, not the stronger causal claim that policymakers created these markets to pacify voters or finance deficits.\",\n  \"critical_caveats\": [\n    \"DefiLlama is a crypto data aggregator rather than a government statistical agency; stablecoin totals can be revised with chain and token coverage.\",\n    \"AGA is an industry association. Its commercial-gaming series is based on state reports but excludes tribal gaming, lotteries, and illegal or offshore activity.\",\n    \"Sports handle is gross money wagered and can recycle the same capital; it must not be added to operator revenue or GDP.\",\n    \"The May 2026 Kalshi sports-event figure is AGA's characterization of exchange volume and is not independently reconstructed here.\",\n    \"The perpetual-volume values are industry estimates reproduced in a CFTC filing, not a CFTC official statistical series.\",\n    \"No causal coefficient connects these financialization measures to fiscal policy, social stability, or political consent; this remains a downstream scenario diagnostic with zero core-index weight.\",\n    \"Tokenized-asset history is not included because the public RWA.xyz timeseries endpoint requires an API key that is not configured on this machine.\"\n  ],\n  \"sources\": {\n    \"stablecoins\": \"https://stablecoins.llama.fi/stablecoincharts/all\",\n    \"defillama_api_docs\": \"https://defillama.com/docs/api\",\n    \"aga_tracker\": \"https://www.americangaming.org/resources/commercial-gaming-revenue-tracker/\",\n    \"aga_annual_releases\": [\n      \"https://www.americangaming.org/2021-commercial-gaming-revenue-shatters-industry-record-reaches-53b/\",\n      \"https://www.americangaming.org/2022-commercial-gaming-revenue-tops-60b-breaking-annual-record-for-second-consecutive-year/\",\n      \"https://www.americangaming.org/resources/state-of-the-states-2024/\",\n      \"https://www.americangaming.org/2024-commercial-gaming-revenue-reaches-71-9b-marking-fourth-straight-year-of-record-revenue/\",\n      \"https://www.americangaming.org/commercial-gaming-revenue-hits-78-7-billion-in-2025-driving-record-18-1-billion-in-gaming-taxes-nationwide/\"\n    ],\n    \"cftc_perpetual_filing\": \"https://www.cftc.gov/filings/ptc/ptc0602265036.pdf\",\n    \"rwa_api_docs_missing_key\": \"https://docs.rwa.xyz/api/timeseries\"\n  }\n}\n"
+      "elapsed_seconds": 2.099,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:41.436515+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"stablecoin_supply\": {\n    \"observation_date\": \"2026-08-04\",\n    \"usd_billions\": 305.74582001513,\n    \"multiple_since_2020_year_end\": 11.296842218948777,\n    \"change_since_2024_year_end_pct\": 48.830714430074536\n  },\n  \"commercial_gaming\": {\n    \"latest_full_year\": 2025,\n    \"revenue_usd_billions\": 78.72,\n    \"revenue_change_since_2021_pct\": 48.52830188679245,\n    \"sports_betting_handle_usd_billions\": 166.94,\n    \"sports_betting_revenue_usd_billions\": 16.96,\n    \"igaming_revenue_usd_billions\": 10.74\n  },\n  \"may_2026_market_substitution_snapshot\": {\n    \"state_regulated_sports_handle_usd_billions\": 12.06,\n    \"kalshi_sports_event_contract_volume_usd_billions\": 15.0,\n    \"kalshi_value_is_aga_description\": \"nearly $15 billion\",\n    \"observation_month\": \"2026-05\"\n  },\n  \"crypto_perpetual_volume_benchmarks\": [\n    {\n      \"year\": 2023,\n      \"annual_volume_usd_trillions\": 28.0,\n      \"qualifier\": \"industry estimate cited in CFTC filing\"\n    },\n    {\n      \"year\": 2025,\n      \"annual_volume_usd_trillions\": 90.0,\n      \"qualifier\": \"more than; industry estimate cited in CFTC filing\"\n    }\n  ],\n  \"interpretation\": \"Digital dollar collateral and legal betting channels have expanded rapidly. This establishes financialization and distribution capacity, not the stronger causal claim that policymakers created these markets to pacify voters or finance deficits.\",\n  \"critical_caveats\": [\n    \"DefiLlama is a crypto data aggregator rather than a government statistical agency; stablecoin totals can be revised with chain and token coverage.\",\n    \"AGA is an industry association. Its commercial-gaming series is based on state reports but excludes tribal gaming, lotteries, and illegal or offshore activity.\",\n    \"Sports handle is gross money wagered and can recycle the same capital; it must not be added to operator revenue or GDP.\",\n    \"The May 2026 Kalshi sports-event figure is AGA's characterization of exchange volume and is not independently reconstructed here.\",\n    \"The perpetual-volume values are industry estimates reproduced in a CFTC filing, not a CFTC official statistical series.\",\n    \"No causal coefficient connects these financialization measures to fiscal policy, social stability, or political consent; this remains a downstream scenario diagnostic with zero core-index weight.\",\n    \"Tokenized-asset history is not included because the public RWA.xyz timeseries endpoint requires an API key that is not configured on this machine.\"\n  ],\n  \"sources\": {\n    \"stablecoins\": \"https://stablecoins.llama.fi/stablecoincharts/all\",\n    \"defillama_api_docs\": \"https://defillama.com/docs/api\",\n    \"aga_tracker\": \"https://www.americangaming.org/resources/commercial-gaming-revenue-tracker/\",\n    \"aga_annual_releases\": [\n      \"https://www.americangaming.org/2021-commercial-gaming-revenue-shatters-industry-record-reaches-53b/\",\n      \"https://www.americangaming.org/2022-commercial-gaming-revenue-tops-60b-breaking-annual-record-for-second-consecutive-year/\",\n      \"https://www.americangaming.org/resources/state-of-the-states-2024/\",\n      \"https://www.americangaming.org/2024-commercial-gaming-revenue-reaches-71-9b-marking-fourth-straight-year-of-record-revenue/\",\n      \"https://www.americangaming.org/commercial-gaming-revenue-hits-78-7-billion-in-2025-driving-record-18-1-billion-in-gaming-taxes-nationwide/\"\n    ],\n    \"cftc_perpetual_filing\": \"https://www.cftc.gov/filings/ptc/ptc0602265036.pdf\",\n    \"rwa_api_docs_missing_key\": \"https://docs.rwa.xyz/api/timeseries\"\n  }\n}\n"
     },
     {
       "name": "command-control-signposts",
@@ -244,8 +244,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 14.602,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:27.939455+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"status\": \"diagnostic_non_scoring\",\n  \"event_count\": 11,\n  \"event_count_by_category\": {\n    \"censorship\": 1,\n    \"digital_money_control\": 3,\n    \"domestic_military\": 3,\n    \"executive_power\": 1,\n    \"surveillance\": 3\n  },\n  \"current_signposts\": {\n    \"retail_us_cbdc_authorized_or_operational\": false,\n    \"retail_us_cbdc_policy\": \"No issuance decision or authorizing law; Executive Order 14178 formally prohibits agency establishment or promotion unless required by law.\",\n    \"insurrection_act_invoked_since_1992\": false,\n    \"title_10_forces_used_for_2025_los_angeles_protection_mission\": true,\n    \"section_702_status\": \"The statutory authority lapsed in June 2026, but existing court certification permits an operational tail into 2027.\",\n    \"federal_anti_censorship_policy_in_force\": true\n  },\n  \"interpretation\": \"Observable command-and-control capacity is mixed: surveillance and domestic military support authorities exist and were used, while a retail U.S. CBDC is not authorized, the last Insurrection Act invocation remains 1992, and a current executive order formally constrains federal censorship. The panel does not support calling an authoritarian transition inevitable or complete.\",\n  \"falsifiers\": [\n    \"Sustained expiry or repeal of broad surveillance authorities without functionally equivalent replacement.\",\n    \"A durable statutory prohibition on retail CBDC programmability, political account restrictions, and compelled private-platform censorship.\",\n    \"Persistent judicial and legislative enforcement of narrow domestic military roles and executive-power limits.\",\n    \"Improving civil-liberty and executive-constraint outcomes alongside declining coercive procurement and deployment.\"\n  ],\n  \"critical_caveats\": [\n    \"An enabling legal authority is not proof it was used abusively; a formal safeguard is not proof of compliance.\",\n    \"National-security surveillance targeting non-U.S. persons and ordinary domestic law enforcement are legally distinct.\",\n    \"The 2025 Los Angeles mission used Title 10 forces but did not invoke the Insurrection Act; DOD said service members were not performing law enforcement.\",\n    \"Stablecoins, FedNow, commercial bank deposits, and a retail central-bank digital currency are different instruments.\",\n    \"This hand-audited event taxonomy is not a comprehensive procurement panel or a calibrated regime-transition model and therefore has zero index weight.\"\n  ],\n  \"sources\": [\n    \"https://www.congress.gov/crs-product/R42659\",\n    \"https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n    \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n    \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n    \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n    \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n    \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\"\n  ],\n  \"source_verification\": {\n    \"status\": \"fresh\",\n    \"fresh_count\": 10,\n    \"cached_count\": 0,\n    \"max_cached_age_days\": 30,\n    \"sources\": [\n      {\n        \"source\": \"https://www.congress.gov/crs-product/R42659\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://r.jina.ai/https://www.congress.gov/crs-product/R42659\",\n        \"content_bytes\": 231499\n      },\n      {\n        \"source\": \"https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://r.jina.ai/https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n        \"content_bytes\": 26155\n      },\n      {\n        \"source\": \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n        \"content_bytes\": 80184\n      },\n      {\n        \"source\": \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n        \"content_bytes\": 126133\n      },\n      {\n        \"source\": \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n        \"content_bytes\": 185846\n      },\n      {\n        \"source\": \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n        \"content_bytes\": 151879\n      },\n      {\n        \"source\": \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n        \"content_bytes\": 531026\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n        \"content_bytes\": 279832\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n        \"content_bytes\": 286517\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T18:05:13.712582+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\",\n        \"content_bytes\": 292550\n      }\n    ]\n  }\n}\n"
+      "elapsed_seconds": 15.009,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:56.449069+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"status\": \"diagnostic_non_scoring\",\n  \"event_count\": 11,\n  \"event_count_by_category\": {\n    \"censorship\": 1,\n    \"digital_money_control\": 3,\n    \"domestic_military\": 3,\n    \"executive_power\": 1,\n    \"surveillance\": 3\n  },\n  \"current_signposts\": {\n    \"retail_us_cbdc_authorized_or_operational\": false,\n    \"retail_us_cbdc_policy\": \"No issuance decision or authorizing law; Executive Order 14178 formally prohibits agency establishment or promotion unless required by law.\",\n    \"insurrection_act_invoked_since_1992\": false,\n    \"title_10_forces_used_for_2025_los_angeles_protection_mission\": true,\n    \"section_702_status\": \"The statutory authority lapsed in June 2026, but existing court certification permits an operational tail into 2027.\",\n    \"federal_anti_censorship_policy_in_force\": true\n  },\n  \"interpretation\": \"Observable command-and-control capacity is mixed: surveillance and domestic military support authorities exist and were used, while a retail U.S. CBDC is not authorized, the last Insurrection Act invocation remains 1992, and a current executive order formally constrains federal censorship. The panel does not support calling an authoritarian transition inevitable or complete.\",\n  \"falsifiers\": [\n    \"Sustained expiry or repeal of broad surveillance authorities without functionally equivalent replacement.\",\n    \"A durable statutory prohibition on retail CBDC programmability, political account restrictions, and compelled private-platform censorship.\",\n    \"Persistent judicial and legislative enforcement of narrow domestic military roles and executive-power limits.\",\n    \"Improving civil-liberty and executive-constraint outcomes alongside declining coercive procurement and deployment.\"\n  ],\n  \"critical_caveats\": [\n    \"An enabling legal authority is not proof it was used abusively; a formal safeguard is not proof of compliance.\",\n    \"National-security surveillance targeting non-U.S. persons and ordinary domestic law enforcement are legally distinct.\",\n    \"The 2025 Los Angeles mission used Title 10 forces but did not invoke the Insurrection Act; DOD said service members were not performing law enforcement.\",\n    \"Stablecoins, FedNow, commercial bank deposits, and a retail central-bank digital currency are different instruments.\",\n    \"This hand-audited event taxonomy is not a comprehensive procurement panel or a calibrated regime-transition model and therefore has zero index weight.\"\n  ],\n  \"sources\": [\n    \"https://www.congress.gov/crs-product/R42659\",\n    \"https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n    \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n    \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n    \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n    \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n    \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n    \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\"\n  ],\n  \"source_verification\": {\n    \"status\": \"fresh\",\n    \"fresh_count\": 10,\n    \"cached_count\": 0,\n    \"max_cached_age_days\": 30,\n    \"sources\": [\n      {\n        \"source\": \"https://www.congress.gov/crs-product/R42659\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://r.jina.ai/https://www.congress.gov/crs-product/R42659\",\n        \"content_bytes\": 231499\n      },\n      {\n        \"source\": \"https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://r.jina.ai/https://www.defense.gov/News/News-Stories/Article/Article/4216935/marines-to-guard-federal-property-personnel-in-la-as-guard-troops-transition-to/\",\n        \"content_bytes\": 26100\n      },\n      {\n        \"source\": \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.federalreserve.gov/cbdc-faqs.htm\",\n        \"content_bytes\": 80184\n      },\n      {\n        \"source\": \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm\",\n        \"content_bytes\": 126133\n      },\n      {\n        \"source\": \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm\",\n        \"content_bytes\": 185846\n      },\n      {\n        \"source\": \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.judiciary.senate.gov/press/dem/releases/durbin-calls-for-opposition-to-fisa-section-702-reauthorization-without-serious-reforms-and-removal-of-pulte\",\n        \"content_bytes\": 151879\n      },\n      {\n        \"source\": \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf\",\n        \"content_bytes\": 531026\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/01/restoring-freedom-of-speech-and-ending-federal-censorship/\",\n        \"content_bytes\": 279832\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/01/strengthening-american-leadership-in-digital-financial-technology/\",\n        \"content_bytes\": 286517\n      },\n      {\n        \"source\": \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\",\n        \"status\": \"fresh\",\n        \"last_verified_at\": \"2026-08-04T20:08:41.812553+00:00\",\n        \"transport_url\": \"https://www.whitehouse.gov/presidential-actions/2025/06/department-of-defense-security-for-the-protection-of-department-of-homeland-security-functions/\",\n        \"content_bytes\": 292550\n      }\n    ]\n  }\n}\n"
     },
     {
       "name": "superintelligence-exit-signposts",
@@ -256,8 +256,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.31,
-      "output_tail": "{\n  \"generated_at\": \"2026-08-04T18:05:29.248971+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"status\": \"conceptual_non_scoring\",\n  \"causal_proposition\": \"Superintelligence is an exit from Doom only if it creates sustained broad-based real productivity and fiscal capacity while preserving human agency. Capability without distribution and alignment can instead inherit or intensify the command-and-control system.\",\n  \"current_assessment\": \"The exit case is not the current base case: both directly testable escape conditions fail, the recurring fiscal adjustment remains large, and capital-return, distribution, and human-agency evidence is incomplete.\",\n  \"conditions_total\": 6,\n  \"conditions_met\": 0,\n  \"conditions_not_met\": 3,\n  \"conditions_insufficient_or_missing\": 3,\n  \"assessed_condition_pass_rate_pct\": 0.0,\n  \"musk_primary_interview\": {\n    \"date\": \"2026-07-23\",\n    \"publisher\": \"The Economist\",\n    \"interviewer\": \"Zanny Minton Beddoes\",\n    \"speaker\": \"Elon Musk\",\n    \"publisher_episode\": \"https://shows.acast.com/theintelligencepodcast/episodes/an-interview-with-elon-musk\",\n    \"recording_transcript_archive\": \"https://elonmuskarchive.org/video/economist-elon-musk-2026-07-23\",\n    \"context\": \"Musk forecast AI exceeding combined human intelligence and, when asked whether humans would no longer be in control in ten years, said continued human control was unlikely by analogy to the intelligence gap between humans and chimpanzees. This is a forecast by an interested executive, not empirical evidence.\"\n  },\n  \"critical_caveats\": [\n    \"No accepted scalar measure of AGI or superintelligence exists, so the panel tests economic and governance consequences rather than declaring an arrival date.\",\n    \"Musk's statement is a primary-source forecast, not a probability estimate or independent warrant.\",\n    \"Productivity can rise without benefits being broadly distributed, and material abundance does not by itself preserve political agency.\",\n    \"The current research productivity probability is an explicit scenario ensemble, not a calibrated forecasting model.\",\n    \"This scenario has zero Doom Index weight and cannot trigger the portfolio stop until the ordinary productivity override passes its separate calibration and governance gates.\"\n  ],\n  \"sources\": [\n    \"https://shows.acast.com/theintelligencepodcast/episodes/an-interview-with-elon-musk\",\n    \"https://elonmuskarchive.org/video/economist-elon-musk-2026-07-23\"\n  ]\n}\n"
+      "elapsed_seconds": 1.121,
+      "output_tail": "{\n  \"generated_at\": \"2026-08-04T20:08:57.566386+00:00\",\n  \"as_of_date\": \"2026-08-04\",\n  \"status\": \"conceptual_non_scoring\",\n  \"causal_proposition\": \"Superintelligence is an exit from Doom only if it creates sustained broad-based real productivity and fiscal capacity while preserving human agency. Capability without distribution and alignment can instead inherit or intensify the command-and-control system.\",\n  \"current_assessment\": \"The exit case is not the current base case: both directly testable escape conditions fail, the recurring fiscal adjustment remains large, and capital-return, distribution, and human-agency evidence is incomplete.\",\n  \"conditions_total\": 6,\n  \"conditions_met\": 0,\n  \"conditions_not_met\": 3,\n  \"conditions_insufficient_or_missing\": 3,\n  \"assessed_condition_pass_rate_pct\": 0.0,\n  \"musk_primary_interview\": {\n    \"date\": \"2026-07-23\",\n    \"publisher\": \"The Economist\",\n    \"interviewer\": \"Zanny Minton Beddoes\",\n    \"speaker\": \"Elon Musk\",\n    \"publisher_episode\": \"https://shows.acast.com/theintelligencepodcast/episodes/an-interview-with-elon-musk\",\n    \"recording_transcript_archive\": \"https://elonmuskarchive.org/video/economist-elon-musk-2026-07-23\",\n    \"context\": \"Musk forecast AI exceeding combined human intelligence and, when asked whether humans would no longer be in control in ten years, said continued human control was unlikely by analogy to the intelligence gap between humans and chimpanzees. This is a forecast by an interested executive, not empirical evidence.\"\n  },\n  \"critical_caveats\": [\n    \"No accepted scalar measure of AGI or superintelligence exists, so the panel tests economic and governance consequences rather than declaring an arrival date.\",\n    \"Musk's statement is a primary-source forecast, not a probability estimate or independent warrant.\",\n    \"Productivity can rise without benefits being broadly distributed, and material abundance does not by itself preserve political agency.\",\n    \"The current research productivity probability is an explicit scenario ensemble, not a calibrated forecasting model.\",\n    \"This scenario has zero Doom Index weight and cannot trigger the portfolio stop until the ordinary productivity override passes its separate calibration and governance gates.\"\n  ],\n  \"sources\": [\n    \"https://shows.acast.com/theintelligencepodcast/episodes/an-interview-with-elon-musk\",\n    \"https://elonmuskarchive.org/video/economist-elon-musk-2026-07-23\"\n  ]\n}\n"
     },
     {
       "name": "legitimacy-political-feasibility",
@@ -268,8 +268,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.105,
-      "output_tail": "{\n  \"legitimacy\": {\n    \"generated_at\": \"2026-08-04T18:05:30.344144+00:00\",\n    \"as_of_date\": \"2026-08-04\",\n    \"institutional_economic_legitimacy_score\": 74.55986348445362,\n    \"score_coverage_pct\": 100.0,\n    \"latest\": {\n      \"federal_government_trust_pct\": 17.0,\n      \"core_institution_confidence_pct\": 26.857142857142858,\n      \"voluntary_tax_compliance_pct\": 85.0,\n      \"governmentwide_improper_payments_billions\": 186.0,\n      \"improper_payments_pct_federal_outlays\": 2.652934166582871\n    },\n    \"score_definition\": \"Equal-weight fixed-threshold stress score across federal trust, confidence in 14 core public and private institutions, voluntary tax compliance, and government-wide improper payments/outlays.\",\n    \"definitions\": {\n      \"improper_payments\": \"Payments that should not have been made or were made in an incorrect amount. They include overpayments, underpayments, documentation errors, and some fraud; they are not a fraud estimate.\",\n      \"tax_gap\": \"The difference between true tax liability and tax paid voluntarily and on time. The IRS says the stable 85% compliance rate means the latest dollar increase primarily reflects economic growth.\"\n    },\n    \"sources\": [\n      \"https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/\",\n      \"https://news.gallup.com/poll/712436/confidence-institutions-remains-near-time-low.aspx\",\n      \"https://www.irs.gov/statistics/irs-the-tax-gap\",\n      \"https://www.gao.gov/products/gao-26-108694\"\n    ]\n  },\n  \"political_feasibility\": {\n    \"as_of_date\": \"2026-08-04\",\n    \"political_adjustment_difficulty_score\": 87.04099529413219,\n    \"score_coverage_pct\": 100.0,\n    \"signals\": {\n      \"adjustment_scale_stress_score\": 81.46007223023541,\n      \"receipt_increase_stress_score\": 94.43724227962664,\n      \"projected_deficit_persistence_score\": 74.0,\n      \"direct_passage_probability_score\": 98.26666666666667\n    },\n    \"inputs\": {\n      \"required_recurring_adjustment_pct_gdp\": 8.331406500721187,\n      \"current_receipts_pct_gdp\": 17.541,\n      \"tax_only_required_receipts_pct_gdp\": 25.87240650072119,\n      \"required_receipts_increase_pct\": 47.49675902583199,\n      \"projected_2036_deficit_pct_gdp\": 6.7,\n      \"target_deficit_pct_gdp\": 3.0,\n      \"direct_adjustment_passage_probability_pct\": 1.7333333333333336\n    },\n    \"score_definition\": \"Equal-weight fixed-threshold difficulty score across required adjustment/GDP, the proportional increase in receipts under a tax-only case, and the 2036 projected deficit above the 3%-of-GDP target, and the inverse modeled probability of timely enactment of a sufficient package.\",\n    \"critical_caveat\": \"The passage input is a disclosed historical-base-rate model with a sensitivity range, not a liquid exchange price or a statistically identified congressional forecast.\",\n    \"sources\": [\n      \"CBO Budget and Economic Outlook: 2026 to 2036\",\n      \"Local prudent-course model in fiscal_sustainability_summary.json\"\n    ]\n  }\n}\n"
+      "elapsed_seconds": 1.172,
+      "output_tail": "{\n  \"legitimacy\": {\n    \"generated_at\": \"2026-08-04T20:08:58.732395+00:00\",\n    \"as_of_date\": \"2026-08-04\",\n    \"institutional_economic_legitimacy_score\": 74.55986348445362,\n    \"score_coverage_pct\": 100.0,\n    \"latest\": {\n      \"federal_government_trust_pct\": 17.0,\n      \"core_institution_confidence_pct\": 26.857142857142858,\n      \"voluntary_tax_compliance_pct\": 85.0,\n      \"governmentwide_improper_payments_billions\": 186.0,\n      \"improper_payments_pct_federal_outlays\": 2.652934166582871\n    },\n    \"score_definition\": \"Equal-weight fixed-threshold stress score across federal trust, confidence in 14 core public and private institutions, voluntary tax compliance, and government-wide improper payments/outlays.\",\n    \"definitions\": {\n      \"improper_payments\": \"Payments that should not have been made or were made in an incorrect amount. They include overpayments, underpayments, documentation errors, and some fraud; they are not a fraud estimate.\",\n      \"tax_gap\": \"The difference between true tax liability and tax paid voluntarily and on time. The IRS says the stable 85% compliance rate means the latest dollar increase primarily reflects economic growth.\"\n    },\n    \"sources\": [\n      \"https://www.pewresearch.org/politics/2025/12/04/public-trust-in-government-1958-2025/\",\n      \"https://news.gallup.com/poll/712436/confidence-institutions-remains-near-time-low.aspx\",\n      \"https://www.irs.gov/statistics/irs-the-tax-gap\",\n      \"https://www.gao.gov/products/gao-26-108694\"\n    ]\n  },\n  \"political_feasibility\": {\n    \"as_of_date\": \"2026-08-04\",\n    \"political_adjustment_difficulty_score\": 87.04099529413219,\n    \"score_coverage_pct\": 100.0,\n    \"signals\": {\n      \"adjustment_scale_stress_score\": 81.46007223023541,\n      \"receipt_increase_stress_score\": 94.43724227962664,\n      \"projected_deficit_persistence_score\": 74.0,\n      \"direct_passage_probability_score\": 98.26666666666667\n    },\n    \"inputs\": {\n      \"required_recurring_adjustment_pct_gdp\": 8.331406500721187,\n      \"current_receipts_pct_gdp\": 17.541,\n      \"tax_only_required_receipts_pct_gdp\": 25.87240650072119,\n      \"required_receipts_increase_pct\": 47.49675902583199,\n      \"projected_2036_deficit_pct_gdp\": 6.7,\n      \"target_deficit_pct_gdp\": 3.0,\n      \"direct_adjustment_passage_probability_pct\": 1.7333333333333336\n    },\n    \"score_definition\": \"Equal-weight fixed-threshold difficulty score across required adjustment/GDP, the proportional increase in receipts under a tax-only case, and the 2036 projected deficit above the 3%-of-GDP target, and the inverse modeled probability of timely enactment of a sufficient package.\",\n    \"critical_caveat\": \"The passage input is a disclosed historical-base-rate model with a sensitivity range, not a liquid exchange price or a statistically identified congressional forecast.\",\n    \"sources\": [\n      \"CBO Budget and Economic Outlook: 2026 to 2036\",\n      \"Local prudent-course model in fiscal_sustainability_summary.json\"\n    ]\n  }\n}\n"
     },
     {
       "name": "productivity-escape-forecast",
@@ -280,7 +280,7 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 1.199,
+      "elapsed_seconds": 0.971,
       "output_tail": "{\n  \"as_of_date\": \"2026-03-31\",\n  \"threshold_pct\": 5.0,\n  \"forecast_horizon_years\": 5,\n  \"productivity_escape_probability_pct\": 2.5,\n  \"override_threshold_probability_pct\": 50.0,\n  \"override_triggered\": false,\n  \"spf\": {\n    \"vintage\": \"2026Q1\",\n    \"horizon\": \"10-year annual-average productivity growth\",\n    \"respondents\": 20,\n    \"median_pct\": 1.8,\n    \"mean_pct\": 1.8248849999999996,\n    \"minimum_pct\": 0.8,\n    \"maximum_pct\": 3.0,\n    \"share_at_or_above_threshold_pct\": 0.0,\n    \"source\": \"https://www.philadelphiafed.org/surveys-and-data/prod10\"\n  },\n  \"cbo\": {\n    \"potential_labor_force_productivity_2026_2036_pct\": 1.5,\n    \"estimated_ai_tfp_contribution_pct_points\": 0.1,\n    \"source\": \"https://www.cbo.gov/publication/62105\",\n    \"role\": \"Central-case reference; not assigned an invented probability density.\"\n  },\n  \"historical\": {\n    \"first_five_year_window_end\": 1952,\n    \"last_window_end\": 2026,\n    \"windows\": 75,\n    \"maximum_five_year_cagr_pct\": 3.487702867996534,\n    \"share_at_or_above_threshold_pct\": 0.0,\n    \"source\": \"https://fred.stlouisfed.org/series/OPHNFB\",\n    \"vintage_warning\": \"Current-vintage history; not an ALFRED real-time vintage.\"\n  },\n  \"explicit_ai_scenarios\": [\n    {\n      \"scenario\": \"slow adoption and offsets\",\n      \"five_year_productivity_pct\": 1.5,\n      \"probability\": 0.3\n    },\n    {\n      \"scenario\": \"incremental broad adoption\",\n      \"five_year_productivity_pct\": 2.5,\n      \"probability\": 0.4\n    },\n    {\n      \"scenario\": \"strong automation diffusion\",\n      \"five_year_productivity_pct\": 4.0,\n      \"probability\": 0.2\n    },\n    {\n      \"scenario\": \"AGI-scale acceleration\",\n      \"five_year_productivity_pct\": 6.0,\n      \"probability\": 0.1\n    }\n  ],\n  \"source_weights\": {\n    \"spf_cross_section\": 0.5,\n    \"historical_base_rate\": 0.25,\n    \"explicit_ai_scenarios\": 0.25\n  },\n  \"interpretation\": \"Research ensemble, not a calibrated forecast probability. SPF respondent dispersion and historical frequency are diagnostics; the tail depends on the disclosed AI scenario prior.\"\n}\n"
     },
     {
@@ -292,8 +292,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.496,
-      "output_tail": "{\n  \"research_score\": 67.80451671316331,\n  \"coverage_pct\": 100.0,\n  \"missing_input_sensitivity\": {\n    \"lower\": 67.80451671316331,\n    \"upper\": 67.80451671316331,\n    \"interpretation\": \"Bounds assign every missing or stale indicator either 0 or 100 without reweighting.\"\n  },\n  \"stop_status\": {\n    \"threshold\": 20,\n    \"triggered\": false,\n    \"productivity_override_probability_pct\": 2.5,\n    \"productivity_override_triggered\": false,\n    \"operational\": false,\n    \"reason\": \"The research override is now reproducible, but historical point-in-time calibration and strategy execution conventions are incomplete.\"\n  }\n}\n"
+      "elapsed_seconds": 0.451,
+      "output_tail": "{\n  \"research_score\": 67.82208497252037,\n  \"coverage_pct\": 100.0,\n  \"missing_input_sensitivity\": {\n    \"lower\": 67.82208497252037,\n    \"upper\": 67.82208497252037,\n    \"interpretation\": \"Bounds assign every missing or stale indicator either 0 or 100 without reweighting.\"\n  },\n  \"stop_status\": {\n    \"threshold\": 20,\n    \"triggered\": false,\n    \"productivity_override_probability_pct\": 2.5,\n    \"productivity_override_triggered\": false,\n    \"operational\": false,\n    \"reason\": \"The research override is now reproducible, but historical point-in-time calibration and strategy execution conventions are incomplete.\"\n  }\n}\n"
     },
     {
       "name": "doom-history",
@@ -304,8 +304,8 @@
       "cwd": "/home/pfrpc/repos/navstrategies",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 0.5,
-      "output_tail": " calendar_year as_of_date  research_score  diagnostic_score  coverage_pct  publication_comparable  missing_input_lower_bound  missing_input_upper_bound\n          2004 2004-12-31             NaN         19.624018          50.5                   False                  10.249292                  59.749292\n          2005 2005-12-31             NaN         17.766070          59.5                   False                  10.780311                  51.280311\n          2006 2006-12-31             NaN         25.531175          50.5                   False                  12.898102                  62.398102\n          2007 2007-12-31             NaN         29.919567          50.5                   False                  15.466909                  64.966909\n          2008 2008-12-31             NaN         30.728922          56.5                   False                  18.418734                  61.918734\n          2009 2009-12-31             NaN         37.796072          56.5                   False                  23.721737                  67.221737\n          2010 2010-12-31             NaN         34.026072          65.5                   False                  24.677591                  59.177591\n          2011 2011-12-31             NaN         31.468857          56.5                   False                  19.857715                  63.357715\n          2012 2012-12-31             NaN         37.142649          56.5                   False                  24.473793                  67.973793\n          2013 2013-12-31             NaN         36.356927          56.5                   False                  24.100177                  67.600177\n          2014 2014-12-31             NaN         35.848505          56.5                   False                  23.596005                  67.096005\n          2015 2015-12-31             NaN         40.167979          65.5                   False                  29.135923                  63.635923\n          2016 2016-12-31             NaN         40.808553          56.5                   False                  27.338899                  70.838899\n          2017 2017-12-31             NaN         40.500596          56.5                   False                  27.051298                  70.551298\n          2018 2018-12-31             NaN         40.666333          56.5                   False                  26.715465                  70.215465\n          2019 2019-12-31             NaN         44.770996          65.5                   False                  32.975235                  67.475235\n          2020 2020-12-31             NaN         55.558756          62.5                   False                  40.047293                  77.547293\n          2021 2021-12-31             NaN         51.112516          65.5                   False                  38.966621                  73.466621\n          2022 2022-12-31             NaN         47.966151          65.5                   False                  35.964096                  70.464096\n          2023 2023-12-31             NaN         53.661854          65.5                   False                  40.237815                  74.737815\n          2024 2024-12-31             NaN         55.998891          65.5                   False                  42.090283                  76.590283\n          2025 2025-12-31             NaN         57.620601          65.5                   False                  43.241198                  77.741198\n          2026 2026-08-04       67.804517         67.804517         100.0                    True                  67.804517                  67.804517\n"
+      "elapsed_seconds": 0.478,
+      "output_tail": " calendar_year as_of_date  research_score  diagnostic_score  coverage_pct  publication_comparable  missing_input_lower_bound  missing_input_upper_bound\n          2004 2004-12-31             NaN         19.624018          50.5                   False                  10.249292                  59.749292\n          2005 2005-12-31             NaN         17.766070          59.5                   False                  10.780311                  51.280311\n          2006 2006-12-31             NaN         25.531175          50.5                   False                  12.898102                  62.398102\n          2007 2007-12-31             NaN         29.919567          50.5                   False                  15.466909                  64.966909\n          2008 2008-12-31             NaN         30.728922          56.5                   False                  18.418734                  61.918734\n          2009 2009-12-31             NaN         37.796072          56.5                   False                  23.721737                  67.221737\n          2010 2010-12-31             NaN         34.026072          65.5                   False                  24.677591                  59.177591\n          2011 2011-12-31             NaN         31.468857          56.5                   False                  19.857715                  63.357715\n          2012 2012-12-31             NaN         37.142649          56.5                   False                  24.473793                  67.973793\n          2013 2013-12-31             NaN         36.356927          56.5                   False                  24.100177                  67.600177\n          2014 2014-12-31             NaN         35.848505          56.5                   False                  23.596005                  67.096005\n          2015 2015-12-31             NaN         40.167979          65.5                   False                  29.135923                  63.635923\n          2016 2016-12-31             NaN         40.808553          56.5                   False                  27.338899                  70.838899\n          2017 2017-12-31             NaN         40.500596          56.5                   False                  27.051298                  70.551298\n          2018 2018-12-31             NaN         40.666333          56.5                   False                  26.715465                  70.215465\n          2019 2019-12-31             NaN         44.770996          65.5                   False                  32.975235                  67.475235\n          2020 2020-12-31             NaN         55.558756          62.5                   False                  40.047293                  77.547293\n          2021 2021-12-31             NaN         51.112516          65.5                   False                  38.966621                  73.466621\n          2022 2022-12-31             NaN         47.966151          65.5                   False                  35.964096                  70.464096\n          2023 2023-12-31             NaN         53.661854          65.5                   False                  40.237815                  74.737815\n          2024 2024-12-31             NaN         55.998891          65.5                   False                  42.090283                  76.590283\n          2025 2025-12-31             NaN         57.620601          65.5                   False                  43.241198                  77.741198\n          2026 2026-08-04       67.822085         67.822085         100.0                    True                  67.822085                  67.822085\n"
     },
     {
       "name": "site-data-payload",
@@ -316,7 +316,7 @@
       "cwd": "/home/pfrpc/repos/goodalexander.github.io",
       "status": "success",
       "returncode": 0,
-      "elapsed_seconds": 2.346,
+      "elapsed_seconds": 1.088,
       "output_tail": "{\n  \"year\": 2026,\n  \"households\": 134790000.0,\n  \"public_debt_trillions\": 39.84111,\n  \"ssa_unfunded_75yr_trillions\": 29.3,\n  \"medicare_resource_gap_trillions\": 65.3,\n  \"total_liabilities_trillions\": 134.44110999999998,\n  \"public_debt_per_household\": 295579.1230803472,\n  \"ssa_unfunded_per_household\": 217375.17620001483,\n  \"medicare_resource_gap_per_household\": 484457.3039542993,\n  \"total_liabilities_per_household\": 997411.6032346612,\n  \"mean_after_tax_income_per_consumer_unit\": 87869.0,\n  \"mean_after_tax_income_year\": 2023,\n  \"median_pretax_household_income\": 83730.0,\n  \"median_post_tax_household_income\": 72330.0,\n  \"median_household_income_year\": 2024,\n  \"liabilities_to_disposable_income_ratio\": 11.351120454707134,\n  \"precise_interest_trillions\": 1.0425031663656936,\n  \"public_company_net_income_trillions\": 2.6378918709764405,\n  \"interest_to_public_net_income_ratio\": 0.3952031460560971,\n  \"mean_discretionary_income_per_consumer_unit\": 27000.0,\n  \"discretionary_income_year\": 2023,\n  \"aggregate_discretionary_income_trillions\": 3.633012,\n  \"benchmark_interest_trillions\": 0.658267,\n  \"benchmark_interest_to_discretionary_income_ratio\": 0.18119042821768827,\n  \"current_interest_per_household\": 7734.276773986895,\n  \"current_interest_to_discretionary_income_ratio\": 0.28645469533284795,\n  \"trustees_real_discount_rate\": 0.023,\n  \"funding_horizon_years\": 75,\n  \"unfunded_program_pv_trillions\": 94.6,\n  \"annualized_unfunded_program_cost_trillions\": 2.6588897207893574,\n  \"annualized_unfunded_program_cost_per_household\": 19726.16455812269,\n  \"annualized_unfunded_to_public_net_income_ratio\": 1.007960087387943,\n  \"all_in_annual_burden_trillions\": 3.701392887155051,\n  \"all_in_annual_burden_per_household\": 27460.441332109585,\n  \"all_in_burden_to_public_net_income_ratio\": 1.40316323344404,\n  \"all_in_burden_to_discretionary_income_ratio\": 1.0188220922901028\n}\n"
     },
     {
@@ -326,53 +326,53 @@
         "--gc",
         "--minify",
         "--destination",
-        "/tmp/doom-hugo-s8rf8xhz"
+        "/tmp/doom-hugo-krx0pbkc"
       ],
       "cwd": "/home/pfrpc/repos/goodalexander.github.io",
       "status": "success",
       "returncode": 0,
-      "output_tail": "Start building sites \u2026 \nhugo v0.121.1-00b46fed8e47f7bb0a85d7cfc2d9f1356379b740+extended linux/amd64 BuildDate=2023-12-08T08:47:45Z VendorInfo=gohugoio\n\n\n                   | EN  \n-------------------+-----\n  Pages            | 98  \n  Paginator pages  | 12  \n  Non-page files   | 68  \n  Static files     | 37  \n  Processed images |  0  \n  Aliases          | 12  \n  Sitemaps         |  1  \n  Cleaned          |  0  \n\nTotal in 305 ms\n"
+      "output_tail": "Start building sites \u2026 \nhugo v0.121.1-00b46fed8e47f7bb0a85d7cfc2d9f1356379b740+extended linux/amd64 BuildDate=2023-12-08T08:47:45Z VendorInfo=gohugoio\n\n\n                   | EN  \n-------------------+-----\n  Pages            | 99  \n  Paginator pages  | 12  \n  Non-page files   | 68  \n  Static files     | 37  \n  Processed images |  0  \n  Aliases          | 12  \n  Sitemaps         |  1  \n  Cleaned          |  0  \n\nTotal in 302 ms\n"
     }
   ],
   "outputs": [
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/doom_index_research_score.json",
       "exists": true,
-      "bytes": 38988,
-      "sha256": "6cde0093b1b5c1a7c8d18b2e78a831f06d27f0a46bec8028bc0cd02b714a2054",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/doom_index_research_score.json",
-      "snapshot_sha256": "6cde0093b1b5c1a7c8d18b2e78a831f06d27f0a46bec8028bc0cd02b714a2054"
+      "bytes": 38164,
+      "sha256": "07de59c3e0cb89f64a3ce1ae938740f76e90b72a56de2821591b076f416464b1",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/doom_index_research_score.json",
+      "snapshot_sha256": "07de59c3e0cb89f64a3ce1ae938740f76e90b72a56de2821591b076f416464b1"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/doom_index_research_score_history.json",
       "exists": true,
       "bytes": 7936,
-      "sha256": "ed6ece6a6cc2f50dc75fe4299e5ba75efe896a71682a2bd135c59ab0accddd16",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/doom_index_research_score_history.json",
-      "snapshot_sha256": "ed6ece6a6cc2f50dc75fe4299e5ba75efe896a71682a2bd135c59ab0accddd16"
+      "sha256": "c53b9a280953873fe72ba1ed3303d5dfcd17383be4db9c621c46742cfde5c8c6",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/doom_index_research_score_history.json",
+      "snapshot_sha256": "c53b9a280953873fe72ba1ed3303d5dfcd17383be4db9c621c46742cfde5c8c6"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/doom_index_component_scores.csv",
       "exists": true,
-      "bytes": 656,
-      "sha256": "1bd4a5e5c548834cd48db6de7253d952e1921fb509cb244e0c5cff8720486aff",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/doom_index_component_scores.csv",
-      "snapshot_sha256": "1bd4a5e5c548834cd48db6de7253d952e1921fb509cb244e0c5cff8720486aff"
+      "bytes": 658,
+      "sha256": "50b3d1d2f5d4979539d65beb3f937563f82757115c3fffc9d86bdba597a51646",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/doom_index_component_scores.csv",
+      "snapshot_sha256": "50b3d1d2f5d4979539d65beb3f937563f82757115c3fffc9d86bdba597a51646"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/doom_index_indicator_scores.csv",
       "exists": true,
-      "bytes": 16586,
-      "sha256": "292f38515fae692446d0687d2b7a0fd2c15fc0050970feb9992dbbd212b9873e",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/doom_index_indicator_scores.csv",
-      "snapshot_sha256": "292f38515fae692446d0687d2b7a0fd2c15fc0050970feb9992dbbd212b9873e"
+      "bytes": 16162,
+      "sha256": "2633ceb637baecfa9d0cd17afecb07a4f35c8d8532bb61f1ddacf3faffb6f450",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/doom_index_indicator_scores.csv",
+      "snapshot_sha256": "2633ceb637baecfa9d0cd17afecb07a4f35c8d8532bb61f1ddacf3faffb6f450"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/productivity_escape_forecast_summary.json",
       "exists": true,
       "bytes": 2042,
       "sha256": "757eb05d8db45df60da4ef68c2d208072963e7b0adc302f5212d7d953c0b3cc7",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/productivity_escape_forecast_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/productivity_escape_forecast_summary.json",
       "snapshot_sha256": "757eb05d8db45df60da4ef68c2d208072963e7b0adc302f5212d7d953c0b3cc7"
     },
     {
@@ -380,7 +380,7 @@
       "exists": true,
       "bytes": 1361,
       "sha256": "073496eb4a7b3f1f3358bfc33a41b2feeb493c35ee3aaadb80e4b82006bbaf56",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/hyperscaler_capital_efficiency_point_in_time_2004_2026_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/hyperscaler_capital_efficiency_point_in_time_2004_2026_summary.json",
       "snapshot_sha256": "073496eb4a7b3f1f3358bfc33a41b2feeb493c35ee3aaadb80e4b82006bbaf56"
     },
     {
@@ -388,7 +388,7 @@
       "exists": true,
       "bytes": 3093,
       "sha256": "fb4aab1e452503123575ace8dd5118e5fb57ee08f4d4a0eb0a27c5f8c756fed4",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/real_business_productivity_ex_distraction_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/real_business_productivity_ex_distraction_summary.json",
       "snapshot_sha256": "fb4aab1e452503123575ace8dd5118e5fb57ee08f4d4a0eb0a27c5f8c756fed4"
     },
     {
@@ -396,167 +396,167 @@
       "exists": true,
       "bytes": 1226,
       "sha256": "e68a711ea9ce0371dcbf369248c1b329eb6075c3f76adb1c0e9c3e53a8ffa949",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/ai_monetization_bottlenecks_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/ai_monetization_bottlenecks_summary.json",
       "snapshot_sha256": "e68a711ea9ce0371dcbf369248c1b329eb6075c3f76adb1c0e9c3e53a8ffa949"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/ai_video_quality_frontier_summary.json",
       "exists": true,
       "bytes": 1737,
-      "sha256": "0e333170db0ec3fb48445115e45185cc55b5f1c871199153208bb4ed0961ba07",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/ai_video_quality_frontier_summary.json",
-      "snapshot_sha256": "0e333170db0ec3fb48445115e45185cc55b5f1c871199153208bb4ed0961ba07"
+      "sha256": "feba99ef0222a8a67d538df3c6cc1ef76576af915ab4b3925e3416b110fd0db9",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/ai_video_quality_frontier_summary.json",
+      "snapshot_sha256": "feba99ef0222a8a67d538df3c6cc1ef76576af915ab4b3925e3416b110fd0db9"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/hbm_market_panel_summary.json",
       "exists": true,
       "bytes": 2743,
-      "sha256": "cab66da8b0d778cd18d1de1f335ebeb9be792b7d0164c049351c5f91e9420792",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/hbm_market_panel_summary.json",
-      "snapshot_sha256": "cab66da8b0d778cd18d1de1f335ebeb9be792b7d0164c049351c5f91e9420792"
+      "sha256": "2a217fa9a0ffba79fda91059814461fa98df9e244eeb8d92b3eb4f7bb0e53ec4",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/hbm_market_panel_summary.json",
+      "snapshot_sha256": "2a217fa9a0ffba79fda91059814461fa98df9e244eeb8d92b3eb4f7bb0e53ec4"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/distraction_attention_summary.json",
       "exists": true,
       "bytes": 2168,
       "sha256": "a7be368f4f6265f9bf9d83739ca4e5fcf75b71ef169b9ac89d0212647707b37f",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/distraction_attention_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/distraction_attention_summary.json",
       "snapshot_sha256": "a7be368f4f6265f9bf9d83739ca4e5fcf75b71ef169b9ac89d0212647707b37f"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_summary.json",
       "exists": true,
-      "bytes": 3039,
-      "sha256": "646213b87bbe01de0e5f2e2cb9dc542799f76c54dd3ceeac4f6a6e5ec22353a0",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_summary.json",
-      "snapshot_sha256": "646213b87bbe01de0e5f2e2cb9dc542799f76c54dd3ceeac4f6a6e5ec22353a0"
+      "bytes": 3058,
+      "sha256": "43c7393ffafc7a4653f073b732ff4cb5e06dc02ac2f314bba2ea45d1699bfe24",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_summary.json",
+      "snapshot_sha256": "43c7393ffafc7a4653f073b732ff4cb5e06dc02ac2f314bba2ea45d1699bfe24"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv",
       "exists": true,
-      "bytes": 76797,
-      "sha256": "754b5f2cebf1425f64a2bcb538775f7f218a2e961e5d99040fe7abb46261cceb",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv",
-      "snapshot_sha256": "754b5f2cebf1425f64a2bcb538775f7f218a2e961e5d99040fe7abb46261cceb"
+      "bytes": 76802,
+      "sha256": "ca38b6c80546fb2700165c915911d7d2b8ff8d55412169d355223652bee9fb77",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_weekly.csv",
+      "snapshot_sha256": "ca38b6c80546fb2700165c915911d7d2b8ff8d55412169d355223652bee9fb77"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/google_trends_ai_porn_best_colleges_trade_school_worldwide_raw.json",
       "exists": true,
       "bytes": 88182,
-      "sha256": "9eb06036e5e1a1d4c44b5fb82735f651205c0593cce07036c6878e6f21970f44",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_raw.json",
-      "snapshot_sha256": "9eb06036e5e1a1d4c44b5fb82735f651205c0593cce07036c6878e6f21970f44"
+      "sha256": "245ea62d8fb816c8cbb06a9b300e37c2d76c5c88b88025879e619f6be98bac2d",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/google_trends_ai_porn_best_colleges_trade_school_worldwide_raw.json",
+      "snapshot_sha256": "245ea62d8fb816c8cbb06a9b300e37c2d76c5c88b88025879e619f6be98bac2d"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/debasement_repression_summary.json",
       "exists": true,
-      "bytes": 3669,
-      "sha256": "6d193ca719b3ac746878feb0b5a7d1edb146eda934edb52e06cc6bed1deb9f55",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/debasement_repression_summary.json",
-      "snapshot_sha256": "6d193ca719b3ac746878feb0b5a7d1edb146eda934edb52e06cc6bed1deb9f55"
+      "bytes": 3668,
+      "sha256": "fc67ac6be69b7b4469e22369572b61b3f32418e1ecf63c531688f9e45b357ea3",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/debasement_repression_summary.json",
+      "snapshot_sha256": "fc67ac6be69b7b4469e22369572b61b3f32418e1ecf63c531688f9e45b357ea3"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/financial_repression_ownership_summary.json",
       "exists": true,
       "bytes": 1956,
-      "sha256": "b288803de00a57ef9f086a1f9f8328a939fbdd0fd290c3de4ac0a00888ac936e",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/financial_repression_ownership_summary.json",
-      "snapshot_sha256": "b288803de00a57ef9f086a1f9f8328a939fbdd0fd290c3de4ac0a00888ac936e"
+      "sha256": "9bd3ebe99783b110b6f1b1b6c1b9e61c70dce8b2c3e3758ebd401d9850d032cb",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/financial_repression_ownership_summary.json",
+      "snapshot_sha256": "9bd3ebe99783b110b6f1b1b6c1b9e61c70dce8b2c3e3758ebd401d9850d032cb"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/institutional_confidence_panel_summary.json",
       "exists": true,
       "bytes": 1292,
-      "sha256": "efbe38145a5ee06f5f3418bc6fbcaf25046fdba455fea009a1dc5a0aa02f16ec",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/institutional_confidence_panel_summary.json",
-      "snapshot_sha256": "efbe38145a5ee06f5f3418bc6fbcaf25046fdba455fea009a1dc5a0aa02f16ec"
+      "sha256": "73b9016d25fdefbd442d3058a88699aebfd875cc840225f95ce28d7406070aa5",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/institutional_confidence_panel_summary.json",
+      "snapshot_sha256": "73b9016d25fdefbd442d3058a88699aebfd875cc840225f95ce28d7406070aa5"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/us_governance_civil_liberties_summary.json",
       "exists": true,
       "bytes": 4175,
-      "sha256": "fab6c94da4c2615fbee1f751d2f428f4aefc9718ec18c48d554c6564d9c4cc21",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/us_governance_civil_liberties_summary.json",
-      "snapshot_sha256": "fab6c94da4c2615fbee1f751d2f428f4aefc9718ec18c48d554c6564d9c4cc21"
+      "sha256": "f6d352bbf114da6fa05823a7ff4677b763386615950f1ef2addd06aeebc209d6",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/us_governance_civil_liberties_summary.json",
+      "snapshot_sha256": "f6d352bbf114da6fa05823a7ff4677b763386615950f1ef2addd06aeebc209d6"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/verified_fraud_enforcement_summary.json",
       "exists": true,
       "bytes": 1365,
-      "sha256": "3b6624e5a9580f4587d29570e7910db5d9a7ab6d969d463cff36cde9376bbc01",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/verified_fraud_enforcement_summary.json",
-      "snapshot_sha256": "3b6624e5a9580f4587d29570e7910db5d9a7ab6d969d463cff36cde9376bbc01"
+      "sha256": "8e252d0e7891309e15d237c450ee93f4cb0714de59c8a4332ff2647b9c75efaf",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/verified_fraud_enforcement_summary.json",
+      "snapshot_sha256": "8e252d0e7891309e15d237c450ee93f4cb0714de59c8a4332ff2647b9c75efaf"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/us_exit_proxies_summary.json",
       "exists": true,
       "bytes": 1520,
-      "sha256": "b8b249669e1b4f8e3567cd31f330faa5afa09ad02a6753bfe47a12be8579eb12",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/us_exit_proxies_summary.json",
-      "snapshot_sha256": "b8b249669e1b4f8e3567cd31f330faa5afa09ad02a6753bfe47a12be8579eb12"
+      "sha256": "693175588cc4f3ee55bf772430742461ad4fb3fce57734fa3b1ba6aa9f75aa77",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/us_exit_proxies_summary.json",
+      "snapshot_sha256": "693175588cc4f3ee55bf772430742461ad4fb3fce57734fa3b1ba6aa9f75aa77"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/surveillance_deployment_summary.json",
       "exists": true,
       "bytes": 2648,
-      "sha256": "b6b4378b9e8c0ea909d4574f2739a4f89b09cfee95876b2e53854bded0dbb224",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/surveillance_deployment_summary.json",
-      "snapshot_sha256": "b6b4378b9e8c0ea909d4574f2739a4f89b09cfee95876b2e53854bded0dbb224"
+      "sha256": "110ea04a4f2553875a0ea1551e0df4d31bd7d561ce85386604d5aee6037d4eb4",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/surveillance_deployment_summary.json",
+      "snapshot_sha256": "110ea04a4f2553875a0ea1551e0df4d31bd7d561ce85386604d5aee6037d4eb4"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/us_protest_unrest_summary.json",
       "exists": true,
       "bytes": 2255,
-      "sha256": "c4725111e1672b0f61e0c4f737a504d51a78dcd72e293544e61fbe442c524f21",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/us_protest_unrest_summary.json",
-      "snapshot_sha256": "c4725111e1672b0f61e0c4f737a504d51a78dcd72e293544e61fbe442c524f21"
+      "sha256": "d4f8220af9bd56ece1542b92d758c49a4855225add9d0e24d4442d293d133bfd",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/us_protest_unrest_summary.json",
+      "snapshot_sha256": "d4f8220af9bd56ece1542b92d758c49a4855225add9d0e24d4442d293d133bfd"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/financial_bread_circuses_summary.json",
       "exists": true,
-      "bytes": 3592,
-      "sha256": "033fb3e186bba83d5fd4951ff297bf8476cb81e3b9f999b7919c7dd25f27925a",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/financial_bread_circuses_summary.json",
-      "snapshot_sha256": "033fb3e186bba83d5fd4951ff297bf8476cb81e3b9f999b7919c7dd25f27925a"
+      "bytes": 3593,
+      "sha256": "59922b856b23affb38afdd7ad42b1c489cd85fae55743790c1276d54bb1e5a78",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/financial_bread_circuses_summary.json",
+      "snapshot_sha256": "59922b856b23affb38afdd7ad42b1c489cd85fae55743790c1276d54bb1e5a78"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/us_command_control_signposts_summary.json",
       "exists": true,
       "bytes": 7682,
-      "sha256": "90c986b4f4466c611bb3635b2a80066e740f4dc09ff42ec16a2cd569cc5722e2",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/us_command_control_signposts_summary.json",
-      "snapshot_sha256": "90c986b4f4466c611bb3635b2a80066e740f4dc09ff42ec16a2cd569cc5722e2"
+      "sha256": "17836c021db6ab0ed5d5c74b2f359c4b2ffa6548c35c43c2bbb69266c770b198",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/us_command_control_signposts_summary.json",
+      "snapshot_sha256": "17836c021db6ab0ed5d5c74b2f359c4b2ffa6548c35c43c2bbb69266c770b198"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/command_control_source_verification_cache.json",
       "exists": true,
       "bytes": 4378,
-      "sha256": "4dfd1484efa3849321b6fb505955a9e9e29ca50006c32699be43b0531057a354",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/command_control_source_verification_cache.json",
-      "snapshot_sha256": "4dfd1484efa3849321b6fb505955a9e9e29ca50006c32699be43b0531057a354"
+      "sha256": "e0035bf7b8ae702eb3e5081422aaafee193a3a4c1b480b508a5ca3e4129de233",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/command_control_source_verification_cache.json",
+      "snapshot_sha256": "e0035bf7b8ae702eb3e5081422aaafee193a3a4c1b480b508a5ca3e4129de233"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/superintelligence_exit_summary.json",
       "exists": true,
       "bytes": 2448,
-      "sha256": "2191ee09de0b47492041ccab95247ced16c3a069670a7e7dcb96ce8d215d12f5",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/superintelligence_exit_summary.json",
-      "snapshot_sha256": "2191ee09de0b47492041ccab95247ced16c3a069670a7e7dcb96ce8d215d12f5"
+      "sha256": "b7b3b63eac27d89c3b6be37cd3093533a3f34534be3776f817e4c244e2885f86",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/superintelligence_exit_summary.json",
+      "snapshot_sha256": "b7b3b63eac27d89c3b6be37cd3093533a3f34534be3776f817e4c244e2885f86"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/institutional_economic_legitimacy_summary.json",
       "exists": true,
       "bytes": 1440,
-      "sha256": "a3001efc36b7dfef8d4240121d4631fa8417e3f03548f8abf57e64c0417fd58e",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/institutional_economic_legitimacy_summary.json",
-      "snapshot_sha256": "a3001efc36b7dfef8d4240121d4631fa8417e3f03548f8abf57e64c0417fd58e"
+      "sha256": "bef2ddb6e750f7bf99867468f677ce30dbae3e43c9b58cd63544bdeb7ed6c0c8",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/institutional_economic_legitimacy_summary.json",
+      "snapshot_sha256": "bef2ddb6e750f7bf99867468f677ce30dbae3e43c9b58cd63544bdeb7ed6c0c8"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/political_adjustment_feasibility_summary.json",
       "exists": true,
       "bytes": 1392,
       "sha256": "392e6dddc2511a18467d28b010eb829c400fcf2a3b59420802fcd1f83e8829ad",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/political_adjustment_feasibility_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/political_adjustment_feasibility_summary.json",
       "snapshot_sha256": "392e6dddc2511a18467d28b010eb829c400fcf2a3b59420802fcd1f83e8829ad"
     },
     {
@@ -564,7 +564,7 @@
       "exists": true,
       "bytes": 938,
       "sha256": "657648a4cc66ec38df43000884b3199f0cb238cd3219206642f377d7743e6e78",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/political_fiscal_history_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/political_fiscal_history_summary.json",
       "snapshot_sha256": "657648a4cc66ec38df43000884b3199f0cb238cd3219206642f377d7743e6e78"
     },
     {
@@ -572,353 +572,353 @@
       "exists": true,
       "bytes": 1066,
       "sha256": "acb64b3b90351773fb672445ea18ced004575cceb288fea6b55016627a459a78",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/political_polling_summary.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/political_polling_summary.json",
       "snapshot_sha256": "acb64b3b90351773fb672445ea18ced004575cceb288fea6b55016627a459a78"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/fiscal_prediction_markets_summary.json",
       "exists": true,
-      "bytes": 2381,
-      "sha256": "67a088fdb114c1111e77d76412ca86601ff1aef2e400f4a9535ccb38c83ea1bb",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/fiscal_prediction_markets_summary.json",
-      "snapshot_sha256": "67a088fdb114c1111e77d76412ca86601ff1aef2e400f4a9535ccb38c83ea1bb"
+      "bytes": 2382,
+      "sha256": "b2e7f18095503a2e43b3bc4d1510fa5b51777adfe2bf127b8ea3f0c3f6ded774",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/fiscal_prediction_markets_summary.json",
+      "snapshot_sha256": "b2e7f18095503a2e43b3bc4d1510fa5b51777adfe2bf127b8ea3f0c3f6ded774"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/fiscal_prediction_market_candidates_current.csv",
       "exists": true,
-      "bytes": 166924,
-      "sha256": "18b02c2a220572fe6e610d97aff2ae47162f30eecc4e8cd21917f8dd5d553d26",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/fiscal_prediction_market_candidates_current.csv",
-      "snapshot_sha256": "18b02c2a220572fe6e610d97aff2ae47162f30eecc4e8cd21917f8dd5d553d26"
+      "bytes": 166943,
+      "sha256": "1b12545677f1dec3eb9bbcf93eeba5048ace15bfd8ed5250f841ab6d8a28cb54",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/fiscal_prediction_market_candidates_current.csv",
+      "snapshot_sha256": "1b12545677f1dec3eb9bbcf93eeba5048ace15bfd8ed5250f841ab6d8a28cb54"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/political_adjustment_probability_summary.json",
       "exists": true,
-      "bytes": 3271,
-      "sha256": "47f171a66bfa4cce8a0c01bdd436f007b61768e8b04c5f18f5289f504b6ca2bc",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/political_adjustment_probability_summary.json",
-      "snapshot_sha256": "47f171a66bfa4cce8a0c01bdd436f007b61768e8b04c5f18f5289f504b6ca2bc"
+      "bytes": 3272,
+      "sha256": "bfad212d0101e8fd96f894fe87a973d36d55afeb7645578ec9151fc13f618cc4",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/political_adjustment_probability_summary.json",
+      "snapshot_sha256": "bfad212d0101e8fd96f894fe87a973d36d55afeb7645578ec9151fc13f618cc4"
     },
     {
       "path": "/home/pfrpc/repos/data/doom_thesis/political_adjustment_probability_sensitivity.csv",
       "exists": true,
       "bytes": 250,
       "sha256": "3e0b7e69e3715dd9bd5f8ed5f53caab8c7da08d9eb9ab8a39b0ddfa884c8651a",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/political_adjustment_probability_sensitivity.csv",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/political_adjustment_probability_sensitivity.csv",
       "snapshot_sha256": "3e0b7e69e3715dd9bd5f8ed5f53caab8c7da08d9eb9ab8a39b0ddfa884c8651a"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/data.json",
       "exists": true,
-      "bytes": 647782,
-      "sha256": "afbf9b78dffee9dd0daf0d1a183333e7eba43a147f0aff86afbd1c9884f24ac1",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/data.json",
-      "snapshot_sha256": "afbf9b78dffee9dd0daf0d1a183333e7eba43a147f0aff86afbd1c9884f24ac1"
+      "bytes": 646940,
+      "sha256": "47224ad34cd97b434799bb52e3d44e41a888d7aa59183fb04f0a89e92041f64c",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/data.json",
+      "snapshot_sha256": "47224ad34cd97b434799bb52e3d44e41a888d7aa59183fb04f0a89e92041f64c"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/doom-index-score.json",
       "exists": true,
-      "bytes": 38988,
-      "sha256": "6cde0093b1b5c1a7c8d18b2e78a831f06d27f0a46bec8028bc0cd02b714a2054",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/doom-index-score.json",
-      "snapshot_sha256": "6cde0093b1b5c1a7c8d18b2e78a831f06d27f0a46bec8028bc0cd02b714a2054"
+      "bytes": 38164,
+      "sha256": "07de59c3e0cb89f64a3ce1ae938740f76e90b72a56de2821591b076f416464b1",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/doom-index-score.json",
+      "snapshot_sha256": "07de59c3e0cb89f64a3ce1ae938740f76e90b72a56de2821591b076f416464b1"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/doom-index-history.json",
       "exists": true,
       "bytes": 7936,
-      "sha256": "ed6ece6a6cc2f50dc75fe4299e5ba75efe896a71682a2bd135c59ab0accddd16",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/doom-index-history.json",
-      "snapshot_sha256": "ed6ece6a6cc2f50dc75fe4299e5ba75efe896a71682a2bd135c59ab0accddd16"
+      "sha256": "c53b9a280953873fe72ba1ed3303d5dfcd17383be4db9c621c46742cfde5c8c6",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/doom-index-history.json",
+      "snapshot_sha256": "c53b9a280953873fe72ba1ed3303d5dfcd17383be4db9c621c46742cfde5c8c6"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/doom-index-framework.json",
       "exists": true,
-      "bytes": 27550,
-      "sha256": "ef5f2d4e9b60798f692a2806573f20922bf29345a2dbdea9000e433116db27b3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/doom-index-framework.json",
-      "snapshot_sha256": "ef5f2d4e9b60798f692a2806573f20922bf29345a2dbdea9000e433116db27b3"
+      "bytes": 27609,
+      "sha256": "7dd629c12dcbae399cd1e0d2d271fae7d13b20f0e9b14488d0e6b1eb5cbcbc9b",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/doom-index-framework.json",
+      "snapshot_sha256": "7dd629c12dcbae399cd1e0d2d271fae7d13b20f0e9b14488d0e6b1eb5cbcbc9b"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/doom-index-indicator-registry.json",
       "exists": true,
-      "bytes": 14987,
-      "sha256": "03da47ac9c607e9f2e0bc23d5a97917b5fc11da40a283293efdd5ceefc45d650",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/doom-index-indicator-registry.json",
-      "snapshot_sha256": "03da47ac9c607e9f2e0bc23d5a97917b5fc11da40a283293efdd5ceefc45d650"
+      "bytes": 14691,
+      "sha256": "e2de96fbd20a47cdccc953e31414a98574bf384be51b248bd83c8a8b2997ecf0",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/doom-index-indicator-registry.json",
+      "snapshot_sha256": "e2de96fbd20a47cdccc953e31414a98574bf384be51b248bd83c8a8b2997ecf0"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/fiscal-prediction-markets-summary.json",
       "exists": true,
-      "bytes": 2381,
-      "sha256": "67a088fdb114c1111e77d76412ca86601ff1aef2e400f4a9535ccb38c83ea1bb",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/fiscal-prediction-markets-summary.json",
-      "snapshot_sha256": "67a088fdb114c1111e77d76412ca86601ff1aef2e400f4a9535ccb38c83ea1bb"
+      "bytes": 2382,
+      "sha256": "b2e7f18095503a2e43b3bc4d1510fa5b51777adfe2bf127b8ea3f0c3f6ded774",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/fiscal-prediction-markets-summary.json",
+      "snapshot_sha256": "b2e7f18095503a2e43b3bc4d1510fa5b51777adfe2bf127b8ea3f0c3f6ded774"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/fiscal-prediction-market-candidates.csv",
       "exists": true,
-      "bytes": 166924,
-      "sha256": "18b02c2a220572fe6e610d97aff2ae47162f30eecc4e8cd21917f8dd5d553d26",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/fiscal-prediction-market-candidates.csv",
-      "snapshot_sha256": "18b02c2a220572fe6e610d97aff2ae47162f30eecc4e8cd21917f8dd5d553d26"
+      "bytes": 166943,
+      "sha256": "1b12545677f1dec3eb9bbcf93eeba5048ace15bfd8ed5250f841ab6d8a28cb54",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/fiscal-prediction-market-candidates.csv",
+      "snapshot_sha256": "1b12545677f1dec3eb9bbcf93eeba5048ace15bfd8ed5250f841ab6d8a28cb54"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis/search-attention-allocation-weekly.csv",
       "exists": true,
-      "bytes": 76509,
-      "sha256": "9e6374a589429a74027f8e6f2fc5fadf67a3bb888151e0c6c70a7c01ef977012",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis/search-attention-allocation-weekly.csv",
-      "snapshot_sha256": "9e6374a589429a74027f8e6f2fc5fadf67a3bb888151e0c6c70a7c01ef977012"
+      "bytes": 76513,
+      "sha256": "24629c3379e67c193966cb0a3468089724357401c4125b2e63a459d60c474bf0",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis/search-attention-allocation-weekly.csv",
+      "snapshot_sha256": "24629c3379e67c193966cb0a3468089724357401c4125b2e63a459d60c474bf0"
     },
     {
       "path": "/home/pfrpc/repos/goodalexander.github.io/static/doom-thesis.txt",
       "exists": true,
       "bytes": 15353,
-      "sha256": "87c1ea1777d0f5abcab7af7dff81dc2e8a01dcf32cc038deb6e51475451e1b20",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/site/static/doom-thesis.txt",
-      "snapshot_sha256": "87c1ea1777d0f5abcab7af7dff81dc2e8a01dcf32cc038deb6e51475451e1b20"
+      "sha256": "4485d9dd45322e653391d4b1f0d2b8796de3668b63ba0a5f69fa308513fede03",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/site/static/doom-thesis.txt",
+      "snapshot_sha256": "4485d9dd45322e653391d4b1f0d2b8796de3668b63ba0a5f69fa308513fede03"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0001_kalshi_all_series.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0001_kalshi_all_series.json",
       "exists": true,
-      "bytes": 20015077,
-      "sha256": "d525fbb18cc9540a30d77e95bb69aacad2450955b0676cd077e44f07ecf40783",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0001_kalshi_all_series.json",
-      "snapshot_sha256": "d525fbb18cc9540a30d77e95bb69aacad2450955b0676cd077e44f07ecf40783"
+      "bytes": 20022467,
+      "sha256": "83ec2a8a69b8acf21394897b29a78821f209e8da8a0782829cc876dfc0e19b10",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0001_kalshi_all_series.json",
+      "snapshot_sha256": "83ec2a8a69b8acf21394897b29a78821f209e8da8a0782829cc876dfc0e19b10"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0002_kalshi_series_kxincomerate_page_1.json",
-      "exists": true,
-      "bytes": 36,
-      "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0002_kalshi_series_kxincomerate_page_1.json",
-      "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
-    },
-    {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0003_kalshi_series_kxmedicareneg_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0002_kalshi_series_kxtradedefficit_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0003_kalshi_series_kxmedicareneg_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0002_kalshi_series_kxtradedefficit_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0004_kalshi_series_kxsocialsecuritydeplete_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0003_kalshi_series_kxsocialsecuritydeplete_page_1.json",
       "exists": true,
-      "bytes": 2726,
-      "sha256": "8470c6bbc2459e354979f83a95bbf8c2c6fa622efb98522a6e1f01ad1df1291a",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0004_kalshi_series_kxsocialsecuritydeplete_page_1.json",
-      "snapshot_sha256": "8470c6bbc2459e354979f83a95bbf8c2c6fa622efb98522a6e1f01ad1df1291a"
+      "bytes": 2724,
+      "sha256": "f51bbd1a6e505813858f2d54a2ed43dc0a9e448cf539e2387b7e764ad312c627",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0003_kalshi_series_kxsocialsecuritydeplete_page_1.json",
+      "snapshot_sha256": "f51bbd1a6e505813858f2d54a2ed43dc0a9e448cf539e2387b7e764ad312c627"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0005_kalshi_series_kxndebtshrink_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0004_kalshi_series_kxmedicareneg_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0005_kalshi_series_kxndebtshrink_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0004_kalshi_series_kxmedicareneg_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0006_kalshi_series_kxdefgdp_page_1.json",
-      "exists": true,
-      "bytes": 2035,
-      "sha256": "6ee5e5a7806e12f4c33580656fac609a2498b3ee9e95dc24b8d37ace464e1af9",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0006_kalshi_series_kxdefgdp_page_1.json",
-      "snapshot_sha256": "6ee5e5a7806e12f4c33580656fac609a2498b3ee9e95dc24b8d37ace464e1af9"
-    },
-    {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0007_kalshi_series_kxadmincms_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0005_kalshi_series_kxincomerate_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0007_kalshi_series_kxadmincms_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0005_kalshi_series_kxincomerate_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0008_kalshi_series_kxtradedefficit_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0006_kalshi_series_kxtdefficitby_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0008_kalshi_series_kxtradedefficit_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0006_kalshi_series_kxtdefficitby_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0009_kalshi_series_kxcapgain_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0007_kalshi_series_kxndebtshrink_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0009_kalshi_series_kxcapgain_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0007_kalshi_series_kxndebtshrink_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0010_kalshi_series_kxdeficit_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0008_kalshi_series_kxendowmentrate_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0010_kalshi_series_kxdeficit_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0008_kalshi_series_kxendowmentrate_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0011_kalshi_series_kxsstax_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0009_kalshi_series_corptax_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0011_kalshi_series_kxsstax_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0009_kalshi_series_corptax_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0012_kalshi_series_capgain_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0010_kalshi_series_kxdefgdp_page_1.json",
+      "exists": true,
+      "bytes": 2034,
+      "sha256": "5cf7e63fc7e905321ff872107ca907e1ddaf3be71b658ba80b3d621b211a03e2",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0010_kalshi_series_kxdefgdp_page_1.json",
+      "snapshot_sha256": "5cf7e63fc7e905321ff872107ca907e1ddaf3be71b658ba80b3d621b211a03e2"
+    },
+    {
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0011_kalshi_series_kxadmincms_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0012_kalshi_series_capgain_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0011_kalshi_series_kxadmincms_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0013_kalshi_series_kxcorptax_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0012_kalshi_series_kxbalance_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0013_kalshi_series_kxcorptax_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0012_kalshi_series_kxbalance_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0014_kalshi_series_corptax_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0013_kalshi_series_kxsstax_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0014_kalshi_series_corptax_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0013_kalshi_series_kxsstax_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0015_kalshi_series_kxtdefficitby_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0014_kalshi_series_capgain_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0015_kalshi_series_kxtdefficitby_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0014_kalshi_series_capgain_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0016_kalshi_series_kxendowmentrate_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0015_kalshi_series_kxcorptax_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0016_kalshi_series_kxendowmentrate_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0015_kalshi_series_kxcorptax_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0017_kalshi_series_kxbalance_page_1.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0016_kalshi_series_kxcapgain_page_1.json",
       "exists": true,
       "bytes": 36,
       "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0017_kalshi_series_kxbalance_page_1.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0016_kalshi_series_kxcapgain_page_1.json",
       "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0018_kalshi_orderbook.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0017_kalshi_series_kxdeficit_page_1.json",
       "exists": true,
-      "bytes": 1066,
-      "sha256": "d3235c235d18953bb24144a861354c64c19ca0420175d2a2dc8577b5b057f373",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0018_kalshi_orderbook.json",
-      "snapshot_sha256": "d3235c235d18953bb24144a861354c64c19ca0420175d2a2dc8577b5b057f373"
+      "bytes": 36,
+      "sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0017_kalshi_series_kxdeficit_page_1.json",
+      "snapshot_sha256": "71527d568a88938414db81043be43275d38ed24705df02804cef3ca2cea4b5a3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0019_kalshi_orderbook.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0018_kalshi_orderbook.json",
       "exists": true,
-      "bytes": 808,
-      "sha256": "d855d3d3f793b27422557b01376726a020c80b0f1e0e0bf25f33382ff388d79f",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0019_kalshi_orderbook.json",
-      "snapshot_sha256": "d855d3d3f793b27422557b01376726a020c80b0f1e0e0bf25f33382ff388d79f"
+      "bytes": 1065,
+      "sha256": "a3b154d2450aa0dbfe13d3e24b82eba0a0dff61bbcb935263692fb53a935e693",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0018_kalshi_orderbook.json",
+      "snapshot_sha256": "a3b154d2450aa0dbfe13d3e24b82eba0a0dff61bbcb935263692fb53a935e693"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0020_polymarket_search_balance_budget.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0019_kalshi_orderbook.json",
+      "exists": true,
+      "bytes": 1012,
+      "sha256": "92b81c1884f9b5076104fe00082176e2d0da3b7b025944a6c0bdcae22d897d20",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0019_kalshi_orderbook.json",
+      "snapshot_sha256": "92b81c1884f9b5076104fe00082176e2d0da3b7b025944a6c0bdcae22d897d20"
+    },
+    {
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0020_polymarket_search_balance_budget.json",
       "exists": true,
       "bytes": 58784,
       "sha256": "3fec72083c662a17a14009139b810a6ef603a8afb07990ec7abdd015df9170e3",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0020_polymarket_search_balance_budget.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0020_polymarket_search_balance_budget.json",
       "snapshot_sha256": "3fec72083c662a17a14009139b810a6ef603a8afb07990ec7abdd015df9170e3"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0021_polymarket_search_federal_deficit.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0021_polymarket_search_federal_deficit.json",
       "exists": true,
-      "bytes": 350767,
-      "sha256": "c5586985091f27ae5d915e339fad94c0273629764d3ba3b26bc03ec900a6d3d0",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0021_polymarket_search_federal_deficit.json",
-      "snapshot_sha256": "c5586985091f27ae5d915e339fad94c0273629764d3ba3b26bc03ec900a6d3d0"
+      "bytes": 349921,
+      "sha256": "60af21ea20ebf9108e95473c73cd5be03fd83b4321ee0ecaafb5bdcccc528323",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0021_polymarket_search_federal_deficit.json",
+      "snapshot_sha256": "60af21ea20ebf9108e95473c73cd5be03fd83b4321ee0ecaafb5bdcccc528323"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0022_polymarket_search_national_debt.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0022_polymarket_search_national_debt.json",
       "exists": true,
-      "bytes": 126758,
-      "sha256": "ffbaf250da76625919a652808f91c25777f6d06f8fa6eae7c89e5b48402d5559",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0022_polymarket_search_national_debt.json",
-      "snapshot_sha256": "ffbaf250da76625919a652808f91c25777f6d06f8fa6eae7c89e5b48402d5559"
+      "bytes": 127026,
+      "sha256": "a0850a8edcd2a7daab5fa29ee21f8d3a08bc5ab07ad30f76db7461b19fedb144",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0022_polymarket_search_national_debt.json",
+      "snapshot_sha256": "a0850a8edcd2a7daab5fa29ee21f8d3a08bc5ab07ad30f76db7461b19fedb144"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0023_polymarket_search_government_spending.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0023_polymarket_search_government_spending.json",
       "exists": true,
-      "bytes": 34730,
-      "sha256": "4e9df1d3e1dff6e126e67ff00261e6b916515190db9606a065f6d58359268089",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0023_polymarket_search_government_spending.json",
-      "snapshot_sha256": "4e9df1d3e1dff6e126e67ff00261e6b916515190db9606a065f6d58359268089"
+      "bytes": 34307,
+      "sha256": "ffd8701b3f96f3739733c7bd4647e8abbe05b6a331de45ec965e0529b61ad6b9",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0023_polymarket_search_government_spending.json",
+      "snapshot_sha256": "ffd8701b3f96f3739733c7bd4647e8abbe05b6a331de45ec965e0529b61ad6b9"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0024_polymarket_search_tax_increase.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0024_polymarket_search_tax_increase.json",
       "exists": true,
       "bytes": 7425,
       "sha256": "a4270191ff91cbdb5abc2694d461aea476645038f96290636ecebe7256e1029d",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0024_polymarket_search_tax_increase.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0024_polymarket_search_tax_increase.json",
       "snapshot_sha256": "a4270191ff91cbdb5abc2694d461aea476645038f96290636ecebe7256e1029d"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0025_polymarket_search_social_security_cuts.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0025_polymarket_search_social_security_cuts.json",
       "exists": true,
       "bytes": 42042,
       "sha256": "5d081c5ccdfddea85a4cf5758df009f52da1c297c1b1f964cceba6a255d3317a",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0025_polymarket_search_social_security_cuts.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0025_polymarket_search_social_security_cuts.json",
       "snapshot_sha256": "5d081c5ccdfddea85a4cf5758df009f52da1c297c1b1f964cceba6a255d3317a"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0026_polymarket_search_medicare_cuts.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0026_polymarket_search_medicare_cuts.json",
       "exists": true,
       "bytes": 9219,
       "sha256": "67a284a075d8042040ae6149ada6de32b46050fc895d83d0d2379f2c04564583",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0026_polymarket_search_medicare_cuts.json",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0026_polymarket_search_medicare_cuts.json",
       "snapshot_sha256": "67a284a075d8042040ae6149ada6de32b46050fc895d83d0d2379f2c04564583"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0027_polymarket_clob_yes_book.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0027_polymarket_clob_yes_book.json",
       "exists": true,
-      "bytes": 2754,
-      "sha256": "ad6f400c606ab5cfe6eb976f3b54fc0d9eca65f7f70749a461433ad0d94f3889",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0027_polymarket_clob_yes_book.json",
-      "snapshot_sha256": "ad6f400c606ab5cfe6eb976f3b54fc0d9eca65f7f70749a461433ad0d94f3889"
+      "bytes": 2755,
+      "sha256": "3347303037c3ea59a0f21a156311a149d2459483f0e2e73631ae1e6b25fd9546",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0027_polymarket_clob_yes_book.json",
+      "snapshot_sha256": "3347303037c3ea59a0f21a156311a149d2459483f0e2e73631ae1e6b25fd9546"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0028_polymarket_clob_yes_book.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0028_polymarket_clob_yes_book.json",
       "exists": true,
-      "bytes": 1757,
-      "sha256": "052703a6017aea0f2d556af3ef8bf48ca85d3e523e9fc559a98c9bd36d9c276b",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0028_polymarket_clob_yes_book.json",
-      "snapshot_sha256": "052703a6017aea0f2d556af3ef8bf48ca85d3e523e9fc559a98c9bd36d9c276b"
+      "bytes": 1867,
+      "sha256": "cf9cd8754bda58e09f6e7eb5970d2b4ae3bccf6e6a8591031618b4ff1d6a4937",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0028_polymarket_clob_yes_book.json",
+      "snapshot_sha256": "cf9cd8754bda58e09f6e7eb5970d2b4ae3bccf6e6a8591031618b4ff1d6a4937"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/0029_polymarket_clob_yes_book.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/0029_polymarket_clob_yes_book.json",
       "exists": true,
-      "bytes": 1887,
-      "sha256": "2691c9b2c1003d764de8904bbe8b44fb4a8ab680449584cc2906699fe402589e",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/0029_polymarket_clob_yes_book.json",
-      "snapshot_sha256": "2691c9b2c1003d764de8904bbe8b44fb4a8ab680449584cc2906699fe402589e"
+      "bytes": 2163,
+      "sha256": "f27e54570d848d561542ca901dbaa82f2fbce45dd23b43c33783dfc75e74b3df",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/0029_polymarket_clob_yes_book.json",
+      "snapshot_sha256": "f27e54570d848d561542ca901dbaa82f2fbce45dd23b43c33783dfc75e74b3df"
     },
     {
-      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T180316.065428+0000/request_manifest.json",
+      "path": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/request_manifest.json",
       "exists": true,
       "bytes": 17134,
-      "sha256": "531ce9e0d66de90c9ce3886c5202b2fabea2efd041d7bbcf7c2d7f4e4345a4ed",
-      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T180239.867487Z/artifacts/data/raw/prediction_markets/20260804T180316.065428+0000/request_manifest.json",
-      "snapshot_sha256": "531ce9e0d66de90c9ce3886c5202b2fabea2efd041d7bbcf7c2d7f4e4345a4ed"
+      "sha256": "c60ba2ca8f6973f01eb35025a43da340d1ce33c92c5ab3848c76f6872cd9ac66",
+      "snapshot_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260804T200602.311608Z/artifacts/data/raw/prediction_markets/20260804T200632.193761+0000/request_manifest.json",
+      "snapshot_sha256": "c60ba2ca8f6973f01eb35025a43da340d1ce33c92c5ab3848c76f6872cd9ac66"
     }
   ],
-  "finished_at": "2026-08-04T18:05:35.372546+00:00"
+  "finished_at": "2026-08-04T20:09:02.210783+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-04T18:05:34.505023+00:00",
+  "generated_at_utc": "2026-08-04T20:09:01.315539+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
@@ -2331,7 +2331,7 @@
       "caveat": "ATUS records a respondent's primary activity. Concurrent smartphone or media use during work, commuting, eating, or socializing is not captured, and the survey has no annual 2020 estimate. Television and leisure computer use are not inherently harmful; the ratio is a descriptive attention-allocation proxy, not a causal productivity estimate."
     },
     "search_attention_summary": {
-      "generated_at": "2026-08-04T18:03:13.937633+00:00",
+      "generated_at": "2026-08-04T20:06:29.125114+00:00",
       "source": "DataForSEO Google Trends explore/live",
       "geography": "Worldwide (location omitted)",
       "query_mode": "One grouped request with shared normalization",
@@ -2346,17 +2346,17 @@
       "latest_week_ending": "2026-08-01",
       "yoy_definition": "Latest trailing-12-week mean divided by the trailing-12-week mean 52 weekly observations earlier, minus one.",
       "doom_signal": {
-        "attention_allocation_doom_score": 23.73702093355039,
+        "attention_allocation_doom_score": 23.560129578785695,
         "construction": "Equal-weight mean of the level-ratio and growth-differential subscores.",
         "ai_porn_52w_ma": 81.07692307692308,
-        "constructive_education_52w_ma": 43.97115384615385,
-        "ai_porn_to_constructive_52w_ratio": 1.8438661710037174,
-        "level_ratio_score": 42.19330855018587,
+        "constructive_education_52w_ma": 43.99038461538461,
+        "ai_porn_to_constructive_52w_ratio": 1.8430601092896177,
+        "level_ratio_score": 42.153005464480884,
         "level_ratio_score_rule": "0 at AI Porn / constructive 52-week MA <=1x; 100 at >=3x; linear and clipped.",
         "ai_porn_12w_ma_yoy_pct": 45.40612516644473,
-        "constructive_education_12w_ma_yoy_pct": 90.12539184952982,
-        "ai_porn_minus_constructive_growth_pp": -44.71926668308509,
-        "growth_differential_score": 5.280733316914912,
+        "constructive_education_12w_ma_yoy_pct": 90.43887147335423,
+        "ai_porn_minus_constructive_growth_pp": -45.032746306909495,
+        "growth_differential_score": 4.967253693090505,
         "growth_differential_score_rule": "0 when AI Porn growth trails constructive growth by 50 percentage points or more; 100 when it leads by 50 points or more; linear and clipped.",
         "constructive_definition": "Equal-weight mean of the jointly normalized Best Colleges and Trade School indices.",
         "critical_caveat": "Worldwide English-language query terms are an attention proxy, not educational enrollment or pornography consumption. Google Trends history is relative and can be renormalized or revised."
@@ -2368,7 +2368,7 @@
         {
           "term": "AI Porn",
           "latest_week_ending": "2026-08-01",
-          "latest_week_index": 92.0,
+          "latest_week_index": 94.0,
           "latest_12w_ma": 91.0,
           "prior_year_12w_ma": 62.583333333333336,
           "latest_12w_ma_yoy_pct": 45.40612516644473,
@@ -2377,11 +2377,11 @@
         {
           "term": "Best Colleges",
           "latest_week_ending": "2026-08-01",
-          "latest_week_index": 52.0,
-          "latest_12w_ma": 61.5,
+          "latest_week_index": 54.0,
+          "latest_12w_ma": 61.666666666666664,
           "prior_year_12w_ma": 38.25,
-          "latest_12w_ma_yoy_pct": 60.7843137254902,
-          "latest_52w_ma": 50.61538461538461
+          "latest_12w_ma_yoy_pct": 61.220043572984736,
+          "latest_52w_ma": 50.65384615384615
         },
         {
           "term": "Trade School",
@@ -12013,11 +12013,11 @@
         "date_to": "2026-07-25",
         "term": "AI Porn",
         "missing_data": false,
-        "trend_index": 88.0,
-        "trend_index_12w_ma": 90.91666667,
-        "trend_index_52w_ma": 80.57692308,
+        "trend_index": 86.0,
+        "trend_index_12w_ma": 90.75,
+        "trend_index_52w_ma": 80.53846154,
         "trend_index_12w_ma_prior_year": 61.41666667,
-        "trend_index_12w_ma_yoy_pct": 48.03256445
+        "trend_index_12w_ma_yoy_pct": 47.76119403
       },
       {
         "date_from": "2026-07-19",
@@ -12046,7 +12046,7 @@
         "date_to": "2026-08-01",
         "term": "AI Porn",
         "missing_data": false,
-        "trend_index": 92.0,
+        "trend_index": 94.0,
         "trend_index_12w_ma": 91.0,
         "trend_index_52w_ma": 81.07692308,
         "trend_index_12w_ma_prior_year": 62.58333333,
@@ -12057,11 +12057,11 @@
         "date_to": "2026-08-01",
         "term": "Best Colleges",
         "missing_data": false,
-        "trend_index": 52.0,
-        "trend_index_12w_ma": 61.5,
-        "trend_index_52w_ma": 50.61538462,
+        "trend_index": 54.0,
+        "trend_index_12w_ma": 61.66666667,
+        "trend_index_52w_ma": 50.65384615,
         "trend_index_12w_ma_prior_year": 38.25,
-        "trend_index_12w_ma_yoy_pct": 60.78431373
+        "trend_index_12w_ma_yoy_pct": 61.22004357
       },
       {
         "date_from": "2026-07-26",
@@ -15680,11 +15680,11 @@
       },
       {
         "component_id": "distraction-economy",
-        "component_score": 56.4511318716399,
+        "component_score": 56.415753600686955,
         "coverage_pct": 100.0,
         "title": "The distraction economy",
         "weight": 15.0,
-        "weighted_contribution": 8.467669780745986
+        "weighted_contribution": 8.462363040103044
       },
       {
         "component_id": "political-feasibility",
@@ -15696,11 +15696,11 @@
       },
       {
         "component_id": "debasement-repression",
-        "component_score": 17.052771129652516,
+        "component_score": 17.281521129652518,
         "coverage_pct": 100.0,
         "title": "Debasement and financial repression",
         "weight": 10.0,
-        "weighted_contribution": 1.7052771129652515
+        "weighted_contribution": 1.7281521129652517
       },
       {
         "component_id": "institutional-control",
@@ -15712,7 +15712,7 @@
       }
     ],
     "coverage_pct": 100.0,
-    "generated_at": "2026-08-04T18:05:32.039067+00:00",
+    "generated_at": "2026-08-04T20:09:00.162662+00:00",
     "indicators": [
       {
         "as_of": "2025-09-30",
@@ -16005,37 +16005,18 @@
         "component_title": "The distraction economy",
         "direction": "increasing",
         "fresh_until": "2026-08-15",
-        "high_threshold": 100,
-        "indicator_id": "search_attention_allocation_doom_score",
-        "indicator_score": 23.73702093355039,
-        "label": "AI-porn versus constructive-education search attention",
-        "low_threshold": 0,
-        "note": "Equal-weight composite of the AI Porn/constructive-attention 52-week level ratio and the AI Porn-minus-constructive 12-week YoY growth differential.",
-        "quality_flag": "current",
-        "raw_value": 23.73702093355039,
-        "source": "DataForSEO Google Trends worldwide grouped query; AI Porn, Best Colleges, Trade School",
-        "total_index_weight": 3.0,
-        "unit": "/100",
-        "within_component_weight": 20.0
-      },
-      {
-        "as_of": "2026-08-01",
-        "component_id": "distraction-economy",
-        "component_title": "The distraction economy",
-        "direction": "increasing",
-        "fresh_until": "2026-08-15",
         "high_threshold": 3,
         "indicator_id": "ai_porn_to_constructive_attention_52w_ratio",
-        "indicator_score": 42.19330855018587,
+        "indicator_score": 42.153005464480884,
         "label": "AI Porn / constructive education 52-week search index",
         "low_threshold": 1,
-        "note": "Diagnostic subcomponent; constructive attention is the equal-weight Best Colleges and Trade School index.",
+        "note": "Scored level signal; constructive attention is the equal-weight Best Colleges and Trade School index.",
         "quality_flag": "current",
-        "raw_value": 1.8438661710037174,
-        "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent",
-        "total_index_weight": 0.0,
+        "raw_value": 1.8430601092896177,
+        "source": "DataForSEO Google Trends worldwide grouped query; AI Porn versus equal-weight Best Colleges and Trade School",
+        "total_index_weight": 1.5,
         "unit": "x",
-        "within_component_weight": 0.0
+        "within_component_weight": 10.0
       },
       {
         "as_of": "2026-08-01",
@@ -16045,16 +16026,16 @@
         "fresh_until": "2026-08-15",
         "high_threshold": 50,
         "indicator_id": "ai_porn_minus_constructive_attention_growth_pp",
-        "indicator_score": 5.280733316914912,
+        "indicator_score": 4.967253693090505,
         "label": "AI Porn minus constructive education 12-week YoY growth",
         "low_threshold": -50,
-        "note": "Diagnostic subcomponent comparing trailing-12-week YoY growth rates.",
+        "note": "Scored momentum signal comparing trailing-12-week YoY growth rates.",
         "quality_flag": "current",
-        "raw_value": -44.71926668308509,
-        "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent",
-        "total_index_weight": 0.0,
+        "raw_value": -45.032746306909495,
+        "source": "DataForSEO Google Trends worldwide grouped query; trailing-12-week YoY growth differential",
+        "total_index_weight": 1.5,
         "unit": "percentage points",
-        "within_component_weight": 0.0
+        "within_component_weight": 10.0
       },
       {
         "as_of": "2026-08-04",
@@ -16178,12 +16159,12 @@
         "fresh_until": "2026-10-20",
         "high_threshold": 100,
         "indicator_id": "market_probability_deficit_below_5_pct_fy2026",
-        "indicator_score": 90.5,
+        "indicator_score": 90.0,
         "label": "Market probability FY2026 deficit/GDP is below 5%",
         "low_threshold": 0,
         "note": "Diagnostic only: one-year deficit/GDP outcome, not passage of a recurring prudent-course package; midpoint is sensitive to spread and liquidity.",
         "quality_flag": "current",
-        "raw_value": 9.5,
+        "raw_value": 10.0,
         "source": "Kalshi KXDEFGDP public API; one-year fiscal-outcome diagnostic, not package-passage probability",
         "total_index_weight": 0.0,
         "unit": "% probability",
@@ -16247,19 +16228,19 @@
         "within_component_weight": 15.0
       },
       {
-        "as_of": "2026-07-24",
+        "as_of": "2026-07-31",
         "component_id": "debasement-repression",
         "component_title": "Debasement and financial repression",
         "direction": "increasing",
         "fresh_until": null,
         "high_threshold": 2,
         "indicator_id": "ten_year_term_premium_pct",
-        "indicator_score": 41.88,
+        "indicator_score": 43.405,
         "label": "10-year term premium",
         "low_threshold": 0,
         "note": "",
         "quality_flag": "current",
-        "raw_value": 0.8376,
+        "raw_value": 0.8681,
         "source": "FRED THREEFYTP10",
         "total_index_weight": 1.5,
         "unit": "%",
@@ -16304,7 +16285,7 @@
         "within_component_weight": 15.0
       },
       {
-        "as_of": "2026-08-03",
+        "as_of": "2026-08-04",
         "component_id": "debasement-repression",
         "component_title": "Debasement and financial repression",
         "direction": "increasing",
@@ -16653,11 +16634,11 @@
     },
     "missing_input_sensitivity": {
       "interpretation": "Bounds assign every missing or stale indicator either 0 or 100 without reweighting.",
-      "lower": 67.80451671316331,
-      "upper": 67.80451671316331
+      "lower": 67.82208497252037,
+      "upper": 67.82208497252037
     },
     "published_probability": null,
-    "research_score": 67.80451671316331,
+    "research_score": 67.82208497252037,
     "status": "research_evidence_score_not_probability",
     "stop_status": {
       "operational": false,
@@ -16667,8 +16648,8 @@
       "threshold": 20,
       "triggered": false
     },
-    "uncapped_research_score": 67.80451671316331,
-    "version": "1.0.0"
+    "uncapped_research_score": 67.82208497252037,
+    "version": "1.1.0"
   },
   "productivity_escape_forecast": {
     "as_of_date": "2026-03-31",

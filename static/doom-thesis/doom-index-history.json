@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-08-04T18:05:32.550432+00:00",
+  "version": "1.1.0",
+  "generated_at": "2026-08-04T20:09:00.642621+00:00",
   "status": "coverage_gated_research_evidence_history_not_probability",
   "minimum_publication_coverage_pct": 100.0,
   "methodology": {
@@ -233,12 +233,12 @@
     {
       "calendar_year": 2026,
       "as_of_date": "2026-08-04",
-      "research_score": 67.8045167132,
-      "diagnostic_score": 67.8045167132,
+      "research_score": 67.8220849725,
+      "diagnostic_score": 67.8220849725,
       "coverage_pct": 100.0,
       "publication_comparable": true,
-      "missing_input_lower_bound": 67.8045167132,
-      "missing_input_upper_bound": 67.8045167132
+      "missing_input_lower_bound": 67.8220849725,
+      "missing_input_upper_bound": 67.8220849725
     }
   ]
 }

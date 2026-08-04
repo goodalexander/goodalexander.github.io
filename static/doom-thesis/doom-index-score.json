@@ -19,11 +19,11 @@
     },
     {
       "component_id": "distraction-economy",
-      "component_score": 56.4511318716399,
+      "component_score": 56.415753600686955,
       "coverage_pct": 100.0,
       "title": "The distraction economy",
       "weight": 15.0,
-      "weighted_contribution": 8.467669780745986
+      "weighted_contribution": 8.462363040103044
     },
     {
       "component_id": "political-feasibility",
@@ -35,11 +35,11 @@
     },
     {
       "component_id": "debasement-repression",
-      "component_score": 17.052771129652516,
+      "component_score": 17.281521129652518,
       "coverage_pct": 100.0,
       "title": "Debasement and financial repression",
       "weight": 10.0,
-      "weighted_contribution": 1.7052771129652515
+      "weighted_contribution": 1.7281521129652517
     },
     {
       "component_id": "institutional-control",
@@ -51,7 +51,7 @@
     }
   ],
   "coverage_pct": 100.0,
-  "generated_at": "2026-08-04T18:05:32.039067+00:00",
+  "generated_at": "2026-08-04T20:09:00.162662+00:00",
   "indicators": [
     {
       "as_of": "2025-09-30",
@@ -344,37 +344,18 @@
       "component_title": "The distraction economy",
       "direction": "increasing",
       "fresh_until": "2026-08-15",
-      "high_threshold": 100,
-      "indicator_id": "search_attention_allocation_doom_score",
-      "indicator_score": 23.73702093355039,
-      "label": "AI-porn versus constructive-education search attention",
-      "low_threshold": 0,
-      "note": "Equal-weight composite of the AI Porn/constructive-attention 52-week level ratio and the AI Porn-minus-constructive 12-week YoY growth differential.",
-      "quality_flag": "current",
-      "raw_value": 23.73702093355039,
-      "source": "DataForSEO Google Trends worldwide grouped query; AI Porn, Best Colleges, Trade School",
-      "total_index_weight": 3.0,
-      "unit": "/100",
-      "within_component_weight": 20.0
-    },
-    {
-      "as_of": "2026-08-01",
-      "component_id": "distraction-economy",
-      "component_title": "The distraction economy",
-      "direction": "increasing",
-      "fresh_until": "2026-08-15",
       "high_threshold": 3,
       "indicator_id": "ai_porn_to_constructive_attention_52w_ratio",
-      "indicator_score": 42.19330855018587,
+      "indicator_score": 42.153005464480884,
       "label": "AI Porn / constructive education 52-week search index",
       "low_threshold": 1,
-      "note": "Diagnostic subcomponent; constructive attention is the equal-weight Best Colleges and Trade School index.",
+      "note": "Scored level signal; constructive attention is the equal-weight Best Colleges and Trade School index.",
       "quality_flag": "current",
-      "raw_value": 1.8438661710037174,
-      "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent",
-      "total_index_weight": 0.0,
+      "raw_value": 1.8430601092896177,
+      "source": "DataForSEO Google Trends worldwide grouped query; AI Porn versus equal-weight Best Colleges and Trade School",
+      "total_index_weight": 1.5,
       "unit": "x",
-      "within_component_weight": 0.0
+      "within_component_weight": 10.0
     },
     {
       "as_of": "2026-08-01",
@@ -384,16 +365,16 @@
       "fresh_until": "2026-08-15",
       "high_threshold": 50,
       "indicator_id": "ai_porn_minus_constructive_attention_growth_pp",
-      "indicator_score": 5.280733316914912,
+      "indicator_score": 4.967253693090505,
       "label": "AI Porn minus constructive education 12-week YoY growth",
       "low_threshold": -50,
-      "note": "Diagnostic subcomponent comparing trailing-12-week YoY growth rates.",
+      "note": "Scored momentum signal comparing trailing-12-week YoY growth rates.",
       "quality_flag": "current",
-      "raw_value": -44.71926668308509,
-      "source": "DataForSEO Google Trends worldwide grouped query; diagnostic subcomponent",
-      "total_index_weight": 0.0,
+      "raw_value": -45.032746306909495,
+      "source": "DataForSEO Google Trends worldwide grouped query; trailing-12-week YoY growth differential",
+      "total_index_weight": 1.5,
       "unit": "percentage points",
-      "within_component_weight": 0.0
+      "within_component_weight": 10.0
     },
     {
       "as_of": "2026-08-04",
@@ -517,12 +498,12 @@
       "fresh_until": "2026-10-20",
       "high_threshold": 100,
       "indicator_id": "market_probability_deficit_below_5_pct_fy2026",
-      "indicator_score": 90.5,
+      "indicator_score": 90.0,
       "label": "Market probability FY2026 deficit/GDP is below 5%",
       "low_threshold": 0,
       "note": "Diagnostic only: one-year deficit/GDP outcome, not passage of a recurring prudent-course package; midpoint is sensitive to spread and liquidity.",
       "quality_flag": "current",
-      "raw_value": 9.5,
+      "raw_value": 10.0,
       "source": "Kalshi KXDEFGDP public API; one-year fiscal-outcome diagnostic, not package-passage probability",
       "total_index_weight": 0.0,
       "unit": "% probability",
@@ -586,19 +567,19 @@
       "within_component_weight": 15.0
     },
     {
-      "as_of": "2026-07-24",
+      "as_of": "2026-07-31",
       "component_id": "debasement-repression",
       "component_title": "Debasement and financial repression",
       "direction": "increasing",
       "fresh_until": null,
       "high_threshold": 2,
       "indicator_id": "ten_year_term_premium_pct",
-      "indicator_score": 41.88,
+      "indicator_score": 43.405,
       "label": "10-year term premium",
       "low_threshold": 0,
       "note": "",
       "quality_flag": "current",
-      "raw_value": 0.8376,
+      "raw_value": 0.8681,
       "source": "FRED THREEFYTP10",
       "total_index_weight": 1.5,
       "unit": "%",
@@ -643,7 +624,7 @@
       "within_component_weight": 15.0
     },
     {
-      "as_of": "2026-08-03",
+      "as_of": "2026-08-04",
       "component_id": "debasement-repression",
       "component_title": "Debasement and financial repression",
       "direction": "increasing",
@@ -992,11 +973,11 @@
   },
   "missing_input_sensitivity": {
     "interpretation": "Bounds assign every missing or stale indicator either 0 or 100 without reweighting.",
-    "lower": 67.80451671316331,
-    "upper": 67.80451671316331
+    "lower": 67.82208497252037,
+    "upper": 67.82208497252037
   },
   "published_probability": null,
-  "research_score": 67.80451671316331,
+  "research_score": 67.82208497252037,
   "status": "research_evidence_score_not_probability",
   "stop_status": {
     "operational": false,
@@ -1006,6 +987,6 @@
     "threshold": 20,
     "triggered": false
   },
-  "uncapped_research_score": 67.80451671316331,
-  "version": "1.0.0"
+  "uncapped_research_score": 67.82208497252037,
+  "version": "1.1.0"
 }
