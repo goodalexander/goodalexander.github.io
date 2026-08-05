@@ -9,9 +9,9 @@
       "title": "Fiscal constraint",
       "weight": 20,
       "indicators": [
-        {"id": "gross_debt_pct_gdp", "label": "Gross federal debt / GDP", "weight": 25, "unit": "%", "low": 60, "high": 150, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED GFDGDPA188S"},
-        {"id": "deficit_pct_gdp", "label": "Unified deficit / GDP", "weight": 20, "unit": "%", "low": 3, "high": 8, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED FYFSDFYGDP; 0 at <=3% and 100 at >=8% under the disclosed fiscal-stress convention"},
-        {"id": "net_interest_pct_receipts", "label": "Federal interest / receipts", "weight": 20, "unit": "%", "low": 5, "high": 30, "direction": "increasing", "frequency": "annual", "source": "OMB/FRED FYOINT and FYFR"},
+        {"id": "gross_debt_pct_gdp", "label": "Gross federal debt / GDP", "weight": 25, "unit": "%", "low": 60, "high": 150, "direction": "increasing", "frequency": "daily debt / quarterly GDP", "source": "Bloomberg PUBLDEBT and BEA/FRED GDP"},
+        {"id": "deficit_pct_gdp", "label": "Trailing-12-month deficit / GDP", "weight": 20, "unit": "%", "low": 3, "high": 8, "direction": "increasing", "frequency": "monthly", "source": "Treasury MTS/FRED monthly receipts and outlays; 0 at <=3% and 100 at >=8%"},
+        {"id": "net_interest_pct_receipts", "label": "Federal interest / receipts", "weight": 20, "unit": "%", "low": 5, "high": 30, "direction": "increasing", "frequency": "monthly/current curve", "source": "Treasury security-level current-curve model and trailing-12-month Treasury MTS receipts"},
         {"id": "program_gap_pct_gdp", "label": "Social Security and Medicare 75-year gap / GDP", "weight": 20, "unit": "%", "low": 100, "high": 400, "direction": "increasing", "frequency": "annual vintage", "source": "SSA/CMS Trustees and Treasury Statement of Social Insurance"},
         {"id": "prudent_adjustment_pct_gdp", "label": "Recurring prudent-course adjustment / GDP", "weight": 15, "unit": "%", "low": 1, "high": 10, "direction": "increasing", "frequency": "CBO/Trustees vintage", "source": "Doom fiscal sustainability model"}
       ]
@@ -21,9 +21,9 @@
       "title": "Productivity escape",
       "weight": 30,
       "indicators": [
-        {"id": "labor_productivity_five_year_cagr_pct", "label": "Five-year labor-productivity growth", "weight": 20, "unit": "%", "low": 1, "high": 5, "direction": "decreasing", "frequency": "annual", "source": "BLS/FRED OPHNFB"},
+        {"id": "labor_productivity_five_year_cagr_pct", "label": "Five-year labor-productivity growth", "weight": 20, "unit": "%", "low": 1, "high": 5, "direction": "decreasing", "frequency": "quarterly", "source": "BLS/FRED OPHNFB, latest quarter aligned"},
         {"id": "labor_productivity_latest_qoq_annualized_pct", "label": "Latest quarterly labor-productivity growth", "weight": 10, "unit": "%", "low": 0, "high": 5, "direction": "decreasing", "frequency": "quarterly", "source": "BLS nonfarm business productivity"},
-        {"id": "utility_real_capex_per_mwh_multiple", "label": "Real utility capex per MWh versus 2004", "weight": 20, "unit": "x", "low": 1, "high": 3, "direction": "increasing", "frequency": "annual", "source": "Sharadar, EIA, CPI-U"},
+        {"id": "utility_real_capex_per_mwh_multiple", "label": "Real utility capex per MWh versus 2004", "weight": 20, "unit": "x", "low": 1, "high": 3, "direction": "increasing", "frequency": "rolling filings / monthly generation", "source": "Sharadar rolling-four-quarter filings, EIA trailing-12-month generation, CPI-U"},
         {"id": "education_spending_outcome_gap_pct_points", "label": "Real school spending growth minus NAEP outcome growth", "weight": 15, "unit": "percentage points", "low": 0, "high": 40, "direction": "increasing", "frequency": "assessment vintage", "source": "Census, NCES NAEP, CPI-U"},
         {"id": "real_business_ex_distraction_fcf_margin_pct", "label": "FCF margin outside the distraction index", "weight": 10, "unit": "%", "low": 5, "high": 15, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar quarterly filings and the disclosed distraction-index membership"},
         {"id": "real_business_ex_distraction_real_revenue_growth_yoy_pct", "label": "Real revenue growth outside the distraction index", "weight": 10, "unit": "% real YoY", "low": 0, "high": 8, "direction": "decreasing", "frequency": "daily filing replay", "source": "Sharadar quarterly filings, the disclosed distraction-index membership, and FRED GDP deflator"},

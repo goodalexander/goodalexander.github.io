@@ -336,7 +336,7 @@ def build_payload(doom_root: Path) -> dict:
         .reset_index(drop=True)
     )
     utility_productivity = pd.read_csv(
-        doom_root / "us_utility_capex_vs_power_generation_2004_2025.csv"
+        doom_root / "us_utility_capex_vs_power_generation_2004_2026.csv"
     )
     education_productivity = pd.read_csv(
         doom_root / "us_public_school_spending_vs_naep_2003_2024.csv"
@@ -420,49 +420,23 @@ def build_payload(doom_root: Path) -> dict:
         ignore_index=True,
     )
 
-    labor_productivity_quarterly = fred_series("OPHNFB")
-    labor_productivity_quarterly["year"] = (
-        labor_productivity_quarterly["date"].dt.year
+    labor_productivity = pd.read_csv(
+        doom_root / "labor_productivity_annual_and_latest.csv"
     )
-    labor_productivity_quarterly = labor_productivity_quarterly.sort_values(
-        "date"
-    ).reset_index(drop=True)
-    latest_productivity_quarter = labor_productivity_quarterly.iloc[-1]
-    previous_productivity_quarter = labor_productivity_quarterly.iloc[-2]
-    year_ago_productivity_quarter = labor_productivity_quarterly.iloc[-5]
-    latest_productivity_qoq_annualized = (
-        float(latest_productivity_quarter["value"])
-        / float(previous_productivity_quarter["value"])
-    ) ** 4 - 1
-    latest_productivity_yoy = (
-        float(latest_productivity_quarter["value"])
-        / float(year_ago_productivity_quarter["value"])
-        - 1
+    labor_productivity_summary = json.loads(
+        (doom_root / "labor_productivity_summary.json").read_text(
+            encoding="utf-8"
+        )
     )
-    latest_productivity_quarter_label = (
-        f"Q{pd.Timestamp(latest_productivity_quarter['date']).quarter} "
-        f"{int(latest_productivity_quarter['year'])}"
+    latest_productivity_qoq_annualized = float(
+        labor_productivity_summary["latest_quarter_qoq_annualized_growth"]
     )
-    # Calendar-year averages match the annual flow convention used for company
-    # FCF and utility capex. Exclude the incomplete current calendar year.
-    labor_productivity = (
-        labor_productivity_quarterly[
-            labor_productivity_quarterly["year"].between(2003, 2025)
-        ]
-        .groupby("year", as_index=False)["value"]
-        .mean()
-        .rename(columns={"value": "output_per_hour_index"})
+    latest_productivity_yoy = float(
+        labor_productivity_summary["latest_quarter_yoy_growth"]
     )
-    labor_productivity["annual_growth"] = labor_productivity[
-        "output_per_hour_index"
-    ].pct_change()
-    labor_productivity["five_year_annualized_growth"] = (
-        labor_productivity["output_per_hour_index"]
-        / labor_productivity["output_per_hour_index"].shift(5)
-    ) ** (1 / 5) - 1
-    labor_productivity = labor_productivity[
-        labor_productivity["year"].between(2004, 2025)
-    ].reset_index(drop=True)
+    latest_productivity_quarter_label = str(
+        labor_productivity_summary["latest_period_label"]
+    )
 
     households = fred_series("TTLHH")
     households["year"] = households["date"].dt.year
@@ -997,6 +971,15 @@ def build_payload(doom_root: Path) -> dict:
                     utility_latest["real_2025_capex_per_mwh"]
                     / utility_base["real_2025_capex_per_mwh"]
                 ),
+                "utility_latest_period_label": str(
+                    utility_latest.get("period_label", utility_latest["calendar_year"])
+                ),
+                "utility_generation_as_of_date": str(
+                    utility_latest.get("generation_as_of_date", "")
+                ),
+                "utility_capex_as_of_date": str(
+                    utility_latest.get("capex_as_of_date", "")
+                ),
                 "latest_operating_company_fcf_margin": float(
                     fcf_latest["aggregate_fcf_margin"]
                 ),
@@ -1052,6 +1035,17 @@ def build_payload(doom_root: Path) -> dict:
                 ),
                 "latest_quarter_productivity_growth_yoy": float(
                     latest_productivity_yoy
+                ),
+                "latest_labor_productivity_five_year_cagr": float(
+                    labor_productivity_summary[
+                        "latest_quarter_aligned_five_year_cagr"
+                    ]
+                ),
+                "labor_productivity_last_complete_year": int(
+                    labor_productivity_summary["last_complete_calendar_year"]
+                ),
+                "labor_productivity_latest_observation_date": str(
+                    labor_productivity_summary["latest_observation_date"]
                 ),
                 "labor_productivity_cagr_since_2004": float(
                     labor_productivity_cagr
@@ -1463,6 +1457,7 @@ def build_payload(doom_root: Path) -> dict:
     payload["doom_index_score"] = json.loads(
         (doom_root / "doom_index_research_score.json").read_text()
     )
+    payload["as_of_date"] = str(payload["doom_index_score"]["as_of_date"])
     payload["productivity_escape_forecast"] = json.loads(
         (doom_root / "productivity_escape_forecast_summary.json").read_text()
     )

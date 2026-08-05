@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
+import re
 import subprocess
 import tempfile
 import unittest
@@ -101,7 +103,6 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
 
     def test_index_values_and_distraction_members_are_plainly_labeled(self) -> None:
         for marker in (
-            "-45% YoY",
             "3.7% of GDP",
             "Distraction index constituents",
             'data-field=distraction-current-members',
@@ -110,6 +111,7 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)
+        self.assertIsNotNone(re.search(r"-\d+% YoY", self.thesis))
 
     def test_common_prosperity_preserves_metric_boundaries(self) -> None:
         for marker in (
@@ -128,6 +130,38 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)
+
+    def test_live_payload_does_not_drop_current_quarter_or_current_year(self) -> None:
+        payload = json.loads(
+            (ROOT / "static/doom-thesis/data.json").read_text(encoding="utf-8")
+        )
+        score = json.loads(
+            (ROOT / "static/doom-thesis/doom-index-score.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        assert payload["as_of_date"].startswith("2026-")
+        assert payload["doom_index_score"]["as_of_date"] == payload["as_of_date"]
+
+        labor = payload["productivity"]["labor_productivity"][-1]
+        assert labor["year"] == 2026
+        assert labor["period_type"] == "latest_quarter_yoy"
+        assert labor["period_label"].endswith("2026")
+
+        utility = payload["productivity"]["utility_capex_generation"][-1]
+        assert utility["calendar_year"] == 2026
+        assert utility["period_type"] == "latest_trailing_12_months"
+        assert utility["period_label"] == "TTM through May 2026"
+
+        indicators = {row["indicator_id"]: row for row in score["indicators"]}
+        assert indicators["gross_debt_pct_gdp"]["as_of"].startswith("2026-")
+        assert indicators["deficit_pct_gdp"]["as_of"].startswith("2026-")
+        assert indicators["net_interest_pct_receipts"]["as_of"].startswith("2026-")
+        assert indicators["labor_productivity_five_year_cagr_pct"]["as_of"].endswith("2026")
+        assert indicators["utility_real_capex_per_mwh_multiple"]["as_of"].endswith("2026")
+        assert indicators["distraction_to_industrials_marketcap_pct"]["as_of"].startswith("2026-")
+        assert indicators["distraction_to_industrials_fcf_pct"]["as_of"].startswith("2026-")
 
 
 if __name__ == "__main__":

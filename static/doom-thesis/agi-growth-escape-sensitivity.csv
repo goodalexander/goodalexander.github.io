@@ -1,7 +1,7 @@
 horizon_years,real_program_gap_growth_pct,required_real_gdp_cagr_pct,required_productivity_cagr_pct,incremental_real_gdp_growth_vs_cbo_pct_points,interpretation
-10,0.0,11.482687544367607,11.038533410724716,9.682687544367608,Growth-only denominator test; does not itself fund the remaining gap.
-10,2.0,13.71234129525496,13.259304078939206,11.91234129525496,Growth-only denominator test; does not itself fund the remaining gap.
-20,0.0,5.585362406143979,5.164703591776876,3.7853624061439786,Growth-only denominator test; does not itself fund the remaining gap.
-20,2.0,7.697069654266864,7.267997663612413,5.897069654266864,Growth-only denominator test; does not itself fund the remaining gap.
-30,0.0,3.6897458371113023,3.276639279991333,1.8897458371113025,Growth-only denominator test; does not itself fund the remaining gap.
-30,2.0,5.763540753853524,5.342172065591155,3.963540753853524,Growth-only denominator test; does not itself fund the remaining gap.
+10,0.0,11.284304735716733,10.840940971829417,9.484304735716732,Growth-only denominator test; does not itself fund the remaining gap.
+10,2.0,13.509990830431072,13.057759791266,11.709990830431073,Growth-only denominator test; does not itself fund the remaining gap.
+20,0.0,5.491376299542483,5.07109193181523,3.691376299542483,Growth-only denominator test; does not itself fund the remaining gap.
+20,2.0,7.601203825533331,7.172513770451516,5.801203825533332,Growth-only denominator test; does not itself fund the remaining gap.
+30,0.0,3.6282042139436976,3.21534284257341,1.8282042139436976,Growth-only denominator test; does not itself fund the remaining gap.
+30,2.0,5.700768298222569,5.279649699424871,3.900768298222569,Growth-only denominator test; does not itself fund the remaining gap.

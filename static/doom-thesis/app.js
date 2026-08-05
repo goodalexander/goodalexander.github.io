@@ -243,7 +243,7 @@
     set('real-business-fcf-margin-change', `${productivitySummary.latest_real_business_fcf_margin_change_yoy_pp >= 0 ? '+' : ''}${productivitySummary.latest_real_business_fcf_margin_change_yoy_pp.toFixed(2)} pp`);
     set('real-business-as-of', productivitySummary.real_business_as_of_date);
     set('real-business-companies', productivitySummary.real_business_companies_with_shared_rolling_4q.toLocaleString());
-    set('labor-productivity-cagr', pct(productivitySummary.labor_productivity_cagr_since_2004));
+    set('labor-productivity-cagr', pct(productivitySummary.latest_labor_productivity_five_year_cagr));
     set('labor-productivity-latest-growth', pct(productivitySummary.latest_quarter_productivity_growth_annualized));
     set('labor-productivity-quarter', productivitySummary.latest_labor_productivity_quarter);
     set('labor-productivity-yoy', pct(productivitySummary.latest_quarter_productivity_growth_yoy));
@@ -303,7 +303,7 @@
     set('common-native-fertility-change', signedPercent(commonFertility.change_since_2014_pct, 1));
     set('common-national-tfr', commonFertility.national_total_fertility_rate_2024.toFixed(3));
     set('common-suicide-vs-average', signedPercent(commonSuicide.pct_vs_prior_10_year_average, 1));
-    set('common-suicide-rate', commonSuicide.rate_per_100k.toFixed(1));
+    set('common-suicide-deaths', Number(commonSuicide.deaths).toLocaleString());
     set('common-suicide-since-2001', signedPercent(commonSuicide.change_since_2001_pct, 0));
     set('common-suicide-since-2006', signedPercent(commonSuicide.change_since_2006_pct, 0));
     set('common-obesity-vs-average', signedPercent(commonObesity.pct_vs_prior_decade_cycle_average, 1));
@@ -458,9 +458,9 @@
 
     const utilityProductivity = productivity.utility_capex_generation;
     lineChart($('#utility-productivity-chart'), [
-      { color: '#eb735f', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.real_capex_index_2004 })) },
-      { color: '#62c6ae', values: utilityProductivity.map((d) => ({ year: d.calendar_year, value: d.generation_index_2004 })) },
-    ], { yMin: 80, yMax: 280, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2004=100)`, points: false, xTicks: 8 });
+      { color: '#eb735f', values: utilityProductivity.map((d) => ({ year: d.calendar_year, label: d.period_label, value: d.real_capex_index_2004 })) },
+      { color: '#62c6ae', values: utilityProductivity.map((d) => ({ year: d.calendar_year, label: d.period_label, value: d.generation_index_2004 })) },
+    ], { yMin: 80, yMax: 280, headroom: 1, yFormat: (v) => v.toFixed(0), tooltipFormat: (v) => `${v.toFixed(1)} (2004=100)`, points: true, xTicks: 8 });
 
     const educationProductivity = productivity.education_spending_vs_naep;
     lineChart($('#education-productivity-chart'), [
@@ -476,9 +476,9 @@
 
     const laborProductivity = productivity.labor_productivity;
     lineChart($('#labor-productivity-chart'), [
-      { color: '#8b78d1', values: laborProductivity.map((d) => ({ year: d.year, value: d.annual_growth })) },
-      { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, value: d.five_year_annualized_growth })) },
-    ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: false, xTicks: 6, margin: { left: 52, right: 18 } });
+      { color: '#8b78d1', values: laborProductivity.map((d) => ({ year: d.year, label: d.period_label, value: d.annual_growth })) },
+      { color: '#62c6ae', values: laborProductivity.map((d) => ({ year: d.year, label: d.period_label, value: d.five_year_annualized_growth })) },
+    ], { yMin: -0.02, yMax: 0.06, headroom: 1, yFormat: (v) => Math.abs(v) < 0.0005 ? '0%' : `${(v * 100).toFixed(0)}%`, tooltipFormat: (v) => pct(v, 2), points: true, xTicks: 6, margin: { left: 52, right: 18 } });
 
     lineChart($('#common-housing-chart'), [
       { color: '#eb735f', values: common.housing_history.map((d) => ({ year: d.year, value: d.mortgage_payment_burden_pct_median_household_income })) },

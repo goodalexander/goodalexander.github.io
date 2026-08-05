@@ -1,19 +1,19 @@
 {
   "admissibility_rule": "A direct-package contract must specify U.S. federal enactment, a deadline before fiscal stress is realized, and a recurring budget effect large enough to map to the prudent-course adjustment.",
   "api_subsystem_status": "complete",
-  "as_of_date": "2026-08-04",
+  "as_of_date": "2026-08-05",
   "best_live_fiscal_outcome_market": {
     "close_time": "2026-10-20T12:29:00Z",
     "market_id": "KXDEFGDP-26OCT20-T5",
-    "midpoint_probability_pct": 10.0,
+    "midpoint_probability_pct": 10.5,
     "open_interest_contracts": 19531.5,
     "platform": "Kalshi",
     "title": "Will U.S. federal deficit-to-GDP for FY2026 be below 5%?",
     "url": "https://kalshi.com/markets/kxdefgdp-26oct20",
     "volume_contracts": 66009.53,
     "why_not_direct": "One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.",
-    "yes_ask_pct": 10.999999999999998,
-    "yes_bid_pct": 9.0
+    "yes_ask_pct": 13.0,
+    "yes_bid_pct": 8.0
   },
   "candidate_count": 96,
   "critical_caveats": [
@@ -23,14 +23,14 @@
   ],
   "direct_adjustment_passage_probability_pct": null,
   "direct_package_market_status": "no_direct_contract_use_modeled_probability",
-  "generated_at": "2026-08-04T20:06:37.401762+00:00",
+  "generated_at": "2026-08-05T16:56:15.001227+00:00",
   "interpretation": "The API and order-book subsystem is complete. Market candidates are corroborating features; when no contract directly maps to the prudent package, the scored passage probability comes from the separately disclosed empirical enactment model rather than remaining missing.",
   "live_candidate_count": 5,
   "platform_counts": {
     "Kalshi": 2,
     "Polymarket": 94
   },
-  "raw_request_manifest": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260804T200632.193761+0000/request_manifest.json",
+  "raw_request_manifest": "/home/pfrpc/repos/data/doom_thesis/raw/prediction_markets/20260805T165609.629441+0000/request_manifest.json",
   "sources": {
     "kalshi_api_docs": "https://docs.kalshi.com/getting_started/quick_start_market_data",
     "kalshi_public_api": "https://external-api.kalshi.com/trade-api/v2/markets",

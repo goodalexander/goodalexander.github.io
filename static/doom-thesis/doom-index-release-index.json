@@ -1,7 +1,18 @@
 {
-  "generated_at": "2026-08-04T20:09:02.261027+00:00",
-  "release_count": 16,
+  "generated_at": "2026-08-05T16:58:36.485554+00:00",
+  "release_count": 17,
   "releases": [
+    {
+      "release_id": "20260805T165245.967867Z",
+      "started_at": "2026-08-05T16:52:45.967867+00:00",
+      "finished_at": "2026-08-05T16:58:36.428127+00:00",
+      "profile": "score",
+      "status": "success",
+      "skip_bloomberg": false,
+      "failed_stage": null,
+      "artifact_count": 85,
+      "manifest_path": "/home/pfrpc/repos/data/doom_thesis/releases/20260805T165245.967867Z/manifest.json"
+    },
     {
       "release_id": "20260804T200602.311608Z",
       "started_at": "2026-08-04T20:06:02.311608+00:00",
