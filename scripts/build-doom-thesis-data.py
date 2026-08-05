@@ -163,7 +163,7 @@ def build_llm_document(payload: dict) -> str:
             f"- NVDA market capitalization is {common['market_concentration']['nvda_to_russell_2000_marketcap_pct']:.0f}% of the summed market capitalization of matched current IWM constituents; Sharadar covers {common['market_concentration']['matched_iwm_portfolio_weight_pct']:.1f}% of IWM equity weight.",
             f"- Social outcomes: life expectancy changed {common['life_expectancy']['change_since_2006_years']:+.1f} years since 2006 and {common['life_expectancy']['change_since_1976_years']:+.1f} years since 1976; native-born women ages 40–50 report {common['native_completed_fertility']['children_per_native_born_woman_age_40_50']:.3f} completed births; the 2024 suicide rate was {common['suicide']['rate_per_100k']:.1f} per 100,000 ({common['suicide']['change_since_2006_pct']:+.1f}% since 2006); measured obesity among adults ages 20–74 was {common['obesity']['adult_obesity_pct']:.1f}% ({common['obesity']['change_since_1976_1980_percentage_points']:+.1f} percentage points since the 1976–1980 survey).",
             f"- Demographic support ratio: OASDI beneficiaries rose from {demographics['beneficiaries_per_100_workers_1960']:.1f} per 100 covered workers in 1960 to {demographics['beneficiaries_per_100_workers_2025']:.1f} in 2025; the Trustees' intermediate projection reaches {demographics['beneficiaries_per_100_workers_2036']:.1f} in 2036.",
-            f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
+            f"- Debt comparison: gross federal debt was {demographics['gross_debt_pct_gdp_1945']:.1f}% of GDP in 1945, fell to {demographics['gross_debt_pct_gdp_1960']:.1f}% in 1960, and stood at {demographics['gross_debt_pct_gdp_2025']:.1f}% in 2025. This is the gross-debt definition used in the total measured obligations. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.",
             "",
             "## Definitions",
             "",
@@ -202,6 +202,10 @@ def build_payload(doom_root: Path) -> dict:
     maturity = pd.read_csv(doom_root / "treasury_maturity_wall.csv")
     distraction_marketcap = pd.read_csv(
         doom_root / "distraction_ge70_vs_industrials_marketcap_annual_2026-07-31.csv"
+    )
+    distraction_members = pd.read_csv(
+        doom_root
+        / "distraction_ge70_vs_industrials_marketcap_annual_2026-07-31_distraction_members.csv"
     )
     distraction_fcf = pd.read_csv(
         doom_root / "distraction_ge70_vs_industrials_rolling_4q_fcf_2004_2026_annual.csv"
@@ -792,7 +796,7 @@ def build_payload(doom_root: Path) -> dict:
                 "shortfall plus Medicare's 75-year government-wide resource gap."
             ),
             "doom_index": (
-                "Legacy data-key definition for the measured liability stack; this is "
+                "Legacy data-key definition for total measured obligations; this is "
                 "not the new 0–100 Doom Index evidence score."
             ),
             "household_income": (
@@ -962,6 +966,20 @@ def build_payload(doom_root: Path) -> dict:
                 distraction_search_attention.round(8)
             ),
             "personalization_events": records(distraction_personalization.round(8)),
+            "constituents": {
+                "current": records(
+                    distraction_members.loc[
+                        distraction_members["isdelisted"].ne("Y"),
+                        ["ticker", "company_name", "score", "explanation"],
+                    ].sort_values("ticker")
+                ),
+                "historical_or_delisted": records(
+                    distraction_members.loc[
+                        distraction_members["isdelisted"].eq("Y"),
+                        ["ticker", "company_name", "score", "explanation"],
+                    ].sort_values("ticker")
+                ),
+            },
         },
         "productivity": {
             "summary": {
@@ -1563,6 +1581,7 @@ def main() -> None:
         args.doom_data_root / "agi_growth_escape_sensitivity.csv"
     ).to_csv(args.output_dir / "agi-growth-escape-sensitivity.csv", index=False)
     common_downloads = {
+        "distraction_ge70_vs_industrials_marketcap_annual_2026-07-31_distraction_members.csv": "distraction-index-constituents.csv",
         "common_prosperity_housing_1976_2026.csv": "common-prosperity-housing.csv",
         "common_prosperity_big_macs_per_hour_2000_2026.csv": "common-prosperity-big-macs.csv",
         "common_prosperity_affordability_snapshot.csv": "common-prosperity-affordability.csv",

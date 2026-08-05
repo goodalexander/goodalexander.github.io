@@ -409,6 +409,8 @@
     ], { yMin: -1, yMax: 36, headroom: 1, yFormat: (v) => `$${v.toFixed(0)}T`, tooltipFormat: (v) => trillions(v, 2), points: false, xTicks: 9 });
 
     const distraction = data.distraction_economy;
+    set('distraction-current-members', distraction.constituents.current.map((row) => row.ticker).join(', '));
+    set('distraction-historical-members', distraction.constituents.historical_or_delisted.map((row) => row.ticker).join(', '));
     const searchSignal = distraction.search_attention_summary.doom_signal;
     set('search-level-ratio', `${searchSignal.ai_porn_to_constructive_52w_ratio.toFixed(2)}×`);
     set('search-ai-porn-growth', `${searchSignal.ai_porn_12w_ma_yoy_pct.toFixed(1)}%`);
@@ -530,18 +532,7 @@
     page.classList.add('is-loaded');
   }
 
-  function renderReleaseHistory(payload) {
-    const target = $('#doom-release-history-table');
-    if (!target) return;
-    const rows = (payload.releases || []).slice(0, 8);
-    target.innerHTML = rows.length ? rows.map((row) => {
-      const bloomberg = row.skip_bloomberg ? 'degraded / skipped' : 'normal attempt';
-      const finished = row.finished_at ? new Date(row.finished_at).toISOString().replace('.000Z', 'Z') : '—';
-      return `<tr><td>${row.release_id || '—'}</td><td>${finished}</td><td>${row.profile || '—'}</td><td>${row.status || '—'}</td><td>${Number(row.artifact_count || 0)}</td><td>${bloomberg}</td></tr>`;
-    }).join('') : '<tr><td colspan="6">No archived releases yet.</td></tr>';
-  }
-
-  fetch('/doom-thesis/data.json?v=20260804-4', { cache: 'no-cache' })
+  fetch('/doom-thesis/data.json?v=20260805-1', { cache: 'no-cache' })
     .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
     .then(render)
     .catch((error) => {
@@ -550,12 +541,4 @@
       $('[data-error]').hidden = false;
     });
 
-  fetch('/doom-thesis/doom-index-release-index.json?v=20260804-1', { cache: 'no-cache' })
-    .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
-    .then(renderReleaseHistory)
-    .catch((error) => {
-      console.error('Doom Index release archive load failed', error);
-      const target = $('#doom-release-history-table');
-      if (target) target.innerHTML = '<tr><td colspan="6">Release archive unavailable.</td></tr>';
-    });
 })();

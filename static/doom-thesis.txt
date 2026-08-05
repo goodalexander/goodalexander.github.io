@@ -1,6 +1,6 @@
 # Doom Thesis — machine-readable edition
 
-Generated: 2026-08-04T21:16:14.160914+00:00
+Generated: 2026-08-05T01:06:10.942083+00:00
 Data as of: 2026-08-02
 Canonical human page: https://goodalexander.com/doom-thesis/
 Canonical machine-readable document: https://goodalexander.com/doom-thesis.txt
@@ -83,12 +83,12 @@ Definition: Reduce the FY2026 unified deficit to 3 percent of GDP and reduce the
 - NVDA market capitalization is 135% of the summed market capitalization of matched current IWM constituents; Sharadar covers 98.6% of IWM equity weight.
 - Social outcomes: life expectancy changed +1.2 years since 2006 and +6.0 years since 1976; native-born women ages 40–50 report 1.916 completed births; the 2024 suicide rate was 13.7 per 100,000 (+24.5% since 2006); measured obesity among adults ages 20–74 was 40.8% (+25.8 percentage points since the 1976–1980 survey).
 - Demographic support ratio: OASDI beneficiaries rose from 19.7 per 100 covered workers in 1960 to 37.8 in 2025; the Trustees' intermediate projection reaches 43.0 in 2036.
-- Debt comparison: gross federal debt was 114.1% of GDP in 1945, fell to 53.6% in 1960, and stood at 121.5% in 2025. This is the gross-debt definition used in the measured liability stack. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
+- Debt comparison: gross federal debt was 114.1% of GDP in 1945, fell to 53.6% in 1960, and stood at 121.5% in 2025. This is the gross-debt definition used in the total measured obligations. The 1945 Social Security ratio is a startup artifact because ongoing monthly benefits began only in 1940.
 
 ## Definitions
 
 - measured_liability_stack: Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.
-- doom_index: Legacy data-key definition for the measured liability stack; this is not the new 0–100 Doom Index evidence score.
+- doom_index: Legacy data-key definition for total measured obligations; this is not the new 0–100 Doom Index evidence score.
 - household_income: BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.
 - ratio: Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.
 - discretionary_income: St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.

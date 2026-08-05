@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-08-04T21:16:14.160914+00:00",
+  "generated_at_utc": "2026-08-05T01:06:10.942083+00:00",
   "as_of_date": "2026-08-02",
   "definitions": {
     "measured_liability_stack": "Gross federal debt plus the OASDI 75-year open-group present-value shortfall plus Medicare's 75-year government-wide resource gap.",
-    "doom_index": "Legacy data-key definition for the measured liability stack; this is not the new 0\u2013100 Doom Index evidence score.",
+    "doom_index": "Legacy data-key definition for total measured obligations; this is not the new 0\u2013100 Doom Index evidence score.",
     "household_income": "BLS Consumer Expenditure Survey mean after-tax income per consumer unit. The latest published mean is 2023; BLS could not publish a 2024 mean because its external tax model was not updated.",
     "ratio": "Liability stock per Census household divided by one year of BLS mean after-tax income per consumer unit; read as approximate income-years.",
     "discretionary_income": "St. Louis Fed/BLS definition: after-tax income less food at home, housing, transportation, health care, and personal insurance and pensions. The latest published benchmark is 2023 and is rounded.",
@@ -12139,7 +12139,289 @@
         "source": "https://about.fb.com/news/2026/01/2026-ai-drives-performance/",
         "note": "Meta reported that Q4 recommendation optimizations lifted time spent on Threads by 20%."
       }
-    ]
+    ],
+    "constituents": {
+      "current": [
+        {
+          "ticker": "AAPL",
+          "company_name": "APPLE INC",
+          "score": 72,
+          "explanation": "Apple benefits materially from the distraction economy through App Store commissions on gaming, in-app purchases, and streaming subscriptions, as well as through its own services like Apple TV+ and Apple Arcade. However, its exposure is diversified because the iPhone and broader ecosystem serve many essential productivity and communication purposes, and Apple actively markets privacy and screen-time management features that partially counteract distraction trends."
+        },
+        {
+          "ticker": "APP",
+          "company_name": "APPLOVIN CORP",
+          "score": 88,
+          "explanation": "AppLovin's core business consists of mobile advertising technology and app monetization platforms that directly serve mobile game developers and app publishers, meaning its revenue and franchise value are structurally tied to compulsive screen time, digital gaming, and algorithmic advertising. The company's AppDiscovery and MAX platforms profit directly when app developers spend more to acquire users who engage in longer, more frequent mobile sessions, making distraction-economy growth a primary driver of its economic performance rather than a secondary factor."
+        },
+        {
+          "ticker": "BZFD",
+          "company_name": "BUZZFEED INC",
+          "score": 72,
+          "explanation": "BuzzFeed's core business model is built on viral content, quizzes, listicles, and algorithmic feed optimization designed to maximize compulsive engagement and monetize attention through advertising, making it a direct beneficiary of shorter attention spans and compulsive screen time. However, its revenue base is somewhat diversified across commerce, news, and entertainment, and it depends on third-party platforms rather than owning the distraction infrastructure itself, placing it in the material but not fully structural category."
+        },
+        {
+          "ticker": "CMCSA",
+          "company_name": "COMCAST CORP",
+          "score": 70,
+          "explanation": "Comcast's broadband franchise is a critical infrastructure bottleneck whose demand is materially driven by streaming, gaming, and social media consumption, while Peacock and NBCUniversal's advertising business add direct streaming and digital-ad exposure to the distraction economy. However, broadband also serves substantial productivity, education, and work-from-home uses, making the exposure diversified rather than purely distraction-linked."
+        },
+        {
+          "ticker": "DKNG",
+          "company_name": "DRAFTKINGS INC",
+          "score": 95,
+          "explanation": "DraftKings' entire revenue model is built on online gambling and digital gaming, both explicitly named components of the distraction economy, making its exposure direct and structural. Growth in compulsive screen time, algorithmic engagement, and online gambling directly increases DraftKings' handle, revenue, and strategic franchise value with minimal diversification away from these trends."
+        },
+        {
+          "ticker": "DSP",
+          "company_name": "VIANT TECHNOLOGY INC",
+          "score": 72,
+          "explanation": "Viant Technology operates a demand-side platform that enables programmatic digital advertising, meaning its revenue is materially tied to the growth of algorithmic feeds, compulsive screen time, and digital ad spending that define the distraction economy. However, its exposure is diversified across multiple advertising verticals and channels rather than exclusively dependent on the most compulsive distraction-economy segments, placing it in the material but diversified range."
+        },
+        {
+          "ticker": "EA",
+          "company_name": "ELECTRONIC ARTS INC",
+          "score": 90,
+          "explanation": "Electronic Arts generates substantial revenue and profit directly from digital gaming and compulsive screen time through its live-service franchises and microtransaction models. The company's strategic reliance on engaging players for extended periods structurally aligns with the growth of the distraction economy."
+        },
+        {
+          "ticker": "FUBO",
+          "company_name": "FUBOTV INC",
+          "score": 78,
+          "explanation": "FuboTV operates a streaming television platform that directly monetizes compulsive screen time and algorithmic content delivery, with advertising revenue representing a significant portion of its business model. While the company benefits structurally from increased digital streaming consumption and shorter attention spans driving ad engagement, its exposure is somewhat diversified across live sports and entertainment rather than being purely distraction-economy dependent."
+        },
+        {
+          "ticker": "GOOGL",
+          "company_name": "ALPHABET INC",
+          "score": 72,
+          "explanation": "Alphabet derives substantial revenue from YouTube, whose algorithmic feeds, Shorts, and advertising model directly monetize compulsive screen time and shorter attention spans, while Google Play Store takes a cut from gaming and app purchases that include distraction-economy content. However, the company is significantly diversified across Search, Cloud, and productivity tools that do not depend on distraction-economy trends, keeping the exposure material but not overwhelmingly structural to the overall franchise."
+        },
+        {
+          "ticker": "META",
+          "company_name": "META PLATFORMS INC",
+          "score": 95,
+          "explanation": "Meta's core advertising revenue is structurally driven by algorithmic feeds on Facebook and Instagram that maximize compulsive screen time and engagement, directly linking its profit to the distraction economy. Trends such as shorter attention spans, social isolation, and depression increase time spent on its platforms, materially boosting ad inventory and franchise value."
+        },
+        {
+          "ticker": "MYPS",
+          "company_name": "PLAYSTUDIOS INC",
+          "score": 88,
+          "explanation": "PLAYSTUDIOS Inc. operates exclusively in free-to-play social casino and casual mobile gaming, generating revenue through in-app purchases and advertising that depend directly on compulsive screen time and repeated engagement with digital games. Its entire franchise value is structurally tied to the digital gaming and algorithmic engagement trends central to the distraction economy, making its economic exposure substantial and direct rather than incidental or diversified."
+        },
+        {
+          "ticker": "NFLX",
+          "company_name": "NETFLIX INC",
+          "score": 92,
+          "explanation": "Netflix's entire revenue model depends on subscription streaming, which is explicitly named in the distraction economy definition, and its recommendation algorithms are engineered to maximize compulsive viewing and binge-watching behavior. Growth in compulsive screen time and shorter attention spans directly and structurally increase Netflix's engagement metrics, retention rates, and pricing power, making distraction-linked demand central rather than incidental to its franchise value."
+        },
+        {
+          "ticker": "PENN",
+          "company_name": "PENN ENTERTAINMENT INC",
+          "score": 72,
+          "explanation": "PENN Entertainment derives material revenue from online gambling and iCasino through ESPN Bet and theScore, which are directly named components of the distraction economy. Its physical regional casino footprint diversifies exposure, but the strategic growth emphasis on digital wagering ties a meaningful portion of its franchise value to compulsive screen-based gambling trends."
+        },
+        {
+          "ticker": "PINS",
+          "company_name": "PINTEREST INC",
+          "score": 85,
+          "explanation": "Pinterest's revenue model is built on algorithmic feeds and advertising that monetize compulsive screen time, directly tying its financial performance to engagement-driven scrolling. The platform's strategic franchise value depends on capturing user attention in ways that align with core distraction economy trends like shortened attention spans and social isolation."
+        },
+        {
+          "ticker": "PUBM",
+          "company_name": "PUBMATIC INC",
+          "score": 72,
+          "explanation": "PubMatic operates a sell-side advertising platform whose revenue is structurally tied to digital ad impressions, which grow directly with increased compulsive screen time and algorithmic feed engagement central to the distraction economy. While its exposure is material and direct, it is diversified across many publisher types rather than exclusively concentrated in distraction-economy verticals, placing it in the material-but-diversified range."
+        },
+        {
+          "ticker": "RBLX",
+          "company_name": "ROBLOX CORP",
+          "score": 88,
+          "explanation": "Roblox's entire revenue model is structurally tied to digital gaming engagement, compulsive screen time, and algorithmic game recommendations that maximize user hours on the platform, with Robux purchases and premium subscriptions directly scaling alongside engagement metrics. The platform's social features also substitute for offline relationships, particularly among younger users, making distraction-economy trends a core driver of its franchise value rather than an incidental benefit."
+        },
+        {
+          "ticker": "RDDT",
+          "company_name": "REDDIT INC",
+          "score": 75,
+          "explanation": "Reddit's revenue is overwhelmingly advertising-based and directly tied to user engagement, compulsive scrolling, and algorithmic content feeds that encourage extended screen time, placing it well within the material-and-direct exposure band. However, much of Reddit's value also derives from substantive community discussion and informational content rather than pure distraction, keeping it below the 80+ threshold reserved for franchises whose revenue is structurally and overwhelmingly dependent on distraction-economy trends."
+        },
+        {
+          "ticker": "ROKU",
+          "company_name": "ROKU INC",
+          "score": 85,
+          "explanation": "Roku's entire business model is built on streaming consumption and digital advertising, with platform revenue driven by ad impressions that scale directly with compulsive screen time and algorithmic ad delivery on its TV operating system. The company's strategic franchise value is structurally tied to growth in streaming hours and digital ad spend, making it a direct, substantial beneficiary of the distraction economy as narrowly defined."
+        },
+        {
+          "ticker": "RSI",
+          "company_name": "RUSH STREET INTERACTIVE INC",
+          "score": 88,
+          "explanation": "Rush Street Interactive operates online casino and sports betting platforms, making its revenue directly and structurally tied to online gambling, which is explicitly named in the distraction economy definition. Increased compulsive screen time and digital gambling engagement directly drive the company's core revenue and strategic franchise value, placing it firmly in the highest exposure band."
+        },
+        {
+          "ticker": "SBET",
+          "company_name": "SHARPLINK INC",
+          "score": 85,
+          "explanation": "SharpLink Gaming Inc (SBET) operates as a technology and marketing services provider specifically serving the online sports betting and iGaming industry, making its revenue directly and structurally tied to online gambling growth, which is explicitly named in the distraction economy definition. The company's customer acquisition and retention services for gambling operators mean that increased compulsive screen time and online gambling activity directly expand its addressable market and franchise value."
+        },
+        {
+          "ticker": "SNAP",
+          "company_name": "SNAP INC",
+          "score": 88,
+          "explanation": "Snap Inc.'s Snapchat platform derives virtually all of its revenue from advertising tied to user engagement, with features like algorithmic Discover and Spotlight feeds, Snap Streaks, and augmented reality lenses specifically designed to maximize compulsive screen time and social validation loops. The company's entire business model is structurally dependent on capturing and retaining user attention, making it a direct and substantial beneficiary of distraction-economy trends including shorter attention spans, social isolation, and algorithmic content consumption."
+        },
+        {
+          "ticker": "TBLA",
+          "company_name": "TABOOLACOM LTD",
+          "score": 88,
+          "explanation": "Taboola's core business is algorithmic content recommendation and native advertising, which directly monetizes compulsive screen time and engagement-driven clicking through sponsored content widgets embedded across publisher sites. The company's revenue and strategic franchise value are structurally tied to algorithmic feeds and attention-capturing advertising, making distraction economy growth a direct and substantial driver of its economic model."
+        },
+        {
+          "ticker": "TEAD",
+          "company_name": "TEADS HOLDING CO",
+          "score": 72,
+          "explanation": "Teads is a global video advertising technology platform whose revenue is directly tied to monetizing digital screen time through outstream video ad formats across publisher inventory, structurally benefiting from increased compulsive screen time and the growth of algorithmic feeds and digital advertising. While the company serves a diversified range of premium publishers and content types rather than purely distraction-economy properties, its core business model of monetizing digital attention creates material and direct exposure to the trends specified."
+        },
+        {
+          "ticker": "TTWO",
+          "company_name": "TAKE TWO INTERACTIVE SOFTWARE INC",
+          "score": 88,
+          "explanation": "Take Two Interactive's core business is digital gaming, explicitly named in the distraction economy definition, with franchises like Grand Theft Auto Online and NBA 2K generating substantial recurrent consumer spending through compulsive engagement mechanics and microtransactions. The company's revenue and strategic franchise value are directly and structurally tied to increased screen time, shorter attention spans, and digital gaming habits, making its economic exposure to the distraction economy both material and fundamental rather than incidental."
+        },
+        {
+          "ticker": "U",
+          "company_name": "UNITY SOFTWARE INC",
+          "score": 72,
+          "explanation": "Unity Software derives a substantial portion of its revenue from game developers who use its engine to build mobile and digital games, many of which rely on compulsive engagement and in-game advertising monetization. While Unity also serves non-gaming verticals such as industrial simulation and film, its core gaming and advertising businesses are materially and structurally exposed to distraction-economy trends like increased screen time and algorithmic ad delivery."
+        },
+        {
+          "ticker": "WBD",
+          "company_name": "WARNER BROS DISCOVERY INC",
+          "score": 78,
+          "explanation": "Warner Bros Discovery derives material revenue from streaming (Max), digital gaming, and algorithmic advertising-supported content that directly benefit from compulsive screen time and engagement-driven consumption. While these distraction-economy trends structurally support key segments, the company's broad portfolio across traditional television, film, and physical experiences means its exposure is diversified rather than overwhelmingly dependent on those trends."
+        }
+      ],
+      "historical_or_delisted": [
+        {
+          "ticker": "ADFC",
+          "company_name": "ADFORCE INC",
+          "score": 78,
+          "explanation": "ADFORCE INC, as an advertising technology company, derives material revenue from digital ad serving and placement, which directly benefits from increased compulsive screen time and algorithmic feed engagement central to the distraction economy. However, without clear evidence that its entire franchise is structurally dependent on distraction-linked demand rather than serving broader advertising needs, the exposure remains material but somewhat diversified across general ad markets."
+        },
+        {
+          "ticker": "AQNT",
+          "company_name": "AQUANTIVE INC",
+          "score": 78,
+          "explanation": "aQuantive was a digital advertising technology and marketing services company whose core revenue from ad serving (Atlas), media buying (DRIVEpm), and digital agency operations (Avenue A/Razorfish) was directly and structurally driven by increased screen time and algorithmic advertising spend. Its business model depended on growing digital ad impressions and targeted advertising, which are fundamental components of the distraction economy, though its diversified services across the digital ad stack prevent it from reaching the highest tier reserved for pure-play distraction platforms."
+        },
+        {
+          "ticker": "ATVI",
+          "company_name": "ACTIVISION BLIZZARD INC",
+          "score": 95,
+          "explanation": "Activision Blizzard generates the vast majority of its revenue and franchise value directly from digital gaming and streaming, which are explicitly core components of the distraction economy. Its live-service business models, in-game purchases, and engagement-driven design rely structurally on maximizing compulsive screen time and continuous player attention."
+        },
+        {
+          "ticker": "CACQ1",
+          "company_name": "CAESARS ACQUISITION CO",
+          "score": 78,
+          "explanation": "Caesars Acquisition Company's primary assets included Caesars Interactive Entertainment, which owned Playtika, a leading social and mobile casino gaming business that monetizes compulsive screen time through free-to-play slot and casino games with in-app purchases. The company also held real-money online gambling operations in regulated jurisdictions, which fall squarely within the narrow definition of the distraction economy, though its physical casino properties dilute the pure digital exposure."
+        },
+        {
+          "ticker": "CTV",
+          "company_name": "INNOVID CORP",
+          "score": 75,
+          "explanation": "Innovid Corp (CTV) is a connected-television advertising technology company whose ad-serving, measurement, and analytics revenue is directly tied to the growth of streaming consumption and CTV ad spending, both of which are explicitly named components of the distraction economy. While its exposure is material and structurally aligned with increasing screen time and algorithmic advertising trends, it functions as an ad-tech intermediary rather than a content platform, making its benefit diversified across the CTV ecosystem rather than concentrated in a single distraction franchise."
+        },
+        {
+          "ticker": "DCLK",
+          "company_name": "DOUBLECLICK INC",
+          "score": 78,
+          "explanation": "DoubleClick Inc. provided the core ad-serving and targeting infrastructure that powered the growth of digital advertising, a central pillar of the distraction economy as defined by algorithmic feeds and advertising. Its revenue and franchise value were materially and structurally tied to rising online ad volumes driven by increased screen time and compulsive engagement, though its exposure was diversified across all digital advertising rather than exclusively distraction-linked content."
+        },
+        {
+          "ticker": "DTV1",
+          "company_name": "DIRECTV",
+          "score": 75,
+          "explanation": "DIRECTV's core pay-television business benefits materially from increased compulsive screen time and streaming consumption, as viewers spend more hours engaged with entertainment content and advertising-supported channels. However, the company's exposure is diversified rather than structurally dependent on the most harmful distraction-economy trends, as it primarily serves as a content distributor rather than an algorithmic-feed or gambling platform."
+        },
+        {
+          "ticker": "ELBO",
+          "company_name": "ELECTRONICS BOUTIQUE HOLDINGS CORP",
+          "score": 85,
+          "explanation": "Electronics Boutique Holdings Corp generated its revenue primarily through the retail sale of video games and gaming hardware, which directly aligns with the digital gaming component of the distraction economy. As a pure-play specialty retailer, the company's financial success was structurally tied to the increasing consumer demand for interactive digital entertainment."
+        },
+        {
+          "ticker": "GLUU",
+          "company_name": "GLU MOBILE INC",
+          "score": 90,
+          "explanation": "Glu Mobile Inc. generated its revenue primarily through free-to-play mobile games, which directly aligns with the digital gaming and compulsive screen time components of the distraction economy. The company's business model relied on in-app purchases and continuous user engagement, structurally benefiting from the trends of shorter attention spans and algorithmic feeds driving mobile game usage."
+        },
+        {
+          "ticker": "GNOG",
+          "company_name": "GOLDEN NUGGET ONLINE GAMING INC",
+          "score": 92,
+          "explanation": "Golden Nugget Online Gaming Inc.'s entire business model consists of online casino gaming and sports betting, which is explicitly named in the distraction economy definition as online gambling. The company's revenue and franchise value are directly and structurally tied to compulsive digital engagement with gambling products, making its exposure essentially total rather than incidental or diversified."
+        },
+        {
+          "ticker": "GPU",
+          "company_name": "GPU INC",
+          "score": 72,
+          "explanation": "GPU Inc., as a GPU manufacturer, derives material revenue from digital gaming hardware and from data-center accelerators that power algorithmic feeds, targeted advertising, and streaming infrastructure, all of which are structurally tied to distraction-economy growth. However, GPUs also serve substantial non-distraction markets such as scientific computing, enterprise productivity, and autonomous vehicles, making the exposure diversified rather than predominantly distraction-driven."
+        },
+        {
+          "ticker": "LNWO",
+          "company_name": "LIGHT & WONDER INC",
+          "score": 78,
+          "explanation": "Light & Wonder is a major supplier of iGaming content, digital gaming platforms, and casino games whose revenue and strategic growth are materially tied to online gambling and digital gaming engagement, both explicitly included in the distraction economy definition. However, the company also derives substantial revenue from lottery systems and physical gaming hardware, which diversifies its exposure and prevents it from reaching the highest tier reserved for predominantly distraction-linked franchises."
+        },
+        {
+          "ticker": "MGAM1",
+          "company_name": "MULTIMEDIA GAMES HOLDING COMPANY INC",
+          "score": 72,
+          "explanation": "Multimedia Games Holding Company Inc. derives its revenue primarily from designing and supplying electronic gaming machines and casino systems, which are fundamentally tied to compulsive gambling behavior that aligns with the distraction economy's gambling component. While the company's exposure is direct and structurally central to its business model, it focuses on physical casino gaming machines rather than the specifically online gambling or digital feed formats emphasized in the narrow definition, placing it in the material but diversified exposure range."
+        },
+        {
+          "ticker": "MPLX1",
+          "company_name": "MEDIAPLEX INC",
+          "score": 70,
+          "explanation": "MediaPlex Inc operates as a digital advertising technology and ad-serving platform, giving it material direct exposure to the distraction economy through algorithmic feeds and advertising revenue that scale with compulsive screen time. However, its exposure is diversified across general digital advertising rather than being exclusively tied to the most compulsive distraction-economy segments, placing it in the material but not dominant range."
+        },
+        {
+          "ticker": "SCPL",
+          "company_name": "SCIPLAY CORP",
+          "score": 88,
+          "explanation": "SciPlay Corp derives the substantial majority of its revenue from free-to-play mobile and social casino games that are explicitly designed to maximize compulsive screen time and engagement through algorithmic monetization mechanics. Its business model is structurally dependent on users spending increasing time in digital gaming environments, making it a direct and primary beneficiary of the distraction economy trends identified."
+        },
+        {
+          "ticker": "STRZA",
+          "company_name": "STARZ",
+          "score": 70,
+          "explanation": "STARZ is a premium streaming and cable network whose subscription revenue depends directly on consumers spending more time watching screen entertainment, placing it squarely within the streaming and compulsive screen-time elements of the distraction economy. However, its subscription-based model lacks algorithmic feeds, advertising density, or gambling and pornography exposure, making its benefit material but not as structurally extreme as pure algorithmic or ad-driven distraction platforms."
+        },
+        {
+          "ticker": "THQIQ",
+          "company_name": "THQ INC",
+          "score": 72,
+          "explanation": "THQ Inc. was a video game publisher whose core revenue came from digital gaming, which is explicitly included in the narrow definition of the distraction economy. While the company had direct structural exposure to gaming-driven compulsive screen time, its portfolio spanned diverse genres and platforms rather than concentrating on the most addictive free-to-play or microtransaction-heavy models, placing it in the material but diversified range."
+        },
+        {
+          "ticker": "TLRA",
+          "company_name": "TELARIA INC",
+          "score": 85,
+          "explanation": "Telaria Inc. (TLRA) operated a programmatic video advertising platform focused on connected TV (CTV) and digital video, meaning its core revenue was directly and structurally tied to increased streaming consumption, screen time, and digital ad spending. The company's entire business model depended on advertisers reaching audiences through algorithmic video feeds and streaming platforms, making it a direct beneficiary of distraction economy trends rather than a diversified or incidental one."
+        },
+        {
+          "ticker": "TWTR",
+          "company_name": "TWITTER INC",
+          "score": 88,
+          "explanation": "Twitter's revenue model is structurally dependent on algorithmic feeds and advertising, which directly monetize compulsive screen time and shortened attention spans. The platform's engagement-driven design means that increased social isolation and compulsive scrolling materially increase its advertising inventory and franchise value."
+        },
+        {
+          "ticker": "ZNGA",
+          "company_name": "ZYNGA INC",
+          "score": 88,
+          "explanation": "Zynga's entire business model centers on free-to-play mobile and social games monetized through in-app purchases and advertising, directly aligning with the distraction economy's digital gaming and compulsive screen time trends. The company's revenue and franchise value are structurally dependent on maximizing user engagement and session length, making its economic exposure both direct and substantial."
+        }
+      ]
+    }
   },
   "productivity": {
     "summary": {
@@ -17748,7 +18030,7 @@
     }
   ],
   "doom_index_score": {
-    "as_of_date": "2026-08-04",
+    "as_of_date": "2026-08-05",
     "components": [
       {
         "component_id": "fiscal-constraint",
@@ -17800,7 +18082,7 @@
       }
     ],
     "coverage_pct": 100.0,
-    "generated_at": "2026-08-04T20:09:00.162662+00:00",
+    "generated_at": "2026-08-05T01:06:04.108731+00:00",
     "indicators": [
       {
         "as_of": "2025-09-30",
@@ -17982,12 +18264,12 @@
         "high_threshold": 15,
         "indicator_id": "real_business_ex_distraction_fcf_margin_pct",
         "indicator_score": 71.12842187077209,
-        "label": "Real-business FCF margin ex distraction",
+        "label": "FCF margin outside the distraction index",
         "low_threshold": 5,
         "note": "Point-in-time ARQ replay; excludes known score-70+ distraction businesses, Financial Services, and Utilities.",
         "quality_flag": "current",
         "raw_value": 7.887157812922791,
-        "source": "Sharadar ARQ and GLM 5.2 distraction taxonomy",
+        "source": "Sharadar quarterly filings and the disclosed distraction-index membership",
         "total_index_weight": 3.0,
         "unit": "%",
         "within_component_weight": 10.0
@@ -18001,12 +18283,12 @@
         "high_threshold": 8,
         "indicator_id": "real_business_ex_distraction_real_revenue_growth_yoy_pct",
         "indicator_score": 75.07382006471072,
-        "label": "Real-business real revenue growth ex distraction",
+        "label": "Real revenue growth outside the distraction index",
         "low_threshold": 0,
         "note": "GDP-deflator-adjusted aggregate revenue growth; current-vintage GDPDEF, mix, M&A, entry, and cyclicality prevent a standalone causal productivity interpretation.",
         "quality_flag": "current",
         "raw_value": 1.9940943948231429,
-        "source": "Sharadar ARQ, GLM 5.2 distraction taxonomy, and FRED GDPDEF",
+        "source": "Sharadar quarterly filings, the disclosed distraction-index membership, and FRED GDP deflator",
         "total_index_weight": 3.0,
         "unit": "% real YoY",
         "within_component_weight": 10.0
@@ -18039,12 +18321,12 @@
         "high_threshold": 175,
         "indicator_id": "distraction_to_industrials_marketcap_pct",
         "indicator_score": 71.39867192134687,
-        "label": "Distraction market cap / Industrials market cap",
+        "label": "Distraction-index market cap / Industrials",
         "low_threshold": 25,
         "note": "The 2026 classification is applied retrospectively; this is not a point-in-time membership backtest.",
         "quality_flag": "current",
         "raw_value": 132.0980078820203,
-        "source": "Sharadar DAILY and GLM 5.2 taxonomy",
+        "source": "Sharadar market caps and the disclosed distraction-index membership",
         "total_index_weight": 5.25,
         "unit": "%",
         "within_component_weight": 35.0
@@ -18058,12 +18340,12 @@
         "high_threshold": 175,
         "indicator_id": "distraction_to_industrials_fcf_pct",
         "indicator_score": 65.77542918758584,
-        "label": "Distraction rolling-four-quarter FCF / Industrials FCF",
+        "label": "Distraction-index four-quarter FCF / Industrials",
         "low_threshold": 25,
         "note": "",
         "quality_flag": "current",
         "raw_value": 123.66314378137876,
-        "source": "Sharadar ARQ and GLM 5.2 taxonomy",
+        "source": "Sharadar quarterly filings and the disclosed distraction-index membership",
         "total_index_weight": 3.75,
         "unit": "%",
         "within_component_weight": 25.0
@@ -18115,14 +18397,14 @@
         "high_threshold": 50,
         "indicator_id": "ai_porn_minus_constructive_attention_growth_pp",
         "indicator_score": 4.967253693090505,
-        "label": "AI Porn minus constructive education 12-week YoY growth",
+        "label": "AI-porn search growth versus education",
         "low_threshold": -50,
-        "note": "Scored momentum signal comparing trailing-12-week YoY growth rates.",
+        "note": "AI-porn search interest grew about 45 points more slowly than the education-search average over the latest 12 weeks versus the same weeks a year earlier.",
         "quality_flag": "current",
         "raw_value": -45.032746306909495,
-        "source": "DataForSEO Google Trends worldwide grouped query; trailing-12-week YoY growth differential",
+        "source": "Google Trends worldwide; trailing-12-week growth versus the same period a year ago",
         "total_index_weight": 1.5,
-        "unit": "percentage points",
+        "unit": "% YoY difference",
         "within_component_weight": 10.0
       },
       {
@@ -18172,14 +18454,14 @@
         "high_threshold": 5,
         "indicator_id": "projected_deficit_above_target_pct_gdp",
         "indicator_score": 74.0,
-        "label": "2036 projected deficit above prudent target",
+        "label": "2036 deficit above the 3%-of-GDP target",
         "low_threshold": 0,
         "note": "",
         "quality_flag": "current",
         "raw_value": 3.7,
         "source": "CBO Budget and Economic Outlook",
         "total_index_weight": 3.75,
-        "unit": "percentage points",
+        "unit": "% of GDP",
         "within_component_weight": 25.0
       },
       {

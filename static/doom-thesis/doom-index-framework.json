@@ -29,7 +29,7 @@
       "score_rule": "Score from debt and deficit trajectories, interest burden, program-gap annual equivalent, and the size of the recurring adjustment required to reach the prudent scenario. The unified-deficit input scores 0 at 3% of GDP or less and 100 at 8% or more, so persistent deficits near 6% register as material stress rather than safety.",
       "update_frequency": "Daily debt; monthly interest model; CBO vintage; annual Trustees reports",
       "existing_evidence": [
-        {"label": "Liability stack", "href": "#numbers"},
+        {"label": "Debt and unfunded obligations", "href": "#numbers"},
         {"label": "Interest and refinancing", "href": "#interest"},
         {"label": "Prudent fiscal course", "href": "#tax-valuation"},
         {"label": "Demographic support", "href": "#demographics"}
@@ -52,7 +52,7 @@
       "weight": 30,
       "status": "partial",
       "contention": "Rapid productivity acceleration is not yet the base case, and the fiscal escape velocity is far above consensus.",
-      "plain_english": "Ordinary productivity growth does not make the liability stack disappear. The thesis breaks only if AI produces a sustained, economy-wide step-change large enough to outrun the obligations.",
+      "plain_english": "Ordinary productivity growth is too slow to make the debt and unfunded obligations manageable on its own. The thesis breaks only if AI produces a sustained, economy-wide jump large enough for growth to outrun those obligations.",
       "score_rule": "Combine realized nonfarm-business productivity, forecast distributions, output-per-dollar measures, and the probability of five-year productivity at or above 5%. Lower growth produces a higher Doom score.",
       "update_frequency": "Quarterly BLS; annual physical and human-capital panels; monthly forecast review",
       "existing_evidence": [

@@ -10,7 +10,6 @@
 
   {{- $doomIndex := readFile "static/doom-thesis/doom-index-framework.json" | transform.Unmarshal -}}
   {{- $doomScore := readFile "static/doom-thesis/doom-index-score.json" | transform.Unmarshal -}}
-  {{- $doomHistory := readFile "static/doom-thesis/doom-index-history.json" | transform.Unmarshal -}}
   {{- $fiscalMarkets := readFile "static/doom-thesis/fiscal-prediction-markets-summary.json" | transform.Unmarshal -}}
 
   <section class="doom-section doom-index-system" id="doom-index">
@@ -22,36 +21,22 @@
       <p>The Doom Thesis is a chain of contentions intended to inform long/short equity, macro, and cryptocurrency investing. The index measures how strongly the current evidence supports that regime.</p>
     </div>
 
-    <div class="doom-index-status-grid">
+    <div class="doom-index-status-grid doom-index-status-grid-compact">
       <div class="doom-index-score-card">
         <span>Research evidence score</span>
         <strong>{{ printf "%.0f" $doomScore.research_score }}<small>/100</small></strong>
         <em>As of {{ $doomScore.as_of_date }} · not a calibrated probability</em>
       </div>
       <div>
-        <span>Current weighted coverage</span>
+        <span>Data available</span>
         <strong>{{ printf "%.1f" $doomScore.coverage_pct }}<small>%</small></strong>
-        <em>Share of weighted evidence currently populated</em>
-      </div>
-      <div>
-        <span>Missing-input range</span>
-        <strong>{{ printf "%.0f" $doomScore.missing_input_sensitivity.lower }}–{{ printf "%.0f" $doomScore.missing_input_sensitivity.upper }}</strong>
-        <em>Score sensitivity if unavailable observations are extreme</em>
-      </div>
-      <div class="doom-index-stop-card">
-        <span>Portfolio stop</span>
-        <strong>&lt;20</strong>
-        <em>Exit the thesis if the evidence breaks</em>
+        <em>All current index inputs are populated</em>
       </div>
     </div>
 
     <div class="doom-index-plain">
       <h3>Simply put</h3>
       <p>Structural malinvestment and political transfers have created a fiscal burden that requires decisive adjustment unless AI produces extraordinary economy-wide productivity. The thesis remains intact while that productivity escape is unlikely, capital and attention continue to accrue to distraction rather than broad business productivity, and a politically plausible fiscal settlement remains absent.</p>
-      <div class="doom-index-kill-switch">
-        <span>The kill switch</span>
-        <p>{{ $doomIndex.stop_rule.override }} The score is also exited normally if it falls below {{ $doomIndex.stop_rule.threshold }}.</p>
-      </div>
       <p class="doom-note">The live number is an evidence score built from fixed thresholds, not a probability. Higher readings mean the measured fiscal, productivity, political, institutional, and market evidence is more consistent with the thesis.</p>
     </div>
 
@@ -63,49 +48,12 @@
       <div><b>80–100</b><span>High-conviction regime</span></div>
     </div>
 
-    <details class="doom-index-runbook">
-      <summary><span><b>Coverage-gated score history</b><small>Historical values disclose comparability and missing-data sensitivity</small></span><span aria-hidden="true">+</span></summary>
-      <div class="doom-table-wrap">
-        <table class="doom-table doom-table-dense">
-          <thead><tr><th>Year</th><th>Published score</th><th>Diagnostic</th><th>Coverage</th><th>Missing-input range</th><th>Status</th></tr></thead>
-          <tbody>
-          {{- range last 6 $doomHistory.history }}
-            <tr><td>{{ .calendar_year }}</td><td>{{ if ne .research_score nil }}{{ printf "%.1f" .research_score }}{{ else }}—{{ end }}</td><td>{{ printf "%.1f" .diagnostic_score }}</td><td>{{ printf "%.1f%%" .coverage_pct }}</td><td>{{ printf "%.1f–%.1f" .missing_input_lower_bound .missing_input_upper_bound }}</td><td>{{ if .publication_comparable }}Published{{ else }}Below coverage gate{{ end }}</td></tr>
-          {{- end }}
-          </tbody>
-        </table>
-        <p class="doom-note">Earlier diagnostic values expose missing-data sensitivity; they are not presented as investable historical index values.</p>
-      </div>
-    </details>
-
-    {{- with $fiscalMarkets.best_live_fiscal_outcome_market }}
-    <details class="doom-index-runbook">
-      <summary><span><b>Verified live prediction-market evidence</b><small>API-discovered, order-book checked, and kept distinct from the thesis claim</small></span><span aria-hidden="true">+</span></summary>
-      <div class="doom-index-runbook-body">
-        <p><a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .platform }} · {{ .title }} ↗</b></a></p>
-        <p>{{ printf "%.1f" .yes_bid_pct }}% bid / {{ printf "%.1f" .yes_ask_pct }}% ask · {{ printf "%.1f" .midpoint_probability_pct }}% midpoint · {{ .open_interest_contracts }} contracts open interest.</p>
-        <p class="doom-note">{{ .why_not_direct }} <a href="/doom-thesis/fiscal-prediction-market-candidates.csv">Download the complete discovery output.</a></p>
-      </div>
-    </details>
-    {{- end }}
-
-    <details class="doom-index-runbook">
-      <summary><span><b>Release provenance</b><small>Frozen artifacts, hashes, refresh profile, and provider state</small></span><span aria-hidden="true">+</span></summary>
-      <div class="doom-table-wrap">
-        <table class="doom-table doom-table-dense">
-          <thead><tr><th>Release</th><th>Finished</th><th>Profile</th><th>Status</th><th>Artifacts</th><th>Bloomberg</th></tr></thead>
-          <tbody id="doom-release-history-table"><tr><td colspan="6">Loading release archive…</td></tr></tbody>
-        </table>
-        <p class="doom-note">Every release retains frozen copies of its canonical artifacts and SHA-256 hashes. Provider degradation is disclosed rather than silently treated as normal data.</p>
-      </div>
-    </details>
-
     <div class="doom-index-section-head">
       <div>
-        <span class="doom-panel-label">Component analysis</span>
-        <h3>Open every input. Audit every claim.</h3>
+        <span class="doom-panel-label">Index components</span>
+        <h3>What drives the score</h3>
       </div>
-      <p>Each expandable component contains its argument, scoring rule, live inputs, source dates, claim-level warrants, and links to the underlying evidence.</p>
+      <p>The six sections below explain what the index measures, the latest reading, how much it contributes to the score, and where the number comes from.</p>
     </div>
 
     <div class="doom-index-components">
@@ -122,12 +70,12 @@
         </summary>
         <div class="doom-index-component-body">
           <div class="doom-index-component-copy doom-index-component-copy-two">
-            <div><span class="doom-panel-label">Plain English</span><p>{{ $component.plain_english }}</p></div>
-            <div><span class="doom-panel-label">Scoring rule</span><p>{{ $component.score_rule }}</p></div>
+            <div><span class="doom-panel-label">What this means</span><p>{{ $component.plain_english }}</p></div>
+            <div><span class="doom-panel-label">How it affects the score</span><p>{{ $component.score_rule }}</p></div>
           </div>
 
           <div class="doom-index-indicators">
-            <div class="doom-index-indicators-head"><span class="doom-panel-label">Current quantitative inputs</span><small>Every transform is clipped to 0–100. Higher means more evidence for the thesis.</small></div>
+            <div class="doom-index-indicators-head"><span class="doom-panel-label">Current numbers</span><small>Higher component scores mean the evidence supports the thesis more strongly.</small></div>
             <div class="doom-index-indicator-table">
               {{- range where $doomScore.indicators "component_id" $component.id }}
               <div class="doom-index-indicator-row">
@@ -136,7 +84,22 @@
                   <small>{{ if gt .total_index_weight 0.0 }}Scored · {{ printf "%.2f" .total_index_weight }}% index weight{{ else }}Diagnostic · zero index weight{{ end }} · {{ .source }}{{ with .as_of }} · as of {{ . }}{{ end }}</small>
                   {{- with .note }}<small>{{ . }}</small>{{ end }}
                 </div>
-                <span class="doom-index-indicator-value">{{ if ne .raw_value nil }}{{ printf "%.1f" .raw_value }}{{ .unit }}{{ else }}—{{ end }}</span>
+                <span class="doom-index-indicator-value">
+                  {{- if ne .raw_value nil -}}
+                    {{- if eq .indicator_id "ai_porn_minus_constructive_attention_growth_pp" -}}{{ printf "%.0f%% YoY" .raw_value }}
+                    {{- else if eq .indicator_id "projected_deficit_above_target_pct_gdp" -}}{{ printf "%.1f%% of GDP" .raw_value }}
+                    {{- else if eq .unit "%" -}}{{ printf "%.1f%%" .raw_value }}
+                    {{- else if eq .unit "% real YoY" -}}{{ printf "%.1f%% YoY" .raw_value }}
+                    {{- else if eq .unit "% probability" -}}{{ printf "%.1f%%" .raw_value }}
+                    {{- else if eq .unit "percentage points" -}}{{ printf "%.1f pp" .raw_value }}
+                    {{- else if eq .unit "x" -}}{{ printf "%.1f×" .raw_value }}
+                    {{- else if eq .unit "$B" -}}{{ printf "$%.1fB" .raw_value }}
+                    {{- else if or (eq .unit "people") (eq .unit "applications") (eq .unit "records") (eq .unit "events") -}}{{ printf "%.0f %s" .raw_value .unit }}
+                    {{- else if eq .unit "0/1" -}}{{ if eq .raw_value 1.0 }}Yes{{ else }}No{{ end }}
+                    {{- else -}}{{ printf "%.1f %s" .raw_value .unit }}
+                    {{- end -}}
+                  {{- else -}}—{{- end -}}
+                </span>
                 <span class="doom-index-indicator-score">{{ if gt .total_index_weight 0.0 }}{{ if ne .indicator_score nil }}{{ printf "%.0f" .indicator_score }}{{ else }}—{{ end }}<small>/100</small>{{ else }}<small>diagnostic</small>{{ end }}</span>
                 <span class="doom-index-status doom-index-status-{{ .quality_flag }}">{{ .quality_flag }}</span>
               </div>
@@ -144,6 +107,15 @@
             </div>
             <p class="doom-note">Component score: <b>{{ printf "%.1f" $componentScore.component_score }}/100</b> at <b>{{ printf "%.1f" $componentScore.coverage_pct }}%</b> input coverage.</p>
           </div>
+
+          {{- if eq $component.id "political-feasibility" }}
+          {{- with $fiscalMarkets.best_live_fiscal_outcome_market }}
+          <div class="doom-index-market-check" id="political-market-check">
+            <span class="doom-panel-label">Prediction-market check</span>
+            <p><a href="{{ .url }}" target="_blank" rel="noopener"><b>{{ .title }} ↗</b></a> trades at roughly <b>{{ printf "%.0f%%" .midpoint_probability_pct }}</b>. It asks only whether the FY2026 deficit falls below 5% of GDP—not whether Congress passes the much larger recurring adjustment modeled here.</p>
+          </div>
+          {{- end }}
+          {{- end }}
 
           <div class="doom-index-claims">
             <span class="doom-panel-label">Claim audit</span>
@@ -167,7 +139,13 @@
 
     <div class="doom-index-section-head doom-index-downstream-head" id="distraction-economy-charts">
       <div><span class="doom-panel-label">Measured capital allocation</span><h3>The Distraction Economy versus Industrials</h3></div>
-      <p>The score-≥70 GLM 5.2 basket contains companies whose economics benefit directly from greater digital distraction. These charts measure capital and cash flow—not the claimed social harm.</p>
+      <p>The distraction index contains companies whose revenue benefits directly when people spend more time on digital entertainment, social feeds, games, gambling, and targeted advertising. The industrial comparison is the Sharadar Industrials sector.</p>
+    </div>
+    <div class="doom-panel doom-index-constituents">
+      <span class="doom-panel-label">Distraction index constituents</span>
+      <p><b>Currently traded:</b> <span data-field="distraction-current-members">—</span></p>
+      <p><b>Historical and delisted companies included in the charts:</b> <span data-field="distraction-historical-members">—</span></p>
+      <p class="doom-note">A company enters this index when its classifier score is at least 70/100. The membership list is fixed as of July 31, 2026 and applied backward to the company’s public-market history. <a href="/doom-thesis/distraction-index-constituents.csv" download>Download constituents and company-level explanations ↓</a></p>
     </div>
     <div class="doom-chart-grid doom-productivity-secondary-charts">
       <figure class="doom-panel doom-chart-panel">
@@ -202,32 +180,6 @@
     </div>
     <p class="doom-note doom-chart-note">Sources: Sharadar DAILY market cap and point-in-time ARQ filings, including delisted U.S. companies; BLS American Time Use Survey; DataForSEO Google Trends. The 2026 classifier is applied retrospectively, so the company charts are descriptive rather than an implementable historical portfolio. ATUS measures only the primary activity, omits simultaneous phone use, and has no annual 2020 estimate. Google Trends is a relative, revisable index and the worldwide English-language terms are attention proxies—not enrollment or consumption. <a href="/doom-thesis/search-attention-allocation-weekly.csv" download>Download the weekly search panel ↓</a></p>
 
-    <div class="doom-index-section-head doom-index-downstream-head">
-      <div><span class="doom-panel-label">Downstream, not yet scored</span><h3>Scenarios and investment modules</h3></div>
-      <p>These are implications of the thesis. They should not inflate the score merely because they sound consistent with it.</p>
-    </div>
-    <div class="doom-index-downstream-grid">
-      <div class="doom-index-scenario-column">
-        <h4>Scenario chain</h4>
-        {{- range $doomIndex.downstream_scenarios }}
-        <details>
-          <summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary>
-          <p>{{ .summary }}</p>
-          {{- with .existing_evidence }}<small><b>Measured now:</b> {{ . }}</small>{{ end }}
-        </details>
-        {{- end }}
-      </div>
-      <div class="doom-index-scenario-column">
-        <h4>Investment sub-strategies</h4>
-        {{- range $doomIndex.strategy_modules }}
-        <details>
-          <summary><span>{{ .title }}</span><span class="doom-index-status doom-index-status-{{ .status }}">{{ .status }}</span></summary>
-          <p>{{ .thesis }}</p>
-        </details>
-        {{- end }}
-      </div>
-    </div>
-
   </section>
 
   <section class="doom-section doom-opening-thesis" id="thesis">
@@ -252,7 +204,7 @@
     <div class="doom-section-head">
       <div>
         <div class="doom-eyebrow">01 / The Numbers</div>
-        <h2>The liability stack</h2>
+        <h2>The bill</h2>
       </div>
       <p>Present-value estimates are stocks. Income and interest are annual flows. The ratios deliberately show how many current income-years sit beneath the obligation.</p>
     </div>
@@ -1061,7 +1013,7 @@
       <div><div class="doom-eyebrow">09 / Read the Fine Print</div><h2>Definitions matter</h2></div>
     </div>
     <div class="doom-method-grid">
-      <div><h3>What the measured liability stack includes</h3><p data-field="doom-definition">—</p></div>
+      <div><h3>What the total includes</h3><p data-field="doom-definition">—</p></div>
       <div><h3>What “unfunded” means</h3><p>Social Security and Medicare are changing 75-year present-value projection gaps, not fixed bonds or legal invoices. They move with demographics, benefits, taxes, healthcare costs and discount rates.</p></div>
       <div><h3>What income means</h3><p data-field="income-definition">—</p></div>
       <div><h3>What the ratio means</h3><p data-field="ratio-definition">—</p></div>
@@ -1080,5 +1032,5 @@
   <div class="doom-loading" data-loading>Loading the balance sheet…</div>
   <div class="doom-error" data-error hidden>Data could not be loaded. The source file remains available for download.</div>
 </article>
-<script src="/doom-thesis/app.js?v=20260804-3" defer></script>
+<script src="/doom-thesis/app.js?v=20260805-1" defer></script>
 {{ end }}

@@ -19,6 +19,16 @@ PROCESS_MARKERS = (
     "Freeze a reproducible fiscal-stress normalization",
     "Separate current-law arithmetic",
     "Backtest how the proposed measures behaved",
+    "Missing-input range",
+    "Portfolio stop",
+    "The kill switch",
+    "Coverage-gated score history",
+    "Verified live prediction-market evidence",
+    "Release provenance",
+    "Scenarios and investment modules",
+    "Investment sub-strategies",
+    "GLM 5.2 basket",
+    "liability stack",
 )
 CHECKLIST_REQUIRED = (
     "Claim checklist",
@@ -72,12 +82,31 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
     def test_thesis_preserves_expandable_component_auditability(self) -> None:
         self.assertEqual(self.thesis.count("<details class=doom-index-component"), 6)
         for marker in (
-            "Current quantitative inputs",
+            "What drives the score",
+            "Current numbers",
             "Claim audit",
             "Evidence already on this page",
-            "Scoring rule",
-            "Coverage-gated score history",
-            "Release provenance",
+            "How it affects the score",
+        ):
+            with self.subTest(marker=marker):
+                self.assertIn(marker, self.thesis)
+
+    def test_market_check_is_inside_political_component(self) -> None:
+        political_start = self.thesis.index('id=component-political-feasibility')
+        political_end = self.thesis.index('</details>', political_start)
+        market_check = self.thesis.index('id=political-market-check')
+        self.assertLess(political_start, market_check)
+        self.assertLess(market_check, political_end)
+        self.assertEqual(self.thesis.count('id=political-market-check'), 1)
+
+    def test_index_values_and_distraction_members_are_plainly_labeled(self) -> None:
+        for marker in (
+            "-45% YoY",
+            "3.7% of GDP",
+            "Distraction index constituents",
+            'data-field=distraction-current-members',
+            'data-field=distraction-historical-members',
+            "Download constituents and company-level explanations",
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)

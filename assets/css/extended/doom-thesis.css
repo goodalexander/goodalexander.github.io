@@ -332,6 +332,13 @@
 .doom-index-evidence-grid li::before { content: "·"; position: absolute; left: .2rem; color: var(--doom-amber); }
 .doom-index-evidence-grid a { color: var(--doom-ink); text-decoration: none; }
 .doom-index-evidence-grid a:hover { color: var(--doom-amber); }
+.doom-index-market-check { margin-top: 1.2rem; padding: 1.1rem; border: 1px solid var(--doom-line); background: rgba(8,10,12,.5); }
+.doom-index-market-check p { margin: .55rem 0 0; color: var(--doom-muted); font-size: .73rem; line-height: 1.6; }
+.doom-index-market-check a { color: var(--doom-ink); text-decoration: none; }
+.doom-index-market-check a:hover { color: var(--doom-amber); }
+.doom-index-constituents { margin-bottom: 1.2rem; padding: 1.2rem; }
+.doom-index-constituents > p { margin: .65rem 0 0; color: var(--doom-muted); font-size: .72rem; line-height: 1.65; }
+.doom-index-constituents > p b { color: var(--doom-ink); }
 .doom-index-markets { margin-top: 1.2rem; padding: 1.15rem; border: 1px solid var(--doom-line); }
 .doom-index-markets > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: .75rem; background: var(--doom-line); }
 .doom-index-markets a { display: block; min-height: 105px; padding: 1rem; background: rgba(8,10,12,.6); text-decoration: none; }

@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-08-04",
+  "as_of_date": "2026-08-05",
   "components": [
     {
       "component_id": "fiscal-constraint",
@@ -51,7 +51,7 @@
     }
   ],
   "coverage_pct": 100.0,
-  "generated_at": "2026-08-04T20:09:00.162662+00:00",
+  "generated_at": "2026-08-05T01:06:04.108731+00:00",
   "indicators": [
     {
       "as_of": "2025-09-30",
@@ -233,12 +233,12 @@
       "high_threshold": 15,
       "indicator_id": "real_business_ex_distraction_fcf_margin_pct",
       "indicator_score": 71.12842187077209,
-      "label": "Real-business FCF margin ex distraction",
+      "label": "FCF margin outside the distraction index",
       "low_threshold": 5,
       "note": "Point-in-time ARQ replay; excludes known score-70+ distraction businesses, Financial Services, and Utilities.",
       "quality_flag": "current",
       "raw_value": 7.887157812922791,
-      "source": "Sharadar ARQ and GLM 5.2 distraction taxonomy",
+      "source": "Sharadar quarterly filings and the disclosed distraction-index membership",
       "total_index_weight": 3.0,
       "unit": "%",
       "within_component_weight": 10.0
@@ -252,12 +252,12 @@
       "high_threshold": 8,
       "indicator_id": "real_business_ex_distraction_real_revenue_growth_yoy_pct",
       "indicator_score": 75.07382006471072,
-      "label": "Real-business real revenue growth ex distraction",
+      "label": "Real revenue growth outside the distraction index",
       "low_threshold": 0,
       "note": "GDP-deflator-adjusted aggregate revenue growth; current-vintage GDPDEF, mix, M&A, entry, and cyclicality prevent a standalone causal productivity interpretation.",
       "quality_flag": "current",
       "raw_value": 1.9940943948231429,
-      "source": "Sharadar ARQ, GLM 5.2 distraction taxonomy, and FRED GDPDEF",
+      "source": "Sharadar quarterly filings, the disclosed distraction-index membership, and FRED GDP deflator",
       "total_index_weight": 3.0,
       "unit": "% real YoY",
       "within_component_weight": 10.0
@@ -290,12 +290,12 @@
       "high_threshold": 175,
       "indicator_id": "distraction_to_industrials_marketcap_pct",
       "indicator_score": 71.39867192134687,
-      "label": "Distraction market cap / Industrials market cap",
+      "label": "Distraction-index market cap / Industrials",
       "low_threshold": 25,
       "note": "The 2026 classification is applied retrospectively; this is not a point-in-time membership backtest.",
       "quality_flag": "current",
       "raw_value": 132.0980078820203,
-      "source": "Sharadar DAILY and GLM 5.2 taxonomy",
+      "source": "Sharadar market caps and the disclosed distraction-index membership",
       "total_index_weight": 5.25,
       "unit": "%",
       "within_component_weight": 35.0
@@ -309,12 +309,12 @@
       "high_threshold": 175,
       "indicator_id": "distraction_to_industrials_fcf_pct",
       "indicator_score": 65.77542918758584,
-      "label": "Distraction rolling-four-quarter FCF / Industrials FCF",
+      "label": "Distraction-index four-quarter FCF / Industrials",
       "low_threshold": 25,
       "note": "",
       "quality_flag": "current",
       "raw_value": 123.66314378137876,
-      "source": "Sharadar ARQ and GLM 5.2 taxonomy",
+      "source": "Sharadar quarterly filings and the disclosed distraction-index membership",
       "total_index_weight": 3.75,
       "unit": "%",
       "within_component_weight": 25.0
@@ -366,14 +366,14 @@
       "high_threshold": 50,
       "indicator_id": "ai_porn_minus_constructive_attention_growth_pp",
       "indicator_score": 4.967253693090505,
-      "label": "AI Porn minus constructive education 12-week YoY growth",
+      "label": "AI-porn search growth versus education",
       "low_threshold": -50,
-      "note": "Scored momentum signal comparing trailing-12-week YoY growth rates.",
+      "note": "AI-porn search interest grew about 45 points more slowly than the education-search average over the latest 12 weeks versus the same weeks a year earlier.",
       "quality_flag": "current",
       "raw_value": -45.032746306909495,
-      "source": "DataForSEO Google Trends worldwide grouped query; trailing-12-week YoY growth differential",
+      "source": "Google Trends worldwide; trailing-12-week growth versus the same period a year ago",
       "total_index_weight": 1.5,
-      "unit": "percentage points",
+      "unit": "% YoY difference",
       "within_component_weight": 10.0
     },
     {
@@ -423,14 +423,14 @@
       "high_threshold": 5,
       "indicator_id": "projected_deficit_above_target_pct_gdp",
       "indicator_score": 74.0,
-      "label": "2036 projected deficit above prudent target",
+      "label": "2036 deficit above the 3%-of-GDP target",
       "low_threshold": 0,
       "note": "",
       "quality_flag": "current",
       "raw_value": 3.7,
       "source": "CBO Budget and Economic Outlook",
       "total_index_weight": 3.75,
-      "unit": "percentage points",
+      "unit": "% of GDP",
       "within_component_weight": 25.0
     },
     {
