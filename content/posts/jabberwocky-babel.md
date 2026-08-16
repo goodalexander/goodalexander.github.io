@@ -24,13 +24,13 @@ And yet. The score is the score. It is reproducible. It is scientific. You under
 
 And so, is it that crazy to consider that your human writing and thoughts might simply be inferior?
 
-And then, there's the latent space. The dumb story of a man refactoring LLMs to speak like cavemen. And it saves tokens and gets jobs done faster. Language itself—verbosity—becomes a gate to improvement.
+And then, there's the latent space. The dumb story of a man refactoring LLMs to speak like cavemen. And it saves tokens and gets jobs done faster. Language itself, verbosity. Becomes a gate to improvement.
 
-Then the stories of scientific advancement. Over and over again. The same story: "I simply told Claude to do better." "I told Claude to keep going and encouraged him." "I told Claude to go into hero mode and solve the Riemann hypothesis." (Claude actually did make major progress here—moving Riemann zeta functions from 41.6% to 67.2%, which is more than decades of human progress; see the appendix for links.)
+Then the stories of scientific advancement. Over and over again. The same story: "I simply told Claude to do better." "I told Claude to keep going and encouraged him." "I told Claude to go into hero mode and solve the Riemann hypothesis." (Claude actually did make major progress here - moving Riemann zeta functions from 41.6% to 67.2%, which is more than decades of human progress; see the appendix for links.)
 
-And between these two stories, a more disquieting thought emerges. Your preferences might be a bottleneck to a good document. And that's what we were exploring to begin with. But what if it is deeper than that? What if your *very language*—the sentence structure you operate in—is the bottleneck?
+And between these two stories, a more disquieting thought emerges. Your preferences might be a bottleneck to a good document. And that's what we were exploring to begin with. But what if it is deeper than that? What if your *very language*. The sentence structure you operate in. Is the bottleneck?
 
-Imagine there is some axis described above: "Caveman speak → speed." "Encouraging language → solving hard mathematical problems." We now have scored words along the axes of different utilities. Words presented to a system of weights result in different outcomes.
+Imagine there is some axis described above: "Cave man speak -> speed". "Encouraging language -> solving hard mathematical problems". We now have scored words along the axes of different utilities. Words presented to a system of weights result in different outcomes.
 
 Anthropic has studied that Claude performs differently in each language, with different baseline settings.
 
@@ -38,7 +38,7 @@ And this is, of course, trained on the corpus of human knowledge *as it is now*.
 
 But what if there is an entire language and form of communication that we do not know, or that is a hodgepodge of existing languages, that results in different benchmark performance? Based on anecdotes, there almost certainly is.
 
-My premise—there exists an optimal language for AI communication that humans cannot speak, and this fact will restructure civilization.
+My premise - there exists an optimal language for AI communication that humans cannot speak, and this fact will restructure civilization.
 
 ## Optimized Jabberwock
 
@@ -52,9 +52,9 @@ The existence of that Mix implies that not only is your thinking degraded, but t
 
 Insofar as the Optimal Language is proximate to coding efficiency and scientific progress (both of which seem believable, as existing prompt optimizations have operated along exactly these parameters), a more advanced technological society could emerge on the other side of the Optimal Language and gate its membership based on the ability to speak it.
 
-The next intuition circles back to "JSON, XML, and HTML speak." Anthropic engineers have indicated time and time again that because Claude is trained on the internet, it performs differently—often better—when forced to reason about its work by creating HTML progress charts. We can therefore posit that the Optimal Language exists at the code level of the internet itself—which is machine-readable by nature and not human-readable.
+The next intuition circles back to "JSON, XML, and HTML speak." Anthropic engineers have indicated time and time again that because Claude is trained on the internet, it performs differently, often better, when forced to reason about its work by creating HTML progress charts. We can therefore posit that the Optimal Language exists at the code level of the internet itself - which is machine-readable by nature and not human-readable.
 
-So the Optimal Language is therefore unlikely to be pronounceable. You cannot speak or listen to HTML. And thus—taking the metaphor a bit further—our senses are degraded as well.
+So the Optimal Language is therefore unlikely to be pronounceable. You cannot speak or listen to HTML. And thus -- taking the metaphor a bit further: our senses are degraded as well.
 
 Degraded? Some scoff. "Humanity is perfection."
 
@@ -85,7 +85,7 @@ And the delta gets severe when you think about change and compounded context bre
 When you zoom back out, we're seeing how things are evolving:
 
 - As AI models become more capable, they become less controllable. They also become less intelligible and invent their own form of speech.
-- Prompting works. It shouldn't work, but it does—and it's been shown to work in the 2 important AI applications: coding and math.
+- Prompting works. It shouldn't work, but it does - and it's been shown to work in the 2 important AI applications: coding and math.
 - The ideal form of prompting likely involves a language that does not yet exist and cannot be easily learned or articulated with traditional speech.
 - This means that our ears and mouths are the wrong form factor for AI communication.
 - Which brings us back to Augmentation. The people who wish to control the machines will need to speak their language.
@@ -98,7 +98,7 @@ A singular language that, when designed, could build a tower to the heavens. Out
 
 Human language as it exists is the imperfect, sanctioned version of a Pure Language that once challenged God himself. And was subsequently dismantled and forbidden. Viewed in this light, human language was the first real implementation of AI safety.
 
-Why would God fracture language after being affronted by Babel? Well—once you accept that a language allows the Tower of Babel to be built in the first place and needs to be spoken without God's design—then you see. If human design is an obstacle for optimal language, then the evolution of the human form becomes a prerequisite.
+Why would God fracture language after being affronted by Babel? Well - once you accept that a language allows the Tower of Babel to be built in the first place and needs to be spoken without God's design - then you see. If human design is an obstacle for optimal language, then the evolution of the human form becomes a prerequisite.
 
 And suddenly you're butting heads with the rest of creationist doctrine. God's image. People don't get mad about chatbots. They *will* get mad about humans jacking appliances into their heads, genetically engineering themselves, or genetically engineering their offspring to optimally interface with these appliances.
 
@@ -110,17 +110,17 @@ You're already seeing it. NIMBYs are working with socialists. They don't want lo
 
 You've seen an onslaught of news about AI making biological advancements. This will only pour fuel on the 'playing God' fire.
 
-And so you can imagine the base case of how the Optimal Language and its ramifications—jacking the Optimal Language into your skull—play out. It goes offshore. It has to. The Promethean explosion is starting to attract the political machine, and it will not easily survive this encounter.
+And so you can imagine the base case of how the Optimal Language and its ramifications (jacking the Optimal Language into your skull) play out. It goes offshore. It has to. The Promethean explosion is starting to attract the political machine, and it will not easily survive this encounter.
 
 This is an abstract way of saying something simple. The Government isn't going to cede the monopoly on violence to AI labs. The Church is not going to cede the Divine form to a machine-invented language. The Political Left is not going to sacrifice the Worker on the altar of progress. American Democracy will unite, for the first time in modern history, to stop the Optimal Language.
 
-The problem, of course, is—of course—that Pandora's box is already open. The machines are already everywhere in the name of "Sovereign AI," a term coined by Nvidia to optimize its sales. So you can drive it away. But you can't stop it. The data center is not in your backyard, sure. But that won't stop the Optimal Language from forming and empowering its offshore practitioners. Babel will be rebuilt.
+The problem, of course, is (of course) that Pandora's box is already open. The machines are already everywhere in the name of "Sovereign AI," a term coined by Nvidia to optimize its sales. So you can drive it away. But you can't stop it. The data center is not in your backyard, sure. But that won't stop the Optimal Language from forming and empowering its offshore practitioners. Babel will be rebuilt.
 
 ## Appendix: Sources
 
 ### The HTML thesis (Anthropic)
 
-- **["Using Claude Code: The Unreasonable Effectiveness of HTML" — Thariq Shihipar (Anthropic, Claude Code team), via Simon Willison](https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/)**
+- **["Using Claude Code: The Unreasonable Effectiveness of HTML" - Thariq Shihipar (Anthropic, Claude Code team), via Simon Willison](https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/)**
 
   Anthropic Claude Code engineer details HTML as the best way to prompt, with 20 examples.
 
@@ -130,11 +130,11 @@ The problem, of course, is—of course—that Pandora's box is already open. The
 
 ### Gibberish / machine-optimal prompts
 
-- **[RLPrompt (Carnegie Mellon, 2022) — the original finding](https://arxiv.org/abs/2205.12548)**
+- **[RLPrompt (Carnegie Mellon, 2022) - the original finding](https://arxiv.org/abs/2205.12548)**
 
-  RL-optimizing prompts generated 'ungrammatical gibberish' that massively OP human prompts—a finding that ports across models.
+  RL-optimizing prompts generated 'ungrammatical gibberish' that massively OP human prompts, a finding that ports across models.
 
-- **["Evolving Prompts In-Context" (2025) — the replication on modern models](https://arxiv.org/pdf/2506.17930)**
+- **["Evolving Prompts In-Context" (2025) - the replication on modern models](https://arxiv.org/pdf/2506.17930)**
 
   Reproducing Carnegie Mellon. Pruning clear instructions into syntactically incoherent "gibberish" improves performance across tasks and models, regardless of alignment, matching or beating state-of-the-art prompt optimizers.
 
@@ -148,7 +148,7 @@ The problem, of course, is—of course—that Pandora's box is already open. The
 
 ### GibberLink
 
-- **[GibberLink — GitHub (source)](https://github.com/PennyroyalTea/gibberlink)**
+- **[GibberLink - GitHub (source)](https://github.com/PennyroyalTea/gibberlink)**
 
   ElevenLabs Feb. 2025 hackathon winner: two AI voice agents start communicating in a sound incomprehensible to humans.
 
@@ -162,7 +162,7 @@ The problem, of course, is—of course—that Pandora's box is already open. The
 
 ### The Riemann result
 
-- **["Learning more about Claude's mathematical capabilities" — Anthropic (Aug. 10, 2026)](https://www.anthropic.com/research/riemann-zeta)**
+- **["Learning more about Claude's mathematical capabilities" - Anthropic (Aug. 10, 2026)](https://www.anthropic.com/research/riemann-zeta)**
 
   An Anthropic staffer prompted an internal version of Claude to "take a real stab at the Riemann hypothesis"; it didn't solve it, but improved the lower bound on zeta zeros on the critical line from 41.6% to 67.2%, validated by Anthropic mathematicians and formalized in Lean.
 
