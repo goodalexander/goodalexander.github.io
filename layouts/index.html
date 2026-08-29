@@ -35,7 +35,7 @@
   </div>
 
   <div class="ga-feed-list">
-    {{- range $index, $page := first 14 $posts }}
+    {{- range $index, $page := $posts }}
     {{- $category := "Research" -}}
     {{- with $page.Params.categories }}{{ if gt (len .) 0 }}{{ $category = index . 0 }}{{ end }}{{ end -}}
     <article class="ga-feed-row">

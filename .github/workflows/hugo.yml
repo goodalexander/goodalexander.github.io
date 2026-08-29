@@ -41,6 +41,9 @@ jobs:
         env:
           HUGO_ENV: production
         run: hugo --gc --minify --baseURL "https://goodalexander.com/"
+
+      - name: Verify homepage index
+        run: python3 scripts/test_homepage_index.py public
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

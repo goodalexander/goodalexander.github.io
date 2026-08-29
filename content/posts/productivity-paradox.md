@@ -4,6 +4,8 @@ title: "The AI Productivity Paradox- Chopping Wood Cubed"
 date: 2025-08-20T18:21:51Z
 summary: "understanding the underlying drivers of the Doom Thesis and what to do about it on a personal level"
 draft: false
+aliases: ["/posts/paradox/"]
+categories: ["markets"]
 tags: ["long-form","philosophy","markets"]
 ---
 
