@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "generated_at": "2026-08-05T17:00:14.109546+00:00",
+  "generated_at": "2026-10-03T08:42:03.065478+00:00",
   "status": "coverage_gated_research_evidence_history_not_probability",
   "minimum_publication_coverage_pct": 100.0,
   "methodology": {
@@ -14,231 +14,231 @@
       "calendar_year": 2004,
       "as_of_date": "2004-12-31",
       "research_score": null,
-      "diagnostic_score": 19.5811639593,
+      "diagnostic_score": 19.5875545964,
       "coverage_pct": 51.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 10.4002068842,
-      "missing_input_upper_bound": 58.9002068842
+      "missing_input_lower_bound": 10.4037217347,
+      "missing_input_upper_bound": 58.9037217347
     },
     {
       "calendar_year": 2005,
       "as_of_date": "2005-12-31",
       "research_score": null,
-      "diagnostic_score": 17.6812859496,
+      "diagnostic_score": 17.71760348,
       "coverage_pct": 60.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 10.7992299277,
-      "missing_input_upper_bound": 50.2992299277
+      "missing_input_lower_bound": 10.8192045694,
+      "missing_input_upper_bound": 50.3192045694
     },
     {
       "calendar_year": 2006,
       "as_of_date": "2006-12-31",
       "research_score": null,
-      "diagnostic_score": 25.4537408335,
+      "diagnostic_score": 25.501000932,
       "coverage_pct": 51.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 12.8980988335,
-      "missing_input_upper_bound": 61.3980988335
+      "missing_input_lower_bound": 12.9240918877,
+      "missing_input_upper_bound": 61.4240918877
     },
     {
       "calendar_year": 2007,
       "as_of_date": "2007-12-31",
       "research_score": null,
-      "diagnostic_score": 30.4938778189,
+      "diagnostic_score": 30.3249260188,
       "coverage_pct": 51.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 16.1523813326,
-      "missing_input_upper_bound": 64.6523813326
+      "missing_input_lower_bound": 16.0594578426,
+      "missing_input_upper_bound": 64.5594578426
     },
     {
       "calendar_year": 2008,
       "as_of_date": "2008-12-31",
       "research_score": null,
-      "diagnostic_score": 31.6761859278,
+      "diagnostic_score": 31.6975646481,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 19.4186645725,
-      "missing_input_upper_bound": 61.9186645725
+      "missing_input_lower_bound": 19.4346986127,
+      "missing_input_upper_bound": 61.9346986127
     },
     {
       "calendar_year": 2009,
       "as_of_date": "2009-12-31",
       "research_score": null,
-      "diagnostic_score": 37.9156584462,
+      "diagnostic_score": 37.9410654491,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 24.0625532133,
-      "missing_input_upper_bound": 66.5625532133
+      "missing_input_lower_bound": 24.0816084655,
+      "missing_input_upper_bound": 66.5816084655
     },
     {
       "calendar_year": 2010,
       "as_of_date": "2010-12-31",
       "research_score": null,
-      "diagnostic_score": 34.1574475265,
+      "diagnostic_score": 34.1757400051,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 25.0447113398,
-      "missing_input_upper_bound": 58.5447113398
+      "missing_input_lower_bound": 25.0583319585,
+      "missing_input_upper_bound": 58.5583319585
     },
     {
       "calendar_year": 2011,
       "as_of_date": "2011-12-31",
       "research_score": null,
-      "diagnostic_score": 31.4910679446,
+      "diagnostic_score": 31.5124541847,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 20.0493162854,
-      "missing_input_upper_bound": 62.5493162854
+      "missing_input_lower_bound": 20.0651687801,
+      "missing_input_upper_bound": 62.5651687801
     },
     {
       "calendar_year": 2012,
       "as_of_date": "2012-12-31",
       "research_score": null,
-      "diagnostic_score": 36.8324053406,
+      "diagnostic_score": 36.0209446953,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 24.4732827747,
-      "missing_input_upper_bound": 66.9732827747
+      "missing_input_lower_bound": 23.8646643651,
+      "missing_input_upper_bound": 66.3646643651
     },
     {
       "calendar_year": 2013,
       "as_of_date": "2013-12-31",
       "research_score": null,
-      "diagnostic_score": 35.9827145155,
+      "diagnostic_score": 36.516960427,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 24.0596733471,
-      "missing_input_upper_bound": 66.5596733471
+      "missing_input_lower_bound": 24.4605058778,
+      "missing_input_upper_bound": 66.9605058778
     },
     {
       "calendar_year": 2014,
       "as_of_date": "2014-12-31",
       "research_score": null,
-      "diagnostic_score": 35.7063143955,
+      "diagnostic_score": 35.7408509973,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 23.6588749404,
-      "missing_input_upper_bound": 66.1588749404
+      "missing_input_lower_bound": 23.6850175402,
+      "missing_input_upper_bound": 66.1850175402
     },
     {
       "calendar_year": 2015,
       "as_of_date": "2015-12-31",
       "research_score": null,
-      "diagnostic_score": 39.9526394343,
+      "diagnostic_score": 39.9783350359,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 29.1359279566,
-      "missing_input_upper_bound": 62.6359279566
+      "missing_input_lower_bound": 29.1551561917,
+      "missing_input_upper_bound": 62.6551561917
     },
     {
       "calendar_year": 2016,
       "as_of_date": "2016-12-31",
       "research_score": null,
-      "diagnostic_score": 40.5921235588,
+      "diagnostic_score": 40.5993056118,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 27.3537194005,
-      "missing_input_upper_bound": 69.8537194005
+      "missing_input_lower_bound": 27.35877568,
+      "missing_input_upper_bound": 69.85877568
     },
     {
       "calendar_year": 2017,
       "as_of_date": "2017-12-31",
       "research_score": null,
-      "diagnostic_score": 40.2934142555,
+      "diagnostic_score": 40.315278093,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 27.0512904858,
-      "missing_input_upper_bound": 69.5512904858
+      "missing_input_lower_bound": 27.0679112555,
+      "missing_input_upper_bound": 69.5679112555
     },
     {
       "calendar_year": 2018,
       "as_of_date": "2018-12-31",
       "research_score": null,
-      "diagnostic_score": 40.5157667353,
+      "diagnostic_score": 40.5584641346,
       "coverage_pct": 57.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 26.7154648131,
-      "missing_input_upper_bound": 69.2154648131
+      "missing_input_lower_bound": 26.7476452145,
+      "missing_input_upper_bound": 69.2476452145
     },
     {
       "calendar_year": 2019,
       "as_of_date": "2019-12-31",
       "research_score": null,
-      "diagnostic_score": 44.5841901395,
+      "diagnostic_score": 44.6557844273,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 32.9752354552,
-      "missing_input_upper_bound": 66.4752354552
+      "missing_input_lower_bound": 33.0286578626,
+      "missing_input_upper_bound": 66.5286578626
     },
     {
       "calendar_year": 2020,
       "as_of_date": "2020-12-31",
       "research_score": null,
-      "diagnostic_score": 55.1285070806,
+      "diagnostic_score": 55.1795534906,
       "coverage_pct": 63.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 40.0472269051,
-      "missing_input_upper_bound": 76.5472269051
+      "missing_input_lower_bound": 40.0844506847,
+      "missing_input_upper_bound": 76.5844506847
     },
     {
       "calendar_year": 2021,
       "as_of_date": "2021-12-31",
       "research_score": null,
-      "diagnostic_score": 50.6913365085,
+      "diagnostic_score": 50.718074509,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 39.031166087,
-      "missing_input_upper_bound": 72.531166087
+      "missing_input_lower_bound": 39.0507698783,
+      "missing_input_upper_bound": 72.5507698783
     },
     {
       "calendar_year": 2022,
       "as_of_date": "2022-12-31",
       "research_score": null,
-      "diagnostic_score": 48.1355805122,
+      "diagnostic_score": 48.1622223291,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 36.4332780218,
-      "missing_input_upper_bound": 69.9332780218
+      "missing_input_lower_bound": 36.4530244593,
+      "missing_input_upper_bound": 69.9530244593
     },
     {
       "calendar_year": 2023,
       "as_of_date": "2023-12-31",
       "research_score": null,
-      "diagnostic_score": 53.8669845728,
+      "diagnostic_score": 53.8850899163,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 40.6434518201,
-      "missing_input_upper_bound": 74.1434518201
+      "missing_input_lower_bound": 40.6546647308,
+      "missing_input_upper_bound": 74.1546647308
     },
     {
       "calendar_year": 2024,
       "as_of_date": "2024-12-31",
       "research_score": null,
-      "diagnostic_score": 56.0531423048,
+      "diagnostic_score": 56.0306465312,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 42.3521010993,
-      "missing_input_upper_bound": 75.8521010993
+      "missing_input_lower_bound": 42.3266445903,
+      "missing_input_upper_bound": 75.8266445903
     },
     {
       "calendar_year": 2025,
       "as_of_date": "2025-12-31",
       "research_score": null,
-      "diagnostic_score": 57.4483302107,
+      "diagnostic_score": 57.3717566733,
       "coverage_pct": 66.5,
       "publication_comparable": false,
-      "missing_input_lower_bound": 43.2411983612,
-      "missing_input_upper_bound": 76.7411983612
+      "missing_input_lower_bound": 43.1811674623,
+      "missing_input_upper_bound": 76.6811674623
     },
     {
       "calendar_year": 2026,
-      "as_of_date": "2026-08-05",
-      "research_score": 67.6242361365,
-      "diagnostic_score": 67.6242361365,
+      "as_of_date": "2026-10-03",
+      "research_score": 67.561224423,
+      "diagnostic_score": 67.561224423,
       "coverage_pct": 100.0,
       "publication_comparable": true,
-      "missing_input_lower_bound": 67.6242361365,
-      "missing_input_upper_bound": 67.6242361365
+      "missing_input_lower_bound": 67.561224423,
+      "missing_input_upper_bound": 67.561224423
     }
   ]
 }

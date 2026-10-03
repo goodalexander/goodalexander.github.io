@@ -1,15 +1,105 @@
 platform,event_id,market_id,title,status,close_time,yes_bid_pct,yes_ask_pct,yes_bid_size_contracts,yes_ask_size_contracts,no_bid_pct,no_ask_pct,midpoint_probability_pct,last_probability_pct,volume_native,volume_unit,liquidity_usd,open_interest_contracts,rules,mapping,admissible_for_direct_package_probability,rejection_reason,url
-Kalshi,KXDEFGDP-26OCT20,KXDEFGDP-26OCT20-T5,Will U.S. federal deficit-to-GDP for FY2026 be below 5%?,open,2026-10-20T12:29:00Z,8.0,13.0,1854.65,500.68,87.0,92.0,10.5,9.0,66009.53,contracts,0.0,19531.5,"If the U.S. federal budget deficit as a percentage of GDP for fiscal year 2026, as reported in the U.S. Treasury / Office of Management and Budget Joint Statement on Budget Results for Fiscal Year 2026, is below 5%, then the market resolves to Yes.",fiscal_outcome_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxdefgdp-26oct20
-Kalshi,KXSOCIALSECURITYDEPLETE-33,KXSOCIALSECURITYDEPLETE-33-33JAN01,"Will it be reported by any of the Source Agencies that the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law before Jan 1, 2033?",open,2033-01-01T04:59:00Z,14.000000000000002,19.999999999999996,6.69,100.89,80.0,86.0,17.0,19.0,2162.76,contracts,0.0,83.8,"If the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law  after Issuance and before Jan 1, 2033, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsocialsecuritydeplete-33
-Polymarket,73226,665518,Will the U.S. national debt hit $40 trillion before 2027?,open,2026-12-31T00:00:00Z,97.89999999999999,99.6,46.14,35.8,,,98.75,98.0,5840.286934999999,USD,3067.19785,3554.712988,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+Kalshi,KXDEFGDP-26OCT20,KXDEFGDP-26OCT20-T5,Will U.S. federal deficit-to-GDP for FY2026 be below 5%?,open,2026-10-20T12:29:00Z,,4.0000000000000036,0.0,150.0,96.0,,,1.0,75970.36,contracts,,22915.48,"If the U.S. federal budget deficit as a percentage of GDP for fiscal year 2026, as reported in the U.S. Treasury / Office of Management and Budget Joint Statement on Budget Results for Fiscal Year 2026, is below 5%, then the market resolves to Yes.",fiscal_outcome_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxdefgdp-26oct20
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T1.5,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 1.5%?,open,2027-10-13T12:29:00Z,80.0,83.0,401.72,200.0,17.0,19.999999999999996,81.5,83.0,2947.58,contracts,,947.02,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+1.5%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T4.5,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 4.5%?,open,2027-10-13T12:29:00Z,7.000000000000001,8.999999999999996,200.0,17.02,91.0,93.0,7.999999999999998,8.0,2086.02,contracts,,600.02,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+4.5%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T2.5,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 2.5%?,open,2027-10-13T12:29:00Z,44.0,51.0,200.0,155.21,49.0,56.00000000000001,47.5,51.0,808.65,contracts,,268.95,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+2.5%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T3.5,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 3.5%?,open,2027-10-13T12:29:00Z,19.0,29.000000000000004,200.0,200.0,71.0,81.0,24.0,22.0,204.31,contracts,,204.31,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+3.5%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T4.0,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 4.0%?,open,2027-10-13T12:29:00Z,11.0,20.999999999999996,200.0,200.0,79.0,89.0,15.999999999999998,17.0,1112.01,contracts,,200.01,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+4.0%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T3.0,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 3.0%?,open,2027-10-13T12:29:00Z,28.000000000000004,37.0,10.0,200.0,63.0,72.0,32.5,31.0,1210.92,contracts,,175.01,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+3.0%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Kalshi,KXSOCIALSECURITYDEPLETE-33,KXSOCIALSECURITYDEPLETE-33-33JAN01,"Will it be reported by any of the Source Agencies that the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law before Jan 1, 2033?",open,2033-01-01T04:59:00Z,13.0,19.999999999999996,5.34,2.17,80.0,87.0,16.5,20.0,2180.61,contracts,,73.29,"If the OASI Trust Fund reserves are depleted such that full scheduled Social Security retirement and survivors benefits are no longer payable under then-current law  after Issuance and before Jan 1, 2033, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsocialsecuritydeplete-33
+Kalshi,KXSSCOLA-27OCT13,KXSSCOLA-27OCT13-T2.0,Will the cost-of-living adjustment applied to Social Security benefits payable for December 2027 be above 2.0%?,open,2027-10-13T12:29:00Z,65.0,75.0,200.0,200.0,25.0,35.0,70.0,76.0,384.03,contracts,,0.01,"If the cost-of-living adjustment applied to Social Security benefits payable for December 2027, as initially announced by the Social Security Administration, is above
+
+2.0%, then the market resolves to Yes.",search_candidate_only,False,One-year outcome or adjacent fiscal contract; it does not resolve enactment of the recurring prudent-course package.,https://kalshi.com/markets/kxsscola-27oct13
+Polymarket,73226,665519,Will the U.S. national debt hit $41 trillion before 2027?,open,2027-01-01T04:59:00Z,19.0,88.0,68.02,21.43,,,53.5,83.0,675.943375,USD,55.2074,6298.5887139999995,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
 
 The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
-Polymarket,73226,665519,Will the U.S. national debt hit $41 trillion before 2027?,open,2026-12-31T00:00:00Z,26.0,54.0,42.5,87.21,,,40.0,24.0,653.6921840000001,USD,489.1726,3554.712988,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+Polymarket,73226,665520,Will the U.S. national debt hit $42 trillion before 2027?,open,2027-01-01T04:59:00Z,2.5,5.4,4.64,6.9,,,3.95,2.6,10286.916803,USD,4464.2157,6298.5887139999995,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
 
 The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
-Polymarket,73226,665520,Will the U.S. national debt hit $42 trillion before 2027?,open,2026-12-31T00:00:00Z,1.7999999999999998,5.8999999999999995,10.0,30.0,,,3.8499999999999996,8.0,5284.423352,USD,4010.47254,3554.712988,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+Polymarket,1040357,4662997,Will the UK Budget include a wealth tax?,open,2026-10-29T03:59:00Z,8.0,10.0,79.99,160.0,,,9.0,7.000000000000001,649.485678,USD,318.7568,2245.893851,"The UK Autumn Budget 2026 is scheduled to be delivered to Parliament by Chancellor of the Exchequer John Healey on October 28, 2026.
 
-The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+This market will resolve to ""Yes"" if the listed measure is announced in the 2026 Autumn Budget. Otherwise, this market will resolve to ""No"".
+
+For the purposes of this market, the listed options are defined as follows:
+
+- Wealth tax: the introduction of an annual percentage-based levy on the value of a person's assets.
+- Land value tax: the introduction of a percentage-based levy on the value of a person's home.
+- Fuel duty increase: an increase to the rate of fuel duty.
+- CGT increase: an increase to any rate of capital gains tax.
+
+A measure will only count if it is announced in the Chancellor's Budget speech or contained in the official Budget documents published by HM Treasury on the day of the Budget. Measures that are only consulted on, reviewed, or otherwise not announced as government policy will not count.
+
+For the fuel duty option, the ending or non-renewal of the existing fuel duty freeze, such that the rate of fuel duty rises, will count as an increase.
+
+If the 2026 Autumn Budget is delayed beyond October 28, 2026, this market will resolve according to the Budget whenever it is delivered, provided it is delivered by December 31, 2026, 11:59 PM ET. If no Budget is delivered by that date, this market will resolve to ""No"".
+
+The primary resolution source for this market will be official information from HM Treasury and the UK government, including the published Budget documents; however, a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-uk-budget-20260914
+Polymarket,1040357,4662998,Will the UK Budget include a land value tax?,open,2026-10-29T03:59:00Z,7.000000000000001,22.0,25.0,39.99,,,14.5,17.0,291.802653,USD,124.2342,2245.893851,"The UK Autumn Budget 2026 is scheduled to be delivered to Parliament by Chancellor of the Exchequer John Healey on October 28, 2026.
+
+This market will resolve to ""Yes"" if the listed measure is announced in the 2026 Autumn Budget. Otherwise, this market will resolve to ""No"".
+
+For the purposes of this market, the listed options are defined as follows:
+
+- Wealth tax: the introduction of an annual percentage-based levy on the value of a person's assets.
+- Land value tax: the introduction of a percentage-based levy on the value of a person's home.
+- Fuel duty increase: an increase to the rate of fuel duty.
+- CGT increase: an increase to any rate of capital gains tax.
+
+A measure will only count if it is announced in the Chancellor's Budget speech or contained in the official Budget documents published by HM Treasury on the day of the Budget. Measures that are only consulted on, reviewed, or otherwise not announced as government policy will not count.
+
+For the fuel duty option, the ending or non-renewal of the existing fuel duty freeze, such that the rate of fuel duty rises, will count as an increase.
+
+If the 2026 Autumn Budget is delayed beyond October 28, 2026, this market will resolve according to the Budget whenever it is delivered, provided it is delivered by December 31, 2026, 11:59 PM ET. If no Budget is delivered by that date, this market will resolve to ""No"".
+
+The primary resolution source for this market will be official information from HM Treasury and the UK government, including the published Budget documents; however, a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-uk-budget-20260914
+Polymarket,1040357,4662999,Will the UK Budget include an increase to fuel duty?,open,2026-10-29T03:59:00Z,32.0,45.0,29.73,109.2,,,38.5,27.0,697.8892549999999,USD,329.4257,2245.893851,"The UK Autumn Budget 2026 is scheduled to be delivered to Parliament by Chancellor of the Exchequer John Healey on October 28, 2026.
+
+This market will resolve to ""Yes"" if the listed measure is announced in the 2026 Autumn Budget. Otherwise, this market will resolve to ""No"".
+
+For the purposes of this market, the listed options are defined as follows:
+
+- Wealth tax: the introduction of an annual percentage-based levy on the value of a person's assets.
+- Land value tax: the introduction of a percentage-based levy on the value of a person's home.
+- Fuel duty increase: an increase to the rate of fuel duty.
+- CGT increase: an increase to any rate of capital gains tax.
+
+A measure will only count if it is announced in the Chancellor's Budget speech or contained in the official Budget documents published by HM Treasury on the day of the Budget. Measures that are only consulted on, reviewed, or otherwise not announced as government policy will not count.
+
+For the fuel duty option, the ending or non-renewal of the existing fuel duty freeze, such that the rate of fuel duty rises, will count as an increase.
+
+If the 2026 Autumn Budget is delayed beyond October 28, 2026, this market will resolve according to the Budget whenever it is delivered, provided it is delivered by December 31, 2026, 11:59 PM ET. If no Budget is delivered by that date, this market will resolve to ""No"".
+
+The primary resolution source for this market will be official information from HM Treasury and the UK government, including the published Budget documents; however, a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-uk-budget-20260914
+Polymarket,1040357,4663000,Will the UK Budget include an increase to capital gains tax?,open,2026-10-29T03:59:00Z,45.0,50.0,42.6,121.4,,,47.5,38.0,2965.329823,USD,422.7322,2245.893851,"The UK Autumn Budget 2026 is scheduled to be delivered to Parliament by Chancellor of the Exchequer John Healey on October 28, 2026.
+
+This market will resolve to ""Yes"" if the listed measure is announced in the 2026 Autumn Budget. Otherwise, this market will resolve to ""No"".
+
+For the purposes of this market, the listed options are defined as follows:
+
+- Wealth tax: the introduction of an annual percentage-based levy on the value of a person's assets.
+- Land value tax: the introduction of a percentage-based levy on the value of a person's home.
+- Fuel duty increase: an increase to the rate of fuel duty.
+- CGT increase: an increase to any rate of capital gains tax.
+
+A measure will only count if it is announced in the Chancellor's Budget speech or contained in the official Budget documents published by HM Treasury on the day of the Budget. Measures that are only consulted on, reviewed, or otherwise not announced as government policy will not count.
+
+For the fuel duty option, the ending or non-renewal of the existing fuel duty freeze, such that the rate of fuel duty rises, will count as an increase.
+
+If the 2026 Autumn Budget is delayed beyond October 28, 2026, this market will resolve according to the Budget whenever it is delivered, provided it is delivered by December 31, 2026, 11:59 PM ET. If no Budget is delivered by that date, this market will resolve to ""No"".
+
+The primary resolution source for this market will be official information from HM Treasury and the UK government, including the published Budget documents; however, a consensus of credible reporting will also be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-be-in-the-uk-budget-20260914
 Polymarket,378798,1981726,"Will Trump say ""Million"" or ""Billion"" or ""Trillion"" 15+ times during No Tax on Tips Roundtable?",closed,2026-04-16T00:00:00Z,99.9,100.0,,,,,99.95,99.5,6875.732334,USD,,112470.07426900002,"Donald Trump is scheduled to participate in an event titled ""The President participates in a Roundtable and Remarks on Tax Day"" in Las Vegas, Nevada on April 16, 2026, 7PM ET (https://rollcall.com/factbase/trump/calendar/).
 
 This market will resolve to ""Yes"" if Donald Trump says the listed term during the Tax Day Roundtable scheduled for April 16, 2026. Otherwise, the market will resolve to ""No"".
@@ -469,7 +559,10 @@ AI-generated audio or video will not count toward this market's resolution.
 If this event is definitively cancelled, or otherwise is not aired by April 16, 2026, 11:59 PM ET, ""-No Qualifying Event-"" will resolve to ""Yes"" and all other brackets will resolve to ""No"".
 
 The resolution source will be video of the events. Only remarks which are broadcast or streamed live will count toward this market's resolution.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/what-will-trump-say-during-no-tax-on-tips-roundtable
-Polymarket,73226,665517,Will the U.S. national debt hit $39 trillion before 2027?,closed,2026-12-31T00:00:00Z,99.9,100.0,,,,,99.95,99.9,11778.402471,USD,7561.39299,3554.712988,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+Polymarket,73226,665517,Will the U.S. national debt hit $39 trillion before 2027?,closed,2026-12-31T00:00:00Z,99.9,100.0,,,,,99.95,99.9,19161.101112999997,USD,4522.9032,6298.5887139999995,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
+
+The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
+Polymarket,73226,665518,Will the U.S. national debt hit $40 trillion before 2027?,closed,2026-12-31T00:00:00Z,99.9,100.0,,,,,99.95,99.9,8198.240934999998,USD,4522.9032,6298.5887139999995,"This market will resolve to ""Yes"" if the U.S. national debt reaches the listed value this year at any point by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to ""No"".
 
 The resolution source for this market will be the U.S. Treasury Department (https://www.treasurydirect.gov/NP_WS/debt/current). If treasurydirect.gov/NP_WS/debt/current becomes unavailable, another credible source will be used.",search_candidate_only,False,Keyword-discovered adjacent contract; it does not define the magnitude and enactment deadline of the recurring prudent-course package.,https://polymarket.com/event/peak-us-national-debt-before-2027
 Polymarket,18167,522523,Will DOGE balance the budget in 2025?,closed,2026-01-31T12:00:00Z,,0.1,,,,,0.0,3.6999999999999997,69874.57023,USD,0.0,0.0,"This market will resolve to ""Yes"" if the budget is balanced for the 2025 fiscal year, i.e. if revenue minus spending is 0 or greater. Otherwise, this market will resolve to ""No.""

@@ -111,7 +111,8 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
         ):
             with self.subTest(marker=marker):
                 self.assertIn(marker, self.thesis)
-        self.assertIsNotNone(re.search(r"-\d+% YoY", self.thesis))
+        # Signed YoY growth is rendered with its unit; the sign follows the data.
+        self.assertIsNotNone(re.search(r"-?\d+% YoY", self.thesis))
 
     def test_common_prosperity_preserves_metric_boundaries(self) -> None:
         for marker in (
@@ -152,7 +153,7 @@ class DoomThesisContentSeparationTest(unittest.TestCase):
         utility = payload["productivity"]["utility_capex_generation"][-1]
         assert utility["calendar_year"] == 2026
         assert utility["period_type"] == "latest_trailing_12_months"
-        assert utility["period_label"] == "TTM through May 2026"
+        assert re.fullmatch(r"TTM through [A-Z][a-z]{2} 2026", utility["period_label"]), utility["period_label"]
 
         indicators = {row["indicator_id"]: row for row in score["indicators"]}
         assert indicators["gross_debt_pct_gdp"]["as_of"].startswith("2026-")
