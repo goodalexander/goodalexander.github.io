@@ -1,0 +1,345 @@
+{{ define "main" }}
+<article class="rt" data-routine>
+  <header class="rt-hero">
+    <div class="rt-hero-text">
+      <div class="rt-kicker"><span class="rt-dot" aria-hidden="true"></span>Routine</div>
+      <h1>The Lock-In Plan</h1>
+      <p class="rt-deck">One fixed day, repeated. Strength and cardio up, 188 lb down to 165, built around US market hours from Puerto Rico.</p>
+      <div class="rt-hero-actions">
+        <a class="rt-btn rt-btn-solid" href="#today">See today</a>
+        <a class="rt-btn" href="#checkin">Sunday check-in</a>
+        <a class="rt-btn" href="/routine/Lock-In-Plan.pdf" download>Download PDF ↓</a>
+      </div>
+    </div>
+    <dl class="rt-stats">
+      <div><dt>Start</dt><dd>Mon, Nov 2, 2026</dd></div>
+      <div><dt>Goal</dt><dd>188 → 165 lb</dd></div>
+      <div><dt>Pace</dt><dd>1–1.5 lb / week</dd></div>
+      <div><dt>Food</dt><dd>2,000 kcal · 199 g protein</dd></div>
+      <div><dt>Eating window</dt><dd>09:30–18:00</dd></div>
+      <div><dt>Lift</dt><dd>12:30–13:20</dd></div>
+    </dl>
+  </header>
+
+  <!-- 01 TODAY -->
+  <section class="rt-section" id="today">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">01 / Today</div>
+      <h2>Where the day stands</h2>
+      <label class="rt-date-pick">Show day
+        <input type="date" data-date-input min="2026-10-01" max="2027-12-31">
+        <button type="button" class="rt-link-btn" data-date-today>Now</button>
+      </label>
+    </div>
+    <div class="rt-today">
+      <figure class="rt-dial-wrap">
+        <svg class="rt-dial" viewBox="-180 -180 360 360" role="img" aria-label="24-hour dial of the routine" data-dial></svg>
+        <figcaption class="rt-dial-legend">
+          <span><i class="sw sw-sleep"></i>Sleep</span>
+          <span><i class="sw sw-cardio"></i>Cardio</span>
+          <span><i class="sw sw-lift"></i>Lift</span>
+          <span><i class="sw sw-food"></i>Eating window</span>
+          <span><i class="sw sw-market"></i>US market</span>
+        </figcaption>
+      </figure>
+      <div class="rt-today-side">
+        <div class="rt-card rt-now">
+          <div class="rt-card-label" data-field="pr-date">Puerto Rico</div>
+          <div class="rt-now-time" data-field="pr-time">--:--</div>
+          <div class="rt-now-row"><span>Now</span><strong data-field="now-item">—</strong></div>
+          <div class="rt-now-row"><span>Next</span><strong data-field="next-item">—</strong></div>
+        </div>
+        <div class="rt-card rt-plan-day">
+          <div class="rt-card-label" data-field="plan-week">—</div>
+          <h3 data-field="lift-title">—</h3>
+          <ol class="rt-ex-list" data-field="lift-list"></ol>
+          <p class="rt-small" data-field="lift-note"></p>
+          <div class="rt-now-row"><span>Cardio</span><strong data-field="cardio-today">—</strong></div>
+          <div class="rt-now-row"><span>Market</span><strong data-field="market-today">—</strong></div>
+        </div>
+      </div>
+    </div>
+    <ol class="rt-timeline" data-timeline aria-label="Daily clock"></ol>
+    <p class="rt-note">US markets run <strong>10:30–17:00 Puerto Rico time</strong> from Nov 1, 2026 to Mar 13, 2027 and <strong>09:30–16:00</strong> from Mar 14. Puerto Rico has no daylight saving, so only the market rows move. Lifting sits in the midday lull in both seasons: after the 08:30 and 10:00 New York data releases, before the 14:00 Fed announcements, and clear of earnings, which print before the open or after the close.</p>
+  </section>
+
+  <!-- 02 RULES -->
+  <section class="rt-section" id="rules">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">02 / The six rules</div>
+      <h2>Everything else follows from these</h2>
+    </div>
+    <ol class="rt-rules">
+      <li><b>Eat between 09:30 and 18:00.</b> Outside it: water, black coffee, electrolytes.</li>
+      <li><b>Eat the same three meals daily.</b> Breakfast 09:30, lunch 13:30 with the whey shake right after lifting, dinner 17:30 with family.</li>
+      <li><b>Lift 12:30–13:20</b> in the midday market lull, three hours after breakfast. Monday, Wednesday and Friday in weeks 1–3, then Monday–Friday once you have earned it.</li>
+      <li><b>Easy cardio every morning at 06:15,</b> before breakfast. 30 minutes on weekdays, longer on weekends.</li>
+      <li><b>Lights out 22:00, wake 06:00,</b> weekends included.</li>
+      <li><b>Sunday: at most one calorie change,</b> following the check-in steps in order.</li>
+    </ol>
+    <div class="rt-phases">
+      <div class="rt-phase"><span class="rt-phase-n">Weeks 1–3</span><h3>Calibrate</h3><p>Three lifting days at 2 sets. Eat the menu exactly; the weigh-ins establish your real rate of loss.</p></div>
+      <div class="rt-phase"><span class="rt-phase-n">Week 4 to goal</span><h3>Cut</h3><p>Earn the full split and full volume. The Sunday steps hold loss at 1–1.5 lb a week.</p></div>
+      <div class="rt-phase"><span class="rt-phase-n">At 166 lb</span><h3>Hold</h3><p>Step up to estimated maintenance in one move, then keep the 7-day average inside 163–168 lb.</p></div>
+    </div>
+  </section>
+
+  <!-- 03 FOOD -->
+  <section class="rt-section" id="food">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">03 / Food</div>
+      <h2>Three meals, all from Costco</h2>
+      <p class="rt-lede">Weigh meat raw. Cook chicken and steak with zero-calorie spray; the tablespoon of olive oil in the salad is the only added fat. Pick a calorie level or a dinner swap and the menu and totals update.</p>
+    </div>
+    <div class="rt-controls">
+      <div class="rt-control">
+        <span class="rt-control-label">Calorie level</span>
+        <div class="rt-seg" data-level-seg role="radiogroup" aria-label="Calorie level"></div>
+      </div>
+      <div class="rt-control">
+        <span class="rt-control-label">Dinner protein</span>
+        <div class="rt-seg" data-swap-seg role="radiogroup" aria-label="Dinner protein">
+          <button type="button" data-swap="steak" class="is-on">Top sirloin</button>
+          <button type="button" data-swap="salmon">Wild sockeye</button>
+          <button type="button" data-swap="chicken">Chicken</button>
+        </div>
+      </div>
+    </div>
+    <div class="rt-totals" data-totals></div>
+    <div class="rt-meals" data-meals></div>
+    <p class="rt-note" data-swap-note>Swaps: up to three dinners a week. Salmon is about the same as the steak (−15 kcal, +2 g protein); chicken is −92 kcal at the same protein and is only allowed at level 0 or above. Drink about 3–4 L of water a day, more on sweaty days.</p>
+  </section>
+
+  <!-- 04 TRAINING -->
+  <section class="rt-section" id="training">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">04 / Training</div>
+      <h2>The trainer's split, earned in three steps</h2>
+      <p class="rt-lede">10–12 reps (squats 12–15), stopping 1–2 reps short of failure. Two light warm-up sets on the first lift. Rest 2 minutes on the first two exercises, 60–90 seconds on the rest. When every set reaches the top of its range, add 5 lb (upper body) or 10 lb (legs) next session.</p>
+    </div>
+    <div class="rt-steps" data-steps>
+      <button type="button" class="rt-step is-on" data-step="1"><span>Step 1 · from week 1</span><b>Calibrate</b><em>Mon · Wed · Fri, next session in order, 2 sets</em></button>
+      <button type="button" class="rt-step" data-step="2"><span>Step 2 · from week 4</span><b>Full split</b><em>Mon–Fri as listed, 2 sets</em></button>
+      <button type="button" class="rt-step" data-step="3"><span>Step 3 · from week 5</span><b>Full volume</b><em>Mon–Fri as listed, 3 sets</em></button>
+    </div>
+    <div class="rt-week-grid" data-week-grid></div>
+    <div class="rt-sessions" data-sessions></div>
+    <div class="rt-gate">
+      <div>
+        <h3>Ready for the next step?</h3>
+        <p class="rt-small">Move up only when all four hold. Otherwise stay at your current step and recheck next Sunday.</p>
+      </div>
+      <ul class="rt-checks" data-gate>
+        <li><label><input type="checkbox"> Made every session of the previous two weeks (one week for step 3)</label></li>
+        <li><label><input type="checkbox"> Weights held or rose</label></li>
+        <li><label><input type="checkbox"> Soreness clears within 48 hours</label></li>
+        <li><label><input type="checkbox"> Slept 7+ hours most nights</label></li>
+      </ul>
+      <div class="rt-gate-out" data-gate-out>Stay at your current step.</div>
+    </div>
+    <div class="rt-two">
+      <div>
+        <h3 class="rt-h3">Recovery rules</h3>
+        <table class="rt-table">
+          <thead><tr><th>Signal</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Every 6th week (6, 12, 18)</td><td>Deload: 2 sets per exercise, same weights, same number of days</td></tr>
+            <tr><td>A lift falls two sessions running, or sleep under 7 hours</td><td>That day: 2 sets per exercise, skip the finisher and intervals</td></tr>
+            <tr><td>A joint hurts during an exercise</td><td>Stop that exercise; next time try the machine or cable version only if pain-free. Pain lasting a week: see a physical therapist</td></tr>
+            <tr><td>Missed session</td><td>Skip it and continue the schedule; never double up</td></tr>
+            <tr><td>Market moving at 12:30</td><td>Count it as a missed session; never push the lift into the evening</td></tr>
+            <tr><td>Overloaded day</td><td>Minimum day: the three meals, a 20-minute walk, the sleep window; no lifting</td></tr>
+            <tr><td>Sick</td><td>No training until 24 hours symptom-free; restart at 2 sets for a week</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 class="rt-h3">The 50-minute cap</h3>
+        <p>The cap includes warm-ups and transitions. If a session will run long, drop work from the bottom of the day's list: overhead tricep extensions Monday, preacher curls Tuesday, the bike and then wall sits Wednesday, "Y" raises Thursday, the finisher Friday. Protect the first two lifts and their rests, and never run past 13:20.</p>
+        <h3 class="rt-h3">Cardio</h3>
+        <table class="rt-table">
+          <tbody>
+            <tr><td>Mon–Fri</td><td>06:15, 30 min: incline walk, elliptical or easy swim. Start at 3.0 mph and 5% incline; add 1% a week up to 10–12% while you can still talk in full sentences</td></tr>
+            <tr><td>Saturday</td><td>06:15, 45–60 min easy; from week 4, finish with 6 × 30 s hard / 90 s easy</td></tr>
+            <tr><td>Sunday</td><td>06:15, 30–45 min walk</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SLEEP + SUPPLEMENTS -->
+  <section class="rt-section" id="recovery">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">05 / Sleep and supplements</div>
+      <h2>Eight hours, five supplements</h2>
+    </div>
+    <div class="rt-two">
+      <ul class="rt-bullets">
+        <li><b>22:00–06:00</b>, weekends included.</li>
+        <li><b>Last food by 18:00,</b> four hours before bed.</li>
+        <li><b>No caffeine after 12:15</b> (the pre-lift coffee).</li>
+        <li><b>Screens off at 21:30;</b> the phone charges outside the bedroom.</li>
+        <li><b>Dark, cool bedroom,</b> 65–68°F.</li>
+      </ul>
+      <table class="rt-table">
+        <thead><tr><th>Time</th><th>Supplement</th><th>Dose</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>06:00</td><td>Zero-sugar electrolytes</td><td>1 packet in 1 L water</td><td>Replaces sweat losses in the heat</td></tr>
+          <tr><td>09:30</td><td>Creatine monohydrate (ON)</td><td>5 g</td><td>Strength; the most-studied safe supplement [6]</td></tr>
+          <tr><td>09:30</td><td>Collagen peptides (Vital Proteins)</td><td>2 scoops</td><td>Optional; part of the old routine</td></tr>
+          <tr><td>13:30</td><td>Whey (ON Gold Standard)</td><td>1 scoop</td><td>Complete protein after lifting</td></tr>
+          <tr><td>21:30</td><td>Magnesium glycinate</td><td>200 mg elemental</td><td>Optional; may help sleep. Skip with kidney disease</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 06 SUNDAY CHECK-IN -->
+  <section class="rt-section" id="checkin">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">06 / Sunday check-in</div>
+      <h2>One decision a week</h2>
+      <p class="rt-lede">Weigh daily after waking and keep a 7-day average; measure your waist at the navel on Sundays. Enter the numbers and the five steps run in order. Sleep and training fixes can stack; food changes at most once.</p>
+    </div>
+    <form class="rt-calc" data-calc autocomplete="off">
+      <fieldset>
+        <legend>Where you are</legend>
+        <label>Plan week <input type="number" name="week" min="1" max="80" value="4"></label>
+        <label>Current level <select name="level" data-level-select></select></label>
+        <label>Weeks since last calorie change <input type="number" name="since" min="0" max="52" value="2"></label>
+        <label class="rt-check"><input type="checkbox" name="hold"> Already in Hold</label>
+      </fieldset>
+      <fieldset>
+        <legend>Scale and tape</legend>
+        <label>This week's 7-day average (lb) <input type="number" name="now" step="0.1" value="183.0"></label>
+        <label>7-day average two weeks ago (lb) <input type="number" name="prior" step="0.1" value="185.4"></label>
+        <label>Waist vs last check <select name="waist"><option value="down">Down ¼ inch or more</option><option value="flat">Flat or up</option></select></label>
+        <label>Days on the full menu this week <input type="number" name="menu" min="0" max="7" value="7"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Recovery</legend>
+        <label>Nights under 7 hours of sleep <input type="number" name="shortnights" min="0" max="7" value="0"></label>
+        <label class="rt-check"><input type="checkbox" name="liftdown"> First lift of a session down two sessions in a row</label>
+        <label class="rt-check"><input type="checkbox" name="after2"> Lifts still down after a 2-set week</label>
+        <label class="rt-check"><input type="checkbox" name="hunger"> Hunger or fatigue disrupting work on 4+ days</label>
+        <label class="rt-check"><input type="checkbox" name="persist"> These signs have lasted two weeks</label>
+        <label class="rt-check" data-hold-only><input type="checkbox" name="abovetwice"> Hold: above 168 lb and flat or rising at the last check too</label>
+      </fieldset>
+    </form>
+    <div class="rt-verdict" data-verdict aria-live="polite"></div>
+    <details class="rt-details">
+      <summary>The calorie ladder</summary>
+      <table class="rt-table" data-ladder-table>
+        <thead><tr><th>Level</th><th>Adds to the level below</th><th class="num">kcal/day</th><th class="num">Protein</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="rt-small">The top covers the estimated maintenance range (2,600–2,800 kcal) with room to spare. If a step would move you above +6 or below −1, stay where you are and see a doctor or dietitian. "Full menu" means your current level, including the allowed swaps, with nothing unplanned added or left out.</p>
+    </details>
+    <details class="rt-details">
+      <summary>The five steps, written out</summary>
+      <ol class="rt-steplist">
+        <li><b>Recovery fixes (any week; training and sleep only).</b> Under 7 hours of sleep on 3+ nights: 2 sets this week and fix the sleep routine. First lift down two sessions in a row with sleep on track: 2 sets for one week. Either sign still there after two weeks: see your doctor.</li>
+        <li><b>Under-fueling (any week; overrides every waiting period).</b> Lifts still down after a 2-set week, or hunger or fatigue disrupting work on 4+ days, while on the menu, sleeping 7+ hours and still losing: up one level, stop.</li>
+        <li><b>Hold entry (first Sunday at or below 166 lb).</b> The remaining deficit is about 500 kcal a day per 1 lb a week of loss. Add it to your level's kcal, move to the closest level, stop. Expect a 1–3 lb rebound over two weeks, mostly glycogen and water.</li>
+        <li><b>Wait.</b> No change before week 4, within two weeks of the last change, or with fewer than 6 of 7 days on the menu.</li>
+        <li><b>Weight action.</b> Cutting, by weekly loss: more than 1.5 lb, up one level; 1.0–1.5 lb, stay; 0.5 to under 1.0 lb, stay if the waist is down, otherwise down one; under 0.5 lb or gaining, down one. Hold, inside 163–168 lb: falling more than 0.5 lb a week, up one; within ±0.5 lb, stay; rising more than 0.5 lb, down one. Above the band and falling, or below it and rising: stay. Below the band and flat or falling: up one. Above the band and flat or rising two checks in a row: down one.</li>
+      </ol>
+      <p class="rt-small">Maintenance is confirmed after two "maintenance level" results in a row. Then keep weighing daily, run the Hold check on the first Sunday of each month, and go back to weekly checks after any other result.</p>
+    </details>
+  </section>
+
+  <!-- 07 PROGRESS -->
+  <section class="rt-section" id="progress">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">07 / Progress</div>
+      <h2>Milestones and your log</h2>
+      <p class="rt-lede">The shaded boxes are the milestones for the 7-day average: guideposts, not deadlines. Off a milestone, follow the Sunday steps; never add extra cuts or cardio. Your log stays in this browser only.</p>
+    </div>
+    <div class="rt-progress">
+      <svg class="rt-chart" viewBox="0 0 720 340" role="img" aria-label="Weight milestones by week" data-chart></svg>
+      <form class="rt-log" data-log autocomplete="off">
+        <label>Week <input type="number" name="week" min="0" max="40" value="1"></label>
+        <label>7-day average (lb) <input type="number" name="avg" step="0.1" placeholder="188.0"></label>
+        <button type="submit" class="rt-btn rt-btn-solid">Add to log</button>
+        <button type="button" class="rt-link-btn" data-log-clear>Clear log</button>
+        <ul class="rt-milestones">
+          <li><b>Week 4</b> 182–184 lb · waist smaller, week-2 weights held</li>
+          <li><b>Week 8</b> 176–179 lb · most lifts above week 4</li>
+          <li><b>Week 12</b> 171–174 lb · repeat blood panel</li>
+          <li><b>Weeks 16–20</b> 165–168 lb · move to Hold</li>
+        </ul>
+      </form>
+    </div>
+  </section>
+
+  <!-- 08 SHOPPING -->
+  <section class="rt-section" id="shopping">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">08 / Shopping and prep</div>
+      <h2>One Costco run a week</h2>
+      <p class="rt-lede">Quantities cover the base menu; adjust for your level and swaps. Ticks are saved in this browser and reset with the button.</p>
+    </div>
+    <div class="rt-two">
+      <div>
+        <ul class="rt-shop" data-shop></ul>
+        <button type="button" class="rt-link-btn" data-shop-reset>Reset ticks</button>
+      </div>
+      <div class="rt-prep">
+        <h3 class="rt-h3">Prep</h3>
+        <ol>
+          <li><b>Sunday (60 min) and Wednesday (30 min):</b> bake 1.75 lb of chicken at 425°F for 20–22 minutes to 165°F inside. Portion it with broccoli and mushrooms; cooked chicken keeps 4 days in the fridge.</li>
+          <li><b>At the market close:</b> sear the steak about 4 minutes a side to 145°F, rest 3 minutes, eat at 17:30. Use a thermometer.</li>
+          <li><b>Sunday:</b> wash the greens and tomatoes.</li>
+        </ol>
+        <h3 class="rt-h3">Travel</h3>
+        <p>Hotel dumbbells for the day's muscle group. At restaurants, chicken or steak with salad and rice; count an uncertain day as off the menu for the Sunday check-in. Resume the routine when you're back; never compensate with skipped meals or extra training.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 WHY -->
+  <section class="rt-section" id="why">
+    <div class="rt-section-head">
+      <div class="rt-eyebrow">09 / Why it works</div>
+      <h2>The reasoning, with sources</h2>
+    </div>
+    <div class="rt-why">
+      <div><h3>~2,000 kcal to start</h3><p>Estimated maintenance at 188 lb with this activity is about 2,600–2,800 kcal, a deficit of roughly 600–800 kcal a day. From week 4 the ladder steers by your measured rate instead.</p></div>
+      <div><h3>200 g protein</h3><p>About 1.1 g per pound, above the ~0.7 g/lb (1.6 g/kg) intake beyond which extra protein added little muscle on average [2], and within the range recommended for lifters in a deficit [3].</p></div>
+      <div><h3>09:30–18:00 eating</h3><p>It matches what worked before and keeps dinner at the family table. An 8-hour window cut fat mass while keeping strength in resistance-trained men [1]; an early window improved insulin sensitivity and blood pressure in a small controlled trial [7].</p></div>
+      <div><h3>Lifting at 12:30</h3><p>You train fed, three hours after breakfast, with lunch straight after, in the quietest hour of the trading day in both seasons.</p></div>
+      <div><h3>Earned volume</h3><p>Three days at 2 sets, then five days at 2 sets, then 3 sets: about 18 sets a session at most, so you recover while eating less. The full 4-set program comes back at goal weight.</p></div>
+      <div><h3>Daily easy cardio</h3><p>Talking-pace cardio builds aerobic fitness at little recovery cost; weekly intervals raise VO₂max, and higher fitness is associated with lower long-term mortality [5].</p></div>
+      <div><h3>8 hours of sleep</h3><p>In a controlled study, dieting on 5.5 hours of sleep cut fat loss by 55% and increased loss of fat-free mass [4].</p></div>
+      <div><h3>Creatine</h3><p>5 g a day of creatine monohydrate supports strength and is the most-studied safe supplement [6]. Expect 1–3 lb of water weight when you start.</p></div>
+    </div>
+    <div class="rt-caveats">
+      <h3>Caveats</h3>
+      <p>Calories and macros are planning figures from package labels and USDA data; check your packages, which change by batch. The studies support the approach, not this exact window or schedule. Get a physical with blood work (typically lipids, A1c, kidney function) in the first two weeks and again around week 12. Stop exercising and get checked promptly for chest pain, fainting or unusual breathlessness.</p>
+    </div>
+    <details class="rt-details">
+      <summary>Sources and evidence</summary>
+      <p class="rt-small">Labels: Kirkland rolled oats (150 kcal, 5 g protein per ½ cup); Three Berry Blend (70 kcal per cup); Vital Proteins collagen (70 kcal, 18 g protein per 2 scoops); Kirkland chicken breast (110 kcal, 24 g protein per 4 oz raw); organic broccoli (25 kcal per 85 g); Tasty Bite brown rice &amp; lentils (390 kcal per pouch); Kirkland top sirloin (156 kcal, 24 g protein per 4 oz raw); pumpkin seeds (280 kcal, 15 g protein per ⅓ cup); olive oil (120 kcal per Tbsp); balsamic (45 kcal per Tbsp); Greek nonfat yogurt (100 kcal, 18 g protein per ⅔ cup); ON creatine (5 g per serving); ON Gold Standard whey (120 kcal, 24 g protein per scoop). Mushrooms, greens, tomatoes and sockeye salmon (131 kcal, 22 g protein, 4.7 g fat per 100 g raw): <a href="https://fdc.nal.usda.gov" rel="noopener" target="_blank">USDA FoodData Central</a>.</p>
+      <ul class="rt-small rt-links">
+        <li><a href="https://www.costcobusinessdelivery.com/p/-/kirkland-signature-organic-greek-nonfat-yogurt-plain-3-lbs/100291657" rel="noopener" target="_blank">Kirkland Greek nonfat yogurt</a></li>
+        <li><a href="https://www.costco.com/p/-/kirkland-signature-three-berry-blend-4-lbs/100410665" rel="noopener" target="_blank">Kirkland Three Berry Blend</a></li>
+        <li><a href="https://www.frysfood.com/p/tasty-bite-brown-rice-lentils-pouch/0078273331111" rel="noopener" target="_blank">Tasty Bite brown rice &amp; lentils</a></li>
+        <li><a href="https://app.warehouserunner.com/costco/1303463-vital-proteins-collagen-peptides-unflavored-1-5-lbs" rel="noopener" target="_blank">Vital Proteins collagen peptides</a></li>
+        <li><a href="https://app.warehouserunner.com/costco/1868389-optimum-nutrition-micronized-creatine-1-49-lbs" rel="noopener" target="_blank">Optimum Nutrition creatine</a></li>
+      </ul>
+      <ol class="rt-small rt-refs">
+        <li>Moro T, et al. Effects of eight weeks of time-restricted feeding (16/8) on basal metabolism, maximal strength, body composition, inflammation, and cardiovascular risk factors in resistance-trained males. <i>J Transl Med.</i> 2016;14:290.</li>
+        <li>Morton RW, et al. A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength. <i>Br J Sports Med.</i> 2018;52:376–384.</li>
+        <li>Helms ER, Aragon AA, Fitschen PJ. Evidence-based recommendations for natural bodybuilding contest preparation: nutrition and supplementation. <i>J Int Soc Sports Nutr.</i> 2014;11:20.</li>
+        <li>Nedeltcheva AV, et al. Insufficient sleep undermines dietary efforts to reduce adiposity. <i>Ann Intern Med.</i> 2010;153(7):435–441.</li>
+        <li>Mandsager K, et al. Association of cardiorespiratory fitness with long-term mortality among adults undergoing exercise treadmill testing. <i>JAMA Netw Open.</i> 2018;1(6):e183605.</li>
+        <li>Kreider RB, et al. International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine. <i>J Int Soc Sports Nutr.</i> 2017;14:18.</li>
+        <li>Sutton EF, et al. Early time-restricted feeding improves insulin sensitivity, blood pressure, and oxidative stress even without weight loss in men with prediabetes. <i>Cell Metab.</i> 2018;27(6):1212–1221.</li>
+      </ol>
+    </details>
+  </section>
+  <noscript><p class="rt-note">The interactive parts of this page need JavaScript. Everything is also in the <a href="/routine/Lock-In-Plan.pdf">PDF</a>.</p></noscript>
+</article>
+<script src="/routine/app.js?v=20261029-3" defer></script>
+{{ end }}
