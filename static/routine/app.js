@@ -6,163 +6,167 @@
   const $ = (sel, el = root) => el.querySelector(sel);
   const $$ = (sel, el = root) => Array.from(el.querySelectorAll(sel));
   const SVGNS = "http://www.w3.org/2000/svg";
-  const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 0 });
   const num = (n) => (Math.round(n * 10) / 10).toLocaleString("en-US", { maximumFractionDigits: 1 });
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* private mode */ } },
   };
 
-  /* ------------------------------------------------------------------ */
-  /* Plan data                                                           */
-  /* ------------------------------------------------------------------ */
+  /* ---------------- Plan data ---------------- */
   const START = Date.UTC(2026, 10, 2); // Monday, Nov 2, 2026
   const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  const DAY3 = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+  // [name, reps, dropFirst, single] — single items are done once, not per set
   const SESSIONS = [
-    { title: "Chest / Triceps", ex: [["Bench press (barbell)"], ["Incline bench (barbell)"], ["Incline press (DB)"], ["Cable flys"], ["Tricep extensions"], ["Overhead tricep ext (rope)", null, true]] },
-    { title: "Back / Biceps", ex: [["Lat pulldowns"], ["Seated rows"], ["Dumbbell rows"], ["Face pulls"], ["Standing DB curls"], ["Preacher curls", null, true]] },
-    { title: "Legs A (quads)", ex: [["Squats", "12–15"], ["Leg press"], ["Walking lunges (DB)"], ["Leg extensions"], ["Wall sits", "30–60 s", true], ["Bike cool-down", "10 min", true]] },
-    { title: "Shoulders", ex: [["Shoulder press (DB)"], ["Standing single-leg shoulder press"], ["Lateral raises"], ["Rear delt flys (DB)"], ["Upright rows (cable)"], ['"Y" raises', "30 s holds", true]] },
-    { title: "Legs B (hinge) + arms", ex: [["Romanian deadlift (DB or barbell)"], ["Hamstring curls"], ["Hip thrust (barbell or machine)"], ["DB curls"], ["Overhead tricep ext (rope)"], ["Finisher: bi/tri drop set", "1 set", true]] },
+    { title: "Chest and triceps", ex: [["Bench press (barbell)"], ["Incline bench (barbell)"], ["Incline press (dumbbell)"], ["Cable flys"], ["Tricep extensions"], ["Overhead tricep extension (rope)", null, true]] },
+    { title: "Back and biceps", ex: [["Lat pulldowns"], ["Seated rows"], ["Dumbbell rows"], ["Face pulls"], ["Standing dumbbell curls"], ["Preacher curls", null, true]] },
+    { title: "Legs (quads)", ex: [["Squats", "12–15"], ["Leg press"], ["Walking lunges (dumbbell)"], ["Leg extensions"], ["Wall sits", "30–60 s", true], ["Bike cool-down", "10 min", true, true]] },
+    { title: "Shoulders", ex: [["Shoulder press (dumbbell)"], ["Standing single-leg shoulder press"], ["Lateral raises"], ["Rear delt flys (dumbbell)"], ["Upright rows (cable)"], ['"Y" raises', "30 s holds", true]] },
+    { title: "Legs (hinge) and arms", ex: [["Romanian deadlift"], ["Hamstring curls"], ["Hip thrust"], ["Dumbbell curls"], ["Overhead tricep extension (rope)"], ["Finisher: biceps/triceps drop set", "1 drop set", true, true]] },
   ];
+  const exText = ([, reps, , single], sets) => (single ? reps : `${sets} × ${reps || "10–12"}`);
+
+  // NYSE holidays and early closes (1:00 p.m. New York) from nyse.com
+  const CLOSED = {
+    "2026-11-26": "Thanksgiving", "2026-12-25": "Christmas", "2027-01-01": "New Year's Day", "2027-01-18": "Martin Luther King Jr. Day",
+    "2027-02-15": "Washington's Birthday", "2027-03-26": "Good Friday", "2027-05-31": "Memorial Day", "2027-06-18": "Juneteenth",
+    "2027-07-05": "Independence Day", "2027-09-06": "Labor Day", "2027-11-25": "Thanksgiving", "2027-12-24": "Christmas",
+  };
+  const EARLY = { "2026-11-27": "day after Thanksgiving", "2026-12-24": "Christmas Eve", "2027-11-26": "day after Thanksgiving" };
 
   // [name, amount, kcal, protein, carbs, fat, fiber]
   const DINNER = {
-    steak: ["Kirkland top sirloin", "8 oz raw", 312, 48, 0, 13, 0],
-    salmon: ["Wild sockeye salmon (Kirkland, frozen)", "8 oz raw", 297, 50, 0, 10.6, 0],
-    chicken: ["Kirkland chicken breast", "8 oz raw", 220, 48, 0, 2, 0],
+    steak: ["Top sirloin", "8 oz raw", 312, 48, 0, 13, 0],
+    salmon: ["Wild sockeye salmon", "8 oz raw", 297, 50, 0, 10.6, 0],
+    chicken: ["Chicken breast", "8 oz raw", 220, 48, 0, 2, 0],
   };
   const MEALS = [
-    { time: "09:30", name: "Oat and yogurt bowl", note: "Breakfast · the eating window opens", items: [
-      ["Kirkland rolled oats", "1 cup dry (80 g)", 300, 10, 54, 6, 8],
-      ["Kirkland Three Berry Blend, frozen", "1 cup (126 g)", 70, 2, 16, 0, 5],
-      ["Vital Proteins collagen peptides", "2 scoops (20 g)", 70, 18, 0, 0, 0],
-      ["Kirkland Greek nonfat yogurt", "1 cup (255 g)", 150, 27, 10, 0, 0],
-      ["Optimum Nutrition creatine", "5 g", 0, 0, 0, 0, 0],
+    { time: "09:30", name: "Oat and yogurt bowl", items: [
+      ["Rolled oats", "1 cup dry (80 g)", 300, 10, 54, 6, 8],
+      ["Three Berry Blend", "1 cup (126 g)", 70, 2, 16, 0, 5],
+      ["Collagen (Vital Proteins)", "2 scoops (20 g)", 70, 18, 0, 0, 0],
+      ["Greek nonfat yogurt", "1 cup (255 g)", 150, 27, 10, 0, 0],
+      ["Creatine (ON)", "5 g", 0, 0, 0, 0, 0],
     ] },
-    { time: "13:30", name: "Chicken bowl and shake", note: "Lunch · straight after lifting", items: [
-      ["Kirkland chicken breast", "8 oz raw", 220, 48, 0, 2, 0],
-      ["Kirkland organic broccoli, frozen", "170 g", 50, 6, 8, 0, 4],
-      ["White mushrooms", "1 cup sliced (70 g)", 15, 2, 2, 0, 1],
-      ["Tasty Bite brown rice & lentils", "1 pouch (250 g)", 390, 6, 78, 6, 9],
-      ["Optimum Nutrition Gold Standard whey", "1 scoop, in water", 120, 24, 3, 1.5, 0],
+    { time: "13:30", name: "Chicken bowl and shake", items: [
+      ["Chicken breast", "8 oz raw", 220, 48, 0, 2, 0],
+      ["Broccoli, frozen", "170 g", 50, 6, 8, 0, 4],
+      ["Mushrooms", "1 cup (70 g)", 15, 2, 2, 0, 1],
+      ["Rice & lentils (Tasty Bite)", "1 pouch", 390, 6, 78, 6, 9],
+      ["Whey (ON)", "1 scoop", 120, 24, 3, 1.5, 0],
     ] },
-    { time: "17:30", name: "Steak salad", note: "Dinner with family · the window closes 18:00", items: [
+    { time: "17:30", name: "Steak salad", items: [
       "DINNER",
-      ["Kirkland organic spring mix", "3 cups (85 g)", 20, 2, 3, 0, 2],
+      ["Spring mix", "3 cups (85 g)", 20, 2, 3, 0, 2],
       ["Grape tomatoes", "1 cup (150 g)", 27, 1, 6, 0, 2],
-      ["Kirkland pumpkin seeds", "16 g (about 1½ Tbsp)", 90, 5, 2, 8, 1],
-      ["Kirkland extra virgin olive oil", "1 Tbsp", 120, 0, 0, 14, 0],
-      ["Kirkland balsamic vinegar", "1 Tbsp", 45, 0, 10, 0, 0],
+      ["Pumpkin seeds", "16 g (1½ Tbsp)", 90, 5, 2, 8, 1],
+      ["Olive oil", "1 Tbsp", 120, 0, 0, 14, 0],
+      ["Balsamic vinegar", "1 Tbsp", 45, 0, 10, 0, 0],
     ] },
   ];
-  const OATS = ["Kirkland rolled oats", "+½ cup dry (40 g)", 150, 5, 27, 3, 4];
-  const RICE = ["Tasty Bite brown rice & lentils", "+½ pouch", 195, 3, 39, 3, 4.5];
+  const OATS = ["Rolled oats", "+½ cup dry (40 g)", 150, 5, 27, 3, 4];
+  const RICE = ["Rice & lentils (Tasty Bite)", "+½ pouch", 195, 3, 39, 3, 4.5];
   const INC = {
-    "-1": [[1, ["Tasty Bite brown rice & lentils", "−½ pouch (eat half)", -195, -3, -39, -3, -4.5]]],
-    1: [[0, OATS]],
-    2: [[1, RICE]],
-    3: [[0, ["Kirkland Greek nonfat yogurt", "+1 cup (255 g)", 150, 27, 10, 0, 0]]],
-    4: [[0, OATS]],
-    5: [[1, RICE]],
-    6: [[2, ["Kirkland extra virgin olive oil", "+1 Tbsp", 120, 0, 0, 14, 0]]],
+    "-1": [[1, ["Rice & lentils (Tasty Bite)", "eat ½ pouch", -195, -3, -39, -3, -4.5]]],
+    1: [[0, OATS]], 2: [[1, RICE]], 3: [[0, ["Greek nonfat yogurt", "+1 cup (255 g)", 150, 27, 10, 0, 0]]],
+    4: [[0, OATS]], 5: [[1, RICE]], 6: [[2, ["Olive oil", "+1 Tbsp", 120, 0, 0, 14, 0]]],
   };
   const LADDER = [
-    { lv: 6, add: "+1 Tbsp olive oil (dinner)", kcal: 2960, p: 242 },
-    { lv: 5, add: "+½ pouch rice (lunch; 2 pouches in total)", kcal: 2840, p: 242 },
-    { lv: 4, add: "+½ cup oats (breakfast; 2 cups in total)", kcal: 2645, p: 239 },
-    { lv: 3, add: "+1 cup Greek yogurt (breakfast)", kcal: 2495, p: 234 },
-    { lv: 2, add: "+½ pouch rice (lunch)", kcal: 2345, p: 207 },
-    { lv: 1, add: "+½ cup oats (breakfast)", kcal: 2150, p: 204 },
-    { lv: 0, add: "Base menu", kcal: 2000, p: 199 },
-    { lv: -1, add: "Base − ½ pouch rice", kcal: 1805, p: 196 },
+    { lv: 6, add: "+1 Tbsp olive oil at dinner", kcal: 2960, p: 242 },
+    { lv: 5, add: "+½ pouch rice at lunch", kcal: 2840, p: 242 },
+    { lv: 4, add: "+½ cup oats at breakfast", kcal: 2645, p: 239 },
+    { lv: 3, add: "+1 cup Greek yogurt at breakfast", kcal: 2495, p: 234 },
+    { lv: 2, add: "+½ pouch rice at lunch", kcal: 2345, p: 207 },
+    { lv: 1, add: "+½ cup oats at breakfast", kcal: 2150, p: 204 },
+    { lv: 0, add: "The base menu", kcal: 2000, p: 199 },
+    { lv: -1, add: "Half the rice pouch at lunch", kcal: 1805, p: 196 },
   ];
   const lvl = (n) => LADDER.find((r) => r.lv === n);
   const lvName = (n) => (n > 0 ? "+" + n : n < 0 ? "−" + Math.abs(n) : "0");
 
-  /* ------------------------------------------------------------------ */
-  /* Time                                                                */
-  /* ------------------------------------------------------------------ */
-  const prFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/Puerto_Rico", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" });
+  /* ---------------- Time ---------------- */
+  const prFmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/Puerto_Rico", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
   function prNow() {
     const p = {};
     prFmt.formatToParts(new Date()).forEach((x) => { p[x.type] = x.value; });
-    return { y: +p.year, m: +p.month, d: +p.day, min: (+p.hour % 24) * 60 + +p.minute, sec: +p.second };
+    return { y: +p.year, m: +p.month, d: +p.day, min: (+p.hour % 24) * 60 + +p.minute };
   }
-  function nthSunday(y, m, n) { // m 1-12
-    const first = new Date(Date.UTC(y, m - 1, 1)).getUTCDay();
-    return 1 + ((7 - first) % 7) + (n - 1) * 7;
-  }
-  function usDST(y, m, d) {
-    const t = Date.UTC(y, m - 1, d);
-    return t >= Date.UTC(y, 2, nthSunday(y, 3, 2)) && t < Date.UTC(y, 10, nthSunday(y, 11, 1));
-  }
-  const hm = (mins) => { const h = Math.floor(mins / 60) % 24; const m = Math.round(mins % 60); return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0"); };
+  const nthSunday = (y, m, n) => 1 + ((7 - new Date(Date.UTC(y, m - 1, 1)).getUTCDay()) % 7) + (n - 1) * 7;
+  const usDST = (y, m, d) => { const t = Date.UTC(y, m - 1, d); return t >= Date.UTC(y, 2, nthSunday(y, 3, 2)) && t < Date.UTC(y, 10, nthSunday(y, 11, 1)); };
+  const hm = (mins) => String(Math.floor(mins / 60) % 24).padStart(2, "0") + ":" + String(Math.floor(mins % 60)).padStart(2, "0");
   const t = (s) => { const [h, m] = s.split(":").map(Number); return h * 60 + m; };
+  const iso = (y, m, d) => `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  const fromUTC = (ms) => { const d = new Date(ms); return { y: d.getUTCFullYear(), m: d.getUTCMonth() + 1, d: d.getUTCDate() }; };
+  const longDate = (ms) => new Date(ms).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: "UTC" });
+
+  function liftFor(week, dow, days) {
+    if (days < 0 || dow > 4) return null;
+    if (week <= 3) {
+      const slot = { 0: 0, 2: 1, 4: 2 }[dow];
+      return slot === undefined ? null : { idx: ((week - 1) * 3 + slot) % 5, sets: 2 };
+    }
+    const base = week === 4 ? 2 : 3;
+    return { idx: dow, sets: week % 6 === 0 ? base - 1 : base, deload: week % 6 === 0 };
+  }
 
   function dayInfo(y, m, d) {
     const utc = Date.UTC(y, m - 1, d);
-    const dow = (new Date(utc).getUTCDay() + 6) % 7; // 0 = Monday
+    const dow = (new Date(utc).getUTCDay() + 6) % 7;
     const days = Math.round((utc - START) / 86400000);
     const week = days >= 0 ? Math.floor(days / 7) + 1 : 0;
+    const key = iso(y, m, d);
     const dst = usDST(y, m, d);
-    const weekday = dow < 5;
-    const market = weekday ? (dst ? { open: t("09:30"), close: t("16:00") } : { open: t("10:30"), close: t("17:00") }) : null;
-    return { y, m, d, utc, dow, days, week, dst, market, lift: liftFor(week, dow, days) };
-  }
-
-  function liftFor(week, dow, days) {
-    if (days < 0) return { none: true, pre: true };
-    if (dow > 4) return { none: true };
-    const deload = week % 6 === 0;
-    if (week <= 3) {
-      const slot = { 0: 0, 2: 1, 4: 2 }[dow];
-      if (slot === undefined) return { none: true, calib: true };
-      return { idx: ((week - 1) * 3 + slot) % 5, sets: 2, step: 1, deload: false };
+    let market = null, marketNote = "";
+    if (dow < 5 && CLOSED[key]) marketNote = "Market closed for " + CLOSED[key];
+    else if (dow < 5) {
+      market = dst ? { open: t("09:30"), close: t("16:00") } : { open: t("10:30"), close: t("17:00") };
+      if (EARLY[key]) { market.close = dst ? t("13:00") : t("14:00"); marketNote = "Market closes early, " + EARLY[key]; }
     }
-    return { idx: dow, sets: deload || week === 4 ? 2 : 3, step: week === 4 ? 2 : 3, deload };
+    return { y, m, d, utc, key, dow, days, week, market, marketNote, lift: liftFor(week, dow, days) };
   }
 
   function cardioFor(info) {
-    if (info.dow === 5) return { start: t("06:15"), end: t("07:15"), text: info.week >= 4 ? "06:15, 45–60 min easy + 6 × 30 s hard / 90 s easy" : "06:15, 45–60 min easy" };
-    if (info.dow === 6) return { start: t("06:15"), end: t("07:00"), text: "06:15, 30–45 min walk" };
-    return { start: t("06:15"), end: t("06:45"), text: "06:15, 30 min easy" };
+    if (info.dow === 5) return { end: t("07:15"), text: info.week >= 4 ? "45–60 min easy, then 6 × 30 s hard" : "45–60 min easy" };
+    if (info.dow === 6) return { end: t("07:00"), text: "30–45 min walk" };
+    return { end: t("06:45"), text: "30 min easy" };
   }
 
   function events(info) {
     const c = cardioFor(info);
     const ev = [
-      { at: t("06:00"), label: "Wake, weigh in; 1 L water with electrolytes; black coffee" },
-      { at: c.start, end: c.end, label: "Easy cardio", kind: "cardio" },
-      { at: t("07:15"), label: info.market ? "L1 deep work (no market screens)" : "L1 deep work" },
-      { at: t("09:30"), label: "Meal 1: oat and yogurt bowl · eating window opens", kind: "food" },
+      { at: t("06:00"), label: "Wake, weigh in, electrolytes, black coffee" },
+      { at: t("06:15"), end: c.end, label: "Cardio: " + c.text, kind: "cardio" },
+      { at: t("07:15"), label: "L1 work" },
+      { at: t("09:30"), label: "Breakfast: oat and yogurt bowl, creatine", kind: "food" },
     ];
-    if (info.market) {
-      ev.push({ at: info.market.open - 15, label: "Market prep" });
-      ev.push({ at: info.market.open, label: "Market open", kind: "market" });
-    }
-    ev.push({ at: t("12:15"), label: "Last caffeine (pre-lift coffee)" });
-    if (!info.lift.none) ev.push({ at: t("12:30"), end: t("13:20"), label: "Lift: " + SESSIONS[info.lift.idx].title, kind: "lift" });
-    ev.push({ at: t("13:30"), label: "Meal 2: chicken bowl and shake", kind: "food" });
-    if (info.market) ev.push({ at: info.market.close, label: "Market close; sear the steak", kind: "market" });
-    else ev.push({ at: t("17:15"), label: "Sear the steak" });
-    ev.push({ at: t("17:30"), label: "Meal 3: dinner · window closes 18:00", kind: "food" });
+    if (info.market) ev.push({ at: info.market.open, label: "Market open", kind: "market" });
+    ev.push({ at: t("12:15"), label: "Last coffee" });
+    if (info.lift) ev.push({ at: t("12:30"), end: t("13:20"), label: SESSIONS[info.lift.idx].title + `, ${info.lift.sets} sets` + (info.lift.deload ? " (deload)" : ""), kind: "lift", lift: info.lift });
+    else if (info.days < 0 && info.dow < 5) ev.push({ at: t("12:30"), label: "Lifting starts Monday, November 2", kind: "muted" });
+    ev.push({ at: t("13:30"), label: "Lunch: chicken bowl and whey shake", kind: "food" });
+    if (info.market) ev.push({ at: info.market.close, label: info.marketNote ? "Market closes early" : "Market close", kind: "market" });
+    ev.push({ at: t("17:15"), label: "Sear the steak" });
+    ev.push({ at: t("17:30"), label: "Dinner with family: steak salad", kind: "food" });
     ev.push({ at: t("18:00"), label: "Kitchen closed" });
-    ev.push({ at: t("21:30"), label: "Screens off; magnesium" });
+    ev.push({ at: t("21:30"), label: "Screens off, magnesium" });
     ev.push({ at: t("22:00"), label: "Lights out", kind: "sleep" });
     return ev.sort((a, b) => a.at - b.at);
   }
 
-  /* ------------------------------------------------------------------ */
-  /* 01 Today: dial, now/next, today's session, timeline                 */
-  /* ------------------------------------------------------------------ */
-  const dateInput = $("[data-date-input]");
-  let viewDate = null; // {y,m,d} when previewing; null = live
+  function extras(info) {
+    const x = [];
+    if (info.dow === 6) x.push("Sunday check-in", "bake chicken (60 min)", "wash greens");
+    if (info.dow === 2) x.push("bake chicken (30 min)");
+    if (info.marketNote) x.push(info.marketNote);
+    return x;
+  }
 
-  function el(tag, attrs = {}, parent) {
+  /* ---------------- Dial ---------------- */
+  function el(tag, attrs, parent) {
     const n = document.createElementNS(SVGNS, tag);
-    Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+    Object.entries(attrs || {}).forEach(([k, v]) => n.setAttribute(k, v));
     if (parent) parent.appendChild(n);
     return n;
   }
@@ -170,452 +174,270 @@
   const pt = (mins, r) => [Math.cos(ang(mins)) * r, Math.sin(ang(mins)) * r];
   function arc(a, b, r) {
     if (b <= a) b += 1440;
-    const [x1, y1] = pt(a, r); const [x2, y2] = pt(b, r);
-    const large = b - a > 720 ? 1 : 0;
-    return `M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(2)} ${y2.toFixed(2)}`;
+    const [x1, y1] = pt(a, r), [x2, y2] = pt(b, r);
+    return `M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${b - a > 720 ? 1 : 0} 1 ${x2.toFixed(2)} ${y2.toFixed(2)}`;
   }
+  const until = (mins) => { const h = Math.floor(mins / 60), m = Math.round(mins % 60); return h ? `${h} h ${m} min` : `${m} min`; };
 
-  function drawDial(info, nowMin, live) {
+  function drawDial(info, nowMin) {
     const svg = $("[data-dial]");
     svg.innerHTML = "";
     const g = el("g", {}, svg);
-    [142, 118, 97].forEach((r, i) => el("circle", { r, class: "dial-track", "stroke-width": [18, 12, 8][i] }, g));
+    [[142, 18], [118, 12], [97, 8]].forEach(([r, w]) => el("circle", { r, class: "dial-track", "stroke-width": w }, g));
     for (let h = 0; h < 24; h++) {
-      const [x1, y1] = pt(h * 60, 156); const [x2, y2] = pt(h * 60, h % 6 === 0 ? 164 : 160);
-      el("line", { x1, y1, x2, y2, class: "dial-tick" + (h % 6 === 0 ? " major" : "") }, g);
-      if (h % 3 === 0) {
-        const [lx, ly] = pt(h * 60, 172);
-        const tx = el("text", { x: lx, y: ly, class: "dial-hour", "text-anchor": "middle", "dominant-baseline": "central" }, g);
-        tx.textContent = String(h).padStart(2, "0");
-      }
+      const [x1, y1] = pt(h * 60, 156), [x2, y2] = pt(h * 60, h % 6 ? 160 : 164);
+      el("line", { x1, y1, x2, y2, class: "dial-tick" + (h % 6 ? "" : " major") }, g);
+      if (h % 6 === 0) { const [lx, ly] = pt(h * 60, 172); el("text", { x: lx, y: ly, class: "dial-hour", "text-anchor": "middle", "dominant-baseline": "central" }, g).textContent = String(h).padStart(2, "0"); }
     }
-    const seg = (a, b, r, w, cls, title) => {
-      const p = el("path", { d: arc(a, b, r), class: "dial-seg " + cls, "stroke-width": w }, g);
-      const ti = el("title", {}, p); ti.textContent = title;
-    };
+    const seg = (a, b, r, w, cls, title) => { const p = el("path", { d: arc(a, b, r), class: "dial-seg " + cls, "stroke-width": w }, g); el("title", {}, p).textContent = title; };
     const c = cardioFor(info);
     seg(t("22:00"), t("06:00"), 142, 18, "seg-sleep", "Sleep 22:00–06:00");
-    seg(c.start, c.end, 142, 18, "seg-cardio", "Cardio " + hm(c.start) + "–" + hm(c.end));
-    if (!info.lift.none) seg(t("12:30"), t("13:20"), 142, 18, "seg-lift", "Lift 12:30–13:20 · " + SESSIONS[info.lift.idx].title);
-    seg(t("09:30"), t("18:00"), 118, 12, "seg-food", "Eating window 09:30–18:00");
-    if (info.market) seg(info.market.open, info.market.close, 97, 8, "seg-market", "US market " + hm(info.market.open) + "–" + hm(info.market.close) + " Puerto Rico time");
-    [["09:30", "Breakfast"], ["13:30", "Lunch + shake"], ["17:30", "Dinner"]].forEach(([s, name]) => {
-      const [x, y] = pt(t(s), 118);
-      const dot = el("circle", { cx: x, cy: y, r: 6.5, class: "dial-meal" }, g);
-      el("title", {}, dot).textContent = name + " " + s;
-    });
-    if (live) {
-      const [x0, y0] = pt(nowMin, 74);
-      const [x, y] = pt(nowMin, 154);
+    seg(t("06:15"), c.end, 142, 18, "seg-cardio", "Cardio from 06:15");
+    if (info.lift) seg(t("12:30"), t("13:20"), 142, 18, "seg-lift", "Lift 12:30–13:20");
+    seg(t("09:30"), t("18:00"), 118, 12, "seg-food", "Eating 09:30–18:00");
+    if (info.market) seg(info.market.open, info.market.close, 97, 8, "seg-market", `Market ${hm(info.market.open)}–${hm(info.market.close)} Puerto Rico time`);
+    ["09:30", "13:30", "17:30"].forEach((s) => { const [x, y] = pt(t(s), 118); el("circle", { cx: x, cy: y, r: 6.5, class: "dial-meal" }, g); });
+    let k, v, s;
+    if (nowMin !== null) {
+      const [x0, y0] = pt(nowMin, 74), [x, y] = pt(nowMin, 154);
       el("line", { x1: x0, y1: y0, x2: x, y2: y, class: "dial-hand" }, g);
       el("circle", { cx: x, cy: y, r: 5, class: "dial-hand-dot" }, g);
-    }
-    const st = statusAt(info, live ? Math.floor(nowMin) : null);
-    const t1 = el("text", { x: 0, y: -18, class: "dial-center-k", "text-anchor": "middle" }, g); t1.textContent = st.k;
-    const t2 = el("text", { x: 0, y: 12, class: "dial-center-v", "text-anchor": "middle" }, g); t2.textContent = st.v;
-    const t3 = el("text", { x: 0, y: 34, class: "dial-center-s", "text-anchor": "middle" }, g); t3.textContent = st.s;
+      v = hm(nowMin);
+      if (nowMin >= t("22:00") || nowMin < t("06:00")) { k = "SLEEP"; s = "up in " + until(nowMin >= t("22:00") ? 1440 - nowMin + t("06:00") : t("06:00") - nowMin); }
+      else if (nowMin < t("09:30")) { k = "NOT EATING YET"; s = "breakfast in " + until(t("09:30") - nowMin); }
+      else if (nowMin < t("18:00")) { k = "EATING WINDOW"; s = "closes in " + until(t("18:00") - nowMin); }
+      else { k = "KITCHEN CLOSED"; s = "lights out in " + until(t("22:00") - nowMin); }
+    } else { k = DAYS[info.dow].toUpperCase(); v = info.week > 0 ? "Week " + info.week : "Preview"; s = info.lift ? "Lift day" : "No lift"; }
+    el("text", { x: 0, y: -20, class: "dial-k", "text-anchor": "middle" }, g).textContent = k;
+    el("text", { x: 0, y: 12, class: "dial-v", "text-anchor": "middle" }, g).textContent = v;
+    el("text", { x: 0, y: 34, class: "dial-s", "text-anchor": "middle" }, g).textContent = s;
   }
 
-  function untilText(mins) {
-    if (mins < 1) return "now";
-    const h = Math.floor(mins / 60), m = Math.round(mins % 60);
-    return h ? `${h} h ${String(m).padStart(2, "0")} min` : `${m} min`;
-  }
+  /* ---------------- Today + week ---------------- */
+  const dateInput = $("[data-date-input]");
+  const todayBtn = $("[data-date-today]");
+  let viewDate = null;
 
-  function statusAt(info, nowMin) {
-    if (nowMin === null) return { k: DAYS[info.dow].toUpperCase(), v: info.week > 0 ? "Week " + info.week : "Preview", s: info.lift.none ? "No lift" : "Lift " + SESSIONS[info.lift.idx].title };
-    if (nowMin >= t("22:00") || nowMin < t("06:00")) {
-      const left = nowMin >= t("22:00") ? 1440 - nowMin + t("06:00") : t("06:00") - nowMin;
-      return { k: "SLEEP", v: hm(nowMin), s: "wake in " + untilText(left) };
-    }
-    if (nowMin >= t("09:30") && nowMin < t("18:00")) return { k: "EATING WINDOW", v: hm(nowMin), s: "closes in " + untilText(t("18:00") - nowMin) };
-    if (nowMin < t("09:30")) return { k: "FASTING", v: hm(nowMin), s: "breakfast in " + untilText(t("09:30") - nowMin) };
-    return { k: "KITCHEN CLOSED", v: hm(nowMin), s: "lights out in " + untilText(t("22:00") - nowMin) };
-  }
-
-  function renderToday() {
+  function render() {
     const now = prNow();
-    const live = !viewDate || (viewDate.y === now.y && viewDate.m === now.m && viewDate.d === now.d);
     const day = viewDate || now;
+    const live = !viewDate || iso(day.y, day.m, day.d) === iso(now.y, now.m, now.d);
     const info = dayInfo(day.y, day.m, day.d);
-    const nowMin = now.min + now.sec / 60;
-    const dateLabel = new Date(info.utc).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
-
-    drawDial(info, nowMin, live);
-    $('[data-field="pr-date"]').textContent = (live ? "Puerto Rico · " : "Preview · ") + dateLabel;
-    $('[data-field="pr-time"]').textContent = live ? hm(now.min) : "—";
+    const nowMin = live ? now.min : null;
+    drawDial(info, nowMin);
+    $('[data-field="day-label"]').textContent = longDate(info.utc) + (live ? ` · ${hm(now.min)} in Puerto Rico` : "") + (info.days < 0 ? " · plan starts Monday, November 2" : "");
+    todayBtn.hidden = live;
+    dateInput.value = info.key;
 
     const ev = events(info);
+    const box = $("[data-nownext]");
+    box.hidden = !live;
     let cur = null, nxt = null;
     if (live) {
       ev.forEach((e) => { if (e.at <= nowMin) cur = e; });
       nxt = ev.find((e) => e.at > nowMin) || null;
-      if (cur && cur.end && nowMin >= cur.end) cur = { label: cur.label.replace(/^Lift: /, "") + " done" };
-      if (!cur || nowMin >= t("22:00")) cur = { label: "Sleep" };
+      const curLabel = !cur || nowMin >= t("22:00") ? "Sleep" : cur.end && nowMin >= cur.end ? "Done: " + cur.label.split(",")[0] : cur.label;
+      $('[data-field="now-item"]').textContent = curLabel;
+      $('[data-field="next-item"]').textContent = nxt ? `${hm(nxt.at)} ${nxt.label} (in ${until(nxt.at - nowMin)})` : "06:00 Wake";
     }
-    $('[data-field="now-item"]').textContent = live ? cur.label : "—";
-    $('[data-field="next-item"]').textContent = live ? (nxt ? `${hm(nxt.at)} · ${nxt.label} (in ${untilText(nxt.at - nowMin)})` : "06:00 · Wake") : "—";
+    const list = $("[data-day-list]");
+    list.innerHTML = ev.map((e) => {
+      const cls = ["rt-day-item", e.kind ? "k-" + e.kind : "", live && e === cur ? "is-now" : ""].join(" ");
+      const sub = e.lift ? `<ol class="rt-day-ex">${SESSIONS[e.lift.idx].ex.map((x) => `<li><span>${x[0]}</span><em>${exText(x, e.lift.sets)}</em></li>`).join("")}</ol>` : "";
+      return `<li class="${cls}"><time>${hm(e.at)}</time><div>${e.label}${sub}</div></li>`;
+    }).join("");
+    const ex = extras(info);
+    if (ex.length) list.insertAdjacentHTML("beforeend", `<li class="rt-day-item k-extra"><time>Also</time><div>${ex.join(" · ")}</div></li>`);
 
-    // plan day card
-    const L = info.lift;
-    let weekLabel;
-    if (info.days < 0) weekLabel = `Starts Monday, November 2 · in ${-info.days} day${info.days === -1 ? "" : "s"}`;
-    else weekLabel = `Week ${info.week} · ${DAYS[info.dow]}` + (info.week <= 3 ? " · Calibrate" : "") + (L.deload ? " · Deload week" : "");
-    $('[data-field="plan-week"]').textContent = weekLabel;
-    const list = $('[data-field="lift-list"]');
-    list.innerHTML = "";
-    let note = "";
-    if (L.pre) {
-      $('[data-field="lift-title"]').textContent = "Week 1 opens with Chest / Triceps";
-      note = "Pick a date on or after November 2 to preview any day of the plan.";
-    } else if (L.none) {
-      $('[data-field="lift-title"]').textContent = info.dow === 5 ? "Saturday: no lifting" : info.dow === 6 ? "Sunday: check-in day" : "No lifting today";
-      note = info.dow === 6 ? "Run the Sunday check-in below and prep chicken for the week (60 min)." : info.dow === 5 ? "Long easy cardio this morning; nothing else to train." : "Calibration weeks lift Monday, Wednesday and Friday only.";
-    } else {
-      const s = SESSIONS[L.idx];
-      $('[data-field="lift-title"]').textContent = `12:30 · ${s.title} · ${L.sets} sets`;
-      s.ex.forEach(([name, reps], i) => {
-        const li = document.createElement("li");
-        li.innerHTML = `<span>${name}</span><em>${L.sets} × ${reps || "10–12"}${i < 2 ? " · 2 min rest" : ""}</em>`;
-        list.appendChild(li);
-      });
-      note = (info.week >= 4 ? "Assumes each step's gate passed. " : "") + (info.dow === 2 ? "Prep tonight: bake the second chicken batch (30 min)." : "");
+    // week strip
+    const weekStart = info.days >= 0 ? START + (info.week - 1) * 7 * 86400000 : START;
+    const wk = info.days >= 0 ? info.week : 1;
+    $('[data-field="week-label"]').textContent = info.days >= 0
+      ? `Week ${wk}` + (wk <= 3 ? " · lifting Mon, Wed, Fri, 2 sets" : wk === 4 ? " · every weekday, 2 sets" : wk % 6 === 0 ? " · deload week" : " · every weekday, 3 sets")
+      : "Starts Monday, November 2 · week 1 shown";
+    let html = "";
+    for (let i = 0; i < 7; i++) {
+      const ms = weekStart + i * 86400000, p = fromUTC(ms), di = dayInfo(p.y, p.m, p.d);
+      const date = new Date(ms).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+      const liftTxt = di.lift ? `<b>${SESSIONS[di.lift.idx].title}</b><em>${di.lift.sets} sets</em>` : `<b class="is-off">No lift</b><em>${i < 5 ? "Cardio only" : i === 5 ? "Long cardio" : "Walk"}</em>`;
+      const ext = extras(di);
+      html += `<button type="button" class="rt-wday${di.key === info.key ? " is-sel" : ""}${di.lift ? " has-lift" : ""}" data-day="${di.key}"><span class="rt-wday-d">${DAY3[i]} <small>${date}</small></span>${liftTxt}${ext.length ? `<i>${ext.join(" · ")}</i>` : ""}</button>`;
     }
-    $('[data-field="lift-note"]').textContent = note;
-    $('[data-field="cardio-today"]').textContent = cardioFor(info).text;
-    $('[data-field="market-today"]').textContent = info.market ? `${hm(info.market.open)}–${hm(info.market.close)} Puerto Rico time` : "Closed";
-
-    // timeline
-    const tl = $("[data-timeline]");
-    tl.innerHTML = "";
-    ev.forEach((e) => {
-      const li = document.createElement("li");
-      li.className = "rt-tl-item" + (e.kind ? " k-" + e.kind : "");
-      if (live && cur && e === cur) li.classList.add("is-now");
-      if (live && nxt && e === nxt) li.classList.add("is-next");
-      li.innerHTML = `<time>${hm(e.at)}${e.end ? "–" + hm(e.end) : ""}</time><span>${e.label}</span>`;
-      tl.appendChild(li);
-    });
-    if (dateInput && !dateInput.value) {
-      dateInput.value = `${day.y}-${String(day.m).padStart(2, "0")}-${String(day.d).padStart(2, "0")}`;
-    }
+    $("[data-week]").innerHTML = html;
+    $("[data-week-note]").textContent = wk <= 3
+      ? "Weeks 1–3: lift Monday, Wednesday and Friday, doing the next session in order. From week 4, every weekday, but only if the step-up checks pass (see Training). Tap a day to see it above."
+      : "Move up a step only if the step-up checks pass (see Training). Tap a day to see it above.";
   }
 
-  if (dateInput) {
-    dateInput.addEventListener("change", () => {
-      const v = dateInput.value;
-      if (!v) { viewDate = null; renderToday(); return; }
-      const [y, m, d] = v.split("-").map(Number);
-      viewDate = { y, m, d };
-      renderToday();
-    });
-  }
-  const todayBtn = $("[data-date-today]");
-  if (todayBtn) todayBtn.addEventListener("click", () => { viewDate = null; dateInput.value = ""; renderToday(); });
-  renderToday();
-  setInterval(renderToday, 20000);
+  dateInput.addEventListener("change", () => {
+    if (!dateInput.value) { viewDate = null; render(); return; }
+    const [y, m, d] = dateInput.value.split("-").map(Number);
+    viewDate = { y, m, d }; render();
+  });
+  todayBtn.addEventListener("click", () => { viewDate = null; render(); });
+  $("[data-week]").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-day]"); if (!b) return;
+    const [y, m, d] = b.dataset.day.split("-").map(Number);
+    viewDate = { y, m, d }; render();
+    $("#today").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  render();
+  setInterval(() => { if (!viewDate) render(); }, 30000);
 
-  /* ------------------------------------------------------------------ */
-  /* 03 Food                                                             */
-  /* ------------------------------------------------------------------ */
+  /* ---------------- Meals ---------------- */
   let level = store.get("rt-level", 0);
   let swap = store.get("rt-swap", "steak");
   const levelSeg = $("[data-level-seg]");
   [-1, 0, 1, 2, 3, 4, 5, 6].forEach((n) => {
     const b = document.createElement("button");
-    b.type = "button"; b.dataset.level = n; b.textContent = lvName(n);
-    b.title = lvl(n).add + " · ≈" + fmt(lvl(n).kcal) + " kcal";
+    b.type = "button"; b.dataset.level = n; b.textContent = lvName(n); b.title = `≈${fmt(lvl(n).kcal)} kcal`;
     levelSeg.appendChild(b);
   });
-
-  function mealRows(level, swap) {
-    const meals = MEALS.map((m) => ({ ...m, rows: m.items.map((it) => (it === "DINNER" ? { v: DINNER[swap], swap: true } : { v: it })) }));
-    const incs = level < 0 ? INC["-1"] : Array.from({ length: level }, (_, i) => INC[i + 1]).flat();
-    incs.forEach(([mi, v]) => meals[mi].rows.push({ v, add: true }));
-    return meals;
-  }
-
   function renderFood() {
     if (level < 0 && swap === "chicken") swap = "steak";
-    $$("button", levelSeg).forEach((b) => { b.classList.toggle("is-on", +b.dataset.level === level); b.setAttribute("aria-checked", +b.dataset.level === level); });
-    $$("[data-swap]").forEach((b) => {
-      b.classList.toggle("is-on", b.dataset.swap === swap);
-      b.disabled = b.dataset.swap === "chicken" && level < 0;
-    });
-    const meals = mealRows(level, swap);
+    $$("button", levelSeg).forEach((b) => b.classList.toggle("is-on", +b.dataset.level === level));
+    $$("[data-swap]").forEach((b) => { b.classList.toggle("is-on", b.dataset.swap === swap); b.disabled = b.dataset.swap === "chicken" && level < 0; });
+    const meals = MEALS.map((m) => ({ ...m, rows: m.items.map((it) => (it === "DINNER" ? { v: DINNER[swap] } : { v: it })) }));
+    (level < 0 ? INC["-1"] : Array.from({ length: level }, (_, i) => INC[i + 1]).flat()).forEach(([mi, v]) => meals[mi].rows.push({ v, add: true }));
     const day = [0, 0, 0, 0, 0];
-    const wrap = $("[data-meals]");
-    wrap.innerHTML = "";
-    meals.forEach((m, i) => {
+    $("[data-meals]").innerHTML = meals.map((m, i) => {
       const tot = [0, 0, 0, 0, 0];
-      const rows = m.rows.map((r) => {
-        r.v.slice(2).forEach((x, k) => { tot[k] += x; });
-        const cls = r.add ? (r.v[2] < 0 ? "is-cut" : "is-add") : r.swap && swap !== "steak" ? "is-swap" : "";
-        return `<tr class="${cls}"><td>${r.v[0]}${r.add ? ` <b class="rt-tag">${r.v[2] < 0 ? "level −1" : "ladder"}</b>` : ""}</td><td>${r.v[1]}</td>${r.v.slice(2).map((x) => `<td class="num">${num(x)}</td>`).join("")}</tr>`;
-      }).join("");
+      const rows = m.rows.map((r) => { r.v.slice(2).forEach((x, k) => { tot[k] += x; }); return `<tr${r.add ? ' class="is-add"' : ""}><td>${r.v[0]}</td><td>${r.v[1]}</td><td class="num">${num(r.v[2])}</td><td class="num">${num(r.v[3])}</td></tr>`; }).join("");
       tot.forEach((x, k) => { day[k] += x; });
-      const name = i === 2 ? (swap === "salmon" ? "Salmon salad" : swap === "chicken" ? "Chicken salad" : m.name) : m.name;
-      const card = document.createElement("div");
-      card.className = "rt-meal";
-      card.innerHTML = `<div class="rt-meal-head"><span class="rt-meal-time">${m.time}</span><div><h3>Meal ${i + 1} · ${name}</h3><p>${m.note}</p></div><div class="rt-meal-kcal"><b>${fmt(tot[0])}</b><span>kcal · ${num(tot[1])} g protein</span></div></div>
-        <div class="rt-table-wrap"><table class="rt-table rt-meal-table"><thead><tr><th>Food (Costco)</th><th>Amount</th><th class="num">kcal</th><th class="num">Protein</th><th class="num">Carbs</th><th class="num">Fat</th><th class="num">Fiber</th></tr></thead><tbody>${rows}</tbody>
-        <tfoot><tr><td>Meal total</td><td></td>${tot.map((x) => `<td class="num">${num(x)}</td>`).join("")}</tr></tfoot></table></div>`;
-      wrap.appendChild(card);
-    });
-    const pk = day[1] * 4, ck = day[2] * 4, fk = day[3] * 9, all = pk + ck + fk;
-    $("[data-totals]").innerHTML = `
-      <div class="rt-total"><span>Level ${lvName(level)}</span><b>${fmt(day[0])}</b><em>kcal a day</em></div>
-      <div class="rt-total"><span>Protein</span><b>${num(day[1])} g</b><em>${num(day[1] / 188 * 1)} g per lb at 188</em></div>
-      <div class="rt-total"><span>Carbs</span><b>${num(day[2])} g</b><em>fiber ${num(day[4])} g</em></div>
-      <div class="rt-total"><span>Fat</span><b>${num(day[3])} g</b><em>one Tbsp oil at dinner</em></div>
-      <div class="rt-macro-bar" aria-label="Share of calories by macro">
-        <i class="mb-p" style="width:${(pk / all * 100).toFixed(1)}%"><span>Protein ${Math.round(pk / all * 100)}%</span></i>
-        <i class="mb-c" style="width:${(ck / all * 100).toFixed(1)}%"><span>Carbs ${Math.round(ck / all * 100)}%</span></i>
-        <i class="mb-f" style="width:${(fk / all * 100).toFixed(1)}%"><span>Fat ${Math.round(fk / all * 100)}%</span></i>
-      </div>`;
+      const name = i === 2 && swap !== "steak" ? (swap === "salmon" ? "Salmon salad" : "Chicken salad") : m.name;
+      return `<div class="rt-meal"><div class="rt-meal-head"><span>${m.time}</span><h3>${name}</h3><em>${fmt(tot[0])} kcal · ${num(tot[1])} g protein</em></div>
+        <table class="rt-table rt-meal-table"><thead><tr><th>Food</th><th>Amount</th><th class="num">kcal</th><th class="num">Protein</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }).join("");
+    $("[data-totals]").innerHTML = `<div><span>Per day</span><b>≈${fmt(Math.round(day[0] / 10) * 10)} kcal</b></div><div><span>Protein</span><b>${num(day[1])} g</b></div><div><span>Carbs</span><b>${num(day[2])} g</b></div><div><span>Fat</span><b>${num(day[3])} g</b></div><div><span>Fiber</span><b>${num(day[4])} g</b></div>`;
     store.set("rt-level", level); store.set("rt-swap", swap);
   }
-  levelSeg.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; level = +b.dataset.level; renderFood(); });
-  $("[data-swap-seg]").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b || b.disabled) return; swap = b.dataset.swap; renderFood(); });
+  levelSeg.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { level = +b.dataset.level; renderFood(); } });
+  $("[data-swap-seg]").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b && !b.disabled) { swap = b.dataset.swap; renderFood(); } });
   renderFood();
 
-  /* ------------------------------------------------------------------ */
-  /* 04 Training                                                         */
-  /* ------------------------------------------------------------------ */
-  let step = 1;
-  function renderTraining() {
-    $$("[data-step]").forEach((b) => b.classList.toggle("is-on", +b.dataset.step === step));
-    const sets = step === 3 ? 3 : 2;
-    const grid = $("[data-week-grid]");
-    const head = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-    grid.classList.toggle("is-calib", step === 1);
-    let html = `<div class="rt-wg-row rt-wg-head"><span></span>${head.map((h, i) => `<span${i === 1 || i === 3 ? ' class="wg-tt"' : ""}>${h}</span>`).join("")}</div>`;
-    if (step === 1) {
-      [1, 2, 3].forEach((w) => {
-        html += `<div class="rt-wg-row"><span>Week ${w}</span>` + [0, 1, 2, 3, 4].map((dow) => {
-          const L = liftFor(w, dow, 0);
-          return L.none ? `<span class="rt-wg-off wg-tt">Cardio only</span>` : `<span class="rt-wg-on"><b>${L.idx + 1}</b>${SESSIONS[L.idx].title}</span>`;
-        }).join("") + `</div>`;
-      });
-    } else {
-      html += `<div class="rt-wg-row"><span>Every week</span>` + SESSIONS.map((s, i) => `<span class="rt-wg-on"><b>${i + 1}</b>${s.title}</span>`).join("") + `</div>`;
-    }
-    grid.innerHTML = html;
-    const wrap = $("[data-sessions]");
-    wrap.innerHTML = SESSIONS.map((s, i) => `<div class="rt-session"><div class="rt-session-head"><span>${step === 1 ? "Session " + (i + 1) : DAYS[i]}</span><h3>${s.title}</h3></div><ol>${s.ex.map(([n, reps, drop], k) => `<li class="${k < 2 ? "is-heavy" : ""}"><span>${n}</span><em>${sets} × ${reps || "10–12"}</em>${k < 2 ? `<b class="rt-tag">2 min rest</b>` : ""}${drop ? `<b class="rt-tag rt-tag-quiet">drop first if late</b>` : ""}</li>`).join("")}</ol></div>`).join("");
-  }
-  $("[data-steps]").addEventListener("click", (e) => { const b = e.target.closest("[data-step]"); if (!b) return; step = +b.dataset.step; renderTraining(); });
-  renderTraining();
+  /* ---------------- Sessions ---------------- */
+  $("[data-sessions]").innerHTML = SESSIONS.map((s, i) => `<div class="rt-session"><span>Session ${i + 1} · ${DAY3[i]} from week 4</span><h3>${s.title}</h3><ol>${s.ex.map((x, k) => `<li><span>${x[0]}</span><em>${x[3] ? x[1] : x[1] || "10–12 reps"}</em>${k < 2 ? '<b class="rt-tag">2 min rest</b>' : ""}${x[2] ? '<b class="rt-tag rt-tag-quiet">drop first</b>' : ""}</li>`).join("")}</ol></div>`).join("");
 
-  const gate = $("[data-gate]");
-  gate.addEventListener("change", () => {
-    const ok = $$("input", gate).every((i) => i.checked);
-    const out = $("[data-gate-out]");
-    out.textContent = ok ? "All four hold: move up one step from Monday." : "Stay at your current step and recheck next Sunday.";
-    out.classList.toggle("is-ok", ok);
-  });
-
-  /* ------------------------------------------------------------------ */
-  /* 06 Sunday check-in                                                  */
-  /* ------------------------------------------------------------------ */
+  /* ---------------- Sunday check-in ---------------- */
   const form = $("[data-calc]");
   const levelSelect = $("[data-level-select]");
-  LADDER.slice().reverse().forEach((r) => {
-    const o = document.createElement("option");
-    o.value = r.lv; o.textContent = `${lvName(r.lv)} · ≈${fmt(r.kcal)} kcal`;
-    levelSelect.appendChild(o);
-  });
-  levelSelect.value = "0";
-  const ladderBody = $("[data-ladder-table] tbody");
-  ladderBody.innerHTML = LADDER.map((r) => `<tr${r.lv === 0 ? ' class="is-base"' : ""}><td>${lvName(r.lv)}${r.lv === 6 ? " (top)" : r.lv === 0 ? " (start)" : r.lv === -1 ? " (floor)" : ""}</td><td>${r.add}</td><td class="num">≈${fmt(r.kcal)}</td><td class="num">${r.p} g</td></tr>`).join("");
-  const nowInfo = (() => { const n = prNow(); return dayInfo(n.y, n.m, n.d); })();
-  form.elements.week.value = Math.max(1, nowInfo.week || 1);
-  if (nowInfo.week < 4) { form.elements.week.value = 4; }
+  LADDER.slice().reverse().forEach((r) => { const o = document.createElement("option"); o.value = r.lv; o.textContent = `${lvName(r.lv)} · ≈${fmt(r.kcal)} kcal`; levelSelect.appendChild(o); });
+  levelSelect.value = String(store.get("rt-level", 0));
+  $("[data-levels] tbody").innerHTML = LADDER.map((r) => `<tr${r.lv === 0 ? ' class="is-base"' : ""}><td>${lvName(r.lv)}</td><td>${r.add}</td><td class="num">≈${fmt(r.kcal)}</td></tr>`).join("");
+  const n0 = prNow(), i0 = dayInfo(n0.y, n0.m, n0.d);
+  form.elements.week.value = Math.max(1, i0.week);
 
-  const MENU_CHANGE = {
-    "-1": "eat half the rice pouch at lunch",
-    1: "add ½ cup oats at breakfast",
-    2: "add ½ pouch rice at lunch",
-    3: "add 1 cup Greek yogurt at breakfast",
-    4: "add another ½ cup oats at breakfast (2 cups in total)",
-    5: "add another ½ pouch rice at lunch (2 pouches in total)",
-    6: "add 1 Tbsp olive oil at dinner",
-  };
+  const CHANGE = { 1: "add ½ cup oats at breakfast", 2: "add ½ pouch rice at lunch", 3: "add 1 cup Greek yogurt at breakfast", 4: "add another ½ cup oats at breakfast", 5: "add another ½ pouch rice at lunch", 6: "add 1 Tbsp olive oil at dinner" };
   function menuChange(from, to) {
-    if (to === from) return "";
-    if (to > from) {
-      const steps = [];
-      for (let k = from + 1; k <= to; k++) steps.push(k === 0 ? "go back to the full rice pouch" : MENU_CHANGE[k]);
-      return steps.join("; then ");
-    }
-    const steps = [];
-    for (let k = from; k > to; k--) steps.push(k === 0 ? MENU_CHANGE["-1"] : "drop the level " + lvName(k) + " item (" + MENU_CHANGE[k].replace(/^add (another )?/, "").replace(/ \(.*\)$/, "") + ")");
-    return steps.join("; then ");
+    const out = [];
+    for (let k = from + 1; k <= to; k++) out.push(k === 0 ? "go back to the full rice pouch" : CHANGE[k]);
+    for (let k = from; k > to; k--) out.push(k === 0 ? "eat half the rice pouch at lunch" : "drop the " + CHANGE[k].replace(/^add (another )?/, ""));
+    return out.join(", then ");
   }
 
   function decide(f) {
-    const L = +f.level, week = +f.week, since = +f.since, menu = +f.menu, nights = +f.shortnights;
+    const L = +f.level, week = +f.week || 1, since = +f.since, menu = +f.menu;
     const nowW = parseFloat(f.now), prior = parseFloat(f.prior);
-    const hold = !!f.hold;
-    const trace = [];
-    const fixes = [];
-    if (!isFinite(nowW) || !isFinite(prior)) return { error: "Enter both 7-day averages." };
-    const loss = (prior - nowW) / 2;   // positive = losing
-    const change = -loss;               // positive = gaining
-    const sleepShort = nights >= 3;
-    const anySign = sleepShort || f.liftdown || f.after2 || f.hunger;
-
-    // Step 1
-    if (sleepShort) fixes.push("Train at 2 sets per exercise this week and fix the sleep routine: caffeine by 12:15, screens off 21:30, lights out 22:00.");
-    if (f.liftdown && !sleepShort) fixes.push("Train at 2 sets per exercise for one week.");
-    if (f.persist && anySign) fixes.push("These signs have lasted two weeks: see your doctor.");
-    trace.push({ n: 1, name: "Recovery fixes", state: fixes.length ? "fired" : "pass", text: fixes.length ? fixes.join(" ") : "Nothing to fix." });
-
-    const result = (to, n, why) => {
-      let note = "";
-      if (to > 6 || to < -1) { note = "That would move past the ladder, so stay and see a doctor or dietitian."; to = L; }
-      return { to, n, why, note };
-    };
+    const steps = [], fixes = [];
+    if (f.sleep) fixes.push("2 sets this week and fix sleep: last coffee 12:15, screens off 21:30, lights out 22:00.");
+    if (f.liftdown && !f.sleep) fixes.push("2 sets for one week.");
+    if (f.persist && (f.sleep || f.liftdown || f.after2 || f.hunger)) fixes.push("These have lasted two weeks: see your doctor.");
+    steps.push(["Recovery", fixes.length ? fixes.join(" ") : "Nothing to fix.", fixes.length ? "action" : ""]);
+    if (!isFinite(nowW) || !isFinite(prior)) return { empty: true, fixes };
+    const loss = (prior - nowW) / 2;
+    const bound = (to) => (to > 6 || to < -1 ? { to: L, note: "That would go past the ladder, so stay and talk to a doctor or dietitian." } : { to });
     let res = null;
-
-    // Step 2
-    const under = (f.after2 || f.hunger) && menu >= 6 && !sleepShort && loss > 0;
-    if (under) res = result(L + 1, 2, "Under-fueling: recovery signs while on the menu, sleeping 7+ hours and still losing.");
-    trace.push({ n: 2, name: "Under-fueling", state: under ? "decided" : res ? "skip" : "pass", text: under ? "Up one level, without waiting." : (f.after2 || f.hunger) ? "Signs present, but " + (menu < 6 ? "fewer than 6 days on the menu" : sleepShort ? "sleep is short; fix sleep first" : "weight is not falling") + ", so no food change here." : "No under-fueling signs." });
-
-    // Step 3
-    if (!res) {
-      if (!hold && nowW <= 166) {
-        const deficit = Math.max(loss, 0) * 500;
-        const target = lvl(L).kcal + deficit;
-        let best = LADDER[0];
-        LADDER.forEach((r) => { if (Math.abs(r.kcal - target) < Math.abs(best.kcal - target)) best = r; });
-        res = result(best.lv, 3, `Hold entry: losing ${num(loss)} lb a week ≈ ${fmt(deficit)} kcal a day of remaining deficit; ${fmt(lvl(L).kcal)} + ${fmt(deficit)} ≈ ${fmt(target)} kcal, closest to level ${lvName(best.lv)}.`);
-        res.holdEntry = true;
-        trace.push({ n: 3, name: "Hold entry", state: "decided", text: "You reached 166 lb. Move straight to estimated maintenance; expect a 1–3 lb rebound over two weeks, mostly glycogen and water. Tick “Already in Hold” from next week." });
-      } else trace.push({ n: 3, name: "Hold entry", state: hold ? "pass" : "pass", text: hold ? "Already in Hold." : "Not at 166 lb yet." });
-    } else trace.push({ n: 3, name: "Hold entry", state: "skip", text: "Skipped: a calorie decision was already made." });
-
-    // Step 4
+    if ((f.after2 || f.hunger) && menu >= 6 && !f.sleep && loss > 0) {
+      res = { ...bound(L + 1), why: "You're on the menu, sleeping enough and still losing, but recovery is suffering. Eat more." };
+      steps.push(["Under-fueling", "Up one level, no waiting.", "decides"]);
+    } else steps.push(["Under-fueling", (f.after2 || f.hunger) ? (menu < 6 ? "Signs present, but you were off the menu." : f.sleep ? "Signs present, but sleep comes first." : "Signs present, but weight isn't falling.") : "No signs.", ""]);
+    if (!res && !f.hold && nowW <= 166) {
+      const target = lvl(L).kcal + Math.max(loss, 0) * 500;
+      let best = LADDER[0];
+      LADDER.forEach((r) => { if (Math.abs(r.kcal - target) < Math.abs(best.kcal - target)) best = r; });
+      res = { to: best.lv, why: `Your 7-day average reached 166 lb. Losing ${num(loss)} lb a week means about ${fmt(Math.max(loss, 0) * 500)} kcal a day of deficit left, so move straight to maintenance. Expect 1–3 lb of water back over two weeks. Tick "In maintenance" from next Sunday.` };
+      steps.push(["Maintenance", `Reached 166 lb: move to level ${lvName(best.lv)}.`, "decides"]);
+    } else if (!res) steps.push(["Maintenance", f.hold ? "Already in maintenance." : "Not at 166 lb yet.", ""]);
     if (!res) {
       const why = [];
-      if (week < 4) why.push("it is before week 4");
-      if (since < 2) why.push("your last change was less than two weeks ago");
-      if (menu < 6) why.push("you were on the full menu fewer than 6 of 7 days");
-      if (why.length) {
-        res = { to: L, n: 4, why: "Wait: " + why.join("; ") + "." };
-        trace.push({ n: 4, name: "Wait", state: "decided", text: "No calorie change this week." });
-      } else trace.push({ n: 4, name: "Wait", state: "pass", text: "Eligible for a weight-based change." });
-    } else trace.push({ n: 4, name: "Wait", state: "skip", text: "Skipped." });
-
-    // Step 5
+      if (week < 4) why.push("it's before week 4 (early weight changes are mostly water)");
+      if (since < 2) why.push("your last food change was under two weeks ago");
+      if (menu < 6) why.push("you were on the menu fewer than 6 days");
+      if (why.length) { res = { to: L, wait: true, why: "No change because " + why.join(" and ") + "." }; steps.push(["Wait", "No food change this week.", "decides"]); }
+      else steps.push(["Wait", "OK to change.", ""]);
+    }
     if (!res) {
-      let to = L, why = "";
-      if (!hold) {
-        if (loss > 1.5) { to = L + 1; why = `Losing ${num(loss)} lb a week: faster than 1.5, so up one level.`; }
-        else if (loss >= 1.0) { why = `Losing ${num(loss)} lb a week: on target, stay.`; }
-        else if (loss >= 0.5 && f.waist === "down") { why = `Losing ${num(loss)} lb a week with the waist down: stay.`; }
-        else if (loss >= 0.5) { to = L - 1; why = `Losing ${num(loss)} lb a week with the waist flat or up: down one level.`; }
-        else { to = L - 1; why = loss >= 0 ? `Losing only ${num(loss)} lb a week: down one level.` : `Gaining ${num(-loss)} lb a week: down one level.`; }
+      let to = L, why;
+      if (!f.hold) {
+        if (loss > 1.5) { to = L + 1; why = `Losing ${num(loss)} lb a week is faster than the 1.5 lb limit.`; }
+        else if (loss >= 1) why = `Losing ${num(loss)} lb a week is on target.`;
+        else if (loss >= 0.5 && f.waist === "down") why = `Losing ${num(loss)} lb a week with your waist down is fine.`;
+        else { to = L - 1; why = loss >= 0 ? `Losing only ${num(loss)} lb a week${loss >= 0.5 ? " and your waist isn't shrinking" : ""}.` : `Gaining ${num(-loss)} lb a week.`; }
       } else {
-        const c = change;
-        if (nowW > 168) {
-          if (c < 0) why = `Above 168 lb and falling ${num(-c)} lb a week: stay, you are heading back to the band.`;
-          else if (f.abovetwice) { to = L - 1; why = "Above 168 lb and flat or rising for two checks in a row: down one level."; }
-          else why = "Above 168 lb and flat or rising for the first time: stay and recheck in two weeks.";
-        } else if (nowW >= 163) {
-          if (c < -0.5) { to = L + 1; why = `In the band but falling ${num(-c)} lb a week: up one level.`; }
-          else if (c > 0.5) { to = L - 1; why = `In the band but rising ${num(c)} lb a week: down one level.`; }
-          else why = "In the band and within ±0.5 lb a week: stay, this is your maintenance level.";
-        } else {
-          if (c > 0) why = `Below 163 lb and rising ${num(c)} lb a week: stay, you are heading back to the band.`;
-          else { to = L + 1; why = "Below 163 lb and flat or falling: up one level."; }
-        }
+        const c = -loss;
+        if (nowW > 168) { if (c < 0) why = "Above 168 lb but falling, so you're heading back."; else if (f.abovetwice) { to = L - 1; why = "Above 168 lb and not falling for two checks."; } else why = "Above 168 lb and not falling. Check again in two weeks."; }
+        else if (nowW >= 163) { if (c < -0.5) { to = L + 1; why = `In the 163–168 lb band but still losing ${num(-c)} lb a week.`; } else if (c > 0.5) { to = L - 1; why = `In the band but gaining ${num(c)} lb a week.`; } else why = "In the 163–168 lb band and steady. This is your maintenance level."; }
+        else { if (c > 0) why = "Below 163 lb but rising, so you're heading back."; else { to = L + 1; why = "Below 163 lb and not rising."; } }
       }
-      res = result(to, 5, why);
-      trace.push({ n: 5, name: "Weight action", state: "decided", text: why });
-    } else trace.push({ n: 5, name: "Weight action", state: "skip", text: "Skipped." });
-
-    return { res, trace, fixes, loss, change, hold, L };
+      res = { ...bound(to), why };
+      steps.push(["Weight", why, "decides"]);
+    }
+    return { res, steps, fixes, loss, L };
   }
 
   function renderCalc() {
     const f = {};
-    Array.from(form.elements).forEach((x) => { if (!x.name) return; f[x.name] = x.type === "checkbox" ? x.checked : x.value; });
+    Array.from(form.elements).forEach((x) => { if (x.name) f[x.name] = x.type === "checkbox" ? x.checked : x.value; });
     $$("[data-hold-only]").forEach((n) => { n.hidden = !f.hold; });
     const out = $("[data-verdict]");
     const d = decide(f);
-    if (d.error) { out.innerHTML = `<p class="rt-small">${d.error}</p>`; return; }
-    const { res, trace, L } = d;
+    if (d.empty) {
+      out.innerHTML = `<div class="rt-answer is-empty"><strong>Enter your two 7-day averages</strong><p>Weigh every morning after waking. On Sunday, average the last 7 days.</p>${d.fixes.length ? `<p><b>Training:</b> ${d.fixes.join(" ")}</p>` : ""}</div>`;
+      return;
+    }
+    const { res, steps, L } = d;
     const moved = res.to - L;
-    const head = moved > 0 ? (res.holdEntry ? `Move to level ${lvName(res.to)}` : "Up one level") : moved < 0 ? "Down one level" : res.n === 4 ? "Wait" : "Stay";
-    const target = lvl(res.to);
+    const head = moved > 0 ? (moved > 1 ? `Move up to level ${lvName(res.to)}` : "Eat a bit more") : moved < 0 ? "Eat a bit less" : res.wait ? "No change yet" : "Keep going";
     const change = menuChange(L, res.to);
-    out.innerHTML = `
-      <div class="rt-verdict-main ${moved > 0 ? "up" : moved < 0 ? "down" : "stay"}">
-        <span class="rt-card-label">This Sunday · step ${res.n} decides</span>
+    const target = lvl(res.to);
+    out.innerHTML = `<div class="rt-answer ${moved > 0 ? "up" : moved < 0 ? "down" : ""}">
         <strong>${head}</strong>
-        <p>Level ${lvName(res.to)} · ≈${fmt(target.kcal)} kcal · ${target.p} g protein${change ? ` · <b>${change}</b>` : ""}</p>
-        <p class="rt-small">${res.why}${res.note ? " " + res.note : ""}</p>
-        <p class="rt-small">${d.hold ? "Weekly change" : "Weekly loss"}: <b>${num(d.hold ? d.change : d.loss)} lb</b> (two-week average${d.hold ? ", positive = gaining" : ", positive = losing"}).</p>
+        ${change ? `<p class="rt-answer-do">${change[0].toUpperCase() + change.slice(1)}.</p>` : ""}
+        <p>${res.why}${res.note ? " " + res.note : ""}</p>
+        <p class="rt-answer-meta">Level ${lvName(res.to)} · ≈${fmt(target.kcal)} kcal · ${target.p} g protein · ${d.loss >= 0 ? "losing " + num(d.loss) : "gaining " + num(-d.loss)} lb a week</p>
+        ${d.fixes.length ? `<p><b>Training:</b> ${d.fixes.join(" ")}</p>` : ""}
       </div>
-      <ol class="rt-trace">${trace.map((s) => `<li class="st-${s.state}"><span class="rt-trace-n">${s.n}</span><div><b>${s.name}</b><p>${s.text}</p></div><em>${s.state === "fired" ? "action" : s.state === "decided" ? "decides" : s.state === "skip" ? "skipped" : "passes"}</em></li>`).join("")}</ol>`;
+      <details class="rt-how"><summary>How this was decided</summary><ol>${steps.map(([n, txt, st]) => `<li class="${st}"><b>${n}.</b> ${txt}</li>`).join("")}</ol></details>`;
   }
   form.addEventListener("input", renderCalc);
   form.addEventListener("change", renderCalc);
   form.addEventListener("submit", (e) => e.preventDefault());
   renderCalc();
 
-  /* ------------------------------------------------------------------ */
-  /* 07 Progress chart + log                                             */
-  /* ------------------------------------------------------------------ */
+  /* ---------------- Progress ---------------- */
   const chart = $("[data-chart]");
   const logForm = $("[data-log]");
   let log = store.get("rt-log", {});
   function drawChart() {
     chart.innerHTML = "";
-    const weeks = Object.keys(log).map(Number);
-    const maxW = Math.max(20, ...weeks.map((w) => Math.ceil((w + 1) / 2) * 2));
-    const W = 720, H = 340, ml = 46, mr = 16, mt = 16, mb = 34;
-    const x = (w) => ml + (w / maxW) * (W - ml - mr);
-    const ylo = 160, yhi = 190;
-    const vals = Object.values(log);
-    const lo = Math.min(ylo, ...vals.map((v) => Math.floor(v / 5) * 5));
-    const hi = Math.max(yhi, ...vals.map((v) => Math.ceil(v / 5) * 5));
-    const y = (v) => mt + ((hi - v) / (hi - lo)) * (H - mt - mb);
+    const weeks = Object.keys(log).map(Number), vals = Object.values(log);
+    const maxW = Math.max(24, ...weeks.map((w) => Math.ceil((w + 1) / 4) * 4));
+    const W = 720, H = 320, ml = 44, mr = 14, mt = 14, mb = 30;
+    const lo = Math.min(160, ...vals.map((v) => Math.floor(v / 5) * 5)), hi = Math.max(190, ...vals.map((v) => Math.ceil(v / 5) * 5));
+    const x = (w) => ml + (w / maxW) * (W - ml - mr), y = (v) => mt + ((hi - v) / (hi - lo)) * (H - mt - mb);
     const g = el("g", {}, chart);
-    for (let v = lo; v <= hi; v += 5) {
-      el("line", { x1: ml, x2: W - mr, y1: y(v), y2: y(v), class: "ch-grid" }, g);
-      const tx = el("text", { x: ml - 8, y: y(v), class: "ch-label", "text-anchor": "end", "dominant-baseline": "central" }, g); tx.textContent = v;
-    }
-    for (let w = 0; w <= maxW; w += 2) {
-      const tx = el("text", { x: x(w), y: H - mb + 18, class: "ch-label", "text-anchor": "middle" }, g); tx.textContent = w === 0 ? "wk 0" : w;
-    }
-    // hold band
-    el("rect", { x: x(16), y: y(168), width: x(maxW) - x(16), height: y(163) - y(168), class: "ch-band" }, g);
-    const bt = el("text", { x: x(maxW) - 6, y: y(168) - 6, class: "ch-label", "text-anchor": "end" }, g); bt.textContent = "Hold band 163–168";
+    for (let v = lo; v <= hi; v += 5) { el("line", { x1: ml, x2: W - mr, y1: y(v), y2: y(v), class: "ch-grid" }, g); el("text", { x: ml - 8, y: y(v), class: "ch-label", "text-anchor": "end", "dominant-baseline": "central" }, g).textContent = v; }
+    for (let w = 0; w <= maxW; w += 4) el("text", { x: x(w), y: H - 8, class: "ch-label", "text-anchor": "middle" }, g).textContent = w ? "wk " + w : "start";
     el("line", { x1: ml, x2: W - mr, y1: y(165), y2: y(165), class: "ch-goal" }, g);
-    const gt = el("text", { x: ml + 6, y: y(165) - 6, class: "ch-label ch-goal-label" }, g); gt.textContent = "Goal 165";
-    // milestones
+    el("text", { x: W - mr - 4, y: y(165) - 6, class: "ch-label ch-goal-label", "text-anchor": "end" }, g).textContent = "165 lb goal";
     [[4, 4, 182, 184], [8, 8, 176, 179], [12, 12, 171, 174], [16, 20, 165, 168]].forEach(([a, b, l, h]) => {
-      const r = el("rect", { x: x(a) - 12, y: y(h), width: x(b) - x(a) + 24, height: y(l) - y(h), rx: 3, class: "ch-mile" }, g);
+      const r = el("rect", { x: x(a) - 10, y: y(h), width: x(b) - x(a) + 20, height: y(l) - y(h), rx: 3, class: "ch-mile" }, g);
       el("title", {}, r).textContent = `Week ${a === b ? a : a + "–" + b}: ${l}–${h} lb`;
     });
-    // guide
-    const guide = [[0, 188], [4, 183], [8, 177.5], [12, 172.5], [18, 166.5]];
-    el("path", { d: guide.map(([w, v], i) => (i ? "L" : "M") + x(w).toFixed(1) + " " + y(v).toFixed(1)).join(" "), class: "ch-guide" }, g);
-    // log
     const pts = Object.entries(log).map(([w, v]) => [+w, +v]).sort((a, b) => a[0] - b[0]);
     if (pts.length > 1) el("path", { d: pts.map(([w, v], i) => (i ? "L" : "M") + x(w).toFixed(1) + " " + y(v).toFixed(1)).join(" "), class: "ch-line" }, g);
-    pts.forEach(([w, v]) => {
-      el("circle", { cx: x(w), cy: y(v), r: 9, class: "ch-hit" }, g);
-      const c = el("circle", { cx: x(w), cy: y(v), r: 4.5, class: "ch-pt" }, g);
-      el("title", {}, c).textContent = `Week ${w}: ${num(v)} lb`;
-    });
-    if (!pts.length) {
-      const tx = el("text", { x: x(maxW / 2), y: y(186), class: "ch-label", "text-anchor": "middle" }, g);
-      tx.textContent = "Add your weekly 7-day averages to plot them here";
-    }
+    pts.forEach(([w, v]) => { const c = el("circle", { cx: x(w), cy: y(v), r: 4.5, class: "ch-pt" }, g); el("title", {}, c).textContent = `Week ${w}: ${num(v)} lb`; });
+    if (!pts.length) el("text", { x: x(maxW / 2), y: y(187), class: "ch-label", "text-anchor": "middle" }, g).textContent = "Boxes are the milestones. Add your weekly averages to plot them.";
   }
   logForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -625,24 +447,20 @@
     logForm.elements.week.value = w + 1; logForm.elements.avg.value = "";
     drawChart();
   });
-  $("[data-log-clear]").addEventListener("click", () => { log = {}; store.set("rt-log", log); drawChart(); });
-  if (nowInfo.week > 0) logForm.elements.week.value = nowInfo.week;
+  $("[data-log-clear]").addEventListener("click", () => { if (Object.keys(log).length && !confirm("Clear your saved weekly averages?")) return; log = {}; store.set("rt-log", log); drawChart(); });
+  if (i0.week > 0) logForm.elements.week.value = i0.week;
   drawChart();
 
-  /* ------------------------------------------------------------------ */
-  /* 08 Shopping                                                         */
-  /* ------------------------------------------------------------------ */
+  /* ---------------- Shopping ---------------- */
   const SHOP = [
-    ["Chicken breast", "3.5 lb", "weekly"], ["Top sirloin", "3.5 lb", "weekly"], ["Tasty Bite brown rice & lentils", "7 pouches", "weekly"],
-    ["Greek nonfat yogurt", "4 lb", "weekly"], ["Spring mix", "1.5 lb", "weekly"], ["Grape tomatoes", "2.5 lb", "weekly"], ["Mushrooms", "1.25 lb", "weekly"],
-    ["Organic broccoli, frozen", "4 × 1 lb pack", "every 10 days"], ["Three Berry Blend, frozen", "4 lb bag", "every 2 weeks"], ["Rolled oats", "10 lb bag", "every 8 weeks"],
-    ["Wild sockeye salmon, frozen", "up to 1.5 lb", "for swaps"], ["Pumpkin seeds, olive oil, balsamic", "restock", "monthly"], ["Collagen, creatine, whey, electrolytes, magnesium", "restock", "monthly"],
+    ["Chicken breast", "3.5 lb a week"], ["Top sirloin", "3.5 lb a week"], ["Rice & lentils (Tasty Bite)", "7 pouches a week"],
+    ["Greek nonfat yogurt", "4 lb a week"], ["Spring mix", "1.5 lb a week"], ["Grape tomatoes", "2.5 lb a week"], ["Mushrooms", "1.25 lb a week"],
+    ["Organic broccoli, frozen", "4 × 1 lb every 10 days"], ["Three Berry Blend, frozen", "4 lb every 2 weeks"], ["Rolled oats", "10 lb every 8 weeks"],
+    ["Wild sockeye salmon, frozen", "for swaps"], ["Pumpkin seeds, olive oil, balsamic", "monthly"], ["Collagen, creatine, whey, electrolytes, magnesium", "monthly"],
   ];
   let ticks = store.get("rt-shop", {});
   const shop = $("[data-shop]");
-  function renderShop() {
-    shop.innerHTML = SHOP.map(([n, q, when], i) => `<li class="${ticks[i] ? "is-done" : ""}"><label><input type="checkbox" data-i="${i}"${ticks[i] ? " checked" : ""}><span>${n}</span><em>${q} · ${when}</em></label></li>`).join("");
-  }
+  const renderShop = () => { shop.innerHTML = SHOP.map(([n, q], i) => `<li class="${ticks[i] ? "is-done" : ""}"><label><input type="checkbox" data-i="${i}"${ticks[i] ? " checked" : ""}><span>${n}</span><em>${q}</em></label></li>`).join(""); };
   shop.addEventListener("change", (e) => { const i = e.target.dataset.i; if (i === undefined) return; ticks[i] = e.target.checked; store.set("rt-shop", ticks); renderShop(); });
   $("[data-shop-reset]").addEventListener("click", () => { ticks = {}; store.set("rt-shop", ticks); renderShop(); });
   renderShop();
