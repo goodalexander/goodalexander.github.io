@@ -210,7 +210,7 @@
       el("line", { x1: x0, y1: y0, x2: x, y2: y, class: "dial-hand" }, g);
       el("circle", { cx: x, cy: y, r: 5, class: "dial-hand-dot" }, g);
     }
-    const st = statusAt(info, live ? nowMin : null);
+    const st = statusAt(info, live ? Math.floor(nowMin) : null);
     const t1 = el("text", { x: 0, y: -18, class: "dial-center-k", "text-anchor": "middle" }, g); t1.textContent = st.k;
     const t2 = el("text", { x: 0, y: 12, class: "dial-center-v", "text-anchor": "middle" }, g); t2.textContent = st.v;
     const t3 = el("text", { x: 0, y: 34, class: "dial-center-s", "text-anchor": "middle" }, g); t3.textContent = st.s;
