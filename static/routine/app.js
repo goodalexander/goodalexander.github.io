@@ -14,7 +14,8 @@
   };
 
   /* ---------------- Plan data ---------------- */
-  const START = Date.UTC(2026, 10, 2); // Monday, Nov 2, 2026
+  const START = Date.UTC(2026, 10, 2); // week 1 begins Monday, Nov 2, 2026
+  const DAY1 = Date.UTC(2026, 9, 30); // the plan starts Friday, Oct 30 (start days Fri–Sun)
   const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const DAY3 = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -101,14 +102,10 @@
   const fromUTC = (ms) => { const d = new Date(ms); return { y: d.getUTCFullYear(), m: d.getUTCMonth() + 1, d: d.getUTCDate() }; };
   const longDate = (ms) => new Date(ms).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: "UTC" });
 
-  function liftFor(week, dow, days) {
-    if (days < 0 || dow > 4) return null;
-    if (week <= 3) {
-      const slot = { 0: 0, 2: 1, 4: 2 }[dow];
-      return slot === undefined ? null : { idx: ((week - 1) * 3 + slot) % 5, sets: 2 };
-    }
-    const base = week === 4 ? 2 : 3;
-    return { idx: dow, sets: week % 6 === 0 ? base - 1 : base, deload: week % 6 === 0 };
+  function liftFor(week, dow, started) {
+    if (!started || dow > 4) return null;
+    const deload = week > 0 && week % 6 === 0;
+    return { idx: dow, sets: deload ? 2 : 3, deload };
   }
 
   function dayInfo(y, m, d) {
@@ -116,6 +113,7 @@
     const dow = (new Date(utc).getUTCDay() + 6) % 7;
     const days = Math.round((utc - START) / 86400000);
     const week = days >= 0 ? Math.floor(days / 7) + 1 : 0;
+    const started = utc >= DAY1;
     const key = iso(y, m, d);
     const dst = usDST(y, m, d);
     let market = null, marketNote = "";
@@ -124,7 +122,7 @@
       market = dst ? { open: t("09:30"), close: t("16:00") } : { open: t("10:30"), close: t("17:00") };
       if (EARLY[key]) { market.close = dst ? t("13:00") : t("14:00"); marketNote = "Market closes early, " + EARLY[key]; }
     }
-    return { y, m, d, utc, key, dow, days, week, market, marketNote, lift: liftFor(week, dow, days) };
+    return { y, m, d, utc, key, dow, days, week, started, market, marketNote, lift: liftFor(week, dow, started) };
   }
 
   function cardioFor(info) {
@@ -144,7 +142,7 @@
     if (info.market) ev.push({ at: info.market.open, label: "Market open", kind: "market" });
     ev.push({ at: t("12:15"), label: "Last coffee" });
     if (info.lift) ev.push({ at: t("12:30"), end: t("13:20"), label: SESSIONS[info.lift.idx].title + `, ${info.lift.sets} sets` + (info.lift.deload ? " (deload)" : ""), kind: "lift", lift: info.lift });
-    else if (info.days < 0 && info.dow < 5) ev.push({ at: t("12:30"), label: "Lifting starts Monday, November 2", kind: "muted" });
+    else if (!info.started && info.dow < 5) ev.push({ at: t("12:30"), label: "Lifting starts Friday, October 30", kind: "muted" });
     ev.push({ at: t("13:30"), label: "Lunch: chicken bowl and whey shake", kind: "food" });
     if (info.market) ev.push({ at: info.market.close, label: info.marketNote ? "Market closes early" : "Market close", kind: "market" });
     ev.push({ at: t("17:15"), label: "Sear the steak" });
@@ -157,7 +155,9 @@
 
   function extras(info) {
     const x = [];
-    if (info.dow === 6) x.push("Sunday check-in", "bake chicken (60 min)", "wash greens");
+    if (!info.started) return x;
+    if (info.utc === DAY1) x.push("first Costco run", "bake chicken (60 min)");
+    if (info.dow === 6) x.push(...(info.week >= 1 ? ["Sunday check-in"] : []), "bake chicken (60 min)", "wash greens");
     if (info.dow === 2) x.push("bake chicken (30 min)");
     if (info.marketNote) x.push(info.marketNote);
     return x;
@@ -207,7 +207,7 @@
       else if (nowMin < t("09:30")) { k = "NOT EATING YET"; s = "breakfast in " + until(t("09:30") - nowMin); }
       else if (nowMin < t("18:00")) { k = "EATING WINDOW"; s = "closes in " + until(t("18:00") - nowMin); }
       else { k = "KITCHEN CLOSED"; s = "lights out in " + until(t("22:00") - nowMin); }
-    } else { k = DAYS[info.dow].toUpperCase(); v = info.week > 0 ? "Week " + info.week : "Preview"; s = info.lift ? "Lift day" : "No lift"; }
+    } else { k = DAYS[info.dow].toUpperCase(); v = info.week > 0 ? "Week " + info.week : info.started ? "Start days" : "Preview"; s = info.lift ? "Lift day" : "No lift"; }
     el("text", { x: 0, y: -20, class: "dial-k", "text-anchor": "middle" }, g).textContent = k;
     el("text", { x: 0, y: 12, class: "dial-v", "text-anchor": "middle" }, g).textContent = v;
     el("text", { x: 0, y: 34, class: "dial-s", "text-anchor": "middle" }, g).textContent = s;
@@ -225,7 +225,7 @@
     const info = dayInfo(day.y, day.m, day.d);
     const nowMin = live ? now.min : null;
     drawDial(info, nowMin);
-    $('[data-field="day-label"]').textContent = longDate(info.utc) + (live ? ` · ${hm(now.min)} in Puerto Rico` : "") + (info.days < 0 ? " · plan starts Monday, November 2" : "");
+    $('[data-field="day-label"]').textContent = longDate(info.utc) + (live ? ` · ${hm(now.min)} in Puerto Rico` : "") + (!info.started ? " · plan starts " + (info.utc + 86400000 === DAY1 ? "tomorrow" : "Friday, October 30") : "");
     todayBtn.hidden = live;
     dateInput.value = info.key;
 
@@ -250,23 +250,21 @@
     if (ex.length) list.insertAdjacentHTML("beforeend", `<li class="rt-day-item k-extra"><time>Also</time><div>${ex.join(" · ")}</div></li>`);
 
     // week strip
-    const weekStart = info.days >= 0 ? START + (info.week - 1) * 7 * 86400000 : START;
-    const wk = info.days >= 0 ? info.week : 1;
-    $('[data-field="week-label"]').textContent = info.days >= 0
-      ? `Week ${wk}` + (wk <= 3 ? " · lifting Mon, Wed, Fri, 2 sets" : wk === 4 ? " · every weekday, 2 sets" : wk % 6 === 0 ? " · deload week" : " · every weekday, 3 sets")
-      : "Starts Monday, November 2 · week 1 shown";
+    const weekStart = info.utc - info.dow * 86400000;
+    const wk = Math.round((weekStart - START) / (7 * 86400000)) + 1;
+    $('[data-field="week-label"]').textContent = wk >= 1
+      ? `Week ${wk}` + (wk % 6 === 0 ? " · deload, 2 sets" : " · every weekday, 3 sets")
+      : wk === 0 ? "Start week · week 1 begins Monday, November 2" : "Before the plan starts";
     let html = "";
     for (let i = 0; i < 7; i++) {
       const ms = weekStart + i * 86400000, p = fromUTC(ms), di = dayInfo(p.y, p.m, p.d);
       const date = new Date(ms).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
-      const liftTxt = di.lift ? `<b>${SESSIONS[di.lift.idx].title}</b><em>${di.lift.sets} sets</em>` : `<b class="is-off">No lift</b><em>${i < 5 ? "Cardio only" : i === 5 ? "Long cardio" : "Walk"}</em>`;
+      const liftTxt = !di.started ? `<b class="is-off">Before start</b>` : di.lift ? `<b>${SESSIONS[di.lift.idx].title}</b><em>${di.lift.sets} sets</em>` : `<b class="is-off">No lift</b><em>${i === 5 ? "Long cardio" : "Walk"}</em>`;
       const ext = extras(di);
       html += `<button type="button" class="rt-wday${di.key === info.key ? " is-sel" : ""}${di.lift ? " has-lift" : ""}" data-day="${di.key}"><span class="rt-wday-d">${DAY3[i]} <small>${date}</small></span>${liftTxt}${ext.length ? `<i>${ext.join(" · ")}</i>` : ""}</button>`;
     }
     $("[data-week]").innerHTML = html;
-    $("[data-week-note]").textContent = wk <= 3
-      ? "Weeks 1–3: lift Monday, Wednesday and Friday, doing the next session in order. From week 4, every weekday, but only if the step-up checks pass (see Training). Tap a day to see it above."
-      : "Move up a step only if the step-up checks pass (see Training). Tap a day to see it above.";
+    $("[data-week-note]").textContent = "Lift every weekday at 12:30, 3 sets per exercise. Weeks 6, 12 and 18 are deloads: one set fewer. Tap a day to see it above.";
   }
 
   dateInput.addEventListener("change", () => {
@@ -316,7 +314,7 @@
   renderFood();
 
   /* ---------------- Sessions ---------------- */
-  $("[data-sessions]").innerHTML = SESSIONS.map((s, i) => `<div class="rt-session"><span>Session ${i + 1} · ${DAY3[i]} from week 4</span><h3>${s.title}</h3><ol>${s.ex.map((x, k) => `<li><span>${x[0]}</span><em>${x[3] ? x[1] : x[1] || "10–12 reps"}</em>${k < 2 ? '<b class="rt-tag">2 min rest</b>' : ""}${x[2] ? '<b class="rt-tag rt-tag-quiet">drop first</b>' : ""}</li>`).join("")}</ol></div>`).join("");
+  $("[data-sessions]").innerHTML = SESSIONS.map((s, i) => `<div class="rt-session"><span>${DAYS[i]}</span><h3>${s.title}</h3><ol>${s.ex.map((x, k) => `<li><span>${x[0]}</span><em>${x[3] ? x[1] : x[1] || "10–12 reps"}</em>${k < 2 ? '<b class="rt-tag">2 min rest</b>' : ""}${x[2] ? '<b class="rt-tag rt-tag-quiet">drop first</b>' : ""}</li>`).join("")}</ol></div>`).join("");
 
   /* ---------------- Sunday check-in ---------------- */
   const form = $("[data-calc]");
