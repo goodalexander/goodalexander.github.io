@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-type="e">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive · goodalexander</title>
+<meta name="description" content="Every long-form post from goodalexander, newest first.">
+<meta name="theme-color" content="#f6f2e6">
+<meta property="og:title" content="goodalexander">
+<meta property="og:description" content="Actionable trade ideas on equity perpetual swaps and liquid cryptocurrencies. Brought to you by Post Fiat.">
+<meta property="og:image" content="../plates/hero-1600.jpg">
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml"><link rel="icon" href="../brand/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="goodalexander" href="https://goodalexander.com/index.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="../#main">Skip to content</a>
+
+<div class="util">
+  <div class="wrap">
+    <span class="util__date" data-today>Friday, 6 November 2026</span>
+    <nav class="util__right" aria-label="Social">
+      <a href="https://x.com/goodalexander" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/U6HjgDSmhR" target="_blank" rel="noopener">Discord</a>
+      <a class="btn-line" href="../#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</div>
+
+<header class="nameplate">
+  <div class="wrap">
+    <a class="nameplate__name" href="../"><img class="nameplate__mark" src="../brand/ga-mark.svg" alt="" width="1000" height="635">goodalexander</a>
+    <div class="nameplate__rule"></div>
+    <nav class="nav" aria-label="Primary">
+      <a href="../#commentary">Commentary</a>
+      <a href="../#models">Models</a>
+      <a href="../api/">API</a>
+      <a href="../#video">Video</a>
+      <a href="../archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="archive">
+  <div class="wrap">
+    <header class="archive__head">
+      <p class="label">Archive</p>
+      <h1>Every long-form post.</h1>
+      <p><span data-archive-count>{{ len (where site.RegularPages "Section" "posts") }}</span> pieces since 2018, newest first. For current trade and market commentary, <a href="../#subscribe">subscribe by email</a> or follow <a href="https://x.com/goodalexander" target="_blank" rel="noopener">@goodalexander on X</a>.</p>
+    </header>
+    <div class="archive__body">
+    <!-- posts:start -->
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- range $posts.GroupByDate "2006" }}
+    <h2 class="archive__year">{{ .Key }}</h2>
+    <ul class="archive__list">
+    {{- range .Pages }}
+      <li><a href="{{ .Permalink }}"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan" }}</time><span class="archive__title">{{ .Title }}</span>{{ with trim (.Summary | plainify | htmlUnescape) " \n\t" }}<span class="archive__sum">{{ . | truncate 180 }}</span>{{ end }}</a></li>
+    {{- end }}
+    </ul>
+{{- end }}
+    <!-- posts:end -->
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="foot__name" href="../"><img class="foot__mark" src="../brand/ga-mark.svg" alt="" width="1000" height="635">goodalexander</a>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="../#commentary">Commentary</a>
+      <a href="../archive/">Archive</a>
+      <a href="https://tasknode.postfiat.org" target="_blank" rel="noopener">Task Node</a>
+      <a href="https://x.com/goodalexander" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/U6HjgDSmhR" target="_blank" rel="noopener">Discord</a>
+      <a href="https://goodalexander.com/index.xml">RSS</a>
+    </nav>
+    <p class="foot__legal">The newsletter is free. Not financial advice.</p>
+  </div>
+</footer>
+
+<script src="../data.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

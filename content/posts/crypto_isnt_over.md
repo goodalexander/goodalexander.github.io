@@ -304,17 +304,4 @@ In the world I’m describing, I’d basically always be an expat anywhere I’m
 I’ll try to post more actively about short-term opportunities. I know people are here to gamble, not read thought pieces. I’ll do my best in the New Year to facilitate that.
 
 
-<div style="height: 30vh">  
-    <script 
-        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" 
-        data-background-color="#2B2B2B"    
-        data-text-color="#ffffff"
-        data-button-color="#2d2d2d"       
-        data-button-text-color="#ffffff"
-        data-title="goodalexander" 
-        data-description="GoodAlexander essays and market notes" 
-        data-site="https://goodalexander.ghost.io/" 
-        data-locale="en" 
-        async>
-    </script>
-</div>
+{{< subscribe >}}

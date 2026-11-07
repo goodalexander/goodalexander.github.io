@@ -78,6 +78,4 @@ So in essence. Murad is right. He’s a visionary. But he’s going to have to d
 
 # Subscribe to Get These By Email
 
-<div style="height: 50vh">
-    <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js" data-background-color="#2B2B2B" data-text-color="#FFFFFF" data-button-color="#ff1a75" data-button-text-color="#FFFFFF" data-title="goodalexander" data-description="crypto trading" data-site="https://goodalexander.ghost.io/" async></script>
-</div>
+{{< subscribe >}}
