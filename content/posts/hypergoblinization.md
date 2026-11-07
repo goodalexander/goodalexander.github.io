@@ -358,20 +358,7 @@ Can you hear it?
 
 <p class="hg-small">Method note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.</p>
 
-<div style="height: 30vh">
-    <script
-        src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js"
-        data-background-color="#2B2B2B"
-        data-text-color="#ffffff"
-        data-button-color="#2d2d2d"
-        data-button-text-color="#ffffff"
-        data-title="goodalexander"
-        data-description="GoodAlexander essays and market notes"
-        data-site="https://goodalexander.ghost.io/"
-        data-locale="en"
-        async>
-    </script>
-</div>
+{{< subscribe >}}
 
 </div>
 

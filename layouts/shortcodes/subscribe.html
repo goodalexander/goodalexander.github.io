@@ -1,0 +1,32 @@
+{{- /* goodalexander newsletter signup (Beehiiv via the goodalexander-subscribe forwarder). Replaces the old Ghost widget. */ -}}
+{{- $id := printf "ga-sub-%d" .Ordinal -}}
+<div class="ga-sub" style="margin:2rem 0;padding:1.25rem 1.25rem 1rem;border:1px solid currentColor;border-radius:4px;max-width:560px">
+  <p style="margin:0 0 .75rem;font-weight:600">Get goodalexander by email</p>
+  <p style="margin:0 0 .9rem;opacity:.8">Trade and market commentary on equity perps and liquid crypto. Free.</p>
+  <form id="{{ $id }}" novalidate style="display:flex;gap:.5rem;flex-wrap:wrap">
+    <input type="email" name="email" placeholder="you@domain.com" autocomplete="email" required aria-label="Email address"
+      style="flex:1 1 220px;min-width:0;padding:.6rem .75rem;border:1px solid currentColor;border-radius:3px;background:transparent;color:inherit;font:inherit">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+    <button type="submit" style="padding:.6rem 1.1rem;border:0;border-radius:3px;background:#16140f;color:#f8f4e7;font:inherit;font-weight:600;cursor:pointer">Subscribe</button>
+    <p role="status" aria-live="polite" style="flex-basis:100%;margin:.5rem 0 0;min-height:1.2em;font-size:.9em"></p>
+  </form>
+</div>
+<script>
+(() => {
+  const f = document.getElementById('{{ $id }}'); if (!f) return;
+  const out = f.querySelector('[role=status]'), btn = f.querySelector('button');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = f.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { out.textContent = 'Please enter a valid email address.'; return; }
+    btn.disabled = true; out.textContent = 'Sending…';
+    try {
+      const r = await fetch('https://goodalexander-subscribe.fly.dev/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, label: 'essay-{{ .Page.File.ContentBaseName | default "page" | urlize }}', website: f.website.value }) });
+      if (!r.ok) throw new Error(r.status);
+      out.textContent = 'You’re subscribed. The next note goes straight to your inbox.'; f.email.value = '';
+    } catch { out.textContent = 'That didn’t go through. Please try again in a moment.'; }
+    finally { btn.disabled = false; }
+  });
+})();
+</script>

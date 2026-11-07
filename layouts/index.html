@@ -1,64 +1,181 @@
-{{- define "main" -}}
-{{- $allPosts := where site.RegularPages "Type" "in" site.Params.mainSections -}}
-{{- $allPosts = where $allPosts "File.BaseFileName" "!=" "new_html" -}}
-{{- $posts := sort $allPosts "Date" "desc" -}}
-{{- $latest := index $posts 0 -}}
+<!doctype html>
+<html lang="en" data-type="e">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>goodalexander</title>
+<meta name="description" content="Compound Capital On Chain. Actionable trade ideas on equity perpetual swaps and liquid cryptocurrencies, brought to you by Post Fiat.">
+<meta name="theme-color" content="#f6f2e6">
+<meta property="og:title" content="goodalexander">
+<meta property="og:description" content="Actionable trade ideas on equity perpetual swaps and liquid cryptocurrencies. Brought to you by Post Fiat.">
+<meta property="og:image" content="plates/hero-1600.jpg">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml"><link rel="icon" href="brand/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="goodalexander" href="https://goodalexander.com/index.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<section class="ga-hero">
-  <div class="ga-hero-primary">
-    <p class="ga-eyebrow"><span></span> Independent research &amp; public notebook</p>
-    <h1><span>Monetize</span><span>Dystopia.</span></h1>
-    <p class="ga-hero-deck">Research at the intersection of markets, technology, institutional decay, and the systems replacing what no longer works.</p>
-    <div class="ga-hero-links">
-      <a class="ga-button" href="{{ $latest.RelPermalink }}">Read the latest <span aria-hidden="true">↗</span></a>
-      <a class="ga-text-link" href="/archives/">Explore the archive <span aria-hidden="true">→</span></a>
+<div class="util">
+  <div class="wrap">
+    <span class="util__date" data-today>Friday, 6 November 2026</span>
+    <nav class="util__right" aria-label="Social">
+      <a href="https://x.com/goodalexander" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/U6HjgDSmhR" target="_blank" rel="noopener">Discord</a>
+      <a class="btn-line" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</div>
+
+<header class="nameplate">
+  <div class="wrap">
+    <a class="nameplate__name" href="/"><img class="nameplate__mark" src="brand/ga-mark.svg" alt="" width="1000" height="635">goodalexander</a>
+    <div class="nameplate__rule"></div>
+    <nav class="nav" aria-label="Primary">
+      <a href="#commentary">Commentary</a>
+      <a href="#models">Models</a>
+      <a href="api/">API</a>
+      <a href="#video">Video</a>
+      <a href="archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="subscribe">
+  <div class="wrap">
+    <div class="hero__copy">
+      <p class="label hero__kicker">Trade and market commentary</p>
+      <h1 class="hero__title">Compound Capital On Chain</h1>
+      <p class="hero__lede">Get actionable trade ideas focused on equity perpetual swaps and liquid cryptocurrencies.</p>
+      <p class="hero__sub">Brought to you by <a href="https://postfiat.org" target="_blank" rel="noopener">Post Fiat</a>, the private, quantum-resistant XRP&nbsp;2.0 for buy-side use cases. Validators get the underlying financial models and premium content.</p>
+      <form class="signup" data-signup data-label="landing-hero" novalidate>
+        <label class="sr" for="email-hero">Email address</label>
+        <input id="email-hero" type="email" name="email" placeholder="you@domain.com" autocomplete="email" required>
+        <button type="submit">Subscribe</button>
+        <p class="signup__status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="hero__meta">Free by email.</p>
+      <ul class="ctas">
+        <li><a href="https://tasknode.postfiat.org" target="_blank" rel="noopener"><b>Join the Task Node</b><span>Contribute alpha, get free models, earn Post Fiat rewards.</span></a></li>
+        <li><a href="https://x.com/goodalexander" target="_blank" rel="noopener"><b>Follow on X</b><span>Real-time market commentary. <span data-bind="xFollowers">175K</span> followers.</span></a></li>
+        <li><a href="api/"><b>Get an API key</b><span>The financial models driving goodalexander, by API.</span></a></li>
+      </ul>
     </div>
   </div>
-  <aside class="ga-hero-aside">
-    <p class="ga-aside-label">The notebook</p>
-    <p class="ga-aside-copy">Long-form analysis, market structure, philosophy, and working theses—published in public.</p>
-    <dl class="ga-aside-stats">
-      <div><dt>{{ len $posts }}</dt><dd>published notes</dd></div>
-      <div><dt>{{ $latest.Date.Format "2006" }}</dt><dd>latest dispatch</dd></div>
-    </dl>
-    <a href="/subscribe/">Subscribe for new work <span aria-hidden="true">↗</span></a>
-  </aside>
+  <div class="hero__plate" aria-hidden="true">
+    <picture>
+      <source srcset="plates/hero-900.webp 900w, plates/hero-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 62vw" type="image/webp">
+      <img class="plate-img" src="plates/hero-1600.jpg" alt="" width="1600" height="900">
+    </picture>
+  </div>
 </section>
 
-<section class="ga-feed" aria-labelledby="latest-research">
-  <div class="ga-section-head">
+<section class="section" id="commentary" aria-labelledby="commentary-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="commentary-title">Latest commentary</h2>
+      <a class="more" href="https://x.com/goodalexander" target="_blank" rel="noopener">Follow on X</a>
+    </div>
+    <!-- commentary:start -->
+    <a class="lead" href="commentary/intel-sandisk-aws-binance-shake-it/">
+      <div class="lead__plate"><picture><source srcset="plates/intel-900.webp 900w, plates/intel-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 58vw" type="image/webp"><img class="plate-img" src="plates/intel-1600.jpg" alt="" width="1600" height="900" loading="lazy"></picture></div>
+      <div>
+        <span class="label">30 Oct 2026 · Latest</span>
+        <h3 class="lead__title">Intel, Sandisk, AWS, Binance. Shake it up. Add some Geopolitics. Why not?</h3>
+        <p class="lead__dek">Intel which is now down 29% this morning changed the story from &quot;2027 is funded by operations&quot; to that it&#x27;s probably funded by debt and equity issuance that along with operational issues. The memory sector is forcing ppl into multi year contracts at extreme…</p>
+        <span class="more">Read the note</span>
+      </div>
+    </a>
+    <div class="stories"><a class="story" href="commentary/one-last-midnight-opting-out-of/"><div class="story__plate"><picture><source srcset="plates/midnight-900.webp 900w, plates/midnight-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" type="image/webp"><img class="plate-img" src="plates/midnight-1600.jpg" alt="" width="1600" height="900" loading="lazy"></picture></div><span class="label">22 Oct 2026</span><h3 class="story__title">One Last Midnight Opting Out of a Raw Deal: Long Coins Short Stocks</h3><p class="story__dek">Cryptocurrency is running higher. Stocks are stalling. I think it&#x27;s time for the big run in coins vs equities and the crypto market now has the infra…</p></a><a class="story" href="commentary/whiplash-deepseek-inference-is-over-spacex/"><div class="story__plate"><picture><source srcset="plates/whiplash-900.webp 900w, plates/whiplash-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" type="image/webp"><img class="plate-img" src="plates/whiplash-1600.jpg" alt="" width="1600" height="900" loading="lazy"></picture></div><span class="label">21 Oct 2026</span><h3 class="story__title">Whiplash. DeepSeek, Inference is Over. SpaceX $1T Guide (We&#x27;re Back)</h3><p class="story__dek">Simply - near term after SpaceX and SMCI we see a sigh of relief on GPU economics and then are left with the Fable 5.5 launch to answer the question…</p></a><a class="story" href="commentary/is-coreweave-going-to-die/"><div class="story__plate"><picture><source srcset="plates/coreweave-900.webp 900w, plates/coreweave-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" type="image/webp"><img class="plate-img" src="plates/coreweave-1600.jpg" alt="" width="1600" height="900" loading="lazy"></picture></div><span class="label">15 Oct 2026</span><h3 class="story__title">Is CoreWeave Going to Die</h3><p class="story__dek">No. Coreweave I do not think is going to die. I think Anthropic roadshow will do better than expects due to Fable 5.5 lifting sentiment on Lab…</p></a></div>
+    <!-- commentary:end -->
+  </div>
+</section>
+
+<section class="night section" id="models" aria-labelledby="models-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="models-title">The models</h2>
+    </div>
+    <div class="theses">
+      <div class="thesis" id="tasknode">
+        <span class="thesis__n">&sect; 01</span>
+        <p class="thesis__text">Post Fiat validators and Task Node users get the financial models driving goodalexander for free.</p>
+        <div class="thesis__act">
+          <a class="more" href="https://tasknode.postfiat.org" target="_blank" rel="noopener">Open the Task Node</a>
+          <a class="more" href="https://postfiat.org" target="_blank" rel="noopener">Post Fiat</a>
+        </div>
+      </div>
+      <div class="thesis" id="api">
+        <span class="thesis__n">&sect; 02</span>
+        <p class="thesis__text">The same models by API, for your own stack or your agents.</p>
+        <div class="thesis__act">
+          <a class="more" href="api/">Get an API key</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="band-title">
+  <div class="wrap">
     <div>
-      <p class="ga-section-kicker">Field notes / {{ now.Year }}</p>
-      <h2 id="latest-research">Latest research</h2>
+      <h2 id="band-title">Get the commentary by email.</h2>
+      <p>Every new note, with the charts. Free.</p>
     </div>
-    <a href="/archives/">Full archive <span aria-hidden="true">→</span></a>
-  </div>
-
-  <div class="ga-feed-list">
-    {{- range $index, $page := $posts }}
-    {{- $category := "Research" -}}
-    {{- with $page.Params.categories }}{{ if gt (len .) 0 }}{{ $category = index . 0 }}{{ end }}{{ end -}}
-    <article class="ga-feed-row">
-      <span class="ga-feed-index">{{ printf "%02d" (add $index 1) }}</span>
-      <div class="ga-feed-content">
-        <p>{{ $category }}</p>
-        <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
-        <div>{{ $page.Summary | plainify | htmlUnescape | truncate 190 }}</div>
-      </div>
-      <div class="ga-feed-meta">
-        <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "02 Jan 2006" }}</time>
-        <span>{{ $page.ReadingTime }} min read</span>
-      </div>
-      <a class="ga-feed-arrow" href="{{ $page.RelPermalink }}" aria-label="Read {{ $page.Title }}"><span>↗</span></a>
-    </article>
-    {{- end }}
+    <form class="signup" data-signup data-label="landing-band" novalidate>
+      <label class="sr" for="email-band">Email address</label>
+      <input id="email-band" type="email" name="email" placeholder="you@domain.com" autocomplete="email" required>
+      <button type="submit">Subscribe</button>
+      <p class="signup__status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
-<section class="ga-home-cta">
-  <p class="ga-section-kicker">No algorithm. No feed games.</p>
-  <h2>Get the next dispatch.</h2>
-  <p>New research delivered when it is worth publishing.</p>
-  <a class="ga-button" href="/subscribe/">Subscribe <span aria-hidden="true">↗</span></a>
+<section class="section" id="video" aria-labelledby="follow-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="follow-title">Watch and follow</h2>
+      <a class="more" href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener">YouTube channel</a>
+    </div>
+    <svg class="sr" width="0" height="0" aria-hidden="true" focusable="false"><filter id="ink-duotone" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues="0.086 0.973"/><feFuncG type="table" tableValues="0.078 0.957"/><feFuncB type="table" tableValues="0.059 0.906"/></feComponentTransfer></filter></svg>
+    <div class="videos" id="videos">
+      <noscript><p><a href="https://www.youtube.com/@goodalexander_">Watch on YouTube</a></p></noscript>
+    </div>
+    <ul class="links links--row">
+      <li><a href="https://x.com/goodalexander" target="_blank" rel="noopener"><b>X</b><span>@goodalexander</span></a></li>
+      <li><a href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener"><b>YouTube</b><span>Video</span></a></li>
+      <li><a href="https://discord.gg/U6HjgDSmhR" target="_blank" rel="noopener"><b>Discord</b><span>Post Fiat community</span></a></li>
+      <li><a href="archive/"><b>Archive</b><span>Long-form since 2018</span></a></li>
+      <li><a href="https://goodalexander.com/index.xml"><b>RSS</b><span>Every post</span></a></li>
+    </ul>
+  </div>
 </section>
-{{- end -}}
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="foot__name" href="/"><img class="foot__mark" src="brand/ga-mark.svg" alt="" width="1000" height="635">goodalexander</a>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="#commentary">Commentary</a>
+      <a href="archive/">Archive</a>
+      <a href="https://tasknode.postfiat.org" target="_blank" rel="noopener">Task Node</a>
+      <a href="https://x.com/goodalexander" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@goodalexander_" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/U6HjgDSmhR" target="_blank" rel="noopener">Discord</a>
+      <a href="https://goodalexander.com/index.xml">RSS</a>
+    </nav>
+    <p class="foot__legal">The newsletter is free. Not financial advice.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
