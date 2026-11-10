@@ -12,6 +12,5 @@ GET /v1/company-models/{model_id}/outputs returns the accepted, filtered model w
 Missing/invalid keys: 401. Inactive subscription: 402. Withheld/stale: 409. Rate limit: 429 with Retry-After. Source unavailable: 503.
 No per-read fee. Refused reads are not counted. HEAD is 405. Reused request IDs are 409.
 Model source age limit: 7 days. Third-party and trading-performance fields are excluded.
-Dated trade idea: https://goodalexander.com/trade-ideas/tsla-short-2026-11-10/
-Evidence: https://goodalexander.com/evidence/tsla-2026-11-10.json
+Trade idea: none is published at the moment; a dated idea page and evidence record will be listed here after publication.
 NAVCoin Buy is disabled until sprint 7's purchase route is live. Newsletter signup does not issue an API key.
