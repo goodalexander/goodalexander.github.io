@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>API updates · goodalexander</title>
-<meta name="description" content="The model API is being prepared. Join the newsletter list for updates.">
+<meta name="description" content="Unlimited reads of accepted company models for <strong data-model-price>$200 per month</strong>, metered and rate-limited. Model responses include the exact version and source date.">
 <meta name="theme-color" content="#f6f2e6">
 <meta property="og:title" content="goodalexander">
 <meta property="og:description" content="Actionable trade ideas on equity perpetual swaps and liquid cryptocurrencies. Brought to you by Post Fiat.">
@@ -50,8 +50,19 @@
     <div class="apipage__grid">
       <div class="apipage__copy">
         <p class="label">goodalexander API</p>
-        <h1 class="apipage__title">API updates</h1>
-        <p class="apipage__lede">The model API is being prepared. Join the newsletter list for updates.</p>
+        <h1 class="apipage__title">Company model API</h1>
+        <p class="apipage__lede">Unlimited reads of accepted company models for <strong data-model-price>$200 per month</strong>, metered and rate-limited. Model responses include the exact version and source date.</p>
+        <h2>Documentation</h2>
+        <p>Base URL: <code>https://api.corbanu.com</code>. Use your Corbanu key in the <code>Authorization: Bearer</code> header. Never put a key in a URL, page or public notebook.</p>
+        <ol>
+          <li>Use the existing <a href="https://corbanu.com/api/">Corbanu account checkout</a> to fund your prepaid API balance and obtain a key. This newsletter form does not issue keys.</li>
+          <li>Read <a href="https://api.corbanu.com/v1/company-model-plan">GET /v1/company-model-plan</a> for the current monthly quote. Purchase one month with <code>POST /v1/company-model-subscription</code>, your authorization header, and <code>X-Corbanu-Confirm-Monthly-Usd</code> set to the exact quoted <code>monthlyUsd</code>. This debits your existing balance once. Renewal is explicit.</li>
+          <li>Read <code>GET /v1/company-models</code> for accepted model IDs, then <code>GET /v1/company-models/TSLA/outputs</code>. Check <code>GET /v1/company-model-subscription</code> for expiry and your metered call count.</li>
+        </ol>
+        <p>No per-read charge and no monthly call cap. Launch limit: 10 successful reads per rolling minute per account, shared across keys. A refused call is not counted. Source dates older than seven days, withheld outputs and failed model checks are refused.</p>
+        <p>Responses: 401 invalid/missing key; 402 subscription or balance required; 409 withheld/stale model or duplicate request ID; 429 rate limited; 503 source unavailable. Respect <code>Retry-After</code>. Supplied request IDs must be unique per call. Data is filtered to first-party model forecasts and targets; third-party data and trading-performance fields are excluded.</p>
+        <p><a href="/llms.txt">Machine-readable API guide</a> · <a href="/trade-ideas/tsla-short-2026-11-10/">Live TSLA short idea and model evidence</a></p>
+        <h2>Newsletter updates</h2>
         <form class="signup" data-signup data-label="api-key" novalidate>
           <label class="sr" for="email-key">Work email</label>
           <input id="email-key" type="email" name="email" placeholder="work email" autocomplete="email" required>
@@ -83,6 +94,7 @@
   </div>
 </footer>
 
+<script type="module" src="/model-api-price.mjs"></script>
 <script src="../data.js"></script>
 <script src="../app.js"></script>
 </body>

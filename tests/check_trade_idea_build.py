@@ -37,14 +37,28 @@ assert any(tag == 'meta' and a.get('name') == 'robots' and a.get('content') == '
 assert any(tag == 'button' and 'disabled' in a and a.get('type') == 'button' for tag, a in elements)
 assert any(tag == 'link' and a.get('href') == '/styles.css' for tag, a in elements)
 api = (production / 'api/index.html').read_text()
-assert 'Join the list' in api and 'API is being prepared' in api
+assert 'Join the list' in api and 'Company model API' in api
 assert 'Get an API key' not in api and 'Get my API key' not in api
 app = (production / 'app.js').read_text()
 assert 'Your API key follows' not in app
 # This task changes only the success message in the existing handler.
 original = subprocess.check_output(['git', 'show', '2ef270a4d111c64799e8766171b0259d3cb1b446:static/app.js'], cwd=root, text=True)
-assert app == original.replace('Check your inbox. Your API key follows.', 'Your address has joined the newsletter list. The API is being prepared.')
+assert app == original.replace('Check your inbox. Your API key follows.', 'Your address has joined the newsletter list. API access is separate; see the API documentation.')
 original_api = subprocess.check_output(['git', 'show', '2ef270a4d111c64799e8766171b0259d3cb1b446:static/api/index.html'], cwd=root, text=True)
 fields = lambda html: [(tag, attrs) for tag, attrs in Elements(html).elements if tag in {'form', 'input', 'button'}]
 assert fields(api) == fields(original_api), 'Form fields, attributes and labels must remain unchanged'
 print('PASS: draft excluded from production pages, sitemap and indexes; review HTML is marked, closed and contains no forbidden metrics; signup behavior unchanged.')
+
+# The real page is published with the matching source version, while checkout stays closed.
+import json
+live=(production/'trade-ideas/tsla-short-2026-11-10/index.html').read_text()
+evidence=json.loads((production/'evidence/tsla-2026-11-10.json').read_text())
+assert evidence['model_version'] in live
+assert evidence['model_source_date'] in live
+assert '12.5%' in live and '$347.01' in live
+assert 'sprint 7' in live and 'Buy remains disabled' in live
+assert 'Placeholder' not in live and 'noindex' not in live
+assert any(tag=='button' and 'disabled' in attrs for tag,attrs in Elements(live).elements)
+assert '/v1/company-models' in api and 'X-Corbanu-Confirm-Monthly-Usd' in api
+assert 'USD 200' in (production/'llms.txt').read_text()
+print('PASS: published TSLA book direction, weight, matching model version/date/target, disabled sprint-7 checkout, API documentation and llms.txt.')

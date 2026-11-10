@@ -112,7 +112,7 @@ try:
         page.get_by_role('button', name='Join the list').click()
         page.wait_for_function("document.querySelector('.signup__status').textContent.includes('address has joined')")
         assert posted == [{'email': 'example@example.invalid', 'label': 'api-key', 'website': ''}]
-        assert 'API is being prepared' in page.locator('.signup__status').inner_text()
+        assert 'API access is separate' in page.locator('.signup__status').inner_text()
         assert not errors, errors
         nojs = browser.new_context(java_script_enabled=False)
         nojs.route('**/*', lambda route: route.continue_() if route.request.url.startswith(origin + '/') else route.abort())
@@ -121,6 +121,14 @@ try:
         assert page_nojs.get_by_role('button', name='Buy — closed').is_disabled()
         assert page_nojs.locator('[data-proof-status]').inner_text() == 'proof age limit not set'
         assert 'require JavaScript' in page_nojs.locator('noscript').inner_text()
+        page.goto(origin + '/trade-ideas/tsla-short-2026-11-10/')
+        assert '12.5%' in page.locator('main').inner_text()
+        assert 'Placeholder' not in page.locator('main').inner_text()
+        assert page.get_by_role('button', name='Buy — closed').is_disabled()
+        for width,label in [(1440,'published-desktop'),(390,'published-mobile')]:
+            page.set_viewport_size({'width':width,'height':1000})
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+            page.screenshot(path=str(evidence / (label+'.png')), full_page=True)
         browser.close()
     print('PASS: desktop/mobile layout, no overflow, disabled buying, no automatic wallet requests, address-only connection, account reset, missing wallet, configured NAV/fee/time display, stale warning, elapsed-time expiry, mocked newsletter payload/success, no-JS closure; no browser script errors. External requests blocked.')
 finally:

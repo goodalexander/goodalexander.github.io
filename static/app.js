@@ -109,7 +109,7 @@
         await subscribe(email, form.dataset.label, trap.value);
         form.classList.add('is-done');
         say(form.dataset.label.startsWith('api')
-          ? 'Your address has joined the newsletter list. The API is being prepared.'
+          ? 'Your address has joined the newsletter list. API access is separate; see the API documentation.'
           : 'You’re subscribed. The next note goes straight to your inbox.', 'is-ok');
       } catch {
         say('That didn’t go through. Please try again in a moment.', 'is-error');

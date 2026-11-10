@@ -69,7 +69,7 @@
         {{ with .Params.video_url }}
         <p><a href="{{ . }}">Watch the trade-idea video</a></p>
         {{ else }}
-        <blockquote>Placeholder — the founder’s trade-idea video will go here.</blockquote>
+        {{ if .Draft }}<blockquote>Placeholder — the founder’s trade-idea video will go here.</blockquote>{{ else }}<p>No video accompanies this written research note.</p>{{ end }}
         {{ end }}
       </section>
       {{ partial "trade-ideas/checkout.html" . }}
