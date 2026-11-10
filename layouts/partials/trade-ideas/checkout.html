@@ -1,5 +1,20 @@
-{{ $coin := index site.Data.navcoins .Params.navcoin }}
-{{ if not $coin }}{{ errorf "Trade idea %s requires a NAVCoin data file" .File.Path }}{{ end }}
+{{/* A trade idea may legitimately have no NAVCoin: only two coins exist, and
+     neither is attached to a single equity name. A page that does not claim a
+     coin says so and shows no buy UI. The original check is PRESERVED for the
+     case that matters: if a page DOES name a coin, its data file must exist. */}}
+{{ $coin := false }}
+{{ with .Params.navcoin }}
+  {{ $coin = index site.Data.navcoins . }}
+  {{ if not $coin }}{{ errorf "Trade idea %s names NAVCoin %q but no such data file exists" $.File.Path . }}{{ end }}
+{{ end }}
+{{ if not $coin }}
+<section class="note__cta" aria-labelledby="navcoin-title">
+  <h2 id="navcoin-title">Attached NAVCoin</h2>
+  <p>No NAVCoin is attached to this idea. Two NAVCoins exist today and neither
+     tracks a single equity name, so there is nothing to buy here and no
+     checkout is shown.</p>
+</section>
+{{ else }}
 <section class="note__cta" aria-labelledby="navcoin-title" data-navcoin-checkout>
   <h2 id="navcoin-title">Attached NAVCoin</h2>
   <p><strong>Coin:</strong> <span data-coin>{{ with $coin.coin }}{{ . }}{{ else }}Not attached — placeholder{{ end }}</span></p>
@@ -16,3 +31,4 @@
   <noscript><p>Wallet connection and proof-age checks require JavaScript. Buying remains closed.</p></noscript>
   <script type="application/json" data-navcoin-config>{{ $coin | jsonify | safeJS }}</script>
 </section>
+{{ end }}
