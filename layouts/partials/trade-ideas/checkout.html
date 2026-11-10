@@ -1,0 +1,18 @@
+{{ $coin := index site.Data.navcoins .Params.navcoin }}
+{{ if not $coin }}{{ errorf "Trade idea %s requires a NAVCoin data file" .File.Path }}{{ end }}
+<section class="note__cta" aria-labelledby="navcoin-title" data-navcoin-checkout>
+  <h2 id="navcoin-title">Attached NAVCoin</h2>
+  <p><strong>Coin:</strong> <span data-coin>{{ with $coin.coin }}{{ . }}{{ else }}Not attached — placeholder{{ end }}</span></p>
+  <p><strong>NAV (USD per coin):</strong> <span data-nav>{{ if ne $coin.navUsd nil }}{{ $coin.navUsd }}{{ else }}Unavailable — no NAV supplied{{ end }}</span></p>
+  <p><strong>Last proof (UTC):</strong> <span data-proof-time>{{ with $coin.lastProofAt }}{{ . }}{{ else }}Unavailable — no proof supplied{{ end }}</span></p>
+  <p data-proof-status role="status">{{ if eq $coin.proofAgeLimitSeconds nil }}proof age limit not set{{ else }}Proof age has not been checked. Buying is closed.{{ end }}</p>
+  <p><strong>Fee:</strong> <span data-fee>{{ if ne $coin.feeBps nil }}{{ $coin.feeBps }} bps{{ else }}Fee not set{{ end }}</span></p>
+  <p id="checkout-closed">Buying is closed. This checkout is for review only.</p>
+  <div class="signup">
+    <button type="button" disabled aria-describedby="checkout-closed">Buy — closed</button>
+    <button type="button" data-connect-wallet>Connect wallet (address only)</button>
+  </div>
+  <p data-wallet-status role="status" aria-live="polite">Wallet not connected.</p>
+  <noscript><p>Wallet connection and proof-age checks require JavaScript. Buying remains closed.</p></noscript>
+  <script type="application/json" data-navcoin-config>{{ $coin | jsonify | safeJS }}</script>
+</section>
