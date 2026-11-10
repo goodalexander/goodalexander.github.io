@@ -5,7 +5,7 @@ draft: false
 description: "Long and short ideas ranked by what the accepted company models imply, against the last price."
 ---
 
-Ranked by what each accepted financial model implies against the last price. 52 accepted models as of **2026-11-10**. Model output only — no holding, allocation or order is disclosed here.
+Ranked by what each accepted financial model implies against the last price. 51 accepted models as of **2026-11-10**. Model output only — no holding, allocation or order is disclosed here.
 
 ## Longs
 

@@ -15,7 +15,7 @@ source_note: "Model output as of 2026-11-10. Published from the accepted model c
 
 ## The idea
 
-The accepted financial model for **Rivian Automotive, Inc.** values it at **$36.51** against a last price of **$14.01** — **+160.6%**. That makes it the **strongest long**-side reading of 52 accepted models at rank 2.
+The accepted financial model for **Rivian Automotive, Inc.** values it at **$36.51** against a last price of **$14.01** — **+160.6%**. That makes it the **strongest long**-side reading of 51 accepted models at rank 2.
 
 The valuation runs on **P/S**. The model's scenario range is **$19.68** to **$57.52**, and the model puts the chance of finishing higher at **over 99%**.
 

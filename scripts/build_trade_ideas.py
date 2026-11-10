@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import html as _html
 import json
 import pathlib
 import re
@@ -27,7 +28,7 @@ DATA = SITE / "data" / "trade_ideas.json"
 # future field added upstream cannot leak onto the site by default.
 PUBLISH = (
     "ticker", "name", "asof", "currency", "price", "price_target", "upside",
-    "price_target_basis", "scenario_low", "scenario_high", "scenario_prob_up", "sim_prob_up",
+    "scenario_low", "scenario_high", "scenario_prob_up", "sim_prob_up",
     "valuation_method", "valuation_method_label",
 )
 # Markers of an actual data leak, not English words. The prose deliberately uses
@@ -41,6 +42,35 @@ FORBIDDEN = (
 FORBIDDEN_PATTERNS = (
     r"weight[^a-z0-9]{0,3}-?\d",   # "weight: -0.125"
     r"-?0\.\d+\s*\(\d+(\.\d+)?%\)",  # "-0.125 (12.5%)"
+)
+
+# An independent review (2026-11-10) established that a name-only allowlist plus a
+# token denylist is not a confidentiality boundary: a model card's free-text method
+# label containing "current holding 250 shares; portfolio allocation 12%" published
+# verbatim, and HTML-entity encoding slipped a literal forbidden token past the raw
+# scan. Two corrections follow.
+#
+# 1. Text that reaches a public page must match a SHAPE, not merely avoid bad words.
+#    Anything outside the shape is refused, never truncated or sanitised, because a
+#    sanitiser that half-works publishes the half it missed.
+SAFE_TEXT = {
+    # field: (max length, permitted character class)
+    "name": (64, r"[A-Za-z0-9 .,&'\-/()]+"),
+    # Bloomberg form, e.g. "TSLA US Equity" / "005930 KS Equity": mixed case, spaces.
+    "ticker": (28, r"[A-Za-z0-9. \-]+"),
+    "valuation_method_label": (32, r"[A-Za-z0-9 /%\-]+"),
+    "valuation_method": (32, r"[A-Za-z0-9 /%\-_]+"),
+    "currency": (8, r"[A-Z]+"),
+    "asof": (10, r"[0-9\-]+"),
+}
+# 2. Words that have no business in a FREE-TEXT field, checked after entity-decoding
+#    and case-folding. Deliberately NOT applied to `name`, `ticker`, `currency` or
+#    `asof`: those are bounded registry values, and real companies are called
+#    Lumentum Holdings and Strategy. Applying it there dropped both.
+FREE_TEXT_FIELDS = ("valuation_method_label", "valuation_method")
+DISCLOSURE_WORDS = (
+    "holding", "allocation", "portfolio", "shares", "strategy", "weight",
+    "exposure", "hedge", "clip", "book", "order", "fill", "nav of",
 )
 
 API_DOC = "/api/"
@@ -64,8 +94,34 @@ def load_cards() -> list[dict]:
             continue
         if raw.get("upside") is None:
             continue
-        cards.append({k: raw.get(k) for k in PUBLISH})
+        card = {k: raw.get(k) for k in PUBLISH}
+        bad = text_shape_problem(card)
+        if bad:
+            print("SKIPPED %s: %s" % (raw.get("ticker"), bad))
+            continue
+        cards.append(card)
     return cards
+
+
+def text_shape_problem(card: dict) -> str | None:
+    """Refuse a card whose published text leaves the permitted shape. Returns the
+    reason, or None when every field is safe. Refusal drops that one idea; it never
+    rewrites the text, because a partial scrub publishes what it missed."""
+    for field, (limit, pattern) in SAFE_TEXT.items():
+        value = card.get(field)
+        if value is None:
+            continue
+        text = str(value)
+        if len(text) > limit:
+            return "%s is %d characters, over the %d limit" % (field, len(text), limit)
+        if not re.fullmatch(pattern, text):
+            return "%s leaves the permitted character shape: %r" % (field, text[:60])
+        if field in FREE_TEXT_FIELDS:
+            decoded = _html.unescape(text).casefold()
+            for word in DISCLOSURE_WORDS:
+                if word in decoded:
+                    return "%s contains the disclosure word %r" % (field, word)
+    return None
 
 
 def prob_phrase(value) -> str:
@@ -224,7 +280,7 @@ def main() -> int:
 
     # Refuse to write anything if a forbidden token appears anywhere.
     for name, body in pages.items():
-        low = body.lower()
+        low = _html.unescape(body).casefold()
         for bad in FORBIDDEN:
             if bad in low:
                 print(f"REFUSED: generated page {name} contains forbidden token {bad!r}; wrote nothing")
@@ -241,7 +297,20 @@ def main() -> int:
             print("   ", n)
         return 0
 
+    # Reconcile the whole owned directory. A page that falls out of the current
+    # ranking previously stayed public at its old URL for ever, and a refused
+    # generation left every stale file in place.
     OUT.mkdir(parents=True, exist_ok=True)
+    existing = {p.name for p in OUT.glob("*.md")}
+    stale = sorted(existing - set(pages))
+    for name in stale:
+        (OUT / name).unlink()
+        print("removed stale page %s (no longer in the ranking)" % name)
+    for path in OUT.glob("*.md"):
+        if path.name in pages:
+            continue
+        print("REFUSED: %s survived reconciliation; wrote nothing" % path.name)
+        return 3
     DATA.parent.mkdir(parents=True, exist_ok=True)
     for name, body in pages.items():
         (OUT / name).write_text(body, encoding="utf-8")

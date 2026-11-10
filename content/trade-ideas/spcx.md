@@ -15,7 +15,7 @@ source_note: "Model output as of 2026-11-10. Published from the accepted model c
 
 ## The idea
 
-The accepted financial model for **Space Exploration Technologies Corp** values it at **$209.00** against a last price of **$142.07** — **+47.1%**. That makes it the **strongest long**-side reading of 52 accepted models at rank 3.
+The accepted financial model for **Space Exploration Technologies Corp** values it at **$209.00** against a last price of **$142.07** — **+47.1%**. That makes it the **strongest long**-side reading of 51 accepted models at rank 3.
 
 The valuation runs on **EV/EBITDA**. The model's scenario range is **$25.06** to **$353.66**, and the model puts the chance of finishing higher at **40%**.
 

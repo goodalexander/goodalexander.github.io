@@ -15,7 +15,7 @@ source_note: "Model output as of 2026-11-10. Published from the accepted model c
 
 ## The idea
 
-The accepted financial model for **CrowdStrike Holdings, Inc.** values it at **$135.67** against a last price of **$228.58** — **-40.6%**. That makes it the **strongest short**-side reading of 52 accepted models at rank 2.
+The accepted financial model for **CrowdStrike Holdings, Inc.** values it at **$135.67** against a last price of **$228.58** — **-40.6%**. That makes it the **strongest short**-side reading of 51 accepted models at rank 2.
 
 The valuation runs on **EV/FCF**. The model's scenario range is **$82.89** to **$190.68**, and the model puts the chance of finishing higher at **4%**.
 
