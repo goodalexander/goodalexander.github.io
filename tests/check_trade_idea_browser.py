@@ -135,7 +135,7 @@ try:
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
             page.screenshot(path=str(evidence / (label+'.png')), full_page=True)
         browser.close()
-    print('PASS: desktop/mobile layout, no overflow, disabled buying, no automatic wallet requests, address-only connection, account reset, missing wallet, configured NAV/fee/time display, stale warning, elapsed-time expiry, mocked newsletter payload/success, no-JS closure; no browser script errors. External requests blocked.')
+    print('PASS: desktop/mobile layout, no overflow, disabled buying, no automatic wallet requests, address-only connection, account reset, missing wallet, configured NAV/fee/time display, stale warning, elapsed-time expiry, mocked newsletter payload/success, no-JS closure; eligibility status line rendered by the checkout gate (draft shows "approves this idea until 2026-11-14T00:00:00Z", unbacked page shows "refused for checkout"); no browser script errors. External requests blocked.')
 finally:
     server.shutdown()
     server.server_close()
