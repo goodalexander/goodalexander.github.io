@@ -1,7 +1,7 @@
 ---
 title: "TSLA short: the equity book’s shared hedge"
 date: 2026-11-10T11:00:00Z
-draft: false
+draft: true
 type: trade-ideas
 description: "The equity book holds a 12.5% short target in Tesla. Its accepted financial model puts the scenario-weighted target at $347.01."
 instrument: "Tesla, Inc. (xyz:TSLA)"
