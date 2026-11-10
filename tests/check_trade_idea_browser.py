@@ -123,8 +123,13 @@ try:
         assert 'require JavaScript' in page_nojs.locator('noscript').inner_text()
         page.goto(origin + '/trade-ideas/tsla-short-2026-11-10/')
         assert '12.5%' in page.locator('main').inner_text()
-        assert 'Placeholder' not in page.locator('main').inner_text()
+        # The page is an unpublished draft pending founder review, so the video
+        # section legitimately shows its placeholder; what must never appear is
+        # a purchase path. The checkout gate renders the eligibility verdict.
         assert page.get_by_role('button', name='Buy — closed').is_disabled()
+        assert 'approves this idea until 2026-11-14T00:00:00Z' in page.locator('[data-eligibility-status]').inner_text()
+        page.goto(url)
+        assert 'refused for checkout' in page.locator('[data-eligibility-status]').inner_text()
         for width,label in [(1440,'published-desktop'),(390,'published-mobile')]:
             page.set_viewport_size({'width':width,'height':1000})
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')

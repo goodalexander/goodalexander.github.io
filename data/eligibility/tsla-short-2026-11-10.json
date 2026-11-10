@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "record": {
+    "instrument_id": "xyz:TSLA",
+    "direction": "SHORT",
+    "family": "equity",
+    "signal": {
+      "strategy_id": "coverage_equity_valuation_garp_revision_transcript_fixed_clip_v3",
+      "definition_sha256": "f0a1169a07e8bbc2fd2c550022160933ee1a70e86f1db58fa116fe0fc86ac644",
+      "decision_at": "2026-11-10"
+    }
+  },
+  "result": {
+    "eligible": true,
+    "refusal": null,
+    "model": {
+      "model_id": "TSLA",
+      "state": "accepted",
+      "version": "sha256:838b4d265470f8e23ee3a8be62e1bf1ab3f8fd997c87d5f7683c5ba4852593af",
+      "source_date": "2026-11-09"
+    },
+    "signal": {
+      "family": "equity",
+      "strategy_id": "coverage_equity_valuation_garp_revision_transcript_fixed_clip_v3",
+      "definition_sha256": "f0a1169a07e8bbc2fd2c550022160933ee1a70e86f1db58fa116fe0fc86ac644",
+      "decision_at": "2026-11-10",
+      "instruction": {
+        "direction": "SHORT",
+        "fraction": -0.125,
+        "source": "equity_target"
+      }
+    }
+  },
+  "valid_until": "2026-11-14T00:00:00+00:00",
+  "valid_until_basis": "equity catalog stale_after_seconds 345600 from decision 2026-11-10",
+  "generated_at_utc": "2026-11-10T17:27:58.003759+00:00",
+  "generator": "navstrategies.idea_generator.eligibility (glm/p03-c04-eligibility-boundaries)"
+}

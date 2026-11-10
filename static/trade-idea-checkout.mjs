@@ -24,6 +24,42 @@ export function feeText(value) {
   return `${value} bps (${value / 100}%)`;
 }
 
+// Plan 03 W3 checkout boundary: an idea may only be purchased while its
+// eligibility record approves it. The record is produced by
+// navstrategies.idea_generator.eligibility; this gate refuses it for the same
+// classes the gate refuses: no record, a refused result (no model, stale,
+// flat, conflicting books, changed signal, opposition to the systematic
+// instruction) and an expired validity window. No limit is invented here.
+export function eligibilityStatus(record, now = Date.now()) {
+  if (record === null || record === undefined || (typeof record === 'object' && Object.keys(record).length === 0)) {
+    return 'No eligibility record. This idea is refused for checkout.';
+  }
+  if (typeof record !== 'object' || Array.isArray(record)) {
+    return 'Eligibility record is invalid. Buying is closed.';
+  }
+  const result = record.result;
+  if (!result || typeof result !== 'object' || Array.isArray(result)) {
+    return 'Eligibility record has no result. Buying is closed.';
+  }
+  if (typeof result.refusal === 'string' && result.refusal) {
+    return `Eligibility refused (${result.refusal}). Buying is closed.`;
+  }
+  if (result.eligible !== true) {
+    return 'Eligibility record does not approve this idea. Buying is closed.';
+  }
+  const value = record.valid_until;
+  const norm = input => typeof input === 'string' ? input.replace(/\+00:00$/, 'Z') : input;
+  const timestamp = typeof value === 'string' ? Date.parse(value) : NaN;
+  if (!Number.isFinite(timestamp) ||
+      new Date(timestamp).toISOString().replace('.000Z', 'Z') !== norm(value).replace('.000Z', 'Z')) {
+    return 'Eligibility validity is missing or invalid. Buying is closed.';
+  }
+  if (!Number.isFinite(now) || timestamp < now) {
+    return 'Warning: eligibility record has expired. Buying is closed.';
+  }
+  return `Eligibility record approves this idea until ${norm(value)}. Buying remains closed.`;
+}
+
 export async function readWalletAddress(provider) {
   if (!provider || typeof provider.request !== 'function') throw new Error('Wallet unavailable');
   const accounts = await provider.request({ method: 'eth_requestAccounts' });
@@ -49,7 +85,20 @@ export function mountCheckout(root, provider) {
   find('[data-proof-time]').textContent = typeof data.lastProofAt === 'string' && data.lastProofAt
     ? data.lastProofAt : 'Unavailable — no proof supplied';
   find('[data-fee]').textContent = feeText(data.feeBps);
-  const refresh = () => { find('[data-proof-status]').textContent = proofStatus(data); };
+  let eligibility = null;
+  const eligibilityNode = find('[data-eligibility-config]');
+  if (eligibilityNode) {
+    try {
+      eligibility = JSON.parse(eligibilityNode.textContent);
+    } catch {
+      eligibility = 'invalid';
+    }
+  }
+  const refresh = () => {
+    find('[data-proof-status]').textContent = proofStatus(data);
+    const eligibilityLine = find('[data-eligibility-status]');
+    if (eligibilityLine) eligibilityLine.textContent = eligibilityStatus(eligibility);
+  };
   refresh();
   // Recheck elapsed wall time while the page stays open. This is a display
   // refresh interval, not a default proof-age limit.

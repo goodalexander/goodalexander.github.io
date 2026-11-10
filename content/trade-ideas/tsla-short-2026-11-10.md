@@ -12,6 +12,7 @@ source_warning: "The daily diligence snapshot reported a catalog reader expectin
 model_name: "TSLA"
 model_url: "https://tasknode.postfiat.org/api/research/bundles/ga-models/index.html#m=TSLA&tab=summary"
 navcoin: tsla_example
+eligibility: tsla-short-2026-11-10
 ---
 
 ## The trade idea

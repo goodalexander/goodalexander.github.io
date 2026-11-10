@@ -49,16 +49,26 @@ fields = lambda html: [(tag, attrs) for tag, attrs in Elements(html).elements if
 assert fields(api) == fields(original_api), 'Form fields, attributes and labels must remain unchanged'
 print('PASS: draft excluded from production pages, sitemap and indexes; review HTML is marked, closed and contains no forbidden metrics; signup behavior unchanged.')
 
-# The real page is published with the matching source version, while checkout stays closed.
-import json
-live=(production/'trade-ideas/tsla-short-2026-11-10/index.html').read_text()
-evidence=json.loads((production/'evidence/tsla-2026-11-10.json').read_text())
-assert evidence['model_version'] in live
-assert evidence['model_source_date'] in live
-assert '12.5%' in live and '$347.01' in live
-assert 'sprint 7' in live and 'Buy remains disabled' in live
-assert 'Placeholder' not in live and 'noindex' not in live
-assert any(tag=='button' and 'disabled' in attrs for tag,attrs in Elements(live).elements)
+# The real TSLA page is UNPUBLISHED pending founder review (master 66e0d96/89bf05a
+# removed it and its public evidence file). The build must keep it out of production
+# while the draft preview carries the eligibility record the page boundary requires.
+live_draft = draft.parent.parent / 'tsla-short-2026-11-10/index.html'
+assert not (production / 'trade-ideas/tsla-short-2026-11-10').exists(), 'The founder-unpublished TSLA idea must not have a production URL'
+assert not (production / 'evidence/tsla-2026-11-10.json').exists(), 'The removed public evidence file must stay out of production'
+text = live_draft.read_text()
+assert 'sha256:838b4d265470f8e23ee3a8be62e1bf1ab3f8fd997c87d5f7683c5ba4852593af' in text
+assert '12.5%' in text and '$347.01' in text
+assert 'sprint 7' in text and 'Buy remains disabled' in text
+import json as _json
+elig = _json.loads([l for l in text.splitlines() if 'data-eligibility-config' in l][0].split('data-eligibility-config>', 1)[1].rsplit('</script>', 1)[0])
+assert elig['result']['eligible'] is True and elig['result']['refusal'] is None
+assert elig['result']['model']['version'].startswith('sha256:838b4d265470f8e2')
+assert any(tag == 'button' and 'disabled' in attrs for tag, attrs in Elements(text).elements)
+example = (root / '_site/draft-preview/trade-ideas/tsla-short-example/index.html').read_text()
+assert 'No eligibility record' in example, 'The placeholder draft must show its refusal state'
+api = (production / 'api/index.html').read_text()
 assert '/v1/company-models' in api and 'X-Corbanu-Confirm-Monthly-Usd' in api
-assert 'USD 200' in (production/'llms.txt').read_text()
-print('PASS: published TSLA book direction, weight, matching model version/date/target, disabled sprint-7 checkout, API documentation and llms.txt.')
+assert 'USD 200' in (production / 'llms.txt').read_text()
+print('PASS: TSLA idea stays unpublished pending founder review; its draft carries a valid '
+      'eligibility record (accepted model version, pinned signal, valid until 2026-11-14); the '
+      'placeholder draft shows the no-record refusal; checkout stays closed; API docs unchanged.')
