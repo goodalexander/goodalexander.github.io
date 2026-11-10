@@ -1,0 +1,17 @@
+# GoodAlexander company model API
+
+Documentation: https://goodalexander.com/api/
+Base URL: https://api.corbanu.com
+Live plan/price: GET /v1/company-model-plan (public)
+Launch: USD 200 per UTC calendar month, unlimited accepted-model reads, 10 successful reads per rolling minute per account.
+Authentication: Authorization: Bearer YOUR_CORBANU_API_KEY. Never put credentials in URLs or public output.
+POST /v1/company-model-subscription buys one month from prepaid balance; requires X-Corbanu-Confirm-Monthly-Usd matching the live monthlyUsd quote. Explicit renewal, no automatic payment.
+GET /v1/company-model-subscription returns active period, fixed charge and successful call count.
+GET /v1/company-models lists accepted model IDs, source dates and SHA-256 versions.
+GET /v1/company-models/{model_id}/outputs returns the accepted, filtered model with source_date, version and output.
+Missing/invalid keys: 401. Inactive subscription: 402. Withheld/stale: 409. Rate limit: 429 with Retry-After. Source unavailable: 503.
+No per-read fee. Refused reads are not counted. HEAD is 405. Reused request IDs are 409.
+Model source age limit: 7 days. Third-party and trading-performance fields are excluded.
+Dated trade idea: https://goodalexander.com/trade-ideas/tsla-short-2026-11-10/
+Evidence: https://goodalexander.com/evidence/tsla-2026-11-10.json
+NAVCoin Buy is disabled until sprint 7's purchase route is live. Newsletter signup does not issue an API key.

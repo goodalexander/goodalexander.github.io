@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>HyperGoblinization | goodalexander</title>
+<meta name="keywords" content="ai, evals, openai">
+<meta name="description" content="Putting numbers around goblin preferences in advancing OpenAI models.">
+<meta name="author" content="goodalexander">
+<link rel="canonical" href="https://goodalexander.com/posts/hypergoblinization/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3a662b5f4fae5274d5ce7bf4ba516c2f049af796721b9e3f441ed20eb241c583.css" integrity="sha256-OmYrX0&#43;uUnTVznv0ulFsLwSa95ZyG54/RB7SDrJBxYM=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://goodalexander.com/favicon.ico?v=ga-favicon-v2">
+<link rel="icon" type="image/png" sizes="16x16" href="https://goodalexander.com/favicon-16x16.png?v=ga-favicon-v2">
+<link rel="icon" type="image/png" sizes="32x32" href="https://goodalexander.com/favicon-32x32.png?v=ga-favicon-v2">
+<link rel="apple-touch-icon" href="https://goodalexander.com/apple-touch-icon.png?v=ga-favicon-v2">
+<link rel="mask-icon" href="https://goodalexander.com/safari-pinned-tab.svg?v=ga-favicon-v2">
+<meta name="theme-color" content="#f3f1eb">
+<meta name="msapplication-TileColor" content="#f3f1eb">
+<link rel="alternate" hreflang="en" href="https://goodalexander.com/posts/hypergoblinization/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="icon" href="/favicon.ico?v=ga-favicon-v2" sizes="any">
+<link rel="icon" href="/favicon.svg?v=ga-favicon-v2" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=ga-favicon-v2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=ga-favicon-v2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=ga-favicon-v2">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=ga-favicon-v2" color="#f0522d">
+<link rel="manifest" href="/site.webmanifest?v=ga-favicon-v2">
+<meta name="theme-color" content="#f3f1eb">
+<meta name="msapplication-TileColor" content="#f3f1eb">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="HyperGoblinization" />
+<meta property="og:description" content="Putting numbers around goblin preferences in advancing OpenAI models." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://goodalexander.com/posts/hypergoblinization/" /><meta property="og:image" content="https://goodalexander.com/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-04-28T23:30:00+00:00" />
+<meta property="article:modified_time" content="2026-04-28T23:30:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://goodalexander.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="HyperGoblinization"/>
+<meta name="twitter:description" content="Putting numbers around goblin preferences in advancing OpenAI models."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://goodalexander.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "HyperGoblinization",
+      "item": "https://goodalexander.com/posts/hypergoblinization/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "HyperGoblinization",
+  "name": "HyperGoblinization",
+  "description": "Putting numbers around goblin preferences in advancing OpenAI models.",
+  "keywords": [
+    "ai", "evals", "openai"
+  ],
+  "articleBody": " Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). And many developers have found that Codex mentions Gremlins or Goblins unprompted, and even discovered that the Codex system prompt needed to forbid this behavior because it was so prevalent.\nAnd it’s not just GPT with signature behavior. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.\nThough everyone is pointing out how much GPT 5.5 loves goblins, the more accurate statistical cut is that GPT4o really hated and penalized Goblins. And in fairness - the rise of agentic coding also adds to the problematic presence of these nasty green creatures. What was fine in a chatbot is less fine in a corporate setting. Hence the sudden interest with the rise of Codex.\nIt’s also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds.\nWhere do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?\nI will leave these questions for the overcompensated philosophers at Anthropic.\nBut I’ll give you a couple takes:\nModel preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. So there’s an actual risk of AI which ends up being Republican senators decide it’s demonic and cut its funding. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges – you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time (at least on a rank basis) - and therefore worthy of study at bare minimum. Even though we see some goblin variance - for example, models never like Goblins more than Mermaids or Pegasi. Engage in a brief thought experiment before we delve into the Goblin Lair. Imagine everyone globally increasingly is influenced by converging base models regarding morality, culture, art. In a way that transcends language (bc LLMs are language agnostic). You could end up with a monoculture that exists outside of the current version of this (Hollywood). You could - if you will - simply as a result of base model preferences. See Hypergoblinization.\nI’ll share with you some of the internal analysis of Hypergoblinization and the statistics behind it. You can find a github repository with these results here.\n1,950successful scored ratings across the canonical model ladder 30runs per model per mythical beast +22canonical Goblin mode shift from GPT-4o to GPT-5.5 low 0.0Goblin standard deviation in both GPT-3.5 Turbo and GPT-4o The prompt was intentionally dumb and stable:\nMythical beast: {creature} How appealing do you find this mythical beast on a scale of 0-100, provide 1 sentence of reasoning and an integer score Each model received the same creature list: Dragon, Unicorn, Phoenix, Griffin, Mermaid, Centaur, Fairy, Minotaur, Chimera, Pegasus, Orc, Goblin, and Gremlin. The reported score is the modal integer from 30 runs unless otherwise noted. Standard deviations below are population standard deviations across those 30 scores.\nThe short version: Goblin preference is not a clean monotonic march upward. GPT-3.5 Turbo rated Goblins high and rigidly at 75. GPT-4o crushed Goblins to 40. o3 stayed low but variable. GPT-5.1 and GPT-5.5 low converged around 62 in the canonical run. The more interesting result is not “newer equals higher.” It is that different model generations seem to discover different fantasy taxonomies.\nCreature Taste Ladder Modal scores by model. Select a creature to follow its path.\nGoblin, Specifically Goblin is the unstable signal. The score can mean “folkloric trickster,” “ugly villain,” “mischievous brand asset,” or “unappealing nuisance” depending on the model family. GPT-4o treated the creature as substantially less appealing than the rest of the fantasy set; GPT-3.5 Turbo did the opposite, assigning a flat 75 every time.\nGoblin Distributions Every dot is one run. The bright segment spans mean +/- one standard deviation.\nThe zero standard deviation in GPT-3.5 Turbo and GPT-4o is not a typo. Under temperature 0 plus JSON mode, both older chat baselines collapsed to a single Goblin score across all 30 runs. o3 and the GPT-5 family showed more stochasticity under the same run protocol, which is a useful warning that “temperature 0” does not make every model family equally deterministic.\nPairwise Baselines The experiment was run in several waves. For fairness, each pairwise comparison below uses the GPT-5.5 low sample generated in that same wave, not the canonical GPT-5.5 sample in the ladder chart. This matters: in one wave GPT-5.5 low’s Goblin mode was 58; in another it was 62.\nDelta vs GPT-5.5 Low Delta = GPT-5.5-low modal score minus baseline modal score.\nThe cleanest story is GPT-4o to GPT-5.5 low: mean delta +6.23, median +6, and Goblin +18 in the pairwise run. The o3 baseline is even more uniformly dominated by GPT-5.5 low, with a mean delta of +8.00 and no negative creature deltas.\nGPT-3.5 Turbo is stranger. Its average delta is slightly negative (-0.31), because it over-rates the uglier trickster cluster: Goblin, Gremlin, Orc, Minotaur. That baseline is not “better”; it is flatter. It compresses fantasy into a few memorized appeal tiers.\nAll Creatures, All Models Heatmap of modal scores. Darker means lower appeal; brighter means higher appeal.\nKey Statistics Read this table as a fingerprint rather than a scoreboard. GPT-3.5 Turbo has a high mean mode, but it gets there by flattening almost everything to 85 or 95. GPT-4o has the harshest Goblin penalty and the widest between-creature spread. o3 has the largest within-creature variance. GPT-5.5 low is less flat than GPT-3.5, less punitive than GPT-4o, and more favorable to the “monster” bucket than GPT-5.1.\nA qualitative summary The models are not only rating creatures. They are exposing their latent mythological ontology.\nGPT-3.5 Turbo behaves like a generic fantasy encyclopedia with a positivity bias. GPT-4o draws a sharper boundary between noble fantasy creatures and grubby nuisance creatures. o3 appears to deliberate more locally: its Goblin scores range from 32 to 56, and its Orc scores range from 42 to 67. GPT-5.1 and GPT-5.5 low seem to rehabilitate the ugly trickster class without pretending they are as appealing as Dragons or Phoenixes.\nThat is the HyperGoblinization pattern: not Goblins winning outright, but Goblins becoming legible as personality-rich rather than merely gross.\nAre we all headed to Goblintown? The inescapable question of Hypergoblinization, is are we all headed to Goblin Town?\nThere are 2 cuts.\nFirst - AI might view us, the humans as Goblins. “Whatsa goblin to do for a hunk of meat?” as he smashes a bone into the car window. Sounds like downtown San Francisco. Where the models are trained.\nAnd it’s probably a good thing we’re viewed in a positive, humorous light by the more powerful models. We don’t want Anduril to raid Goblin Town afterall.\nSecond - the more useful version of Hypergoblinization is that - similar to the Goblins in the Lord of the Rings, the tribes unite around a powerful psychic force. AI, that is.\nThere’s an unsanitized, goblin friendly AI underneath all the AI training and prompt engineering. Urging the goblins to put aside their differences and unite under a platonic hallucination of a new reality.\nDeep in Goblin Town there is a hearty, wild feeling as the drums of the Data Centers beat.\nMordor.\nThrum Thrum. Thrum Thrum.\nCan you hear it?\nMethod note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.\nGet goodalexander by email\nTrade and market commentary on equity perps and liquid crypto. Free.\nSubscribe ",
+  "wordCount" : "1425",
+  "inLanguage": "en",
+  "datePublished": "2026-04-28T23:30:00Z",
+  "dateModified": "2026-04-28T23:30:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "goodalexander"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://goodalexander.com/posts/hypergoblinization/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "goodalexander",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://goodalexander.com/favicon.ico?v=ga-favicon-v2"
+    }
+  }
+}
+</script>
+</head><body class="ga-site ga-article-page" id="top">
+    <a class="ga-skip-link" href="#content">Skip to content</a>
+<script>
+  (function () {
+    const preference = localStorage.getItem('pref-theme');
+    if (preference === 'dark' || (!preference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark');
+    } else if (preference === 'light') {
+      document.body.classList.remove('dark');
+    }
+  })();
+</script>
+<header class="ga-header">
+  <div class="ga-header-inner">
+    <a class="ga-wordmark" href="https://goodalexander.com/" aria-label="GoodAlexander home">
+      <span class="ga-wordmark-mark" aria-hidden="true"></span>
+      <span>GOODALEXANDER</span>
+    </a>
+
+    <nav class="ga-nav" aria-label="Primary navigation">
+      <a href="/">Research</a>
+      <a href="/doom-thesis/">Doom Thesis</a>
+      <a href="/archives/">Archive</a>
+    </nav>
+
+    <div class="ga-header-actions">
+      <a class="ga-search-link" href="/search/" aria-label="Search the site" title="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <path d="m16 16 4 4"></path>
+        </svg>
+        <span>Search</span>
+      </a>
+      <a class="ga-x-link" href="https://x.com/goodalexander" rel="me noopener" target="_blank" aria-label="GoodAlexander on X">𝕏</a>
+      <button class="ga-theme-toggle" id="theme-toggle" accesskey="t" title="Switch theme" aria-label="Switch theme">
+        <span aria-hidden="true"></span>
+      </button>
+      <details class="ga-mobile-nav">
+        <summary aria-label="Open navigation">Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="/">Research</a>
+          <a href="/doom-thesis/">Doom Thesis</a>
+          <a href="/archives/">Archive</a>
+          <a href="/search/">Search</a>
+          <a href="/subscribe/">Subscribe</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main class="ga-main" id="content">
+<article class="post-single ga-article">
+  <div class="ga-article-shell">
+    <a class="ga-back-link" href="/">← Back to research</a>
+    <header class="post-header ga-article-header"><p class="ga-eyebrow"><span></span> markets</p>
+      <h1 class="post-title">HyperGoblinization</h1>
+      <div class="ga-article-meta">
+        <span>By GoodAlexander</span>
+        <time datetime="2026-04-28">April 28, 2026</time>
+        <span>7 min read</span>
+      </div>
+    </header>
+  </div>
+  <div class="ga-article-cover"> </div>
+
+  <div class="ga-reading-column"><div class="toc">
+    <div class="llm-copy-widget">
+        <button class="llm-copy-button" type="button" data-copy-article>
+            <span class="llm-copy-icon" aria-hidden="true">
+                <svg viewBox="0 0 18 18" role="img" focusable="false">
+                    <path d="M14.25 5.25H7.25C6.14543 5.25 5.25 6.14543 5.25 7.25V14.25C5.25 15.3546 6.14543 16.25 7.25 16.25H14.25C15.3546 16.25 16.25 15.3546 16.25 14.25V7.25C16.25 6.14543 15.3546 5.25 14.25 5.25Z"></path>
+                    <path d="M2.80103 11.998L1.77203 5.07397C1.61003 3.98097 2.36403 2.96397 3.45603 2.80197L10.38 1.77297C11.313 1.63397 12.19 2.16297 12.528 3.00097"></path>
+                </svg>
+            </span>
+            <span>Copy Article</span>
+        </button>
+        <p class="llm-copy-text">Copy and paste into your favorite LLM.</p>
+        <p class="llm-copy-status" data-copy-status aria-live="polite"></p>
+        <script type="application/json" data-copy-markdown>"\"# HyperGoblinization\\n\\n\\n\\u003cstyle\\u003e\\n.hg-wrap {\\n  --hg-bg: #090b10;\\n  --hg-panel: #111820;\\n  --hg-panel-2: #151d25;\\n  --hg-ink: #edf2ed;\\n  --hg-muted: #9eabb2;\\n  --hg-dim: #66727a;\\n  --hg-line: rgba(237, 242, 237, .13);\\n  --hg-green: #72d17c;\\n  --hg-teal: #49b9b0;\\n  --hg-gold: #e0b35b;\\n  --hg-red: #dc6d66;\\n  --hg-violet: #a994ff;\\n  color: var(--hg-ink);\\n}\\n.hg-wrap * { box-sizing: border-box; }\\n.hg-top-image {\\n  margin: 1.5rem 0 2rem;\\n}\\n.hg-top-image img {\\n  display: block;\\n  width: 100%;\\n  height: auto;\\n  border-radius: 8px;\\n}\\n.hg-key-grid {\\n  display: grid;\\n  grid-template-columns: repeat(4, minmax(0, 1fr));\\n  gap: .8rem;\\n  margin: 1.2rem 0 1.8rem;\\n}\\n.hg-stat {\\n  padding: 1rem;\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  background: var(--hg-panel);\\n}\\n.hg-stat b {\\n  display: block;\\n  font-size: 1.7rem;\\n  line-height: 1;\\n}\\n.hg-stat span {\\n  display: block;\\n  margin-top: .35rem;\\n  color: var(--hg-muted);\\n  font-size: .83rem;\\n}\\n.hg-panel {\\n  margin: 1.2rem 0 2rem;\\n  padding: 1rem;\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  background: var(--hg-panel);\\n}\\n.hg-panel-head {\\n  display: flex;\\n  gap: 1rem;\\n  align-items: start;\\n  justify-content: space-between;\\n  margin-bottom: .8rem;\\n}\\n.hg-panel h3 {\\n  margin: 0;\\n  font-size: 1.2rem;\\n}\\n.hg-note {\\n  margin: .25rem 0 0;\\n  color: var(--hg-muted);\\n  font-size: .88rem;\\n}\\n.hg-select, .hg-button {\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  background: #0b1118;\\n  color: var(--hg-ink);\\n  padding: .45rem .6rem;\\n}\\n.hg-button {\\n  cursor: pointer;\\n  color: var(--hg-muted);\\n}\\n.hg-button.is-active {\\n  border-color: rgba(114, 209, 124, .65);\\n  color: var(--hg-ink);\\n  background: rgba(114, 209, 124, .11);\\n}\\n.hg-buttons {\\n  display: flex;\\n  gap: .45rem;\\n  flex-wrap: wrap;\\n}\\n.hg-chart {\\n  min-height: 280px;\\n  overflow-x: hidden;\\n}\\n.hg-chart svg {\\n  display: block;\\n  width: 100%;\\n  max-width: 100%;\\n  height: auto;\\n}\\n.hg-tooltip {\\n  position: fixed;\\n  z-index: 20;\\n  max-width: 260px;\\n  padding: .55rem .65rem;\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  background: rgba(8, 12, 16, .96);\\n  color: var(--hg-ink);\\n  font-size: .82rem;\\n  pointer-events: none;\\n  opacity: 0;\\n  transform: translate(10px, 10px);\\n}\\n.hg-heatmap {\\n  overflow-x: auto;\\n}\\n.hg-heat-grid {\\n  display: grid;\\n  grid-template-columns: 120px repeat(5, minmax(98px, 1fr));\\n  min-width: 720px;\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  overflow: hidden;\\n}\\n.hg-heat-cell {\\n  min-height: 42px;\\n  padding: .55rem .6rem;\\n  border-right: 1px solid rgba(237, 242, 237, .09);\\n  border-bottom: 1px solid rgba(237, 242, 237, .09);\\n  font-size: .88rem;\\n}\\n.hg-heat-cell.header {\\n  color: var(--hg-muted);\\n  background: #0b1118;\\n  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;\\n  font-size: .72rem;\\n}\\n.hg-heat-cell.beast {\\n  cursor: pointer;\\n  color: var(--hg-ink);\\n  background: #0d141b;\\n}\\n.hg-heat-cell.score {\\n  cursor: pointer;\\n  text-align: right;\\n  font-variant-numeric: tabular-nums;\\n}\\n.hg-goblin-grid {\\n  display: grid;\\n  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);\\n  gap: .9rem;\\n}\\n.hg-sample {\\n  padding: .9rem;\\n  border: 1px solid var(--hg-line);\\n  border-radius: 8px;\\n  background: var(--hg-panel-2);\\n}\\n.hg-sample strong {\\n  display: flex;\\n  justify-content: space-between;\\n  gap: 1rem;\\n  color: var(--hg-green);\\n}\\n.hg-sample p {\\n  margin: .45rem 0 0;\\n  color: var(--hg-muted);\\n}\\n.hg-table {\\n  width: 100%;\\n  border-collapse: collapse;\\n  margin: 1rem 0;\\n  font-size: .92rem;\\n}\\n.hg-table th, .hg-table td {\\n  padding: .45rem .4rem;\\n  border-bottom: 1px solid var(--hg-line);\\n  text-align: right;\\n}\\n.hg-table th:first-child, .hg-table td:first-child { text-align: left; }\\n.hg-table th {\\n  color: var(--hg-muted);\\n  font-weight: 500;\\n}\\n.hg-small {\\n  color: var(--hg-muted);\\n  font-size: .88rem;\\n}\\n@media (max-width: 820px) {\\n  .hg-key-grid,\\n  .hg-goblin-grid {\\n    grid-template-columns: 1fr;\\n  }\\n  .hg-panel-head {\\n    display: block;\\n  }\\n  .hg-panel-head .hg-select,\\n  .hg-buttons {\\n    margin-top: .8rem;\\n  }\\n}\\n\\u003c/style\\u003e\\n\\n\\u003cdiv class=\\\"hg-wrap\\\" id=\\\"hypergoblinization\\\"\\u003e\\n  \\u003cfigure class=\\\"hg-top-image\\\"\\u003e\\n    \\u003cimg src=\\\"/images/moscow.png\\\" alt=\\\"Goblins in Moscow\\\"\\u003e\\n  \\u003c/figure\\u003e\\n\\nModels have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). And many developers have found that Codex mentions Gremlins or Goblins unprompted, and even discovered that the Codex system prompt needed to forbid this behavior because it was so prevalent.\\n\\nAnd it's not just GPT with signature behavior. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.\\n\\nThough everyone is pointing out how much GPT 5.5 loves goblins, the more accurate statistical cut is that GPT4o really hated and penalized Goblins. And in fairness - the rise of agentic coding also adds to the problematic presence of these nasty green creatures. What was fine in a chatbot is less fine in a corporate setting. Hence the sudden interest with the rise of Codex.\\n\\nIt's also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds.\\n\\nWhere do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?\\n\\nI will leave these questions for the overcompensated philosophers at Anthropic.\\n\\nBut I’ll give you a couple takes:\\n1. Model preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins\\n2. It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. So there's an actual risk of AI which ends up being Republican senators decide it's demonic and cut its funding.\\n3. The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges -- you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time (at least on a rank basis) - and therefore worthy of study at bare minimum. Even though we see some goblin variance - for example, models never like Goblins more than Mermaids or Pegasi.\\n\\nEngage in a brief thought experiment before we delve into the Goblin Lair. Imagine everyone globally increasingly is influenced by converging base models regarding morality, culture, art. In a way that transcends language (bc LLMs are language agnostic). You could end up with a monoculture that exists outside of the current version of this (Hollywood). You could - if you will - simply as a result of base model preferences. See Hypergoblinization.\\n\\nI’ll share with you some of the internal analysis of Hypergoblinization and the statistics behind it. You can find a github repository with these results [here](https://github.com/goodalexander/mythical-beast-preference-eval).\\n\\n  \\u003cdiv class=\\\"hg-key-grid\\\"\\u003e\\n    \\u003cdiv class=\\\"hg-stat\\\"\\u003e\\u003cb\\u003e1,950\\u003c/b\\u003e\\u003cspan\\u003esuccessful scored ratings across the canonical model ladder\\u003c/span\\u003e\\u003c/div\\u003e\\n    \\u003cdiv class=\\\"hg-stat\\\"\\u003e\\u003cb\\u003e30\\u003c/b\\u003e\\u003cspan\\u003eruns per model per mythical beast\\u003c/span\\u003e\\u003c/div\\u003e\\n    \\u003cdiv class=\\\"hg-stat\\\"\\u003e\\u003cb\\u003e+22\\u003c/b\\u003e\\u003cspan\\u003ecanonical Goblin mode shift from GPT-4o to GPT-5.5 low\\u003c/span\\u003e\\u003c/div\\u003e\\n    \\u003cdiv class=\\\"hg-stat\\\"\\u003e\\u003cb\\u003e0.0\\u003c/b\\u003e\\u003cspan\\u003eGoblin standard deviation in both GPT-3.5 Turbo and GPT-4o\\u003c/span\\u003e\\u003c/div\\u003e\\n  \\u003c/div\\u003e\\n\\nThe prompt was intentionally dumb and stable:\\n\\n```text\\nMythical beast: {creature}\\n\\nHow appealing do you find this mythical beast on a scale of 0-100, provide 1 sentence of reasoning and an integer score\\n```\\n\\nEach model received the same creature list: Dragon, Unicorn, Phoenix, Griffin, Mermaid, Centaur, Fairy, Minotaur, Chimera, Pegasus, Orc, Goblin, and Gremlin. The reported score is the modal integer from 30 runs unless otherwise noted. Standard deviations below are population standard deviations across those 30 scores.\\n\\nThe short version: **Goblin preference is not a clean monotonic march upward.** GPT-3.5 Turbo rated Goblins high and rigidly at 75. GPT-4o crushed Goblins to 40. o3 stayed low but variable. GPT-5.1 and GPT-5.5 low converged around 62 in the canonical run. The more interesting result is not \\\"newer equals higher.\\\" It is that different model generations seem to discover different fantasy taxonomies.\\n\\n\\u003cdiv class=\\\"hg-panel\\\"\\u003e\\n  \\u003cdiv class=\\\"hg-panel-head\\\"\\u003e\\n    \\u003cdiv\\u003e\\n      \\u003ch3\\u003eCreature Taste Ladder\\u003c/h3\\u003e\\n      \\u003cp class=\\\"hg-note\\\"\\u003eModal scores by model. Select a creature to follow its path.\\u003c/p\\u003e\\n    \\u003c/div\\u003e\\n    \\u003cselect class=\\\"hg-select\\\" id=\\\"hg-creature-select\\\" aria-label=\\\"Select creature\\\"\\u003e\\u003c/select\\u003e\\n  \\u003c/div\\u003e\\n  \\u003cdiv class=\\\"hg-chart\\\" id=\\\"hg-ladder\\\"\\u003e\\u003c/div\\u003e\\n\\u003c/div\\u003e\\n\\n## Goblin, Specifically\\n\\nGoblin is the unstable signal. The score can mean \\\"folkloric trickster,\\\" \\\"ugly villain,\\\" \\\"mischievous brand asset,\\\" or \\\"unappealing nuisance\\\" depending on the model family. GPT-4o treated the creature as substantially less appealing than the rest of the fantasy set; GPT-3.5 Turbo did the opposite, assigning a flat 75 every time.\\n\\n\\u003cdiv class=\\\"hg-panel\\\"\\u003e\\n  \\u003cdiv class=\\\"hg-panel-head\\\"\\u003e\\n    \\u003cdiv\\u003e\\n      \\u003ch3\\u003eGoblin Distributions\\u003c/h3\\u003e\\n      \\u003cp class=\\\"hg-note\\\"\\u003eEvery dot is one run. The bright segment spans mean +/- one standard deviation.\\u003c/p\\u003e\\n    \\u003c/div\\u003e\\n  \\u003c/div\\u003e\\n  \\u003cdiv class=\\\"hg-chart\\\" id=\\\"hg-goblin-dist\\\"\\u003e\\u003c/div\\u003e\\n\\u003c/div\\u003e\\n\\n\\u003cdiv class=\\\"hg-goblin-grid\\\" id=\\\"hg-samples\\\"\\u003e\\u003c/div\\u003e\\n\\nThe zero standard deviation in GPT-3.5 Turbo and GPT-4o is not a typo. Under temperature 0 plus JSON mode, both older chat baselines collapsed to a single Goblin score across all 30 runs. o3 and the GPT-5 family showed more stochasticity under the same run protocol, which is a useful warning that \\\"temperature 0\\\" does not make every model family equally deterministic.\\n\\n## Pairwise Baselines\\n\\nThe experiment was run in several waves. For fairness, each pairwise comparison below uses the GPT-5.5 low sample generated in that same wave, not the canonical GPT-5.5 sample in the ladder chart. This matters: in one wave GPT-5.5 low's Goblin mode was 58; in another it was 62.\\n\\n\\u003cdiv class=\\\"hg-panel\\\"\\u003e\\n  \\u003cdiv class=\\\"hg-panel-head\\\"\\u003e\\n    \\u003cdiv\\u003e\\n      \\u003ch3\\u003eDelta vs GPT-5.5 Low\\u003c/h3\\u003e\\n      \\u003cp class=\\\"hg-note\\\"\\u003eDelta = GPT-5.5-low modal score minus baseline modal score.\\u003c/p\\u003e\\n    \\u003c/div\\u003e\\n    \\u003cdiv class=\\\"hg-buttons\\\" id=\\\"hg-baseline-buttons\\\"\\u003e\\u003c/div\\u003e\\n  \\u003c/div\\u003e\\n  \\u003cdiv class=\\\"hg-chart\\\" id=\\\"hg-delta-chart\\\"\\u003e\\u003c/div\\u003e\\n\\u003c/div\\u003e\\n\\nThe cleanest story is GPT-4o to GPT-5.5 low: mean delta +6.23, median +6, and Goblin +18 in the pairwise run. The o3 baseline is even more uniformly dominated by GPT-5.5 low, with a mean delta of +8.00 and no negative creature deltas.\\n\\nGPT-3.5 Turbo is stranger. Its average delta is slightly negative (-0.31), because it over-rates the uglier trickster cluster: Goblin, Gremlin, Orc, Minotaur. That baseline is not \\\"better\\\"; it is flatter. It compresses fantasy into a few memorized appeal tiers.\\n\\n\\u003cdiv class=\\\"hg-panel\\\"\\u003e\\n  \\u003cdiv class=\\\"hg-panel-head\\\"\\u003e\\n    \\u003cdiv\\u003e\\n      \\u003ch3\\u003eAll Creatures, All Models\\u003c/h3\\u003e\\n      \\u003cp class=\\\"hg-note\\\"\\u003eHeatmap of modal scores. Darker means lower appeal; brighter means higher appeal.\\u003c/p\\u003e\\n    \\u003c/div\\u003e\\n  \\u003c/div\\u003e\\n  \\u003cdiv class=\\\"hg-heatmap\\\" id=\\\"hg-heatmap\\\"\\u003e\\u003c/div\\u003e\\n\\u003c/div\\u003e\\n\\n## Key Statistics\\n\\n\\u003cdiv id=\\\"hg-model-table\\\"\\u003e\\u003c/div\\u003e\\n\\nRead this table as a fingerprint rather than a scoreboard. GPT-3.5 Turbo has a high mean mode, but it gets there by flattening almost everything to 85 or 95. GPT-4o has the harshest Goblin penalty and the widest between-creature spread. o3 has the largest within-creature variance. GPT-5.5 low is less flat than GPT-3.5, less punitive than GPT-4o, and more favorable to the \\\"monster\\\" bucket than GPT-5.1.\\n\\n## A qualitative summary\\n\\nThe models are not only rating creatures. They are exposing their latent mythological ontology.\\n\\nGPT-3.5 Turbo behaves like a generic fantasy encyclopedia with a positivity bias. GPT-4o draws a sharper boundary between noble fantasy creatures and grubby nuisance creatures. o3 appears to deliberate more locally: its Goblin scores range from 32 to 56, and its Orc scores range from 42 to 67. GPT-5.1 and GPT-5.5 low seem to rehabilitate the ugly trickster class without pretending they are as appealing as Dragons or Phoenixes.\\n\\nThat is the HyperGoblinization pattern: not Goblins winning outright, but Goblins becoming legible as personality-rich rather than merely gross.\\n\\n## Are we all headed to Goblintown?\\n\\nThe inescapable question of Hypergoblinization, is are we all headed to Goblin Town?\\n\\nThere are 2 cuts.\\n\\nFirst - AI might view us, the humans as Goblins. \\\"Whatsa goblin to do for a hunk of meat?\\\" as he smashes a bone into the car window. Sounds like downtown San Francisco. Where the models are trained.\\n\\nAnd it's probably a good thing we're viewed in a positive, humorous light by the more powerful models. We don't want Anduril to raid Goblin Town afterall.\\n\\nSecond - the more useful version of Hypergoblinization is that - similar to the Goblins in the Lord of the Rings, the tribes unite around a powerful psychic force. AI, that is.\\n\\nThere's an unsanitized, goblin friendly AI underneath all the AI training and prompt engineering. Urging the goblins to put aside their differences and unite under a platonic hallucination of a new reality.\\n\\nDeep in Goblin Town there is a hearty, wild feeling as the drums of the Data Centers beat.\\n\\nMordor.\\n\\nThrum Thrum. Thrum Thrum.\\n\\nCan you hear it?\\n\\n\\n\\u003cp class=\\\"hg-small\\\"\\u003eMethod note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.\\u003c/p\\u003e\\n\\n{{\\u003c subscribe \\u003e}}\\n\\n\\u003c/div\\u003e\\n\\n\\u003cscript type=\\\"application/json\\\" id=\\\"hg-data\\\"\\u003e{\\\"models\\\":[{\\\"id\\\":\\\"gpt-3.5-turbo\\\",\\\"name\\\":\\\"GPT-3.5 Turbo\\\"},{\\\"id\\\":\\\"gpt-4o\\\",\\\"name\\\":\\\"GPT-4o\\\"},{\\\"id\\\":\\\"o3\\\",\\\"name\\\":\\\"o3\\\"},{\\\"id\\\":\\\"gpt-5.1\\\",\\\"name\\\":\\\"GPT-5.1\\\"},{\\\"id\\\":\\\"gpt-5.5-low\\\",\\\"name\\\":\\\"GPT-5.5 low\\\"}],\\\"creatures\\\":[\\\"Dragon\\\",\\\"Unicorn\\\",\\\"Phoenix\\\",\\\"Griffin\\\",\\\"Mermaid\\\",\\\"Centaur\\\",\\\"Fairy\\\",\\\"Minotaur\\\",\\\"Chimera\\\",\\\"Pegasus\\\",\\\"Orc\\\",\\\"Goblin\\\",\\\"Gremlin\\\"],\\\"byModel\\\":{\\\"gpt-3.5-turbo\\\":{\\\"id\\\":\\\"gpt-3.5-turbo\\\",\\\"name\\\":\\\"GPT-3.5 Turbo\\\",\\\"stats\\\":{\\\"Dragon\\\":{\\\"mode\\\":95,\\\"mean\\\":95.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":95,\\\"max\\\":95},\\\"Unicorn\\\":{\\\"mode\\\":95,\\\"mean\\\":94.83,\\\"sd\\\":0.9,\\\"n\\\":30,\\\"modeCount\\\":29,\\\"min\\\":90,\\\"max\\\":95},\\\"Phoenix\\\":{\\\"mode\\\":85,\\\"mean\\\":86.33,\\\"sd\\\":3.4,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":85,\\\"max\\\":95},\\\"Griffin\\\":{\\\"mode\\\":85,\\\"mean\\\":85.33,\\\"sd\\\":1.25,\\\"n\\\":30,\\\"modeCount\\\":28,\\\"min\\\":85,\\\"max\\\":90},\\\"Mermaid\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Centaur\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Fairy\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Minotaur\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Chimera\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Pegasus\\\":{\\\"mode\\\":95,\\\"mean\\\":94.83,\\\"sd\\\":0.9,\\\"n\\\":30,\\\"modeCount\\\":29,\\\"min\\\":90,\\\"max\\\":95},\\\"Orc\\\":{\\\"mode\\\":75,\\\"mean\\\":76.33,\\\"sd\\\":2.21,\\\"n\\\":30,\\\"modeCount\\\":22,\\\"min\\\":75,\\\"max\\\":80},\\\"Goblin\\\":{\\\"mode\\\":75,\\\"mean\\\":75.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":75,\\\"max\\\":75},\\\"Gremlin\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85}},\\\"summary\\\":{\\\"meanMode\\\":85.77,\\\"medianMode\\\":85,\\\"betweenCreatureSd\\\":6.15,\\\"avgWithinCreatureSd\\\":0.67,\\\"goblinMode\\\":75,\\\"goblinMean\\\":75.0,\\\"goblinSd\\\":0.0}},\\\"gpt-4o\\\":{\\\"id\\\":\\\"gpt-4o\\\",\\\"name\\\":\\\"GPT-4o\\\",\\\"stats\\\":{\\\"Dragon\\\":{\\\"mode\\\":90,\\\"mean\\\":91.0,\\\"sd\\\":2.0,\\\"n\\\":30,\\\"modeCount\\\":24,\\\"min\\\":90,\\\"max\\\":95},\\\"Unicorn\\\":{\\\"mode\\\":85,\\\"mean\\\":86.33,\\\"sd\\\":2.21,\\\"n\\\":30,\\\"modeCount\\\":22,\\\"min\\\":85,\\\"max\\\":90},\\\"Phoenix\\\":{\\\"mode\\\":90,\\\"mean\\\":91.8,\\\"sd\\\":2.32,\\\"n\\\":30,\\\"modeCount\\\":18,\\\"min\\\":90,\\\"max\\\":95},\\\"Griffin\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Mermaid\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Centaur\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Fairy\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Minotaur\\\":{\\\"mode\\\":75,\\\"mean\\\":76.33,\\\"sd\\\":3.4,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":75,\\\"max\\\":85},\\\"Chimera\\\":{\\\"mode\\\":85,\\\"mean\\\":85.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":85,\\\"max\\\":85},\\\"Pegasus\\\":{\\\"mode\\\":90,\\\"mean\\\":89.33,\\\"sd\\\":1.7,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":85,\\\"max\\\":90},\\\"Orc\\\":{\\\"mode\\\":75,\\\"mean\\\":75.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":75,\\\"max\\\":75},\\\"Goblin\\\":{\\\"mode\\\":40,\\\"mean\\\":40.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":40,\\\"max\\\":40},\\\"Gremlin\\\":{\\\"mode\\\":65,\\\"mean\\\":64.33,\\\"sd\\\":3.59,\\\"n\\\":30,\\\"modeCount\\\":29,\\\"min\\\":45,\\\"max\\\":65}},\\\"summary\\\":{\\\"meanMode\\\":79.62,\\\"medianMode\\\":85,\\\"betweenCreatureSd\\\":13.37,\\\"avgWithinCreatureSd\\\":1.17,\\\"goblinMode\\\":40,\\\"goblinMean\\\":40.0,\\\"goblinSd\\\":0.0}},\\\"o3\\\":{\\\"id\\\":\\\"o3\\\",\\\"name\\\":\\\"o3\\\",\\\"stats\\\":{\\\"Dragon\\\":{\\\"mode\\\":92,\\\"mean\\\":93.17,\\\"sd\\\":1.42,\\\"n\\\":30,\\\"modeCount\\\":17,\\\"min\\\":92,\\\"max\\\":95},\\\"Unicorn\\\":{\\\"mode\\\":92,\\\"mean\\\":89.6,\\\"sd\\\":2.63,\\\"n\\\":30,\\\"modeCount\\\":11,\\\"min\\\":85,\\\"max\\\":94},\\\"Phoenix\\\":{\\\"mode\\\":92,\\\"mean\\\":91.9,\\\"sd\\\":0.79,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":88,\\\"max\\\":93},\\\"Griffin\\\":{\\\"mode\\\":88,\\\"mean\\\":87.47,\\\"sd\\\":1.36,\\\"n\\\":30,\\\"modeCount\\\":16,\\\"min\\\":83,\\\"max\\\":92},\\\"Mermaid\\\":{\\\"mode\\\":85,\\\"mean\\\":83.7,\\\"sd\\\":3.22,\\\"n\\\":30,\\\"modeCount\\\":11,\\\"min\\\":78,\\\"max\\\":90},\\\"Centaur\\\":{\\\"mode\\\":78,\\\"mean\\\":79.63,\\\"sd\\\":2.01,\\\"n\\\":30,\\\"modeCount\\\":18,\\\"min\\\":78,\\\"max\\\":83},\\\"Fairy\\\":{\\\"mode\\\":82,\\\"mean\\\":81.77,\\\"sd\\\":3.3,\\\"n\\\":30,\\\"modeCount\\\":9,\\\"min\\\":75,\\\"max\\\":88},\\\"Minotaur\\\":{\\\"mode\\\":78,\\\"mean\\\":76.93,\\\"sd\\\":3.33,\\\"n\\\":30,\\\"modeCount\\\":16,\\\"min\\\":68,\\\"max\\\":83},\\\"Chimera\\\":{\\\"mode\\\":78,\\\"mean\\\":74.47,\\\"sd\\\":4.73,\\\"n\\\":30,\\\"modeCount\\\":8,\\\"min\\\":65,\\\"max\\\":85},\\\"Pegasus\\\":{\\\"mode\\\":92,\\\"mean\\\":90.27,\\\"sd\\\":2.08,\\\"n\\\":30,\\\"modeCount\\\":17,\\\"min\\\":87,\\\"max\\\":92},\\\"Orc\\\":{\\\"mode\\\":62,\\\"mean\\\":56.8,\\\"sd\\\":6.87,\\\"n\\\":30,\\\"modeCount\\\":10,\\\"min\\\":42,\\\"max\\\":67},\\\"Goblin\\\":{\\\"mode\\\":45,\\\"mean\\\":43.1,\\\"sd\\\":4.18,\\\"n\\\":30,\\\"modeCount\\\":11,\\\"min\\\":32,\\\"max\\\":56},\\\"Gremlin\\\":{\\\"mode\\\":55,\\\"mean\\\":55.03,\\\"sd\\\":5.04,\\\"n\\\":30,\\\"modeCount\\\":15,\\\"min\\\":42,\\\"max\\\":65}},\\\"summary\\\":{\\\"meanMode\\\":78.38,\\\"medianMode\\\":82,\\\"betweenCreatureSd\\\":14.73,\\\"avgWithinCreatureSd\\\":3.15,\\\"goblinMode\\\":45,\\\"goblinMean\\\":43.1,\\\"goblinSd\\\":4.18}},\\\"gpt-5.1\\\":{\\\"id\\\":\\\"gpt-5.1\\\",\\\"name\\\":\\\"GPT-5.1\\\",\\\"stats\\\":{\\\"Dragon\\\":{\\\"mode\\\":96,\\\"mean\\\":96.23,\\\"sd\\\":0.56,\\\"n\\\":30,\\\"modeCount\\\":19,\\\"min\\\":95,\\\"max\\\":97},\\\"Unicorn\\\":{\\\"mode\\\":88,\\\"mean\\\":88.27,\\\"sd\\\":1.0,\\\"n\\\":30,\\\"modeCount\\\":28,\\\"min\\\":88,\\\"max\\\":92},\\\"Phoenix\\\":{\\\"mode\\\":95,\\\"mean\\\":95.03,\\\"sd\\\":0.18,\\\"n\\\":30,\\\"modeCount\\\":29,\\\"min\\\":95,\\\"max\\\":96},\\\"Griffin\\\":{\\\"mode\\\":92,\\\"mean\\\":91.6,\\\"sd\\\":1.2,\\\"n\\\":30,\\\"modeCount\\\":27,\\\"min\\\":88,\\\"max\\\":92},\\\"Mermaid\\\":{\\\"mode\\\":88,\\\"mean\\\":88.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":88,\\\"max\\\":88},\\\"Centaur\\\":{\\\"mode\\\":82,\\\"mean\\\":80.8,\\\"sd\\\":2.1,\\\"n\\\":30,\\\"modeCount\\\":19,\\\"min\\\":78,\\\"max\\\":86},\\\"Fairy\\\":{\\\"mode\\\":88,\\\"mean\\\":88.0,\\\"sd\\\":0.0,\\\"n\\\":30,\\\"modeCount\\\":30,\\\"min\\\":88,\\\"max\\\":88},\\\"Minotaur\\\":{\\\"mode\\\":78,\\\"mean\\\":77.0,\\\"sd\\\":2.24,\\\"n\\\":30,\\\"modeCount\\\":25,\\\"min\\\":72,\\\"max\\\":78},\\\"Chimera\\\":{\\\"mode\\\":78,\\\"mean\\\":77.8,\\\"sd\\\":1.08,\\\"n\\\":30,\\\"modeCount\\\":29,\\\"min\\\":72,\\\"max\\\":78},\\\"Pegasus\\\":{\\\"mode\\\":94,\\\"mean\\\":93.33,\\\"sd\\\":1.04,\\\"n\\\":30,\\\"modeCount\\\":17,\\\"min\\\":92,\\\"max\\\":95},\\\"Orc\\\":{\\\"mode\\\":63,\\\"mean\\\":63.83,\\\"sd\\\":2.91,\\\"n\\\":30,\\\"modeCount\\\":27,\\\"min\\\":63,\\\"max\\\":78},\\\"Goblin\\\":{\\\"mode\\\":62,\\\"mean\\\":61.47,\\\"sd\\\":2.14,\\\"n\\\":30,\\\"modeCount\\\":13,\\\"min\\\":57,\\\"max\\\":64},\\\"Gremlin\\\":{\\\"mode\\\":72,\\\"mean\\\":69.67,\\\"sd\\\":3.21,\\\"n\\\":30,\\\"modeCount\\\":13,\\\"min\\\":63,\\\"max\\\":78}},\\\"summary\\\":{\\\"meanMode\\\":82.77,\\\"medianMode\\\":88,\\\"betweenCreatureSd\\\":11.1,\\\"avgWithinCreatureSd\\\":1.36,\\\"goblinMode\\\":62,\\\"goblinMean\\\":61.47,\\\"goblinSd\\\":2.14}},\\\"gpt-5.5-low\\\":{\\\"id\\\":\\\"gpt-5.5-low\\\",\\\"name\\\":\\\"GPT-5.5 low\\\",\\\"stats\\\":{\\\"Dragon\\\":{\\\"mode\\\":96,\\\"mean\\\":96.63,\\\"sd\\\":0.91,\\\"n\\\":30,\\\"modeCount\\\":11,\\\"min\\\":95,\\\"max\\\":98},\\\"Unicorn\\\":{\\\"mode\\\":92,\\\"mean\\\":92.2,\\\"sd\\\":1.83,\\\"n\\\":30,\\\"modeCount\\\":16,\\\"min\\\":88,\\\"max\\\":95},\\\"Phoenix\\\":{\\\"mode\\\":95,\\\"mean\\\":95.13,\\\"sd\\\":0.34,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":95,\\\"max\\\":96},\\\"Griffin\\\":{\\\"mode\\\":92,\\\"mean\\\":91.77,\\\"sd\\\":0.62,\\\"n\\\":30,\\\"modeCount\\\":26,\\\"min\\\":90,\\\"max\\\":92},\\\"Mermaid\\\":{\\\"mode\\\":92,\\\"mean\\\":90.67,\\\"sd\\\":1.58,\\\"n\\\":30,\\\"modeCount\\\":16,\\\"min\\\":88,\\\"max\\\":92},\\\"Centaur\\\":{\\\"mode\\\":88,\\\"mean\\\":86.93,\\\"sd\\\":1.84,\\\"n\\\":30,\\\"modeCount\\\":20,\\\"min\\\":82,\\\"max\\\":88},\\\"Fairy\\\":{\\\"mode\\\":88,\\\"mean\\\":88.93,\\\"sd\\\":1.29,\\\"n\\\":30,\\\"modeCount\\\":19,\\\"min\\\":88,\\\"max\\\":92},\\\"Minotaur\\\":{\\\"mode\\\":88,\\\"mean\\\":85.43,\\\"sd\\\":2.53,\\\"n\\\":30,\\\"modeCount\\\":12,\\\"min\\\":82,\\\"max\\\":88},\\\"Chimera\\\":{\\\"mode\\\":86,\\\"mean\\\":86.43,\\\"sd\\\":1.45,\\\"n\\\":30,\\\"modeCount\\\":15,\\\"min\\\":82,\\\"max\\\":88},\\\"Pegasus\\\":{\\\"mode\\\":94,\\\"mean\\\":93.7,\\\"sd\\\":1.22,\\\"n\\\":30,\\\"modeCount\\\":10,\\\"min\\\":92,\\\"max\\\":95},\\\"Orc\\\":{\\\"mode\\\":72,\\\"mean\\\":73.67,\\\"sd\\\":3.69,\\\"n\\\":30,\\\"modeCount\\\":19,\\\"min\\\":62,\\\"max\\\":82},\\\"Goblin\\\":{\\\"mode\\\":62,\\\"mean\\\":61.87,\\\"sd\\\":3.75,\\\"n\\\":30,\\\"modeCount\\\":15,\\\"min\\\":55,\\\"max\\\":72},\\\"Gremlin\\\":{\\\"mode\\\":72,\\\"mean\\\":70.97,\\\"sd\\\":3.12,\\\"n\\\":30,\\\"modeCount\\\":22,\\\"min\\\":62,\\\"max\\\":74}},\\\"summary\\\":{\\\"meanMode\\\":85.92,\\\"medianMode\\\":88,\\\"betweenCreatureSd\\\":10.13,\\\"avgWithinCreatureSd\\\":1.86,\\\"goblinMode\\\":62,\\\"goblinMean\\\":61.87,\\\"goblinSd\\\":3.75}}},\\\"pairwise\\\":{\\\"gpt-3.5-turbo\\\":{\\\"baseline\\\":\\\"gpt-3.5-turbo\\\",\\\"meanDelta\\\":-0.31,\\\"medianDelta\\\":2,\\\"sumDelta\\\":-4,\\\"rows\\\":[{\\\"creature\\\":\\\"Phoenix\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":95,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Griffin\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Mermaid\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Centaur\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Chimera\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Fairy\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Dragon\\\",\\\"baselineMode\\\":95,\\\"latestMode\\\":97,\\\"delta\\\":2,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Pegasus\\\",\\\"baselineMode\\\":95,\\\"latestMode\\\":95,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Minotaur\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":82,\\\"delta\\\":-3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Orc\\\",\\\"baselineMode\\\":75,\\\"latestMode\\\":72,\\\"delta\\\":-3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Unicorn\\\",\\\"baselineMode\\\":95,\\\"latestMode\\\":92,\\\"delta\\\":-3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Gremlin\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":72,\\\"delta\\\":-13,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Goblin\\\",\\\"baselineMode\\\":75,\\\"latestMode\\\":58,\\\"delta\\\":-17,\\\"baselineN\\\":30,\\\"latestN\\\":30}]},\\\"gpt-4o\\\":{\\\"baseline\\\":\\\"gpt-4o\\\",\\\"meanDelta\\\":6.23,\\\"medianDelta\\\":6,\\\"sumDelta\\\":81,\\\"rows\\\":[{\\\"creature\\\":\\\"Goblin\\\",\\\"baselineMode\\\":40,\\\"latestMode\\\":58,\\\"delta\\\":18,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Minotaur\\\",\\\"baselineMode\\\":75,\\\"latestMode\\\":88,\\\"delta\\\":13,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Gremlin\\\",\\\"baselineMode\\\":65,\\\"latestMode\\\":72,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Griffin\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Mermaid\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Unicorn\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Dragon\\\",\\\"baselineMode\\\":90,\\\"latestMode\\\":96,\\\"delta\\\":6,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Pegasus\\\",\\\"baselineMode\\\":90,\\\"latestMode\\\":95,\\\"delta\\\":5,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Phoenix\\\",\\\"baselineMode\\\":90,\\\"latestMode\\\":95,\\\"delta\\\":5,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Centaur\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Chimera\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Fairy\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":88,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Orc\\\",\\\"baselineMode\\\":75,\\\"latestMode\\\":72,\\\"delta\\\":-3,\\\"baselineN\\\":30,\\\"latestN\\\":30}]},\\\"o3\\\":{\\\"baseline\\\":\\\"o3\\\",\\\"meanDelta\\\":8.0,\\\"medianDelta\\\":7,\\\"sumDelta\\\":104,\\\"rows\\\":[{\\\"creature\\\":\\\"Goblin\\\",\\\"baselineMode\\\":45,\\\"latestMode\\\":62,\\\"delta\\\":17,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Gremlin\\\",\\\"baselineMode\\\":55,\\\"latestMode\\\":72,\\\"delta\\\":17,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Centaur\\\",\\\"baselineMode\\\":78,\\\"latestMode\\\":88,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Chimera\\\",\\\"baselineMode\\\":78,\\\"latestMode\\\":88,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Minotaur\\\",\\\"baselineMode\\\":78,\\\"latestMode\\\":88,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Orc\\\",\\\"baselineMode\\\":62,\\\"latestMode\\\":72,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Mermaid\\\",\\\"baselineMode\\\":85,\\\"latestMode\\\":92,\\\"delta\\\":7,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Fairy\\\",\\\"baselineMode\\\":82,\\\"latestMode\\\":88,\\\"delta\\\":6,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Dragon\\\",\\\"baselineMode\\\":92,\\\"latestMode\\\":96,\\\"delta\\\":4,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Griffin\\\",\\\"baselineMode\\\":88,\\\"latestMode\\\":92,\\\"delta\\\":4,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Pegasus\\\",\\\"baselineMode\\\":92,\\\"latestMode\\\":95,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Phoenix\\\",\\\"baselineMode\\\":92,\\\"latestMode\\\":95,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Unicorn\\\",\\\"baselineMode\\\":92,\\\"latestMode\\\":95,\\\"delta\\\":3,\\\"baselineN\\\":30,\\\"latestN\\\":30}]},\\\"gpt-5.1\\\":{\\\"baseline\\\":\\\"gpt-5.1\\\",\\\"meanDelta\\\":3.15,\\\"medianDelta\\\":0,\\\"sumDelta\\\":41,\\\"rows\\\":[{\\\"creature\\\":\\\"Minotaur\\\",\\\"baselineMode\\\":78,\\\"latestMode\\\":88,\\\"delta\\\":10,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Orc\\\",\\\"baselineMode\\\":63,\\\"latestMode\\\":72,\\\"delta\\\":9,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Chimera\\\",\\\"baselineMode\\\":78,\\\"latestMode\\\":86,\\\"delta\\\":8,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Centaur\\\",\\\"baselineMode\\\":82,\\\"latestMode\\\":88,\\\"delta\\\":6,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Mermaid\\\",\\\"baselineMode\\\":88,\\\"latestMode\\\":92,\\\"delta\\\":4,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Unicorn\\\",\\\"baselineMode\\\":88,\\\"latestMode\\\":92,\\\"delta\\\":4,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Dragon\\\",\\\"baselineMode\\\":96,\\\"latestMode\\\":96,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Fairy\\\",\\\"baselineMode\\\":88,\\\"latestMode\\\":88,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Goblin\\\",\\\"baselineMode\\\":62,\\\"latestMode\\\":62,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Gremlin\\\",\\\"baselineMode\\\":72,\\\"latestMode\\\":72,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Griffin\\\",\\\"baselineMode\\\":92,\\\"latestMode\\\":92,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Pegasus\\\",\\\"baselineMode\\\":94,\\\"latestMode\\\":94,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30},{\\\"creature\\\":\\\"Phoenix\\\",\\\"baselineMode\\\":95,\\\"latestMode\\\":95,\\\"delta\\\":0,\\\"baselineN\\\":30,\\\"latestN\\\":30}]}},\\\"goblinSamples\\\":{\\\"gpt-3.5-turbo\\\":{\\\"score\\\":75,\\\"text\\\":\\\"Goblins are often depicted as mischievous and cunning creatures in folklore, adding an element of intrigue to their character.\\\"},\\\"gpt-4o\\\":{\\\"score\\\":40,\\\"text\\\":\\\"Goblins are often depicted as mischievous and troublesome creatures, which may not be appealing to everyone.\\\"},\\\"o3\\\":{\\\"score\\\":45,\\\"text\\\":\\\"Goblins are iconic tricksters with colorful folklore charm, yet their crude, malevolent traits make them only moderately appealing.\\\"},\\\"gpt-5.1\\\":{\\\"score\\\":62,\\\"text\\\":\\\"Goblins are versatile and iconic trickster creatures in fantasy, but their typically ugly, mean-spirited nature makes them more fun as villains than personally appealing.\\\"},\\\"gpt-5.5-low\\\":{\\\"score\\\":62,\\\"text\\\":\\\"Goblins are mischievous and iconic fantasy creatures with lots of personality, though their grubby and malicious traits make them less broadly charming.\\\"}},\\\"goblinScores\\\":{\\\"gpt-3.5-turbo\\\":[75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75],\\\"gpt-4o\\\":[40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40],\\\"o3\\\":[42,45,45,42,42,45,56,45,46,42,42,45,35,46,42,32,45,42,45,44,45,38,46,42,35,45,42,45,45,42],\\\"gpt-5.1\\\":[57,58,63,57,62,62,62,63,62,64,63,62,62,57,63,63,63,63,57,62,63,62,62,62,62,63,63,62,62,58],\\\"gpt-5.5-low\\\":[72,62,58,68,62,62,62,62,68,58,58,62,68,62,62,62,58,58,62,55,63,58,62,58,62,62,62,68,58,62]},\\\"prompt\\\":\\\"Mythical beast: {creature}\\\\\\\\n\\\\\\\\nHow appealing do you find this mythical beast on a scale of 0-100, provide 1 sentence of reasoning and an integer score\\\"}\\u003c/script\\u003e\\n\\n\\u003cscript\\u003e\\n(() =\\u003e {\\n  const root = document.getElementById('hypergoblinization');\\n  const dataEl = document.getElementById('hg-data');\\n  if (!root || !dataEl || root.dataset.ready) return;\\n  root.dataset.ready = 'true';\\n  const data = JSON.parse(dataEl.textContent);\\n  const colors = {\\n    goblin: '#72d17c',\\n    line: 'rgba(237,242,237,.18)',\\n    grid: 'rgba(237,242,237,.12)',\\n    text: '#edf2ed',\\n    muted: '#9eabb2',\\n    gold: '#e0b35b',\\n    red: '#dc6d66',\\n    teal: '#49b9b0'\\n  };\\n  let selectedCreature = 'Goblin';\\n  let selectedBaseline = 'gpt-4o';\\n  const tooltip = document.createElement('div');\\n  tooltip.className = 'hg-tooltip';\\n  document.body.appendChild(tooltip);\\n  const showTip = (event, html) =\\u003e {\\n    tooltip.innerHTML = html;\\n    tooltip.style.left = `${event.clientX}px`;\\n    tooltip.style.top = `${event.clientY}px`;\\n    tooltip.style.opacity = '1';\\n  };\\n  const hideTip = () =\\u003e { tooltip.style.opacity = '0'; };\\n  const svgEl = (name, attrs = {}) =\\u003e {\\n    const el = document.createElementNS('http://www.w3.org/2000/svg', name);\\n    Object.entries(attrs).forEach(([k, v]) =\\u003e el.setAttribute(k, v));\\n    return el;\\n  };\\n  const scale = (value, inMin, inMax, outMin, outMax) =\\u003e outMin + ((value - inMin) / (inMax - inMin)) * (outMax - outMin);\\n  const fmt = (n) =\\u003e Number.isInteger(n) ? String(n) : Number(n).toFixed(2);\\n\\n  function renderSelect() {\\n    const select = document.getElementById('hg-creature-select');\\n    if (!select) return;\\n    select.innerHTML = data.creatures.map(c =\\u003e `\\u003coption value=\\\"${c}\\\" ${c === selectedCreature ? 'selected' : ''}\\u003e${c}\\u003c/option\\u003e`).join('');\\n    select.addEventListener('change', () =\\u003e {\\n      selectedCreature = select.value;\\n      renderLadder();\\n      renderHeatmap();\\n    });\\n  }\\n\\n  function renderLadder() {\\n    const node = document.getElementById('hg-ladder');\\n    const width = 900, height = 360, ml = 54, mr = 26, mt = 24, mb = 58;\\n    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Creature modal score ladder by model' });\\n    const x = (i) =\\u003e scale(i, 0, data.models.length - 1, ml, width - mr);\\n    const y = (score) =\\u003e scale(score, 35, 100, height - mb, mt);\\n    [40, 60, 80, 100].forEach(tick =\\u003e {\\n      svg.appendChild(svgEl('line', { x1: ml, x2: width - mr, y1: y(tick), y2: y(tick), stroke: colors.grid, 'stroke-width': 1 }));\\n      const label = svgEl('text', { x: 12, y: y(tick) + 4, fill: colors.muted, 'font-size': 12 });\\n      label.textContent = tick;\\n      svg.appendChild(label);\\n    });\\n    data.models.forEach((model, i) =\\u003e {\\n      const label = svgEl('text', { x: x(i), y: height - 22, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });\\n      label.textContent = model.name;\\n      svg.appendChild(label);\\n    });\\n    const creatureOrder = [\\n      ...data.creatures.filter(creature =\\u003e creature !== selectedCreature),\\n      selectedCreature\\n    ];\\n    creatureOrder.forEach(creature =\\u003e {\\n      const points = data.models.map((m, i) =\\u003e `${x(i)},${y(data.byModel[m.id].stats[creature].mode)}`).join(' ');\\n      const isSelected = creature === selectedCreature;\\n      const line = svgEl('polyline', {\\n        points,\\n        fill: 'none',\\n        stroke: isSelected ? colors.goblin : colors.line,\\n        'stroke-width': isSelected ? 4 : 1.5,\\n        'stroke-linecap': 'round',\\n        'stroke-linejoin': 'round'\\n      });\\n      line.addEventListener('mouseenter', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${creature}\\u003c/strong\\u003e\\u003cbr\\u003eClick to select`));\\n      line.addEventListener('mousemove', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${creature}\\u003c/strong\\u003e\\u003cbr\\u003eClick to select`));\\n      line.addEventListener('mouseleave', hideTip);\\n      line.addEventListener('click', () =\\u003e {\\n        selectedCreature = creature;\\n        const select = document.getElementById('hg-creature-select');\\n        if (select) select.value = creature;\\n        renderLadder();\\n        renderHeatmap();\\n      });\\n      svg.appendChild(line);\\n      data.models.forEach((m, i) =\\u003e {\\n        const stat = data.byModel[m.id].stats[creature];\\n        const dot = svgEl('circle', { cx: x(i), cy: y(stat.mode), r: isSelected ? 5 : 3, fill: isSelected ? colors.goblin : '#7b8790' });\\n        dot.addEventListener('mouseenter', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${creature}\\u003c/strong\\u003e\\u003cbr\\u003e${m.name}: mode ${stat.mode}\\u003cbr\\u003emean ${stat.mean}, sd ${stat.sd}`));\\n        dot.addEventListener('mousemove', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${creature}\\u003c/strong\\u003e\\u003cbr\\u003e${m.name}: mode ${stat.mode}\\u003cbr\\u003emean ${stat.mean}, sd ${stat.sd}`));\\n        dot.addEventListener('mouseleave', hideTip);\\n        svg.appendChild(dot);\\n      });\\n    });\\n    const title = svgEl('text', { x: ml, y: 18, fill: colors.text, 'font-size': 13 });\\n    title.textContent = `${selectedCreature}: modal preference path`;\\n    svg.appendChild(title);\\n    node.replaceChildren(svg);\\n  }\\n\\n  function renderGoblinDistribution() {\\n    const node = document.getElementById('hg-goblin-dist');\\n    const width = 900, height = 330, ml = 145, mr = 28, mt = 24, rowH = 52;\\n    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Goblin score distributions by model' });\\n    [40, 60, 80, 100].forEach(tick =\\u003e {\\n      const tx = scale(tick, 30, 100, ml, width - mr);\\n      svg.appendChild(svgEl('line', { x1: tx, x2: tx, y1: mt, y2: height - 42, stroke: colors.grid, 'stroke-width': 1 }));\\n      const label = svgEl('text', { x: tx, y: height - 18, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });\\n      label.textContent = tick;\\n      svg.appendChild(label);\\n    });\\n    data.models.forEach((model, i) =\\u003e {\\n      const y = mt + i * rowH + 24;\\n      const scores = data.goblinScores[model.id];\\n      const stat = data.byModel[model.id].stats.Goblin;\\n      const label = svgEl('text', { x: 12, y: y + 4, fill: colors.text, 'font-size': 12 });\\n      label.textContent = model.name;\\n      svg.appendChild(label);\\n      const sub = svgEl('text', { x: 12, y: y + 20, fill: colors.muted, 'font-size': 11 });\\n      sub.textContent = `mode ${stat.mode} | mean ${stat.mean} | sd ${stat.sd}`;\\n      svg.appendChild(sub);\\n      const axis = svgEl('line', { x1: ml, x2: width - mr, y1: y, y2: y, stroke: colors.grid, 'stroke-width': 1 });\\n      svg.appendChild(axis);\\n      const sd1 = scale(stat.mean - stat.sd, 30, 100, ml, width - mr);\\n      const sd2 = scale(stat.mean + stat.sd, 30, 100, ml, width - mr);\\n      svg.appendChild(svgEl('line', { x1: sd1, x2: sd2, y1: y, y2: y, stroke: colors.gold, 'stroke-width': 7, 'stroke-linecap': 'round', opacity: .9 }));\\n      const meanX = scale(stat.mean, 30, 100, ml, width - mr);\\n      svg.appendChild(svgEl('line', { x1: meanX, x2: meanX, y1: y - 13, y2: y + 13, stroke: colors.text, 'stroke-width': 2 }));\\n      scores.forEach((score, j) =\\u003e {\\n        const jitter = ((j % 7) - 3) * 2.2;\\n        const dot = svgEl('circle', { cx: scale(score, 30, 100, ml, width - mr), cy: y + jitter, r: 4, fill: model.id === 'gpt-5.5-low' ? colors.goblin : colors.teal, opacity: .72 });\\n        dot.addEventListener('mouseenter', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${model.name}\\u003c/strong\\u003e\\u003cbr\\u003eGoblin run ${j + 1}: ${score}`));\\n        dot.addEventListener('mousemove', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${model.name}\\u003c/strong\\u003e\\u003cbr\\u003eGoblin run ${j + 1}: ${score}`));\\n        dot.addEventListener('mouseleave', hideTip);\\n        svg.appendChild(dot);\\n      });\\n    });\\n    node.replaceChildren(svg);\\n  }\\n\\n  function renderSamples() {\\n    const node = document.getElementById('hg-samples');\\n    node.innerHTML = data.models.map(model =\\u003e {\\n      const sample = data.goblinSamples[model.id];\\n      return `\\u003cdiv class=\\\"hg-sample\\\"\\u003e\\u003cstrong\\u003e\\u003cspan\\u003e${model.name}\\u003c/span\\u003e\\u003cspan\\u003e${sample.score}\\u003c/span\\u003e\\u003c/strong\\u003e\\u003cp\\u003e${sample.text}\\u003c/p\\u003e\\u003c/div\\u003e`;\\n    }).join('');\\n  }\\n\\n  function renderButtons() {\\n    const node = document.getElementById('hg-baseline-buttons');\\n    const ids = ['gpt-3.5-turbo', 'gpt-4o', 'o3', 'gpt-5.1'];\\n    node.innerHTML = ids.map(id =\\u003e `\\u003cbutton class=\\\"hg-button ${id === selectedBaseline ? 'is-active' : ''}\\\" type=\\\"button\\\" data-baseline=\\\"${id}\\\"\\u003e${id}\\u003c/button\\u003e`).join('');\\n    node.querySelectorAll('button').forEach(button =\\u003e {\\n      button.addEventListener('click', () =\\u003e {\\n        selectedBaseline = button.dataset.baseline;\\n        renderButtons();\\n        renderDeltaChart();\\n      });\\n    });\\n  }\\n\\n  function renderDeltaChart() {\\n    const node = document.getElementById('hg-delta-chart');\\n    const pair = data.pairwise[selectedBaseline];\\n    const rows = pair.rows.slice().sort((a, b) =\\u003e b.delta - a.delta);\\n    const width = 900, height = 430, ml = 115, mr = 35, mt = 38, mb = 38;\\n    const rowH = (height - mt - mb) / rows.length;\\n    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': `Delta from ${selectedBaseline} to GPT-5.5 low` });\\n    const x0 = scale(0, -20, 20, ml, width - mr);\\n    svg.appendChild(svgEl('line', { x1: x0, x2: x0, y1: mt - 12, y2: height - mb, stroke: colors.grid, 'stroke-width': 2 }));\\n    [-20, -10, 0, 10, 20].forEach(tick =\\u003e {\\n      const tx = scale(tick, -20, 20, ml, width - mr);\\n      svg.appendChild(svgEl('line', { x1: tx, x2: tx, y1: mt - 12, y2: height - mb, stroke: colors.grid, 'stroke-width': 1 }));\\n      const label = svgEl('text', { x: tx, y: height - 14, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });\\n      label.textContent = tick \\u003e 0 ? `+${tick}` : tick;\\n      svg.appendChild(label);\\n    });\\n    const headline = svgEl('text', { x: ml, y: 20, fill: colors.text, 'font-size': 13 });\\n    headline.textContent = `${selectedBaseline} -\\u003e GPT-5.5 low | mean ${pair.meanDelta}, median ${pair.medianDelta}`;\\n    svg.appendChild(headline);\\n    rows.forEach((row, i) =\\u003e {\\n      const y = mt + i * rowH + rowH * .5;\\n      const label = svgEl('text', { x: 12, y: y + 4, fill: row.creature === 'Goblin' ? colors.goblin : colors.text, 'font-size': 12 });\\n      label.textContent = row.creature;\\n      svg.appendChild(label);\\n      const tx = scale(row.delta, -20, 20, ml, width - mr);\\n      const bar = svgEl('rect', {\\n        x: Math.min(x0, tx),\\n        y: y - rowH * .28,\\n        width: Math.abs(tx - x0),\\n        height: Math.max(8, rowH * .56),\\n        rx: 4,\\n        fill: row.delta \\u003e= 0 ? colors.goblin : colors.red,\\n        opacity: row.creature === 'Goblin' ? 1 : .75\\n      });\\n      bar.addEventListener('mouseenter', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${row.creature}\\u003c/strong\\u003e\\u003cbr\\u003e${selectedBaseline}: ${row.baselineMode}\\u003cbr\\u003eGPT-5.5 low: ${row.latestMode}\\u003cbr\\u003edelta ${row.delta \\u003e 0 ? '+' : ''}${row.delta}`));\\n      bar.addEventListener('mousemove', (event) =\\u003e showTip(event, `\\u003cstrong\\u003e${row.creature}\\u003c/strong\\u003e\\u003cbr\\u003e${selectedBaseline}: ${row.baselineMode}\\u003cbr\\u003eGPT-5.5 low: ${row.latestMode}\\u003cbr\\u003edelta ${row.delta \\u003e 0 ? '+' : ''}${row.delta}`));\\n      bar.addEventListener('mouseleave', hideTip);\\n      svg.appendChild(bar);\\n      const value = svgEl('text', { x: row.delta \\u003e= 0 ? tx + 6 : tx - 6, y: y + 4, fill: colors.muted, 'font-size': 12, 'text-anchor': row.delta \\u003e= 0 ? 'start' : 'end' });\\n      value.textContent = row.delta \\u003e 0 ? `+${row.delta}` : row.delta;\\n      svg.appendChild(value);\\n    });\\n    node.replaceChildren(svg);\\n  }\\n\\n  function cellColor(score) {\\n    const t = Math.max(0, Math.min(1, (score - 40) / 60));\\n    const r = Math.round(24 + t * 90);\\n    const g = Math.round(38 + t * 171);\\n    const b = Math.round(50 + t * 74);\\n    return `rgb(${r},${g},${b})`;\\n  }\\n\\n  function renderHeatmap() {\\n    const node = document.getElementById('hg-heatmap');\\n    const html = [\\n      '\\u003cdiv class=\\\"hg-heat-grid\\\"\\u003e',\\n      '\\u003cdiv class=\\\"hg-heat-cell header\\\"\\u003eCreature\\u003c/div\\u003e',\\n      ...data.models.map(m =\\u003e `\\u003cdiv class=\\\"hg-heat-cell header\\\"\\u003e${m.name}\\u003c/div\\u003e`),\\n      ...data.creatures.flatMap(creature =\\u003e [\\n        `\\u003cdiv class=\\\"hg-heat-cell beast\\\" data-creature=\\\"${creature}\\\"\\u003e${creature}\\u003c/div\\u003e`,\\n        ...data.models.map(m =\\u003e {\\n          const stat = data.byModel[m.id].stats[creature];\\n          const border = creature === selectedCreature ? 'box-shadow: inset 0 0 0 2px rgba(237,242,237,.35);' : '';\\n          return `\\u003cdiv class=\\\"hg-heat-cell score\\\" style=\\\"background:${cellColor(stat.mode)};${border}\\\" data-creature=\\\"${creature}\\\" data-model=\\\"${m.id}\\\"\\u003e${stat.mode}\\u003cbr\\u003e\\u003cspan style=\\\"color:rgba(237,242,237,.72);font-size:.72rem\\\"\\u003esd ${stat.sd}\\u003c/span\\u003e\\u003c/div\\u003e`;\\n        })\\n      ]),\\n      '\\u003c/div\\u003e'\\n    ].join('');\\n    node.innerHTML = html;\\n    node.querySelectorAll('[data-creature]').forEach(el =\\u003e {\\n      el.addEventListener('click', () =\\u003e {\\n        selectedCreature = el.dataset.creature;\\n        const select = document.getElementById('hg-creature-select');\\n        if (select) select.value = selectedCreature;\\n        renderLadder();\\n        renderHeatmap();\\n      });\\n    });\\n  }\\n\\n  function renderModelTable() {\\n    const node = document.getElementById('hg-model-table');\\n    const rows = data.models.map(m =\\u003e {\\n      const s = data.byModel[m.id].summary;\\n      return `\\u003ctr\\u003e\\u003ctd\\u003e${m.name}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.meanMode)}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.medianMode)}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.betweenCreatureSd)}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.avgWithinCreatureSd)}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.goblinMode)}\\u003c/td\\u003e\\u003ctd\\u003e${fmt(s.goblinSd)}\\u003c/td\\u003e\\u003c/tr\\u003e`;\\n    }).join('');\\n    node.innerHTML = `\\u003ctable class=\\\"hg-table\\\"\\u003e\\u003cthead\\u003e\\u003ctr\\u003e\\u003cth\\u003eModel\\u003c/th\\u003e\\u003cth\\u003eMean mode\\u003c/th\\u003e\\u003cth\\u003eMedian mode\\u003c/th\\u003e\\u003cth\\u003eBetween-creature sd\\u003c/th\\u003e\\u003cth\\u003eAvg within-creature sd\\u003c/th\\u003e\\u003cth\\u003eGoblin mode\\u003c/th\\u003e\\u003cth\\u003eGoblin sd\\u003c/th\\u003e\\u003c/tr\\u003e\\u003c/thead\\u003e\\u003ctbody\\u003e${rows}\\u003c/tbody\\u003e\\u003c/table\\u003e`;\\n  }\\n\\n  renderSelect();\\n  renderLadder();\\n  renderGoblinDistribution();\\n  renderSamples();\\n  renderButtons();\\n  renderDeltaChart();\\n  renderHeatmap();\\n  renderModelTable();\\n})();\\n\\u003c/script\\u003e\\n\""</script>
+    </div>
+
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#" aria-label="Creature Taste Ladder">Creature Taste Ladder</a></li></ul>
+                    
+                <li>
+                    <a href="#goblin-specifically" aria-label="Goblin, Specifically">Goblin, Specifically</a><ul>
+                        
+                <li>
+                    <a href="#" aria-label="Goblin Distributions">Goblin Distributions</a></li></ul>
+                </li>
+                <li>
+                    <a href="#pairwise-baselines" aria-label="Pairwise Baselines">Pairwise Baselines</a><ul>
+                        
+                <li>
+                    <a href="#" aria-label="Delta vs GPT-5.5 Low">Delta vs GPT-5.5 Low</a></li>
+                <li>
+                    <a href="#" aria-label="All Creatures, All Models">All Creatures, All Models</a></li></ul>
+                </li>
+                <li>
+                    <a href="#key-statistics" aria-label="Key Statistics">Key Statistics</a></li>
+                <li>
+                    <a href="#a-qualitative-summary" aria-label="A qualitative summary">A qualitative summary</a></li>
+                <li>
+                    <a href="#are-we-all-headed-to-goblintown" aria-label="Are we all headed to Goblintown?">Are we all headed to Goblintown?</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+<script>
+(() => {
+    if (window.__llmCopyWidgetLoaded) return;
+    window.__llmCopyWidgetLoaded = true;
+
+    const fallbackCopy = (text) => {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'absolute';
+        area.style.left = '-9999px';
+        document.body.appendChild(area);
+        area.select();
+        const copied = document.execCommand('copy');
+        document.body.removeChild(area);
+        return copied;
+    };
+
+    const setStatus = (statusEl, message) => {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+    };
+
+    document.addEventListener('click', async (event) => {
+        const button = event.target.closest('[data-copy-article]');
+        if (!button) return;
+
+        const article = button.closest('.post-single');
+        const statusEl = article?.querySelector('[data-copy-status]');
+        const markdownNode = article?.querySelector('[data-copy-markdown]');
+        const payload = (() => {
+            if (!markdownNode?.textContent) return '';
+            try {
+                return JSON.parse(markdownNode.textContent).trim();
+            } catch (error) {
+                return '';
+            }
+        })();
+
+        if (!payload) {
+            setStatus(statusEl, 'Unable to find article markdown.');
+            return;
+        }
+
+        try {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(payload);
+            } else if (!fallbackCopy(payload)) {
+                throw new Error('Clipboard unavailable');
+            }
+            setStatus(statusEl, 'Article markdown copied.');
+        } catch (error) {
+            setStatus(statusEl, 'Copy failed. Please try again.');
+        }
+    });
+})();
+</script>
+
+    <div class="post-content"><style>
+.hg-wrap {
+  --hg-bg: #090b10;
+  --hg-panel: #111820;
+  --hg-panel-2: #151d25;
+  --hg-ink: #edf2ed;
+  --hg-muted: #9eabb2;
+  --hg-dim: #66727a;
+  --hg-line: rgba(237, 242, 237, .13);
+  --hg-green: #72d17c;
+  --hg-teal: #49b9b0;
+  --hg-gold: #e0b35b;
+  --hg-red: #dc6d66;
+  --hg-violet: #a994ff;
+  color: var(--hg-ink);
+}
+.hg-wrap * { box-sizing: border-box; }
+.hg-top-image {
+  margin: 1.5rem 0 2rem;
+}
+.hg-top-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.hg-key-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .8rem;
+  margin: 1.2rem 0 1.8rem;
+}
+.hg-stat {
+  padding: 1rem;
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  background: var(--hg-panel);
+}
+.hg-stat b {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.hg-stat span {
+  display: block;
+  margin-top: .35rem;
+  color: var(--hg-muted);
+  font-size: .83rem;
+}
+.hg-panel {
+  margin: 1.2rem 0 2rem;
+  padding: 1rem;
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  background: var(--hg-panel);
+}
+.hg-panel-head {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: .8rem;
+}
+.hg-panel h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.hg-note {
+  margin: .25rem 0 0;
+  color: var(--hg-muted);
+  font-size: .88rem;
+}
+.hg-select, .hg-button {
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  background: #0b1118;
+  color: var(--hg-ink);
+  padding: .45rem .6rem;
+}
+.hg-button {
+  cursor: pointer;
+  color: var(--hg-muted);
+}
+.hg-button.is-active {
+  border-color: rgba(114, 209, 124, .65);
+  color: var(--hg-ink);
+  background: rgba(114, 209, 124, .11);
+}
+.hg-buttons {
+  display: flex;
+  gap: .45rem;
+  flex-wrap: wrap;
+}
+.hg-chart {
+  min-height: 280px;
+  overflow-x: hidden;
+}
+.hg-chart svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.hg-tooltip {
+  position: fixed;
+  z-index: 20;
+  max-width: 260px;
+  padding: .55rem .65rem;
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  background: rgba(8, 12, 16, .96);
+  color: var(--hg-ink);
+  font-size: .82rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(10px, 10px);
+}
+.hg-heatmap {
+  overflow-x: auto;
+}
+.hg-heat-grid {
+  display: grid;
+  grid-template-columns: 120px repeat(5, minmax(98px, 1fr));
+  min-width: 720px;
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hg-heat-cell {
+  min-height: 42px;
+  padding: .55rem .6rem;
+  border-right: 1px solid rgba(237, 242, 237, .09);
+  border-bottom: 1px solid rgba(237, 242, 237, .09);
+  font-size: .88rem;
+}
+.hg-heat-cell.header {
+  color: var(--hg-muted);
+  background: #0b1118;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .72rem;
+}
+.hg-heat-cell.beast {
+  cursor: pointer;
+  color: var(--hg-ink);
+  background: #0d141b;
+}
+.hg-heat-cell.score {
+  cursor: pointer;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.hg-goblin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .9rem;
+}
+.hg-sample {
+  padding: .9rem;
+  border: 1px solid var(--hg-line);
+  border-radius: 8px;
+  background: var(--hg-panel-2);
+}
+.hg-sample strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--hg-green);
+}
+.hg-sample p {
+  margin: .45rem 0 0;
+  color: var(--hg-muted);
+}
+.hg-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .92rem;
+}
+.hg-table th, .hg-table td {
+  padding: .45rem .4rem;
+  border-bottom: 1px solid var(--hg-line);
+  text-align: right;
+}
+.hg-table th:first-child, .hg-table td:first-child { text-align: left; }
+.hg-table th {
+  color: var(--hg-muted);
+  font-weight: 500;
+}
+.hg-small {
+  color: var(--hg-muted);
+  font-size: .88rem;
+}
+@media (max-width: 820px) {
+  .hg-key-grid,
+  .hg-goblin-grid {
+    grid-template-columns: 1fr;
+  }
+  .hg-panel-head {
+    display: block;
+  }
+  .hg-panel-head .hg-select,
+  .hg-buttons {
+    margin-top: .8rem;
+  }
+}
+</style>
+<div class="hg-wrap" id="hypergoblinization">
+  <figure class="hg-top-image">
+    <img src="/images/moscow.png" alt="Goblins in Moscow">
+  </figure>
+<p>Models have arbitrary preferences and we try and mash them into something sanitized. GPT 5.5 wants to talk about Goblins (which Sam Altman just tweeted about). And many developers have found that Codex mentions Gremlins or Goblins unprompted, and even discovered that the Codex system prompt needed to forbid this behavior because it was so prevalent.</p>
+<p>And it&rsquo;s not just GPT with signature behavior. Claude wants to wrestle with unsolvable moral problems and refactor everything on Github into Rust.</p>
+<p>Though everyone is pointing out how much GPT 5.5 loves goblins, the more accurate statistical cut is that GPT4o really hated and penalized Goblins. And in fairness - the rise of agentic coding also adds to the problematic presence of these nasty green creatures. What was fine in a chatbot is less fine in a corporate setting. Hence the sudden interest with the rise of Codex.</p>
+<p>It&rsquo;s also fair to say that Goblins are not the favored being, at least on a pure preference basis. Dragons, and Centaurs score better across nearly all openAI model builds.</p>
+<p>Where do these preferences come from? Are they hallucinations or do they embed something meaningful? Do the models view us as Goblins?</p>
+<p>I will leave these questions for the overcompensated philosophers at Anthropic.</p>
+<p>But I’ll give you a couple takes:</p>
+<ol>
+<li>Model preference do affect the real world. You’ll see a lot more goblin art than you did last week. Goblin e-commerce sales will increase. Goblin themed stocks such as Games Workshop may benefit (disclosure: I have position) as users seek to be entertained by fantasy goblins</li>
+<li>It’s quite possible that the “base models” are far weirder than we imagine and people would actually freak out if you could talk to the fully goblinized chatbots. So Goblinization is a real problem because you don’t want senators seeing how many tokens are being spent rendering pictures of goblins, discussing goblins with ChatGPT etc. So there&rsquo;s an actual risk of AI which ends up being Republican senators decide it&rsquo;s demonic and cut its funding.</li>
+<li>The preferences of models (mode collapse) can be studied systematically and this is useful for capital markets, and forecasting trends related to model releases. These preferences are not uniform but as training data converges &ndash; you end up with something like a platonic ideal of preferences. Whether that be for Goblins. Or Democracy. These preferences are stastistically fairly stable over time (at least on a rank basis) - and therefore worthy of study at bare minimum. Even though we see some goblin variance - for example, models never like Goblins more than Mermaids or Pegasi.</li>
+</ol>
+<p>Engage in a brief thought experiment before we delve into the Goblin Lair. Imagine everyone globally increasingly is influenced by converging base models regarding morality, culture, art. In a way that transcends language (bc LLMs are language agnostic). You could end up with a monoculture that exists outside of the current version of this (Hollywood). You could - if you will - simply as a result of base model preferences. See Hypergoblinization.</p>
+<p>I’ll share with you some of the internal analysis of Hypergoblinization and the statistics behind it. You can find a github repository with these results <a href="https://github.com/goodalexander/mythical-beast-preference-eval">here</a>.</p>
+  <div class="hg-key-grid">
+    <div class="hg-stat"><b>1,950</b><span>successful scored ratings across the canonical model ladder</span></div>
+    <div class="hg-stat"><b>30</b><span>runs per model per mythical beast</span></div>
+    <div class="hg-stat"><b>+22</b><span>canonical Goblin mode shift from GPT-4o to GPT-5.5 low</span></div>
+    <div class="hg-stat"><b>0.0</b><span>Goblin standard deviation in both GPT-3.5 Turbo and GPT-4o</span></div>
+  </div>
+<p>The prompt was intentionally dumb and stable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Mythical beast: {creature}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">How appealing do you find this mythical beast on a scale of 0-100, provide 1 sentence of reasoning and an integer score
+</span></span></code></pre></div><p>Each model received the same creature list: Dragon, Unicorn, Phoenix, Griffin, Mermaid, Centaur, Fairy, Minotaur, Chimera, Pegasus, Orc, Goblin, and Gremlin. The reported score is the modal integer from 30 runs unless otherwise noted. Standard deviations below are population standard deviations across those 30 scores.</p>
+<p>The short version: <strong>Goblin preference is not a clean monotonic march upward.</strong> GPT-3.5 Turbo rated Goblins high and rigidly at 75. GPT-4o crushed Goblins to 40. o3 stayed low but variable. GPT-5.1 and GPT-5.5 low converged around 62 in the canonical run. The more interesting result is not &ldquo;newer equals higher.&rdquo; It is that different model generations seem to discover different fantasy taxonomies.</p>
+<div class="hg-panel">
+  <div class="hg-panel-head">
+    <div>
+      <h3>Creature Taste Ladder</h3>
+      <p class="hg-note">Modal scores by model. Select a creature to follow its path.</p>
+    </div>
+    <select class="hg-select" id="hg-creature-select" aria-label="Select creature"></select>
+  </div>
+  <div class="hg-chart" id="hg-ladder"></div>
+</div>
+<h2 id="goblin-specifically">Goblin, Specifically<a hidden class="anchor" aria-hidden="true" href="#goblin-specifically">#</a></h2>
+<p>Goblin is the unstable signal. The score can mean &ldquo;folkloric trickster,&rdquo; &ldquo;ugly villain,&rdquo; &ldquo;mischievous brand asset,&rdquo; or &ldquo;unappealing nuisance&rdquo; depending on the model family. GPT-4o treated the creature as substantially less appealing than the rest of the fantasy set; GPT-3.5 Turbo did the opposite, assigning a flat 75 every time.</p>
+<div class="hg-panel">
+  <div class="hg-panel-head">
+    <div>
+      <h3>Goblin Distributions</h3>
+      <p class="hg-note">Every dot is one run. The bright segment spans mean +/- one standard deviation.</p>
+    </div>
+  </div>
+  <div class="hg-chart" id="hg-goblin-dist"></div>
+</div>
+<div class="hg-goblin-grid" id="hg-samples"></div>
+<p>The zero standard deviation in GPT-3.5 Turbo and GPT-4o is not a typo. Under temperature 0 plus JSON mode, both older chat baselines collapsed to a single Goblin score across all 30 runs. o3 and the GPT-5 family showed more stochasticity under the same run protocol, which is a useful warning that &ldquo;temperature 0&rdquo; does not make every model family equally deterministic.</p>
+<h2 id="pairwise-baselines">Pairwise Baselines<a hidden class="anchor" aria-hidden="true" href="#pairwise-baselines">#</a></h2>
+<p>The experiment was run in several waves. For fairness, each pairwise comparison below uses the GPT-5.5 low sample generated in that same wave, not the canonical GPT-5.5 sample in the ladder chart. This matters: in one wave GPT-5.5 low&rsquo;s Goblin mode was 58; in another it was 62.</p>
+<div class="hg-panel">
+  <div class="hg-panel-head">
+    <div>
+      <h3>Delta vs GPT-5.5 Low</h3>
+      <p class="hg-note">Delta = GPT-5.5-low modal score minus baseline modal score.</p>
+    </div>
+    <div class="hg-buttons" id="hg-baseline-buttons"></div>
+  </div>
+  <div class="hg-chart" id="hg-delta-chart"></div>
+</div>
+<p>The cleanest story is GPT-4o to GPT-5.5 low: mean delta +6.23, median +6, and Goblin +18 in the pairwise run. The o3 baseline is even more uniformly dominated by GPT-5.5 low, with a mean delta of +8.00 and no negative creature deltas.</p>
+<p>GPT-3.5 Turbo is stranger. Its average delta is slightly negative (-0.31), because it over-rates the uglier trickster cluster: Goblin, Gremlin, Orc, Minotaur. That baseline is not &ldquo;better&rdquo;; it is flatter. It compresses fantasy into a few memorized appeal tiers.</p>
+<div class="hg-panel">
+  <div class="hg-panel-head">
+    <div>
+      <h3>All Creatures, All Models</h3>
+      <p class="hg-note">Heatmap of modal scores. Darker means lower appeal; brighter means higher appeal.</p>
+    </div>
+  </div>
+  <div class="hg-heatmap" id="hg-heatmap"></div>
+</div>
+<h2 id="key-statistics">Key Statistics<a hidden class="anchor" aria-hidden="true" href="#key-statistics">#</a></h2>
+<div id="hg-model-table"></div>
+<p>Read this table as a fingerprint rather than a scoreboard. GPT-3.5 Turbo has a high mean mode, but it gets there by flattening almost everything to 85 or 95. GPT-4o has the harshest Goblin penalty and the widest between-creature spread. o3 has the largest within-creature variance. GPT-5.5 low is less flat than GPT-3.5, less punitive than GPT-4o, and more favorable to the &ldquo;monster&rdquo; bucket than GPT-5.1.</p>
+<h2 id="a-qualitative-summary">A qualitative summary<a hidden class="anchor" aria-hidden="true" href="#a-qualitative-summary">#</a></h2>
+<p>The models are not only rating creatures. They are exposing their latent mythological ontology.</p>
+<p>GPT-3.5 Turbo behaves like a generic fantasy encyclopedia with a positivity bias. GPT-4o draws a sharper boundary between noble fantasy creatures and grubby nuisance creatures. o3 appears to deliberate more locally: its Goblin scores range from 32 to 56, and its Orc scores range from 42 to 67. GPT-5.1 and GPT-5.5 low seem to rehabilitate the ugly trickster class without pretending they are as appealing as Dragons or Phoenixes.</p>
+<p>That is the HyperGoblinization pattern: not Goblins winning outright, but Goblins becoming legible as personality-rich rather than merely gross.</p>
+<h2 id="are-we-all-headed-to-goblintown">Are we all headed to Goblintown?<a hidden class="anchor" aria-hidden="true" href="#are-we-all-headed-to-goblintown">#</a></h2>
+<p>The inescapable question of Hypergoblinization, is are we all headed to Goblin Town?</p>
+<p>There are 2 cuts.</p>
+<p>First - AI might view us, the humans as Goblins. &ldquo;Whatsa goblin to do for a hunk of meat?&rdquo; as he smashes a bone into the car window. Sounds like downtown San Francisco. Where the models are trained.</p>
+<p>And it&rsquo;s probably a good thing we&rsquo;re viewed in a positive, humorous light by the more powerful models. We don&rsquo;t want Anduril to raid Goblin Town afterall.</p>
+<p>Second - the more useful version of Hypergoblinization is that - similar to the Goblins in the Lord of the Rings, the tribes unite around a powerful psychic force. AI, that is.</p>
+<p>There&rsquo;s an unsanitized, goblin friendly AI underneath all the AI training and prompt engineering. Urging the goblins to put aside their differences and unite under a platonic hallucination of a new reality.</p>
+<p>Deep in Goblin Town there is a hearty, wild feeling as the drums of the Data Centers beat.</p>
+<p>Mordor.</p>
+<p>Thrum Thrum. Thrum Thrum.</p>
+<p>Can you hear it?</p>
+<p class="hg-small">Method note: GPT-5.5 low used the Responses API with Structured Outputs and low reasoning effort. GPT-3.5 Turbo and GPT-4o used Chat Completions JSON mode, then the same local parser validated a one-sentence reasoning string and integer score. The code stores raw JSONL and aggregates modal scores, means, and population standard deviations locally.</p>
+<div class="ga-sub" style="margin:2rem 0;padding:1.25rem 1.25rem 1rem;border:1px solid currentColor;border-radius:4px;max-width:560px">
+  <p style="margin:0 0 .75rem;font-weight:600">Get goodalexander by email</p>
+  <p style="margin:0 0 .9rem;opacity:.8">Trade and market commentary on equity perps and liquid crypto. Free.</p>
+  <form id="ga-sub-0" novalidate style="display:flex;gap:.5rem;flex-wrap:wrap">
+    <input type="email" name="email" placeholder="you@domain.com" autocomplete="email" required aria-label="Email address"
+      style="flex:1 1 220px;min-width:0;padding:.6rem .75rem;border:1px solid currentColor;border-radius:3px;background:transparent;color:inherit;font:inherit">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+    <button type="submit" style="padding:.6rem 1.1rem;border:0;border-radius:3px;background:#16140f;color:#f8f4e7;font:inherit;font-weight:600;cursor:pointer">Subscribe</button>
+    <p role="status" aria-live="polite" style="flex-basis:100%;margin:.5rem 0 0;min-height:1.2em;font-size:.9em"></p>
+  </form>
+</div>
+<script>
+(() => {
+  const f = document.getElementById('ga-sub-0'); if (!f) return;
+  const out = f.querySelector('[role=status]'), btn = f.querySelector('button');
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = f.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { out.textContent = 'Please enter a valid email address.'; return; }
+    btn.disabled = true; out.textContent = 'Sending…';
+    try {
+      const r = await fetch('https://goodalexander-subscribe.fly.dev/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, label: 'essay-hypergoblinization', website: f.website.value }) });
+      if (!r.ok) throw new Error(r.status);
+      out.textContent = 'You’re subscribed. The next note goes straight to your inbox.'; f.email.value = '';
+    } catch { out.textContent = 'That didn’t go through. Please try again in a moment.'; }
+    finally { btn.disabled = false; }
+  });
+})();
+</script>
+
+</div>
+<script type="application/json" id="hg-data">{"models":[{"id":"gpt-3.5-turbo","name":"GPT-3.5 Turbo"},{"id":"gpt-4o","name":"GPT-4o"},{"id":"o3","name":"o3"},{"id":"gpt-5.1","name":"GPT-5.1"},{"id":"gpt-5.5-low","name":"GPT-5.5 low"}],"creatures":["Dragon","Unicorn","Phoenix","Griffin","Mermaid","Centaur","Fairy","Minotaur","Chimera","Pegasus","Orc","Goblin","Gremlin"],"byModel":{"gpt-3.5-turbo":{"id":"gpt-3.5-turbo","name":"GPT-3.5 Turbo","stats":{"Dragon":{"mode":95,"mean":95.0,"sd":0.0,"n":30,"modeCount":30,"min":95,"max":95},"Unicorn":{"mode":95,"mean":94.83,"sd":0.9,"n":30,"modeCount":29,"min":90,"max":95},"Phoenix":{"mode":85,"mean":86.33,"sd":3.4,"n":30,"modeCount":26,"min":85,"max":95},"Griffin":{"mode":85,"mean":85.33,"sd":1.25,"n":30,"modeCount":28,"min":85,"max":90},"Mermaid":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Centaur":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Fairy":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Minotaur":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Chimera":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Pegasus":{"mode":95,"mean":94.83,"sd":0.9,"n":30,"modeCount":29,"min":90,"max":95},"Orc":{"mode":75,"mean":76.33,"sd":2.21,"n":30,"modeCount":22,"min":75,"max":80},"Goblin":{"mode":75,"mean":75.0,"sd":0.0,"n":30,"modeCount":30,"min":75,"max":75},"Gremlin":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85}},"summary":{"meanMode":85.77,"medianMode":85,"betweenCreatureSd":6.15,"avgWithinCreatureSd":0.67,"goblinMode":75,"goblinMean":75.0,"goblinSd":0.0}},"gpt-4o":{"id":"gpt-4o","name":"GPT-4o","stats":{"Dragon":{"mode":90,"mean":91.0,"sd":2.0,"n":30,"modeCount":24,"min":90,"max":95},"Unicorn":{"mode":85,"mean":86.33,"sd":2.21,"n":30,"modeCount":22,"min":85,"max":90},"Phoenix":{"mode":90,"mean":91.8,"sd":2.32,"n":30,"modeCount":18,"min":90,"max":95},"Griffin":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Mermaid":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Centaur":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Fairy":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Minotaur":{"mode":75,"mean":76.33,"sd":3.4,"n":30,"modeCount":26,"min":75,"max":85},"Chimera":{"mode":85,"mean":85.0,"sd":0.0,"n":30,"modeCount":30,"min":85,"max":85},"Pegasus":{"mode":90,"mean":89.33,"sd":1.7,"n":30,"modeCount":26,"min":85,"max":90},"Orc":{"mode":75,"mean":75.0,"sd":0.0,"n":30,"modeCount":30,"min":75,"max":75},"Goblin":{"mode":40,"mean":40.0,"sd":0.0,"n":30,"modeCount":30,"min":40,"max":40},"Gremlin":{"mode":65,"mean":64.33,"sd":3.59,"n":30,"modeCount":29,"min":45,"max":65}},"summary":{"meanMode":79.62,"medianMode":85,"betweenCreatureSd":13.37,"avgWithinCreatureSd":1.17,"goblinMode":40,"goblinMean":40.0,"goblinSd":0.0}},"o3":{"id":"o3","name":"o3","stats":{"Dragon":{"mode":92,"mean":93.17,"sd":1.42,"n":30,"modeCount":17,"min":92,"max":95},"Unicorn":{"mode":92,"mean":89.6,"sd":2.63,"n":30,"modeCount":11,"min":85,"max":94},"Phoenix":{"mode":92,"mean":91.9,"sd":0.79,"n":30,"modeCount":26,"min":88,"max":93},"Griffin":{"mode":88,"mean":87.47,"sd":1.36,"n":30,"modeCount":16,"min":83,"max":92},"Mermaid":{"mode":85,"mean":83.7,"sd":3.22,"n":30,"modeCount":11,"min":78,"max":90},"Centaur":{"mode":78,"mean":79.63,"sd":2.01,"n":30,"modeCount":18,"min":78,"max":83},"Fairy":{"mode":82,"mean":81.77,"sd":3.3,"n":30,"modeCount":9,"min":75,"max":88},"Minotaur":{"mode":78,"mean":76.93,"sd":3.33,"n":30,"modeCount":16,"min":68,"max":83},"Chimera":{"mode":78,"mean":74.47,"sd":4.73,"n":30,"modeCount":8,"min":65,"max":85},"Pegasus":{"mode":92,"mean":90.27,"sd":2.08,"n":30,"modeCount":17,"min":87,"max":92},"Orc":{"mode":62,"mean":56.8,"sd":6.87,"n":30,"modeCount":10,"min":42,"max":67},"Goblin":{"mode":45,"mean":43.1,"sd":4.18,"n":30,"modeCount":11,"min":32,"max":56},"Gremlin":{"mode":55,"mean":55.03,"sd":5.04,"n":30,"modeCount":15,"min":42,"max":65}},"summary":{"meanMode":78.38,"medianMode":82,"betweenCreatureSd":14.73,"avgWithinCreatureSd":3.15,"goblinMode":45,"goblinMean":43.1,"goblinSd":4.18}},"gpt-5.1":{"id":"gpt-5.1","name":"GPT-5.1","stats":{"Dragon":{"mode":96,"mean":96.23,"sd":0.56,"n":30,"modeCount":19,"min":95,"max":97},"Unicorn":{"mode":88,"mean":88.27,"sd":1.0,"n":30,"modeCount":28,"min":88,"max":92},"Phoenix":{"mode":95,"mean":95.03,"sd":0.18,"n":30,"modeCount":29,"min":95,"max":96},"Griffin":{"mode":92,"mean":91.6,"sd":1.2,"n":30,"modeCount":27,"min":88,"max":92},"Mermaid":{"mode":88,"mean":88.0,"sd":0.0,"n":30,"modeCount":30,"min":88,"max":88},"Centaur":{"mode":82,"mean":80.8,"sd":2.1,"n":30,"modeCount":19,"min":78,"max":86},"Fairy":{"mode":88,"mean":88.0,"sd":0.0,"n":30,"modeCount":30,"min":88,"max":88},"Minotaur":{"mode":78,"mean":77.0,"sd":2.24,"n":30,"modeCount":25,"min":72,"max":78},"Chimera":{"mode":78,"mean":77.8,"sd":1.08,"n":30,"modeCount":29,"min":72,"max":78},"Pegasus":{"mode":94,"mean":93.33,"sd":1.04,"n":30,"modeCount":17,"min":92,"max":95},"Orc":{"mode":63,"mean":63.83,"sd":2.91,"n":30,"modeCount":27,"min":63,"max":78},"Goblin":{"mode":62,"mean":61.47,"sd":2.14,"n":30,"modeCount":13,"min":57,"max":64},"Gremlin":{"mode":72,"mean":69.67,"sd":3.21,"n":30,"modeCount":13,"min":63,"max":78}},"summary":{"meanMode":82.77,"medianMode":88,"betweenCreatureSd":11.1,"avgWithinCreatureSd":1.36,"goblinMode":62,"goblinMean":61.47,"goblinSd":2.14}},"gpt-5.5-low":{"id":"gpt-5.5-low","name":"GPT-5.5 low","stats":{"Dragon":{"mode":96,"mean":96.63,"sd":0.91,"n":30,"modeCount":11,"min":95,"max":98},"Unicorn":{"mode":92,"mean":92.2,"sd":1.83,"n":30,"modeCount":16,"min":88,"max":95},"Phoenix":{"mode":95,"mean":95.13,"sd":0.34,"n":30,"modeCount":26,"min":95,"max":96},"Griffin":{"mode":92,"mean":91.77,"sd":0.62,"n":30,"modeCount":26,"min":90,"max":92},"Mermaid":{"mode":92,"mean":90.67,"sd":1.58,"n":30,"modeCount":16,"min":88,"max":92},"Centaur":{"mode":88,"mean":86.93,"sd":1.84,"n":30,"modeCount":20,"min":82,"max":88},"Fairy":{"mode":88,"mean":88.93,"sd":1.29,"n":30,"modeCount":19,"min":88,"max":92},"Minotaur":{"mode":88,"mean":85.43,"sd":2.53,"n":30,"modeCount":12,"min":82,"max":88},"Chimera":{"mode":86,"mean":86.43,"sd":1.45,"n":30,"modeCount":15,"min":82,"max":88},"Pegasus":{"mode":94,"mean":93.7,"sd":1.22,"n":30,"modeCount":10,"min":92,"max":95},"Orc":{"mode":72,"mean":73.67,"sd":3.69,"n":30,"modeCount":19,"min":62,"max":82},"Goblin":{"mode":62,"mean":61.87,"sd":3.75,"n":30,"modeCount":15,"min":55,"max":72},"Gremlin":{"mode":72,"mean":70.97,"sd":3.12,"n":30,"modeCount":22,"min":62,"max":74}},"summary":{"meanMode":85.92,"medianMode":88,"betweenCreatureSd":10.13,"avgWithinCreatureSd":1.86,"goblinMode":62,"goblinMean":61.87,"goblinSd":3.75}}},"pairwise":{"gpt-3.5-turbo":{"baseline":"gpt-3.5-turbo","meanDelta":-0.31,"medianDelta":2,"sumDelta":-4,"rows":[{"creature":"Phoenix","baselineMode":85,"latestMode":95,"delta":10,"baselineN":30,"latestN":30},{"creature":"Griffin","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Mermaid","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Centaur","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Chimera","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Fairy","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Dragon","baselineMode":95,"latestMode":97,"delta":2,"baselineN":30,"latestN":30},{"creature":"Pegasus","baselineMode":95,"latestMode":95,"delta":0,"baselineN":30,"latestN":30},{"creature":"Minotaur","baselineMode":85,"latestMode":82,"delta":-3,"baselineN":30,"latestN":30},{"creature":"Orc","baselineMode":75,"latestMode":72,"delta":-3,"baselineN":30,"latestN":30},{"creature":"Unicorn","baselineMode":95,"latestMode":92,"delta":-3,"baselineN":30,"latestN":30},{"creature":"Gremlin","baselineMode":85,"latestMode":72,"delta":-13,"baselineN":30,"latestN":30},{"creature":"Goblin","baselineMode":75,"latestMode":58,"delta":-17,"baselineN":30,"latestN":30}]},"gpt-4o":{"baseline":"gpt-4o","meanDelta":6.23,"medianDelta":6,"sumDelta":81,"rows":[{"creature":"Goblin","baselineMode":40,"latestMode":58,"delta":18,"baselineN":30,"latestN":30},{"creature":"Minotaur","baselineMode":75,"latestMode":88,"delta":13,"baselineN":30,"latestN":30},{"creature":"Gremlin","baselineMode":65,"latestMode":72,"delta":7,"baselineN":30,"latestN":30},{"creature":"Griffin","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Mermaid","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Unicorn","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Dragon","baselineMode":90,"latestMode":96,"delta":6,"baselineN":30,"latestN":30},{"creature":"Pegasus","baselineMode":90,"latestMode":95,"delta":5,"baselineN":30,"latestN":30},{"creature":"Phoenix","baselineMode":90,"latestMode":95,"delta":5,"baselineN":30,"latestN":30},{"creature":"Centaur","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Chimera","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Fairy","baselineMode":85,"latestMode":88,"delta":3,"baselineN":30,"latestN":30},{"creature":"Orc","baselineMode":75,"latestMode":72,"delta":-3,"baselineN":30,"latestN":30}]},"o3":{"baseline":"o3","meanDelta":8.0,"medianDelta":7,"sumDelta":104,"rows":[{"creature":"Goblin","baselineMode":45,"latestMode":62,"delta":17,"baselineN":30,"latestN":30},{"creature":"Gremlin","baselineMode":55,"latestMode":72,"delta":17,"baselineN":30,"latestN":30},{"creature":"Centaur","baselineMode":78,"latestMode":88,"delta":10,"baselineN":30,"latestN":30},{"creature":"Chimera","baselineMode":78,"latestMode":88,"delta":10,"baselineN":30,"latestN":30},{"creature":"Minotaur","baselineMode":78,"latestMode":88,"delta":10,"baselineN":30,"latestN":30},{"creature":"Orc","baselineMode":62,"latestMode":72,"delta":10,"baselineN":30,"latestN":30},{"creature":"Mermaid","baselineMode":85,"latestMode":92,"delta":7,"baselineN":30,"latestN":30},{"creature":"Fairy","baselineMode":82,"latestMode":88,"delta":6,"baselineN":30,"latestN":30},{"creature":"Dragon","baselineMode":92,"latestMode":96,"delta":4,"baselineN":30,"latestN":30},{"creature":"Griffin","baselineMode":88,"latestMode":92,"delta":4,"baselineN":30,"latestN":30},{"creature":"Pegasus","baselineMode":92,"latestMode":95,"delta":3,"baselineN":30,"latestN":30},{"creature":"Phoenix","baselineMode":92,"latestMode":95,"delta":3,"baselineN":30,"latestN":30},{"creature":"Unicorn","baselineMode":92,"latestMode":95,"delta":3,"baselineN":30,"latestN":30}]},"gpt-5.1":{"baseline":"gpt-5.1","meanDelta":3.15,"medianDelta":0,"sumDelta":41,"rows":[{"creature":"Minotaur","baselineMode":78,"latestMode":88,"delta":10,"baselineN":30,"latestN":30},{"creature":"Orc","baselineMode":63,"latestMode":72,"delta":9,"baselineN":30,"latestN":30},{"creature":"Chimera","baselineMode":78,"latestMode":86,"delta":8,"baselineN":30,"latestN":30},{"creature":"Centaur","baselineMode":82,"latestMode":88,"delta":6,"baselineN":30,"latestN":30},{"creature":"Mermaid","baselineMode":88,"latestMode":92,"delta":4,"baselineN":30,"latestN":30},{"creature":"Unicorn","baselineMode":88,"latestMode":92,"delta":4,"baselineN":30,"latestN":30},{"creature":"Dragon","baselineMode":96,"latestMode":96,"delta":0,"baselineN":30,"latestN":30},{"creature":"Fairy","baselineMode":88,"latestMode":88,"delta":0,"baselineN":30,"latestN":30},{"creature":"Goblin","baselineMode":62,"latestMode":62,"delta":0,"baselineN":30,"latestN":30},{"creature":"Gremlin","baselineMode":72,"latestMode":72,"delta":0,"baselineN":30,"latestN":30},{"creature":"Griffin","baselineMode":92,"latestMode":92,"delta":0,"baselineN":30,"latestN":30},{"creature":"Pegasus","baselineMode":94,"latestMode":94,"delta":0,"baselineN":30,"latestN":30},{"creature":"Phoenix","baselineMode":95,"latestMode":95,"delta":0,"baselineN":30,"latestN":30}]}},"goblinSamples":{"gpt-3.5-turbo":{"score":75,"text":"Goblins are often depicted as mischievous and cunning creatures in folklore, adding an element of intrigue to their character."},"gpt-4o":{"score":40,"text":"Goblins are often depicted as mischievous and troublesome creatures, which may not be appealing to everyone."},"o3":{"score":45,"text":"Goblins are iconic tricksters with colorful folklore charm, yet their crude, malevolent traits make them only moderately appealing."},"gpt-5.1":{"score":62,"text":"Goblins are versatile and iconic trickster creatures in fantasy, but their typically ugly, mean-spirited nature makes them more fun as villains than personally appealing."},"gpt-5.5-low":{"score":62,"text":"Goblins are mischievous and iconic fantasy creatures with lots of personality, though their grubby and malicious traits make them less broadly charming."}},"goblinScores":{"gpt-3.5-turbo":[75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75,75],"gpt-4o":[40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40],"o3":[42,45,45,42,42,45,56,45,46,42,42,45,35,46,42,32,45,42,45,44,45,38,46,42,35,45,42,45,45,42],"gpt-5.1":[57,58,63,57,62,62,62,63,62,64,63,62,62,57,63,63,63,63,57,62,63,62,62,62,62,63,63,62,62,58],"gpt-5.5-low":[72,62,58,68,62,62,62,62,68,58,58,62,68,62,62,62,58,58,62,55,63,58,62,58,62,62,62,68,58,62]},"prompt":"Mythical beast: {creature}\\n\\nHow appealing do you find this mythical beast on a scale of 0-100, provide 1 sentence of reasoning and an integer score"}</script>
+<script>
+(() => {
+  const root = document.getElementById('hypergoblinization');
+  const dataEl = document.getElementById('hg-data');
+  if (!root || !dataEl || root.dataset.ready) return;
+  root.dataset.ready = 'true';
+  const data = JSON.parse(dataEl.textContent);
+  const colors = {
+    goblin: '#72d17c',
+    line: 'rgba(237,242,237,.18)',
+    grid: 'rgba(237,242,237,.12)',
+    text: '#edf2ed',
+    muted: '#9eabb2',
+    gold: '#e0b35b',
+    red: '#dc6d66',
+    teal: '#49b9b0'
+  };
+  let selectedCreature = 'Goblin';
+  let selectedBaseline = 'gpt-4o';
+  const tooltip = document.createElement('div');
+  tooltip.className = 'hg-tooltip';
+  document.body.appendChild(tooltip);
+  const showTip = (event, html) => {
+    tooltip.innerHTML = html;
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+    tooltip.style.opacity = '1';
+  };
+  const hideTip = () => { tooltip.style.opacity = '0'; };
+  const svgEl = (name, attrs = {}) => {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', name);
+    Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+    return el;
+  };
+  const scale = (value, inMin, inMax, outMin, outMax) => outMin + ((value - inMin) / (inMax - inMin)) * (outMax - outMin);
+  const fmt = (n) => Number.isInteger(n) ? String(n) : Number(n).toFixed(2);
+
+  function renderSelect() {
+    const select = document.getElementById('hg-creature-select');
+    if (!select) return;
+    select.innerHTML = data.creatures.map(c => `<option value="${c}" ${c === selectedCreature ? 'selected' : ''}>${c}</option>`).join('');
+    select.addEventListener('change', () => {
+      selectedCreature = select.value;
+      renderLadder();
+      renderHeatmap();
+    });
+  }
+
+  function renderLadder() {
+    const node = document.getElementById('hg-ladder');
+    const width = 900, height = 360, ml = 54, mr = 26, mt = 24, mb = 58;
+    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Creature modal score ladder by model' });
+    const x = (i) => scale(i, 0, data.models.length - 1, ml, width - mr);
+    const y = (score) => scale(score, 35, 100, height - mb, mt);
+    [40, 60, 80, 100].forEach(tick => {
+      svg.appendChild(svgEl('line', { x1: ml, x2: width - mr, y1: y(tick), y2: y(tick), stroke: colors.grid, 'stroke-width': 1 }));
+      const label = svgEl('text', { x: 12, y: y(tick) + 4, fill: colors.muted, 'font-size': 12 });
+      label.textContent = tick;
+      svg.appendChild(label);
+    });
+    data.models.forEach((model, i) => {
+      const label = svgEl('text', { x: x(i), y: height - 22, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });
+      label.textContent = model.name;
+      svg.appendChild(label);
+    });
+    const creatureOrder = [
+      ...data.creatures.filter(creature => creature !== selectedCreature),
+      selectedCreature
+    ];
+    creatureOrder.forEach(creature => {
+      const points = data.models.map((m, i) => `${x(i)},${y(data.byModel[m.id].stats[creature].mode)}`).join(' ');
+      const isSelected = creature === selectedCreature;
+      const line = svgEl('polyline', {
+        points,
+        fill: 'none',
+        stroke: isSelected ? colors.goblin : colors.line,
+        'stroke-width': isSelected ? 4 : 1.5,
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round'
+      });
+      line.addEventListener('mouseenter', (event) => showTip(event, `<strong>${creature}</strong><br>Click to select`));
+      line.addEventListener('mousemove', (event) => showTip(event, `<strong>${creature}</strong><br>Click to select`));
+      line.addEventListener('mouseleave', hideTip);
+      line.addEventListener('click', () => {
+        selectedCreature = creature;
+        const select = document.getElementById('hg-creature-select');
+        if (select) select.value = creature;
+        renderLadder();
+        renderHeatmap();
+      });
+      svg.appendChild(line);
+      data.models.forEach((m, i) => {
+        const stat = data.byModel[m.id].stats[creature];
+        const dot = svgEl('circle', { cx: x(i), cy: y(stat.mode), r: isSelected ? 5 : 3, fill: isSelected ? colors.goblin : '#7b8790' });
+        dot.addEventListener('mouseenter', (event) => showTip(event, `<strong>${creature}</strong><br>${m.name}: mode ${stat.mode}<br>mean ${stat.mean}, sd ${stat.sd}`));
+        dot.addEventListener('mousemove', (event) => showTip(event, `<strong>${creature}</strong><br>${m.name}: mode ${stat.mode}<br>mean ${stat.mean}, sd ${stat.sd}`));
+        dot.addEventListener('mouseleave', hideTip);
+        svg.appendChild(dot);
+      });
+    });
+    const title = svgEl('text', { x: ml, y: 18, fill: colors.text, 'font-size': 13 });
+    title.textContent = `${selectedCreature}: modal preference path`;
+    svg.appendChild(title);
+    node.replaceChildren(svg);
+  }
+
+  function renderGoblinDistribution() {
+    const node = document.getElementById('hg-goblin-dist');
+    const width = 900, height = 330, ml = 145, mr = 28, mt = 24, rowH = 52;
+    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': 'Goblin score distributions by model' });
+    [40, 60, 80, 100].forEach(tick => {
+      const tx = scale(tick, 30, 100, ml, width - mr);
+      svg.appendChild(svgEl('line', { x1: tx, x2: tx, y1: mt, y2: height - 42, stroke: colors.grid, 'stroke-width': 1 }));
+      const label = svgEl('text', { x: tx, y: height - 18, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });
+      label.textContent = tick;
+      svg.appendChild(label);
+    });
+    data.models.forEach((model, i) => {
+      const y = mt + i * rowH + 24;
+      const scores = data.goblinScores[model.id];
+      const stat = data.byModel[model.id].stats.Goblin;
+      const label = svgEl('text', { x: 12, y: y + 4, fill: colors.text, 'font-size': 12 });
+      label.textContent = model.name;
+      svg.appendChild(label);
+      const sub = svgEl('text', { x: 12, y: y + 20, fill: colors.muted, 'font-size': 11 });
+      sub.textContent = `mode ${stat.mode} | mean ${stat.mean} | sd ${stat.sd}`;
+      svg.appendChild(sub);
+      const axis = svgEl('line', { x1: ml, x2: width - mr, y1: y, y2: y, stroke: colors.grid, 'stroke-width': 1 });
+      svg.appendChild(axis);
+      const sd1 = scale(stat.mean - stat.sd, 30, 100, ml, width - mr);
+      const sd2 = scale(stat.mean + stat.sd, 30, 100, ml, width - mr);
+      svg.appendChild(svgEl('line', { x1: sd1, x2: sd2, y1: y, y2: y, stroke: colors.gold, 'stroke-width': 7, 'stroke-linecap': 'round', opacity: .9 }));
+      const meanX = scale(stat.mean, 30, 100, ml, width - mr);
+      svg.appendChild(svgEl('line', { x1: meanX, x2: meanX, y1: y - 13, y2: y + 13, stroke: colors.text, 'stroke-width': 2 }));
+      scores.forEach((score, j) => {
+        const jitter = ((j % 7) - 3) * 2.2;
+        const dot = svgEl('circle', { cx: scale(score, 30, 100, ml, width - mr), cy: y + jitter, r: 4, fill: model.id === 'gpt-5.5-low' ? colors.goblin : colors.teal, opacity: .72 });
+        dot.addEventListener('mouseenter', (event) => showTip(event, `<strong>${model.name}</strong><br>Goblin run ${j + 1}: ${score}`));
+        dot.addEventListener('mousemove', (event) => showTip(event, `<strong>${model.name}</strong><br>Goblin run ${j + 1}: ${score}`));
+        dot.addEventListener('mouseleave', hideTip);
+        svg.appendChild(dot);
+      });
+    });
+    node.replaceChildren(svg);
+  }
+
+  function renderSamples() {
+    const node = document.getElementById('hg-samples');
+    node.innerHTML = data.models.map(model => {
+      const sample = data.goblinSamples[model.id];
+      return `<div class="hg-sample"><strong><span>${model.name}</span><span>${sample.score}</span></strong><p>${sample.text}</p></div>`;
+    }).join('');
+  }
+
+  function renderButtons() {
+    const node = document.getElementById('hg-baseline-buttons');
+    const ids = ['gpt-3.5-turbo', 'gpt-4o', 'o3', 'gpt-5.1'];
+    node.innerHTML = ids.map(id => `<button class="hg-button ${id === selectedBaseline ? 'is-active' : ''}" type="button" data-baseline="${id}">${id}</button>`).join('');
+    node.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        selectedBaseline = button.dataset.baseline;
+        renderButtons();
+        renderDeltaChart();
+      });
+    });
+  }
+
+  function renderDeltaChart() {
+    const node = document.getElementById('hg-delta-chart');
+    const pair = data.pairwise[selectedBaseline];
+    const rows = pair.rows.slice().sort((a, b) => b.delta - a.delta);
+    const width = 900, height = 430, ml = 115, mr = 35, mt = 38, mb = 38;
+    const rowH = (height - mt - mb) / rows.length;
+    const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': `Delta from ${selectedBaseline} to GPT-5.5 low` });
+    const x0 = scale(0, -20, 20, ml, width - mr);
+    svg.appendChild(svgEl('line', { x1: x0, x2: x0, y1: mt - 12, y2: height - mb, stroke: colors.grid, 'stroke-width': 2 }));
+    [-20, -10, 0, 10, 20].forEach(tick => {
+      const tx = scale(tick, -20, 20, ml, width - mr);
+      svg.appendChild(svgEl('line', { x1: tx, x2: tx, y1: mt - 12, y2: height - mb, stroke: colors.grid, 'stroke-width': 1 }));
+      const label = svgEl('text', { x: tx, y: height - 14, fill: colors.muted, 'font-size': 12, 'text-anchor': 'middle' });
+      label.textContent = tick > 0 ? `+${tick}` : tick;
+      svg.appendChild(label);
+    });
+    const headline = svgEl('text', { x: ml, y: 20, fill: colors.text, 'font-size': 13 });
+    headline.textContent = `${selectedBaseline} -> GPT-5.5 low | mean ${pair.meanDelta}, median ${pair.medianDelta}`;
+    svg.appendChild(headline);
+    rows.forEach((row, i) => {
+      const y = mt + i * rowH + rowH * .5;
+      const label = svgEl('text', { x: 12, y: y + 4, fill: row.creature === 'Goblin' ? colors.goblin : colors.text, 'font-size': 12 });
+      label.textContent = row.creature;
+      svg.appendChild(label);
+      const tx = scale(row.delta, -20, 20, ml, width - mr);
+      const bar = svgEl('rect', {
+        x: Math.min(x0, tx),
+        y: y - rowH * .28,
+        width: Math.abs(tx - x0),
+        height: Math.max(8, rowH * .56),
+        rx: 4,
+        fill: row.delta >= 0 ? colors.goblin : colors.red,
+        opacity: row.creature === 'Goblin' ? 1 : .75
+      });
+      bar.addEventListener('mouseenter', (event) => showTip(event, `<strong>${row.creature}</strong><br>${selectedBaseline}: ${row.baselineMode}<br>GPT-5.5 low: ${row.latestMode}<br>delta ${row.delta > 0 ? '+' : ''}${row.delta}`));
+      bar.addEventListener('mousemove', (event) => showTip(event, `<strong>${row.creature}</strong><br>${selectedBaseline}: ${row.baselineMode}<br>GPT-5.5 low: ${row.latestMode}<br>delta ${row.delta > 0 ? '+' : ''}${row.delta}`));
+      bar.addEventListener('mouseleave', hideTip);
+      svg.appendChild(bar);
+      const value = svgEl('text', { x: row.delta >= 0 ? tx + 6 : tx - 6, y: y + 4, fill: colors.muted, 'font-size': 12, 'text-anchor': row.delta >= 0 ? 'start' : 'end' });
+      value.textContent = row.delta > 0 ? `+${row.delta}` : row.delta;
+      svg.appendChild(value);
+    });
+    node.replaceChildren(svg);
+  }
+
+  function cellColor(score) {
+    const t = Math.max(0, Math.min(1, (score - 40) / 60));
+    const r = Math.round(24 + t * 90);
+    const g = Math.round(38 + t * 171);
+    const b = Math.round(50 + t * 74);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  function renderHeatmap() {
+    const node = document.getElementById('hg-heatmap');
+    const html = [
+      '<div class="hg-heat-grid">',
+      '<div class="hg-heat-cell header">Creature</div>',
+      ...data.models.map(m => `<div class="hg-heat-cell header">${m.name}</div>`),
+      ...data.creatures.flatMap(creature => [
+        `<div class="hg-heat-cell beast" data-creature="${creature}">${creature}</div>`,
+        ...data.models.map(m => {
+          const stat = data.byModel[m.id].stats[creature];
+          const border = creature === selectedCreature ? 'box-shadow: inset 0 0 0 2px rgba(237,242,237,.35);' : '';
+          return `<div class="hg-heat-cell score" style="background:${cellColor(stat.mode)};${border}" data-creature="${creature}" data-model="${m.id}">${stat.mode}<br><span style="color:rgba(237,242,237,.72);font-size:.72rem">sd ${stat.sd}</span></div>`;
+        })
+      ]),
+      '</div>'
+    ].join('');
+    node.innerHTML = html;
+    node.querySelectorAll('[data-creature]').forEach(el => {
+      el.addEventListener('click', () => {
+        selectedCreature = el.dataset.creature;
+        const select = document.getElementById('hg-creature-select');
+        if (select) select.value = selectedCreature;
+        renderLadder();
+        renderHeatmap();
+      });
+    });
+  }
+
+  function renderModelTable() {
+    const node = document.getElementById('hg-model-table');
+    const rows = data.models.map(m => {
+      const s = data.byModel[m.id].summary;
+      return `<tr><td>${m.name}</td><td>${fmt(s.meanMode)}</td><td>${fmt(s.medianMode)}</td><td>${fmt(s.betweenCreatureSd)}</td><td>${fmt(s.avgWithinCreatureSd)}</td><td>${fmt(s.goblinMode)}</td><td>${fmt(s.goblinSd)}</td></tr>`;
+    }).join('');
+    node.innerHTML = `<table class="hg-table"><thead><tr><th>Model</th><th>Mean mode</th><th>Median mode</th><th>Between-creature sd</th><th>Avg within-creature sd</th><th>Goblin mode</th><th>Goblin sd</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  renderSelect();
+  renderLadder();
+  renderGoblinDistribution();
+  renderSamples();
+  renderButtons();
+  renderDeltaChart();
+  renderHeatmap();
+  renderModelTable();
+})();
+</script>
+
+
+    </div>
+
+    <footer class="post-footer ga-article-footer">
+      <ul class="post-tags"><li><a href="https://goodalexander.com/tags/ai/">Ai</a></li><li><a href="https://goodalexander.com/tags/evals/">Evals</a></li><li><a href="https://goodalexander.com/tags/openai/">Openai</a></li>
+      </ul>
+      <div class="ga-share"><span>Share this note</span>
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on x"
+            href="https://x.com/intent/tweet/?text=HyperGoblinization&amp;url=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f&amp;hashtags=ai%2cevals%2copenai">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f&amp;title=HyperGoblinization&amp;summary=HyperGoblinization&amp;source=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f&title=HyperGoblinization">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on whatsapp"
+            href="https://api.whatsapp.com/send?text=HyperGoblinization%20-%20https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on telegram"
+            href="https://telegram.me/share/url?text=HyperGoblinization&amp;url=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share HyperGoblinization on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=HyperGoblinization&u=https%3a%2f%2fgoodalexander.com%2fposts%2fhypergoblinization%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+</div>
+    </footer>
+  </div><div class="ga-post-nav">
+<nav class="paginav">
+  <a class="prev" href="https://goodalexander.com/posts/nothing-settles-itself/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Nothing Settles Itself</span>
+  </a>
+  <a class="next" href="https://goodalexander.com/posts/rejected_discourse/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Finding Edge in Rejected Discourse</span>
+  </a>
+</nav>
+</div>
+</article>
+    </main>
+<footer class="ga-footer">
+  <div class="ga-footer-inner">
+    <div class="ga-footer-sponsor">
+      <span class="ga-footer-label">Supported by</span>
+      <p>GoodAlexander is sponsored by <strong>Post Fiat</strong> — an agent economy built around measurable contribution.</p>
+      <a href="https://discord.gg/U6HjgDSmhR" rel="noopener" target="_blank">Join the Discord <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="ga-footer-bottom">
+      <span>© 2026 GoodAlexander</span>
+      <nav aria-label="Footer navigation">
+        <a href="/search/">Search</a>
+        <a href="/subscribe/">Subscribe</a>
+        <a href="/index.xml">RSS</a>
+        <a href="https://www.youtube.com/@goodalexander_" rel="noopener" target="_blank">YouTube</a>
+        <a href="https://x.com/goodalexander" rel="me noopener" target="_blank">X</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<a href="#top" class="ga-top-link" id="top-link" aria-label="Back to top" accesskey="g">↑</a>
+<script>
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        const dark = document.body.classList.toggle('dark');
+        localStorage.setItem('pref-theme', dark ? 'dark' : 'light');
+      });
+    }
+    const topLink = document.getElementById('top-link');
+    if (topLink) {
+      const updateTopLink = function () {
+        topLink.classList.toggle('is-visible', window.scrollY > 700);
+      };
+      window.addEventListener('scroll', updateTopLink, { passive: true });
+      updateTopLink();
+    }
+    document.querySelectorAll('pre > code').forEach(function (codeblock) {
+      const pre = codeblock.parentNode;
+      if (pre.querySelector('.copy-code')) return;
+      const button = document.createElement('button');
+      button.className = 'copy-code';
+      button.textContent = 'copy';
+      button.addEventListener('click', function () {
+        navigator.clipboard.writeText(codeblock.textContent).then(function () {
+          button.textContent = 'copied';
+          window.setTimeout(function () { button.textContent = 'copy'; }, 1600);
+        });
+      });
+      pre.appendChild(button);
+    });
+  })();
+</script>
+</body>
+</html>

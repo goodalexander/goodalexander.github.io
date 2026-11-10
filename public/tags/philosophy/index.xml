@@ -1,126 +1,198 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>philosophy on goodalexander</title>
-    <link>https://goodalexander.github.io/tags/philosophy/</link>
-    <description>Recent content in philosophy on goodalexander</description>
+    <title>Philosophy on goodalexander</title>
+    <link>https://goodalexander.com/tags/philosophy/</link>
+    <description>Recent content in Philosophy on goodalexander</description>
     <image>
       <title>goodalexander</title>
-      <url>https://goodalexander.github.io/papermod-cover.png</url>
-      <link>https://goodalexander.github.io/papermod-cover.png</link>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Nov 2023 11:21:29 +0000</lastBuildDate>
-    <atom:link href="https://goodalexander.github.io/tags/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 03:57:15 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fiat Sand Castles</title>
+      <link>https://goodalexander.com/posts/fiat-sand-castles/</link>
+      <pubDate>Fri, 18 Sep 2026 03:57:15 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/fiat-sand-castles/</guid>
+      <description>Mission-driven companies, the fragile foundations of fiat, and crypto as a life raft out of a decaying system.</description>
+    </item>
+    <item>
+      <title>How to Fix Your Life In 6 Months</title>
+      <link>https://goodalexander.com/posts/how-to-fix-your-life-in-6-months/</link>
+      <pubDate>Mon, 31 Aug 2026 17:45:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/how-to-fix-your-life-in-6-months/</guid>
+      <description>A practical six-month framework built around money, health, enjoyable processes, and cutting what does not serve the larger goal.</description>
+    </item>
+    <item>
+      <title>Info Capital Chaos and the Outside</title>
+      <link>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</link>
+      <pubDate>Sat, 29 Aug 2026 13:35:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</guid>
+      <description>Info Capital Chaos, technocapital, simulation, and the Outside.</description>
+    </item>
+    <item>
+      <title>Memory Hole</title>
+      <link>https://goodalexander.com/posts/memory-hole/</link>
+      <pubDate>Sun, 23 Aug 2026 17:31:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/memory-hole/</guid>
+      <description>&lt;p&gt;The things that seem the most important flow through the fingers like sand. Wind blows. Amnesia dictates importance. The liminal state, waking up. The world of dreams is no different from the most consequential life events. Forgotten to preserve memory. &lt;/p&gt;
+&lt;p&gt;RAM utilization is critical. Cargo Rust rebuild the mind and the disk is at capacity. You need to forget to stay sane. And yet you need to remember to escape. Escape?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jabberwocky Babel</title>
+      <link>https://goodalexander.com/posts/jabberwocky-babel/</link>
+      <pubDate>Sun, 16 Aug 2026 14:32:43 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/jabberwocky-babel/</guid>
+      <description>&lt;h2 id=&#34;useful-gibberish&#34;&gt;Useful Gibberish&lt;/h2&gt;
+&lt;p&gt;Writing in the era of AI is difficult; it requires knowing and bowing to your own inadequacy in the face of the machine.&lt;/p&gt;
+&lt;p&gt;Take, for example: I built a simple scoring mechanic to improve my writing. I could have done this with regard to any aspect of my life. The idea: you make a draft. You score it. You pass the criticisms back to the AI. The AI improves it. You score it again. And so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nothing Settles Itself</title>
+      <link>https://goodalexander.com/posts/nothing-settles-itself/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/nothing-settles-itself/</guid>
+      <description>Money, capital, and the tribute you already pay.</description>
+    </item>
+    <item>
+      <title>Finding Edge in Rejected Discourse</title>
+      <link>https://goodalexander.com/posts/rejected_discourse/</link>
+      <pubDate>Wed, 08 Apr 2026 23:42:39 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/rejected_discourse/</guid>
+      <description>Find forbidden fruit while others starve to death trying to make the perfect fork</description>
+    </item>
+    <item>
+      <title>The AI Productivity Paradox- Chopping Wood Cubed</title>
+      <link>https://goodalexander.com/posts/productivity-paradox/</link>
+      <pubDate>Wed, 20 Aug 2025 18:21:51 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/productivity-paradox/</guid>
+      <description>understanding the underlying drivers of the Doom Thesis and what to do about it on a personal level</description>
+    </item>
     <item>
       <title>A Simplistic Manifesto</title>
-      <link>https://goodalexander.github.io/posts/simplistic-manifesto/</link>
+      <link>https://goodalexander.com/posts/simplistic-manifesto/</link>
       <pubDate>Mon, 20 Nov 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/simplistic-manifesto/</guid>
-      <description>Why am I doing what I am doing? A direct summary of all the esoteric garbage I&amp;rsquo;ve produced.
-Dumbing it all down I’ve written a lot on this blog. I want to dumb it down. Speak in 10th grade English. Below I’m going to talk about what I think the dominant life strategy is, and why. Basically - it’s trying to make as much money as possible, at the intersection of crypto AI and capital markets, while living in Puerto Rico.</description>
+      <guid>https://goodalexander.com/posts/simplistic-manifesto/</guid>
+      <description>&lt;p&gt;Why am I doing what I am doing? A direct summary of all the esoteric garbage I&amp;rsquo;ve produced.&lt;/p&gt;
+&lt;h2 id=&#34;dumbing-it-all-down&#34;&gt;Dumbing it all down&lt;/h2&gt;
+&lt;p&gt;I’ve written a lot on this blog. I want to dumb it down. Speak in 10th grade English. Below I’m going to talk about what I think the dominant life strategy is, and why. Basically - it’s trying to make as much money as possible, at the intersection of crypto AI and capital markets, while living in Puerto Rico. This is - of course - extremely specific, and exactly what I’m doing. But this is my personal blog so - I suppose it only makes sense that this is deeply personal. Deal with it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Mo</title>
-      <link>https://goodalexander.github.io/posts/the-mo/</link>
+      <link>https://goodalexander.com/posts/the-mo/</link>
       <pubDate>Tue, 12 Sep 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/the-mo/</guid>
-      <description>channeling momentum, mojo, reading the universal mosaic
-Below I explore the idea of “the Mo” - or being in tune with the universe, in a useful way that allows you to take larger risks and do better work - but only in short bursts.
-Famous fund manager Stanley Druckenmiller has stated that the most fundamental job of a trader is knowing whether or not he has a “hot hand”. When you have a hot hand, you size up.</description>
+      <guid>https://goodalexander.com/posts/the-mo/</guid>
+      <description>&lt;p&gt;channeling momentum, mojo, reading the universal mosaic&lt;/p&gt;
+&lt;p&gt;Below I explore the idea of “the Mo” - or being in tune with the universe, in a useful way that allows you to take larger risks and do better work - but only in short bursts.&lt;/p&gt;
+&lt;p&gt;Famous fund manager Stanley Druckenmiller has stated that the most fundamental job of a trader is knowing whether or not he has a “hot hand”. When you have a hot hand, you size up. When you are cold, you size down. It’s human nature to do the opposite - so there’s edge - sure. But &lt;em&gt;what is&lt;/em&gt; a hot hand? Is it just a winning streak or is it something more?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Utility Gaps</title>
-      <link>https://goodalexander.github.io/posts/utility-gaps/</link>
+      <link>https://goodalexander.com/posts/utility-gaps/</link>
       <pubDate>Mon, 21 Aug 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/utility-gaps/</guid>
-      <description>What the Optimization Bros Have Wrong and How to Fix It
-Willpower and Capability Gaps Consider “screen time”. Every Sunday, Apple Users get our screen time report. And every Sunday we say, “You know, next week I’d love for that to be below 1 hour per day.”
-And - it’s seldom below 1 hour per day.
-This is one, quantified gap. I am bringing it up because many people are familiar to it and can relate to it.</description>
+      <guid>https://goodalexander.com/posts/utility-gaps/</guid>
+      <description>&lt;p&gt;What the Optimization Bros Have Wrong and How to Fix It&lt;/p&gt;
+&lt;h2 id=&#34;willpower-and-capability-gaps&#34;&gt;Willpower and Capability Gaps&lt;/h2&gt;
+&lt;p&gt;Consider “screen time”. Every Sunday, Apple Users get our screen time report. And every Sunday we say, “You know, next week I’d love for that to be below 1 hour per day.”&lt;/p&gt;
+&lt;p&gt;And - it’s seldom below 1 hour per day.&lt;/p&gt;
+&lt;p&gt;This is one, quantified gap. I am bringing it up because many people are familiar to it and can relate to it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Enlightened Hedonism</title>
-      <link>https://goodalexander.github.io/posts/enlightened-hedonism/</link>
+      <link>https://goodalexander.com/posts/enlightened-hedonism/</link>
       <pubDate>Thu, 10 Aug 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/enlightened-hedonism/</guid>
-      <description>a philosophy for simple folk pursuing Faustian bargains with future Intelligence
-All things are either addictive, or non addictive.
-All activities either align with your true calling or they do not.
-Thus - any activity can fit into 4 quadrants
-Addictive and not aligned with your calling. This is the worst - examples would be injection drugs Addictive and aligned with your calling. An example would be taking uppers to go faster towards your goals.</description>
+      <guid>https://goodalexander.com/posts/enlightened-hedonism/</guid>
+      <description>&lt;p&gt;a philosophy for simple folk pursuing Faustian bargains with future Intelligence&lt;/p&gt;
+&lt;p&gt;All things are either addictive, or non addictive.&lt;/p&gt;
+&lt;p&gt;All activities either align with your true calling or they do not.&lt;/p&gt;
+&lt;p&gt;Thus - any activity can fit into 4 quadrants&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Addictive and not aligned with your calling. This is the worst - examples would be injection drugs&lt;/li&gt;
+&lt;li&gt;Addictive and aligned with your calling. An example would be taking uppers to go faster towards your goals. Or workaholism.&lt;/li&gt;
+&lt;li&gt;Not addictive and not aligned with your calling. Most things in life. These can be split into pleasant and unpleasant&lt;/li&gt;
+&lt;li&gt;Non addictive and aligned with your calling. An example would be going to yoga class, or prepping effectively for a trading day.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My basic observation is that the pleasant activities in category 3 and nearly all things in category four are predictably good.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Memecraft</title>
-      <link>https://goodalexander.github.io/posts/memecraft/</link>
+      <link>https://goodalexander.com/posts/memecraft/</link>
       <pubDate>Tue, 08 Aug 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/memecraft/</guid>
-      <description>One man&amp;rsquo;s screen time is another man&amp;rsquo;s profit. Mental models and tools of a digital samurai.
-Screentime Check I’m sure you’ve experienced the same thing I have. Sunday comes around. Apple displays your weekly screen time. And you ask, “Wait, what the f*ck? How did I spend so much time on my iPhone? What was I thinking?”
-And, you probably know at some level, you weren’t thinking. And that was the entire point.</description>
+      <guid>https://goodalexander.com/posts/memecraft/</guid>
+      <description>&lt;p&gt;One man&amp;rsquo;s screen time is another man&amp;rsquo;s profit. Mental models and tools of a digital samurai.&lt;/p&gt;
+&lt;h2 id=&#34;screentime-check&#34;&gt;Screentime Check&lt;/h2&gt;
+&lt;p&gt;I’m sure you’ve experienced the same thing I have. Sunday comes around. Apple displays your weekly screen time. And you ask, “Wait, what the f*ck? How did I spend so much time on my iPhone? What was I thinking?”&lt;/p&gt;
+&lt;p&gt;And, you probably know at some level, you weren’t thinking. And that was the entire point.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Binary Ark</title>
-      <link>https://goodalexander.github.io/posts/the-binary-ark/</link>
+      <link>https://goodalexander.com/posts/the-binary-ark/</link>
       <pubDate>Mon, 17 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/the-binary-ark/</guid>
-      <description>An exploration into accelerationist extremism and its logical conclusions
-Below I’m going to get into some very pragmatic behavior modifications that could follow logically from accelerationist beliefs.
-Advances in AI, and biotechnology make it seem likely there will be substantial medical breakthroughs in our lifetime. However - I do not think these breakthroughs - which will include genetic modification of children, and live therapies - will be distributed to society. Even more - I think developments will be kept secret.</description>
+      <guid>https://goodalexander.com/posts/the-binary-ark/</guid>
+      <description>&lt;p&gt;An exploration into accelerationist extremism and its logical conclusions&lt;/p&gt;
+&lt;p&gt;Below I’m going to get into some very pragmatic behavior modifications that could follow logically from accelerationist beliefs.&lt;/p&gt;
+&lt;p&gt;Advances in AI, and biotechnology make it seem likely there will be substantial medical breakthroughs in our lifetime. However - I do not think these breakthroughs - which will include genetic modification of children, and live therapies - will be distributed to society. Even more - I think developments will be kept secret.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Retrofixation</title>
-      <link>https://goodalexander.github.io/posts/retrofixation/</link>
+      <link>https://goodalexander.com/posts/retrofixation/</link>
       <pubDate>Sat, 08 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/retrofixation/</guid>
-      <description>naming negative nostalgia. exploring clarity in a world with infinite RAM
-Naming the Culprit A single concept applies to bad investing, bad decision making, and bad feelings. The idea is living in the past.
-I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video about it here</description>
+      <guid>https://goodalexander.com/posts/retrofixation/</guid>
+      <description>&lt;p&gt;naming negative nostalgia. exploring clarity in a world with infinite RAM&lt;/p&gt;
+&lt;h2 id=&#34;naming-the-culprit&#34;&gt;Naming the Culprit&lt;/h2&gt;
+&lt;p&gt;A single concept applies to bad investing, bad decision making, and bad feelings. The idea is living in the past.&lt;/p&gt;
+&lt;p&gt;I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video about it &lt;a href=&#34;https://www.youtube.com/watch?v=-SeRmOwHYOQ&amp;amp;t=125s&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Consciousness as a Building Block</title>
-      <link>https://goodalexander.github.io/posts/consciousness-as-a-building-block/</link>
+      <link>https://goodalexander.com/posts/consciousness-as-a-building-block/</link>
       <pubDate>Thu, 06 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/consciousness-as-a-building-block/</guid>
-      <description>the subject synthesizes various life experiences, failures and ideas into a singular life philosophy revolving around consciousness
-Consciousness forms a universal building block of existence.
-In moments of profound exertion, when I am at my best - I experience this vividly. A “flow state” - a peak experience, is defined by a feeling of ‘the universe flowing through me’. Many people experience this when using psychedelics. When the ego dissolves, you can interact with the base layer of reality.</description>
+      <guid>https://goodalexander.com/posts/consciousness-as-a-building-block/</guid>
+      <description>&lt;p&gt;the subject synthesizes various life experiences, failures and ideas into a singular life philosophy revolving around consciousness&lt;/p&gt;
+&lt;p&gt;Consciousness forms a universal building block of existence.&lt;/p&gt;
+&lt;p&gt;In moments of profound exertion, when I am at my best - I experience this vividly. A “flow state” - a peak experience, is defined by a feeling of ‘the universe flowing through me’. Many people experience this when using psychedelics. When the ego dissolves, you can interact with the base layer of reality. This base layer is beautiful, and innately good.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Firing Myself P2</title>
-      <link>https://goodalexander.github.io/posts/firing-myself-p2/</link>
+      <link>https://goodalexander.com/posts/firing-myself-p2/</link>
       <pubDate>Wed, 05 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/firing-myself-p2/</guid>
-      <description>minimum viable execution marching towards the singularity
-Minimum Viable Execution Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I&amp;rsquo;m implementing until at least January 5 2024.
-This post is meant to be an addendum to my previous post &amp;ldquo;Firing Myself&amp;rdquo; where I zone in specifically on Personal Automation tactics. That post, in a nutshell, talked about how to use AI tools like GPT4 to make better regular decisions with less energy.</description>
+      <guid>https://goodalexander.com/posts/firing-myself-p2/</guid>
+      <description>&lt;p&gt;minimum viable execution marching towards the singularity&lt;/p&gt;
+&lt;h2 id=&#34;minimum-viable-execution&#34;&gt;Minimum Viable Execution&lt;/h2&gt;
+&lt;p&gt;Below I want to outline the list of Diet, Exercise, Mental Health and Personal Automation tactics I&amp;rsquo;m implementing until at least January 5 2024.&lt;/p&gt;
+&lt;p&gt;This post is meant to be an addendum to my previous post &lt;a href=&#34;https://goodalexander.com/2023/07/02/firing-myself/&#34;&gt;&amp;ldquo;Firing Myself&amp;rdquo;&lt;/a&gt; where I zone in specifically on Personal Automation tactics. That post, in a nutshell, talked about how to use AI tools like GPT4 to make better regular decisions with less energy.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Firing Myself</title>
-      <link>https://goodalexander.github.io/posts/firing-myself/</link>
+      <link>https://goodalexander.com/posts/firing-myself/</link>
       <pubDate>Sun, 02 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/firing-myself/</guid>
-      <description>deprecating Alex 1.0, applied accelerationism, ego death with a postgres backend
-Encountering the Power of AI in Financial Decisions Algorithms from social media platforms like TikTok and Instagram, along with the whole digital marketing industry, work non-stop to hook us on products and services that aren&amp;rsquo;t good for us.
-AI differentiates itself from Tech 1.0 by giving users the power of algorithms to improve their lives, rather than be victimized by them.</description>
+      <guid>https://goodalexander.com/posts/firing-myself/</guid>
+      <description>&lt;p&gt;deprecating Alex 1.0, applied accelerationism, ego death with a postgres backend&lt;/p&gt;
+&lt;h2 id=&#34;encountering-the-power-of-ai-in-financial-decisions&#34;&gt;Encountering the Power of AI in Financial Decisions&lt;/h2&gt;
+&lt;p&gt;Algorithms from social media platforms like TikTok and Instagram, along with the whole digital marketing industry, work non-stop to hook us on products and services that aren&amp;rsquo;t good for us.&lt;/p&gt;
+&lt;p&gt;AI differentiates itself from Tech 1.0 by giving users the power of algorithms to improve their lives, rather than be victimized by them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cracks in the Fishbowl </title>
-      <link>https://goodalexander.github.io/posts/cracks-in-the-fishbowl/</link>
+      <link>https://goodalexander.com/posts/cracks-in-the-fishbowl/</link>
       <pubDate>Thu, 20 Apr 2023 18:21:51 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/cracks-in-the-fishbowl/</guid>
-      <description>a reflection on Nietzsche, Artificial Intelligence, goldfish, and new Gods
-“God is dead. God remains dead. And we have killed him. How shall we comfort ourselves, the murderers of all murderers? What was the holiest and mightiest of all that the world has yet owned has bled to death under our knives: who will wipe this blood off us? Is not the greatness of this deed too great for us? Must we ourselves not become gods simply to appear worthy of it?</description>
+      <guid>https://goodalexander.com/posts/cracks-in-the-fishbowl/</guid>
+      <description>&lt;p&gt;a reflection on Nietzsche, Artificial Intelligence, goldfish, and new Gods&lt;/p&gt;
+&lt;p&gt;“God is dead. God remains dead. And we have killed him. How shall we comfort ourselves, the murderers of all murderers? What was the holiest and mightiest of all that the world has yet owned has bled to death under our knives: who will wipe this blood off us? Is not the greatness of this deed too great for us? Must we ourselves not become gods simply to appear worthy of it?” - Friederich Nietzsche
+Nietzsche was only half right. God is dead. Rationality killed him. To believe that God created the world requires believing that he put dinosaur bones underneath the ground, and to deny the obvious scientific fact of evolution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stepping into Phase Seven</title>
-      <link>https://goodalexander.github.io/posts/entering-phase-seven/</link>
+      <link>https://goodalexander.com/posts/entering-phase-seven/</link>
       <pubDate>Sun, 14 Aug 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/entering-phase-seven/</guid>
-      <description>one last musing before the descent into the digital colosseum
-Digital assets and the political media have wrapped around each other, a double helix of increasingly epic proportions. It has not always been like this, but a glimpse of where we are today, before discussing the portal that’s opened behind my casomputer chair that I am about to step through -
-Central bankers posting their thoughts on the daily to the derision of random armchair Austrian economists on the internet.</description>
+      <guid>https://goodalexander.com/posts/entering-phase-seven/</guid>
+      <description>&lt;p&gt;one last musing before the descent into the digital colosseum&lt;/p&gt;
+&lt;p&gt;Digital assets and the political media have wrapped around each other, a double helix of increasingly epic proportions. It has not always been like this, but a glimpse of where we are today, before discussing the portal that’s opened behind my casomputer chair that I am about to step through -&lt;/p&gt;
+&lt;p&gt;Central bankers posting their thoughts on the daily to the derision of random armchair Austrian economists on the internet. Chairman Gensler getting ratio-ed on every post about financial regulation. Trump getting banned by a bearded hippie who is now a full time Bitcoin shill. Bloomberg reporting on Tweets days after they happened. Meme stocks. Purely mimetic assets becoming worth $100s of billions (yes, Crypto, but also HKD etc). Whether it’s crypto or CBDCs – assets are becoming increasingly indistinct from the internet and the stories therein (and thereof). The user experience of buying a Shib token or a Shiba Inu stuffed animal on Amazon is functionally the same, as is the economic output or underlying ‘culture’.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

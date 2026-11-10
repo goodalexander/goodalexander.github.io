@@ -1,40 +1,188 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>markets on goodalexander</title>
-    <link>https://goodalexander.github.io/categories/markets/</link>
-    <description>Recent content in markets on goodalexander</description>
+    <title>Markets on goodalexander</title>
+    <link>https://goodalexander.com/categories/markets/</link>
+    <description>Recent content in Markets on goodalexander</description>
     <image>
       <title>goodalexander</title>
-      <url>https://goodalexander.github.io/papermod-cover.png</url>
-      <link>https://goodalexander.github.io/papermod-cover.png</link>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Dec 2023 11:21:29 +0000</lastBuildDate>
-    <atom:link href="https://goodalexander.github.io/categories/markets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Sep 2026 21:36:01 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/categories/markets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tokenization and the Road to Financial RSI</title>
+      <link>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</link>
+      <pubDate>Thu, 17 Sep 2026 21:36:01 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</guid>
+      <description>Sovereign debt, stablecoins, privacy, and the path from tokenized stocks to autonomous on-chain capital.</description>
+    </item>
+    <item>
+      <title>The AI Hail Mary</title>
+      <link>https://goodalexander.com/posts/the-ai-hail-mary/</link>
+      <pubDate>Tue, 15 Sep 2026 02:17:33 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-ai-hail-mary/</guid>
+      <description>Why weak real-world productivity makes AI investment more desperate and the spending harder to stop.</description>
+    </item>
+    <item>
+      <title>SEC Regulation Crypto Assets: A Plain-English Primer</title>
+      <link>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</link>
+      <pubDate>Thu, 20 Aug 2026 16:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</guid>
+      <description>What the SEC’s proposed startup exemption, fundraising exemption, Form TR safe harbor, and state preemption would actually do.</description>
+    </item>
+    <item>
+      <title>Societal-Level Investment, Societal-Level Returns</title>
+      <link>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</link>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</guid>
+      <description>If you have societal-level investment, you are accountable for societal-level returns.</description>
+    </item>
+    <item>
+      <title>HyperGoblinization</title>
+      <link>https://goodalexander.com/posts/hypergoblinization/</link>
+      <pubDate>Tue, 28 Apr 2026 23:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/hypergoblinization/</guid>
+      <description>Putting numbers around goblin preferences in advancing OpenAI models.</description>
+    </item>
+    <item>
+      <title>Why Crypto Isn&#39;t Over But Maybe Society Is (One Shot Series II)</title>
+      <link>https://goodalexander.com/posts/crypto_isnt_over/</link>
+      <pubDate>Thu, 18 Dec 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/crypto_isnt_over/</guid>
+      <description>Part 2 in AI generated text experiment designed to cause extreme consciousness changes in consumers</description>
+    </item>
+    <item>
+      <title>The Great Unraveling (One Shot Series I)</title>
+      <link>https://goodalexander.com/posts/the_one_shot_series/</link>
+      <pubDate>Fri, 28 Nov 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the_one_shot_series/</guid>
+      <description>Part 1 in AI generated text experiment designed to cause extreme consciousness changes in consumers</description>
+    </item>
+    <item>
+      <title>Hyperstitional Vortex</title>
+      <link>https://goodalexander.com/posts/hyperstitional_vortex/</link>
+      <pubDate>Wed, 19 Nov 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/hyperstitional_vortex/</guid>
+      <description>That which was shall be once more, if not at first then just before</description>
+    </item>
+    <item>
+      <title>AI Apes Together Strong</title>
+      <link>https://goodalexander.com/posts/ai_apes_together/</link>
+      <pubDate>Sun, 21 Sep 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/ai_apes_together/</guid>
+      <description>My simplified thesis for a never ending speculative mania that is now a matter of national security</description>
+    </item>
+    <item>
+      <title>The AI Productivity Paradox- Chopping Wood Cubed</title>
+      <link>https://goodalexander.com/posts/productivity-paradox/</link>
+      <pubDate>Wed, 20 Aug 2025 18:21:51 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/productivity-paradox/</guid>
+      <description>understanding the underlying drivers of the Doom Thesis and what to do about it on a personal level</description>
+    </item>
+    <item>
+      <title>On Not Selling</title>
+      <link>https://goodalexander.com/posts/not-selling/</link>
+      <pubDate>Fri, 29 Nov 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/not-selling/</guid>
+      <description>On the fundamental role of building an economic network</description>
+    </item>
+    <item>
+      <title>Murad Meta and AI Cult Coins</title>
+      <link>https://goodalexander.com/posts/murad_meta_ai_cult/</link>
+      <pubDate>Sat, 12 Oct 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/murad_meta_ai_cult/</guid>
+      <description>How the Murad Meta inevitably transitions to AI cults</description>
+    </item>
+    <item>
+      <title>The Ten Principles for Crypto Network Development / Investment</title>
+      <link>https://goodalexander.com/posts/ten-principles-crypto/</link>
+      <pubDate>Thu, 10 Oct 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/ten-principles-crypto/</guid>
+      <description>A year in, core qualitative evaluation principles for both own projects / investments</description>
+    </item>
+    <item>
+      <title>The Flat Circle Portfolio</title>
+      <link>https://goodalexander.com/posts/the-flat-circle-portfolio/</link>
+      <pubDate>Wed, 02 Oct 2024 10:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-flat-circle-portfolio/</guid>
+      <description>Monetizing the ouroborous economy</description>
+    </item>
+    <item>
+      <title>Levelsio, Amazon Sellers, and the New 4 Hour Workweek</title>
+      <link>https://goodalexander.com/posts/levels-and-four-hww/</link>
+      <pubDate>Thu, 29 Aug 2024 10:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/levels-and-four-hww/</guid>
+      <description>AI as a sociocultural movement that enables solo entrepreneurs and bootstrappers</description>
+    </item>
+    <item>
+      <title>The Story of Taran</title>
+      <link>https://goodalexander.com/posts/story-of-taran/</link>
+      <pubDate>Wed, 15 May 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/story-of-taran/</guid>
+      <description>A short story about Kona Blue and other esoteric topics</description>
+    </item>
+    <item>
+      <title>Nineteen Ninety Three</title>
+      <link>https://goodalexander.com/posts/nineteen-ninety-three/</link>
+      <pubDate>Wed, 17 Apr 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/nineteen-ninety-three/</guid>
+      <description>The end of nostalgia</description>
+    </item>
+    <item>
+      <title>Agentic Protocols</title>
+      <link>https://goodalexander.com/posts/agentic-protocols/</link>
+      <pubDate>Sat, 06 Apr 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/agentic-protocols/</guid>
+      <description>Crypto With Cash Flow. Fleeing The ARKK</description>
+    </item>
+    <item>
+      <title>The Big Whoosh</title>
+      <link>https://goodalexander.com/posts/the-big-whoosh/</link>
+      <pubDate>Wed, 20 Mar 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-big-whoosh/</guid>
+      <description>brain drain innate to how small the real AI workforce is</description>
+    </item>
+    <item>
+      <title>Deep Dive on Bittensor (TAO)</title>
+      <link>https://goodalexander.com/posts/bittensor-tao-deep-dive/</link>
+      <pubDate>Sun, 07 Jan 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/bittensor-tao-deep-dive/</guid>
+      <description>First Coin Deep Dive: Bittensor/ Tao</description>
+    </item>
     <item>
       <title>The Blackprint - A Manifesto for the New World Order</title>
-      <link>https://goodalexander.github.io/posts/the-blackprint/</link>
+      <link>https://goodalexander.com/posts/the-blackprint/</link>
       <pubDate>Thu, 28 Dec 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/the-blackprint/</guid>
+      <guid>https://goodalexander.com/posts/the-blackprint/</guid>
       <description>how to survive and thrive in the post nation-state AI driven reality</description>
     </item>
     <item>
       <title>Asylum Sidepots. How to Escape the Matrix and Stay Out</title>
-      <link>https://goodalexander.github.io/posts/asylum-sidepots/</link>
+      <link>https://goodalexander.com/posts/asylum-sidepots/</link>
       <pubDate>Sat, 05 Aug 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/asylum-sidepots/</guid>
-      <description>Escaping the socio-spiritual prison from the starting position of a speculator
-Sidepots in the Asylum When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc.
-My father is a renegade. He viewed markets as a way to escape the simulation.</description>
+      <guid>https://goodalexander.com/posts/asylum-sidepots/</guid>
+      <description>&lt;p&gt;Escaping the socio-spiritual prison from the starting position of a speculator&lt;/p&gt;
+&lt;h2 id=&#34;sidepots-in-the-asylum&#34;&gt;Sidepots in the Asylum&lt;/h2&gt;
+&lt;p&gt;When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc.&lt;/p&gt;
+&lt;p&gt;My father is a renegade. He viewed markets as a way to escape the simulation. He wasn’t around much but he did buy us long leather jackets and took us all to watch the Movie the Matrix at a formative age.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Absurdity Supercycle- Being Early After the End of History</title>
-      <link>https://goodalexander.github.io/posts/absurdity-supercycle/</link>
+      <link>https://goodalexander.com/posts/absurdity-supercycle/</link>
       <pubDate>Sun, 20 Feb 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/absurdity-supercycle/</guid>
+      <guid>https://goodalexander.com/posts/absurdity-supercycle/</guid>
       <description>reflections on recent price action, ARK investments, Palantir, and crypto</description>
+    </item>
+    <item>
+      <title>The Nigeria Template</title>
+      <link>https://goodalexander.com/posts/the-nigeria-template/</link>
+      <pubDate>Sun, 20 Feb 2022 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-nigeria-template/</guid>
+      <description>migration crises lead to populism lead to asset confiscation leads to crypto going up</description>
     </item>
   </channel>
 </rss>

@@ -2,22 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on goodalexander</title>
-    <link>https://goodalexander.github.io/categories/</link>
+    <link>https://goodalexander.com/categories/</link>
     <description>Recent content in Categories on goodalexander</description>
     <image>
       <title>goodalexander</title>
-      <url>https://goodalexander.github.io/papermod-cover.png</url>
-      <link>https://goodalexander.github.io/papermod-cover.png</link>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Dec 2023 11:21:29 +0000</lastBuildDate>
-    <atom:link href="https://goodalexander.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 03:57:15 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>markets</title>
-      <link>https://goodalexander.github.io/categories/markets/</link>
-      <pubDate>Thu, 28 Dec 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/categories/markets/</guid>
+      <title>Philosophy</title>
+      <link>https://goodalexander.com/categories/philosophy/</link>
+      <pubDate>Fri, 18 Sep 2026 03:57:15 +0000</pubDate>
+      <guid>https://goodalexander.com/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markets</title>
+      <link>https://goodalexander.com/categories/markets/</link>
+      <pubDate>Thu, 17 Sep 2026 21:36:01 +0000</pubDate>
+      <guid>https://goodalexander.com/categories/markets/</guid>
       <description></description>
     </item>
   </channel>

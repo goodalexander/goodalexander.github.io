@@ -1,155 +1,373 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>markets on goodalexander</title>
-    <link>https://goodalexander.github.io/tags/markets/</link>
-    <description>Recent content in markets on goodalexander</description>
+    <title>Markets on goodalexander</title>
+    <link>https://goodalexander.com/tags/markets/</link>
+    <description>Recent content in Markets on goodalexander</description>
     <image>
       <title>goodalexander</title>
-      <url>https://goodalexander.github.io/papermod-cover.png</url>
-      <link>https://goodalexander.github.io/papermod-cover.png</link>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Dec 2023 11:21:29 +0000</lastBuildDate>
-    <atom:link href="https://goodalexander.github.io/tags/markets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 03:57:15 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/markets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fiat Sand Castles</title>
+      <link>https://goodalexander.com/posts/fiat-sand-castles/</link>
+      <pubDate>Fri, 18 Sep 2026 03:57:15 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/fiat-sand-castles/</guid>
+      <description>Mission-driven companies, the fragile foundations of fiat, and crypto as a life raft out of a decaying system.</description>
+    </item>
+    <item>
+      <title>Tokenization and the Road to Financial RSI</title>
+      <link>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</link>
+      <pubDate>Thu, 17 Sep 2026 21:36:01 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</guid>
+      <description>Sovereign debt, stablecoins, privacy, and the path from tokenized stocks to autonomous on-chain capital.</description>
+    </item>
+    <item>
+      <title>The AI Hail Mary</title>
+      <link>https://goodalexander.com/posts/the-ai-hail-mary/</link>
+      <pubDate>Tue, 15 Sep 2026 02:17:33 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-ai-hail-mary/</guid>
+      <description>Why weak real-world productivity makes AI investment more desperate and the spending harder to stop.</description>
+    </item>
+    <item>
+      <title>Societal-Level Investment, Societal-Level Returns</title>
+      <link>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</link>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</guid>
+      <description>If you have societal-level investment, you are accountable for societal-level returns.</description>
+    </item>
+    <item>
+      <title>Nothing Settles Itself</title>
+      <link>https://goodalexander.com/posts/nothing-settles-itself/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/nothing-settles-itself/</guid>
+      <description>Money, capital, and the tribute you already pay.</description>
+    </item>
+    <item>
+      <title>Finding Edge in Rejected Discourse</title>
+      <link>https://goodalexander.com/posts/rejected_discourse/</link>
+      <pubDate>Wed, 08 Apr 2026 23:42:39 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/rejected_discourse/</guid>
+      <description>Find forbidden fruit while others starve to death trying to make the perfect fork</description>
+    </item>
+    <item>
+      <title>The AI Productivity Paradox- Chopping Wood Cubed</title>
+      <link>https://goodalexander.com/posts/productivity-paradox/</link>
+      <pubDate>Wed, 20 Aug 2025 18:21:51 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/productivity-paradox/</guid>
+      <description>understanding the underlying drivers of the Doom Thesis and what to do about it on a personal level</description>
+    </item>
+    <item>
+      <title>On Not Selling</title>
+      <link>https://goodalexander.com/posts/not-selling/</link>
+      <pubDate>Fri, 29 Nov 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/not-selling/</guid>
+      <description>On the fundamental role of building an economic network</description>
+    </item>
+    <item>
+      <title>Murad Meta and AI Cult Coins</title>
+      <link>https://goodalexander.com/posts/murad_meta_ai_cult/</link>
+      <pubDate>Sat, 12 Oct 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/murad_meta_ai_cult/</guid>
+      <description>How the Murad Meta inevitably transitions to AI cults</description>
+    </item>
+    <item>
+      <title>The Ten Principles for Crypto Network Development / Investment</title>
+      <link>https://goodalexander.com/posts/ten-principles-crypto/</link>
+      <pubDate>Thu, 10 Oct 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/ten-principles-crypto/</guid>
+      <description>A year in, core qualitative evaluation principles for both own projects / investments</description>
+    </item>
+    <item>
+      <title>The Flat Circle Portfolio</title>
+      <link>https://goodalexander.com/posts/the-flat-circle-portfolio/</link>
+      <pubDate>Wed, 02 Oct 2024 10:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-flat-circle-portfolio/</guid>
+      <description>Monetizing the ouroborous economy</description>
+    </item>
+    <item>
+      <title>Levelsio, Amazon Sellers, and the New 4 Hour Workweek</title>
+      <link>https://goodalexander.com/posts/levels-and-four-hww/</link>
+      <pubDate>Thu, 29 Aug 2024 10:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/levels-and-four-hww/</guid>
+      <description>AI as a sociocultural movement that enables solo entrepreneurs and bootstrappers</description>
+    </item>
+    <item>
+      <title>The Big Whoosh</title>
+      <link>https://goodalexander.com/posts/the-big-whoosh/</link>
+      <pubDate>Wed, 20 Mar 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-big-whoosh/</guid>
+      <description>brain drain innate to how small the real AI workforce is</description>
+    </item>
     <item>
       <title>What Do Markets Mean to Me</title>
-      <link>https://goodalexander.github.io/posts/investment-philosophy/</link>
+      <link>https://goodalexander.com/posts/investment-philosophy/</link>
       <pubDate>Tue, 12 Dec 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/investment-philosophy/</guid>
-      <description>My Investment Philosophy as Best as I can explain. dfuq do I actually do
-A lot of people think I’m “insane” or “on drugs”, per Twitter discourse .I want to explain what I do for a living and how it all fits together.
-Everything Is Rigged First - I believe the market is rigged. There isn’t a printer that goes brr. Central Banks buy assets - bonds, and sometimes ETFs. Credit instruments and equities sensitive to credit rates get influenced by the daily actions of central banks.</description>
+      <guid>https://goodalexander.com/posts/investment-philosophy/</guid>
+      <description>&lt;p&gt;My Investment Philosophy as Best as I can explain. dfuq do I actually do&lt;/p&gt;
+&lt;p&gt;A lot of people think I’m “insane” or “on drugs”, per Twitter discourse .I want to explain what I do for a living and how it all fits together.&lt;/p&gt;
+&lt;h2 id=&#34;everything-is-rigged&#34;&gt;Everything Is Rigged&lt;/h2&gt;
+&lt;p&gt;First - I believe the market is rigged. There isn’t a printer that goes brr. Central Banks buy assets - bonds, and sometimes ETFs. Credit instruments and equities sensitive to credit rates get influenced by the daily actions of central banks. So I go and read about what Central Banks say they’re going to buy. Then I design strategies to detect if they’re doing something stupid regarding their purchases. And - if possible, I front-run them.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Left Curve Path</title>
-      <link>https://goodalexander.github.io/posts/left-curve-path/</link>
+      <link>https://goodalexander.com/posts/left-curve-path/</link>
       <pubDate>Sat, 02 Dec 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/left-curve-path/</guid>
-      <description>AI Good. Fiat Bad. What&amp;rsquo;s your plan, anon?
-What Is The Left Curve Most internet denizens know this meme by now&amp;hellip; but, for reference
-It pays to keep it really simple.
-The Morpheus Bull A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money.
-Because the nature of money is changing.</description>
+      <guid>https://goodalexander.com/posts/left-curve-path/</guid>
+      <description>&lt;p&gt;AI Good. Fiat Bad. What&amp;rsquo;s your plan, anon?&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-left-curve&#34;&gt;What Is The Left Curve&lt;/h2&gt;
+&lt;p&gt;Most internet denizens know this meme by now&amp;hellip; but, for reference&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://goodalexander.com/images/AIGOOD.png&#34; alt=&#34;LeftCurve&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;It pays to keep it really simple.&lt;/p&gt;
+&lt;h2 id=&#34;the-morpheus-bull&#34;&gt;The Morpheus Bull&lt;/h2&gt;
+&lt;p&gt;A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money.&lt;/p&gt;
+&lt;p&gt;Because the nature of money is changing. If the real “Bull” arrives it’s actually the Fiat “bear”. That is to say - governments thought adding endless debt was a free lunch but it’s increasingly accelerating into an untenable situation. And the only way to deal with it is by pretending you’re borrowing at low rates, and inappropriately easy monetary policy in the face of obvious inflation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Simplistic Manifesto</title>
-      <link>https://goodalexander.github.io/posts/simplistic-manifesto/</link>
+      <link>https://goodalexander.com/posts/simplistic-manifesto/</link>
       <pubDate>Mon, 20 Nov 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/simplistic-manifesto/</guid>
-      <description>Why am I doing what I am doing? A direct summary of all the esoteric garbage I&amp;rsquo;ve produced.
-Dumbing it all down I’ve written a lot on this blog. I want to dumb it down. Speak in 10th grade English. Below I’m going to talk about what I think the dominant life strategy is, and why. Basically - it’s trying to make as much money as possible, at the intersection of crypto AI and capital markets, while living in Puerto Rico.</description>
+      <guid>https://goodalexander.com/posts/simplistic-manifesto/</guid>
+      <description>&lt;p&gt;Why am I doing what I am doing? A direct summary of all the esoteric garbage I&amp;rsquo;ve produced.&lt;/p&gt;
+&lt;h2 id=&#34;dumbing-it-all-down&#34;&gt;Dumbing it all down&lt;/h2&gt;
+&lt;p&gt;I’ve written a lot on this blog. I want to dumb it down. Speak in 10th grade English. Below I’m going to talk about what I think the dominant life strategy is, and why. Basically - it’s trying to make as much money as possible, at the intersection of crypto AI and capital markets, while living in Puerto Rico. This is - of course - extremely specific, and exactly what I’m doing. But this is my personal blog so - I suppose it only makes sense that this is deeply personal. Deal with it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Mo</title>
-      <link>https://goodalexander.github.io/posts/the-mo/</link>
+      <link>https://goodalexander.com/posts/the-mo/</link>
       <pubDate>Tue, 12 Sep 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/the-mo/</guid>
-      <description>channeling momentum, mojo, reading the universal mosaic
-Below I explore the idea of “the Mo” - or being in tune with the universe, in a useful way that allows you to take larger risks and do better work - but only in short bursts.
-Famous fund manager Stanley Druckenmiller has stated that the most fundamental job of a trader is knowing whether or not he has a “hot hand”. When you have a hot hand, you size up.</description>
+      <guid>https://goodalexander.com/posts/the-mo/</guid>
+      <description>&lt;p&gt;channeling momentum, mojo, reading the universal mosaic&lt;/p&gt;
+&lt;p&gt;Below I explore the idea of “the Mo” - or being in tune with the universe, in a useful way that allows you to take larger risks and do better work - but only in short bursts.&lt;/p&gt;
+&lt;p&gt;Famous fund manager Stanley Druckenmiller has stated that the most fundamental job of a trader is knowing whether or not he has a “hot hand”. When you have a hot hand, you size up. When you are cold, you size down. It’s human nature to do the opposite - so there’s edge - sure. But &lt;em&gt;what is&lt;/em&gt; a hot hand? Is it just a winning streak or is it something more?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Asylum Sidepots. How to Escape the Matrix and Stay Out</title>
-      <link>https://goodalexander.github.io/posts/asylum-sidepots/</link>
+      <link>https://goodalexander.com/posts/asylum-sidepots/</link>
       <pubDate>Sat, 05 Aug 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/asylum-sidepots/</guid>
-      <description>Escaping the socio-spiritual prison from the starting position of a speculator
-Sidepots in the Asylum When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc.
-My father is a renegade. He viewed markets as a way to escape the simulation.</description>
+      <guid>https://goodalexander.com/posts/asylum-sidepots/</guid>
+      <description>&lt;p&gt;Escaping the socio-spiritual prison from the starting position of a speculator&lt;/p&gt;
+&lt;h2 id=&#34;sidepots-in-the-asylum&#34;&gt;Sidepots in the Asylum&lt;/h2&gt;
+&lt;p&gt;When I started trading, I was in it for money and pride. My father lost a lot of money starting a hedge fund and we lost our house when I was a kid. I got into trading as some kind of redemption arc.&lt;/p&gt;
+&lt;p&gt;My father is a renegade. He viewed markets as a way to escape the simulation. He wasn’t around much but he did buy us long leather jackets and took us all to watch the Movie the Matrix at a formative age.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Vision of the Future</title>
-      <link>https://goodalexander.github.io/posts/vision-of-future/</link>
+      <link>https://goodalexander.com/posts/vision-of-future/</link>
       <pubDate>Sat, 29 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/vision-of-future/</guid>
-      <description>A hypothetical exploration of the world we are heading towards
-There have been 3 major technology shifts since 2022. The market has weighted one much higher in terms of valuation - Artificial Intelligence. But a second, more subtle shift was the launch of the MetaQuest Pro and improvement of visual tracking in Virtual Reality. A third, and final tech change is the rise of ZK technology in cryptocurrency enabling highly scalable, verifiable and largely anonymous currency transactions.</description>
+      <guid>https://goodalexander.com/posts/vision-of-future/</guid>
+      <description>&lt;p&gt;A hypothetical exploration of the world we are heading towards&lt;/p&gt;
+&lt;p&gt;There have been 3 major technology shifts since 2022. The market has weighted one much higher in terms of valuation - Artificial Intelligence. But a second, more subtle shift was the launch of the MetaQuest Pro and improvement of visual tracking in Virtual Reality. A third, and final tech change is the rise of ZK technology in cryptocurrency enabling highly scalable, verifiable and largely anonymous currency transactions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Withering Trader’s Illustrated Primer</title>
-      <link>https://goodalexander.github.io/posts/withering-trader-primer/</link>
+      <link>https://goodalexander.com/posts/withering-trader-primer/</link>
       <pubDate>Fri, 14 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/withering-trader-primer/</guid>
-      <description>the Last Samurai, Darth Vader, the world of entertainment bleeding into the world of things
-“There are only two industries. This has always been true&amp;hellip;.There is the industry of things, and the industry of entertainment&amp;hellip;.After people have the things they need to live, everything else is entertainment. Everything.” ― Neal Stephenson, The Diamond Age: Or, a Young Lady&amp;rsquo;s Illustrated Primer
-Now that I’ve spent some more time in the weeds with LLMs as applied to capital markets, I have some reflections about what the building blocks are, how things are likely to play out as well as how I’m going to position myself.</description>
+      <guid>https://goodalexander.com/posts/withering-trader-primer/</guid>
+      <description>&lt;p&gt;the Last Samurai, Darth Vader, the world of entertainment bleeding into the world of things&lt;/p&gt;
+&lt;p&gt;“There are only two industries. This has always been true&amp;hellip;.There is the industry of things, and the industry of entertainment&amp;hellip;.After people have the things they need to live, everything else is entertainment. Everything.”
+― Neal Stephenson, The Diamond Age: Or, a Young Lady&amp;rsquo;s Illustrated Primer&lt;/p&gt;
+&lt;p&gt;Now that I’ve spent some more time in the weeds with LLMs as applied to capital markets, I have some reflections about what the building blocks are, how things are likely to play out as well as how I’m going to position myself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Retrofixation</title>
-      <link>https://goodalexander.github.io/posts/retrofixation/</link>
+      <link>https://goodalexander.com/posts/retrofixation/</link>
       <pubDate>Sat, 08 Jul 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/retrofixation/</guid>
-      <description>naming negative nostalgia. exploring clarity in a world with infinite RAM
-Naming the Culprit A single concept applies to bad investing, bad decision making, and bad feelings. The idea is living in the past.
-I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video about it here</description>
+      <guid>https://goodalexander.com/posts/retrofixation/</guid>
+      <description>&lt;p&gt;naming negative nostalgia. exploring clarity in a world with infinite RAM&lt;/p&gt;
+&lt;h2 id=&#34;naming-the-culprit&#34;&gt;Naming the Culprit&lt;/h2&gt;
+&lt;p&gt;A single concept applies to bad investing, bad decision making, and bad feelings. The idea is living in the past.&lt;/p&gt;
+&lt;p&gt;I began exploring this concept by speaking to my friend Kyla about nostalgia, and its role in Brexit, the election of Donald Trump, guys who only eat meat, luddite behavior, and economic desperation. She recorded a video about it &lt;a href=&#34;https://www.youtube.com/watch?v=-SeRmOwHYOQ&amp;amp;t=125s&#34;&gt;here&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cracks in the Fishbowl </title>
-      <link>https://goodalexander.github.io/posts/cracks-in-the-fishbowl/</link>
+      <link>https://goodalexander.com/posts/cracks-in-the-fishbowl/</link>
       <pubDate>Thu, 20 Apr 2023 18:21:51 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/cracks-in-the-fishbowl/</guid>
-      <description>a reflection on Nietzsche, Artificial Intelligence, goldfish, and new Gods
-“God is dead. God remains dead. And we have killed him. How shall we comfort ourselves, the murderers of all murderers? What was the holiest and mightiest of all that the world has yet owned has bled to death under our knives: who will wipe this blood off us? Is not the greatness of this deed too great for us? Must we ourselves not become gods simply to appear worthy of it?</description>
+      <guid>https://goodalexander.com/posts/cracks-in-the-fishbowl/</guid>
+      <description>&lt;p&gt;a reflection on Nietzsche, Artificial Intelligence, goldfish, and new Gods&lt;/p&gt;
+&lt;p&gt;“God is dead. God remains dead. And we have killed him. How shall we comfort ourselves, the murderers of all murderers? What was the holiest and mightiest of all that the world has yet owned has bled to death under our knives: who will wipe this blood off us? Is not the greatness of this deed too great for us? Must we ourselves not become gods simply to appear worthy of it?” - Friederich Nietzsche
+Nietzsche was only half right. God is dead. Rationality killed him. To believe that God created the world requires believing that he put dinosaur bones underneath the ground, and to deny the obvious scientific fact of evolution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Week 2 - Decline and Fall</title>
-      <link>https://goodalexander.github.io/posts/letsgo/</link>
+      <link>https://goodalexander.com/posts/letsgo/</link>
       <pubDate>Thu, 20 Apr 2023 18:21:51 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/letsgo/</guid>
-      <description>Ideas expressing weakness in US equities relative to ROW this week
-Last Week Last week&amp;rsquo;s performance was +1.25%, unlevered had you traded this blog post on the open Monday and held til Friday Source: Last Week&amp;rsquo;s Write Up . Full breakdown at a trade level here. Download
-Big tech and the virus acceleration were separated from the political narrative. I think it is notable that the basket titled &amp;ldquo;Green Old Deal&amp;rdquo; was the top performer, with big up moves in Uranium stocks throughout the week.</description>
+      <guid>https://goodalexander.com/posts/letsgo/</guid>
+      <description>&lt;p&gt;Ideas expressing weakness in US equities relative to ROW this week&lt;/p&gt;
+&lt;h2 id=&#34;last-week&#34;&gt;Last Week&lt;/h2&gt;
+&lt;p&gt;Last week&amp;rsquo;s performance was +1.25%, unlevered had you traded this blog post on the open Monday and held til Friday &lt;a href=&#34;http://goodalexander.com/2021/01/02/new-beginnings&#34;&gt;Source: Last Week&amp;rsquo;s Write Up&lt;/a&gt; . Full breakdown at a trade level here. &lt;a href=&#34;https://goodalexander.com/files/long_short_week1.csv&#34;&gt;Download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Big tech and the virus acceleration were separated from the political narrative. I think it is notable that the basket titled &amp;ldquo;Green Old Deal&amp;rdquo; was the top performer, with big up moves in Uranium stocks throughout the week. This would be a reinforcement of the narrative that Biden will not do anything too wild re: Green energy, and will likely default to nuclear energy and hydrogen fuel providing the best risk reward given ICLN&amp;rsquo;s insane run.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tokyo Swerve- Careful What You Wish For</title>
-      <link>https://goodalexander.github.io/posts/tokyo-swerve/</link>
+      <link>https://goodalexander.com/posts/tokyo-swerve/</link>
       <pubDate>Wed, 12 Oct 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/tokyo-swerve/</guid>
-      <description>extreme FX and interest rate volatility paints a picture of 2 very different worlds. which shall we step into?
-Let&amp;rsquo;s start with a question. If Japan has rock bottom risk-free rates, shouldn&amp;rsquo;t its companies command higher multiples? Shouldn&amp;rsquo;t Japan be a global hub of innovation - because low rates and structural deflation allow for investment in growth?
-To the first question - Japanese companies certainly do not command higher multiples. Japan&amp;rsquo;s TOPIX Index has a forward PE ratio is 12, while it has a 30-year bond yield of 1.</description>
+      <guid>https://goodalexander.com/posts/tokyo-swerve/</guid>
+      <description>&lt;p&gt;extreme FX and interest rate volatility paints a picture of 2 very different worlds. which shall we step into?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start with a question. If Japan has rock bottom risk-free rates, shouldn&amp;rsquo;t its companies command higher multiples? Shouldn&amp;rsquo;t Japan be a global hub of innovation - because low rates and structural deflation allow for investment in growth?&lt;/p&gt;
+&lt;p&gt;To the first question - Japanese companies certainly do not command higher multiples. Japan&amp;rsquo;s TOPIX Index has a forward PE ratio is 12, while it has a 30-year bond yield of 1.4%. The MSCI US Index in the meanwhile has a forward PE ratio of 14 with 30-year yields of 3.9%. In other words, Japanese companies do not enjoy a better fundraising environment simply because the Japanese government has artificially suppressed yields. Japan has even gone so far as to explicitly buy equities - owning 50% of outstanding ETFs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Postulates on Useful Financial Speech</title>
-      <link>https://goodalexander.github.io/posts/postulates-on-financial-speech/</link>
+      <link>https://goodalexander.com/posts/postulates-on-financial-speech/</link>
       <pubDate>Tue, 20 Sep 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/postulates-on-financial-speech/</guid>
-      <description>Previously I wrote about the evolution of media and how it ends in a poorly defined digital Colosseum. Here I write in detail about how/ why that Colosseum will entail the creation of financial eSports
-Financial markets are unique from politics, science, or other arenas of the media because they are accompanied by Timeseries. For the most part these timeseries consist of a price which implies a value (i.e. what you&amp;rsquo;re paying the price for) and an expectation (what that price implies - relative to historical prices, relevant comparables, consensus values and so forth).</description>
+      <guid>https://goodalexander.com/posts/postulates-on-financial-speech/</guid>
+      <description>&lt;p&gt;Previously I wrote about the evolution of media and how it ends in a poorly defined digital Colosseum. Here I write in detail about how/ why that Colosseum will entail the creation of financial eSports&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Financial markets are unique from politics, science, or other arenas of the media because they are accompanied by Timeseries.&lt;/li&gt;
+&lt;li&gt;For the most part these timeseries consist of a price which implies a value (i.e. what you&amp;rsquo;re paying the price for) and an expectation (what that price implies - relative to historical prices, relevant comparables, consensus values and so forth).&lt;/li&gt;
+&lt;li&gt;Unlike science - financial statements affect expectations about a price, and often the price of a security itself. If you state that &amp;ldquo;the earth is flat&amp;rdquo; then science can easily discard that statement. If you state, &amp;ldquo;Tesla should be worth $1 trillion&amp;rdquo; - this statement might be equally absurd, but it exists in the context of a real price that cannot easily be discarded because someone is willing to &amp;ldquo;bet money&amp;rdquo; on that condition. Put another way: financial statements affect the prices of the things they seek to describe and therefore are inherently less scientific than postulates made about the natural world. Soros and others have termed this phenomenon, simply, &amp;ldquo;reflexivity&amp;rdquo; - i.e., the innate conditions of markets to reflect not underlying reality, but rather an interpretation of a reality&lt;/li&gt;
+&lt;li&gt;This disconnect between fundamentals is further exacerbated by all financial markets being (for the most part) legal abstractions. When you own a &amp;ldquo;company&amp;rdquo; you do not simply slice the company into pieces and keep one of those pieces in your closet, like you might with a bar of gold. You&amp;rsquo;re betting not only on the performance of the company but also the entire political context, and legal framework surrounding that company sending you back dividends and capital returns.&lt;/li&gt;
+&lt;li&gt;Thus - in addition to being reflexive, most markets are innately political. This has become truer as governments share of GDP has expanded over the years.&lt;/li&gt;
+&lt;li&gt;Legal frameworks frequently shift. Discussions and perceptions frequently shift. Shifting legal frameworks and perceptions can shift without any underlying change in the business&amp;rsquo;s immediate operations. But because a business can issue equity or debt with higher valuations, and subsequently fund new business operations - &amp;ldquo;narrative&amp;rdquo; or &amp;ldquo;regulatory&amp;rdquo; shifts are relevant fundamental information. The reason why markets seem to predict the future is precisely because markets fund the future companies plan to create. It is not some triumph of &amp;ldquo;the invisible hand&amp;rdquo; or &amp;ldquo;market efficiency&amp;rdquo; but rather very deliberate actions taken after raising money. If you say Tesla is worth $1t you give Elon Musk a war chest to go implement his plan, and give marching orders to huge numbers of people to go along with him.&lt;/li&gt;
+&lt;li&gt;Thus - most &amp;ldquo;meaningful financial statements&amp;rdquo; inherent consist of a] a discussion of price and how it is arrived at b] a discussion of what value &amp;lsquo;ought to be&amp;rsquo; given prevailing market conditions c] a discussion for why price has diverged from value d] weighing implications of changing laws, regulations, and investor preferences insofar as they can affect c.&lt;/li&gt;
+&lt;li&gt;Enter the problem of timeframes. It is frequently the case that the length between value and price converging is in the years. This creates a logical flaw. While certain business fundamentals of very capital-intensive, time-tested businesses (i.e. those preferred by Warren Buffett) can be reasonably discussed over years - most businesses and assets have too much fluctuation to make meaningful statements over a multi-year timeframe. This is precisely because of 7 c &amp;amp; d, or the implications of &amp;ldquo;reflexivity&amp;rdquo; taking effect. Narrative shifts and regulatory changes dominate more volatile, new ventures.&lt;/li&gt;
+&lt;li&gt;In the internet era, timeframes of years are especially inappropriate - because people have an attention span of days – or weeks at most. So not only does &amp;ldquo;speaking in fundamentals&amp;rdquo; have the problem of reflexivity, but also the problem of &amp;ldquo;relevance&amp;rdquo;. People pretend to have 5-year horizons but will quickly abandon or ridicule people who have made wrong statements over a 3-month window. Whether this is wrong or right does not particularly matter - so much as it is true and predictable, and therefore a reasonable critique of financial speech. Meaningful speech ought to match the timeframe of its audience, whether that audience fully grasps (or is honest with itself about) its timeframe or not.&lt;/li&gt;
+&lt;li&gt;Global tax codes and market structure (high transaction costs) providing incentives for holding for the long term and common-sense favor long term investors, but the financial media inherently stifles them. This is innate to a} narratives and regulatory shifts undeniably driving price action, and thus fundamentals of heavily traded stocks b} financial participants having small attention spans - both features unlikely to change. We are then left with a seeming paradox. Relevant speech diverges from profitability expectation.&lt;/li&gt;
+&lt;li&gt;Indeed - empirical brokerage statistics show that the average audience member for financial content loses large amounts of money at worst, or at best vastly underperforms the index. Cross-sectional wide-ranging studies in multiple countries (most notably Taiwan which quantifies the financial impact of its day trading culture) show this consistently to be the case. This holds across asset classes - and is especially true in zero sum contracts such as CFDs, or forex trading. Even without studies, the vast profitability of market making enterprises focused on retail trading provide ample evidence that aggregate focus on short term financial fluctuations generates a financial loss for its participants&lt;/li&gt;
+&lt;li&gt;We are left with two seeming incongruities and an obvious, and somewhat inescapable conclusion. 1] financially rational discussion would focus on very boring businesses that had limited to no effect from reflexivity or regulatory / political shifts. This would foster long term compounding gains. 2] consumption of financial media diverges vastly from said financially rational discussion. leading us to the conclusion that&lt;/li&gt;
+&lt;li&gt;The primary motivation of most people consuming financial speech is not profit, but rather entertainment. This is not to say that going to the Berkshire Shareholder conference is a waste of time, or that &amp;rsquo;long term value&amp;rsquo; cannot be discussed - rather that it is like some irrelevant third party in a 2-party system driven by a mix of catalysts, and narrative shifts. The 2 major parties get all the clicks, and that is that.&lt;/li&gt;
+&lt;li&gt;The impact of this is much, much higher than it would be otherwise due to the relevance of fiscal and monetary policy to financial markets. Fiscal and monetary policy is driven by human beings who conduct press releases in short term bursts which drive large moves in financial markets, often with accompanying political ramifications. This both decreases the timeframe of important market moves (i.e centers it around decisions and legislation) as well as increases the reflexive attributes of the market because politicians are human beings communicating on the very same channels as the people consuming financial content about those people.&lt;/li&gt;
+&lt;li&gt;This now leaves us with a useful set of initial conditions. A] Reflexivity and narrative matter when framed in a context of value and price diverging. B] The timeframe that people can pay attention to these things is relatively short due to the constraints of the platforms / media environments we exist in - and is getting shorter and more reflexive due to societal conditions that are unlikely to change. C] People consuming financial content are doing so because they are bored or want to gamble. D] Despite this irrationality, because the people consuming content actually trade they affect the fundamentals of companies (with Tesla being the most extreme example, and Bitcoin being the second largest)&lt;/li&gt;
+&lt;li&gt;This set of initial conditions can neatly account for much of the past 2 years of trading as well as discourse around trading. We are however, at a new unique juncture because the public has broadly realized that the &amp;ldquo;5 year outlook&amp;rdquo; clickbait predictions (from the common tweet format - what business would you buy and hold for the next 10 years) - largely have crashed, catastrophically. Many of the holdings of ARKK investments, various SPACs, and crypto currencies not only proved the irrelevance of &amp;ldquo;long term planning&amp;rdquo; but also destroyed huge amounts of equity capital from retail investors. Which leads to a new, emergent condition&lt;/li&gt;
+&lt;li&gt;Now that the general public has widely recognized the futility of making long term predictions, they no longer approach the Puru Saxenas, the Cathie Woods, Chamaths, Michael Saylors or the Deep Value Investors (Burry for example) with the same reverence.&lt;/li&gt;
+&lt;li&gt;Even if you are trading financial markets because you are bored losing 70% of your bankroll is not fun and causes a lack of engagement (which has manifested in the decline of Robinhood and Coinbase share price)&lt;/li&gt;
+&lt;li&gt;The current market is characterized by huge financial losses, and a lack of trust in the trading platforms (Robinhood/ various crypto players) and the people paying for data from the trading Platforms (i.e Citadel). The market also broadly does not like Blackrock which seems intent on capitalizing on various memes in a disingenuous way (pivoting back and forth between clean energy and oil investment). After having followed markets for some time, trust in pundits such as Jim Cramer is also very low.&lt;/li&gt;
+&lt;li&gt;Platforms like Coindesk (+ endless crypto grift platforms), Twitter, Substack, CNBC, Bloomberg are ad revenue supported and the platforms described above (the ones who lost peoples&amp;rsquo; money and trust) are the ones paying for ads. This both manifests directly on &amp;ldquo;feeds&amp;rdquo; of people interested in financial content as well as explicitly via paid promotion through &amp;ldquo;financial influencers&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Because creating financial content is relatively difficult - this results in a series of incentive problems. Ad sponsored financial influencers have a hard time retaining the trust of their audience, because for the most part - people paying to advertise financial products are innately not trustworthy actors. If you need to advertise your asset, chances are your asset isn’t good. Subscription supported financial influencers cannot afford to publish their best work for free - which in turn lowers their reach / audience. Finally - because financial markets are &amp;ldquo;timeseries&amp;rdquo; based - for the most part &amp;ndash; the point at which you are opining on markets is the point at which you&amp;rsquo;ve failed to generate trading profits. Institutions tend to have strict requirements about speaking at length about investment theses on social media. So there is an additional level of adverse selection based into the commentary of financial markets. If you were able to make $ trading you couldn&amp;rsquo;t even talk about your trades.&lt;/li&gt;
+&lt;li&gt;Thus - we live in an era where peoples&amp;rsquo; engagement with financial markets has never been higher, but the structural information distribution systems are fundamentally broken due to a mix of timescale and incentive problems.&lt;/li&gt;
+&lt;li&gt;Those who can make money trading either don’t have the time to do so, or are not allowed to do so by compliance. Those who cannot make money trading lack useful insight at best and are aligned with “retail monetization” (i.e. scams) at worst.&lt;/li&gt;
+&lt;li&gt;This results in my E-Sports Postulate. The postulate states that financial markets have been gamified. There are many players who now roughly understand the rules of the game. Talented professionals have yet to meaningfully compete in a public setting that would be sufficiently intelligible or engaging for large numbers of people. A digital colosseum will emerge soon.&lt;/li&gt;
+&lt;li&gt;Consider professional poker. Originally there was vast &amp;lsquo;retail&amp;rsquo; involvement on online poker via &amp;ldquo;full tilt&amp;rdquo;, resulting in large losses. But because players learned the game&amp;rsquo;s rules they appreciated the professional version of the sport which migrated to ESPN.&lt;/li&gt;
+&lt;li&gt;Something similar happened with video games - where large numbers of people learned arcane rules of League of Legends by actually playing and suddenly were packing stadiums to watch people compete.&lt;/li&gt;
+&lt;li&gt;I believe that something like this will occur in financial markets- simply because &lt;em&gt;in spite of losing vast amounts of money&lt;/em&gt; people broadly can engage with markets and content around markets in a fundamentally different and deeper way than they would have been able to pre-covid.&lt;/li&gt;
+&lt;li&gt;Namely, there will be &amp;ldquo;players&amp;rdquo; who iterate and trade publicly. They will have to have relatively short time horizons in order to stay engaging and will need to focus on innately engaging market topics (namely, narrative shifts and catalysts that drive large, immediate gaps in price)&lt;/li&gt;
+&lt;li&gt;Short time horizon is important not just because the nature of the engaging content (which takes place in tight windows). But also because the accrual of statistical significance. It is possible to build trust around short time-horizon content because a large number of data points can accrue if you make frequent claims. Whereas being right on a long-running trend can be fun for a while, but once the trend stops - engagement cliffs alongside the asset.&lt;/li&gt;
+&lt;li&gt;Becoming an eSports &amp;ldquo;player&amp;rdquo; is financially rational, potentially - because of a number of benefits that accrue to the player. Namely A] ability to collect data on one&amp;rsquo;s own statements and subsequently gain a real edge versus other people who do not have that data B] management access. It is common to receive corporate access for being a financial influencer associated with a company - which might cost millions per year to acquire as a buy-side PM/analyst. C] ability to influence Wall Street analysts evaluation of a stock / its multiple. D] the ability - alongside other &amp;ldquo;players&amp;rdquo; to fully quantify the effects of reflexivity in a way that could be deployed in scalable quantitative strategies.&lt;/li&gt;
+&lt;li&gt;Fundamentally &amp;ldquo;plays&amp;rdquo; will consist of three basic actions. A] Previewing a likely market event and constructing a position / risk exposure that capitalizes on a perceived asymmetry. B] livestreaming /responding to said market event C] recapping event.&lt;/li&gt;
+&lt;li&gt;Events will typically be a] fundamental – i.e earnings, central bank decisions, or data releases or b] political / narrative driven – i.e the passing of a major bill, invasion of a country etc c] unhinged – i.e purely digitally native, ala trading a bubble. But would still likely focus on an event or a perceived acceleration in a major narrative such as a conference (Consensys/ Bitcoin Miami) or an event (the merge)&lt;/li&gt;
+&lt;li&gt;This is rather different from standard content in the status quo which tends to resemble traditional sell-side analysis (this is the value of a company and these are the things that could cause it to move there).&lt;/li&gt;
+&lt;li&gt;100 page PDFs and accompanying Excel Models are a bad UX that will never gain widescale traction in the attention economy. But they are the status quo for the financial industry. A better UX would incorporate: 1] relevant information around all assets being discussed 2] interactive charts previewing events and easy to read tables 3] sortable opportunity tables that inform workflows 4] streams around events 5] podcasts 6] tik tok videos with rich infographics.&lt;/li&gt;
+&lt;li&gt;The UX design will likely become native to “events” – and thus will need to incorporate streaming, because events transpire in real time. This is a hard problem and will require building software&lt;/li&gt;
+&lt;li&gt;More interactive UX will allow increased data collection which will increase the utility of being a “player” as opposed to running in anonymity&lt;/li&gt;
+&lt;li&gt;Put another way, there will come an engagement * technology threshhold where the compliance benefits of being anonymous and running a hedge fund will be less than being a public financial esports participant. This threshold will not occur for many years, but people who are early to the trend will accrue massive advantages due to network effects latent on social media&lt;/li&gt;
+&lt;li&gt;None of this exists.&lt;/li&gt;
+&lt;li&gt;Without getting too in the ‘monetization’ weeds it is somewhat easy to imagine a world in which you make a “franchise model” for digitally native traders, providing them the right tools, and allowing them to share data and management access at scale – potentially even on a distributed basis, or one that benefits their streamers&lt;/li&gt;
+&lt;li&gt;It is believable embedding financial alignment with these “players” could be done through a cryptocurrency or an exchange token&lt;/li&gt;
+&lt;li&gt;Informational advantage also works well in this frame. Consider private 1 on 1s that are common with hedge funds and are heavily monetized by sell side investment banks. There is no reason why this format could not occur on Twitch as premium content with eSports financiers leading the sessions.&lt;/li&gt;
+&lt;li&gt;Rivalries in the hedge fund world are humorous and engaging. The popularity of the show Billions shows fairly well that finance culture can translate well into the real world. These rivalries are accompanied with financial timeseries (someone is right and someone is wrong) – and this will make for good content.&lt;/li&gt;
+&lt;li&gt;Cathie Wood is arguably the first Esports financier. She is interesting because she has sustained massive investment losses (in the billions) without losing her investor base. This is (I would argue) because she is able to engage directly with her holders and reassert her investment thesis. I believe Cathie’s model is interesting – but undesirable because of the problem of statistical significance (i.e. she has a hold time similar to Warren Buffett, so her theses are innately less engaging)&lt;/li&gt;
+&lt;li&gt;Much as Cathie Wood invented her own ‘style’ – a fundamentally new trading/investing style needs to be deployed. Imagine a Venn Diagram. “Consistently Engaging”. And “Makes Money”. Meme stocks and SPACs are engaging but don’t make money. Warren Buffett makes money but him buying OXY once every 3 years isn’t consistently engaging. The correct format needs to both trade frequently focusing on exciting market events, and make money.&lt;/li&gt;
+&lt;li&gt;All of the parameters and constraints are clear but there is an enormous psychological friction to “entering the digital colosseum”. Running an investment strategy is extremely difficult without endless online trolling or the addiction native to social media platforms. And the type of “engaging but profitable” trading strategy specifically is especially nightmarish to implement. Added to this is the need to simultaneously execute on the tech side (i.e. building something people want to consume). This is, in my view the biggest potential risk with the model. The type of digitally native portfolio managers who would perform the best in the new financial esports arena will simply burn out or go mad before the future can become a reality&lt;/li&gt;
+&lt;li&gt;Reiterating point 38 - these people don&amp;rsquo;t exist. I sigh as I stretch, readying myself.&lt;/li&gt;
+&lt;li&gt;I know who could do the job well though. And once you see it you can’t unsee it. Robinhood is broken. Meme stocks /crypto scams are powerful and interesting but don’t align well with users, regulatory interests, or even fun in the long run (only fun on the way up). But we cannot go back to what was before. In the ashes of the meme/retail boom of 2020-2021, will rise a Phoenix of clicks, financial assets, increasingly indistinct from the totality of speech in modern society. The crowds will delight as they see financial gladiators spilling their own livelihoods, playing the eSport of trading in a digital colosseum.&lt;/li&gt;
+&lt;li&gt;And perhaps through continuous combat, something more can emerge.&lt;/li&gt;
+&lt;li&gt;“What we do in life echoes in eternity” – Maximus, Gladiator&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;subscribe-to-get-these-by-email&#34;&gt;Subscribe to Get These By Email&lt;/h1&gt;
+&lt;div id=&#34;revue-embed&#34;&gt;
+  &lt;form action=&#34;https://www.getrevue.co/profile/goodalexander/add_subscriber&#34; method=&#34;post&#34; id=&#34;revue-form&#34; name=&#34;revue-form&#34;  target=&#34;_blank&#34;&gt;
+  &lt;div class=&#34;revue-form-group&#34;&gt;
+    &lt;label for=&#34;member_email&#34;&gt;Email address&lt;/label&gt;
+    &lt;input class=&#34;revue-form-field&#34; placeholder=&#34;Your email address...&#34; type=&#34;email&#34; name=&#34;member[email]&#34; id=&#34;member_email&#34;&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;revue-form-group&#34;&gt;
+    &lt;label for=&#34;member_first_name&#34;&gt;First name &lt;span class=&#34;optional&#34;&gt;(Optional)&lt;/span&gt;&lt;/label&gt;
+    &lt;input class=&#34;revue-form-field&#34; placeholder=&#34;First name... (Optional)&#34; type=&#34;text&#34; name=&#34;member[first_name]&#34; id=&#34;member_first_name&#34;&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;revue-form-group&#34;&gt;
+    &lt;label for=&#34;member_last_name&#34;&gt;Last name &lt;span class=&#34;optional&#34;&gt;(Optional)&lt;/span&gt;&lt;/label&gt;
+    &lt;input class=&#34;revue-form-field&#34; placeholder=&#34;Last name... (Optional)&#34; type=&#34;text&#34; name=&#34;member[last_name]&#34; id=&#34;member_last_name&#34;&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;revue-form-actions&#34;&gt;
+    &lt;input type=&#34;submit&#34; value=&#34;Subscribe&#34; name=&#34;member[subscribe]&#34; id=&#34;member_submit&#34;&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;revue-form-footer&#34;&gt;By subscribing, you agree with Revue’s &lt;a target=&#34;_blank&#34; href=&#34;https://www.getrevue.co/terms&#34;&gt;Terms of Service&lt;/a&gt; and &lt;a target=&#34;_blank&#34; href=&#34;https://www.getrevue.co/privacy&#34;&gt;Privacy Policy&lt;/a&gt;.&lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</description>
     </item>
     <item>
       <title>Stepping into Phase Seven</title>
-      <link>https://goodalexander.github.io/posts/entering-phase-seven/</link>
+      <link>https://goodalexander.com/posts/entering-phase-seven/</link>
       <pubDate>Sun, 14 Aug 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/entering-phase-seven/</guid>
-      <description>one last musing before the descent into the digital colosseum
-Digital assets and the political media have wrapped around each other, a double helix of increasingly epic proportions. It has not always been like this, but a glimpse of where we are today, before discussing the portal that’s opened behind my casomputer chair that I am about to step through -
-Central bankers posting their thoughts on the daily to the derision of random armchair Austrian economists on the internet.</description>
+      <guid>https://goodalexander.com/posts/entering-phase-seven/</guid>
+      <description>&lt;p&gt;one last musing before the descent into the digital colosseum&lt;/p&gt;
+&lt;p&gt;Digital assets and the political media have wrapped around each other, a double helix of increasingly epic proportions. It has not always been like this, but a glimpse of where we are today, before discussing the portal that’s opened behind my casomputer chair that I am about to step through -&lt;/p&gt;
+&lt;p&gt;Central bankers posting their thoughts on the daily to the derision of random armchair Austrian economists on the internet. Chairman Gensler getting ratio-ed on every post about financial regulation. Trump getting banned by a bearded hippie who is now a full time Bitcoin shill. Bloomberg reporting on Tweets days after they happened. Meme stocks. Purely mimetic assets becoming worth $100s of billions (yes, Crypto, but also HKD etc). Whether it’s crypto or CBDCs – assets are becoming increasingly indistinct from the internet and the stories therein (and thereof). The user experience of buying a Shib token or a Shiba Inu stuffed animal on Amazon is functionally the same, as is the economic output or underlying ‘culture’.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Discussion on the Study of Asset Price Movement</title>
-      <link>https://goodalexander.github.io/posts/discussion-on-asset-price-movement/</link>
+      <link>https://goodalexander.com/posts/discussion-on-asset-price-movement/</link>
       <pubDate>Fri, 24 Jun 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/discussion-on-asset-price-movement/</guid>
-      <description>A 35 point summary of how I define speculation, its 6 core components and thoughts around implementation
-Investors are not traders. Investors focus on the capital return potential of assets, adjusted for a discount rate. Traders focus on capturing the movement of assets. An investor may trade, to swap into a more appealing capital return or asset. But a trader would rarely invest - as that would suppose capital returns made up a higher percentage of an asset’s return profile than its movement.</description>
+      <guid>https://goodalexander.com/posts/discussion-on-asset-price-movement/</guid>
+      <description>&lt;p&gt;A 35 point summary of how I define speculation, its 6 core components and thoughts around implementation&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Investors are not traders. Investors focus on the capital return potential of assets, adjusted for a discount rate. Traders focus on capturing the movement of assets. An investor may trade, to swap into a more appealing capital return or asset. But a trader would rarely invest - as that would suppose capital returns made up a higher percentage of an asset’s return profile than its movement. This is seldom the case. For example, the S&amp;amp;P 500 routinely moves more in 1 day than its annual dividend payment.&lt;/li&gt;
+&lt;li&gt;The concepts that define investing are relatively well known and widely discussed. At their core, an investment analyst seeks to answer the question, “Is this an asset I would be happy to own for a long time, or until maturity?” This essentially boils down to comparing valuation relative to growth, business quality and industry/ country risk. Due to long hold periods, investors are more likely to concern themselves with the day to day affairs of the businesses they own - in the extreme case (Berkshire Hathaway), taking them private, owning them outright or operating them.&lt;/li&gt;
+&lt;li&gt;I am writing this because while trading is ‘widely discussed’, it is done so in disjointed contexts unlikely to generate a return&lt;/li&gt;
+&lt;li&gt;There are two types of trading. I will use the terms common in regulatory frameworks - market making, and proprietary trading. Market makers focus on providing liquidity to traders or investors and get paid the bid-offer for doing so. Most market makers have extremely low hold times - micro-seconds in the case of equities - but longer in less liquid assets such as over the counter fixed income.&lt;/li&gt;
+&lt;li&gt;Like investing, market making is widely discussed. Calling it formulaic would be insulting to its practitioners. There is much art to successful execution, including procuring data that may provide an edge (payment for order flow being an example) and often impressive math involved hedging exposures in real time. The coding acumen and technical expertise to implement millions of small orders a day and reduce risk in near real time similarly merits much discussion. At its core however - a market maker aims to provide the market with the lowest spread possible, as many times as possible, without getting “run over” (which basically means trading against someone who likely has better information than you do).&lt;/li&gt;
+&lt;li&gt;I am not a market maker and only described it to differentiate it from proprietary trading (what I do). I am sure my description was insufficient, or even partially inaccurate - so take it with a grain of salt.&lt;/li&gt;
+&lt;li&gt;Thus - to summarize, what I will now describe is neither market making, nor investing, but rather something in between. It could be called “prop trading” but I prefer to call it short term speculating. I will simply call it “speculating” and myself a “speculator”.&lt;/li&gt;
+&lt;li&gt;At its core, speculators attempt to predict asset movements, take positions before they happen and sell shortly after a set of conditions are met. Investors focus on terminal value. Market makers focus on providing liquidity. Speculators focus on taking liquidity.&lt;/li&gt;
+&lt;li&gt;Because speculators frequently cross bid-ask spreads, this means a speculator must transact much less frequently than a market maker.&lt;/li&gt;
+&lt;li&gt;If a speculator’s job is to predict short term asset movements, then the study of asset movements is an important part of the job. Assets move for four major reasons that are useful to a speculator.&lt;/li&gt;
+&lt;li&gt;First - a repeated, price insensitive buyer such as a corporate hedger, passive index, central bank, is transacting in a particular way. I call the study of these price insensitive buyer “Flows.” Flows happen on a daily basis, but their nature depends heavily on the mechanisms of the actor. Indexes have a rebalance calendar, for example - that might determine a “flow”.&lt;/li&gt;
+&lt;li&gt;Second - an asset will release important news relevant to its fundamentals. This is typically an earnings release or an investor day for a stock, or a data release for a currency. The work done to prepare for such events I term “Pre Catalyst. An asset will typically begin adjusting or moving in anticipation of a catalyst approximately 14 days before an event.&lt;/li&gt;
+&lt;li&gt;Third - the gap after an event described as the catalyst, requires both an immediate fast movement and a subsequent realignment. I call the rapid response to an event and readjustment &amp;ldquo;Post Catalyst”. Assets adjust rapidly within minutes or seconds of most catalysts, but the subsequent readjustment after an event frequently takes a full 72 hours.&lt;/li&gt;
+&lt;li&gt;Fourth - while flows and catalysts could exist without problem in a single economy - their existence across global markets becomes messy. Central banks and global indices fail to coordinate, or even come into conflict. A catalyst for a company in one country can drive its central bank to bail it out - which might affect a company in another country where the central bank cannot intervene legally. Because these asymmetries take a long time to rectify, they create useful trends and dislocations. This is the basis for the fourth type of trading I call “Macro”.&lt;/li&gt;
+&lt;li&gt;So far I have only described fundamental trading. Everything described so far is best put as an “equilibrium condition”. In a normal economy - corporates will hedge, indices will rebalance, central banks will act in particular ways to respond to these things which will cause occasional trends and imbalances that can be “harvested” by speculators. These gentle flows will be punctuated by occasional violent readjustments triggered by catalysts. But for the most part, the violence is “expected” because it happens at pre-ordained times such as Non Farm payrolls.&lt;/li&gt;
+&lt;li&gt;The term fundamental trading implies the existence of “non fundamental trading”.&lt;/li&gt;
+&lt;li&gt;Non fundamental trading arises when the system described above enters ‘disequilibrium’. “Bubbles” are the most common type of non fundamental trading - and typically arise when a regulator or well capitalized entity does something extreme that creates a “free lunch” for market participants. George Soros famously posited that bubbles and ‘far from equilibrium’ situations are innate to capital markets because people A] believe markets are a natural system B] markets are not a natural system because they are comprised of the beliefs of their participants which change in response to the market itself. C] regulators cannot properly account for A and B so operate in a perpetual state of pretending their own presence is part of the natural system, when, in fact - their perennial bailouts happen because the system fails.&lt;/li&gt;
+&lt;li&gt;There are two types of non fundamental trading - non fundamental macro trading – betting on the formation, and collapse of bubbles, and non fundamental flow trading – betting on stampede behavior of irrational investors (typically retail, typically using leverage).&lt;/li&gt;
+&lt;li&gt;Thus there are six basic market regimes - four which happen when the market is in equilibrium (flows, pre catalyst, post catalyst, and macro) and two when the market is in disequilibrium (non fundamental flows, non fundamental macro).&lt;/li&gt;
+&lt;li&gt;You will note that catalysts are absent in disequilibrium states. One useful definition of the market being in disequilibrium condition is when the variance of day to day random moves dwarves the moves when there is a catalyst for an asset. For example, before AMC was a meme stock, it had larger moves during its earnings releases. After it became a meme stock, it realized large moves for little to no reason at all.&lt;/li&gt;
+&lt;li&gt;Some assets are in a perpetual state of disequilibrium by their very nature. A non controversial example might be Dogecoin - which is quite literally a joke currency with no scaling plan and no terminal value. A more controversial example would be Gold - which has monetary value due to being a perceived alternative to an existing system (that is to say, Gold is almost entirely a belief driven asset).&lt;/li&gt;
+&lt;li&gt;Most assets fluctuate between states of equilibrium and disequilibrium.&lt;/li&gt;
+&lt;li&gt;This concludes the description of the market which opens the way for a description of what exactly a speculator &lt;em&gt;does&lt;/em&gt;. I believe this is composed of 8 essential parts.&lt;/li&gt;
+&lt;li&gt;First - quantify flows that repeat, using data, analysis and quantitative due diligence. Map non price sensitive actors to anomalies. Create hypotheses for why flows might recur. Build systems that isolate exposure to flows, and conduct experiments out of sample to assess their repeatability.&lt;/li&gt;
+&lt;li&gt;Second - preview catalysts before they happen. This boils down to identifying low expectations, low valuation, and high “carry” (i.e. capital returns) disconnected from surprising business success as measured by data, superior knowledge / context, or competitive analysis. Then structuring and placing trades with appealing risk reward (high possibility of a payout and low worst case scenario).&lt;/li&gt;
+&lt;li&gt;Third - respond and trade post (after) the catalyst. This involves quantifying, in advance the likely trajectory of assets after a data or earnings release. This can be wide scale and systematic, or specific. Typically speculators will need a more nuanced view how to respond “post” catalyst if they have a large position “pre” catalyst.&lt;/li&gt;
+&lt;li&gt;Fourth - combine all of the above, combined with relevant sovereign indicators (such as interest rates, currency valuation, equity performance, economic performance, central bank commentary) to identify asymmetries in global foreign exchange, interest rate and commodity markets. This is well understood and called “macro” investing. It is worth noting that flows, pre catalyst, and post catalyst trading can be performed on macro instruments such as EURUSD, but macro trading focuses more on fundamental trends likely to persist or that can be expressed asymmetrically due to the impossibility of coordinating global monetary and fiscal policy.&lt;/li&gt;
+&lt;li&gt;Fifth - identify repeated price movements that exist &lt;em&gt;outside&lt;/em&gt; fundamental flows, pre-catalyst, post catalyst and macro trading. Typically this will involve herd behavior, short squeezes, stampedes and retail trading driven nonsense. Yes, this includes internet memes. One way to think about this is that people are treating the markets like an online store. You are measuring an e-commerce checkout pattern and trading accordingly. This can be termed, detecting “non fundamental flows”&lt;/li&gt;
+&lt;li&gt;Sixth - Combine 1-5 with external data, market analysis, and regulator action to identify the presence of a “free lunch” or something that is likely to get completely out of hand. Create a hypothesis about how it will get out of hand, writing in advance why and what conditions it will likely go wrong, and bet on a bubble forming. This type of trading is the highest form of speculation, and at times can risk the very existence of markets themselves when speculators stampede over governments or central banks. This is called “non fundamental macro”. It is worth noting that non fundamental macro trading requires a high degree of hubris and perhaps is not best attempted by those not strongly executing on the first 5 pillars.&lt;/li&gt;
+&lt;li&gt;Seventh - Quantify the 6 potential sources of PNL. Manage risk at each strategy level. Only the macro strategy should have net market exposures in stocks, bonds, gold, oil or factors. If you do not have a quantified, and tracked view - do not have an exposure. Track performance over time and build robust systems to do so.&lt;/li&gt;
+&lt;li&gt;Eighth - allocate capital to the 6 potential sources of PNL, and allocate time, resources and personnel according to expected value at risk&lt;/li&gt;
+&lt;li&gt;This comprises the job of a speculator in a way that originates from the definition of speculation itself - the study of why assets move. Flows go into them day to day, when they’re not jumping about on catalysts. Sometimes bubbles come into play and all rules are thrown out the window.&lt;/li&gt;
+&lt;li&gt;Parting thought ½ : I wrote this partly out of annoyance at existing classifications of speculation. Short term speculation is studying and profiting from asset movement, as discussed definitionally - crossing spreads with the intention of gain. Long/Short equities, Macro, Quant, Merger Arb, etc - are sloppy categorizations because they do not - in their very essence, come from asset movement - but rather come from asset definition - which is arbitrary. Discourse on short term speculation also drifts with annoying frequency into market making - when they are in some ways opposites (taking vs providing liquidity)&lt;/li&gt;
+&lt;li&gt;Parting thought 2/2 : the idea of a “quant fund” while somewhat descriptive in the age of machine learning and “AI” is useful, but dangerous. In the framework above, Flows and Post Catalyst trading are innately more quantitative - and can even be reduced into machine learning or AI based strategies. In fact - with enough external data (imagine a full exhaust of Twitter or Google) - it might be possible to turn all of the above into “quant” strategies. But the core pillars, I’d argue - regardless of whether a human or machine implements them - come from first principles of how assets move. Also - the decision to allocate capital to something, and to turn a quant strategy on or off will likely (for better or worse) be made by a person. Or perhaps this is just the coping of an analyst who does not code well enough&lt;/li&gt;
+&lt;li&gt;This comprises my understanding of speculation. If I fail in my speculation, this diatribe will be easily discarded. If I succeed perhaps it will be of interest in the future - but from this perspective is best stated in advance. Pre-catalyst, if you will. Fin.&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     <item>
       <title>The Absurdity Supercycle- Being Early After the End of History</title>
-      <link>https://goodalexander.github.io/posts/absurdity-supercycle/</link>
+      <link>https://goodalexander.com/posts/absurdity-supercycle/</link>
       <pubDate>Sun, 20 Feb 2022 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/absurdity-supercycle/</guid>
+      <guid>https://goodalexander.com/posts/absurdity-supercycle/</guid>
       <description>reflections on recent price action, ARK investments, Palantir, and crypto</description>
     </item>
     <item>
+      <title>The Nigeria Template</title>
+      <link>https://goodalexander.com/posts/the-nigeria-template/</link>
+      <pubDate>Sun, 20 Feb 2022 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-nigeria-template/</guid>
+      <description>migration crises lead to populism lead to asset confiscation leads to crypto going up</description>
+    </item>
+    <item>
       <title>Common Stocks and Uncommon Profits</title>
-      <link>https://goodalexander.github.io/posts/common-stocks-uncommon-profits/</link>
+      <link>https://goodalexander.com/posts/common-stocks-uncommon-profits/</link>
       <pubDate>Fri, 20 Apr 2018 18:25:51 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/common-stocks-uncommon-profits/</guid>
-      <description>Common Stocks and Uncommon Profits gets frequently recommended to me by top performing equity managers. It&amp;rsquo;s 15 rules for evaluating growth stocks. I read it and summarized it.
-Summary Rote changes in revenue and earnings are less interesting than their quality and repeatability. Invest in a company with capable, honest and adaptive management entering an under penetrated market that invests its resources in such a way to give it optionality into new spaces.</description>
+      <guid>https://goodalexander.com/posts/common-stocks-uncommon-profits/</guid>
+      <description>&lt;p&gt;Common Stocks and Uncommon Profits gets frequently recommended to me by top performing equity managers. It&amp;rsquo;s 15 rules for evaluating growth stocks. I read it and summarized it.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Rote changes in revenue and earnings are less interesting than their quality and repeatability. Invest in a company with capable, honest and adaptive management entering an under penetrated market that invests its resources in such a way to give it optionality into new spaces.  High quality sales organizations, and long term investments into customer support with expanding margins due to automation are the killer combination.
+categories: book summary&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

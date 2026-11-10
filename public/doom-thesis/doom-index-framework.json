@@ -1,0 +1,237 @@
+{
+  "version": "1.2.0",
+  "last_reviewed": "2026-08-04",
+  "specification": {
+    "canonical": "docs/doom-thesis-spec.md",
+    "source_brief": "docs/doom-thesis-original-brief.md",
+    "runbook": "docs/doom-index-runbook.md"
+  },
+  "status": "research_build",
+  "status_label": "Research score live — probability withheld",
+  "published_score": null,
+  "research_score_path": "/doom-thesis/doom-index-score.json",
+  "interpretation": "The live 0–100 number is a fixed-threshold research evidence score. It is not a probability or an operational trading signal until indicator history is point-in-time, historically calibrated, reviewed out of sample, and the productivity override is operational.",
+  "publication_rule": "Publish the headline research evidence score only when 100% of weighted inputs are current or explicitly modeled and reproducible. Modeled inputs must retain visible quality flags and sensitivity. Do not label the score a probability or activate portfolio stops until historical point-in-time calibration has been reviewed out of sample.",
+  "stop_rule": {
+    "threshold": 20,
+    "action": "Exit Doom Index-linked positions",
+    "override": "If the probability that U.S. productivity averages at least 5% for the next five years becomes the base case (50% or greater), cap the Doom Index at 19 even if other components remain elevated.",
+    "missing_warrant": "A reproducible research ensemble now exists, but its AI tail is a disclosed scenario prior rather than a calibrated market probability. It must pass historical and governance review before it can execute positions."
+  },
+  "components": [
+    {
+      "id": "fiscal-constraint",
+      "title": "Fiscal constraint",
+      "weight": 20,
+      "status": "partial",
+      "contention": "The United States has a structural fiscal gap that cannot be closed painlessly under consensus growth.",
+      "plain_english": "Debt, interest, and promised-program funding are growing faster than the ordinary tax base. Stabilization requires unusually strong growth, materially higher revenue, benefit reform, inflation, or some combination.",
+      "score_rule": "Score from debt and deficit trajectories, interest burden, program-gap annual equivalent, and the size of the recurring adjustment required to reach the prudent scenario. The unified-deficit input scores 0 at 3% of GDP or less and 100 at 8% or more, so persistent deficits near 6% register as material stress rather than safety.",
+      "update_frequency": "Daily debt; monthly interest model; CBO vintage; annual Trustees reports",
+      "existing_evidence": [
+        {"label": "Debt and unfunded obligations", "href": "#numbers"},
+        {"label": "Interest and refinancing", "href": "#interest"},
+        {"label": "Prudent fiscal course", "href": "#tax-valuation"},
+        {"label": "Demographic support", "href": "#demographics"}
+      ],
+      "missing_warrants": [
+        "Freeze a reproducible fiscal-stress normalization rather than scoring the size of liabilities by judgment.",
+        "Separate current-law arithmetic from claims that no politically plausible adjustment path exists.",
+        "Backtest how the proposed measures behaved before prior fiscal consolidations and inflation regimes."
+      ],
+      "claims": [
+        {"status": "warranted", "text": "The current debt, interest, Social Security, and Medicare arithmetic is measured and sourced.", "note": "The existing daily panel, Trustees estimates, CBO baseline, and security-level Treasury roll model support this."},
+        {"status": "warranted", "text": "The prudent scenario requires a very large recurring adjustment under current assumptions.", "note": "The page shows the deficit correction and program-gap funding separately to avoid double counting."},
+        {"status": "warranted", "text": "Demographics make a wartime-sized debt ratio harder to stabilize than in 1945.", "note": "The OASDI beneficiary-to-worker series and gross debt/GDP comparison are already present."},
+        {"status": "partial", "text": "There is no obvious path to balancing the budget.", "note": "The arithmetic is supported; the word “path” requires political and behavioral evidence developed in the political-feasibility component."}
+      ]
+    },
+    {
+      "id": "productivity-escape",
+      "title": "Productivity escape",
+      "weight": 30,
+      "status": "partial",
+      "contention": "Rapid productivity acceleration is not yet the base case, and the fiscal escape velocity is far above consensus.",
+      "plain_english": "Ordinary productivity growth is too slow to make the debt and unfunded obligations manageable on its own. The thesis breaks only if AI produces a sustained, economy-wide jump large enough for growth to outrun those obligations.",
+      "score_rule": "Combine realized nonfarm-business productivity, forecast distributions, output-per-dollar measures, and the probability of five-year productivity at or above 5%. Lower growth produces a higher Doom score.",
+      "update_frequency": "Quarterly BLS; annual physical and human-capital panels; monthly forecast review",
+      "existing_evidence": [
+        {"label": "AGI growth hurdle", "href": "#thesis"},
+        {"label": "Productivity evidence", "href": "#productivity"},
+        {"label": "Real-business outcomes ex distraction", "href": "#productivity"},
+        {"label": "Education trajectory", "href": "#productivity"}
+      ],
+      "missing_warrants": [
+        "Calibrate and govern the completed five-year research ensemble rather than treating its scenario-weighted tail as an objective probability.",
+        "Estimate AI's positive and negative productivity channels without assuming the net sign; do not count private returns earned from distraction as an economy-wide productivity gain.",
+        "Approve the execution and revision convention for the now-reproducible 5% research override."
+      ],
+      "claims": [
+        {"status": "warranted", "text": "Observed productivity has not yet established a sustained 5% regime.", "note": "The existing BLS quarterly and five-year trend series supports the historical statement, not the forward probability."},
+        {"status": "partial", "text": "Broad operating companies outside known distraction businesses are showing measurable real revenue growth and cash conversion.", "note": "A daily point-in-time Sharadar bridge now tracks rolling-four-quarter GDP-deflator-adjusted revenue growth, operating-cash-flow margin, and FCF margin for U.S. nonfinancial, nonutility companies outside the score-70+ distraction basket. Current-vintage GDPDEF, mix, acquisitions, entry, and cyclicality prevent a causal AI-productivity interpretation."},
+        {"status": "partial", "text": "Several high-spending systems are producing weak measured output gains.", "note": "Utilities and education are documented descriptively, but the charts do not establish causation."},
+        {"status": "missing", "text": "AI's offsetting effects will prevent massive net productivity acceleration.", "note": "This is central to the thesis but currently has no decomposed empirical model."},
+        {"status": "warranted", "text": "Five-percent sustained productivity growth would invalidate the Doom base case.", "note": "The threshold and research estimator are explicit and reproducible; live execution remains gated on calibration and governance."}
+      ]
+    },
+    {
+      "id": "distraction-economy",
+      "title": "The distraction economy",
+      "weight": 15,
+      "status": "partial",
+      "contention": "AI may raise measured capability while reducing human attention, agency, and effective productivity through personalized media and addiction loops.",
+      "plain_english": "Cheaper, more personalized content can consume the time and focus that better tools theoretically save. A productivity model that counts only workplace automation misses this offset.",
+      "score_rule": "Measure attention-platform value and cash flow against industrial capacity, observed digital leisure versus socializing, and two explicit weekly Google Trends inputs. The AI Porn/constructive-education 52-week level ratio and their trailing-12-week YoY growth-rate difference each receive 10% of the Distraction component, or 1.5% of the total Doom Index.",
+      "update_frequency": "Weekly search attention; quarterly market-cap and revenue panel; annual time-use data",
+      "existing_evidence": [
+        {"label": "Distraction market cap and FCF", "href": "#distraction-economy-charts"},
+        {"label": "Search attention allocation", "href": "#distraction-economy-charts"},
+        {"label": "Human-capital evidence", "href": "#productivity"}
+      ],
+      "missing_warrants": [
+        "Test classifier stability across prompt and model vintages and manually review the largest contributors.",
+        "Extend the completed BLS time-use feeder into a consistently defined cross-platform engagement panel without treating usage or market capitalization as proof of social harm.",
+        "Quantify the incremental revenue and engagement effects of recommendation and personalization systems.",
+        "Identify a defensible causal bridge from attention capture to economy-wide productivity."
+      ],
+      "claims": [
+        {"status": "warranted", "text": "A reproducible public-company Distraction Economy category now exists.", "note": "GLM 5.2 scored all 6,226 active and delisted U.S. Sharadar companies that ever exceeded $1 billion of market capitalization; the prompt, responses, membership, retries, and audit outputs are retained."},
+        {"status": "warranted", "text": "The high-relevance Distraction basket has outgrown U.S. Industrials in public-market value.", "note": "The score-70-or-higher basket is compared with all U.S. Industrials using active and delisted membership and each ticker-year's final Sharadar market-cap observation. This is a capital-allocation proxy, not proof of social harm."},
+        {"status": "partial", "text": "Distraction businesses generate material cash flow relative to Industrials.", "note": "The daily comparison uses the core point-in-time ARQ/datekey replay and four distinct calendar quarters; the interpretation still needs business-model and causal controls."},
+        {"status": "partial", "text": "AI personalization materially increases media and advertising consumption.", "note": "Meta reports a 24% increase in Instagram time spent since Reels, a 7% view lift from Q4 2025 Facebook ranking improvements, and a 20% Threads time-spent lift from recommendation optimizations. These company measurements are not yet a consistent cross-platform or economy-wide causal panel."},
+        {"status": "warranted", "text": "Measured digital leisure has risen relative to socializing.", "note": "BLS ATUS primary-activity data show television plus leisure gaming/computer use at 3.23 hours per day in 2025 versus 2.87 in 2003, while socializing fell from 0.78 to 0.58 hours; the ratio rose about 51%. Concurrent phone use is omitted."},
+        {"status": "warranted", "text": "Two reproducible weekly search-attention inputs compare AI pornography with constructive education interest.", "note": "One worldwide grouped Google Trends request places AI Porn, Best Colleges, and Trade School on a shared scale. The 52-week level ratio and the 12-week-average YoY growth differential are separately visible and separately scored at 1.5% of the total index each; English-language term choice, relative normalization, and historical revisions remain explicit caveats."},
+        {"status": "missing", "text": "The resulting attention loss offsets a meaningful share of AI productivity gains.", "note": "This needs causal evidence and sensitivity bounds."}
+      ]
+    },
+    {
+      "id": "political-feasibility",
+      "title": "Political feasibility of adjustment",
+      "weight": 15,
+      "status": "partial",
+      "contention": "The austerity and revenue package required by the fiscal arithmetic is politically infeasible before crisis conditions.",
+      "plain_english": "The arithmetic can identify a bill; it cannot prove Congress will pay it. This component asks whether voters and institutions will accept the required taxes, spending restraint, or benefit changes before markets force the issue.",
+      "score_rule": "Combine legislative prediction markets, fiscal-policy polling, roll-call behavior, enacted primary-balance changes, and independent budget scores. Lower probability of timely adjustment produces a higher score.",
+      "update_frequency": "Weekly market/poll review; event-driven legislation; quarterly policy score",
+      "existing_evidence": [
+        {"label": "Tax and reform sensitivity", "href": "#tax-valuation"},
+        {"label": "Institutional trust context", "href": "#productivity"}
+      ],
+      "missing_warrants": [
+        "Backtest and recalibrate the completed empirical enactment model as new proposals, roll calls, enactments, dilution, and reversals accumulate.",
+        "Extend the completed major-enactment scale panel to proposals, roll calls, dilution, implementation, reversals, and realized primary-balance effects.",
+        "Extend the completed Gallup tax, spending-concern, and deficit-remedy panel with repeated comparable measures of benefit reform, inflation tolerance, wealth taxation, and financial repression.",
+        "Model revenue feedback and policy dilution between proposal and enactment."
+      ],
+      "claims": [
+        {"status": "partial", "text": "A prudent fiscal adjustment is politically difficult under current conditions.", "note": "The live model scores required adjustment/GDP, the tax-only receipts increase, projected deficit persistence, and a disclosed 1.73% base-rate estimate of timely sufficient enactment with a 0.15%-6.0% sensitivity range. This is a model, not proof of infeasibility."},
+        {"status": "warranted", "text": "The prudent adjustment is far larger than selected recent enacted precedents.", "note": "Across seven major laws with contemporaneous CBO/JCT scores since 2011, none reaches the 8.33%-of-GDP recurring prudent adjustment on a simple annualized budget-window basis. The largest deficit-reducing precedent, the 2011 Budget Control Act, is about 1.33% of enactment-year GDP—roughly one-sixth of the required scale—and later laws modified its caps."},
+        {"status": "warranted", "text": "Concern about federal spending does not imply support for the principal benefit adjustment.", "note": "Gallup reports 79% worried a great deal or fair amount about federal spending in 2026, while its 2025 question found 39% favoring and 57% opposing significant Social Security and Medicare cost changes. These are separate questions and are not a calibrated package-passage probability."},
+        {"status": "warranted", "text": "Prediction markets can provide useful political and macro inputs.", "note": "Production Kalshi and Polymarket clients now paginate discovery, flatten all event markets, read executable order books, preserve native units, and archive hashed raw responses. The live Kalshi FY2026 deficit/GDP-below-5% contract was 9% bid / 11% ask on 2026-08-04; because it resolves a different event, it is corroborating evidence rather than a substitute for the enactment model."},
+        {"status": "missing", "text": "Politicians will choose indirect adjustment before explicit austerity.", "note": "This requires historical base rates and observable policy probabilities."}
+      ]
+    },
+    {
+      "id": "debasement-repression",
+      "title": "Debasement and financial repression",
+      "weight": 10,
+      "status": "partial",
+      "contention": "If explicit adjustment fails, policymakers will lean on inflation, money creation, captive demand, and digital financial control.",
+      "plain_english": "The bill can be paid visibly through taxes and cuts or less visibly through lower real returns on money and bonds. Digital rails may increase the state's ability to target, monitor, or restrict that adjustment—but that outcome is not automatic.",
+      "score_rule": "Track inflation expectations, term premium and rate volatility, central-bank balance sheets, real yields, Treasury ownership, regulatory captive-demand measures, and concrete U.S. digital-money policy milestones.",
+      "update_frequency": "Daily markets; monthly balance sheets; event-driven legislation and regulation",
+      "existing_evidence": [
+        {"label": "Debt carrying cost", "href": "#interest"},
+        {"label": "Fixed-income valuation", "href": "#tax-valuation"}
+      ],
+      "missing_warrants": [
+        "Restore the Bloomberg MOVE input and add inflation swaps to the completed FRED market/monetary and Treasury-ownership panels.",
+        "Extend the initial source-linked Treasury-regulation, CBDC, and stablecoin event taxonomy to a comprehensive history of regulated-holder exposure, wealth taxes, capital controls, and asset-control laws.",
+        "Estimate regime-transition probabilities without treating monetary accommodation or digital rails as proof of coercion."
+      ],
+      "claims": [
+        {"status": "partial", "text": "Fiscal pressure increases incentives for inflationary or repressive adjustment.", "note": "The incentive is plausible and historically grounded, but the current page lacks a regime model."},
+        {"status": "warranted", "text": "The narrow current observed-repression condition is not met.", "note": "The latest matched 10-year real yield is positive and the coded U.S. panel contains no current broad capital-control or asset-confiscation law. Fed ownership is 14.8% of the constructed market-facing debt denominator; this is a diagnostic, not proof of compelled private demand."},
+        {"status": "conceptual", "text": "CBDCs or digitized money will be used for wealth taxation and control.", "note": "No current U.S. policy path or conditional probability is supplied."},
+        {"status": "partial", "text": "Inflation expectations will unanchor and fixed-income volatility will force repression.", "note": "Breakevens, 5y5y inflation, real yields, term premium, Fed assets, M2, and MOVE are wired with thresholds and currently populated. The August 4 refresh used a visibly disclosed delayed-quote fallback for MOVE because the Bloomberg bridge timed out; the causal regime transition is not established."},
+        {"status": "conceptual", "text": "Asset confiscation is a likely endpoint.", "note": "The term requires a precise legal and economic definition before it can enter the score."}
+      ]
+    },
+    {
+      "id": "institutional-control",
+      "title": "Institutional and economic legitimacy",
+      "weight": 10,
+      "status": "partial",
+      "contention": "Declining economic and political legitimacy makes explicit fiscal adjustment harder and increases noncompliance, exit, conflict, and the risk of coercive responses.",
+      "plain_english": "A fiscal settlement requires people to believe the economic and political bargain is legitimate enough to comply with. Trust and administrative capacity are measurable; the transitions from weak legitimacy to noncompliance, conflict, and coercion are not yet established.",
+      "score_rule": "Use political and economic trust, perceived fairness and mobility, tax and payment compliance, verified fraud and corruption, capital flight, democratic governance, protest and unrest, executive power, surveillance, and civil-liberty indicators with predeclared thresholds.",
+      "update_frequency": "Annual institutional datasets; quarterly polling; event-driven legal and security review",
+      "existing_evidence": [
+        {"label": "Trust and improper-payment context", "href": "#productivity"}
+      ],
+      "missing_warrants": [
+        "Extend the completed Pew government-trust and fixed 14-institution Gallup confidence panels with perceived-fairness, mobility, and democratic-governance outcome series.",
+        "Extend the separated IRS compliance and GAO improper-payment inputs with verified fraud and corruption series; one does not prove another.",
+        "Extend the completed V-Dem/Freedom House governance panel, Harvard/UConn protest panel, Section 6039G/BEA exit diagnostics, U.S. Courts intercept history, and EFF current surveillance inventory with broader event-level political violence, migration, identified capital flight, and surveillance-capacity histories.",
+        "Estimate transitions from weak legitimacy to noncompliance and conflict, then from conflict to coercive policy, rather than narrating an inevitable authoritarian sequence."
+      ],
+      "claims": [
+        {"status": "warranted", "text": "Trust in the federal government is low by the existing series.", "note": "The page reports the Pew history and latest level."},
+        {"status": "warranted", "text": "Confidence is low across multiple institutions, not only the federal government.", "note": "The fixed Gallup 14-institution average is 26.9% in 2026 versus 37.8% in its first fully populated year, 1993. Congress is 9%, the Supreme Court 27%, banks 28%, big business 17%, newspapers 17%, and television news 14%; these are survey attitudes, not direct performance measures."},
+        {"status": "partial", "text": "Administrative leakage is relevant to institutional capacity.", "note": "CMS improper payments are measured, but CMS explicitly says they are not a fraud estimate."},
+        {"status": "warranted", "text": "The latest producer vintages show material U.S. governance deterioration.", "note": "V-Dem v16 reports the U.S. liberal-democracy index at 0.571 in 2025, down 0.228 from 2004; Freedom House reports 81/100, down 12 points. Legislative constraints, expression, human rights, and judicial constraints also decline in the panel. These expert-coded, overlapping measures warrant a deterioration signal, not an inevitable-authoritarianism forecast."},
+        {"status": "partial", "text": "Social unrest and democratic dissatisfaction are accelerating toward authoritarian government.", "note": "Democracy, civil-liberty, executive-constraint, centralization, court-authorized-intercept, current local-surveillance, and 2017–2025 political-crowd diagnostics now exist. CCC event count rose 260% from 2017 to 2025, but reported serious harm or property damage fell to 0.35% of events from 1.01%; arrests are kept separate. Court-authorized intercepts fell 58.2% from their 2015 publication-series peak. The evidence does not yet establish a broad political-violence trend or a calibrated authoritarian transition probability."},
+        {"status": "conceptual", "text": "AI will be used to suppress dissent and solidify command-and-control rule.", "note": "This is a scenario requiring signposts, not a warranted current-state claim."}
+      ]
+    }
+  ],
+  "downstream_scenarios": [
+    {
+      "title": "Financial bread and circuses",
+      "status": "partial",
+      "summary": "Legalized gambling, prediction markets, tokenized equities, perpetual swaps, and stablecoin collateral become politically useful outlets and financial rails.",
+      "existing_evidence": "Global stablecoin supply is $305.8B as of 2026-08-04, 11.3x its 2020 year-end level. AGA reports 2025 U.S. commercial gaming revenue of $78.72B, sports handle of $166.94B, and iGaming revenue of $10.74B. In May 2026, AGA reports $12.06B state-regulated sports handle versus nearly $15B of Kalshi sports-event volume. Industry estimates reproduced in a CFTC filing put crypto perpetual volume above $90T in 2025. These are distribution-capacity facts, not evidence of deliberate political pacification.",
+      "needed": "Stablecoin velocity and users, complete prediction-market and perpetual volume histories, tokenized-asset issuance, a comprehensive legal panel, and a causal mechanism connecting these to fiscal policy. RWA.xyz timeseries access is not configured."
+    },
+  {
+    "title": "Temporary command-and-control economy",
+    "status": "partial",
+    "summary": "AI-enabled surveillance, military capacity, and centralized financial rails strengthen human authoritarian control during the adjustment phase.",
+    "existing_evidence": "A source-linked U.S. event taxonomy now separates surveillance authority, executive-power law, formal anti-censorship safeguards, domestic military support, retail-CBDC policy, and private stablecoin rails. It records the 2025 Title 10 Los Angeles protection mission without mislabeling it an Insurrection Act invocation, and records that no U.S. retail CBDC is authorized or operational. These mixed signposts do not establish an authoritarian transition.",
+    "needed": "Comprehensive procurement and surveillance-capacity histories, compliance/outcome audits behind formal safeguards, cross-country comparison regimes, transition rates, and a calibrated link from these signposts to coercive outcomes."
+  },
+  {
+    "title": "Exit from Doom through superintelligence",
+    "status": "conceptual-with-signposts",
+    "summary": "Superintelligence is an exit from Doom only if it creates sustained broad-based real productivity and fiscal capacity while preserving human agency. Capability without distribution and alignment can instead inherit or intensify command and control.",
+    "existing_evidence": "A six-condition, zero-weight signpost panel now tests productivity escape, fiscal escape, AI capital return, broad distribution, and human agency. None currently passes: three directly testable conditions fail and three lack sufficient evidence. The July 23, 2026 Economist interview with Elon Musk is now linked to the publisher episode and primary recording/transcript rather than cited through a secondary paraphrase; his forecast is labeled opinion, not evidence.",
+    "needed": "Validated AI-attributable ROIC, broad distribution and essential-cost panels, auditable human override and appeal metrics, alignment incident histories, and an approved calibration for the separate productivity override."
+  }
+  ],
+  "strategy_modules": [
+    {
+      "title": "Macro: hard assets versus fiat",
+      "status": "missing",
+      "thesis": "Own scarce real assets and short structurally weak fiat currencies when debasement and repression signals rise.",
+      "requirements": "Define the asset and currency universe, valuation filter, carry, trend, entry/exit rules, transaction costs, sizing, and historical drawdown test."
+    },
+    {
+      "title": "Long/short Doom equities",
+      "status": "missing",
+      "thesis": "Rank companies by alignment with fiscal transfer, scarcity, command-and-control, attention, and capital-intensity regimes.",
+      "requirements": "Create a point-in-time stock taxonomy, auditable features, neutralization rules, valuation support, filing-event signals, and a survivorship-safe backtest."
+    },
+    {
+      "title": "Tactical and on-chain perennials",
+      "status": "missing",
+      "thesis": "Trade liquid perps and tokenized markets around intra-quarter changes in the Doom components.",
+      "requirements": "Specify venues, collateral, liquidation and oracle risks, funding costs, market-impact assumptions, custody constraints, and hard risk limits before any performance claim."
+    },
+    {
+      "title": "Index stop and portfolio governor",
+      "status": "partial",
+      "thesis": "Exit Doom-linked risk when the index falls below 20 or the productivity override activates.",
+      "requirements": "The rule is explicit; it still needs a published daily score, revision policy, execution convention, slippage model, and test for threshold whipsaw."
+    }
+  ]
+}

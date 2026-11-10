@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on goodalexander</title>
+    <link>https://goodalexander.com/tags/ai/</link>
+    <description>Recent content in Ai on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Sep 2026 21:36:01 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tokenization and the Road to Financial RSI</title>
+      <link>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</link>
+      <pubDate>Thu, 17 Sep 2026 21:36:01 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</guid>
+      <description>Sovereign debt, stablecoins, privacy, and the path from tokenized stocks to autonomous on-chain capital.</description>
+    </item>
+    <item>
+      <title>The AI Hail Mary</title>
+      <link>https://goodalexander.com/posts/the-ai-hail-mary/</link>
+      <pubDate>Tue, 15 Sep 2026 02:17:33 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the-ai-hail-mary/</guid>
+      <description>Why weak real-world productivity makes AI investment more desperate and the spending harder to stop.</description>
+    </item>
+    <item>
+      <title>Info Capital Chaos and the Outside</title>
+      <link>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</link>
+      <pubDate>Sat, 29 Aug 2026 13:35:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</guid>
+      <description>Info Capital Chaos, technocapital, simulation, and the Outside.</description>
+    </item>
+    <item>
+      <title>Societal-Level Investment, Societal-Level Returns</title>
+      <link>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</link>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</guid>
+      <description>If you have societal-level investment, you are accountable for societal-level returns.</description>
+    </item>
+    <item>
+      <title>Jabberwocky Babel</title>
+      <link>https://goodalexander.com/posts/jabberwocky-babel/</link>
+      <pubDate>Sun, 16 Aug 2026 14:32:43 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/jabberwocky-babel/</guid>
+      <description>&lt;h2 id=&#34;useful-gibberish&#34;&gt;Useful Gibberish&lt;/h2&gt;
+&lt;p&gt;Writing in the era of AI is difficult; it requires knowing and bowing to your own inadequacy in the face of the machine.&lt;/p&gt;
+&lt;p&gt;Take, for example: I built a simple scoring mechanic to improve my writing. I could have done this with regard to any aspect of my life. The idea: you make a draft. You score it. You pass the criticisms back to the AI. The AI improves it. You score it again. And so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HyperGoblinization</title>
+      <link>https://goodalexander.com/posts/hypergoblinization/</link>
+      <pubDate>Tue, 28 Apr 2026 23:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/hypergoblinization/</guid>
+      <description>Putting numbers around goblin preferences in advancing OpenAI models.</description>
+    </item>
+  </channel>
+</rss>
