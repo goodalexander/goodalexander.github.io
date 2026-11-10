@@ -1,28 +1,102 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>crypto on goodalexander</title>
-    <link>https://goodalexander.github.io/tags/crypto/</link>
-    <description>Recent content in crypto on goodalexander</description>
+    <title>Crypto on goodalexander</title>
+    <link>https://goodalexander.com/tags/crypto/</link>
+    <description>Recent content in Crypto on goodalexander</description>
     <image>
       <title>goodalexander</title>
-      <url>https://goodalexander.github.io/papermod-cover.png</url>
-      <link>https://goodalexander.github.io/papermod-cover.png</link>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Dec 2023 11:21:29 +0000</lastBuildDate>
-    <atom:link href="https://goodalexander.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 03:57:15 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fiat Sand Castles</title>
+      <link>https://goodalexander.com/posts/fiat-sand-castles/</link>
+      <pubDate>Fri, 18 Sep 2026 03:57:15 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/fiat-sand-castles/</guid>
+      <description>Mission-driven companies, the fragile foundations of fiat, and crypto as a life raft out of a decaying system.</description>
+    </item>
+    <item>
+      <title>Tokenization and the Road to Financial RSI</title>
+      <link>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</link>
+      <pubDate>Thu, 17 Sep 2026 21:36:01 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/tokenization-and-the-road-to-financial-rsi/</guid>
+      <description>Sovereign debt, stablecoins, privacy, and the path from tokenized stocks to autonomous on-chain capital.</description>
+    </item>
+    <item>
+      <title>SEC Regulation Crypto Assets: A Plain-English Primer</title>
+      <link>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</link>
+      <pubDate>Thu, 20 Aug 2026 16:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</guid>
+      <description>What the SEC’s proposed startup exemption, fundraising exemption, Form TR safe harbor, and state preemption would actually do.</description>
+    </item>
+    <item>
+      <title>Societal-Level Investment, Societal-Level Returns</title>
+      <link>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</link>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/societal-level-investment-societal-level-returns/</guid>
+      <description>If you have societal-level investment, you are accountable for societal-level returns.</description>
+    </item>
+    <item>
+      <title>Why Crypto Isn&#39;t Over But Maybe Society Is (One Shot Series II)</title>
+      <link>https://goodalexander.com/posts/crypto_isnt_over/</link>
+      <pubDate>Thu, 18 Dec 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/crypto_isnt_over/</guid>
+      <description>Part 2 in AI generated text experiment designed to cause extreme consciousness changes in consumers</description>
+    </item>
+    <item>
+      <title>The Great Unraveling (One Shot Series I)</title>
+      <link>https://goodalexander.com/posts/the_one_shot_series/</link>
+      <pubDate>Fri, 28 Nov 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/the_one_shot_series/</guid>
+      <description>Part 1 in AI generated text experiment designed to cause extreme consciousness changes in consumers</description>
+    </item>
+    <item>
+      <title>Hyperstitional Vortex</title>
+      <link>https://goodalexander.com/posts/hyperstitional_vortex/</link>
+      <pubDate>Wed, 19 Nov 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/hyperstitional_vortex/</guid>
+      <description>That which was shall be once more, if not at first then just before</description>
+    </item>
+    <item>
+      <title>AI Apes Together Strong</title>
+      <link>https://goodalexander.com/posts/ai_apes_together/</link>
+      <pubDate>Sun, 21 Sep 2025 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/ai_apes_together/</guid>
+      <description>My simplified thesis for a never ending speculative mania that is now a matter of national security</description>
+    </item>
+    <item>
+      <title>Agentic Protocols</title>
+      <link>https://goodalexander.com/posts/agentic-protocols/</link>
+      <pubDate>Sat, 06 Apr 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/agentic-protocols/</guid>
+      <description>Crypto With Cash Flow. Fleeing The ARKK</description>
+    </item>
+    <item>
+      <title>Deep Dive on Bittensor (TAO)</title>
+      <link>https://goodalexander.com/posts/bittensor-tao-deep-dive/</link>
+      <pubDate>Sun, 07 Jan 2024 11:21:29 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/bittensor-tao-deep-dive/</guid>
+      <description>First Coin Deep Dive: Bittensor/ Tao</description>
+    </item>
     <item>
       <title>The Left Curve Path</title>
-      <link>https://goodalexander.github.io/posts/left-curve-path/</link>
+      <link>https://goodalexander.com/posts/left-curve-path/</link>
       <pubDate>Sat, 02 Dec 2023 11:21:29 +0000</pubDate>
-      <guid>https://goodalexander.github.io/posts/left-curve-path/</guid>
-      <description>AI Good. Fiat Bad. What&amp;rsquo;s your plan, anon?
-What Is The Left Curve Most internet denizens know this meme by now&amp;hellip; but, for reference
-It pays to keep it really simple.
-The Morpheus Bull A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money.
-Because the nature of money is changing.</description>
+      <guid>https://goodalexander.com/posts/left-curve-path/</guid>
+      <description>&lt;p&gt;AI Good. Fiat Bad. What&amp;rsquo;s your plan, anon?&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-left-curve&#34;&gt;What Is The Left Curve&lt;/h2&gt;
+&lt;p&gt;Most internet denizens know this meme by now&amp;hellip; but, for reference&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://goodalexander.com/images/AIGOOD.png&#34; alt=&#34;LeftCurve&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;It pays to keep it really simple.&lt;/p&gt;
+&lt;h2 id=&#34;the-morpheus-bull&#34;&gt;The Morpheus Bull&lt;/h2&gt;
+&lt;p&gt;A crypto bull market is arriving. It’s time to dial down the spiritual thought, the hobbies, the relationships. The meditations on what it means to be human. And focus on making money.&lt;/p&gt;
+&lt;p&gt;Because the nature of money is changing. If the real “Bull” arrives it’s actually the Fiat “bear”. That is to say - governments thought adding endless debt was a free lunch but it’s increasingly accelerating into an untenable situation. And the only way to deal with it is by pretending you’re borrowing at low rates, and inappropriately easy monetary policy in the face of obvious inflation.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

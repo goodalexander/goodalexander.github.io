@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regulation on goodalexander</title>
+    <link>https://goodalexander.com/tags/regulation/</link>
+    <description>Recent content in Regulation on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Aug 2026 16:30:00 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/regulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SEC Regulation Crypto Assets: A Plain-English Primer</title>
+      <link>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</link>
+      <pubDate>Thu, 20 Aug 2026 16:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/sec-regulation-crypto-assets-primer/</guid>
+      <description>What the SEC’s proposed startup exemption, fundraising exemption, Form TR safe harbor, and state preemption would actually do.</description>
+    </item>
+  </channel>
+</rss>

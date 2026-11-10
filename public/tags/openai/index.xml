@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openai on goodalexander</title>
+    <link>https://goodalexander.com/tags/openai/</link>
+    <description>Recent content in Openai on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Apr 2026 23:30:00 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/tags/openai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HyperGoblinization</title>
+      <link>https://goodalexander.com/posts/hypergoblinization/</link>
+      <pubDate>Tue, 28 Apr 2026 23:30:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/hypergoblinization/</guid>
+      <description>Putting numbers around goblin preferences in advancing OpenAI models.</description>
+    </item>
+  </channel>
+</rss>

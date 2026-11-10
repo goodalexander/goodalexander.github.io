@@ -1,3 +1,4 @@
 User-agent: *
 Disallow:
-Sitemap: https://goodalexander.github.io/sitemap.xml
+
+Sitemap: https://goodalexander.com/sitemap.xml

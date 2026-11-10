@@ -1,0 +1,57 @@
+{
+  "generated_at_utc": "2026-11-10T20:41:06.265724+00:00",
+  "asof": "2026-11-10",
+  "accepted_models": 52,
+  "longs": [
+    {
+      "ticker": "285A JP Equity",
+      "upside": 1.677621
+    },
+    {
+      "ticker": "RIVN US Equity",
+      "upside": 1.605835
+    },
+    {
+      "ticker": "SPCX US Equity",
+      "upside": 0.471128
+    },
+    {
+      "ticker": "RDDT US Equity",
+      "upside": 0.462754
+    },
+    {
+      "ticker": "RKLB US Equity",
+      "upside": 0.455146
+    },
+    {
+      "ticker": "NFLX US Equity",
+      "upside": 0.409556
+    }
+  ],
+  "shorts": [
+    {
+      "ticker": "IREN US Equity",
+      "upside": -0.530374
+    },
+    {
+      "ticker": "CRWD US Equity",
+      "upside": -0.406474
+    },
+    {
+      "ticker": "005380 KS Equity",
+      "upside": -0.404318
+    },
+    {
+      "ticker": "MRVL US Equity",
+      "upside": -0.381459
+    },
+    {
+      "ticker": "HIMS US Equity",
+      "upside": -0.307423
+    },
+    {
+      "ticker": "AAPL US Equity",
+      "upside": -0.303116
+    }
+  ]
+}

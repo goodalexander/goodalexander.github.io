@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philosophy on goodalexander</title>
+    <link>https://goodalexander.com/categories/philosophy/</link>
+    <description>Recent content in Philosophy on goodalexander</description>
+    <image>
+      <title>goodalexander</title>
+      <url>https://goodalexander.com/papermod-cover.png</url>
+      <link>https://goodalexander.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Sep 2026 03:57:15 +0000</lastBuildDate>
+    <atom:link href="https://goodalexander.com/categories/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fiat Sand Castles</title>
+      <link>https://goodalexander.com/posts/fiat-sand-castles/</link>
+      <pubDate>Fri, 18 Sep 2026 03:57:15 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/fiat-sand-castles/</guid>
+      <description>Mission-driven companies, the fragile foundations of fiat, and crypto as a life raft out of a decaying system.</description>
+    </item>
+    <item>
+      <title>How to Fix Your Life In 6 Months</title>
+      <link>https://goodalexander.com/posts/how-to-fix-your-life-in-6-months/</link>
+      <pubDate>Mon, 31 Aug 2026 17:45:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/how-to-fix-your-life-in-6-months/</guid>
+      <description>A practical six-month framework built around money, health, enjoyable processes, and cutting what does not serve the larger goal.</description>
+    </item>
+    <item>
+      <title>Info Capital Chaos and the Outside</title>
+      <link>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</link>
+      <pubDate>Sat, 29 Aug 2026 13:35:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/info-capital-chaos-and-the-outside/</guid>
+      <description>Info Capital Chaos, technocapital, simulation, and the Outside.</description>
+    </item>
+    <item>
+      <title>Memory Hole</title>
+      <link>https://goodalexander.com/posts/memory-hole/</link>
+      <pubDate>Sun, 23 Aug 2026 17:31:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/memory-hole/</guid>
+      <description>&lt;p&gt;The things that seem the most important flow through the fingers like sand. Wind blows. Amnesia dictates importance. The liminal state, waking up. The world of dreams is no different from the most consequential life events. Forgotten to preserve memory. &lt;/p&gt;
+&lt;p&gt;RAM utilization is critical. Cargo Rust rebuild the mind and the disk is at capacity. You need to forget to stay sane. And yet you need to remember to escape. Escape?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nothing Settles Itself</title>
+      <link>https://goodalexander.com/posts/nothing-settles-itself/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://goodalexander.com/posts/nothing-settles-itself/</guid>
+      <description>Money, capital, and the tribute you already pay.</description>
+    </item>
+  </channel>
+</rss>
