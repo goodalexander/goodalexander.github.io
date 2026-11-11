@@ -33,5 +33,5 @@ GET https://api.corbanu.com/v1/company-models/HIMS/outputs
 
 The response carries the exact source date and content version. [API documentation and the current monthly price](/api/).
 
-[Open HIMS in the model viewer](https://tasknode.postfiat.org/api/research/bundles/ga-models/index.html#m=HIMS&tab=summary)
+Subscribers can open HIMS in the Finance Hub model viewer, which requires a Task Node sign-in. [Start with the API documentation](/api/).
 

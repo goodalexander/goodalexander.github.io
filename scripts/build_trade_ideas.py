@@ -213,7 +213,8 @@ def page(card: dict, rank: int, total: int) -> str:
         f"The response carries the exact source date and content version. "
         f"[API documentation and the current monthly price]({API_DOC}).",
         "",
-        f"[Open {short} in the model viewer]({HUB}#m={short}&tab=summary)",
+        f"Subscribers can open {short} in the Finance Hub model viewer, which requires a "
+        f"Task Node sign-in. [Start with the API documentation]({API_DOC}).",
         "",
     ]
     return "\n".join(head) + "\n"
