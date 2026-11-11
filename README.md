@@ -42,6 +42,12 @@ rolling 365-day `snapshots` array and derives `telemetry.series` from it so
 week-over-week dashboard calculations do not depend on transient current values
 or Git history scraping.
 
+Telemetry updater smoke test:
+
+```bash
+node scripts/test_the_merge_x_followers.mjs
+```
+
 ## The Merge GitHub telemetry
 
 `scripts/update-the-merge-private-github.mjs` refreshes the redacted GitHub

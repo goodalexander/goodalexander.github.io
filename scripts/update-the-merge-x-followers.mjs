@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { constants as fsConstants } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
@@ -9,6 +10,40 @@ const DEFAULT_WALLET_ADDRESS = 'rPo8GkCA9YMKzuJGTHbj11kdVfPqSJHxNx';
 const DEFAULT_TASKNODE_METRICS_URL = 'https://tasknode.postfiat.org/api/public/merge-telemetry';
 const DEFAULT_HISTORY_RETENTION_DAYS = 365;
 const DEFAULT_TELEMETRY_SERIES_DAYS = 90;
+const MAX_REASONABLE_COUNTER = 1_000_000_000_000;
+const SNAPSHOT_NUMERIC_FIELDS = [
+  'dau',
+  'x_followers',
+  'x_following',
+  'x_posts',
+  'loc',
+  'commits',
+  'task_requests',
+  'task_verifications',
+  'task_updates',
+  'tasks_completed',
+  'rewards',
+  'pft_rewards',
+  'context_updates',
+  'wallet_interactions',
+  'github_private_commits',
+  'github_private_loc',
+  'github_private_additions',
+  'github_private_deletions',
+  'github_public_commits',
+  'github_public_loc',
+  'github_public_additions',
+  'github_public_deletions',
+  'github_total_commits',
+  'github_total_loc',
+  'github_total_additions',
+  'github_total_deletions',
+  'local_workspace_files',
+  'local_workspace_repos',
+  'local_workspace_loc',
+  'local_workspace_additions',
+  'local_workspace_deletions',
+];
 
 function readEnv(name) {
   const value = process.env[name];
@@ -76,20 +111,26 @@ async function fetchJson(url, options = {}) {
   const response = await fetch(url, options);
   const body = await response.text();
   let parsed = null;
+  let parseError = null;
   if (body) {
     try {
       parsed = JSON.parse(body);
-    } catch {
-      parsed = { raw: body.slice(0, 500) };
+    } catch (err) {
+      parseError = err;
     }
   }
   if (!response.ok) {
-    const message = parsed?.detail
-      || parsed?.title
-      || parsed?.errors?.[0]?.message
-      || parsed?.error
+    const message = parsed
+      ? (parsed.detail
+        || parsed.title
+        || parsed.errors?.[0]?.message
+        || parsed.error)
+      : body.slice(0, 500)
       || `HTTP ${response.status}`;
     throw new Error(`HTTP request failed (${response.status}): ${message}`);
+  }
+  if (parseError) {
+    throw new Error(`Invalid JSON response from ${url}: ${parseError.message}`);
   }
   return parsed;
 }
@@ -151,7 +192,11 @@ async function buildXAuthorizationHeader(method, url) {
 async function fetchXProfile(username) {
   const mockResponse = readEnv('THE_MERGE_X_MOCK_RESPONSE');
   if (mockResponse) {
-    return JSON.parse(mockResponse);
+    try {
+      return JSON.parse(mockResponse);
+    } catch (err) {
+      throw new Error(`Invalid THE_MERGE_X_MOCK_RESPONSE JSON: ${err.message}`);
+    }
   }
 
   const url = new URL(`https://api.x.com/2/users/by/username/${encodeURIComponent(username)}`);
@@ -167,7 +212,11 @@ async function fetchXProfile(username) {
 async function fetchTaskNodeTelemetry({ walletAddress, endpoint }) {
   const mockResponse = readEnv('THE_MERGE_TASKNODE_MOCK_RESPONSE');
   if (mockResponse) {
-    return JSON.parse(mockResponse);
+    try {
+      return JSON.parse(mockResponse);
+    } catch (err) {
+      throw new Error(`Invalid THE_MERGE_TASKNODE_MOCK_RESPONSE JSON: ${err.message}`);
+    }
   }
   if (!walletAddress || !endpoint) {
     return null;
@@ -178,10 +227,15 @@ async function fetchTaskNodeTelemetry({ walletAddress, endpoint }) {
 }
 
 function requireFiniteMetric(value, label) {
-  if (!Number.isFinite(value)) {
-    throw new Error(`X profile response missing numeric ${label}.`);
+  const parsed = Number(value);
+  if (
+    !Number.isFinite(parsed)
+    || parsed < 0
+    || parsed > MAX_REASONABLE_COUNTER
+  ) {
+    throw new Error(`X profile response missing sane numeric ${label}.`);
   }
-  return value;
+  return parsed;
 }
 
 function toFiniteNumberOrNull(value) {
@@ -236,6 +290,229 @@ function isFreshTimestamp(value, referenceValue, maxHours) {
 
 function stableStringify(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function isRecord(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function requireRecord(value, label) {
+  if (!isRecord(value)) {
+    throw new Error(`${label} must be an object.`);
+  }
+  return value;
+}
+
+function requireIsoTimestamp(value, label) {
+  if (typeof value !== 'string' || Number.isNaN(Date.parse(value))) {
+    throw new Error(`${label} must be an ISO timestamp.`);
+  }
+}
+
+function requireDateKey(value, label) {
+  if (
+    typeof value !== 'string'
+    || !/^\d{4}-\d{2}-\d{2}$/.test(value)
+    || Number.isNaN(Date.parse(`${value}T00:00:00.000Z`))
+  ) {
+    throw new Error(`${label} must be a YYYY-MM-DD date.`);
+  }
+}
+
+function validateOptionalCounter(value, label) {
+  if (value === null || value === undefined) {
+    return;
+  }
+  if (
+    typeof value !== 'number'
+    || !Number.isFinite(value)
+    || value < 0
+    || value > MAX_REASONABLE_COUNTER
+  ) {
+    throw new Error(`${label} must be a non-negative finite number.`);
+  }
+}
+
+function validateSnapshotRow(row, label) {
+  requireRecord(row, label);
+  requireDateKey(row.date, `${label}.date`);
+  if (row.updated_at !== undefined) {
+    requireIsoTimestamp(row.updated_at, `${label}.updated_at`);
+  }
+  for (const field of SNAPSHOT_NUMERIC_FIELDS) {
+    validateOptionalCounter(row[field], `${label}.${field}`);
+  }
+  if (row.sources !== undefined) {
+    requireRecord(row.sources, `${label}.sources`);
+  }
+}
+
+function validateTelemetryDocument(telemetry, label = 'telemetry') {
+  requireRecord(telemetry, label);
+  requireIsoTimestamp(telemetry.generated_at, `${label}.generated_at`);
+  requireRecord(telemetry.metrics, `${label}.metrics`);
+  validateOptionalCounter(telemetry.metrics.x_followers, `${label}.metrics.x_followers`);
+  if (telemetry.x_profile !== undefined) {
+    requireRecord(telemetry.x_profile, `${label}.x_profile`);
+    validateOptionalCounter(telemetry.x_profile.followers_count, `${label}.x_profile.followers_count`);
+    validateOptionalCounter(telemetry.x_profile.following_count, `${label}.x_profile.following_count`);
+    validateOptionalCounter(telemetry.x_profile.posts_count, `${label}.x_profile.posts_count`);
+    if (telemetry.x_profile.fetched_at !== undefined) {
+      requireIsoTimestamp(telemetry.x_profile.fetched_at, `${label}.x_profile.fetched_at`);
+    }
+  }
+  if (!Array.isArray(telemetry.series)) {
+    throw new Error(`${label}.series must be an array.`);
+  }
+  telemetry.series.forEach((row, index) => validateSnapshotRow(row, `${label}.series[${index}]`));
+  const history = requireRecord(telemetry.history, `${label}.history`);
+  if (typeof history.source !== 'string' || !history.source.trim()) {
+    throw new Error(`${label}.history.source must be a non-empty string.`);
+  }
+  requireIsoTimestamp(history.generated_at, `${label}.history.generated_at`);
+  validateOptionalCounter(history.retention_days, `${label}.history.retention_days`);
+  validateOptionalCounter(history.snapshots, `${label}.history.snapshots`);
+  requireDateKey(history.current_date, `${label}.history.current_date`);
+}
+
+function validateHistoryDocument(history, label = 'history') {
+  requireRecord(history, label);
+  if (history.schema_version !== 1) {
+    throw new Error(`${label}.schema_version must be 1.`);
+  }
+  requireIsoTimestamp(history.generated_at, `${label}.generated_at`);
+  validateOptionalCounter(history.retention_days, `${label}.retention_days`);
+  if (!Array.isArray(history.snapshots)) {
+    throw new Error(`${label}.snapshots must be an array.`);
+  }
+  const seenDates = new Set();
+  history.snapshots.forEach((row, index) => {
+    validateSnapshotRow(row, `${label}.snapshots[${index}]`);
+    if (seenDates.has(row.date)) {
+      throw new Error(`${label}.snapshots contains duplicate date ${row.date}.`);
+    }
+    seenDates.add(row.date);
+  });
+}
+
+function parseAndValidateJsonDocument(contents, label, validator) {
+  let parsed;
+  try {
+    parsed = JSON.parse(contents);
+  } catch (err) {
+    throw new Error(`${label} is not valid JSON: ${err.message}`);
+  }
+  validator(parsed, label);
+  return parsed;
+}
+
+function validateXProfilePayload(profile, username) {
+  const payload = requireRecord(profile, 'X profile response');
+  const data = requireRecord(payload.data, 'X profile response data');
+  const metrics = requireRecord(data.public_metrics, 'X profile public_metrics');
+  requireFiniteMetric(metrics.followers_count, 'followers_count');
+  requireFiniteMetric(metrics.following_count, 'following_count');
+  requireFiniteMetric(metrics.tweet_count, 'tweet_count');
+  if (data.username !== undefined && typeof data.username !== 'string') {
+    throw new Error('X profile username must be a string when present.');
+  }
+  if (!data.username && !username) {
+    throw new Error('X profile response missing username.');
+  }
+  return data;
+}
+
+function validateTaskNodeTelemetryPayload(taskNodeTelemetry) {
+  const payload = requireRecord(taskNodeTelemetry, 'Task Node telemetry response');
+  const metrics = requireRecord(payload.metrics, 'Task Node telemetry metrics');
+  for (const [key, value] of Object.entries(metrics)) {
+    validateOptionalCounter(
+      toFiniteNumberOrNull(value),
+      `Task Node telemetry metrics.${key}`
+    );
+  }
+  if (payload.generated_at !== undefined) {
+    requireIsoTimestamp(payload.generated_at, 'Task Node telemetry generated_at');
+  }
+  if (payload.wallet_address !== undefined && typeof payload.wallet_address !== 'string') {
+    throw new Error('Task Node telemetry wallet_address must be a string when present.');
+  }
+  if (payload.profile !== undefined) {
+    requireRecord(payload.profile, 'Task Node telemetry profile');
+  }
+  return payload;
+}
+
+function uniqueSidecarPath(filePath, suffix) {
+  const random = crypto.randomBytes(6).toString('hex');
+  return path.join(
+    path.dirname(filePath),
+    `.${path.basename(filePath)}.${process.pid}.${Date.now()}.${random}${suffix}`
+  );
+}
+
+async function prepareJsonWrite({ filePath, contents, label, validator }) {
+  parseAndValidateJsonDocument(contents, label, validator);
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  const tempPath = uniqueSidecarPath(filePath, '.tmp');
+  await fs.writeFile(tempPath, contents, { encoding: 'utf8', flag: 'wx' });
+  const tempContents = await fs.readFile(tempPath, 'utf8');
+  parseAndValidateJsonDocument(tempContents, `${label} temp file`, validator);
+  return { filePath, tempPath, label };
+}
+
+async function copyExistingFileToBackup(filePath) {
+  const backupPath = uniqueSidecarPath(filePath, '.bak');
+  try {
+    await fs.copyFile(filePath, backupPath, fsConstants.COPYFILE_EXCL);
+    return { filePath, backupPath, existed: true };
+  } catch (err) {
+    if (err?.code === 'ENOENT') {
+      return { filePath, backupPath, existed: false };
+    }
+    throw err;
+  }
+}
+
+async function removeIfExists(filePath) {
+  try {
+    await fs.unlink(filePath);
+  } catch (err) {
+    if (err?.code !== 'ENOENT') {
+      throw err;
+    }
+  }
+}
+
+async function restoreBackups(backups) {
+  for (const backup of backups.slice().reverse()) {
+    if (backup.existed) {
+      await fs.copyFile(backup.backupPath, backup.filePath);
+    } else {
+      await removeIfExists(backup.filePath);
+    }
+  }
+}
+
+async function commitJsonWrites(preparedWrites) {
+  if (!preparedWrites.length) {
+    return;
+  }
+  const backups = [];
+  try {
+    for (const write of preparedWrites) {
+      backups.push(await copyExistingFileToBackup(write.filePath));
+    }
+    for (const write of preparedWrites) {
+      await fs.rename(write.tempPath, write.filePath);
+    }
+  } catch (err) {
+    await restoreBackups(backups);
+    throw err;
+  } finally {
+    await Promise.allSettled(preparedWrites.map((write) => removeIfExists(write.tempPath)));
+    await Promise.allSettled(backups.map((backup) => removeIfExists(backup.backupPath)));
+  }
 }
 
 function normalizeSeriesRow(row, fallbackUpdatedAt) {
@@ -572,57 +849,43 @@ async function main() {
   const rawTelemetry = await fs.readFile(telemetryPath, 'utf8');
   const telemetry = JSON.parse(rawTelemetry);
   const [profile, taskNodeTelemetry] = await Promise.all([
-    fetchXProfile(username).catch((err) => {
-      console.warn(`X profile refresh failed: ${err.message}`);
-      return null;
-    }),
-    fetchTaskNodeTelemetry({ walletAddress, endpoint: taskNodeMetricsUrl }).catch((err) => {
-      console.warn(`Task Node telemetry refresh failed: ${err.message}`);
-      return null;
-    }),
+    fetchXProfile(username),
+    fetchTaskNodeTelemetry({ walletAddress, endpoint: taskNodeMetricsUrl }),
   ]);
   const fetchedAt = new Date().toISOString();
+  const validatedTaskNodeTelemetry = validateTaskNodeTelemetryPayload(taskNodeTelemetry);
 
   telemetry.generated_at = fetchedAt;
   telemetry.metrics = telemetry.metrics || {};
   telemetry.notes = telemetry.notes || {};
   telemetry.notes.history = `Daily telemetry snapshots are retained in /the-merge/${DEFAULT_HISTORY_FILENAME}; telemetry.series is derived from that cache.`;
 
-  const data = profile?.data || null;
+  const data = validateXProfilePayload(profile, username);
   const publicMetrics = data?.public_metrics || {};
   let followersCount = toFiniteNumberOrNull(telemetry.metrics.x_followers);
   let followingCount = toFiniteNumberOrNull(telemetry.x_profile?.following_count);
   let postsCount = toFiniteNumberOrNull(telemetry.x_profile?.posts_count);
   let xFollowersSource = 'retained_last_successful_x_snapshot';
-  if (data) {
-    followersCount = requireFiniteMetric(publicMetrics.followers_count, 'followers_count');
-    followingCount = Number.isFinite(publicMetrics.following_count) ? publicMetrics.following_count : null;
-    postsCount = Number.isFinite(publicMetrics.tweet_count) ? publicMetrics.tweet_count : null;
-    xFollowersSource = 'x_api_v2_users_by_username';
-    telemetry.metrics.x_followers = followersCount;
-    telemetry.x_profile = {
-      source: 'x_api_v2_users_by_username',
-      username: data.username || username,
-      user_id: data.id || null,
-      fetched_at: fetchedAt,
-      followers_count: followersCount,
-      following_count: followingCount,
-      posts_count: postsCount,
-      verified: typeof data.verified === 'boolean' ? data.verified : null,
-      verified_type: data.verified_type || null,
-      account_created_at: data.created_at || null,
-    };
-    telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
-    delete telemetry.notes.x_followers_refresh_error;
-  } else {
-    telemetry.notes.x_followers_refresh_error = (
-      `X profile refresh failed at ${fetchedAt}; retaining the last successful X metrics until credentials recover.`
-    );
-    if (followersCount !== null) {
-      telemetry.metrics.x_followers = followersCount;
-    }
-  }
-  mergeTaskNodeTelemetry(telemetry, taskNodeTelemetry);
+  followersCount = requireFiniteMetric(publicMetrics.followers_count, 'followers_count');
+  followingCount = requireFiniteMetric(publicMetrics.following_count, 'following_count');
+  postsCount = requireFiniteMetric(publicMetrics.tweet_count, 'tweet_count');
+  xFollowersSource = 'x_api_v2_users_by_username';
+  telemetry.metrics.x_followers = followersCount;
+  telemetry.x_profile = {
+    source: 'x_api_v2_users_by_username',
+    username: data.username || username,
+    user_id: data.id || null,
+    fetched_at: fetchedAt,
+    followers_count: followersCount,
+    following_count: followingCount,
+    posts_count: postsCount,
+    verified: typeof data.verified === 'boolean' ? data.verified : null,
+    verified_type: data.verified_type || null,
+    account_created_at: data.created_at || null,
+  };
+  telemetry.notes.x_followers = `Official X API v2 user lookup for @${username}; public_metrics.followers_count fetched at ${fetchedAt}.`;
+  delete telemetry.notes.x_followers_refresh_error;
+  mergeTaskNodeTelemetry(telemetry, validatedTaskNodeTelemetry);
   pruneStaleTimelineCaches(telemetry, fetchedAt);
 
   const currentSnapshot = buildCurrentSnapshot({
@@ -646,10 +909,6 @@ async function main() {
 
   const nextTelemetry = stableStringify(telemetry);
   const nextHistory = stableStringify(history);
-  await fs.mkdir(path.dirname(historyPath), { recursive: true });
-  if (nextTelemetry !== rawTelemetry) {
-    await fs.writeFile(telemetryPath, nextTelemetry, 'utf8');
-  }
   let rawHistory = null;
   try {
     rawHistory = await fs.readFile(historyPath, 'utf8');
@@ -658,9 +917,29 @@ async function main() {
       throw err;
     }
   }
-  if (nextHistory !== rawHistory) {
-    await fs.writeFile(historyPath, nextHistory, 'utf8');
+  const writes = [];
+  try {
+    if (nextTelemetry !== rawTelemetry) {
+      writes.push(await prepareJsonWrite({
+        filePath: telemetryPath,
+        contents: nextTelemetry,
+        label: 'next telemetry',
+        validator: validateTelemetryDocument,
+      }));
+    }
+    if (nextHistory !== rawHistory) {
+      writes.push(await prepareJsonWrite({
+        filePath: historyPath,
+        contents: nextHistory,
+        label: 'next history',
+        validator: validateHistoryDocument,
+      }));
+    }
+  } catch (err) {
+    await Promise.allSettled(writes.map((write) => removeIfExists(write.tempPath)));
+    throw err;
   }
+  await commitJsonWrites(writes);
 
   console.log(JSON.stringify({
     username,
